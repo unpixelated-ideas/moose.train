@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>moose.train Terms of Use</title>
+  <script>
+    (() => {
+      const storageKey = "moose-theme";
+      try {
+        const savedTheme = localStorage.getItem(storageKey);
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const preference = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+        document.documentElement.dataset.theme = preference === "system" && systemDark ? "dark" : preference === "dark" ? "dark" : "light";
+        document.documentElement.dataset.themePreference = preference;
+      } catch (_error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.themePreference = "system";
+      }
+    })();
+  </script>
+  <style>
+    :root,
+    [data-theme="light"] {
+      color-scheme: light;
+      --color-page: #ffffff;
+      --color-surface: #ffffff;
+      --color-surface-secondary: #f4f4f7;
+      --color-input: #ffffff;
+      --color-hover: #f4f4f7;
+      --color-text-primary: #000000;
+      --color-text-body: #1d1d1f;
+      --color-text-secondary: #6e6e73;
+      --color-border: #bfbfbf;
+      --color-border-hover: #a9a9ad;
+      --color-accent: #0070e2;
+      --color-link: #0070e2;
+      --color-focus-ring: rgba(0, 112, 226, 0.16);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --grouped: var(--color-surface-secondary);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --paper: var(--color-surface);
+      --wash: var(--color-page);
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --color-page: #000000;
+      --color-surface: #111214;
+      --color-surface-secondary: #0a0a0a;
+      --color-input: #151619;
+      --color-hover: #151619;
+      --color-text-primary: #f5f5f7;
+      --color-text-body: #d2d2d7;
+      --color-text-secondary: #a1a1a6;
+      --color-border: #3a3a3c;
+      --color-border-hover: #48484a;
+      --color-accent: #0070e2;
+      --color-link: #2997ff;
+      --color-focus-ring: rgba(0, 112, 226, 0.3);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --grouped: var(--color-surface-secondary);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --paper: var(--color-surface);
+      --wash: var(--color-page);
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--body);
+      background: var(--wash);
+      font-family: var(--system-font);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: clamp(76px, 10vw, 108px);
+      height: auto;
+      aspect-ratio: 1;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .brand-home {
+      display: block;
+      flex: 0 0 auto;
+      line-height: 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .tagline,
+    .section-heading p,
+    .status,
+    .terms-updated {
+      color: var(--muted);
+    }
+
+    .tagline {
+      margin: 6px 0 0;
+      line-height: 1.5;
+      white-space: pre;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      min-width: 180px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--body);
+    }
+
+    select {
+      width: 100%;
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--field);
+      color: var(--ink);
+      padding: 10px 12px;
+      font: inherit;
+      transition: background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    select:hover {
+      border-color: var(--color-border-hover);
+    }
+
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      outline: none;
+    }
+
+    .header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 12px;
+      max-width: 580px;
+    }
+
+    .top-link {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--link);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .top-link:hover {
+      text-decoration: underline;
+    }
+
+    .top-link:focus-visible {
+      border-radius: 10px;
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      outline: none;
+    }
+
+    .terms-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 36px);
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.85rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .terms-content {
+      display: grid;
+      gap: 28px;
+      line-height: 1.68;
+    }
+
+    .terms-intro,
+    .terms-section {
+      display: grid;
+      gap: 12px;
+    }
+
+    .terms-section {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .terms-section h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    .terms-content p {
+      margin: 0;
+    }
+
+    .status {
+      border: 1px dashed var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: var(--grouped);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      select {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .header-controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      main {
+        padding: 20px 14px 36px;
+      }
+
+      label {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="masthead">
+        <a class="brand-home" href="index.html" aria-label="moose.train home">
+          <img class="brand-logo" src="supporting_files/assets/logov2.png" alt="" width="1024" height="1024">
+        </a>
+        <div>
+          <h1>moose.train</h1>
+          <p id="tagline" class="tagline">M.O.O.S.E. - Metro-North Or Other Service&nbsp;Evaluator</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <label>
+          <span id="appearance-label">Appearance</span>
+          <select id="appearance-select" aria-label="Appearance">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+        <label>
+          <span id="language-label">Language</span>
+          <select id="language-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <a id="back-link" class="top-link" href="index.html">Back to trip search</a>
+
+    <article class="terms-card" aria-labelledby="terms-title">
+      <div class="section-heading">
+        <h2 id="terms-title">Terms of Use</h2>
+        <p id="terms-updated" class="terms-updated">Last updated: August 18, 2026</p>
+      </div>
+      <div id="terms-content" class="terms-content">
+        <div class="status">Loading Terms of Use...</div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const fallbackTranslations = {
+      en: {
+        appearanceLabel: "Appearance",
+        appearanceSystem: "System",
+        appearanceLight: "Light",
+        appearanceDark: "Dark",
+        back: "Back to trip search",
+        loading: "Loading Terms of Use...",
+        error: "Unable to load Terms of Use.",
+      },
+      ko: {
+        appearanceLabel: "화면 모드",
+        appearanceSystem: "시스템",
+        appearanceLight: "라이트",
+        appearanceDark: "다크",
+        back: "여행 검색으로 돌아가기",
+        loading: "이용약관을 불러오는 중...",
+        error: "이용약관을 불러올 수 없습니다.",
+      },
+      es: {
+        appearanceLabel: "Apariencia",
+        appearanceSystem: "Sistema",
+        appearanceLight: "Claro",
+        appearanceDark: "Oscuro",
+        back: "Volver a la búsqueda de viajes",
+        loading: "Cargando Términos de uso...",
+        error: "No se pudieron cargar los Términos de uso.",
+      },
+    };
+
+    let translations = {};
+    let termsContent = {};
+    let currentLanguage = new URLSearchParams(location.search).get("lang") || "en";
+    const THEME_STORAGE_KEY = "moose-theme";
+    const systemThemeQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+    const els = {
+      appearance: document.getElementById("appearance-select"),
+      appearanceLabel: document.getElementById("appearance-label"),
+      language: document.getElementById("language-select"),
+      languageLabel: document.getElementById("language-label"),
+      tagline: document.getElementById("tagline"),
+      backLink: document.getElementById("back-link"),
+      termsTitle: document.getElementById("terms-title"),
+      termsUpdated: document.getElementById("terms-updated"),
+      termsContent: document.getElementById("terms-content"),
+    };
+
+    init();
+
+    async function init() {
+      initTheme();
+      els.appearance.addEventListener("change", () => setThemePreference(els.appearance.value));
+      els.language.addEventListener("change", () => {
+        setLanguage(els.language.value);
+        history.replaceState(null, "", `terms.html?lang=${encodeURIComponent(currentLanguage)}`);
+      });
+      try {
+        const response = await fetch("index.html", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const source = await response.text();
+        translations = extractObject(source, "translations");
+        termsContent = extractObject(source, "termsContent");
+      } catch (_error) {
+        els.termsContent.innerHTML = `<div class="status">${escapeHtml(pageText("error"))}</div>`;
+        return;
+      }
+      setLanguage(currentLanguage);
+    }
+
+    function extractObject(source, name) {
+      const marker = `const ${name} = `;
+      const start = source.indexOf(marker);
+      if (start < 0) throw new Error(`Missing ${name}`);
+      const bodyStart = source.indexOf("{", start);
+      let depth = 0;
+      let inString = "";
+      let escaped = false;
+      for (let i = bodyStart; i < source.length; i += 1) {
+        const char = source[i];
+        if (inString) {
+          if (escaped) {
+            escaped = false;
+          } else if (char === "\\") {
+            escaped = true;
+          } else if (char === inString) {
+            inString = "";
+          }
+          continue;
+        }
+        if (char === "\"" || char === "'" || char === "`") {
+          inString = char;
+        } else if (char === "{") {
+          depth += 1;
+        } else if (char === "}") {
+          depth -= 1;
+          if (depth === 0) {
+            return new Function(`return (${source.slice(bodyStart, i + 1)});`)();
+          }
+        }
+      }
+      throw new Error(`Unclosed ${name}`);
+    }
+
+    function setLanguage(language) {
+      currentLanguage = translations[language] && termsContent[language] ? language : "en";
+      const content = termsContent[currentLanguage] || termsContent.en;
+      document.documentElement.lang = currentLanguage;
+      document.title = `moose.train ${content.title}`;
+      els.language.value = currentLanguage;
+      els.appearanceLabel.textContent = pageText("appearanceLabel");
+      els.appearance.setAttribute("aria-label", pageText("appearanceLabel"));
+      els.appearance.querySelector('option[value="system"]').textContent = pageText("appearanceSystem");
+      els.appearance.querySelector('option[value="light"]').textContent = pageText("appearanceLight");
+      els.appearance.querySelector('option[value="dark"]').textContent = pageText("appearanceDark");
+      els.languageLabel.textContent = text("languageLabel", "Language");
+      els.language.setAttribute("aria-label", text("languageLabel", "Language"));
+      els.tagline.textContent = text("tagline", "M.O.O.S.E. - Metro-North Or Other Service\u00a0Evaluator");
+      els.backLink.textContent = pageText("back");
+      els.backLink.href = `index.html?lang=${encodeURIComponent(currentLanguage)}`;
+      renderTerms(content);
+    }
+
+    function text(key, fallback) {
+      return (translations[currentLanguage] && translations[currentLanguage][key]) || fallback;
+    }
+
+    function pageText(key) {
+      return (fallbackTranslations[currentLanguage] && fallbackTranslations[currentLanguage][key]) || fallbackTranslations.en[key];
+    }
+
+    function renderTerms(content) {
+      els.termsTitle.textContent = content.title;
+      els.termsUpdated.textContent = content.lastUpdated;
+      els.termsContent.innerHTML = `
+        <div class="terms-intro">
+          ${content.intro.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        </div>
+        ${content.sections.map((section) => `
+          <section class="terms-section">
+            <h3>${escapeHtml(section.title)}</h3>
+            ${section.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+          </section>
+        `).join("")}
+      `;
+    }
+
+    function initTheme() {
+      const preference = currentThemePreference();
+      els.appearance.value = preference;
+      applyThemePreference(preference);
+      if (systemThemeQuery) {
+        const handleSystemThemeChange = () => {
+          if (currentThemePreference() === "system") applyThemePreference("system");
+        };
+        if (systemThemeQuery.addEventListener) {
+          systemThemeQuery.addEventListener("change", handleSystemThemeChange);
+        } else if (systemThemeQuery.addListener) {
+          systemThemeQuery.addListener(handleSystemThemeChange);
+        }
+      }
+    }
+
+    function setThemePreference(preference) {
+      const nextPreference = ["system", "light", "dark"].includes(preference) ? preference : "system";
+      try {
+        if (nextPreference === "system") {
+          localStorage.removeItem(THEME_STORAGE_KEY);
+        } else {
+          localStorage.setItem(THEME_STORAGE_KEY, nextPreference);
+        }
+      } catch (_error) {
+        // Ignore storage failures; the selected theme still applies for this page view.
+      }
+      applyThemePreference(nextPreference);
+    }
+
+    function currentThemePreference() {
+      try {
+        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+      } catch (_error) {
+        return "system";
+      }
+    }
+
+    function applyThemePreference(preference) {
+      const resolvedTheme = preference === "dark" || (preference === "system" && systemThemeQuery && systemThemeQuery.matches)
+        ? "dark"
+        : "light";
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.themePreference = preference;
+      if (els.appearance) els.appearance.value = preference;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
+</body>
+</html>

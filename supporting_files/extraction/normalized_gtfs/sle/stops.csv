@@ -1,0 +1,12 @@
+feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
+sle,sle:MDS,MDS,MAD,MDS,Madison,41.283577,-72.599444,,,,true
+sle,sle:NLC,NLC,NLC,NLC,New London,41.354267,-72.093225,,,,true
+sle,sle:BRP,BRP,BRP,BRP,Bridgeport,41.178006,-73.187539,,,,true
+sle,sle:CLN,CLN,CLIN,CLN,Clinton,41.279458,-72.528314,,,,true
+sle,sle:STS,STS,NHV,STS,New Haven,41.305253,-72.922086,,,,true
+sle,sle:BNF,BNF,BRA,BNF,Branford,41.274549,-72.817225,,,,true
+sle,sle:NHV,NHV,NHV,NHV,New Haven,41.297714,-72.92667,,,,true
+sle,sle:STM,STM,STM,STM,Stamford,41.04713,-73.54216,,,,true
+sle,sle:WSB,WSB,WBK,WSB,Westbrook,41.288787,-72.448,,,,true
+sle,sle:GUI,GUI,GUI,GUI,Guilford,41.275603,-72.673513,,,,true
+sle,sle:OSB,OSB,OSB,OSB,Old Saybrook,41.30039,-72.376818,,,,true

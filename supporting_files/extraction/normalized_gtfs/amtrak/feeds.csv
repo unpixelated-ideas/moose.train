@@ -1,0 +1,2 @@
+feed_id,source_id,operator_name,source_url,zip_path,imported_at,timezone
+amtrak,amtrak_official,Amtrak,https://content.amtrak.com/content/gtfs/GTFS.zip,/Users/fgbm27/Documents/2026/Moose.Train/supporting_files/source_gtfs/amtrak_official/GTFS.zip,2026-08-20T00:47:25+00:00,America/New_York

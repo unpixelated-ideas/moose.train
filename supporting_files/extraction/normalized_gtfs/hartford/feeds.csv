@@ -1,0 +1,2 @@
+feed_id,source_id,operator_name,source_url,zip_path,imported_at,timezone
+hartford,hartford,CTrail,https://ctrides.com/hlgtfs.zip,/Users/fgbm27/Documents/2026/Moose.Train/supporting_files/source_gtfs/hartford/hlgtfs.zip,2026-08-20T00:47:21+00:00,America/New_York

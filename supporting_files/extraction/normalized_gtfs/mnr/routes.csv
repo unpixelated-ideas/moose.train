@@ -1,0 +1,5 @@
+feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+mnr,mnr:3,3,mnr:1,1,,New Haven,2,New Haven Line,New Haven Line
+mnr,mnr:4,4,mnr:1,1,,New Canaan,2,New Canaan Branch,New Haven Line - New Canaan Branch
+mnr,mnr:5,5,mnr:1,1,,Danbury,2,Danbury Branch,New Haven Line - Danbury Branch
+mnr,mnr:6,6,mnr:1,1,,Waterbury,2,Waterbury Branch,New Haven Line - Waterbury Branch

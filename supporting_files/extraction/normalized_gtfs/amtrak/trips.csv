@@ -1,0 +1,795 @@
+feed_id,trip_uid,source_trip_id,route_uid,source_route_id,service_uid,source_service_id,trip_headsign,trip_short_name,direction_id,block_id,shape_uid,source_shape_id,operator_name,service_name,route_name
+amtrak,amtrak:282201,282201,amtrak:41044,41044,amtrak:106270047228,106270047228,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282058,282058,amtrak:41042,41042,amtrak:206262286247,206262286247,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282060,282060,amtrak:41042,41042,amtrak:106262516303,106262516303,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282061,282061,amtrak:41042,41042,amtrak:106263066329,106263066329,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282063,282063,amtrak:41042,41042,amtrak:106263316358,106263316358,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282065,282065,amtrak:41042,41042,amtrak:106063626365,106063626365,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277200,277200,amtrak:41042,41042,amtrak:106263066329,106263066329,Springfield,490,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277202,277202,amtrak:41042,41042,amtrak:106263316358,106263316358,Springfield,490,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277204,277204,amtrak:41042,41042,amtrak:106063626365,106063626365,Springfield,490,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277116,277116,amtrak:41042,41042,amtrak:206262286247,206262286247,Hartford,470,0,,,,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277118,277118,amtrak:41042,41042,amtrak:106262516303,106262516303,Hartford,470,0,,,,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277119,277119,amtrak:41042,41042,amtrak:106263066329,106263066329,Springfield,470,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277121,277121,amtrak:41042,41042,amtrak:106263316358,106263316358,Springfield,470,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277123,277123,amtrak:41042,41042,amtrak:106063626365,106063626365,Springfield,470,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277138,277138,amtrak:41042,41042,amtrak:206262286247,206262286247,New Haven,473,1,,,,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277140,277140,amtrak:41042,41042,amtrak:106262516303,106262516303,New Haven,473,1,,,,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277141,277141,amtrak:41042,41042,amtrak:106263066329,106263066329,New Haven,473,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277143,277143,amtrak:41042,41042,amtrak:106263316358,106263316358,New Haven,473,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277145,277145,amtrak:41042,41042,amtrak:106063626365,106063626365,New Haven,473,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277151,277151,amtrak:41042,41042,amtrak:206262286247,206262286247,Springfield,474,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277153,277153,amtrak:41042,41042,amtrak:106262516329,106262516329,Springfield,474,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277155,277155,amtrak:41042,41042,amtrak:106263316358,106263316358,Springfield,474,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277157,277157,amtrak:41042,41042,amtrak:106063626365,106063626365,Springfield,474,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277205,277205,amtrak:41042,41042,amtrak:106270047228,106270047228,Springfield,490,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277124,277124,amtrak:41042,41042,amtrak:106270047228,106270047228,Springfield,470,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277146,277146,amtrak:41042,41042,amtrak:106270047228,106270047228,New Haven,473,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277158,277158,amtrak:41042,41042,amtrak:106270047228,106270047228,Springfield,474,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:287153,287153,amtrak:88,88,amtrak:106262856289,106262856289,Boston,86,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:287154,287154,amtrak:88,88,amtrak:106262926329,106262926329,Boston,86,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:287156,287156,amtrak:88,88,amtrak:106263316358,106263316358,Boston,86,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:287158,287158,amtrak:88,88,amtrak:106063626365,106063626365,Boston,86,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:287159,287159,amtrak:88,88,amtrak:106270047228,106270047228,Boston,86,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:277699,277699,amtrak:41042,41042,amtrak:103262506250,103262506250,New Haven,405,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277700,277700,amtrak:41042,41042,amtrak:100463306330,100463306330,New Haven,405,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277701,277701,amtrak:41042,41042,amtrak:100263597001,100263597001,New Haven,405,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277715,277715,amtrak:41042,41042,amtrak:206462286242,206462286242,Springfield,416,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277717,277717,amtrak:41042,41042,amtrak:103262506250,103262506250,Springfield,416,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277719,277719,amtrak:41042,41042,amtrak:100163326332,100163326332,Springfield,416,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277735,277735,amtrak:41042,41042,amtrak:103262506250,103262506250,Springfield,460,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277736,277736,amtrak:41042,41042,amtrak:100463306330,100463306330,Springfield,460,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277737,277737,amtrak:41042,41042,amtrak:100263597001,100263597001,Springfield,460,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277743,277743,amtrak:41042,41042,amtrak:200162286325,200162286325,New Haven,463,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277744,277744,amtrak:41042,41042,amtrak:106462496249,106462496249,New Haven,463,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277745,277745,amtrak:41042,41042,amtrak:100463306330,100463306330,New Haven,463,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277748,277748,amtrak:41042,41042,amtrak:100263597001,100263597001,New Haven,463,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277755,277755,amtrak:41042,41042,amtrak:103262506250,103262506250,Springfield,464,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277756,277756,amtrak:41042,41042,amtrak:100463306330,100463306330,Springfield,464,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277757,277757,amtrak:41042,41042,amtrak:100263597001,100263597001,Springfield,464,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277762,277762,amtrak:41042,41042,amtrak:206462286242,206462286242,New Haven,465,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277764,277764,amtrak:41042,41042,amtrak:103262506250,103262506250,New Haven,465,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277766,277766,amtrak:41042,41042,amtrak:100163326332,100163326332,New Haven,465,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277772,277772,amtrak:41042,41042,amtrak:200162286325,200162286325,New Haven,467,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277773,277773,amtrak:41042,41042,amtrak:106462496249,106462496249,New Haven,467,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277774,277774,amtrak:41042,41042,amtrak:100463306330,100463306330,New Haven,467,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277777,277777,amtrak:41042,41042,amtrak:100263597001,100263597001,New Haven,467,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277782,277782,amtrak:41042,41042,amtrak:206462286242,206462286242,New Haven,497,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277784,277784,amtrak:41042,41042,amtrak:103262506250,103262506250,New Haven,497,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277786,277786,amtrak:41042,41042,amtrak:100163326332,100163326332,New Haven,497,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277803,277803,amtrak:41044,41044,amtrak:103262506250,103262506250,New Haven,461,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277804,277804,amtrak:41044,41044,amtrak:100463306330,100463306330,New Haven,461,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277805,277805,amtrak:41044,41044,amtrak:100263597001,100263597001,New Haven,461,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277802,277802,amtrak:41044,41044,amtrak:306562287228,306562287228,New Haven,461,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277698,277698,amtrak:41042,41042,amtrak:306562287228,306562287228,New Haven,405,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277718,277718,amtrak:41042,41042,amtrak:106462567228,106462567228,Springfield,416,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277734,277734,amtrak:41042,41042,amtrak:306562287228,306562287228,Springfield,460,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277747,277747,amtrak:41042,41042,amtrak:100163397228,100163397228,New Haven,463,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277754,277754,amtrak:41042,41042,amtrak:306562287228,306562287228,Springfield,464,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277765,277765,amtrak:41042,41042,amtrak:106462567228,106462567228,New Haven,465,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277776,277776,amtrak:41042,41042,amtrak:100163397228,100163397228,New Haven,467,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277785,277785,amtrak:41042,41042,amtrak:106462567228,106462567228,New Haven,497,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:277908,277908,amtrak:41044,41044,amtrak:103262506250,103262506250,Greenfield,488,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277909,277909,amtrak:41044,41044,amtrak:100463306330,100463306330,Greenfield,488,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277910,277910,amtrak:41044,41044,amtrak:100263597001,100263597001,Greenfield,488,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:277907,277907,amtrak:41044,41044,amtrak:306562287228,306562287228,Greenfield,488,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:297437,297437,amtrak:40751,40751,amtrak:103262506250,103262506250,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297440,297440,amtrak:40751,40751,amtrak:106562766277,106562766277,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297441,297441,amtrak:40751,40751,amtrak:106562836319,106562836319,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297442,297442,amtrak:40751,40751,amtrak:100163256346,100163256346,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297443,297443,amtrak:40751,40751,amtrak:106463266347,106463266347,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297444,297444,amtrak:40751,40751,amtrak:100463306330,100463306330,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297447,297447,amtrak:40751,40751,amtrak:100263597001,100263597001,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297478,297478,amtrak:88,88,amtrak:106270047228,106270047228,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297225,297225,amtrak:88,88,amtrak:106563537228,106563537228,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297238,297238,amtrak:88,88,amtrak:100163537228,100163537228,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297248,297248,amtrak:88,88,amtrak:106463547228,106463547228,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297255,297255,amtrak:88,88,amtrak:106463267228,106463267228,Washington,157,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297272,297272,amtrak:88,88,amtrak:100163537228,100163537228,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297273,297273,amtrak:88,88,amtrak:106463547228,106463547228,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297285,297285,amtrak:88,88,amtrak:100163397228,100163397228,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297296,297296,amtrak:88,88,amtrak:106563537228,106563537228,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297320,297320,amtrak:40751,40751,amtrak:106563537228,106563537228,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297338,297338,amtrak:40751,40751,amtrak:100163537228,100163537228,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297339,297339,amtrak:40751,40751,amtrak:106463547228,106463547228,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297350,297350,amtrak:88,88,amtrak:106563537228,106563537228,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297359,297359,amtrak:88,88,amtrak:100163257228,100163257228,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297360,297360,amtrak:88,88,amtrak:106463267228,106463267228,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297375,297375,amtrak:88,88,amtrak:206562286242,206562286242,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297376,297376,amtrak:88,88,amtrak:109762486250,109762486250,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297377,297377,amtrak:88,88,amtrak:100162556269,100162556269,New Haven,135,1,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297381,297381,amtrak:88,88,amtrak:106562766277,106562766277,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297382,297382,amtrak:88,88,amtrak:106562836319,106562836319,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297383,297383,amtrak:88,88,amtrak:106563256347,106563256347,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297384,297384,amtrak:88,88,amtrak:100463306330,100463306330,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297386,297386,amtrak:88,88,amtrak:100263597001,100263597001,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297387,297387,amtrak:40751,40751,amtrak:206562286235,206562286235,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297388,297388,amtrak:40751,40751,amtrak:106562416249,106562416249,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297389,297389,amtrak:40751,40751,amtrak:103262506250,103262506250,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297393,297393,amtrak:40751,40751,amtrak:106562766277,106562766277,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297396,297396,amtrak:40751,40751,amtrak:106563256347,106563256347,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297397,297397,amtrak:40751,40751,amtrak:100463306330,100463306330,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297399,297399,amtrak:40751,40751,amtrak:100263597001,100263597001,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297445,297445,amtrak:40751,40751,amtrak:100163537228,100163537228,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297446,297446,amtrak:40751,40751,amtrak:106463547228,106463547228,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297819,297819,amtrak:40751,40751,amtrak:206562286235,206562286235,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297820,297820,amtrak:40751,40751,amtrak:106562416242,106562416242,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297821,297821,amtrak:40751,40751,amtrak:109762486250,109762486250,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297825,297825,amtrak:40751,40751,amtrak:106562766277,106562766277,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297829,297829,amtrak:40751,40751,amtrak:100463306330,100463306330,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297830,297830,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297467,297467,amtrak:88,88,amtrak:206262286247,206262286247,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297469,297469,amtrak:88,88,amtrak:106262516282,106262516282,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297473,297473,amtrak:88,88,amtrak:106263206329,106263206329,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297475,297475,amtrak:88,88,amtrak:106263316358,106263316358,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297477,297477,amtrak:88,88,amtrak:106063626365,106063626365,Boston,94,0,,amtrak:341,341,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297494,297494,amtrak:88,88,amtrak:206562286249,206562286249,Boston,150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:282066,282066,amtrak:41042,41042,amtrak:106270047228,106270047228,New Haven,475,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282078,282078,amtrak:41042,41042,amtrak:106270047228,106270047228,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282036,282036,amtrak:41044,41044,amtrak:206262286247,206262286247,New Haven,471,1,,amtrak:359,359,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282038,282038,amtrak:41044,41044,amtrak:106262516303,106262516303,New Haven,471,1,,amtrak:359,359,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282039,282039,amtrak:41044,41044,amtrak:106263066329,106263066329,New Haven,471,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282041,282041,amtrak:41044,41044,amtrak:106263316358,106263316358,New Haven,471,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282043,282043,amtrak:41044,41044,amtrak:106063626365,106063626365,New Haven,471,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282044,282044,amtrak:41044,41044,amtrak:106270047228,106270047228,New Haven,471,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282070,282070,amtrak:41042,41042,amtrak:206262286247,206262286247,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282072,282072,amtrak:41042,41042,amtrak:106262516303,106262516303,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282073,282073,amtrak:41042,41042,amtrak:106263066329,106263066329,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282075,282075,amtrak:41042,41042,amtrak:106263316358,106263316358,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282077,282077,amtrak:41042,41042,amtrak:106063626365,106063626365,New Haven,417,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:282193,282193,amtrak:41044,41044,amtrak:206262286247,206262286247,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282195,282195,amtrak:41044,41044,amtrak:106262516303,106262516303,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282196,282196,amtrak:41044,41044,amtrak:106263066329,106263066329,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282198,282198,amtrak:41044,41044,amtrak:106263316358,106263316358,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:282200,282200,amtrak:41044,41044,amtrak:106063626365,106063626365,Springfield,478,0,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291326,291326,amtrak:41044,41044,amtrak:106270047228,106270047228,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291342,291342,amtrak:41044,41044,amtrak:106270047228,106270047228,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291378,291378,amtrak:41044,41044,amtrak:106270047228,106270047228,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291318,291318,amtrak:41044,41044,amtrak:206262286247,206262286247,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291320,291320,amtrak:41044,41044,amtrak:106262516303,106262516303,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291321,291321,amtrak:41044,41044,amtrak:106263066329,106263066329,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291323,291323,amtrak:41044,41044,amtrak:106263316358,106263316358,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291325,291325,amtrak:41044,41044,amtrak:106063626365,106063626365,New Haven,479,1,,amtrak:315,315,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291334,291334,amtrak:41044,41044,amtrak:206262286247,206262286247,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291336,291336,amtrak:41044,41044,amtrak:106262516303,106262516303,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291337,291337,amtrak:41044,41044,amtrak:106263066329,106263066329,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291339,291339,amtrak:41044,41044,amtrak:106263316358,106263316358,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291341,291341,amtrak:41044,41044,amtrak:106063626365,106063626365,Greenfield,486,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:292636,292636,amtrak:88,88,amtrak:106463267228,106463267228,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292960,292960,amtrak:40751,40751,amtrak:206262286247,206262286247,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292962,292962,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292963,292963,amtrak:40751,40751,amtrak:106262856317,106262856317,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292964,292964,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292966,292966,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292967,292967,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292993,292993,amtrak:40751,40751,amtrak:206262286247,206262286247,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292995,292995,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292996,292996,amtrak:40751,40751,amtrak:106262856317,106262856317,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292997,292997,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292999,292999,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293000,293000,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293004,293004,amtrak:90,90,amtrak:206262286247,206262286247,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293006,293006,amtrak:90,90,amtrak:106262516282,106262516282,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293007,293007,amtrak:90,90,amtrak:106262856303,106262856303,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293008,293008,amtrak:90,90,amtrak:106263066317,106263066317,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293009,293009,amtrak:90,90,amtrak:106263206329,106263206329,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293011,293011,amtrak:90,90,amtrak:106263316352,106263316352,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293012,293012,amtrak:90,90,amtrak:106063556365,106063556365,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293512,293512,amtrak:88,88,amtrak:206262286247,206262286247,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293514,293514,amtrak:88,88,amtrak:106262516282,106262516282,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293516,293516,amtrak:88,88,amtrak:106263206329,106263206329,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293518,293518,amtrak:88,88,amtrak:106263316352,106263316352,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293519,293519,amtrak:88,88,amtrak:106063556365,106063556365,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293523,293523,amtrak:88,88,amtrak:206262286247,206262286247,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293525,293525,amtrak:88,88,amtrak:106262516282,106262516282,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293527,293527,amtrak:88,88,amtrak:106263206329,106263206329,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293529,293529,amtrak:88,88,amtrak:106263316352,106263316352,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293530,293530,amtrak:88,88,amtrak:106063556365,106063556365,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293534,293534,amtrak:88,88,amtrak:206262286247,206262286247,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293536,293536,amtrak:88,88,amtrak:106262516282,106262516282,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293538,293538,amtrak:88,88,amtrak:106263206329,106263206329,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293540,293540,amtrak:88,88,amtrak:106263316352,106263316352,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293541,293541,amtrak:88,88,amtrak:106063556365,106063556365,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293545,293545,amtrak:88,88,amtrak:206262286247,206262286247,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293547,293547,amtrak:88,88,amtrak:106262516282,106262516282,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293549,293549,amtrak:88,88,amtrak:106263206329,106263206329,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293551,293551,amtrak:88,88,amtrak:106263316352,106263316352,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293552,293552,amtrak:88,88,amtrak:106063556365,106063556365,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293897,293897,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293899,293899,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293900,293900,amtrak:40751,40751,amtrak:106262856289,106262856289,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293901,293901,amtrak:40751,40751,amtrak:106262926317,106262926317,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293902,293902,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293904,293904,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293906,293906,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294559,294559,amtrak:88,88,amtrak:206262286247,206262286247,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294561,294561,amtrak:88,88,amtrak:106262516282,106262516282,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294565,294565,amtrak:88,88,amtrak:106263206329,106263206329,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294567,294567,amtrak:88,88,amtrak:106263316358,106263316358,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294569,294569,amtrak:88,88,amtrak:106063626365,106063626365,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292841,292841,amtrak:40751,40751,amtrak:106562836319,106562836319,Washington,2249,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:292842,292842,amtrak:40751,40751,amtrak:106562836319,106562836319,Washington,2251,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293521,293521,amtrak:88,88,amtrak:106270047228,106270047228,Washington,141,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293532,293532,amtrak:88,88,amtrak:106270047228,106270047228,Roanoke,171,1,,amtrak:344,344,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293543,293543,amtrak:88,88,amtrak:106270047228,106270047228,Washington,173,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293554,293554,amtrak:88,88,amtrak:106270047228,106270047228,Washington,175,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293568,293568,amtrak:88,88,amtrak:206262286247,206262286247,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293570,293570,amtrak:88,88,amtrak:106262516282,106262516282,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293573,293573,amtrak:88,88,amtrak:106263206329,106263206329,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293575,293575,amtrak:88,88,amtrak:106263316352,106263316352,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293576,293576,amtrak:88,88,amtrak:106063556365,106063556365,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293603,293603,amtrak:88,88,amtrak:206262286247,206262286247,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293605,293605,amtrak:88,88,amtrak:106262516282,106262516282,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293607,293607,amtrak:88,88,amtrak:106263206329,106263206329,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293609,293609,amtrak:88,88,amtrak:106263316352,106263316352,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293610,293610,amtrak:88,88,amtrak:106063556365,106063556365,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294359,294359,amtrak:88,88,amtrak:106270047228,106270047228,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294570,294570,amtrak:88,88,amtrak:106270047228,106270047228,Springfield,148,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293453,293453,amtrak:88,88,amtrak:106270047228,106270047228,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293463,293463,amtrak:88,88,amtrak:106270047228,106270047228,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294009,294009,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294011,294011,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294014,294014,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294016,294016,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294018,294018,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294020,294020,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294022,294022,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294025,294025,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294027,294027,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294029,294029,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294032,294032,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294034,294034,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294036,294036,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294038,294038,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294040,294040,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294053,294053,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294055,294055,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294057,294057,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294059,294059,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294061,294061,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:292629,292629,amtrak:88,88,amtrak:206462286235,206462286235,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292630,292630,amtrak:88,88,amtrak:106462426242,106462426242,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292632,292632,amtrak:88,88,amtrak:103262506250,103262506250,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292633,292633,amtrak:88,88,amtrak:106462566277,106462566277,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292637,292637,amtrak:88,88,amtrak:100163326332,100163326332,Boston,96,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292969,292969,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2151,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293002,293002,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2155,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293014,293014,amtrak:90,90,amtrak:106270047228,106270047228,Washington,55,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293080,293080,amtrak:40751,40751,amtrak:206262286240,206262286240,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293081,293081,amtrak:40751,40751,amtrak:106262436247,106262436247,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293083,293083,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293085,293085,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293087,293087,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293088,293088,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293091,293091,amtrak:40751,40751,amtrak:106262436247,106262436247,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293093,293093,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293095,293095,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293097,293097,amtrak:40751,40751,amtrak:106263316358,106263316358,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293099,293099,amtrak:40751,40751,amtrak:106063626365,106063626365,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293102,293102,amtrak:40751,40751,amtrak:206262286247,206262286247,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293104,293104,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293106,293106,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293108,293108,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293109,293109,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293113,293113,amtrak:40751,40751,amtrak:206262286247,206262286247,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293115,293115,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293117,293117,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293119,293119,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293120,293120,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293124,293124,amtrak:40751,40751,amtrak:206262286247,206262286247,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293126,293126,amtrak:40751,40751,amtrak:106262516282,106262516282,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293128,293128,amtrak:40751,40751,amtrak:106263206329,106263206329,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293130,293130,amtrak:40751,40751,amtrak:106263316352,106263316352,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293131,293131,amtrak:40751,40751,amtrak:106063556365,106063556365,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293134,293134,amtrak:40751,40751,amtrak:206262286247,206262286247,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293136,293136,amtrak:40751,40751,amtrak:106262516282,106262516282,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293138,293138,amtrak:40751,40751,amtrak:106263206329,106263206329,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293140,293140,amtrak:40751,40751,amtrak:106263316358,106263316358,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293142,293142,amtrak:40751,40751,amtrak:106063626365,106063626365,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293145,293145,amtrak:88,88,amtrak:206262286247,206262286247,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293147,293147,amtrak:88,88,amtrak:106262516282,106262516282,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293150,293150,amtrak:88,88,amtrak:106263206329,106263206329,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293152,293152,amtrak:88,88,amtrak:106263316352,106263316352,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293153,293153,amtrak:88,88,amtrak:106063556365,106063556365,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293157,293157,amtrak:88,88,amtrak:206262286247,206262286247,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293159,293159,amtrak:88,88,amtrak:106262516282,106262516282,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293161,293161,amtrak:88,88,amtrak:106263206329,106263206329,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293163,293163,amtrak:88,88,amtrak:106263316352,106263316352,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293164,293164,amtrak:88,88,amtrak:106063556365,106063556365,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293168,293168,amtrak:88,88,amtrak:206262286247,206262286247,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293170,293170,amtrak:88,88,amtrak:106262516282,106262516282,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293172,293172,amtrak:88,88,amtrak:106263206329,106263206329,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293174,293174,amtrak:88,88,amtrak:106263316352,106263316352,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293175,293175,amtrak:88,88,amtrak:106063556365,106063556365,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295750,295750,amtrak:40751,40751,amtrak:106563257228,106563257228,Boston,2260,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295759,295759,amtrak:40751,40751,amtrak:100163397228,100163397228,Boston,2262,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295766,295766,amtrak:40751,40751,amtrak:106463267228,106463267228,Boston,2264,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293444,293444,amtrak:88,88,amtrak:206262286247,206262286247,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293446,293446,amtrak:88,88,amtrak:106262516282,106262516282,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293448,293448,amtrak:88,88,amtrak:106263206329,106263206329,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293450,293450,amtrak:88,88,amtrak:106263316358,106263316358,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293452,293452,amtrak:88,88,amtrak:106063626365,106063626365,Philadelphia,177,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293454,293454,amtrak:88,88,amtrak:206262286247,206262286247,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293456,293456,amtrak:88,88,amtrak:106262516282,106262516282,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293458,293458,amtrak:88,88,amtrak:106263206329,106263206329,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293460,293460,amtrak:88,88,amtrak:106263316358,106263316358,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293462,293462,amtrak:88,88,amtrak:106063626365,106063626365,Philadelphia,179,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293578,293578,amtrak:88,88,amtrak:106270047228,106270047228,Newport News,125,1,,amtrak:346,346,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293612,293612,amtrak:88,88,amtrak:106270047228,106270047228,Washington,137,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293862,293862,amtrak:90,90,amtrak:206262286247,206262286247,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293026,293026,amtrak:88,88,amtrak:200262286233,200262286233,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293027,293027,amtrak:88,88,amtrak:200162286234,200162286234,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293028,293028,amtrak:88,88,amtrak:100362406282,100362406282,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293029,293029,amtrak:88,88,amtrak:106462496249,106462496249,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293030,293030,amtrak:88,88,amtrak:100362836318,100362836318,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293031,293031,amtrak:88,88,amtrak:100363246346,100363246346,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293032,293032,amtrak:88,88,amtrak:100863296329,100863296329,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293034,293034,amtrak:88,88,amtrak:100463586365,100463586365,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293035,293035,amtrak:88,88,amtrak:212462286246,212462286246,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293037,293037,amtrak:88,88,amtrak:112462506281,112462506281,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293038,293038,amtrak:88,88,amtrak:112462846319,112462846319,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293039,293039,amtrak:88,88,amtrak:112463206328,112463206328,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293041,293041,amtrak:88,88,amtrak:112463306357,112463306357,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293043,293043,amtrak:88,88,amtrak:112063616364,112063616364,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293090,293090,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2159,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293100,293100,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2163,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293111,293111,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2165,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293122,293122,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2167,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293133,293133,amtrak:40751,40751,amtrak:106270047228,106270047228,Washington,2171,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293143,293143,amtrak:40751,40751,amtrak:106270047228,106270047228,New York,2193,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:293155,293155,amtrak:88,88,amtrak:106270047228,106270047228,Washington,85,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293166,293166,amtrak:88,88,amtrak:106270047228,106270047228,Norfolk,95,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293177,293177,amtrak:88,88,amtrak:106270047228,106270047228,Norfolk,93,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293871,293871,amtrak:90,90,amtrak:106270047228,106270047228,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293929,293929,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294097,294097,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294099,294099,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294101,294101,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294103,294103,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294105,294105,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294107,294107,amtrak:40751,40751,amtrak:106262436247,106262436247,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294109,294109,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294111,294111,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294113,294113,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294115,294115,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294019,294019,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2158,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294030,294030,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2160,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294041,294041,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2190,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:294062,294062,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2162,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294106,294106,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2154,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294116,294116,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2156,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294441,294441,amtrak:88,88,amtrak:106270047228,106270047228,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294452,294452,amtrak:88,88,amtrak:106270047228,106270047228,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294463,294463,amtrak:88,88,amtrak:106270047228,106270047228,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294485,294485,amtrak:88,88,amtrak:106270047228,106270047228,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294507,294507,amtrak:88,88,amtrak:106270047228,106270047228,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294641,294641,amtrak:88,88,amtrak:106270047228,106270047228,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295478,295478,amtrak:88,88,amtrak:200162286234,200162286234,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295479,295479,amtrak:88,88,amtrak:100162416241,100162416241,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295480,295480,amtrak:88,88,amtrak:100162486276,100162486276,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295481,295481,amtrak:88,88,amtrak:106462496249,106462496249,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295484,295484,amtrak:88,88,amtrak:100162836283,100162836283,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295485,295485,amtrak:88,88,amtrak:106562846319,106562846319,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295486,295486,amtrak:88,88,amtrak:100563256330,100563256330,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295489,295489,amtrak:88,88,amtrak:100263597001,100263597001,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295509,295509,amtrak:88,88,amtrak:100162907228,100162907228,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295511,295511,amtrak:88,88,amtrak:106463267228,106463267228,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296059,296059,amtrak:88,88,amtrak:206462286235,206462286235,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296060,296060,amtrak:88,88,amtrak:106462426242,106462426242,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296062,296062,amtrak:88,88,amtrak:103262506250,103262506250,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296063,296063,amtrak:88,88,amtrak:106462566277,106462566277,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296065,296065,amtrak:88,88,amtrak:106463266347,106463266347,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296066,296066,amtrak:88,88,amtrak:100163326332,100163326332,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293847,293847,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293849,293849,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293851,293851,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293852,293852,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293853,293853,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293907,293907,amtrak:40751,40751,amtrak:106270047228,106270047228,Boston,2150,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293864,293864,amtrak:90,90,amtrak:106262516282,106262516282,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293865,293865,amtrak:90,90,amtrak:106262856317,106262856317,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293866,293866,amtrak:90,90,amtrak:106263206329,106263206329,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293868,293868,amtrak:90,90,amtrak:106263316352,106263316352,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293869,293869,amtrak:90,90,amtrak:106063556365,106063556365,St Albans,56,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:293882,293882,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293884,293884,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293887,293887,amtrak:40751,40751,amtrak:106262856317,106262856317,Boston,2148,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293890,293890,amtrak:88,88,amtrak:106262856317,106262856317,Springfield,1140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293893,293893,amtrak:88,88,amtrak:106262856317,106262856317,Springfield,1146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293919,293919,amtrak:40751,40751,amtrak:206262286247,206262286247,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293921,293921,amtrak:40751,40751,amtrak:106262516282,106262516282,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293922,293922,amtrak:40751,40751,amtrak:106262856289,106262856289,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293923,293923,amtrak:40751,40751,amtrak:106262926317,106262926317,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293924,293924,amtrak:40751,40751,amtrak:106263206329,106263206329,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293926,293926,amtrak:40751,40751,amtrak:106263316358,106263316358,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:293928,293928,amtrak:40751,40751,amtrak:106063626365,106063626365,Boston,2152,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:294431,294431,amtrak:88,88,amtrak:206262286247,206262286247,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294433,294433,amtrak:88,88,amtrak:106262516282,106262516282,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294436,294436,amtrak:88,88,amtrak:106263206329,106263206329,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294438,294438,amtrak:88,88,amtrak:106263316358,106263316358,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294440,294440,amtrak:88,88,amtrak:106063626365,106063626365,Boston,170,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294442,294442,amtrak:88,88,amtrak:206262286247,206262286247,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294444,294444,amtrak:88,88,amtrak:106262516282,106262516282,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294447,294447,amtrak:88,88,amtrak:106263206329,106263206329,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294449,294449,amtrak:88,88,amtrak:106263316358,106263316358,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294451,294451,amtrak:88,88,amtrak:106063626365,106063626365,Boston,172,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294453,294453,amtrak:88,88,amtrak:206262286247,206262286247,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294455,294455,amtrak:88,88,amtrak:106262516282,106262516282,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294458,294458,amtrak:88,88,amtrak:106263206329,106263206329,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294460,294460,amtrak:88,88,amtrak:106263316358,106263316358,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294462,294462,amtrak:88,88,amtrak:106063626365,106063626365,Boston,174,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294475,294475,amtrak:88,88,amtrak:206262286247,206262286247,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294477,294477,amtrak:88,88,amtrak:106262516282,106262516282,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294480,294480,amtrak:88,88,amtrak:106263206329,106263206329,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294482,294482,amtrak:88,88,amtrak:106263316358,106263316358,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294484,294484,amtrak:88,88,amtrak:106063626365,106063626365,Boston,178,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294486,294486,amtrak:88,88,amtrak:206262286247,206262286247,Boston,182,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294488,294488,amtrak:88,88,amtrak:106262516282,106262516282,Boston,182,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294497,294497,amtrak:88,88,amtrak:206262286247,206262286247,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294499,294499,amtrak:88,88,amtrak:106262516282,106262516282,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294502,294502,amtrak:88,88,amtrak:106263206329,106263206329,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294504,294504,amtrak:88,88,amtrak:106263316358,106263316358,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294506,294506,amtrak:88,88,amtrak:106063626365,106063626365,Boston,184,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294631,294631,amtrak:88,88,amtrak:206262286247,206262286247,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294633,294633,amtrak:88,88,amtrak:106262516282,106262516282,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294636,294636,amtrak:88,88,amtrak:106263206329,106263206329,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294638,294638,amtrak:88,88,amtrak:106263316358,106263316358,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294640,294640,amtrak:88,88,amtrak:106063626365,106063626365,Springfield,136,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292901,292901,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292903,292903,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292910,292910,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292911,292911,amtrak:88,88,amtrak:106262856317,106262856317,Newport News,1099,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292912,292912,amtrak:88,88,amtrak:106262856317,106262856317,Roanoke,1147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292913,292913,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292914,292914,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292915,292915,amtrak:88,88,amtrak:106262856317,106262856317,Philadelphia,1169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292920,292920,amtrak:88,88,amtrak:106262856317,106262856317,Norfolk,1087,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292921,292921,amtrak:88,88,amtrak:106262856317,106262856317,Washington,1163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292924,292924,amtrak:88,88,amtrak:106262856317,106262856317,Philadelphia,1167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:292926,292926,amtrak:40751,40751,amtrak:106262856317,106262856317,Washington,2149,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:293033,293033,amtrak:88,88,amtrak:100363527228,100363527228,Newport News,65,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:293044,293044,amtrak:88,88,amtrak:112470037228,112470037228,Newport News,67,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295643,295643,amtrak:40751,40751,amtrak:100163537228,100163537228,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295644,295644,amtrak:40751,40751,amtrak:106463547228,106463547228,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:294349,294349,amtrak:88,88,amtrak:206262286247,206262286247,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294351,294351,amtrak:88,88,amtrak:106262516282,106262516282,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294354,294354,amtrak:88,88,amtrak:106263206329,106263206329,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294356,294356,amtrak:88,88,amtrak:106263316358,106263316358,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:294358,294358,amtrak:88,88,amtrak:106063626365,106063626365,Boston,190,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295501,295501,amtrak:88,88,amtrak:200162286241,200162286241,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295502,295502,amtrak:88,88,amtrak:206462286242,206462286242,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295503,295503,amtrak:88,88,amtrak:100162486276,100162486276,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295504,295504,amtrak:88,88,amtrak:106462496249,106462496249,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295505,295505,amtrak:88,88,amtrak:103262506250,103262506250,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295506,295506,amtrak:88,88,amtrak:106462566277,106462566277,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295508,295508,amtrak:88,88,amtrak:106562836284,106562836284,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295510,295510,amtrak:88,88,amtrak:106462916319,106462916319,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295512,295512,amtrak:88,88,amtrak:100463306330,100463306330,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295513,295513,amtrak:88,88,amtrak:100263597001,100263597001,Springfield,146,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295488,295488,amtrak:88,88,amtrak:100163397228,100163397228,Boston,168,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:295634,295634,amtrak:40751,40751,amtrak:200162286276,200162286276,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295635,295635,amtrak:40751,40751,amtrak:206462286277,206462286277,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295636,295636,amtrak:40751,40751,amtrak:103262506250,103262506250,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295640,295640,amtrak:40751,40751,amtrak:100163256346,100163256346,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295641,295641,amtrak:40751,40751,amtrak:106463266347,106463266347,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295642,295642,amtrak:40751,40751,amtrak:100463306330,100463306330,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295645,295645,amtrak:40751,40751,amtrak:100263597001,100263597001,Washington,2271,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:295746,295746,amtrak:40751,40751,amtrak:206562286277,206562286277,Boston,2260,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295747,295747,amtrak:40751,40751,amtrak:103262506250,103262506250,Boston,2260,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295751,295751,amtrak:40751,40751,amtrak:100463306330,100463306330,Boston,2260,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295752,295752,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2260,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295753,295753,amtrak:40751,40751,amtrak:200162286276,200162286276,Boston,2262,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295754,295754,amtrak:40751,40751,amtrak:106462496249,106462496249,Boston,2262,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295757,295757,amtrak:40751,40751,amtrak:100563256330,100563256330,Boston,2262,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295760,295760,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2262,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295761,295761,amtrak:40751,40751,amtrak:206462286242,206462286242,Boston,2264,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295763,295763,amtrak:40751,40751,amtrak:103262506250,103262506250,Boston,2264,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295764,295764,amtrak:40751,40751,amtrak:106462566277,106462566277,Boston,2264,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295767,295767,amtrak:40751,40751,amtrak:100163326332,100163326332,Boston,2264,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295785,295785,amtrak:40751,40751,amtrak:106562836284,106562836284,Boston,2248,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:295786,295786,amtrak:40751,40751,amtrak:106562906319,106562906319,Boston,2248,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:296067,296067,amtrak:88,88,amtrak:106463547228,106463547228,Washington,139,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296197,296197,amtrak:88,88,amtrak:106463267228,106463267228,Boston,132,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296205,296205,amtrak:88,88,amtrak:106463267228,106463267228,Boston,166,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:291370,291370,amtrak:41044,41044,amtrak:206262286247,206262286247,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291372,291372,amtrak:41044,41044,amtrak:106262516303,106262516303,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291373,291373,amtrak:41044,41044,amtrak:106263066329,106263066329,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291375,291375,amtrak:41044,41044,amtrak:106263316358,106263316358,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:291377,291377,amtrak:41044,41044,amtrak:106063626365,106063626365,Greenfield,494,0,,amtrak:316,316,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288517,288517,amtrak:41042,41042,amtrak:103262506250,103262506250,Springfield,450,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288518,288518,amtrak:41042,41042,amtrak:100463306330,100463306330,Springfield,450,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288519,288519,amtrak:41042,41042,amtrak:100263597001,100263597001,Springfield,450,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288524,288524,amtrak:41042,41042,amtrak:206462286242,206462286242,New Haven,409,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288526,288526,amtrak:41042,41042,amtrak:103262506250,103262506250,New Haven,409,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288528,288528,amtrak:41042,41042,amtrak:100163326332,100163326332,New Haven,409,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288630,288630,amtrak:41044,41044,amtrak:106270047228,106270047228,New Haven,495,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288623,288623,amtrak:41044,41044,amtrak:206262286247,206262286247,New Haven,495,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288625,288625,amtrak:41044,41044,amtrak:106262516329,106262516329,New Haven,495,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288627,288627,amtrak:41044,41044,amtrak:106263316358,106263316358,New Haven,495,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288629,288629,amtrak:41044,41044,amtrak:106063626365,106063626365,New Haven,495,1,,,,Amtrak,Valley Flyer,Valley Flyer
+amtrak,amtrak:288527,288527,amtrak:41042,41042,amtrak:106462567228,106462567228,New Haven,409,1,,amtrak:318,318,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:288516,288516,amtrak:41042,41042,amtrak:306562287228,306562287228,Springfield,450,0,,amtrak:319,319,Amtrak,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:296507,296507,amtrak:88,88,amtrak:206562286235,206562286235,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296508,296508,amtrak:88,88,amtrak:106562416242,106562416242,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296509,296509,amtrak:88,88,amtrak:106562486277,106562486277,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296510,296510,amtrak:88,88,amtrak:103262506250,103262506250,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296512,296512,amtrak:88,88,amtrak:106562836319,106562836319,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296514,296514,amtrak:88,88,amtrak:100463306330,100463306330,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296515,296515,amtrak:88,88,amtrak:100263597001,100263597001,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296490,296490,amtrak:88,88,amtrak:100163397228,100163397228,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296503,296503,amtrak:40751,40751,amtrak:106463267228,106463267228,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296505,296505,amtrak:40751,40751,amtrak:100163397228,100163397228,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296191,296191,amtrak:88,88,amtrak:206462286242,206462286242,Boston,132,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296193,296193,amtrak:88,88,amtrak:103262506250,103262506250,Boston,132,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296194,296194,amtrak:88,88,amtrak:106462566277,106462566277,Boston,132,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296198,296198,amtrak:88,88,amtrak:100163326332,100163326332,Boston,132,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296199,296199,amtrak:88,88,amtrak:206462286242,206462286242,Boston,166,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296201,296201,amtrak:88,88,amtrak:103262506250,103262506250,Boston,166,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296202,296202,amtrak:88,88,amtrak:106462566277,106462566277,Boston,166,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296206,296206,amtrak:88,88,amtrak:100163326332,100163326332,Boston,166,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296569,296569,amtrak:88,88,amtrak:200162286234,200162286234,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296570,296570,amtrak:88,88,amtrak:100162416241,100162416241,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296571,296571,amtrak:88,88,amtrak:100162486276,100162486276,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296572,296572,amtrak:88,88,amtrak:106462496249,106462496249,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296575,296575,amtrak:88,88,amtrak:106562836319,106562836319,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296576,296576,amtrak:88,88,amtrak:100563256330,100563256330,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296579,296579,amtrak:88,88,amtrak:100263597001,100263597001,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296463,296463,amtrak:88,88,amtrak:106563537228,106563537228,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296455,296455,amtrak:88,88,amtrak:206562286235,206562286235,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296456,296456,amtrak:88,88,amtrak:106562416242,106562416242,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296457,296457,amtrak:88,88,amtrak:106562486277,106562486277,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296458,296458,amtrak:88,88,amtrak:103262506250,103262506250,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296460,296460,amtrak:88,88,amtrak:106562836319,106562836319,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296461,296461,amtrak:88,88,amtrak:106563256347,106563256347,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296462,296462,amtrak:88,88,amtrak:100463306330,100463306330,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296464,296464,amtrak:88,88,amtrak:100263597001,100263597001,Washington,165,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296481,296481,amtrak:88,88,amtrak:200162286234,200162286234,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296482,296482,amtrak:88,88,amtrak:100162416241,100162416241,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296483,296483,amtrak:88,88,amtrak:100162486276,100162486276,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296484,296484,amtrak:88,88,amtrak:106462496249,106462496249,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296487,296487,amtrak:88,88,amtrak:106562836319,106562836319,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296488,296488,amtrak:88,88,amtrak:100563256330,100563256330,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296491,296491,amtrak:88,88,amtrak:100263597001,100263597001,Philadelphia,167,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296492,296492,amtrak:40751,40751,amtrak:200162286234,200162286234,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296493,296493,amtrak:40751,40751,amtrak:206462286235,206462286235,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296494,296494,amtrak:40751,40751,amtrak:100162416241,100162416241,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296495,296495,amtrak:40751,40751,amtrak:106462426242,106462426242,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296496,296496,amtrak:40751,40751,amtrak:100162486276,100162486276,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296497,296497,amtrak:40751,40751,amtrak:106462496249,106462496249,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296498,296498,amtrak:40751,40751,amtrak:103262506250,103262506250,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296499,296499,amtrak:40751,40751,amtrak:106462566277,106462566277,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296502,296502,amtrak:40751,40751,amtrak:100563256330,100563256330,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296504,296504,amtrak:40751,40751,amtrak:100163326332,100163326332,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296506,296506,amtrak:40751,40751,amtrak:100263597001,100263597001,New York,2293,1,,,,Amtrak,Acela,Acela
+amtrak,amtrak:296513,296513,amtrak:88,88,amtrak:106563257228,106563257228,Philadelphia,169,1,,amtrak:355,355,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296578,296578,amtrak:88,88,amtrak:100163397228,100163397228,Boston,194,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296975,296975,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1088,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297189,297189,amtrak:90,90,amtrak:206562286249,206562286249,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297190,297190,amtrak:90,90,amtrak:103262506250,103262506250,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297195,297195,amtrak:90,90,amtrak:106562766277,106562766277,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297196,297196,amtrak:90,90,amtrak:106562836319,106562836319,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297198,297198,amtrak:90,90,amtrak:100463306330,100463306330,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297199,297199,amtrak:90,90,amtrak:100263597001,100263597001,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297759,297759,amtrak:88,88,amtrak:106562346249,106562346249,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297760,297760,amtrak:88,88,amtrak:103262506250,103262506250,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297761,297761,amtrak:88,88,amtrak:106562556270,106562556270,Boston,88,0,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297763,297763,amtrak:88,88,amtrak:106562766277,106562766277,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297764,297764,amtrak:88,88,amtrak:106562836284,106562836284,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297766,297766,amtrak:88,88,amtrak:100463306330,100463306330,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297767,297767,amtrak:88,88,amtrak:100263597001,100263597001,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297215,297215,amtrak:88,88,amtrak:206562286242,206562286242,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297216,297216,amtrak:88,88,amtrak:106562486249,106562486249,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297217,297217,amtrak:88,88,amtrak:103262506250,103262506250,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297218,297218,amtrak:88,88,amtrak:100162556269,100162556269,New Haven,143,1,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297219,297219,amtrak:88,88,amtrak:106462566263,106462566263,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297220,297220,amtrak:88,88,amtrak:106562706277,106562706277,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297222,297222,amtrak:88,88,amtrak:106562836319,106562836319,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297223,297223,amtrak:88,88,amtrak:106563256347,106563256347,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297224,297224,amtrak:88,88,amtrak:100463306330,100463306330,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297226,297226,amtrak:88,88,amtrak:100263597001,100263597001,Washington,143,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297227,297227,amtrak:88,88,amtrak:200162286241,200162286241,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297228,297228,amtrak:88,88,amtrak:106562486249,106562486249,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297232,297232,amtrak:88,88,amtrak:100162766276,100162766276,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297233,297233,amtrak:88,88,amtrak:100162836318,100162836318,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297234,297234,amtrak:88,88,amtrak:106462846319,106462846319,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297235,297235,amtrak:88,88,amtrak:100563256330,100563256330,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297237,297237,amtrak:88,88,amtrak:100163396346,100163396346,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297239,297239,amtrak:88,88,amtrak:100263597001,100263597001,Roanoke,147,1,,amtrak:391,391,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297240,297240,amtrak:88,88,amtrak:206462286242,206462286242,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297242,297242,amtrak:88,88,amtrak:103262506250,103262506250,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297244,297244,amtrak:88,88,amtrak:106462776277,106462776277,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297246,297246,amtrak:88,88,amtrak:106463266347,106463266347,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297247,297247,amtrak:88,88,amtrak:100163326332,100163326332,Washington,149,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297249,297249,amtrak:88,88,amtrak:206462286242,206462286242,Washington,157,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297251,297251,amtrak:88,88,amtrak:103262506250,103262506250,Washington,157,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297253,297253,amtrak:88,88,amtrak:106462776277,106462776277,Washington,157,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297256,297256,amtrak:88,88,amtrak:100163326332,100163326332,Washington,157,1,,amtrak:259,259,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297257,297257,amtrak:88,88,amtrak:200162286234,200162286234,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297258,297258,amtrak:88,88,amtrak:206462286235,206462286235,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297259,297259,amtrak:88,88,amtrak:100162416241,100162416241,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297260,297260,amtrak:88,88,amtrak:106462426249,106462426249,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297261,297261,amtrak:88,88,amtrak:100162486248,100162486248,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297262,297262,amtrak:88,88,amtrak:103262506250,103262506250,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297266,297266,amtrak:88,88,amtrak:100162766276,100162766276,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297267,297267,amtrak:88,88,amtrak:106462776277,106462776277,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297268,297268,amtrak:88,88,amtrak:106562836319,106562836319,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297269,297269,amtrak:88,88,amtrak:100163256346,100163256346,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297270,297270,amtrak:88,88,amtrak:106463266347,106463266347,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297271,297271,amtrak:88,88,amtrak:100463306330,100463306330,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297274,297274,amtrak:88,88,amtrak:100263597001,100263597001,Washington,161,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297275,297275,amtrak:88,88,amtrak:200162286241,200162286241,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297276,297276,amtrak:88,88,amtrak:106562486249,106562486249,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297280,297280,amtrak:88,88,amtrak:100162766276,100162766276,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297281,297281,amtrak:88,88,amtrak:100162836318,100162836318,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297282,297282,amtrak:88,88,amtrak:106462846319,106462846319,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297283,297283,amtrak:88,88,amtrak:100563256330,100563256330,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297286,297286,amtrak:88,88,amtrak:100263597001,100263597001,Washington,163,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297287,297287,amtrak:88,88,amtrak:206562286235,206562286235,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297288,297288,amtrak:88,88,amtrak:106562416242,106562416242,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297289,297289,amtrak:88,88,amtrak:109762486250,109762486250,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297290,297290,amtrak:88,88,amtrak:106562556270,106562556270,New Haven,195,1,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297292,297292,amtrak:88,88,amtrak:106562766277,106562766277,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297293,297293,amtrak:88,88,amtrak:106562836319,106562836319,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297294,297294,amtrak:88,88,amtrak:106563256347,106563256347,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297295,297295,amtrak:88,88,amtrak:100463306330,100463306330,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297297,297297,amtrak:88,88,amtrak:100263597001,100263597001,Washington,195,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297312,297312,amtrak:40751,40751,amtrak:206562286235,206562286235,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297313,297313,amtrak:40751,40751,amtrak:106562416242,106562416242,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297314,297314,amtrak:40751,40751,amtrak:109762486250,109762486250,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297316,297316,amtrak:40751,40751,amtrak:106562766277,106562766277,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297318,297318,amtrak:40751,40751,amtrak:106563256347,106563256347,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297319,297319,amtrak:40751,40751,amtrak:100463306330,100463306330,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297321,297321,amtrak:40751,40751,amtrak:100263597001,100263597001,Washington,2259,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297329,297329,amtrak:40751,40751,amtrak:206562286235,206562286235,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297330,297330,amtrak:40751,40751,amtrak:106562416242,106562416242,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297331,297331,amtrak:40751,40751,amtrak:109762486250,109762486250,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297333,297333,amtrak:40751,40751,amtrak:106562766277,106562766277,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297335,297335,amtrak:40751,40751,amtrak:100163256346,100163256346,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297336,297336,amtrak:40751,40751,amtrak:106463266347,106463266347,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297337,297337,amtrak:40751,40751,amtrak:100463306330,100463306330,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297340,297340,amtrak:40751,40751,amtrak:100263597001,100263597001,Washington,2265,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297341,297341,amtrak:88,88,amtrak:206562286235,206562286235,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297342,297342,amtrak:88,88,amtrak:106562416249,106562416249,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297343,297343,amtrak:88,88,amtrak:103262506250,103262506250,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297346,297346,amtrak:88,88,amtrak:106562766277,106562766277,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297347,297347,amtrak:88,88,amtrak:106562836319,106562836319,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297348,297348,amtrak:88,88,amtrak:106563256347,106563256347,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297349,297349,amtrak:88,88,amtrak:100463306330,100463306330,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297351,297351,amtrak:88,88,amtrak:100263597001,100263597001,Norfolk,87,1,,amtrak:342,342,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297352,297352,amtrak:88,88,amtrak:206562286235,206562286235,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297353,297353,amtrak:88,88,amtrak:106562416249,106562416249,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297354,297354,amtrak:88,88,amtrak:103262506250,103262506250,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297357,297357,amtrak:88,88,amtrak:106562766277,106562766277,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297358,297358,amtrak:88,88,amtrak:106562836319,106562836319,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297361,297361,amtrak:88,88,amtrak:100463306330,100463306330,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297362,297362,amtrak:88,88,amtrak:100263597001,100263597001,Newport News,99,1,,amtrak:84,84,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297385,297385,amtrak:88,88,amtrak:106563537228,106563537228,Washington,135,1,,amtrak:260,260,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297398,297398,amtrak:40751,40751,amtrak:106563537228,106563537228,Washington,2267,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297788,297788,amtrak:88,88,amtrak:106270047228,106270047228,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297796,297796,amtrak:88,88,amtrak:112763537228,112763537228,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:296974,296974,amtrak:88,88,amtrak:106262856317,106262856317,Boston,1082,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297187,297187,amtrak:90,90,amtrak:106563537228,106563537228,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297197,297197,amtrak:90,90,amtrak:106563257228,106563257228,St Albans,54,0,,amtrak:191,191,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297498,297498,amtrak:88,88,amtrak:106562767228,106562767228,Boston,150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297511,297511,amtrak:88,88,amtrak:100163397228,100163397228,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297557,297557,amtrak:40751,40751,amtrak:100163397228,100163397228,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297613,297613,amtrak:40751,40751,amtrak:106463267228,106463267228,Boston,2290,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:297627,297627,amtrak:88,88,amtrak:100163397228,100163397228,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297776,297776,amtrak:88,88,amtrak:206262286247,206262286247,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297778,297778,amtrak:88,88,amtrak:103062516268,103062516268,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297780,297780,amtrak:88,88,amtrak:106262726282,106262726282,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297783,297783,amtrak:88,88,amtrak:106263206329,106263206329,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297785,297785,amtrak:88,88,amtrak:106263316358,106263316358,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297787,297787,amtrak:88,88,amtrak:106063626365,106063626365,Boston,176,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297790,297790,amtrak:88,88,amtrak:212762286254,212762286254,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297791,297791,amtrak:88,88,amtrak:106562556270,106562556270,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297792,297792,amtrak:88,88,amtrak:106262576268,106262576268,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297793,297793,amtrak:88,88,amtrak:112762716282,112762716282,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297794,297794,amtrak:88,88,amtrak:112762836319,112762836319,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297795,297795,amtrak:88,88,amtrak:112763206352,112763206352,Boston,66,0,,amtrak:343,343,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297828,297828,amtrak:40751,40751,amtrak:106563257228,106563257228,Boston,2258,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297856,297856,amtrak:40751,40751,amtrak:106562486249,106562486249,Washington,2263,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297860,297860,amtrak:40751,40751,amtrak:100162626269,100162626269,Washington,2263,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297862,297862,amtrak:40751,40751,amtrak:106562766277,106562766277,Washington,2263,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297666,297666,amtrak:40751,40751,amtrak:100163257228,100163257228,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297667,297667,amtrak:40751,40751,amtrak:106463267228,106463267228,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297685,297685,amtrak:40751,40751,amtrak:106463267228,106463267228,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297687,297687,amtrak:40751,40751,amtrak:100163397228,100163397228,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297694,297694,amtrak:40751,40751,amtrak:106563257228,106563257228,Boston,2256,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297703,297703,amtrak:88,88,amtrak:106563257228,106563257228,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297714,297714,amtrak:88,88,amtrak:106463267228,106463267228,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297723,297723,amtrak:88,88,amtrak:106563257228,106563257228,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297733,297733,amtrak:88,88,amtrak:106562907228,106562907228,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297743,297743,amtrak:88,88,amtrak:106563257228,106563257228,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297765,297765,amtrak:88,88,amtrak:106562907228,106562907228,Boston,88,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297864,297864,amtrak:40751,40751,amtrak:106563257228,106563257228,Washington,2263,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297179,297179,amtrak:90,90,amtrak:206562286242,206562286242,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297180,297180,amtrak:90,90,amtrak:109762486250,109762486250,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297183,297183,amtrak:90,90,amtrak:106562766277,106562766277,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297184,297184,amtrak:90,90,amtrak:106562836319,106562836319,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297185,297185,amtrak:90,90,amtrak:106563256347,106563256347,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297186,297186,amtrak:90,90,amtrak:100463306330,100463306330,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297188,297188,amtrak:90,90,amtrak:100263597001,100263597001,Washington,57,1,,amtrak:190,190,Amtrak,Vermonter,Vermonter
+amtrak,amtrak:297435,297435,amtrak:40751,40751,amtrak:206562286235,206562286235,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297436,297436,amtrak:40751,40751,amtrak:106562416249,106562416249,Washington,2255,1,,amtrak:324,324,Amtrak,Acela,Acela
+amtrak,amtrak:297495,297495,amtrak:88,88,amtrak:103262506250,103262506250,Boston,150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297496,297496,amtrak:88,88,amtrak:106562556270,106562556270,Boston,150,0,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297499,297499,amtrak:88,88,amtrak:100463306330,100463306330,Boston,150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297500,297500,amtrak:88,88,amtrak:100263597001,100263597001,Boston,150,0,,amtrak:356,356,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297501,297501,amtrak:88,88,amtrak:200162286241,200162286241,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297502,297502,amtrak:88,88,amtrak:106562486249,106562486249,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297506,297506,amtrak:88,88,amtrak:100162766276,100162766276,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297507,297507,amtrak:88,88,amtrak:100162836318,100162836318,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297508,297508,amtrak:88,88,amtrak:106462846319,106462846319,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297509,297509,amtrak:88,88,amtrak:100563256330,100563256330,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297512,297512,amtrak:88,88,amtrak:100263597001,100263597001,Boston,152,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297545,297545,amtrak:40751,40751,amtrak:200162286234,200162286234,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297547,297547,amtrak:40751,40751,amtrak:100162416241,100162416241,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297548,297548,amtrak:40751,40751,amtrak:106562486249,106562486249,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297553,297553,amtrak:40751,40751,amtrak:100162766276,100162766276,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297554,297554,amtrak:40751,40751,amtrak:106562836319,106562836319,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297555,297555,amtrak:40751,40751,amtrak:100563256330,100563256330,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297558,297558,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2250,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297607,297607,amtrak:40751,40751,amtrak:206462286242,206462286242,Boston,2290,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:297609,297609,amtrak:40751,40751,amtrak:103262506250,103262506250,Boston,2290,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:297611,297611,amtrak:40751,40751,amtrak:106462776277,106462776277,Boston,2290,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:297614,297614,amtrak:40751,40751,amtrak:100163326332,100163326332,Boston,2290,0,,amtrak:325,325,Amtrak,Acela,Acela
+amtrak,amtrak:297619,297619,amtrak:88,88,amtrak:100162346248,100162346248,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297620,297620,amtrak:88,88,amtrak:106462496249,106462496249,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297623,297623,amtrak:88,88,amtrak:100162766276,100162766276,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297624,297624,amtrak:88,88,amtrak:106562836319,106562836319,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297625,297625,amtrak:88,88,amtrak:100563256330,100563256330,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297628,297628,amtrak:88,88,amtrak:100263597001,100263597001,Boston,82,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297659,297659,amtrak:40751,40751,amtrak:206562286235,206562286235,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297660,297660,amtrak:40751,40751,amtrak:106562416242,106562416242,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297661,297661,amtrak:40751,40751,amtrak:109762486250,109762486250,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297664,297664,amtrak:40751,40751,amtrak:106562766277,106562766277,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297665,297665,amtrak:40751,40751,amtrak:106562836319,106562836319,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297668,297668,amtrak:40751,40751,amtrak:100463306330,100463306330,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297669,297669,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2252,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297670,297670,amtrak:40751,40751,amtrak:200162286234,200162286234,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297671,297671,amtrak:40751,40751,amtrak:206462286235,206462286235,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297672,297672,amtrak:40751,40751,amtrak:100162416248,100162416248,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297673,297673,amtrak:40751,40751,amtrak:106462426242,106462426242,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297674,297674,amtrak:40751,40751,amtrak:106462496249,106462496249,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297675,297675,amtrak:40751,40751,amtrak:103262506250,103262506250,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297678,297678,amtrak:40751,40751,amtrak:100162766276,100162766276,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297679,297679,amtrak:40751,40751,amtrak:106462776277,106462776277,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297684,297684,amtrak:40751,40751,amtrak:100563256330,100563256330,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297686,297686,amtrak:40751,40751,amtrak:100163326332,100163326332,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297688,297688,amtrak:40751,40751,amtrak:100263597001,100263597001,Boston,2254,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297690,297690,amtrak:40751,40751,amtrak:106562486249,106562486249,Boston,2256,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297692,297692,amtrak:40751,40751,amtrak:106562766277,106562766277,Boston,2256,0,,amtrak:327,327,Amtrak,Acela,Acela
+amtrak,amtrak:297695,297695,amtrak:88,88,amtrak:206562286249,206562286249,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297696,297696,amtrak:88,88,amtrak:103262506250,103262506250,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297701,297701,amtrak:88,88,amtrak:106562766277,106562766277,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297702,297702,amtrak:88,88,amtrak:106562836319,106562836319,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297704,297704,amtrak:88,88,amtrak:100463306330,100463306330,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297705,297705,amtrak:88,88,amtrak:100263597001,100263597001,Springfield,140,0,,amtrak:258,258,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297706,297706,amtrak:88,88,amtrak:206462286235,206462286235,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297707,297707,amtrak:88,88,amtrak:106462426242,106462426242,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297709,297709,amtrak:88,88,amtrak:103262506250,103262506250,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297711,297711,amtrak:88,88,amtrak:106462776277,106462776277,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297715,297715,amtrak:88,88,amtrak:100163326332,100163326332,Boston,154,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297716,297716,amtrak:88,88,amtrak:206562286235,206562286235,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297717,297717,amtrak:88,88,amtrak:106562416242,106562416242,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297718,297718,amtrak:88,88,amtrak:109762486250,109762486250,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297719,297719,amtrak:88,88,amtrak:106562556270,106562556270,Boston,160,0,,,,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297721,297721,amtrak:88,88,amtrak:106562766277,106562766277,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297722,297722,amtrak:88,88,amtrak:106562836319,106562836319,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297724,297724,amtrak:88,88,amtrak:100463306330,100463306330,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297725,297725,amtrak:88,88,amtrak:100263597001,100263597001,Boston,160,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297726,297726,amtrak:88,88,amtrak:206562286235,206562286235,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297727,297727,amtrak:88,88,amtrak:106562416242,106562416242,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297728,297728,amtrak:88,88,amtrak:109762486250,109762486250,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297731,297731,amtrak:88,88,amtrak:106562766277,106562766277,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297732,297732,amtrak:88,88,amtrak:106562836284,106562836284,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297734,297734,amtrak:88,88,amtrak:100463306330,100463306330,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297735,297735,amtrak:88,88,amtrak:100263597001,100263597001,Boston,162,0,,amtrak:264,264,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297736,297736,amtrak:88,88,amtrak:206562286235,206562286235,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297737,297737,amtrak:88,88,amtrak:106562416242,106562416242,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297738,297738,amtrak:88,88,amtrak:109762486250,109762486250,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297741,297741,amtrak:88,88,amtrak:106562766277,106562766277,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297742,297742,amtrak:88,88,amtrak:106562836319,106562836319,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297744,297744,amtrak:88,88,amtrak:100463306330,100463306330,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional
+amtrak,amtrak:297745,297745,amtrak:88,88,amtrak:100263597001,100263597001,Boston,164,0,,amtrak:90,90,Amtrak,Northeast Regional,Northeast Regional

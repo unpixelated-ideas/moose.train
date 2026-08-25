@@ -1,0 +1,5 @@
+source_pdf,source_original_filename,rows_extracted,pages,timetable_effective_date,service_end_date,timetable_last_updated_date,timetable_revision_date
+mnr_gtfs_effective_2026-08-18_updated_2026-08-19.zip,gtfsmnr.zip,124426,,2026-08-18,2026-11-21,2026-08-20,
+hartford_gtfs_effective_2026-07-11_updated_2026-08-19.zip,hlgtfs.zip,266,,2026-07-11,2027-07-12,2026-08-20,
+sle_gtfs_effective_2026-08-16_updated_2026-08-19.zip,GTFS.zip,752,,2026-08-16,2027-08-16,2026-08-20,
+amtrak_gtfs_effective_2026-08-16_updated_2026-08-19.zip,GTFS.zip,4953,,2026-08-16,2027-08-16,2026-08-20,

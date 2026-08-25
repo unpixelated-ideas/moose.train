@@ -1,0 +1,10 @@
+feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
+hartford,hartford:3,3,WFD,WALLNGFRD,Wallingford,41.461695,-72.822730,,,,true
+hartford,hartford:6,6,HFD,HARTFORD,Hartford,41.768960,-72.681831,,,,true
+hartford,hartford:7,7,WND,WINDSOR,Windsor,41.852058,-72.642139,,,,true
+hartford,hartford:8,8,WNL,WINDSORLK,Windsor Locks,41.913938,-72.625967,,,,true
+hartford,hartford:9,9,SPG,SPRNGFLD,Springfield,42.106137,-72.593041,,,,true
+hartford,hartford:1,1,NHV,NEWHAVEN,New Haven Union Station,41.297172,-72.925945,,,,true
+hartford,hartford:4,4,MDN,MERIDEN,Meriden,41.538894,-72.801485,,,,true
+hartford,hartford:2,2,STS,STATESTR,New Haven State Street,41.305092,-72.921692,,,,true
+hartford,hartford:5,5,BER,BERLIN,Berlin,41.636136,-72.765192,,,,true

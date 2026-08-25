@@ -1,0 +1,2 @@
+feed_id,source_id,operator_name,source_url,zip_path,imported_at,timezone
+mnr,mnr,Metro-North,https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip,/Users/fgbm27/Documents/2026/Moose.Train/supporting_files/source_gtfs/mnr/gtfsmnr.zip,2026-08-20T00:46:52+00:00,America/New_York

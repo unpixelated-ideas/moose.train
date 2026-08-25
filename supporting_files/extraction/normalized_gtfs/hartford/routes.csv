@@ -1,0 +1,2 @@
+feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+hartford,hartford:HART,HART,hartford:1,1,,Hartford Line,2,Hartford Line,Hartford Line

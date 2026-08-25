@@ -1,0 +1,17 @@
+feed_id,service_uid,source_service_id,date,exception_type
+hartford,hartford:1,1,2026-09-07,1
+hartford,hartford:1,1,2026-11-26,1
+hartford,hartford:1,1,2026-12-25,1
+hartford,hartford:1,1,2027-01-01,1
+hartford,hartford:1,1,2027-01-18,1
+hartford,hartford:1,1,2027-02-15,1
+hartford,hartford:1,1,2027-05-31,1
+hartford,hartford:1,1,2027-07-05,1
+hartford,hartford:2,2,2026-09-07,2
+hartford,hartford:2,2,2026-11-26,2
+hartford,hartford:2,2,2026-12-25,2
+hartford,hartford:2,2,2027-01-01,2
+hartford,hartford:2,2,2027-01-18,2
+hartford,hartford:2,2,2027-02-15,2
+hartford,hartford:2,2,2027-05-31,2
+hartford,hartford:2,2,2027-07-05,2

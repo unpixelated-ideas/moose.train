@@ -1,0 +1,6 @@
+station_id,station_name,min_transfer_minutes,notes
+NHV,New Haven Union Station,5,Primary transfer point between Metro-North, Shore Line East, Hartford Line, and Amtrak.
+STM,Stamford,5,Metro-North and Amtrak transfer point.
+BRP,Bridgeport,5,Metro-North and Amtrak transfer point.
+SONO,South Norwalk,5,Metro-North transfer point.
+GCT,Grand Central Terminal,5,Metro-North transfer point for trips that require changing trains at the terminal.

@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | moose.train</title>
+  <script>
+    (() => {
+      const storageKey = "moose-theme";
+      try {
+        const savedTheme = localStorage.getItem(storageKey);
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const preference = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+        document.documentElement.dataset.theme = preference === "system" && systemDark ? "dark" : preference === "dark" ? "dark" : "light";
+        document.documentElement.dataset.themePreference = preference;
+      } catch (_error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.themePreference = "system";
+      }
+    })();
+  </script>
+  <style>
+    :root,
+    [data-theme="light"] {
+      color-scheme: light;
+      --color-page: #ffffff;
+      --color-surface: #ffffff;
+      --color-surface-secondary: #f4f4f7;
+      --color-input: #ffffff;
+      --color-hover: #f4f4f7;
+      --color-text-primary: #000000;
+      --color-text-body: #1d1d1f;
+      --color-text-secondary: #6e6e73;
+      --color-border: #bfbfbf;
+      --color-border-hover: #a9a9ad;
+      --color-accent: #0070e2;
+      --color-link: #0070e2;
+      --color-focus-ring: rgba(0, 112, 226, 0.16);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --grouped: var(--color-surface-secondary);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --paper: var(--color-surface);
+      --wash: var(--color-page);
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --color-page: #000000;
+      --color-surface: #111214;
+      --color-surface-secondary: #0a0a0a;
+      --color-input: #151619;
+      --color-hover: #151619;
+      --color-text-primary: #f5f5f7;
+      --color-text-body: #d2d2d7;
+      --color-text-secondary: #a1a1a6;
+      --color-border: #3a3a3c;
+      --color-border-hover: #48484a;
+      --color-accent: #0070e2;
+      --color-link: #2997ff;
+      --color-focus-ring: rgba(0, 112, 226, 0.3);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --grouped: var(--color-surface-secondary);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --paper: var(--color-surface);
+      --wash: var(--color-page);
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--body);
+      background: var(--wash);
+      font-family: var(--system-font);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 34px 20px 44px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: clamp(76px, 10vw, 108px);
+      height: auto;
+      aspect-ratio: 1;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .brand-home {
+      display: block;
+      flex: 0 0 auto;
+      line-height: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+    }
+
+    .tagline,
+    .section-heading p,
+    .policy-meta,
+    footer {
+      color: var(--muted);
+    }
+
+    .tagline {
+      margin: 6px 0 0;
+      line-height: 1.5;
+      white-space: pre;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      min-width: 180px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--body);
+    }
+
+    select {
+      width: 100%;
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--field);
+      color: var(--ink);
+      padding: 10px 12px;
+      font: inherit;
+      transition: background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    select:hover {
+      border-color: var(--color-border-hover);
+    }
+
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      outline: none;
+    }
+
+    .header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 12px;
+      max-width: 580px;
+    }
+
+    .top-link {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--link);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .top-link:hover,
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link:focus-visible,
+    footer a:focus-visible {
+      border-radius: 10px;
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      outline: none;
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.45rem);
+      line-height: 1.1;
+    }
+
+    .section-heading p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .policy-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 34px);
+    }
+
+    .policy-meta {
+      margin: 0 0 24px;
+      font-weight: 700;
+    }
+
+    .policy-section {
+      display: grid;
+      gap: 10px;
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy-section:first-of-type {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: 0;
+    }
+
+    .policy-section h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.35;
+    }
+
+    .policy-section p {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 22px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--link);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      select {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .header-controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      main {
+        padding: 20px 14px 34px;
+      }
+
+      label {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="masthead">
+        <a id="brand-link" class="brand-home" href="index.html" aria-label="moose.train home">
+          <img class="brand-logo" src="supporting_files/assets/logov2.png" alt="" width="1024" height="1024">
+        </a>
+        <div>
+          <h1>moose.train</h1>
+          <p id="tagline" class="tagline">M.O.O.S.E. - Metro-North Or Other Service&nbsp;Evaluator</p>
+        </div>
+      </div>
+      <div class="header-controls">
+        <label>
+          <span id="appearance-label">Appearance</span>
+          <select id="appearance-select" aria-label="Appearance">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </label>
+        <label>
+          <span id="language-label">Language</span>
+          <select id="language-select" aria-label="Language">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <a id="back-link" class="top-link" href="index.html">Back to trip search</a>
+
+    <article class="policy-card" aria-labelledby="privacy-title">
+      <div class="section-heading">
+        <h2 id="privacy-title">Privacy Policy</h2>
+        <p id="privacy-summary">moose.train is designed to work without collecting personal information from its users.</p>
+      </div>
+      <p id="last-updated" class="policy-meta">Last updated: August 18, 2026</p>
+      <div id="policy-sections"></div>
+    </article>
+
+    <footer aria-label="Footer">
+      <span id="footer-note">moose.train</span>
+      <span aria-hidden="true">·</span>
+      <a id="footer-home-link" href="index.html">Trip search</a>
+    </footer>
+  </main>
+
+  <script>
+    const THEME_STORAGE_KEY = "moose-theme";
+    const systemThemeQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+    const privacyTranslations = {
+      en: {
+        documentTitle: "Privacy Policy | moose.train",
+        tagline: "M.O.O.S.E. - Metro-North Or Other Service\u00a0Evaluator",
+        appearanceLabel: "Appearance",
+        appearanceSystem: "System",
+        appearanceLight: "Light",
+        appearanceDark: "Dark",
+        languageLabel: "Language",
+        back: "Back to trip search",
+        footerLabel: "Footer",
+        footerHome: "Trip search",
+        privacyTitle: "Privacy Policy",
+        privacySummary: "moose.train is designed to work without collecting personal information from its users.",
+        lastUpdated: "Last updated: August 18, 2026",
+        sections: [
+          {
+            heading: "Information We Collect",
+            paragraphs: [
+              "moose.train does not require or offer user accounts and does not collect personal information such as your name, email address, or device location.",
+              "Trip searches are handled in your browser. The site is not designed to send your origin, destination, date, or time searches to moose.train as personal information.",
+              "moose.train does not use analytics or advertising trackers to monitor how you use the site.",
+            ],
+          },
+          {
+            heading: "Cookies and Browser Storage",
+            paragraphs: [
+              "moose.train does not use cookies or similar technologies to track users across the site or across other websites.",
+              "The site may store a basic display preference, such as light or dark appearance, in your browser's local storage. That preference stays on your device and is not used to identify or track you.",
+            ],
+          },
+          {
+            heading: "Technical and Hosting Information",
+            paragraphs: [
+              "When moose.train is served through a hosting provider, ordinary infrastructure systems may automatically process standard technical information such as IP address, user-agent information, timestamps, requested pages or files, and similar request information in server, hosting, CDN, or access logs.",
+              "moose.train itself is not designed to use that information to identify users, build profiles, or track people across sites.",
+            ],
+          },
+          {
+            heading: "Third Parties",
+            paragraphs: [
+              "moose.train does not sell, rent, or share personal information with advertisers or other third parties.",
+              "The current site does not load third-party analytics, advertising, or error-reporting scripts.",
+            ],
+          },
+          {
+            heading: "Changes to This Policy",
+            paragraphs: [
+              "If moose.train's data practices change in the future, this Privacy Policy will be updated to reflect those changes.",
+            ],
+          },
+        ],
+      },
+      ko: {
+        documentTitle: "개인정보 처리방침 | moose.train",
+        tagline: "M.O.O.S.E. - Metro-North Or Other Service\u00a0Evaluator\n(메트로 노스 또는 기타 서비스 평가기)",
+        appearanceLabel: "화면 모드",
+        appearanceSystem: "시스템",
+        appearanceLight: "라이트",
+        appearanceDark: "다크",
+        languageLabel: "언어",
+        back: "여행 검색으로 돌아가기",
+        footerLabel: "푸터",
+        footerHome: "여행 검색",
+        privacyTitle: "개인정보 처리방침",
+        privacySummary: "moose.train은 사용자로부터 개인정보를 수집하지 않고도 작동하도록 설계되었습니다.",
+        lastUpdated: "최종 업데이트: 2026년 8월 18일",
+        sections: [
+          {
+            heading: "수집하는 정보",
+            paragraphs: [
+              "moose.train은 사용자 계정을 요구하거나 제공하지 않으며, 이름, 이메일 주소, 기기 위치와 같은 개인정보를 수집하지 않습니다.",
+              "여행 검색은 사용자의 브라우저 안에서 처리됩니다. 출발역, 도착역, 날짜 또는 시간 검색 내용이 개인정보로서 moose.train에 전송되도록 설계되어 있지 않습니다.",
+              "moose.train은 사용자의 사이트 이용 방식을 모니터링하기 위해 분석 도구나 광고 추적기를 사용하지 않습니다.",
+            ],
+          },
+          {
+            heading: "쿠키 및 브라우저 저장소",
+            paragraphs: [
+              "moose.train은 사이트 안팎에서 사용자를 추적하기 위해 쿠키나 이와 유사한 기술을 사용하지 않습니다.",
+              "사이트는 라이트 또는 다크 화면 모드 같은 기본 표시 환경설정을 브라우저의 로컬 저장소에 저장할 수 있습니다. 이 설정은 사용자의 기기에 남아 있으며, 사용자를 식별하거나 추적하는 데 사용되지 않습니다.",
+            ],
+          },
+          {
+            heading: "기술 및 호스팅 정보",
+            paragraphs: [
+              "moose.train이 호스팅 제공업체를 통해 제공되는 경우, 일반적인 인프라 시스템이 IP 주소, 사용자 에이전트 정보, 타임스탬프, 요청한 페이지 또는 파일, 이와 유사한 요청 정보를 서버, 호스팅, CDN 또는 접속 로그에서 자동으로 처리할 수 있습니다.",
+              "moose.train 자체는 이러한 정보를 사용해 사용자를 식별하거나, 프로필을 만들거나, 여러 사이트에 걸쳐 사용자를 추적하도록 설계되어 있지 않습니다.",
+            ],
+          },
+          {
+            heading: "제3자",
+            paragraphs: [
+              "moose.train은 개인정보를 광고주나 기타 제3자에게 판매, 대여 또는 공유하지 않습니다.",
+              "현재 사이트는 제3자 분석, 광고 또는 오류 보고 스크립트를 불러오지 않습니다.",
+            ],
+          },
+          {
+            heading: "본 방침의 변경",
+            paragraphs: [
+              "향후 moose.train의 데이터 처리 방식이 변경되는 경우, 이 개인정보 처리방침은 해당 변경 사항을 반영하도록 업데이트됩니다.",
+            ],
+          },
+        ],
+      },
+      es: {
+        documentTitle: "Política de privacidad | moose.train",
+        tagline: "M.O.O.S.E. - Metro-North Or Other Service\u00a0Evaluator\n(Evaluador de Metro-North u otro servicio)",
+        appearanceLabel: "Apariencia",
+        appearanceSystem: "Sistema",
+        appearanceLight: "Claro",
+        appearanceDark: "Oscuro",
+        languageLabel: "Idioma",
+        back: "Volver a la búsqueda de viajes",
+        footerLabel: "Pie de página",
+        footerHome: "Buscar viajes",
+        privacyTitle: "Política de privacidad",
+        privacySummary: "moose.train está diseñado para funcionar sin recopilar información personal de sus usuarios.",
+        lastUpdated: "Última actualización: 18 de agosto de 2026",
+        sections: [
+          {
+            heading: "Información que recopilamos",
+            paragraphs: [
+              "moose.train no requiere ni ofrece cuentas de usuario y no recopila información personal como tu nombre, correo electrónico o ubicación del dispositivo.",
+              "Las búsquedas de viajes se procesan en tu navegador. El sitio no está diseñado para enviar tu origen, destino, fecha u hora de búsqueda a moose.train como información personal.",
+              "moose.train no utiliza herramientas de analítica ni rastreadores publicitarios para monitorear cómo usas el sitio.",
+            ],
+          },
+          {
+            heading: "Cookies y almacenamiento del navegador",
+            paragraphs: [
+              "moose.train no utiliza cookies ni tecnologías similares para rastrear usuarios dentro del sitio o en otros sitios web.",
+              "El sitio puede guardar una preferencia básica de visualización, como el modo claro u oscuro, en el almacenamiento local de tu navegador. Esa preferencia permanece en tu dispositivo y no se usa para identificarte ni rastrearte.",
+            ],
+          },
+          {
+            heading: "Información técnica y de alojamiento",
+            paragraphs: [
+              "Cuando moose.train se sirve mediante un proveedor de alojamiento, los sistemas ordinarios de infraestructura pueden procesar automáticamente información técnica estándar, como dirección IP, información del agente de usuario, marcas de tiempo, páginas o archivos solicitados e información similar de la solicitud en registros de servidor, alojamiento, CDN o acceso.",
+              "moose.train en sí no está diseñado para usar esa información para identificar usuarios, crear perfiles ni rastrear personas entre sitios.",
+            ],
+          },
+          {
+            heading: "Terceros",
+            paragraphs: [
+              "moose.train no vende, alquila ni comparte información personal con anunciantes ni otros terceros.",
+              "El sitio actual no carga scripts de terceros para analítica, publicidad o informes de errores.",
+            ],
+          },
+          {
+            heading: "Cambios a esta política",
+            paragraphs: [
+              "Si las prácticas de datos de moose.train cambian en el futuro, esta Política de privacidad se actualizará para reflejar esos cambios.",
+            ],
+          },
+        ],
+      },
+    };
+
+    let currentLanguage = new URLSearchParams(location.search).get("lang") || "en";
+
+    const els = {
+      appearance: document.getElementById("appearance-select"),
+      appearanceLabel: document.getElementById("appearance-label"),
+      language: document.getElementById("language-select"),
+      languageLabel: document.getElementById("language-label"),
+      tagline: document.getElementById("tagline"),
+      brandLink: document.getElementById("brand-link"),
+      backLink: document.getElementById("back-link"),
+      footerHomeLink: document.getElementById("footer-home-link"),
+      privacyTitle: document.getElementById("privacy-title"),
+      privacySummary: document.getElementById("privacy-summary"),
+      lastUpdated: document.getElementById("last-updated"),
+      policySections: document.getElementById("policy-sections"),
+      footer: document.querySelector("footer"),
+    };
+
+    init();
+
+    function init() {
+      initTheme();
+      els.appearance.addEventListener("change", () => setThemePreference(els.appearance.value));
+      els.language.addEventListener("change", () => {
+        setLanguage(els.language.value);
+        history.replaceState(null, "", `privacy.html?lang=${encodeURIComponent(currentLanguage)}`);
+      });
+      setLanguage(currentLanguage);
+    }
+
+    function setLanguage(language) {
+      currentLanguage = privacyTranslations[language] ? language : "en";
+      const strings = privacyTranslations[currentLanguage];
+      document.documentElement.lang = currentLanguage;
+      document.title = strings.documentTitle;
+      els.language.value = currentLanguage;
+      els.appearanceLabel.textContent = strings.appearanceLabel;
+      els.appearance.setAttribute("aria-label", strings.appearanceLabel);
+      els.appearance.querySelector('option[value="system"]').textContent = strings.appearanceSystem;
+      els.appearance.querySelector('option[value="light"]').textContent = strings.appearanceLight;
+      els.appearance.querySelector('option[value="dark"]').textContent = strings.appearanceDark;
+      els.languageLabel.textContent = strings.languageLabel;
+      els.language.setAttribute("aria-label", strings.languageLabel);
+      els.tagline.textContent = strings.tagline;
+      els.backLink.textContent = strings.back;
+      els.footer.setAttribute("aria-label", strings.footerLabel);
+      els.footerHomeLink.textContent = strings.footerHome;
+      els.privacyTitle.textContent = strings.privacyTitle;
+      els.privacySummary.textContent = strings.privacySummary;
+      els.lastUpdated.textContent = strings.lastUpdated;
+      const homeHref = `index.html?lang=${encodeURIComponent(currentLanguage)}`;
+      els.brandLink.href = homeHref;
+      els.backLink.href = homeHref;
+      els.footerHomeLink.href = homeHref;
+      renderPolicy(strings.sections);
+    }
+
+    function renderPolicy(sections) {
+      els.policySections.innerHTML = sections.map((section) => `
+        <section class="policy-section">
+          <h3>${escapeHtml(section.heading)}</h3>
+          ${section.paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        </section>
+      `).join("");
+    }
+
+    function initTheme() {
+      const preference = currentThemePreference();
+      els.appearance.value = preference;
+      applyThemePreference(preference);
+      if (systemThemeQuery) {
+        const handleSystemThemeChange = () => {
+          if (currentThemePreference() === "system") applyThemePreference("system");
+        };
+        if (systemThemeQuery.addEventListener) {
+          systemThemeQuery.addEventListener("change", handleSystemThemeChange);
+        } else if (systemThemeQuery.addListener) {
+          systemThemeQuery.addListener(handleSystemThemeChange);
+        }
+      }
+    }
+
+    function setThemePreference(preference) {
+      const nextPreference = ["system", "light", "dark"].includes(preference) ? preference : "system";
+      try {
+        if (nextPreference === "system") {
+          localStorage.removeItem(THEME_STORAGE_KEY);
+        } else {
+          localStorage.setItem(THEME_STORAGE_KEY, nextPreference);
+        }
+      } catch (_error) {
+        // Ignore storage failures; the selected theme still applies for this page view.
+      }
+      applyThemePreference(nextPreference);
+    }
+
+    function currentThemePreference() {
+      try {
+        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+      } catch (_error) {
+        return "system";
+      }
+    }
+
+    function applyThemePreference(preference) {
+      const resolvedTheme = preference === "dark" || (preference === "system" && systemThemeQuery && systemThemeQuery.matches)
+        ? "dark"
+        : "light";
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.themePreference = preference;
+      if (els.appearance) els.appearance.value = preference;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
+</body>
+</html>

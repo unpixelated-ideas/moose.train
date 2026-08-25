@@ -1,0 +1,3 @@
+feed_id,service_uid,source_service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+hartford,hartford:1,1,0,0,0,0,0,1,1,2026-07-11,2027-07-12
+hartford,hartford:2,2,1,1,1,1,1,0,0,2026-07-11,2027-07-12

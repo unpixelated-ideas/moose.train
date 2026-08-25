@@ -1,0 +1,51 @@
+feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
+mnr,mnr:127,127,NTH,2NO,Noroton Heights,41.069041,-73.49788,0,,,true
+mnr,mnr:131,131,SONO,2SN,South Norwalk,41.09673,-73.421132,0,,,true
+mnr,mnr:145,145,MIL,2MI,Milford,41.223231,-73.057647,0,,,true
+mnr,mnr:160,160,WILTON,4WI,Wilton,41.196202,-73.432434,0,,,true
+mnr,mnr:133,133,ENW,2EN,East Norwalk,41.103996,-73.404588,0,,,true
+mnr,mnr:128,128,DAR,2DA,Darien,41.076913,-73.472966,0,,,true
+mnr,mnr:105,105,MVE,2ME,Mount Vernon East,40.912161,-73.832185,0,,,true
+mnr,mnr:1,1,GCT,0NY,Grand Central,40.752998,-73.977056,0,,,true
+mnr,mnr:168,168,ANS,5AN,Ansonia,41.344156,-73.079892,0,,,true
+mnr,mnr:161,161,CND,4CA,Cannondale,41.21662,-73.426703,0,,,true
+mnr,mnr:164,164,BTH,4BE,Bethel,41.376225,-73.418171,0,,,true
+mnr,mnr:190,190,WHA,2WH,West Haven,41.27142,-72.963488,0,,,true
+mnr,mnr:154,154,SPD,3SD,Springdale,41.08876,-73.517828,0,,,true
+mnr,mnr:115,115,POR,2PC,Port Chester,41.000732,-73.6647,0,,,true
+mnr,mnr:129,129,ROW,2RO,Rowayton,41.077456,-73.445527,0,,,true
+mnr,mnr:137,137,SOP,2SP,Southport,41.134844,-73.28897,0,,,true
+mnr,mnr:165,165,DAN,4DN,Danbury,41.396146,-73.44879,0,,,true
+mnr,mnr:151,151,STS,2SS,New Haven State Street,41.304979,-72.921747,0,,,true
+mnr,mnr:171,171,NAU,5NG,Naugatuck,41.494204,-73.052655,0,,,true
+mnr,mnr:106,106,PEL,2PH,Pelham,40.910321,-73.810242,0,,,true
+mnr,mnr:116,116,GRE,2GN,Greenwich,41.021277,-73.624621,0,,,true
+mnr,mnr:153,153,GLB,3GB,Glenbrook,41.070547,-73.520021,0,,,true
+mnr,mnr:120,120,RIV,2RS,Riverside,41.031682,-73.588173,0,,,true
+mnr,mnr:4,4,H125,0HL,Harlem-125th St.,40.805157,-73.939149,0,,,true
+mnr,mnr:163,163,RDG,4RD,Redding,41.325684,-73.4338,0,,,true
+mnr,mnr:110,110,LAR,2LA,Larchmont,40.933394,-73.759792,0,,,true
+mnr,mnr:121,121,OGW,2OG,Old Greenwich,41.033817,-73.565859,0,,,true
+mnr,mnr:108,108,NRO,2NR,New Rochelle,40.911605,-73.783807,0,,,true
+mnr,mnr:172,172,WBY,5WB,Waterbury,41.552728,-73.046126,0,,,true
+mnr,mnr:140,140,BRP,2BP,Bridgeport,41.178677,-73.187076,0,,,true
+mnr,mnr:188,188,FFB,2FM,Fairfield-Black Rock,41.161,-73.234336,0,,,true
+mnr,mnr:136,136,GNF,2GF,Green's Farms,41.122265,-73.315408,0,,,true
+mnr,mnr:170,170,BCF,5BF,Beacon Falls,41.441752,-73.06359,0,,,true
+mnr,mnr:162,162,BVL,4BV,Branchville,41.26763,-73.441421,0,,,true
+mnr,mnr:56,56,FOR,1FO,Fordham,40.8615,-73.89058,0,,,true
+mnr,mnr:124,124,STM,2SM,Stamford,41.046611,-73.542846,0,,,true
+mnr,mnr:134,134,WPT,2WP,Westport,41.118928,-73.371413,0,,,true
+mnr,mnr:169,169,SEY,5SY,Seymour,41.395139,-73.072499,0,,,true
+mnr,mnr:111,111,MAM,2MA,Mamaroneck,40.954061,-73.736125,0,,,true
+mnr,mnr:149,149,NHV,2NH,New Haven Union Station,41.296501,-72.92829,0,,,true
+mnr,mnr:157,157,NCN,3NC,New Canaan,41.146305,-73.495626,0,,,true
+mnr,mnr:143,143,SFD,2SR,Stratford,41.194255,-73.131532,0,,,true
+mnr,mnr:114,114,RYE,2RY,Rye,40.985922,-73.682553,0,,,true
+mnr,mnr:158,158,MRT7,4M7,Merritt 7,41.146618,-73.427859,0,,,true
+mnr,mnr:622,622,YANKEES,0YS,Yankees-E 153 St,40.8253,-73.9299,0,,,true
+mnr,mnr:167,167,DBY,5DB,Derby-Shelton,41.319718,-73.083548,0,,,true
+mnr,mnr:118,118,COB,2CC,Cos Cob,41.030171,-73.598306,0,,,true
+mnr,mnr:138,138,FFD,2FF,Fairfield,41.143077,-73.257742,0,,,true
+mnr,mnr:155,155,TMH,3TH,Talmadge Hill,41.116012,-73.498149,0,,,true
+mnr,mnr:112,112,HAR,2HS,Harrison,40.969432,-73.712964,0,,,true
