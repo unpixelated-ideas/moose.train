@@ -106,7 +106,13 @@
     .masthead {
       display: flex;
       align-items: center;
+      flex: 1 1 auto;
       gap: 14px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .masthead > div {
       min-width: 0;
     }
 
@@ -136,6 +142,7 @@
       margin: 0;
       font-size: clamp(2rem, 4vw, 3.1rem);
       line-height: 1;
+      overflow-wrap: anywhere;
     }
 
     .tagline,
@@ -148,7 +155,8 @@
     .tagline {
       margin: 6px 0 0;
       line-height: 1.5;
-      white-space: pre;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
     }
 
     label {

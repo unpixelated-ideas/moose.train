@@ -1,6 +1,7 @@
 const assert = require("assert");
 
 const SEARCH_WINDOW_MINUTES = 23 * 60 + 59;
+const EARLY_MORNING_ARRIVE_BY_MINUTES = 4 * 60;
 
 function addDays(date, days) {
   const next = new Date(date);
@@ -23,8 +24,11 @@ function localDateIso(date) {
   return `${year}-${month}-${day}`;
 }
 
-function serviceDatesForSearch(date, mode) {
-  return mode === "arrive" ? [date, addDays(date, -1)] : [date, addDays(date, 1)];
+function serviceDatesForSearch(date, mode, queryTime) {
+  if (mode === "arrive") {
+    return queryTime < EARLY_MORNING_ARRIVE_BY_MINUTES ? [date, addDays(date, -1)] : [date];
+  }
+  return [date, addDays(date, 1)];
 }
 
 function serviceApplies(trip, date) {
@@ -71,7 +75,7 @@ function routeFromTrip(trip) {
 
 function findRoutes(trips, queryTime, mode, date) {
   return trips
-    .filter((trip) => serviceDatesForSearch(date, mode).some((serviceDate) => serviceApplies(trip, serviceDate)))
+    .filter((trip) => serviceDatesForSearch(date, mode, queryTime).some((serviceDate) => serviceApplies(trip, serviceDate)))
     .map(routeFromTrip)
     .filter((route) => matchesSearch(route.departure, route.arrival, queryTime, mode))
     .filter((route) => routeServiceApplies(route, date, queryTime, mode));
@@ -95,8 +99,14 @@ assert.strictEqual(
 
 assert.strictEqual(
   findRoutes([{ serviceDays: "sunday", departure: 22 * 60, arrival: 23 * 60 }], eightAm, "arrive", monday).length,
+  0,
+  "late-day arrive-by searches do not show previous-day evening service",
+);
+
+assert.strictEqual(
+  findRoutes([{ serviceDays: "sunday", departure: 23 * 60 + 35, arrival: 3 }], 10, "arrive", monday).length,
   1,
-  "arrive-by searches include previous-day service inside the 24-hour window",
+  "early-morning arrive-by searches include previous-day service that arrives after midnight",
 );
 
 console.log("route search date-window tests passed");

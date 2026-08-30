@@ -129,9 +129,69 @@
       margin-bottom: 30px;
     }
 
+    .timezone-notice {
+      position: relative;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 0 22px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      color: var(--body);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .timezone-notice[hidden] {
+      display: none;
+    }
+
+    .timezone-notice-copy {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .timezone-notice-message {
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    .timezone-notice-times {
+      color: var(--muted);
+    }
+
+    .timezone-notice-dismiss {
+      width: auto;
+      min-height: 34px;
+      flex: 0 0 auto;
+      padding: 6px 12px;
+      border-color: var(--line);
+      background: var(--field);
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    .timezone-notice-dismiss:hover {
+      border-color: var(--color-border-hover);
+      background: var(--color-hover);
+    }
+
+    .timezone-notice-dismiss:active {
+      background: var(--color-secondary-active);
+    }
+
     .masthead {
       display: flex;
       align-items: center;
+      flex: 1 1 auto;
+      width: 100%;
       min-width: 0;
       gap: 14px;
     }
@@ -154,6 +214,7 @@
     .brand-copy {
       display: grid;
       gap: 6px;
+      width: 100%;
       min-width: 0;
     }
 
@@ -163,6 +224,7 @@
       font-size: clamp(2rem, 4vw, 3.35rem);
       line-height: 1;
       letter-spacing: 0;
+      overflow-wrap: anywhere;
     }
 
     .tagline {
@@ -171,7 +233,171 @@
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.5;
-      white-space: pre;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    .debug-comma-trigger {
+      display: inline-block;
+      width: auto;
+      min-height: 0;
+      margin: 0 -0.14em;
+      padding: 0 0.14em;
+      border: 0;
+      border-radius: 0;
+      background: none;
+      color: inherit;
+      font: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      cursor: default;
+    }
+
+    .debug-comma-trigger:hover,
+    .debug-comma-trigger:active {
+      background: none;
+      color: inherit;
+    }
+
+    .debug-menu-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.42);
+    }
+
+    .debug-menu-backdrop[hidden] {
+      display: none;
+    }
+
+    .debug-menu-dialog {
+      display: grid;
+      gap: 16px;
+      width: min(100%, 430px);
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .debug-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .debug-menu-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.08rem;
+      line-height: 1.2;
+    }
+
+    .debug-menu-close {
+      width: 36px;
+      min-height: 36px;
+      border-color: var(--line);
+      background: var(--field);
+      color: var(--ink);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .debug-menu-close:hover {
+      border-color: var(--color-border-hover);
+      background: var(--color-hover);
+    }
+
+    .debug-menu-status {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .debug-password-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .debug-password-form[hidden],
+    .debug-menu-panel[hidden] {
+      display: none;
+    }
+
+    .debug-password-error {
+      min-height: 1.2em;
+      margin: 0;
+      color: var(--warning);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .debug-password-error[hidden] {
+      display: none;
+    }
+
+    .debug-timezone-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .debug-timezone-option {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      min-height: 0;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--field);
+      color: var(--body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .debug-timezone-option:hover {
+      border-color: var(--color-border-hover);
+      background: var(--color-hover);
+    }
+
+    .debug-timezone-option input {
+      width: 18px;
+      min-height: 18px;
+      margin: 1px 0 0;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .debug-menu-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .debug-password-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .debug-password-actions button {
+      width: auto;
+      min-width: 104px;
+      padding-right: 16px;
+      padding-left: 16px;
     }
 
     .header-controls {
@@ -465,8 +691,14 @@
 
     .range-slider {
       width: 100%;
+      --range-thumb-size: 24px;
+      --range-track-height: 8px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      display: block;
+      margin: 0;
       min-height: 32px;
-      accent-color: var(--accent);
       cursor: pointer;
     }
 
@@ -474,6 +706,39 @@
       border-radius: 999px;
       box-shadow: 0 0 0 3px var(--color-focus-ring);
       outline: none;
+    }
+
+    .range-slider::-webkit-slider-runnable-track {
+      height: var(--range-track-height);
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      width: var(--range-thumb-size);
+      height: var(--range-thumb-size);
+      margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) / 2);
+      -webkit-appearance: none;
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+    }
+
+    .range-slider::-moz-range-track {
+      height: var(--range-track-height);
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .range-slider::-moz-range-thumb {
+      width: var(--range-thumb-size);
+      height: var(--range-thumb-size);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
     }
 
     .source-links {
@@ -525,6 +790,87 @@
 
     .source-links a:hover {
       text-decoration: underline;
+    }
+
+    .search-loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 24px;
+    }
+
+    [data-theme="dark"] .search-loading-overlay {
+      background: rgba(0, 0, 0, 0.68);
+    }
+
+    .search-loading-overlay[hidden] {
+      display: none;
+    }
+
+    .search-loading-content {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+      max-width: min(100%, 620px);
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.78) 0%,
+        rgba(255, 255, 255, 0.58) 48%,
+        rgba(255, 255, 255, 0) 76%
+      );
+      color: var(--ink);
+      padding: 34px 56px;
+      text-align: center;
+    }
+
+    [data-theme="dark"] .search-loading-content {
+      background: radial-gradient(
+        ellipse at center,
+        rgba(17, 18, 20, 0.78) 0%,
+        rgba(17, 18, 20, 0.58) 48%,
+        rgba(17, 18, 20, 0) 76%
+      );
+    }
+
+    .search-loading-mark {
+      display: grid;
+      place-items: center;
+      width: 82px;
+      height: 82px;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      color: var(--ink);
+    }
+
+    .search-loading-mark svg {
+      width: 52px;
+      height: 52px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .search-loading-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.18rem;
+      font-weight: 850;
+      line-height: 1.2;
+    }
+
+    .search-loading-note {
+      margin: 0;
+      color: var(--body);
+      font-size: 0.98rem;
+      line-height: 1.45;
+      white-space: nowrap;
     }
 
     .result {
@@ -667,11 +1013,15 @@
 
     .leg {
       display: grid;
-      grid-template-columns: minmax(132px, max-content) minmax(0, 1fr);
+      grid-template-columns: 11.75rem minmax(0, 1fr);
       column-gap: 18px;
       row-gap: 4px;
       padding-top: 8px;
       border-top: 1px solid var(--line);
+    }
+
+    .leg > div {
+      min-width: 0;
     }
 
     .time {
@@ -1019,6 +1369,15 @@
       .header-controls {
         width: 100%;
       }
+
+      .timezone-notice {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .timezone-notice-dismiss {
+        align-self: flex-start;
+      }
     }
 
     @media (max-width: 560px) {
@@ -1033,6 +1392,14 @@
 
       main {
         padding: 20px 14px 32px;
+      }
+
+      .search-loading-content {
+        padding: 28px 24px;
+      }
+
+      .search-loading-note {
+        white-space: normal;
       }
 
       .search-grid,
@@ -1068,6 +1435,24 @@
 </head>
 <body>
   <main>
+    <aside
+      id="timezone-notice"
+      class="timezone-notice"
+      aria-label="Timezone notice"
+      data-i18n-aria-label="timezoneNoticeLabel"
+      hidden
+    >
+      <div class="timezone-notice-copy">
+        <div id="timezone-notice-message" class="timezone-notice-message" data-i18n="timezoneNoticeMessage">
+          Heads up: moose.train shows all train times in U.S. Eastern time.
+        </div>
+        <div id="timezone-notice-times" class="timezone-notice-times"></div>
+      </div>
+      <button id="timezone-notice-dismiss" class="timezone-notice-dismiss" type="button" data-i18n="timezoneNoticeDismiss">
+        Dismiss
+      </button>
+    </aside>
+
     <header>
       <div class="masthead">
         <a class="brand-home" href="index.html" aria-label="moose.train home">
@@ -1153,6 +1538,7 @@
         </label>
         <button id="search-button" type="button" data-i18n="findTrains">Find Trains</button>
         <button id="swap-button" class="secondary" type="button" data-i18n="swap">Swap</button>
+        <button id="reset-button" class="secondary" type="button" data-i18n="resetSearch">Reset</button>
       </div>
       <datalist id="station-list"></datalist>
     </section>
@@ -1226,6 +1612,20 @@
         <a href="#timetable-csv-links-title" data-source-links data-i18n="updateLogViewSources">View sources</a>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v091-title">
+          <h3 id="update-log-v091-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.1</span>
+            <span class="update-log-release-date" data-i18n="updateLogV091Date">August 30, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV091Loading"><strong>Clearer loading.</strong> The loading experience was overhauled so it is easier to tell what moose.train is doing before results appear.</li>
+            <li data-i18n-html="updateLogV091Timezone"><strong>Smarter default searches.</strong> Default search times now better reflect the user’s local timezone.</li>
+            <li data-i18n-html="updateLogV091EasternTime"><strong>Clearer time-zone guidance.</strong> Users outside U.S. Eastern Time now see a reminder that all trip times are listed in U.S. Eastern Time.</li>
+            <li data-i18n-html="updateLogV091Range"><strong>A smoother departure range.</strong> The departure range selector got improvements that make narrowing results feel clearer and more dependable.</li>
+            <li data-i18n-html="updateLogV091Midnight"><strong>Better after-midnight labels.</strong> Fixed a bug that could describe future trips after midnight as “tomorrow.”</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v09-title">
           <h3 id="update-log-v09-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9</span>
@@ -1268,12 +1668,88 @@
   <script id="embedded-schedule-csv" type="text/plain" data-encoding="base64">
 
   </script>
+  <div
+    id="debug-menu-popup"
+    class="debug-menu-backdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="debug-menu-title"
+    hidden
+  >
+    <div class="debug-menu-dialog">
+      <div class="debug-menu-header">
+        <h2 id="debug-menu-title" class="debug-menu-title">Debug Menu</h2>
+        <button id="debug-menu-close" class="debug-menu-close" type="button" aria-label="Close debug menu">×</button>
+      </div>
+      <form id="debug-password-form" class="debug-password-form">
+        <label>
+          <span>Password</span>
+          <input id="debug-password-input" type="password" autocomplete="off">
+        </label>
+        <p id="debug-password-error" class="debug-password-error" hidden>Incorrect password.</p>
+        <div class="debug-password-actions">
+          <button id="debug-password-submit" type="submit">Continue</button>
+        </div>
+      </form>
+      <div id="debug-menu-panel" class="debug-menu-panel" hidden>
+        <p id="debug-menu-status" class="debug-menu-status"></p>
+        <fieldset id="debug-timezone-list" class="debug-timezone-list" aria-label="View page as timezone"></fieldset>
+        <div class="debug-menu-actions">
+          <button id="debug-menu-reset" class="secondary" type="button">Reset</button>
+          <button id="debug-menu-done" type="button">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    id="search-loading-overlay"
+    class="search-loading-overlay"
+    role="status"
+    aria-live="polite"
+    aria-hidden="true"
+    hidden
+  >
+    <div class="search-loading-content">
+      <div class="search-loading-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M17 37h30"></path>
+          <path d="M21 43h22"></path>
+          <path d="M18 23h22l8 8v14H16V25c0-1.1.9-2 2-2Z"></path>
+          <path d="M22 29h10"></path>
+          <path d="M38 29h7"></path>
+          <path d="M22 51h20"></path>
+          <path d="m24 45-5 6"></path>
+          <path d="m40 45 5 6"></path>
+        </svg>
+      </div>
+      <p class="search-loading-title" data-i18n="findingTrains">Finding trains</p>
+      <p class="search-loading-note" data-i18n="firstSearchLoadNote">This only takes a moment on your first search.</p>
+    </div>
+  </div>
   <script>
     const CSV_PATH = "moose_train_schedule.csv";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
     const TRANSFER_BUFFER = 5;
     const SEARCH_WINDOW_MINUTES = 23 * 60 + 59;
+    const EARLY_MORNING_ARRIVE_BY_MINUTES = 4 * 60;
+    const TRANSIT_TIME_ZONE = "America/New_York";
     const THEME_STORAGE_KEY = "moose-theme";
+    const TIMEZONE_NOTICE_STORAGE_KEY = "moose-timezone-notice-dismissed-v1";
+    const DEBUG_TIMEZONE_STORAGE_KEY = "moose-debug-timezone-v1";
+    const DEBUG_PASSWORDS = new Set(["youareamoose", "you are a moose"]);
+    const DEBUG_TIME_ZONES = [
+      { label: "Samoa Standard Time (SST)", timeZone: "Pacific/Pago_Pago" },
+      { label: "Hawaii-Aleutian Standard Time (HST/HAST)", timeZone: "Pacific/Honolulu" },
+      { label: "Alaska Standard Time (AKST)", timeZone: "America/Anchorage" },
+      { label: "U.S. Pacific Standard Time (PST)", timeZone: "America/Los_Angeles" },
+      { label: "U.S. Mountain Standard Time (MST)", timeZone: "America/Denver" },
+      { label: "U.S. Central Standard Time (CST)", timeZone: "America/Chicago" },
+      { label: "U.S. Eastern Standard Time (EST)", timeZone: "America/New_York" },
+      { label: "Atlantic Standard Time (AST)", timeZone: "America/Puerto_Rico" },
+      { label: "Ireland Time (GMT/IST)", timeZone: "Europe/Dublin" },
+      { label: "Korea Standard Time (KST)", timeZone: "Asia/Seoul" },
+      { label: "Chamorro Standard Time (ChST)", timeZone: "Pacific/Guam" },
+    ];
     const MNR_REALTIME_FEED_URL = "https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/mnr%2Fgtfs-mnr";
     const MNR_REALTIME_LIBRARY_URL = "https://cdn.jsdelivr.net/npm/protobufjs@7.4.0/+esm";
     const MNR_REALTIME_ROUTE_IDS = new Set(["3", "4", "5", "6"]);
@@ -1353,9 +1829,9 @@
         timeFormat24: "24-hour",
         routeSearch: "Route search",
         origin: "Origin",
-        originPlaceholder: "New Haven Union Station",
+        originPlaceholder: "From where?",
         destination: "Destination",
-        destinationPlaceholder: "Old Saybrook",
+        destinationPlaceholder: "Where to?",
         date: "Date",
         searchMode: "Search mode",
         leaveAfter: "Leave after",
@@ -1364,10 +1840,19 @@
         findTrains: "Find Trains",
         searching: "Searching...",
         swap: "Swap",
+        resetSearch: "Reset",
         readyToSearch: "Enter a trip to search schedules.",
         loadingCsv: "Loading schedule data...",
         loadingFirstSearch: "Loading schedules for your first search...",
+        findingTrains: "Finding trains",
+        firstSearchLoadNote: "This only takes a moment on your first search.",
         csvLoadError: "Unable to load moose_train_schedule.csv.",
+        dstTimeAdjusted: "That time falls during a daylight-saving transition, so moose.train moved it to {time}.",
+        timezoneNoticeLabel: "Timezone notice",
+        timezoneNoticeMessage: "Heads up: moose.train shows all train times in U.S. Eastern time.",
+        timezoneNoticeTimes: "Your time: {localTime} · U.S. Eastern time: {easternTime}",
+        timezoneNoticeDateTime: "{date}, {time}",
+        timezoneNoticeDismiss: "Dismiss",
         transferBuffer: "Transfer buffer:",
         fiveMinutes: "5 minutes",
         direct: "Direct",
@@ -1409,6 +1894,7 @@
         realtimeTooFar: "Train scheduled too far in advance for live data",
         realtimeUnavailableLine: "Train scheduled but realtime is not available for this line",
         tomorrow: "tomorrow",
+        relativeNextDay: "the next day",
         previousDay: "previous day",
         timetableCsvLinks: "Individual timetable CSVs",
         introTitle: "Rail travel, simplified.",
@@ -1427,6 +1913,12 @@
         learnMoreUpdateLog: "Update Log",
         updateLogTitle: "Update Log",
         updateLogClose: "Close update log",
+        updateLogV091Date: "August 30, 2026",
+        updateLogV091Loading: "<strong>Clearer loading.</strong> The loading experience was overhauled so it is easier to tell what moose.train is doing before results appear.",
+        updateLogV091Timezone: "<strong>Smarter default searches.</strong> Default search times now better reflect the user’s local timezone.",
+        updateLogV091EasternTime: "<strong>Clearer time-zone guidance.</strong> Users outside U.S. Eastern Time now see a reminder that all trip times are listed in U.S. Eastern Time.",
+        updateLogV091Range: "<strong>A smoother departure range.</strong> The departure range selector got improvements that make narrowing results feel clearer and more dependable.",
+        updateLogV091Midnight: "<strong>Better after-midnight labels.</strong> Fixed a bug that could describe future trips after midnight as “tomorrow.”",
         updateLogV09Date: "August 25, 2026",
         updateLogV09Performance: "<strong>Faster load times.</strong> Schedule data loads more efficiently, so the first search feels quicker.",
         updateLogV09Viewer: "<strong>A cleaner Update Log.</strong> The viewer now groups changes by release date so updates are easier to scan.",
@@ -1457,9 +1949,9 @@
         timeFormat24: "24시간",
         routeSearch: "경로 검색",
         origin: "출발역",
-        originPlaceholder: "New Haven Union Station (뉴 헤이븐 유니언 스테이션)",
+        originPlaceholder: "어디에서 출발하나요?",
         destination: "도착역",
-        destinationPlaceholder: "Old Saybrook (올드 세이브룩)",
+        destinationPlaceholder: "어디로 가나요?",
         date: "날짜",
         searchMode: "검색 방식",
         leaveAfter: "이후 출발",
@@ -1468,10 +1960,19 @@
         findTrains: "열차 찾기",
         searching: "검색 중...",
         swap: "바꾸기",
+        resetSearch: "초기화",
         readyToSearch: "여행 정보를 입력해 일정을 검색하세요.",
         loadingCsv: "일정 데이터를 불러오는 중...",
         loadingFirstSearch: "첫 검색을 위한 일정 데이터를 불러오는 중...",
+        findingTrains: "열차를 찾는 중",
+        firstSearchLoadNote: "첫 검색 때만 잠시 시간이 걸립니다.",
         csvLoadError: "moose_train_schedule.csv를 불러올 수 없습니다.",
+        dstTimeAdjusted: "해당 시간은 일광절약 시간 전환 시간대에 해당하므로 moose.train이 {time}(으)로 조정했습니다.",
+        timezoneNoticeLabel: "시간대 안내",
+        timezoneNoticeMessage: "참고: moose.train의 모든 열차 시간은 미국 동부 시간 기준입니다.",
+        timezoneNoticeTimes: "현재 내 시간: {localTime} · 미국 동부 시간: {easternTime}",
+        timezoneNoticeDateTime: "{date} {time}",
+        timezoneNoticeDismiss: "닫기",
         transferBuffer: "환승 여유:",
         fiveMinutes: "5분",
         direct: "직통",
@@ -1513,6 +2014,7 @@
         realtimeTooFar: "실시간 정보를 보기에는 너무 이른 열차입니다",
         realtimeUnavailableLine: "이 노선은 실시간 정보를 제공하지 않습니다",
         tomorrow: "내일",
+        relativeNextDay: "다음 날",
         previousDay: "전날",
         timetableCsvLinks: "개별 시간표 CSV",
         introTitle: "철도 여행을 더 간단하게.",
@@ -1531,6 +2033,12 @@
         learnMoreUpdateLog: "업데이트 로그",
         updateLogTitle: "업데이트 로그",
         updateLogClose: "업데이트 로그 닫기",
+        updateLogV091Date: "2026년 8월 30일",
+        updateLogV091Loading: "<strong>더 알아보기 쉬운 로딩.</strong> 결과가 나오기 전 moose.train이 무엇을 하는지 더 분명히 알 수 있도록 로딩 경험을 전반적으로 다듬었습니다.",
+        updateLogV091Timezone: "<strong>더 똑똑한 기본 검색.</strong> 기본 검색 시간이 사용자의 현지 시간대를 더 잘 반영하도록 개선했습니다.",
+        updateLogV091EasternTime: "<strong>더 명확한 시간대 안내.</strong> 미국 동부 시간대 밖에 있는 사용자에게 모든 여정 시간이 미국 동부 시간 기준이라는 알림을 표시합니다.",
+        updateLogV091Range: "<strong>더 매끄러운 출발 시간 범위.</strong> 결과를 좁히는 흐름이 더 명확하고 안정적으로 느껴지도록 출발 시간 범위 선택기를 개선했습니다.",
+        updateLogV091Midnight: "<strong>자정 이후 표시 개선.</strong> 자정 이후의 향후 여정이 “내일”로 잘못 표시될 수 있던 문제를 수정했습니다.",
         updateLogV09Date: "2026년 8월 25일",
         updateLogV09Performance: "<strong>더 빨라진 로딩.</strong> 일정 데이터를 더 효율적으로 불러와 첫 검색이 더 빠르게 느껴집니다.",
         updateLogV09Viewer: "<strong>더 깔끔한 업데이트 로그.</strong> 변경 사항을 릴리스 날짜별로 묶어 한눈에 훑어보기 쉽게 정리했습니다.",
@@ -1561,9 +2069,9 @@
         timeFormat24: "24 horas",
         routeSearch: "Buscar ruta",
         origin: "Origen",
-        originPlaceholder: "New Haven Union Station",
+        originPlaceholder: "¿Desde dónde?",
         destination: "Destino",
-        destinationPlaceholder: "Old Saybrook",
+        destinationPlaceholder: "¿A dónde?",
         date: "Fecha",
         searchMode: "Modo de búsqueda",
         leaveAfter: "Salir después de",
@@ -1572,10 +2080,19 @@
         findTrains: "Buscar trenes",
         searching: "Buscando...",
         swap: "Invertir",
+        resetSearch: "Restablecer",
         readyToSearch: "Ingresa un viaje para buscar horarios.",
         loadingCsv: "Cargando horarios...",
         loadingFirstSearch: "Cargando horarios para tu primera búsqueda...",
+        findingTrains: "Buscando trenes",
+        firstSearchLoadNote: "Esto solo tarda un momento en tu primera búsqueda.",
         csvLoadError: "No se pudo cargar moose_train_schedule.csv.",
+        dstTimeAdjusted: "Esa hora cae durante un cambio de horario, así que moose.train la ajustó a {time}.",
+        timezoneNoticeLabel: "Aviso de zona horaria",
+        timezoneNoticeMessage: "Aviso: moose.train muestra todos los horarios de trenes en hora del este de EE. UU.",
+        timezoneNoticeTimes: "Tu hora: {localTime} · Hora del este de EE. UU.: {easternTime}",
+        timezoneNoticeDateTime: "{date}, {time}",
+        timezoneNoticeDismiss: "Cerrar",
         transferBuffer: "Margen de transbordo:",
         fiveMinutes: "5 minutos",
         direct: "Directo",
@@ -1617,6 +2134,7 @@
         realtimeTooFar: "Tren programado demasiado lejos para datos en vivo",
         realtimeUnavailableLine: "Tren programado, pero esta línea no tiene datos en vivo",
         tomorrow: "mañana",
+        relativeNextDay: "el día siguiente",
         previousDay: "día anterior",
         timetableCsvLinks: "CSV de horarios individuales",
         introTitle: "Viajar en tren, simplificado.",
@@ -1635,6 +2153,12 @@
         learnMoreUpdateLog: "Registro de cambios",
         updateLogTitle: "Registro de cambios",
         updateLogClose: "Cerrar registro de cambios",
+        updateLogV091Date: "30 de agosto de 2026",
+        updateLogV091Loading: "<strong>Carga más clara.</strong> Renovamos la experiencia de carga para que sea más fácil entender qué está haciendo moose.train antes de que aparezcan los resultados.",
+        updateLogV091Timezone: "<strong>Búsquedas iniciales más inteligentes.</strong> Las horas predeterminadas ahora reflejan mejor la zona horaria local del usuario.",
+        updateLogV091EasternTime: "<strong>Guía de zona horaria más clara.</strong> Los usuarios fuera de la hora del este de EE. UU. ahora ven un recordatorio de que todos los horarios de viaje se muestran en esa zona horaria.",
+        updateLogV091Range: "<strong>Un rango de salida más fluido.</strong> Mejoramos el selector de rango de salida para que acotar resultados se sienta más claro y confiable.",
+        updateLogV091Midnight: "<strong>Mejores etiquetas después de medianoche.</strong> Corregimos un error que podía mostrar viajes futuros después de medianoche como “mañana.”",
         updateLogV09Date: "25 de agosto de 2026",
         updateLogV09Performance: "<strong>Cargas más rápidas.</strong> Los datos de horarios se cargan de forma más eficiente, para que la primera búsqueda se sienta más ágil.",
         updateLogV09Viewer: "<strong>Un registro de cambios más claro.</strong> El visor ahora agrupa las novedades por fecha de lanzamiento para que sea más fácil revisarlas.",
@@ -2031,8 +2555,15 @@
     let metroNorthRealtimeLibraryPromise = null;
     let activeResultStatusRefreshTimer = null;
     let activeRealtimeRefreshInFlight = false;
+    let visitorTimeZone = "";
+    let browserTimeZone = "";
+    let debugTimeZone = "";
+    let timezoneNoticeTimer = null;
 
     const els = {
+      timezoneNotice: document.getElementById("timezone-notice"),
+      timezoneNoticeTimes: document.getElementById("timezone-notice-times"),
+      timezoneNoticeDismiss: document.getElementById("timezone-notice-dismiss"),
       appearance: document.getElementById("appearance-select"),
       language: document.getElementById("language-select"),
       timeFormat: document.getElementById("time-format-select"),
@@ -2043,6 +2574,7 @@
       time: document.getElementById("travel-time"),
       search: document.getElementById("search-button"),
       swap: document.getElementById("swap-button"),
+      reset: document.getElementById("reset-button"),
       status: document.getElementById("status"),
       results: document.getElementById("results"),
       appearanceCurrent: document.getElementById("appearance-current"),
@@ -2058,14 +2590,28 @@
       updateLogPopup: document.getElementById("update-log-popup"),
       updateLogDialog: document.querySelector("#update-log-popup .update-log-dialog"),
       updateLogClose: document.getElementById("update-log-close"),
+      searchLoadingOverlay: document.getElementById("search-loading-overlay"),
       stationList: document.getElementById("station-list"),
+      introTitle: document.getElementById("intro-title"),
+      debugMenuPopup: document.getElementById("debug-menu-popup"),
+      debugMenuClose: document.getElementById("debug-menu-close"),
+      debugMenuDone: document.getElementById("debug-menu-done"),
+      debugMenuReset: document.getElementById("debug-menu-reset"),
+      debugMenuStatus: document.getElementById("debug-menu-status"),
+      debugTimeZoneList: document.getElementById("debug-timezone-list"),
+      debugPasswordForm: document.getElementById("debug-password-form"),
+      debugPasswordInput: document.getElementById("debug-password-input"),
+      debugPasswordError: document.getElementById("debug-password-error"),
+      debugMenuPanel: document.getElementById("debug-menu-panel"),
     };
 
     init();
 
     function init() {
-      els.date.value = new Date().toISOString().slice(0, 10);
+      applyDefaultSearchDateTime();
       initTheme();
+      initTimezoneNotice();
+      initDebugMenu();
       els.language.addEventListener("change", () => setLanguage(els.language.value));
       els.appearance.addEventListener("change", () => {
         setThemePreference(els.appearance.value);
@@ -2076,6 +2622,7 @@
         timeFormat = els.timeFormat.value;
         if (minutes !== null) els.time.value = formatInputTime(minutes);
         updateSettingSummaries();
+        refreshTimezoneNotice();
         renderSearch();
       });
       els.time.addEventListener("blur", () => {
@@ -2122,8 +2669,11 @@
         [els.origin.value, els.destination.value] = [els.destination.value, els.origin.value];
         renderSearch({ resetShortlist: true, requireSchedule: true });
       });
+      els.reset.addEventListener("click", resetSearchForm);
+      els.timezoneNoticeDismiss.addEventListener("click", dismissTimezoneNotice);
       document.addEventListener("visibilitychange", () => {
         if (!document.hidden && activeSearchState) renderActiveSearchResults();
+        if (!document.hidden) refreshTimezoneNotice();
       });
       els.updateLogButton.addEventListener("click", openUpdateLog);
       els.updateLogClose.addEventListener("click", closeUpdateLog);
@@ -2138,6 +2688,10 @@
       });
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") closeRealtimeStatusTooltips();
+        if (event.key === "Escape" && els.debugMenuPopup && !els.debugMenuPopup.hidden) {
+          closeDebugMenu();
+          return;
+        }
         if (els.updateLogPopup.hidden) return;
         if (event.key === "Escape") {
           closeUpdateLog();
@@ -2149,6 +2703,284 @@
       stations = initialStations();
       populateStations(stations);
       setLanguage(requestedLanguage || "en");
+    }
+
+    function initTimezoneNotice() {
+      browserTimeZone = detectedBrowserTimeZone();
+      debugTimeZone = storedDebugTimeZone();
+      visitorTimeZone = activeVisitorTimeZone();
+      if (!shouldShowTimezoneNotice(visitorTimeZone)) {
+        hideTimezoneNotice();
+        return;
+      }
+      showTimezoneNotice();
+    }
+
+    function detectedBrowserTimeZone() {
+      try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      } catch (_error) {
+        return "";
+      }
+    }
+
+    function activeVisitorTimeZone() {
+      return debugTimeZone || browserTimeZone;
+    }
+
+    function shouldShowTimezoneNotice(timeZone) {
+      return Boolean(timeZone && timeZone !== TRANSIT_TIME_ZONE && (debugTimeZone || !isTimezoneNoticeDismissed()));
+    }
+
+    function initDebugMenu() {
+      renderDebugTimeZoneOptions();
+      updateDebugMenuStatus();
+      renderDebugIntroTitle();
+      if (els.introTitle) {
+        els.introTitle.addEventListener("click", (event) => {
+          if (!event.target.closest("[data-debug-comma]")) return;
+          openDebugPasswordPrompt();
+        });
+      }
+      if (els.debugPasswordForm) {
+        els.debugPasswordForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          submitDebugPassword();
+        });
+      }
+      if (els.debugTimeZoneList) {
+        els.debugTimeZoneList.addEventListener("change", (event) => {
+          const input = event.target.closest("input[name='debug-timezone']");
+          if (!input) return;
+          setDebugTimeZone(input.value);
+        });
+      }
+      if (els.debugMenuClose) els.debugMenuClose.addEventListener("click", closeDebugMenu);
+      if (els.debugMenuDone) els.debugMenuDone.addEventListener("click", closeDebugMenu);
+      if (els.debugMenuReset) els.debugMenuReset.addEventListener("click", resetDebugTimeZone);
+      if (els.debugMenuPopup) {
+        els.debugMenuPopup.addEventListener("click", (event) => {
+          if (event.target === els.debugMenuPopup) closeDebugMenu();
+        });
+      }
+    }
+
+    function renderDebugIntroTitle() {
+      if (!els.introTitle) return;
+      if (!shouldShowDebugExperience()) {
+        els.introTitle.textContent = t("introTitle");
+        return;
+      }
+      els.introTitle.innerHTML = "Rail travel<button class=\"debug-comma-trigger\" type=\"button\" aria-label=\"Open debug menu\" data-debug-comma>,</button> simplified.";
+    }
+
+    function shouldShowDebugExperience() {
+      return currentLanguage === "en";
+    }
+
+    function openDebugPasswordPrompt() {
+      if (!shouldShowDebugExperience()) return;
+      if (!els.debugMenuPopup) return;
+      if (els.debugPasswordForm) els.debugPasswordForm.hidden = false;
+      if (els.debugMenuPanel) els.debugMenuPanel.hidden = true;
+      if (els.debugPasswordInput) els.debugPasswordInput.value = "";
+      if (els.debugPasswordError) els.debugPasswordError.hidden = true;
+      els.debugMenuPopup.hidden = false;
+      if (els.debugPasswordInput) els.debugPasswordInput.focus({ preventScroll: true });
+    }
+
+    function submitDebugPassword() {
+      if (!isDebugPassword(els.debugPasswordInput ? els.debugPasswordInput.value : "")) {
+        if (els.debugPasswordError) els.debugPasswordError.hidden = false;
+        if (els.debugPasswordInput) {
+          els.debugPasswordInput.select();
+          els.debugPasswordInput.focus({ preventScroll: true });
+        }
+        return;
+      }
+      openDebugMenu();
+    }
+
+    function isDebugPassword(password) {
+      return DEBUG_PASSWORDS.has(String(password || "").trim().toLowerCase());
+    }
+
+    function openDebugMenu() {
+      if (!els.debugMenuPopup) return;
+      syncDebugTimeZoneSelection();
+      updateDebugMenuStatus();
+      if (els.debugPasswordForm) els.debugPasswordForm.hidden = true;
+      if (els.debugMenuPanel) els.debugMenuPanel.hidden = false;
+      els.debugMenuPopup.hidden = false;
+      const checkedInput = els.debugTimeZoneList ? els.debugTimeZoneList.querySelector("input[name='debug-timezone']:checked") : null;
+      if (checkedInput) {
+        checkedInput.focus({ preventScroll: true });
+      } else if (els.debugMenuReset) {
+        els.debugMenuReset.focus({ preventScroll: true });
+      }
+    }
+
+    function closeDebugMenu() {
+      if (!els.debugMenuPopup) return;
+      els.debugMenuPopup.hidden = true;
+      if (els.debugPasswordError) els.debugPasswordError.hidden = true;
+    }
+
+    function renderDebugTimeZoneOptions() {
+      if (!els.debugTimeZoneList) return;
+      els.debugTimeZoneList.innerHTML = DEBUG_TIME_ZONES.map((item) => `
+        <label class="debug-timezone-option">
+          <input type="radio" name="debug-timezone" value="${escapeHtml(item.timeZone)}">
+          <span>${escapeHtml(item.label)}</span>
+        </label>
+      `).join("");
+      syncDebugTimeZoneSelection();
+    }
+
+    function syncDebugTimeZoneSelection() {
+      if (!els.debugTimeZoneList) return;
+      els.debugTimeZoneList.querySelectorAll("input[name='debug-timezone']").forEach((input) => {
+        input.checked = input.value === debugTimeZone;
+      });
+    }
+
+    function setDebugTimeZone(timeZone) {
+      if (!DEBUG_TIME_ZONES.some((item) => item.timeZone === timeZone)) return;
+      debugTimeZone = timeZone;
+      try {
+        localStorage.setItem(DEBUG_TIMEZONE_STORAGE_KEY, debugTimeZone);
+        if (debugTimeZone !== TRANSIT_TIME_ZONE) localStorage.removeItem(TIMEZONE_NOTICE_STORAGE_KEY);
+      } catch (_error) {
+        // The override still applies for this page view if storage is unavailable.
+      }
+      applyDebugTimeZone();
+    }
+
+    function resetDebugTimeZone() {
+      debugTimeZone = "";
+      try {
+        localStorage.removeItem(DEBUG_TIMEZONE_STORAGE_KEY);
+      } catch (_error) {
+        // Ignore storage failures; the in-memory override is still reset.
+      }
+      applyDebugTimeZone();
+      syncDebugTimeZoneSelection();
+    }
+
+    function applyDebugTimeZone() {
+      visitorTimeZone = activeVisitorTimeZone();
+      updateDebugMenuStatus();
+      if (shouldShowTimezoneNotice(visitorTimeZone)) {
+        showTimezoneNotice();
+      } else {
+        hideTimezoneNotice();
+      }
+      refreshTimezoneNotice();
+    }
+
+    function storedDebugTimeZone() {
+      try {
+        const savedTimeZone = localStorage.getItem(DEBUG_TIMEZONE_STORAGE_KEY) || "";
+        return DEBUG_TIME_ZONES.some((item) => item.timeZone === savedTimeZone) ? savedTimeZone : "";
+      } catch (_error) {
+        return "";
+      }
+    }
+
+    function updateDebugMenuStatus() {
+      if (!els.debugMenuStatus) return;
+      const selected = DEBUG_TIME_ZONES.find((item) => item.timeZone === debugTimeZone);
+      if (selected) {
+        els.debugMenuStatus.textContent = `Viewing as ${selected.label}.`;
+        return;
+      }
+      els.debugMenuStatus.textContent = browserTimeZone
+        ? `Using browser timezone: ${browserTimeZone}.`
+        : "Using browser timezone.";
+    }
+
+    function isTimezoneNoticeDismissed() {
+      try {
+        return localStorage.getItem(TIMEZONE_NOTICE_STORAGE_KEY) === "true";
+      } catch (_error) {
+        return false;
+      }
+    }
+
+    function showTimezoneNotice() {
+      if (!els.timezoneNotice) return;
+      els.timezoneNotice.hidden = false;
+      refreshTimezoneNotice();
+      startTimezoneNoticeTimer();
+    }
+
+    function hideTimezoneNotice() {
+      if (els.timezoneNotice) els.timezoneNotice.hidden = true;
+      stopTimezoneNoticeTimer();
+    }
+
+    function dismissTimezoneNotice() {
+      try {
+        localStorage.setItem(TIMEZONE_NOTICE_STORAGE_KEY, "true");
+      } catch (_error) {
+        // The dismissal still applies for this page view if storage is unavailable.
+      }
+      hideTimezoneNotice();
+    }
+
+    function startTimezoneNoticeTimer() {
+      stopTimezoneNoticeTimer();
+      timezoneNoticeTimer = window.setInterval(refreshTimezoneNotice, 60 * 1000);
+    }
+
+    function stopTimezoneNoticeTimer() {
+      if (!timezoneNoticeTimer) return;
+      window.clearInterval(timezoneNoticeTimer);
+      timezoneNoticeTimer = null;
+    }
+
+    function refreshTimezoneNotice(now = new Date()) {
+      if (!els.timezoneNotice || els.timezoneNotice.hidden || !visitorTimeZone) return;
+      const localTime = formatTimeInTimeZone(now, visitorTimeZone);
+      const easternTime = formatTimeInTimeZone(now, TRANSIT_TIME_ZONE);
+      if (!localTime || !easternTime) {
+        hideTimezoneNotice();
+        return;
+      }
+      els.timezoneNoticeTimes.textContent = t("timezoneNoticeTimes", { localTime, easternTime });
+    }
+
+    function formatTimeInTimeZone(date, timeZone) {
+      const parts = dateTimePartsForZone(date, timeZone);
+      if (!parts) return "";
+      return t("timezoneNoticeDateTime", {
+        date: formatDisplayDate(dateIsoFromParts(parts)),
+        time: formatInputTime(parts.hour * 60 + parts.minute),
+      });
+    }
+
+    function dateTimePartsForZone(date, timeZone) {
+      try {
+        const parts = new Intl.DateTimeFormat("en-US", {
+          timeZone,
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          hourCycle: "h23",
+        }).formatToParts(date);
+        const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+        return {
+          year: Number(values.year),
+          month: Number(values.month),
+          day: Number(values.day),
+          hour: Number(values.hour),
+          minute: Number(values.minute),
+        };
+      } catch (_error) {
+        return null;
+      }
     }
 
     function toggleRealtimeStatusTooltip(button) {
@@ -2180,9 +3012,12 @@
       document.querySelectorAll("option[data-i18n]").forEach((element) => {
         element.textContent = t(element.dataset.i18n);
       });
+      renderDebugIntroTitle();
+      if (!shouldShowDebugExperience()) closeDebugMenu();
       updateLocalizedAttributes();
       updateSettingSummaries();
       refreshStatus();
+      refreshTimezoneNotice();
       refreshSearchLoading();
       if (els && els.time) {
         const minutes = parseClockInput(els.time.value);
@@ -2735,22 +3570,136 @@
       els.search.textContent = t(loading ? "searching" : "findTrains");
       if (loading) {
         els.results.setAttribute("aria-busy", "true");
-        els.results.innerHTML = renderSearchLoadingState();
+        showSearchLoadingOverlay();
         setStatus("loadingFirstSearch");
         return;
       }
       els.results.removeAttribute("aria-busy");
+      hideSearchLoadingOverlay();
     }
 
     function refreshSearchLoading() {
       if (!isSearchLoading) return;
       els.search.textContent = t("searching");
-      els.results.innerHTML = renderSearchLoadingState();
+      refreshSearchLoadingOverlay();
       setStatus("loadingFirstSearch");
     }
 
-    function renderSearchLoadingState() {
-      return `<div class="empty" role="status"><p>${escapeHtml(t("loadingFirstSearch"))}</p></div>`;
+    function showSearchLoadingOverlay() {
+      if (!els.searchLoadingOverlay) return;
+      els.searchLoadingOverlay.hidden = false;
+      els.searchLoadingOverlay.setAttribute("aria-hidden", "false");
+    }
+
+    function hideSearchLoadingOverlay() {
+      if (!els.searchLoadingOverlay) return;
+      els.searchLoadingOverlay.hidden = true;
+      els.searchLoadingOverlay.setAttribute("aria-hidden", "true");
+    }
+
+    function refreshSearchLoadingOverlay() {
+      if (!els.searchLoadingOverlay) return;
+      els.searchLoadingOverlay.querySelectorAll("[data-i18n]").forEach((element) => {
+        element.textContent = t(element.dataset.i18n);
+      });
+    }
+
+    function resetSearchForm() {
+      if (isSearchLoading) return;
+      els.origin.value = "";
+      els.destination.value = "";
+      applyDefaultSearchDateTime();
+      els.mode.value = "leave";
+      timeFormat = els.timeFormat.value;
+      departureRangeHours = 24;
+      activeSearchState = null;
+      resetShortlistState();
+      stopActiveResultStatusRefresh();
+      closeRealtimeStatusTooltips();
+      els.results.innerHTML = "";
+      els.results.removeAttribute("aria-busy");
+      setStatus("readyToSearch");
+    }
+
+    function defaultSearchDate() {
+      return defaultSearchDateTime().date;
+    }
+
+    function applyDefaultSearchDateTime(now = new Date()) {
+      const defaults = defaultSearchDateTime(now);
+      els.date.value = defaults.date;
+      els.time.value = formatInputTime(defaults.minutes);
+    }
+
+    function defaultSearchDateTime(now = new Date()) {
+      const nowParts = transitDateTimeParts(now) || localDateTimeParts(now);
+      const currentDate = dateIsoFromParts(nowParts);
+      const currentMinutes = nowParts.hour * 60 + nowParts.minute;
+      if (currentMinutes >= 23 * 60 + 59) {
+        const tomorrow = new Date(nowParts.year, nowParts.month - 1, nowParts.day + 1);
+        return { date: localDateIso(tomorrow), minutes: 1 };
+      }
+      if (currentMinutes >= 23 * 60 + 45) {
+        return { date: currentDate, minutes: currentMinutes };
+      }
+      if (currentMinutes >= 23 * 60) {
+        return { date: currentDate, minutes: 23 * 60 + 45 };
+      }
+      return {
+        date: currentDate,
+        minutes: (nowParts.hour + 1) * 60,
+      };
+    }
+
+    function transitDateTimeParts(date) {
+      return dateTimePartsForZone(date, TRANSIT_TIME_ZONE);
+    }
+
+    function localDateTimeParts(date) {
+      return {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: date.getDate(),
+        hour: date.getHours(),
+        minute: date.getMinutes(),
+      };
+    }
+
+    function dateIsoFromParts(parts) {
+      return [
+        parts.year,
+        String(parts.month).padStart(2, "0"),
+        String(parts.day).padStart(2, "0"),
+      ].join("-");
+    }
+
+    function daylightSavingSearchTimeAdjustment(searchDate, minutes) {
+      if (!searchDate || Number.isNaN(searchDate.getTime()) || typeof minutes !== "number") return null;
+      const year = searchDate.getFullYear();
+      const springForwardDate = nthWeekdayOfMonth(year, 2, 0, 2);
+      const fallBackDate = nthWeekdayOfMonth(year, 10, 0, 1);
+
+      if (sameLocalDate(searchDate, springForwardDate) && minutes >= 2 * 60 && minutes < 3 * 60) {
+        return { minutes: 3 * 60, transition: "spring-forward" };
+      }
+
+      if (sameLocalDate(searchDate, fallBackDate) && minutes >= 1 * 60 && minutes < 2 * 60) {
+        return { minutes: 2 * 60, transition: "fall-back" };
+      }
+
+      return null;
+    }
+
+    function nthWeekdayOfMonth(year, monthIndex, weekday, occurrence) {
+      const firstOfMonth = new Date(year, monthIndex, 1);
+      const offset = (weekday - firstOfMonth.getDay() + 7) % 7;
+      return new Date(year, monthIndex, 1 + offset + (occurrence - 1) * 7);
+    }
+
+    function sameLocalDate(left, right) {
+      return left.getFullYear() === right.getFullYear() &&
+        left.getMonth() === right.getMonth() &&
+        left.getDate() === right.getDate();
     }
 
     function updateHomepageLinks() {
@@ -2791,7 +3740,7 @@
       if (resetShortlist) resetShortlistState();
       const loadedOrigin = findStation(els.origin.value);
       const loadedDestination = findStation(els.destination.value);
-      const loadedQueryTime = parseClockInput(els.time.value);
+      let loadedQueryTime = parseClockInput(els.time.value);
       if (!loadedOrigin || !loadedDestination || loadedQueryTime === null) {
         activeSearchState = null;
         stopActiveResultStatusRefresh();
@@ -2800,6 +3749,14 @@
         return;
       }
       const date = els.date.value ? new Date(`${els.date.value}T12:00:00`) : new Date();
+      const dstAdjustment = daylightSavingSearchTimeAdjustment(date, loadedQueryTime);
+      if (dstAdjustment) {
+        loadedQueryTime = dstAdjustment.minutes;
+        els.time.value = formatInputTime(loadedQueryTime);
+        setStatus("dstTimeAdjusted", { timeMinutes: loadedQueryTime }, true);
+      } else if (statusState.key === "dstTimeAdjusted") {
+        setStatus("readyToSearch");
+      }
       const mode = els.mode.value;
       const signature = searchSignature(loadedOrigin, loadedDestination, loadedQueryTime, mode, date);
       if (!activeSearchState || activeSearchState.signature !== signature) departureRangeHours = 24;
@@ -3344,9 +4301,13 @@
     function formatBoundaryTime(total, date) {
       const time = formatMinutes(total);
       const offset = dayOffset(total);
-      if (offset > 0) return `${time} ${t("tomorrow")}`;
+      if (offset > 0) return `${time} ${nextDayLabel(date)}`;
       if (offset < 0) return `${time} ${t("previousDay")}`;
       return time;
+    }
+
+    function nextDayLabel(date) {
+      return localDateIso(date) === defaultSearchDate() ? t("tomorrow") : t("relativeNextDay");
     }
 
     function findStation(value, options = {}) {
@@ -3552,8 +4513,11 @@
       return next;
     }
 
-    function serviceDatesForSearch(date, mode) {
-      return mode === "arrive" ? [date, addDays(date, -1)] : [date, addDays(date, 1)];
+    function serviceDatesForSearch(date, mode, queryTime) {
+      if (mode === "arrive") {
+        return queryTime < EARLY_MORNING_ARRIVE_BY_MINUTES ? [date, addDays(date, -1)] : [date];
+      }
+      return [date, addDays(date, 1)];
     }
 
     function routeServiceApplies(route, searchDate, queryTime, mode) {
@@ -3565,7 +4529,7 @@
     }
 
     function findRoutes(originId, destinationId, queryTime, mode, date) {
-      const usableTrips = trips.filter((trip) => serviceDatesForSearch(date, mode).some((serviceDate) => serviceApplies(trip, serviceDate)));
+      const usableTrips = trips.filter((trip) => serviceDatesForSearch(date, mode, queryTime).some((serviceDate) => serviceApplies(trip, serviceDate)));
       const legsByOrigin = buildLegIndex(usableTrips);
       const originLegs = legsByOrigin.get(originId) || [];
       const directs = originLegs
@@ -4129,6 +5093,12 @@
 
     function routeDayStatus(route, queryTime, mode, searchDate) {
       const times = routeWindowTimes(route, queryTime, mode);
+      if (mode === "arrive") {
+        if (dayOffset(times.departure) < 0 && dayOffset(times.arrival) >= 0) return "arrivesNextDay";
+        if (dayOffset(times.departure) > 0) return "nextDay";
+        if (dayOffset(times.arrival) > 0) return "arrivesNextDay";
+        return "";
+      }
       const searchWindowStart = mode === "arrive" ? queryTime - SEARCH_WINDOW_MINUTES : queryTime;
       const searchWindowStartDate = localDateWithOffset(searchDate, dayOffset(searchWindowStart));
       const departureDate = localDateWithOffset(searchDate, dayOffset(times.departure));
@@ -4200,8 +5170,9 @@
 
     function formatInputTime(total) {
       if (timeFormat !== "12") return formatTwentyFourHour(total);
-      const hours = Math.floor(total / 60) % 24;
-      const minutes = total % 60;
+      const normalized = normalizeMinuteOfDay(total);
+      const hours = Math.floor(normalized / 60);
+      const minutes = normalized % 60;
       const hour12 = hours % 12 || 12;
       const period = localizedPeriod(hours >= 12 ? "PM" : "AM");
       if (currentLanguage === "ko") return `${period} ${hour12}:${String(minutes).padStart(2, "0")}`;
@@ -4209,8 +5180,9 @@
     }
 
     function formatMinutes(total) {
-      const hours = Math.floor(total / 60) % 24;
-      const minutes = total % 60;
+      const normalized = normalizeMinuteOfDay(total);
+      const hours = Math.floor(normalized / 60);
+      const minutes = normalized % 60;
       if (timeFormat === "12") {
         const period = localizedPeriod(hours >= 12 ? "PM" : "AM");
         const hour12 = hours % 12 || 12;
@@ -4220,6 +5192,10 @@
       return formatTwentyFourHour(total);
     }
 
+    function normalizeMinuteOfDay(total) {
+      return ((total % 1440) + 1440) % 1440;
+    }
+
     function localizedPeriod(period) {
       if (currentLanguage === "ko") return period === "AM" ? "오전" : "오후";
       if (currentLanguage === "es") return period === "AM" ? "a. m." : "p. m.";
@@ -4227,8 +5203,9 @@
     }
 
     function formatTwentyFourHour(total) {
-      const hours = Math.floor(total / 60) % 24;
-      const minutes = total % 60;
+      const normalized = normalizeMinuteOfDay(total);
+      const hours = Math.floor(normalized / 60);
+      const minutes = normalized % 60;
       return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
     }
 
@@ -4250,10 +5227,15 @@
     }
 
     function refreshStatus() {
-      const values = Object.fromEntries(Object.entries(statusState.values).map(([key, value]) => [
-        key,
-        typeof value === "number" ? formatNumber(value) : value,
-      ]));
+      const values = Object.fromEntries(Object.entries(statusState.values)
+        .filter(([key]) => key !== "timeMinutes")
+        .map(([key, value]) => [
+          key,
+          typeof value === "number" ? formatNumber(value) : value,
+        ]));
+      if (Object.prototype.hasOwnProperty.call(statusState.values, "timeMinutes")) {
+        values.time = formatInputTime(statusState.values.timeMinutes);
+      }
       els.status.textContent = t(statusState.key, values);
       els.status.classList.toggle("warning", statusState.warning);
     }

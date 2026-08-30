@@ -20,6 +20,12 @@ function adjustedForWindow(value, queryTime, mode) {
 
 function routeDayStatus(route, queryTime, mode, searchDate) {
   const times = routeWindowTimes(route, queryTime, mode);
+  if (mode === "arrive") {
+    if (dayOffset(times.departure) < 0 && dayOffset(times.arrival) >= 0) return "arrivesNextDay";
+    if (dayOffset(times.departure) > 0) return "nextDay";
+    if (dayOffset(times.arrival) > 0) return "arrivesNextDay";
+    return "";
+  }
   const searchWindowStart = mode === "arrive" ? queryTime - SEARCH_WINDOW_MINUTES : queryTime;
   const searchWindowStartDate = localDateWithOffset(searchDate, dayOffset(searchWindowStart));
   const departureDate = localDateWithOffset(searchDate, dayOffset(times.departure));
@@ -85,7 +91,13 @@ assert.strictEqual(
 assert.strictEqual(
   routeDayStatus(makeRoute(23 * 60 + 35, 3), 10, "arrive", new Date(2026, 6, 26)),
   "arrivesNextDay",
-  "arrive-by searches compare against the actual search-window start date",
+  "early-morning arrive-by searches label previous-evening trips that arrive after midnight",
+);
+
+assert.strictEqual(
+  routeDayStatus(makeRoute(24, 43), 22 * 60, "arrive", new Date(2026, 7, 30)),
+  "",
+  "late-day arrive-by searches do not mark same-date early-morning service as next day",
 );
 
 console.log("next-day status tests passed");
