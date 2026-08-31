@@ -497,6 +497,7 @@
     label {
       display: grid;
       gap: 6px;
+      min-width: 0;
       font-size: 0.82rem;
       font-weight: 700;
       color: var(--body);
@@ -506,6 +507,8 @@
     select,
     button {
       width: 100%;
+      max-width: 100%;
+      min-width: 0;
       min-height: 44px;
       border-radius: 10px;
       border: 1px solid var(--line);
@@ -518,6 +521,20 @@
       background: var(--field);
       color: var(--ink);
       padding: 10px 12px;
+    }
+
+    input[type="date"] {
+      display: block;
+      -webkit-appearance: none;
+      appearance: none;
+      text-align: left;
+    }
+
+    input[type="date"]::-webkit-date-and-time-value {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      text-align: left;
     }
 
     input::placeholder,
