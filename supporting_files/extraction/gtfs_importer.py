@@ -798,13 +798,6 @@ def raw_notes_for(config: GtfsFeedConfig, trip: dict[str, str], stop_times: list
     for key in ["peak_offpeak", "trip_id", "service_id"]:
         if trip.get(key):
             notes.append(f"gtfs_{key}={trip[key]}" if key in {"trip_id", "service_id"} else f"{key}={trip[key]}")
-    if stop_times and stops_by_id:
-        first = stops_by_id.get(stop_times[0].get("stop_id", ""), {})
-        last = stops_by_id.get(stop_times[-1].get("stop_id", ""), {})
-        if first.get("stop_name"):
-            notes.append(f"source_origin={canonical_stop_name(config, first.get('stop_name', ''), stop_times[0].get('stop_id', ''))}")
-        if last.get("stop_name"):
-            notes.append(f"source_destination={canonical_stop_name(config, last.get('stop_name', ''), stop_times[-1].get('stop_id', ''))}")
     return "; ".join(notes)
 
 

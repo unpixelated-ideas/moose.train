@@ -257,8 +257,8 @@ class GtfsImporterTests(unittest.TestCase):
             self.assertEqual([row["station_id"] for row in train_95], ["NYP", "STM", "NHV"])
             self.assertTrue(all(row["agency"] == "Amtrak" for row in train_95))
             self.assertTrue(all(row["service_name"] == "Northeast Regional" for row in train_95))
-            self.assertIn("source_origin=Boston", train_95[0]["raw_notes"])
-            self.assertIn("source_destination=Washington", train_95[0]["raw_notes"])
+            self.assertIn("gtfs_trip_id=NER1", train_95[0]["raw_notes"])
+            self.assertIn("gtfs_service_id=S1", train_95[0]["raw_notes"])
             normalized_stop_names = {row["stop_name"] for row in result.normalized["stops"]}
             self.assertIn("Boston", normalized_stop_names)
             self.assertIn("Washington", normalized_stop_names)

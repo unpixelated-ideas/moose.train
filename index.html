@@ -962,6 +962,21 @@
       line-height: 1.45;
     }
 
+    .fare-summary {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .leg-fare {
+      justify-self: end;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 850;
+      line-height: 1.45;
+      text-align: right;
+      white-space: nowrap;
+    }
+
     .live-indicator {
       position: relative;
       display: inline-grid;
@@ -1030,7 +1045,7 @@
 
     .leg {
       display: grid;
-      grid-template-columns: 11.75rem minmax(0, 1fr);
+      grid-template-columns: 11.75rem minmax(0, 1fr) auto;
       column-gap: 18px;
       row-gap: 4px;
       padding-top: 8px;
@@ -1425,6 +1440,11 @@
         grid-template-columns: 1fr;
       }
 
+      .leg-fare {
+        justify-self: start;
+        text-align: left;
+      }
+
       .results-filter-top {
         align-items: stretch;
         flex-direction: column;
@@ -1625,11 +1645,21 @@
       <p class="update-log-meta">
         <span data-i18n="updateLogDataLabel">Schedule data</span>
         <span aria-hidden="true"> · </span>
-        <span data-i18n="updateLogDataRefresh">Last refreshed August 19, 2026</span>
+        <span data-i18n="updateLogDataRefresh">Last refreshed September 5, 2026</span>
         <span aria-hidden="true"> · </span>
         <a href="#timetable-csv-links-title" data-source-links data-i18n="updateLogViewSources">View sources</a>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v093-title">
+          <h3 id="update-log-v093-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.3</span>
+            <span class="update-log-release-date" data-i18n="updateLogV093Date">September 5, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV093Fares"><strong>Fare details are easier to compare.</strong> Added standard one-way adult fare information for Metro-North, Shore Line East, and Hartford Line trips.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v092-title">
           <h3 id="update-log-v092-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.2</span>
@@ -1847,6 +1877,185 @@
       ["YANKEES", "622"],
     ]);
     const MNR_REALTIME_GTFS_STOP_IDS = new Set(APP_TO_MNR_GTFS_STOP_ID.values());
+    const FARE_PASSENGER_CATEGORY = {
+      ADULT: "ADULT",
+    };
+    const FARE_PEAK_STATUS = {
+      PEAK: "PEAK",
+      OFF_PEAK: "OFF_PEAK",
+    };
+    const FARE_TYPE = {
+      ORDINARY_ONE_WAY: "ORDINARY_ONE_WAY",
+      CITYTICKET: "CITYTICKET",
+    };
+    const CTRAIL_FARE_PRODUCTS = {
+      SHORE_LINE_EAST: "ctrail-shore-line-east",
+      HARTFORD_LINE: "ctrail-hartford-line",
+    };
+    const MNR_FARE_DATA = {
+      metadata: {
+        sourceName: "MTA Metro-North Railroad fare tables",
+        sourceUrls: [
+          "https://www.mta.info/fares-tolls/lirr-metro-north",
+          "https://www.mta.info/document/194931",
+          "https://www.mta.info/document/194941",
+          "https://www.mta.info/document/194936",
+          "https://www.mta.info/document/194946",
+        ],
+        effectiveDate: "2026-07-01",
+        lastUpdated: "2026-09-01",
+      },
+      cityTicket: {
+        peak: 7.25,
+        offPeak: 5.25,
+        eligibleStationIds: new Set(["GCT", "H125", "FOR"]),
+      },
+      stationZones: new Map([
+        ["GCT", "1"],
+        ["H125", "1"],
+        ["FOR", "11"],
+        ["MVE", "12"],
+        ["PEL", "12"],
+        ["NRO", "12"],
+        ["LAR", "13"],
+        ["MAM", "13"],
+        ["HAR", "13"],
+        ["RYE", "14"],
+        ["POR", "14"],
+        ["GRE", "15"],
+        ["COB", "15"],
+        ["RIV", "15"],
+        ["OGW", "15"],
+        ["STM", "16"],
+        ["NTH", "16"],
+        ["DAR", "16"],
+        ["ROW", "16"],
+        ["SONO", "17"],
+        ["ENW", "17"],
+        ["WPT", "18"],
+        ["GNF", "18"],
+        ["SOP", "18"],
+        ["FFD", "18"],
+        ["FFB", "18"],
+        ["BRP", "19"],
+        ["SFD", "20"],
+        ["MIL", "20"],
+        ["WHA", "21"],
+        ["NHV", "21"],
+        ["STS", "21"],
+        ["GLB", "31"],
+        ["SPD", "31"],
+        ["TMH", "31"],
+        ["NCN", "31"],
+        ["MRT7", "41"],
+        ["WILTON", "41"],
+        ["CND", "41"],
+        ["BVL", "42"],
+        ["RDG", "42"],
+        ["BTH", "42"],
+        ["DAN", "42"],
+        ["DBY", "51"],
+        ["ANS", "51"],
+        ["SEY", "51"],
+        ["BCF", "51"],
+        ["NAU", "51"],
+        ["WBY", "51"],
+      ]),
+      terminalOneWay: new Map(Object.entries({
+        "1": { peak: 7.25, offPeak: 5.25 },
+        "2": { peak: 7.25, offPeak: 5.25 },
+        "11": { peak: 7.25, offPeak: 5.25 },
+        "12": { peak: 12.25, offPeak: 9.00 },
+        "13": { peak: 13.75, offPeak: 10.25 },
+        "14": { peak: 15.00, offPeak: 11.00 },
+        "15": { peak: 16.00, offPeak: 11.75 },
+        "16": { peak: 17.75, offPeak: 13.25 },
+        "17": { peak: 19.00, offPeak: 14.00 },
+        "18": { peak: 20.75, offPeak: 15.25 },
+        "19": { peak: 22.75, offPeak: 16.75 },
+        "20": { peak: 24.25, offPeak: 18.00 },
+        "21": { peak: 27.25, offPeak: 20.25 },
+        "31": { peak: 17.75, offPeak: 13.25 },
+        "41": { peak: 19.75, offPeak: 14.50 },
+        "42": { peak: 20.75, offPeak: 15.25 },
+        "51": { peak: 24.25, offPeak: 18.00 },
+      })),
+      intermediateOneWayZones: ["11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "31", "41", "42", "51"],
+      intermediateOneWay: new Map(),
+    };
+    [
+      ["11", [3.50, 4.50, 5.75, 6.00, 7.25, 8.50, 10.25, 12.00, 13.50, 16.50, 7.25, 9.00, 11.75, 14.50]],
+      ["12", [3.50, 3.50, 3.50, 4.25, 5.75, 7.25, 8.50, 10.25, 12.00, 13.50, 16.50, 7.25, 9.00, 10.25, 13.75]],
+      ["13", [4.50, 3.50, 3.50, 4.25, 4.50, 6.00, 7.25, 8.75, 10.50, 12.00, 15.00, 6.00, 7.50, 9.00, 13.00]],
+      ["14", [5.75, 4.25, 4.25, 3.50, 4.25, 5.75, 7.00, 8.50, 10.00, 11.50, 14.50, 5.75, 7.25, 8.50, 12.25]],
+      ["15", [6.00, 5.75, 4.50, 4.25, 3.50, 3.50, 4.25, 5.50, 7.25, 8.75, 11.75, 3.50, 4.75, 7.00, 9.25]],
+      ["16", [7.25, 7.25, 6.00, 5.75, 3.50, 3.50, 3.50, 3.50, 5.50, 7.00, 9.50, 3.50, 4.25, 5.75, 7.75]],
+      ["17", [8.50, 8.50, 7.25, 7.00, 4.25, 3.50, 3.50, 3.50, 4.50, 5.50, 8.50, 4.25, 3.50, 4.25, 7.25]],
+      ["18", [10.25, 10.25, 8.75, 8.50, 5.50, 3.50, 3.50, 3.50, 3.50, 4.25, 6.50, 5.50, 4.25, 6.00, 6.00]],
+      ["19", [12.00, 12.00, 10.50, 10.00, 7.25, 5.50, 4.50, 3.50, 3.50, 4.50, 7.00, 5.50, 7.25, 3.50]],
+      ["20", [13.50, 13.50, 12.00, 11.50, 8.75, 7.00, 5.50, 4.25, 3.50, 3.50, 4.25, 7.50, 6.00, 7.50, 3.50]],
+      ["21", [16.50, 16.50, 15.00, 14.50, 11.75, 9.50, 8.50, 6.50, 4.50, 4.25, 3.50, 10.25, 8.50, 10.50, 7.25]],
+      ["31", [7.25, 7.25, 6.00, 5.75, 3.50, 3.50, 4.25, 5.50, 7.00, 7.50, 10.25, 3.50, 5.50, 7.00, 9.25]],
+      ["41", [9.00, 9.00, 7.50, 7.25, 4.75, 4.25, 3.50, 4.25, 5.50, 6.00, 8.50, 5.50, 3.25, 3.25, 8.50]],
+      ["42", [11.75, 10.25, 9.00, 8.50, 7.00, 5.75, 4.25, 6.00, 7.25, 7.50, 10.50, 7.00, 3.25, 3.25, 10.50]],
+      ["51", [14.50, 13.75, 13.00, 12.25, 9.25, 7.75, 7.25, 6.00, 3.50, 3.50, 7.25, 9.25, 8.50, 10.50, 3.25]],
+    ].forEach(([originZone, fares]) => {
+      const destinationZones = MNR_FARE_DATA.intermediateOneWayZones.filter((zone) => zone !== originZone || fares.length === MNR_FARE_DATA.intermediateOneWayZones.length);
+      fares.forEach((amount, index) => {
+        const destinationZone = destinationZones[index];
+        if (destinationZone) MNR_FARE_DATA.intermediateOneWay.set(fareZonePairKey(originZone, destinationZone), amount);
+      });
+    });
+    const CTRAIL_FARE_DATA = {
+      metadata: {
+        sourceName: "CTrail fare tables",
+        sourceUrls: [
+          "https://shorelineeast.com/fares/",
+          "https://shorelineeast.com/wp-content/uploads/2026/08/CTrail-Fares-2026-updates.xlsx-Shore-Line-East-Fares.pdf",
+          "https://hartfordline.com/fares-schedules/ticketing/",
+          "https://hartfordline.com/wp-content/uploads/2026/06/CTrail-Fares-2026-updates.xlsx-Hartford-Line-Fares.pdf",
+        ],
+        effectiveDate: "2026-07-01",
+        lastUpdated: "2026-09-01",
+      },
+      stationAliases: new Map([
+        ["STS", "NHV"],
+      ]),
+      products: {
+        [CTRAIL_FARE_PRODUCTS.SHORE_LINE_EAST]: {
+          name: "CTrail Shore Line East",
+          stationIds: ["NHV", "BRA", "GUI", "MAD", "CLIN", "WBK", "OSB", "NLC"],
+          oneWayCents: new Map(),
+        },
+        [CTRAIL_FARE_PRODUCTS.HARTFORD_LINE]: {
+          name: "CTrail Hartford Line",
+          stationIds: ["NHV", "WFD", "MDN", "BER", "HFD", "WND", "WNL", "SPG"],
+          oneWayCents: new Map(),
+        },
+      },
+    };
+    [
+      ["BRA", [400]],
+      ["GUI", [500, 400]],
+      ["MAD", [575, 400, 400]],
+      ["CLIN", [650, 525, 525, 525]],
+      ["WBK", [725, 525, 525, 525, 400]],
+      ["OSB", [850, 525, 525, 525, 400, 400]],
+      ["NLC", [1175, 850, 850, 850, 525, 525, 525]],
+    ].forEach(([destinationStationId, fares]) => {
+      addStationPairFares(CTRAIL_FARE_PRODUCTS.SHORE_LINE_EAST, destinationStationId, fares);
+    });
+    [
+      ["WFD", [425]],
+      ["MDN", [550, 350]],
+      ["BER", [675, 425, 350]],
+      ["HFD", [925, 625, 525, 400]],
+      ["WND", [1050, 750, 650, 525, 350]],
+      ["WNL", [1150, 875, 725, 600, 400, 350]],
+      ["SPG", [1475, 1175, 1050, 925, 675, 550, 475]],
+    ].forEach(([destinationStationId, fares]) => {
+      addStationPairFares(CTRAIL_FARE_PRODUCTS.HARTFORD_LINE, destinationStationId, fares);
+    });
     const systemThemeQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
     const translations = {
@@ -1926,6 +2135,11 @@
         realtimeSkipped: "Stop skipped",
         realtimeTooFar: "Train scheduled too far in advance for live data",
         realtimeUnavailableLine: "Train scheduled but realtime is not available for this line",
+        farePeak: "Peak",
+        fareOffPeak: "Off-Peak",
+        fareCityTicket: "CityTicket",
+        fareOneWay: "One-way",
+        fareStandardOneWay: "standard one-way fare",
         tomorrow: "tomorrow",
         relativeNextDay: "the next day",
         previousDay: "previous day",
@@ -1947,6 +2161,8 @@
         learnMoreFeedback: "Feedback",
         updateLogTitle: "Update Log",
         updateLogClose: "Close update log",
+        updateLogV093Date: "September 5, 2026",
+        updateLogV093Fares: "<strong>Fare details are easier to compare.</strong> Added standard one-way adult fare information for Metro-North, Shore Line East, and Hartford Line trips.",
         updateLogV092Date: "August 31, 2026",
         updateLogV092Feedback: "<strong>Feedback is easier to share.</strong> Added a feedback link so riders can send input as moose.train keeps improving.",
         updateLogV091Date: "August 30, 2026",
@@ -1966,7 +2182,7 @@
         updateLogPreferences: "<strong>Make it yours.</strong> Choose light, dark, or system appearance; 12- or 24-hour time; and English, Korean, or Spanish.",
         updateLogStates: "<strong>Better answers when there isn’t a trip.</strong> Clearer explanations for unavailable dates, next-day trips, and journeys that would require two or more transfers.",
         updateLogDataLabel: "Schedule data",
-        updateLogDataRefresh: "Last refreshed August 19, 2026",
+        updateLogDataRefresh: "Last refreshed September 5, 2026",
         updateLogViewSources: "View sources",
         updateLogV07Date: "June 20, 2026",
         updateLogV07Initial: "<strong>Initial build.</strong> The first working version of moose.train brought the basic trip-planning idea onto the page.",
@@ -2049,6 +2265,11 @@
         realtimeSkipped: "정차 생략",
         realtimeTooFar: "실시간 정보를 보기에는 너무 이른 열차입니다",
         realtimeUnavailableLine: "이 노선은 실시간 정보를 제공하지 않습니다",
+        farePeak: "피크",
+        fareOffPeak: "오프피크",
+        fareCityTicket: "CityTicket",
+        fareOneWay: "편도",
+        fareStandardOneWay: "일반 편도 운임",
         tomorrow: "내일",
         relativeNextDay: "다음 날",
         previousDay: "전날",
@@ -2070,6 +2291,8 @@
         learnMoreFeedback: "피드백",
         updateLogTitle: "업데이트 로그",
         updateLogClose: "업데이트 로그 닫기",
+        updateLogV093Date: "2026년 9월 5일",
+        updateLogV093Fares: "<strong>요금 정보를 더 쉽게 비교할 수 있게.</strong> Metro-North, Shore Line East, Hartford Line 여정에 표준 편도 성인 요금 정보를 추가했습니다.",
         updateLogV092Date: "2026년 8월 31일",
         updateLogV092Feedback: "<strong>의견을 더 쉽게 보낼 수 있게.</strong> moose.train을 계속 개선해 나갈 수 있도록 이용자가 의견을 보낼 수 있는 피드백 링크를 추가했습니다.",
         updateLogV091Date: "2026년 8월 30일",
@@ -2089,7 +2312,7 @@
         updateLogPreferences: "<strong>내 방식대로.</strong> 라이트, 다크, 시스템 화면 모드와 12시간/24시간 형식, 영어/한국어/스페인어를 선택할 수 있습니다.",
         updateLogStates: "<strong>열차가 없을 때도 더 친절하게.</strong> 검색 가능한 날짜를 벗어났거나, 다음 날 도착하거나, 두 번 이상의 환승이 필요한 경우를 더 분명하게 안내합니다.",
         updateLogDataLabel: "일정 데이터",
-        updateLogDataRefresh: "마지막 새로 고침 2026년 8월 19일",
+        updateLogDataRefresh: "마지막 새로 고침 2026년 9월 5일",
         updateLogViewSources: "원본 보기",
         updateLogV07Date: "2026년 6월 20일",
         updateLogV07Initial: "<strong>첫 빌드.</strong> moose.train의 기본 여행 계획 아이디어를 처음으로 페이지 위에서 작동하는 형태로 만들었습니다.",
@@ -2172,6 +2395,11 @@
         realtimeSkipped: "Parada omitida",
         realtimeTooFar: "Tren programado demasiado lejos para datos en vivo",
         realtimeUnavailableLine: "Tren programado, pero esta línea no tiene datos en vivo",
+        farePeak: "Pico",
+        fareOffPeak: "Fuera de pico",
+        fareCityTicket: "CityTicket",
+        fareOneWay: "Solo ida",
+        fareStandardOneWay: "tarifa estándar de solo ida",
         tomorrow: "mañana",
         relativeNextDay: "el día siguiente",
         previousDay: "día anterior",
@@ -2193,6 +2421,8 @@
         learnMoreFeedback: "Comentarios",
         updateLogTitle: "Registro de cambios",
         updateLogClose: "Cerrar registro de cambios",
+        updateLogV093Date: "5 de septiembre de 2026",
+        updateLogV093Fares: "<strong>Las tarifas son más fáciles de comparar.</strong> Agregamos información de tarifa adulta estándar de ida para viajes de Metro-North, Shore Line East y Hartford Line.",
         updateLogV092Date: "31 de agosto de 2026",
         updateLogV092Feedback: "<strong>Compartir comentarios es más fácil.</strong> Agregamos un enlace de comentarios para que los pasajeros puedan enviar ideas mientras moose.train sigue mejorando.",
         updateLogV091Date: "30 de agosto de 2026",
@@ -2212,7 +2442,7 @@
         updateLogPreferences: "<strong>A tu manera.</strong> Elige apariencia clara, oscura o del sistema; formato de 12 o 24 horas; e inglés, coreano o español.",
         updateLogStates: "<strong>Mejores respuestas cuando no hay viaje.</strong> Explicaciones más claras para fechas no disponibles, viajes del día siguiente y trayectos que requerirían dos o más transbordos.",
         updateLogDataLabel: "Datos de horarios",
-        updateLogDataRefresh: "Última actualización: 19 de agosto de 2026",
+        updateLogDataRefresh: "Última actualización: 5 de septiembre de 2026",
         updateLogViewSources: "Ver fuentes",
         updateLogV07Date: "20 de junio de 2026",
         updateLogV07Initial: "<strong>Primera versión.</strong> La idea básica de planificación de viajes de moose.train llegó por primera vez a una página funcional.",
@@ -2225,7 +2455,7 @@
       en: [
         { open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City and Connecticut region, bringing together schedules from Amtrak, Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p>` },
         { open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train currently focuses on rail travel between New York City and Connecticut. That includes stations along the Metro-North New Haven Line in Westchester County, as well as destinations throughout Connecticut served by Metro-North, Amtrak, CTrail Shore Line East, and the CTrail Hartford Line.</p><p>The coverage stretches a little beyond those borders, too. You can plan trips as far north as Springfield, Massachusetts, and as far east as Westerly, Rhode Island.</p><p>This is just the starting point. I kept the initial service area relatively focused so I could get the experience right before expanding to more places.</p>` },
-        { open: true, summary: "When was the data most recently refreshed?", content: `<p>The schedule data in moose.train was last imported on August 19, 2026 at about 8:47 PM Eastern. Because moose.train currently uses published static GTFS schedule data rather than live train data, the results you see are based on the official schedules available at the time of the most recent import.</p><p>There are two useful dates to keep in mind: <strong>provider updated</strong>, which is the date indicated by the source feed or file, and <strong>received by moose.train</strong>, which is when this site last imported that feed.</p><ul><li><strong>Amtrak:</strong> provider updated August 19, 2026; received August 19, 2026. Service currently extends through August 16, 2027.</li><li><strong>Metro-North:</strong> provider updated August 19, 2026; received August 19, 2026. Service currently extends through November 21, 2026.</li><li><strong>CTrail Hartford Line:</strong> provider updated August 19, 2026; received August 19, 2026. Service currently extends through July 12, 2027.</li><li><strong>CTrail Shore Line East:</strong> provider updated August 19, 2026; received August 19, 2026. Service currently extends through August 16, 2027.</li></ul><p>If a search is beyond the available schedule data for a trip, moose.train will show the latest date currently supported for that search.</p>` },
+        { open: true, summary: "When was the data most recently refreshed?", content: `<p>The schedule data in moose.train was last imported on September 5, 2026 at about 11:05 PM Eastern. Because moose.train currently uses published static GTFS schedule data rather than live train data, the results you see are based on the official schedules available at the time of the most recent import.</p><p>There are two useful dates to keep in mind: <strong>provider updated</strong>, which is the date indicated by the source feed or file, and <strong>received by moose.train</strong>, which is when this site last imported that feed. The current import records verify receipt dates but do not independently establish when providers last published an update.</p><ul><li><strong>Amtrak:</strong> provider update date unverified; received September 5, 2026. Service currently extends through August 30, 2027.</li><li><strong>Metro-North:</strong> provider update date unverified; received September 5, 2026. Service currently extends through May 22, 2027.</li><li><strong>CTrail Hartford Line:</strong> provider update date unverified; received September 5, 2026. Service currently extends through July 12, 2027.</li><li><strong>CTrail Shore Line East:</strong> provider update date unverified; received September 5, 2026. Service currently extends through August 30, 2027.</li></ul><p>If a search is beyond the available schedule data for a trip, moose.train will show the latest date currently supported for that search.</p>` },
         { summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from four rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they cover all scheduled passenger rail service between New York City and Connecticut, along with connections farther into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
         { summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
         { summary: "Why is it called moose.train?", content: `<p>It started as an acronym! The original working name was <strong>Metro-North Or Other Service Evaluator</strong>, or <strong>MOOSE</strong>. The name stuck, and eventually became moose.train.</p><p>And, conveniently enough, there really are moose in both New York and Connecticut. So it felt worth keeping. 🫎</p>` },
@@ -2237,7 +2467,7 @@
         { summary: "Does moose.train show real-time delays?", content: `<p>Yes, for Metro-North trips when delay information is available. Metro-North results may show whether a trip appears to be on time or delayed.</p><p>moose.train does not currently show delay information for Amtrak, CTrail Hartford Line, or CTrail Shore Line East trips. Those results are based on published schedules, so real-time delays, cancellations, and other service changes may not appear.</p><p>I’d like to expand live train information in the future. For now, check with the operator directly before you travel if timing is important.</p>` },
         { summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City and Connecticut are just the starting point.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
         { summary: "Is moose.train free?", content: `<p>Yes! moose.train is completely free to use.</p><p>The schedule data comes from publicly available information published by the rail operators, and I built moose.train because I wanted a better way to make sense of it. It only seemed right to make that tool available to everyone else, too.</p>` },
-        { summary: "Does moose.train calculate ticket prices?", content: `<p>Not yet. For now, moose.train focuses on comparing schedules, travel times, and transfers rather than ticket prices.</p><p>Fare information would make those comparisons even more useful, especially when deciding between options like Amtrak and regional rail, so it’s something I’d love to add in the future.</p>` },
+        { summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North New Haven Line, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares, UniRail connections, or trips whose fare is not represented in the local official fare table data.</p>` },
         { summary: "Can I save favorite stations or trips?", content: `<p>Not permanently, but you can <strong>shortlist trips</strong> while comparing your results. Just add the trips you’re interested in to your shortlist, then hide everything else to make them easier to compare.</p><p>Your shortlist is designed for narrowing down options during your current search rather than saving trips or favorite stations for later. More persistent saving options could be useful in the future.</p>` },
         { summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p>` },
         { summary: "Will there eventually be a mobile app?", content: `<p>Maybe someday! For now, my focus is on making moose.train work really well in the browser, whether you’re using a phone, tablet, or computer.</p><p>A dedicated mobile app could be great down the road, especially if there are features that would genuinely benefit from one. But for now, I’d rather make the web experience as good as it can be.</p>` },
@@ -2246,7 +2476,7 @@
       ko: [
         { open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시와 코네티컷 지역에 집중하고 있으며, Amtrak, Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p>` },
         { open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 현재 뉴욕시와 코네티컷 사이의 철도 여행에 집중하고 있습니다. 여기에는 웨스트체스터 카운티의 Metro-North New Haven Line 역들과, Metro-North, Amtrak, CTrail Shore Line East, CTrail Hartford Line이 운행하는 코네티컷 내 목적지가 포함됩니다.</p><p>지원 범위는 그 경계를 조금 넘어섭니다. 북쪽으로는 매사추세츠주 스프링필드까지, 동쪽으로는 로드아일랜드주 웨스터리까지 여행을 계획할 수 있습니다.</p><p>이것은 시작점일 뿐입니다. 더 많은 지역으로 확장하기 전에 경험을 제대로 다듬기 위해 초기 서비스 지역을 비교적 좁게 유지했습니다.</p>` },
-        { open: true, summary: "데이터는 가장 최근에 언제 새로 고쳤나요?", content: `<p>moose.train의 시간표 데이터는 2026년 8월 19일 동부시간 오후 8시 47분경에 마지막으로 가져왔습니다. moose.train은 현재 실시간 열차 데이터가 아니라 게시된 정적 GTFS 시간표 데이터를 사용하므로, 검색 결과는 가장 최근 가져온 시점에 제공되던 공식 시간표를 기준으로 합니다.</p><p>여기에는 두 가지 날짜가 있습니다. <strong>제공자 업데이트</strong>는 원본 피드나 파일에 표시된 날짜이고, <strong>moose.train 수신</strong>은 이 사이트가 해당 피드를 마지막으로 가져온 날짜입니다.</p><ul><li><strong>Amtrak:</strong> 제공자 업데이트 2026년 8월 19일, 수신 2026년 8월 19일. 현재 2027년 8월 16일까지의 운행이 포함되어 있습니다.</li><li><strong>Metro-North:</strong> 제공자 업데이트 2026년 8월 19일, 수신 2026년 8월 19일. 현재 2026년 11월 21일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Hartford Line:</strong> 제공자 업데이트 2026년 8월 19일, 수신 2026년 8월 19일. 현재 2027년 7월 12일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Shore Line East:</strong> 제공자 업데이트 2026년 8월 19일, 수신 2026년 8월 19일. 현재 2027년 8월 16일까지의 운행이 포함되어 있습니다.</li></ul><p>검색 날짜가 해당 여행에 사용할 수 있는 시간표 범위를 넘어가면, moose.train은 현재 검색할 수 있는 가장 늦은 날짜를 알려 줍니다.</p>` },
+        { open: true, summary: "데이터는 가장 최근에 언제 새로 고쳤나요?", content: `<p>moose.train의 시간표 데이터는 2026년 9월 5일 동부시간 오후 11시 5분경에 마지막으로 가져왔습니다. moose.train은 현재 실시간 열차 데이터가 아니라 게시된 정적 GTFS 시간표 데이터를 사용하므로, 검색 결과는 가장 최근 가져온 시점에 제공되던 공식 시간표를 기준으로 합니다.</p><p>여기에는 두 가지 날짜가 있습니다. <strong>제공자 업데이트</strong>는 원본 피드나 파일에 표시된 날짜이고, <strong>moose.train 수신</strong>은 이 사이트가 해당 피드를 마지막으로 가져온 날짜입니다. 현재 가져오기 기록으로 수신 날짜는 확인할 수 있지만, 제공자가 마지막으로 업데이트를 게시한 날짜는 별도로 확인되지 않았습니다.</p><ul><li><strong>Amtrak:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 9월 5일. 현재 2027년 8월 30일까지의 운행이 포함되어 있습니다.</li><li><strong>Metro-North:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 9월 5일. 현재 2027년 5월 22일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Hartford Line:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 9월 5일. 현재 2027년 7월 12일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Shore Line East:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 9월 5일. 현재 2027년 8월 30일까지의 운행이 포함되어 있습니다.</li></ul><p>검색 날짜가 해당 여행에 사용할 수 있는 시간표 범위를 넘어가면, moose.train은 현재 검색할 수 있는 가장 늦은 날짜를 알려 줍니다.</p>` },
         { summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 네 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시와 코네티컷 사이의 모든 정기 여객 철도 서비스와 주변 지역으로 이어지는 연결편을 함께 포괄합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
         { summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
         { summary: "왜 이름이 moose.train인가요?", content: `<p>처음에는 약어에서 시작했습니다! 원래 작업 이름은 <strong>Metro-North Or Other Service Evaluator</strong>, 즉 <strong>MOOSE</strong>였습니다. 그 이름이 계속 남았고, 결국 moose.train이 되었습니다.</p><p>게다가 실제로 뉴욕과 코네티컷에는 무스가 살고 있습니다. 그래서 계속 써도 괜찮겠다고 느꼈습니다. 🫎</p>` },
@@ -2258,7 +2488,7 @@
         { summary: "moose.train에서 실시간 지연 정보를 보여 주나요?", content: `<p>네, Metro-North 여정은 지연 정보가 제공되는 경우 표시합니다. Metro-North 검색 결과에서는 여정이 정시인지 지연 중인지 확인할 수 있습니다.</p><p>moose.train은 현재 Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 지연 정보는 표시하지 않습니다. 해당 결과는 게시된 시간표를 기준으로 하므로 실시간 지연, 취소 및 기타 서비스 변경 사항이 나타나지 않을 수 있습니다.</p><p>앞으로 실시간 열차 정보를 더 넓게 제공하고 싶습니다. 현재로서는 시간이 중요한 경우 여행 전에 운영사에 직접 최신 정보를 확인해 주세요.</p>` },
         { summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 뉴욕시와 코네티컷은 시작점일 뿐입니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
         { summary: "moose.train은 무료인가요?", content: `<p>네! moose.train은 완전히 무료로 사용할 수 있습니다.</p><p>시간표 데이터는 철도 운영사들이 공개한 공개 정보에서 가져오며, 저는 그 정보를 더 잘 이해할 수 있는 방법이 필요해서 moose.train을 만들었습니다. 그 도구를 다른 사람들도 사용할 수 있게 하는 것이 자연스럽다고 생각했습니다.</p>` },
-        { summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>아직은 아닙니다. 현재 moose.train은 티켓 가격이 아니라 시간표, 이동 시간, 환승 비교에 집중합니다.</p><p>요금 정보가 있으면 Amtrak과 지역 철도 같은 선택지 사이에서 결정할 때 비교가 더 유용해질 수 있으므로, 앞으로 추가하고 싶은 기능입니다.</p>` },
+        { summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금, UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p>` },
         { summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>영구적으로 저장할 수는 없지만, 결과를 비교하는 동안 <strong>여정을 후보 목록에 추가</strong>할 수 있습니다. 관심 있는 여정을 후보 목록에 넣은 다음, 나머지를 숨겨 더 쉽게 비교할 수 있습니다.</p><p>후보 목록은 나중을 위해 여행이나 자주 쓰는 역을 저장하는 기능이 아니라, 현재 검색에서 선택지를 좁히기 위한 기능입니다. 더 오래 유지되는 저장 기능은 앞으로 유용할 수 있습니다.</p>` },
         { summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p>` },
         { summary: "언젠가 모바일 앱도 나오나요?", content: `<p>언젠가는 가능할 수도 있습니다! 지금은 휴대폰, 태블릿, 컴퓨터 어디에서든 moose.train이 브라우저에서 잘 작동하도록 만드는 데 집중하고 있습니다.</p><p>전용 모바일 앱은 나중에 좋을 수 있습니다. 특히 앱이 있을 때 실제로 더 좋아지는 기능이 있다면요. 하지만 지금은 웹 경험을 최대한 좋게 만드는 데 더 집중하고 싶습니다.</p>` },
@@ -2267,7 +2497,7 @@
       es: [
         { open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York y Connecticut, reuniendo horarios de Amtrak, Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p>` },
         { open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train actualmente se centra en viajes en tren entre la ciudad de Nueva York y Connecticut. Eso incluye estaciones de la línea Metro-North New Haven Line en el condado de Westchester, así como destinos de Connecticut servidos por Metro-North, Amtrak, CTrail Shore Line East y CTrail Hartford Line.</p><p>La cobertura también se extiende un poco más allá de esos límites. Puedes planificar viajes tan al norte como Springfield, Massachusetts, y tan al este como Westerly, Rhode Island.</p><p>Esto es solo el punto de partida. Mantuve el área inicial de servicio relativamente enfocada para poder mejorar la experiencia antes de expandirla a más lugares.</p>` },
-        { open: true, summary: "¿Cuándo se actualizaron los datos por última vez?", content: `<p>Los datos de horarios de moose.train se importaron por última vez el 19 de agosto de 2026 alrededor de las 8:47 p. m., hora del Este. Como moose.train actualmente usa datos estáticos GTFS publicados en vez de datos de trenes en vivo, los resultados que ves se basan en los horarios oficiales disponibles en el momento de la importación más reciente.</p><p>Hay dos fechas útiles: <strong>actualizado por el proveedor</strong>, que es la fecha indicada por el feed o archivo de origen, y <strong>recibido por moose.train</strong>, que es cuando este sitio importó ese feed por última vez.</p><ul><li><strong>Amtrak:</strong> proveedor actualizado el 19 de agosto de 2026; recibido el 19 de agosto de 2026. El servicio actualmente llega hasta el 16 de agosto de 2027.</li><li><strong>Metro-North:</strong> proveedor actualizado el 19 de agosto de 2026; recibido el 19 de agosto de 2026. El servicio actualmente llega hasta el 21 de noviembre de 2026.</li><li><strong>CTrail Hartford Line:</strong> proveedor actualizado el 19 de agosto de 2026; recibido el 19 de agosto de 2026. El servicio actualmente llega hasta el 12 de julio de 2027.</li><li><strong>CTrail Shore Line East:</strong> proveedor actualizado el 19 de agosto de 2026; recibido el 19 de agosto de 2026. El servicio actualmente llega hasta el 16 de agosto de 2027.</li></ul><p>Si una búsqueda está fuera del rango de horarios disponible para un viaje, moose.train mostrará la última fecha disponible actualmente para esa búsqueda.</p>` },
+        { open: true, summary: "¿Cuándo se actualizaron los datos por última vez?", content: `<p>Los datos de horarios de moose.train se importaron por última vez el 5 de septiembre de 2026 alrededor de las 11:05 p. m., hora del Este. Como moose.train actualmente usa datos estáticos GTFS publicados en vez de datos de trenes en vivo, los resultados que ves se basan en los horarios oficiales disponibles en el momento de la importación más reciente.</p><p>Hay dos fechas útiles: <strong>actualizado por el proveedor</strong>, que es la fecha indicada por el feed o archivo de origen, y <strong>recibido por moose.train</strong>, que es cuando este sitio importó ese feed por última vez. Los registros actuales confirman la recepción, pero no verifican de forma independiente cuándo publicó cada proveedor su última actualización.</p><ul><li><strong>Amtrak:</strong> fecha de actualización del proveedor sin verificar; recibido el 5 de septiembre de 2026. El servicio actualmente llega hasta el 30 de agosto de 2027.</li><li><strong>Metro-North:</strong> fecha de actualización del proveedor sin verificar; recibido el 5 de septiembre de 2026. El servicio actualmente llega hasta el 22 de mayo de 2027.</li><li><strong>CTrail Hartford Line:</strong> fecha de actualización del proveedor sin verificar; recibido el 5 de septiembre de 2026. El servicio actualmente llega hasta el 12 de julio de 2027.</li><li><strong>CTrail Shore Line East:</strong> fecha de actualización del proveedor sin verificar; recibido el 5 de septiembre de 2026. El servicio actualmente llega hasta el 30 de agosto de 2027.</li></ul><p>Si una búsqueda está fuera del rango de horarios disponible para un viaje, moose.train mostrará la última fecha disponible actualmente para esa búsqueda.</p>` },
         { summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de cuatro servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, cubren todo el servicio ferroviario de pasajeros programado entre la ciudad de Nueva York y Connecticut, además de conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
         { summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
         { summary: "¿Por qué se llama moose.train?", content: `<p>¡Empezó como un acrónimo! El nombre de trabajo original era <strong>Metro-North Or Other Service Evaluator</strong>, o <strong>MOOSE</strong>. El nombre se quedó y, con el tiempo, se convirtió en moose.train.</p><p>Además, convenientemente, realmente hay alces tanto en Nueva York como en Connecticut. Así que pareció valer la pena conservarlo. 🫎</p>` },
@@ -2279,7 +2509,7 @@
         { summary: "¿moose.train muestra retrasos en tiempo real?", content: `<p>Sí, para viajes de Metro-North cuando la información de retrasos está disponible. Los resultados de Metro-North pueden indicar si un viaje parece estar a horario o retrasado.</p><p>moose.train actualmente no muestra información de retrasos para viajes de Amtrak, CTrail Hartford Line o CTrail Shore Line East. Esos resultados se basan en horarios publicados, por lo que retrasos en tiempo real, cancelaciones y otros cambios de servicio pueden no aparecer.</p><p>Me gustaría ampliar la información de trenes en vivo en el futuro. Por ahora, consulta directamente con el operador antes de viajar si el horario es importante.</p>` },
         { summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York y Connecticut son solo el punto de partida.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
         { summary: "¿moose.train es gratis?", content: `<p>¡Sí! moose.train es completamente gratis.</p><p>Los datos de horarios provienen de información pública publicada por los operadores ferroviarios, y construí moose.train porque quería una mejor manera de entenderla. Me pareció justo poner esa herramienta también a disposición de todos los demás.</p>` },
-        { summary: "¿moose.train calcula precios de boletos?", content: `<p>Todavía no. Por ahora, moose.train se centra en comparar horarios, tiempos de viaje y transbordos, no precios de boletos.</p><p>La información de tarifas haría que esas comparaciones fueran aún más útiles, especialmente al decidir entre opciones como Amtrak y tren regional, así que es algo que me gustaría agregar en el futuro.</p>` },
+        { summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de Metro-North New Haven Line, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales, conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p>` },
         { summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>No permanentemente, pero puedes <strong>agregar viajes a tu lista breve</strong> mientras comparas tus resultados. Solo agrega los viajes que te interesen a la lista breve y luego oculta todo lo demás para compararlos con más facilidad.</p><p>La lista breve está pensada para reducir tus opciones durante la búsqueda actual, no para guardar viajes o estaciones favoritas para más tarde. Opciones de guardado más persistentes podrían ser útiles en el futuro.</p>` },
         { summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p>` },
         { summary: "¿Habrá una app móvil eventualmente?", content: `<p>¡Quizás algún día! Por ahora, mi enfoque está en hacer que moose.train funcione muy bien en el navegador, ya sea que uses un teléfono, una tableta o una computadora.</p><p>Una app móvil dedicada podría ser excelente más adelante, especialmente si hay funciones que realmente se beneficiarían de tener una. Pero por ahora prefiero hacer que la experiencia web sea lo mejor posible.</p>` },
@@ -3252,6 +3482,7 @@
             serviceStartDate: row.service_start_date,
             serviceEndDate: row.service_end_date,
             rawNotes: row.raw_notes,
+            farePeakStatus: metroNorthPeakStatusFromNotes(row.raw_notes),
             staticTripId: gtfsMetadataValue(row.raw_notes, "trip_id"),
             staticServiceId: gtfsMetadataValue(row.raw_notes, "service_id"),
             sourcePdf: row.source_pdf,
@@ -4650,6 +4881,261 @@
       return match ? match[1].trim() : "";
     }
 
+    function metroNorthPeakStatusFromNotes(notes) {
+      const match = String(notes || "").match(/(?:^|;\s*)peak_offpeak=([01])(?:;|$)/);
+      if (!match) return "";
+      return match[1] === "1" ? FARE_PEAK_STATUS.PEAK : FARE_PEAK_STATUS.OFF_PEAK;
+    }
+
+    function calculateRouteFare(route, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      if (!route || !route.legs.length) return null;
+      if (route.legs.every(isMetroNorthFareLeg)) return calculateMetroNorthRouteFare(route, passengerCategory);
+      const ctrailProduct = ctrailFareProductForLegs(route.legs);
+      if (ctrailProduct) {
+        return calculateCTrailFare({
+          product: ctrailProduct,
+          originStationId: route.legs[0].fromId,
+          destinationStationId: route.legs[route.legs.length - 1].toId,
+          passengerCategory,
+        });
+      }
+      return calculateCombinedLegFare(route.legs, passengerCategory);
+    }
+
+    function calculateCombinedLegFare(legs, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      const legFares = legs.map((leg) => calculateLegFare(leg, passengerCategory));
+      if (!legFares.length || legFares.some((fare) => !fare)) return null;
+      const totalCents = legFares.reduce((sum, fare) => sum + fareAmountCents(fare), 0);
+      if (!Number.isInteger(totalCents)) return null;
+      return {
+        amountCents: totalCents,
+        currency: "USD",
+        passengerCategory,
+        fareType: FARE_TYPE.ORDINARY_ONE_WAY,
+        componentFares: legFares,
+      };
+    }
+
+    function calculateMetroNorthRouteFare(route, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      const peakStatus = metroNorthFarePeakStatusForLegs(route.legs);
+      if (!peakStatus) return null;
+      return calculateMetroNorthFare({
+        originStationId: route.legs[0].fromId,
+        destinationStationId: route.legs[route.legs.length - 1].toId,
+        peakStatus,
+        passengerCategory,
+      });
+    }
+
+    function calculateLegFare(leg, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      if (isMetroNorthFareLeg(leg)) {
+        const peakStatus = metroNorthFarePeakStatusForLegs([leg]);
+        if (!peakStatus) return null;
+        return calculateMetroNorthFare({
+          originStationId: leg.fromId,
+          destinationStationId: leg.toId,
+          peakStatus,
+          passengerCategory,
+        });
+      }
+      const ctrailProduct = ctrailFareProductForLegs([leg]);
+      if (!ctrailProduct) return null;
+      return calculateCTrailFare({
+        product: ctrailProduct,
+        originStationId: leg.fromId,
+        destinationStationId: leg.toId,
+        passengerCategory,
+      });
+    }
+
+    function calculateMetroNorthFare(request) {
+      const passengerCategory = request?.passengerCategory || FARE_PASSENGER_CATEGORY.ADULT;
+      if (passengerCategory !== FARE_PASSENGER_CATEGORY.ADULT) return null;
+      const originStationId = String(request?.originStationId || "").trim();
+      const destinationStationId = String(request?.destinationStationId || "").trim();
+      if (!originStationId || !destinationStationId || originStationId === destinationStationId) return null;
+      const peakStatus = request?.peakStatus;
+      if (![FARE_PEAK_STATUS.PEAK, FARE_PEAK_STATUS.OFF_PEAK].includes(peakStatus)) return null;
+      const originZone = MNR_FARE_DATA.stationZones.get(originStationId);
+      const destinationZone = MNR_FARE_DATA.stationZones.get(destinationStationId);
+      if (!originZone || !destinationZone) return null;
+
+      const isPeak = peakStatus === FARE_PEAK_STATUS.PEAK;
+      if (isMetroNorthCityTicketEligible(originStationId, destinationStationId)) {
+        return metroNorthFareResult({
+          amount: isPeak ? MNR_FARE_DATA.cityTicket.peak : MNR_FARE_DATA.cityTicket.offPeak,
+          originStationId,
+          destinationStationId,
+          originZone,
+          destinationZone,
+          peakStatus,
+          passengerCategory,
+          fareType: FARE_TYPE.CITYTICKET,
+        });
+      }
+
+      const terminalZone = originZone === "1" ? destinationZone : destinationZone === "1" ? originZone : "";
+      if (terminalZone) {
+        const fares = MNR_FARE_DATA.terminalOneWay.get(terminalZone);
+        if (!fares) return null;
+        return metroNorthFareResult({
+          amount: isPeak ? fares.peak : fares.offPeak,
+          originStationId,
+          destinationStationId,
+          originZone,
+          destinationZone,
+          peakStatus,
+          passengerCategory,
+          fareType: FARE_TYPE.ORDINARY_ONE_WAY,
+        });
+      }
+
+      const amount = MNR_FARE_DATA.intermediateOneWay.get(fareZonePairKey(originZone, destinationZone));
+      if (typeof amount !== "number") return null;
+      return metroNorthFareResult({
+        amount,
+        originStationId,
+        destinationStationId,
+        originZone,
+        destinationZone,
+        peakStatus,
+        passengerCategory,
+        fareType: FARE_TYPE.ORDINARY_ONE_WAY,
+      });
+    }
+
+    function metroNorthFareResult(details) {
+      return {
+        amount: details.amount,
+        currency: "USD",
+        peakStatus: details.peakStatus,
+        passengerCategory: details.passengerCategory,
+        fareType: details.fareType,
+        originStationId: details.originStationId,
+        destinationStationId: details.destinationStationId,
+        originZone: details.originZone,
+        destinationZone: details.destinationZone,
+        sourceName: MNR_FARE_DATA.metadata.sourceName,
+        sourceEffectiveDate: MNR_FARE_DATA.metadata.effectiveDate,
+        sourceLastUpdated: MNR_FARE_DATA.metadata.lastUpdated,
+      };
+    }
+
+    function addStationPairFares(productKey, destinationStationId, fares) {
+      const product = CTRAIL_FARE_DATA.products[productKey];
+      if (!product) return;
+      const destinationIndex = product.stationIds.indexOf(destinationStationId);
+      if (destinationIndex < 1) return;
+      fares.forEach((amountCents, index) => {
+        const originStationId = product.stationIds[index];
+        if (originStationId && Number.isInteger(amountCents)) {
+          product.oneWayCents.set(stationPairKey(originStationId, destinationStationId), amountCents);
+        }
+      });
+    }
+
+    function calculateCTrailFare(request) {
+      const passengerCategory = request?.passengerCategory || FARE_PASSENGER_CATEGORY.ADULT;
+      if (passengerCategory !== FARE_PASSENGER_CATEGORY.ADULT) return null;
+      const product = CTRAIL_FARE_DATA.products[request?.product];
+      if (!product) return null;
+      const originStationId = normalizeCTrailFareStationId(request?.originStationId);
+      const destinationStationId = normalizeCTrailFareStationId(request?.destinationStationId);
+      if (!originStationId || !destinationStationId || originStationId === destinationStationId) return null;
+      if (!product.stationIds.includes(originStationId) || !product.stationIds.includes(destinationStationId)) return null;
+      const amountCents = product.oneWayCents.get(stationPairKey(originStationId, destinationStationId));
+      if (!Number.isInteger(amountCents)) return null;
+      return {
+        amountCents,
+        currency: "USD",
+        passengerCategory,
+        fareType: FARE_TYPE.ORDINARY_ONE_WAY,
+        product: request.product,
+        productName: product.name,
+        originStationId,
+        destinationStationId,
+        sourceName: CTRAIL_FARE_DATA.metadata.sourceName,
+        sourceEffectiveDate: CTRAIL_FARE_DATA.metadata.effectiveDate,
+        sourceLastUpdated: CTRAIL_FARE_DATA.metadata.lastUpdated,
+      };
+    }
+
+    function normalizeCTrailFareStationId(stationId) {
+      const clean = String(stationId || "").trim();
+      return CTRAIL_FARE_DATA.stationAliases.get(clean) || clean;
+    }
+
+    function ctrailFareProductForLegs(legs) {
+      const legProducts = legs.map(ctrailFareProductForLeg);
+      if (!legProducts.length || legProducts.some((product) => !product)) return "";
+      const products = new Set(legProducts);
+      return products.size === 1 ? Array.from(products)[0] : "";
+    }
+
+    function ctrailFareProductForLeg(leg) {
+      if (!leg) return "";
+      const text = normalize(`${leg.trip?.service || ""} ${leg.trip?.route || ""}`);
+      if (text.includes("shore line east")) return CTRAIL_FARE_PRODUCTS.SHORE_LINE_EAST;
+      if (text.includes("hartford line") || text.includes("amtrak hartford line")) return CTRAIL_FARE_PRODUCTS.HARTFORD_LINE;
+      return "";
+    }
+
+    function isMetroNorthCityTicketEligible(originStationId, destinationStationId) {
+      return MNR_FARE_DATA.cityTicket.eligibleStationIds.has(originStationId) &&
+        MNR_FARE_DATA.cityTicket.eligibleStationIds.has(destinationStationId);
+    }
+
+    function fareZonePairKey(originZone, destinationZone) {
+      return [String(originZone), String(destinationZone)]
+        .sort((a, b) => Number(a) - Number(b))
+        .join(":");
+    }
+
+    function stationPairKey(originStationId, destinationStationId) {
+      return [String(originStationId), String(destinationStationId)]
+        .sort()
+        .join(":");
+    }
+
+    function isMetroNorthFareLeg(leg) {
+      return normalize(leg?.trip?.agency) === "metro north";
+    }
+
+    function metroNorthFarePeakStatusForLegs(legs) {
+      const statuses = new Set(legs.map((leg) => leg.trip.farePeakStatus).filter(Boolean));
+      return statuses.size === 1 ? Array.from(statuses)[0] : "";
+    }
+
+    function renderFareSummary(fare) {
+      if (!fare) return "";
+      if (Number.isInteger(fare.amountCents)) {
+        return [
+          formatFareAmount(fare),
+          t("fareStandardOneWay"),
+        ].join(" · ");
+      }
+      return [
+        formatFareAmount(fare),
+        fare.peakStatus === FARE_PEAK_STATUS.PEAK ? t("farePeak") : t("fareOffPeak"),
+        fare.fareType === FARE_TYPE.CITYTICKET ? t("fareCityTicket") : t("fareOneWay"),
+      ].join(" · ");
+    }
+
+    function formatFareAmount(fare) {
+      const amount = fareAmountCents(fare) / 100;
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: fare.currency || "USD",
+      }).format(amount);
+    }
+
+    function fareAmountCents(fare) {
+      if (!fare) return NaN;
+      if (Number.isInteger(fare.amountCents)) return fare.amountCents;
+      if (typeof fare.amount === "number") return Math.round(fare.amount * 100);
+      return NaN;
+    }
+
     function numericProtoValue(value) {
       if (value === undefined || value === null) return 0;
       if (typeof value === "number") return value;
@@ -4899,6 +5385,9 @@
         : formatDisplayTimeRange(route.departure, route.arrival, displayOffset);
       const routeDuration = route.realtime ? route.realtime.duration : route.duration;
       const liveIndicator = renderRouteRealtimeIndicator(routeRealtimeStatus(route, queryTime, mode, searchDate, realtimeSnapshot));
+      const routeFare = calculateRouteFare(route);
+      const routeFareSummary = renderFareSummary(routeFare);
+      const routeFareMeta = routeFareSummary ? ` · <span class="fare-summary">${escapeHtml(routeFareSummary)}</span>` : "";
       return `
         <article class="result" data-route-id="${escapeHtml(routeId)}">
           <button
@@ -4914,7 +5403,7 @@
           </button>
           <div class="result-top">
             <div class="result-title" aria-label="${escapeHtml(titleLabel)}">${escapeHtml(title)}${titleStatus}</div>
-            <div class="result-meta">${liveIndicator}${escapeHtml(routeTimeRange)} · ${escapeHtml(formatDuration(routeDuration))}</div>
+            <div class="result-meta">${liveIndicator}${escapeHtml(routeTimeRange)} · ${escapeHtml(formatDuration(routeDuration))}${routeFareMeta}</div>
           </div>
           <div class="legs">
             ${route.legs.map((leg) => renderLeg(leg, displayOffset)).join("")}
@@ -5082,6 +5571,8 @@
       const trip = leg.trip;
       const departure = realtimeLegDeparture(leg) ?? leg.departure;
       const arrival = realtimeLegArrival(leg) ?? leg.arrival;
+      const fare = calculateLegFare(leg);
+      const fareAmount = fare ? formatFareAmount(fare) : "";
       return `
         <div class="leg">
           <div class="time">${escapeHtml(formatDisplayTimeRange(departure, arrival, displayOffset))}</div>
@@ -5090,6 +5581,7 @@
             <div class="leg-meta">${escapeHtml(formatLegMeta(trip, leg.realtime))}</div>
             <div class="leg-source-spacer" aria-hidden="true"></div>
           </div>
+          <div class="leg-fare">${escapeHtml(fareAmount)}</div>
         </div>
       `;
     }
