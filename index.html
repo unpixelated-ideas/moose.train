@@ -1361,6 +1361,23 @@
       transition: background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
     }
 
+    .station-picker { position: relative; min-width: 0; display: grid; gap: 8px; }
+    .station-options {
+      position: absolute; top: 100%; left: 0; right: 0; z-index: 20;
+      max-height: min(240px, 30dvh); overflow-y: auto; overscroll-behavior: contain;
+      background: var(--field); border: 1px solid var(--line); border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    }
+    .station-options[hidden] { display: none; }
+    .station-options > div { padding: 12px; min-height: 44px; color: var(--ink); font-size: 16px; }
+    .station-options [role="option"] { cursor: pointer; }
+    .station-options [role="option"]:hover,
+    .station-options [aria-selected="true"] { background: var(--color-hover); }
+    /* iOS zooms focused form controls when their computed font is below 16px. */
+    @media (max-width: 860px), (pointer: coarse) {
+      input, select, textarea { font-size: max(16px, 1rem); }
+    }
+
     datalist {
       display: none;
     }
@@ -1550,14 +1567,16 @@
 
     <section class="panel" aria-label="Route search" data-i18n-aria-label="routeSearch">
       <div class="search-grid">
-        <label>
-          <span data-i18n="origin">Origin</span>
-          <input id="origin" list="station-list" placeholder="New York Penn">
-        </label>
-        <label>
-          <span data-i18n="destination">Destination</span>
-          <input id="destination" list="station-list" placeholder="Old Saybrook">
-        </label>
+        <div class="station-picker">
+          <label for="origin" data-i18n="origin">Origin</label>
+          <input id="origin" placeholder="New York Penn" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="origin-options" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+          <div id="origin-options" class="station-options" role="listbox" aria-label="Origin" hidden></div>
+        </div>
+        <div class="station-picker">
+          <label for="destination" data-i18n="destination">Destination</label>
+          <input id="destination" placeholder="Old Saybrook" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="destination-options" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+          <div id="destination-options" class="station-options" role="listbox" aria-label="Destination" hidden></div>
+        </div>
         <label>
           <span data-i18n="date">Date</span>
           <input id="travel-date" type="date">
@@ -1577,7 +1596,6 @@
         <button id="swap-button" class="secondary" type="button" data-i18n="swap">Swap</button>
         <button id="reset-button" class="secondary" type="button" data-i18n="resetSearch">Reset</button>
       </div>
-      <datalist id="station-list"></datalist>
     </section>
 
     <div class="toolbar">
@@ -1650,6 +1668,16 @@
         <a href="#timetable-csv-links-title" data-source-links data-i18n="updateLogViewSources">View sources</a>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v094-title">
+          <h3 id="update-log-v094-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.4</span>
+            <span class="update-log-release-date" data-i18n="updateLogV094Date">September 6, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV094MobileSearch"><strong>Mobile search is working again.</strong> Fixed an issue that prevented searches from successfully running on mobile and tablet browsers.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v093-title">
           <h3 id="update-log-v093-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.3</span>
@@ -2070,6 +2098,7 @@
         timeFormat12: "AM/PM",
         timeFormat24: "24-hour",
         routeSearch: "Route search",
+        noMatchingStations: "No matching stations",
         origin: "Origin",
         originPlaceholder: "From where?",
         destination: "Destination",
@@ -2161,6 +2190,8 @@
         learnMoreFeedback: "Feedback",
         updateLogTitle: "Update Log",
         updateLogClose: "Close update log",
+        updateLogV094Date: "September 6, 2026",
+        updateLogV094MobileSearch: "<strong>Mobile search is working again.</strong> Fixed an issue that prevented searches from successfully running on mobile and tablet browsers.",
         updateLogV093Date: "September 5, 2026",
         updateLogV093Fares: "<strong>Fare details are easier to compare.</strong> Added standard one-way adult fare information for Metro-North, Shore Line East, and Hartford Line trips.",
         updateLogV092Date: "August 31, 2026",
@@ -2200,6 +2231,7 @@
         timeFormat12: "오전/오후",
         timeFormat24: "24시간",
         routeSearch: "경로 검색",
+        noMatchingStations: "일치하는 역이 없습니다",
         origin: "출발역",
         originPlaceholder: "어디에서 출발하나요?",
         destination: "도착역",
@@ -2291,6 +2323,8 @@
         learnMoreFeedback: "피드백",
         updateLogTitle: "업데이트 로그",
         updateLogClose: "업데이트 로그 닫기",
+        updateLogV094Date: "2026년 9월 6일",
+        updateLogV094MobileSearch: "<strong>모바일 검색이 다시 정상 작동합니다.</strong> 모바일 및 태블릿 브라우저에서 검색이 제대로 실행되지 않던 문제를 수정했습니다.",
         updateLogV093Date: "2026년 9월 5일",
         updateLogV093Fares: "<strong>요금 정보를 더 쉽게 비교할 수 있게.</strong> Metro-North, Shore Line East, Hartford Line 여정에 표준 편도 성인 요금 정보를 추가했습니다.",
         updateLogV092Date: "2026년 8월 31일",
@@ -2330,6 +2364,7 @@
         timeFormat12: "AM/PM",
         timeFormat24: "24 horas",
         routeSearch: "Buscar ruta",
+        noMatchingStations: "No hay estaciones coincidentes",
         origin: "Origen",
         originPlaceholder: "¿Desde dónde?",
         destination: "Destino",
@@ -2421,6 +2456,8 @@
         learnMoreFeedback: "Comentarios",
         updateLogTitle: "Registro de cambios",
         updateLogClose: "Cerrar registro de cambios",
+        updateLogV094Date: "6 de septiembre de 2026",
+        updateLogV094MobileSearch: "<strong>La búsqueda móvil vuelve a funcionar.</strong> Corregimos un problema que impedía ejecutar búsquedas correctamente en navegadores móviles y de tabletas.",
         updateLogV093Date: "5 de septiembre de 2026",
         updateLogV093Fares: "<strong>Las tarifas son más fáciles de comparar.</strong> Agregamos información de tarifa adulta estándar de ida para viajes de Metro-North, Shore Line East y Hartford Line.",
         updateLogV092Date: "31 de agosto de 2026",
@@ -2811,7 +2848,6 @@
 
     let currentLanguage = "en";
     let timeFormat = "12";
-    let rows = [];
     let trips = [];
     let stations = [];
     let timetableCsvLinks = [];
@@ -2864,7 +2900,6 @@
       updateLogDialog: document.querySelector("#update-log-popup .update-log-dialog"),
       updateLogClose: document.getElementById("update-log-close"),
       searchLoadingOverlay: document.getElementById("search-loading-overlay"),
-      stationList: document.getElementById("station-list"),
       introTitle: document.getElementById("intro-title"),
       debugMenuPopup: document.getElementById("debug-menu-popup"),
       debugMenuClose: document.getElementById("debug-menu-close"),
@@ -2882,6 +2917,7 @@
 
     function init() {
       applyDefaultSearchDateTime();
+      initStationPickers();
       initTheme();
       initTimezoneNotice();
       initDebugMenu();
@@ -3380,7 +3416,31 @@
       try {
         const response = await fetch(CSV_PATH);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        loadCsvText(await response.text());
+        const builder = createTripBuilder();
+        const metadata = new Map();
+        const parser = createCsvParser((row) => {
+          builder.addRow(row);
+          const key = [row.station_id, row.source_pdf, row.service_name, row.timetable_effective_date].join("|");
+          if (!metadata.has(key)) metadata.set(key, {
+            station_id: row.station_id, station_name: row.station_name,
+            source_pdf: row.source_pdf, source_original_filename: row.source_original_filename,
+            service_name: row.service_name, timetable_effective_date: row.timetable_effective_date,
+          });
+        });
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        try {
+          while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+            parser.push(decoder.decode(value, { stream: true }));
+          }
+          parser.push(decoder.decode());
+          parser.finish();
+        } finally {
+          reader.releaseLock();
+        }
+        applySchedule(builder.finish(), Array.from(metadata.values()));
         if (updateStatus) setStatus("readyToSearch");
         return true;
       } catch (_error) {
@@ -3408,54 +3468,85 @@
     }
 
     function loadCsvText(csvText) {
-      rows = parseCsv(csvText);
-      trips = buildTrips(rows);
+      const sourceRows = parseCsv(csvText);
+      applySchedule(buildTrips(sourceRows), sourceRows);
+    }
+
+    function applySchedule(items, metadata) {
+      trips = items;
       stationSequencesByDirection = buildStationSequencesByDirection(trips);
-      stations = uniqueStations(rows);
-      timetableCsvLinks = buildTimetableCsvLinks(rows);
+      stations = uniqueStations(metadata);
+      timetableCsvLinks = buildTimetableCsvLinks(metadata);
       populateStations(stations);
       renderTimetableCsvLinks(timetableCsvLinks);
     }
 
     function parseCsv(text) {
       const records = [];
+      const parser = createCsvParser((row) => records.push(row));
+      parser.push(text);
+      parser.finish();
+      return records;
+    }
+
+    function createCsvParser(onRow) {
+      let headers = null;
       let record = [];
       let field = "";
-      let inQuotes = false;
-      for (let i = 0; i < text.length; i += 1) {
-        const char = text[i];
-        const next = text[i + 1];
-        if (char === '"') {
-          if (inQuotes && next === '"') {
-            field += '"';
-            i += 1;
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === "," && !inQuotes) {
-          record.push(field);
-          field = "";
-        } else if ((char === "\n" || char === "\r") && !inQuotes) {
-          if (char === "\r" && next === "\n") i += 1;
-          record.push(field);
-          if (record.some((value) => value.length)) records.push(record);
-          record = [];
-          field = "";
-        } else {
-          field += char;
+      let quoted = false;
+      let pendingQuote = false;
+      let skipLf = false;
+      // Repeated service-date lists and notes dominate this feed's size.
+      const strings = new Map();
+      function endField() {
+        if (!strings.has(field)) strings.set(field, field);
+        record.push(strings.get(field));
+        field = "";
+      }
+      function endRecord() {
+        endField();
+        if (record.some(Boolean)) {
+          if (!headers) headers = record;
+          else onRow(Object.fromEntries(headers.map((header, index) => [header, record[index] || ""])));
         }
+        record = [];
       }
-      if (field || record.length) {
-        record.push(field);
-        records.push(record);
-      }
-      const headers = records.shift() || [];
-      return records.map((values) => Object.fromEntries(headers.map((header, index) => [header, values[index] || ""])));
+      return {
+        push(text) {
+          for (const char of text) {
+            if (skipLf) { skipLf = false; if (char === "\n") continue; }
+            if (pendingQuote) {
+              pendingQuote = false;
+              if (char === '"') { field += char; continue; }
+              quoted = false;
+            }
+            if (quoted) {
+              if (char === '"') pendingQuote = true;
+              else field += char;
+            } else if (char === '"') quoted = true;
+            else if (char === ',') endField();
+            else if (char === "\n" || char === "\r") {
+              endRecord();
+              skipLf = char === "\r";
+            } else field += char;
+          }
+        },
+        finish() {
+          if (field || record.length || pendingQuote) endRecord();
+          strings.clear();
+        },
+      };
     }
 
     function buildTrips(sourceRows) {
+      const builder = createTripBuilder();
+      sourceRows.forEach(builder.addRow);
+      return builder.finish();
+    }
+
+    function createTripBuilder() {
       const groups = new Map();
-      sourceRows.forEach((row) => {
+      function addRow(row) {
         const key = [
           row.agency,
           row.service_name,
@@ -3488,23 +3579,31 @@
             sourcePdf: row.source_pdf,
           });
         }
-        groups.get(key).rows.push(row);
-      });
-      const extractedTrips = Array.from(groups.values()).flatMap((trip) => {
-        const stops = normalizeExtractedTripStops(trip, mergeAdjacentSameStationStops(trip.rows
-          .slice()
-          .sort((a, b) => Number(a.station_sequence) - Number(b.station_sequence))
-          .map((row, index) => ({
-            index,
-            id: row.station_id,
-            name: row.station_name,
-            arrival: usableMinutes(row.arrival_time),
-            departure: usableMinutes(row.departure_time),
-            sequence: Number(row.station_sequence),
-          }))));
-        return splitTripIntoMonotonicRuns(trip, stops);
-      });
-      return pruneExtractedTripRuns(extractedTrips);
+        groups.get(key).rows.push({
+          station_sequence: row.station_sequence, station_id: row.station_id,
+          station_name: row.station_name, arrival_time: row.arrival_time, departure_time: row.departure_time,
+        });
+      }
+      function finish() {
+        const extractedTrips = Array.from(groups.values()).flatMap((trip) => {
+          const stops = normalizeExtractedTripStops(trip, mergeAdjacentSameStationStops(trip.rows
+            .slice()
+            .sort((a, b) => Number(a.station_sequence) - Number(b.station_sequence))
+            .map((row, index) => ({
+              index,
+              id: row.station_id,
+              name: row.station_name,
+              arrival: usableMinutes(row.arrival_time),
+              departure: usableMinutes(row.departure_time),
+              sequence: Number(row.station_sequence),
+            }))));
+          const { rows: _rows, ...details } = trip;
+          return splitTripIntoMonotonicRuns(details, stops);
+        });
+        groups.clear();
+        return pruneExtractedTripRuns(extractedTrips);
+      }
+      return { addRow, finish };
     }
 
     function normalizeExtractedTripStops(trip, stops) {
@@ -3738,12 +3837,89 @@
       })));
     }
 
-    function populateStations(items) {
-      els.stationList.innerHTML = "";
-      items.forEach((station) => {
-        const option = document.createElement("option");
-        option.value = displayStationName(station.name);
-        els.stationList.appendChild(option);
+    function stationMatchesQuery(station, value) {
+      const query = normalizeStationInput(value);
+      const aliases = stationAliases.filter((alias) => alias.id === station.id).flatMap((alias) => alias.names);
+      const virtual = virtualStations.find((item) => item.id === station.id);
+      return [...stationSearchValues(station), ...aliases, ...(virtual?.aliases || []), ...Object.values(virtual?.displayNames || {})]
+        .some((name) => normalize(name).includes(query));
+    }
+
+    function populateStations() {
+      // Refresh an open picker after loading a schedule or changing language.
+      [els.origin, els.destination].forEach((input) => {
+        input.dispatchEvent(new Event("stationrefresh"));
+      });
+    }
+
+    function initStationPickers() {
+      [els.origin, els.destination].forEach((input) => {
+        const list = document.getElementById(`${input.id}-options`);
+        let matches = [];
+        let activeIndex = -1;
+        function close() {
+          list.hidden = true;
+          input.setAttribute("aria-expanded", "false");
+          input.removeAttribute("aria-activedescendant");
+          activeIndex = -1;
+        }
+        function render() {
+          matches = stations.filter((station) => stationMatchesQuery(station, input.value));
+          activeIndex = -1;
+          input.removeAttribute("aria-activedescendant");
+          list.replaceChildren();
+          list.setAttribute("aria-label", t(input.id));
+          matches.forEach((station, index) => {
+            const option = document.createElement("div");
+            option.id = `${input.id}-option-${index}`;
+            option.setAttribute("role", "option");
+            option.setAttribute("aria-selected", "false");
+            option.textContent = displayStationName(station.name);
+            option.addEventListener("click", () => select(index));
+            list.appendChild(option);
+          });
+          if (!matches.length) {
+            const empty = document.createElement("div");
+            empty.setAttribute("role", "status");
+            empty.textContent = t("noMatchingStations");
+            list.appendChild(empty);
+          }
+          list.hidden = false;
+          input.setAttribute("aria-expanded", "true");
+        }
+        function select(index) {
+          input.value = displayStationName(matches[index].name);
+          close();
+          input.blur();
+        }
+        // Keep focus through a pointer click; touch scrolling still uses native scrolling.
+        list.addEventListener("mousedown", (event) => event.preventDefault());
+        input.addEventListener("focus", render);
+        input.addEventListener("input", render);
+        input.addEventListener("stationrefresh", () => { if (!list.hidden) render(); });
+        input.addEventListener("blur", () => {
+          // A tap's click can follow blur on mobile. Let the click select first.
+          setTimeout(close, 180);
+        });
+        input.addEventListener("keydown", (event) => {
+          if (event.isComposing) return;
+          if (event.key === "Escape" || event.key === "Tab") { close(); return; }
+          if (event.key === "Enter" && !list.hidden) {
+            event.preventDefault();
+            if (activeIndex >= 0) select(activeIndex);
+            else if (matches.length === 1) select(0);
+            return;
+          }
+          if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+          event.preventDefault();
+          if (list.hidden) render();
+          if (!matches.length) return;
+          activeIndex = (activeIndex + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length;
+          Array.from(list.children).forEach((option, index) => option.setAttribute("aria-selected", String(index === activeIndex)));
+          const option = list.children[activeIndex];
+          input.setAttribute("aria-activedescendant", option.id);
+          option.scrollIntoView({ block: "nearest" });
+        });
       });
     }
 
