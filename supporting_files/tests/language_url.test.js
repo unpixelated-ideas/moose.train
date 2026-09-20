@@ -72,8 +72,8 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
     }
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'moose.train');
     for (const selector of ['meta[property="og:description"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'Compare Amtrak and regional rail in one search.');
-    for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'https://moose.train/preiewimage.png');
-    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://moose.train/');
+    for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'https://unpixelated-ideas.github.io/moose.train/preiewimage.png');
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://unpixelated-ideas.github.io/moose.train/');
     const response = await page.request.get(base + '/preiewimage.png');
     assert.equal(response.status(), 200);
     assert.match(response.headers()['content-type'], /image\/png/);
