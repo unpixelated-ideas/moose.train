@@ -57,6 +57,5 @@ route_id,agency_id,route_short_name,route_long_name,route_type,route_url,route_c
 42958,1233,,Amtrak Thruway Connecting Service,3,http://www.amtrak.com,CAE4F1,000000
 42985,1238,,Commuter Rail,2,http://www.amtrak.com,CAE4F1,000000
 42991,51,,Borealis,2,http://www.amtrak.com,CAE4F1,000000
-42992,51,,Berkshire Flyer,2,http://www.amtrak.com,CAE4F1,000000
 42994,51,,Floridian,2,http://www.amtrak.com,CAE4F1,000000
 42996,51,,Amtrak Mardi Gras Service,2,http://www.amtrak.com,CAE4F1,000000
