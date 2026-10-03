@@ -19,3 +19,4 @@ agency_id,agency_name,agency_url,agency_timezone,agency_lang
 1233,Sunway Charters,http://www.amtrak.com,America/New_York,en
 1238,MARC,http://www.amtrak.com,America/New_York,en
 1239,FLIX,http://www.amtrak.com,America/New_York,en
+1240,CLAS,http://www.amtrak.com,America/New_York,en

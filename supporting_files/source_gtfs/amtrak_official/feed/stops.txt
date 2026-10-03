@@ -639,6 +639,8 @@ HAE,HAE,Halethorpe,http://www.amtrak.com/stations/hae,America/New_York,39.237185
 MSA,MSA,Martin Airport,http://www.amtrak.com/stations/msa,America/New_York,39.33012395,-76.42143326
 EDG,EDG,Edgewood,http://www.amtrak.com/stations/edg,America/New_York,39.41624514,-76.29281265
 PRV,PRV,Perryville,http://www.amtrak.com/stations/prv,America/New_York,39.5579616,-76.0732195
+NSF,NSF,N.C. State Fair,http://www.amtrak.com/stations/nsf,America/New_York,35.794203,-78.706292
+LEX,LEX,Lexington,http://www.amtrak.com/stations/lex,America/New_York,35.820856,-80.251565
 WAS,WAS,Washington Union Station,https://www.amtrak.com/stations/was,America/New_York,38.896993,-77.006422
 LBO,LBO,Lbo,http://www.amtrak.com/stations/lbo,America/New_York,54.77395978,-101.84806319
 WMD,WMD,Wmd,http://www.amtrak.com/stations/wmd,America/New_York,39.157083,-122.146998
