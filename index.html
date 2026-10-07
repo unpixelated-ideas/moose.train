@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>moose.train</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico?v=1">
   <meta name="description" content="Compare Amtrak and regional rail in one search.">
   <link rel="canonical" href="https://unpixelated-ideas.github.io/moose.train/">
   <meta property="og:title" content="moose.train">
@@ -651,6 +652,11 @@
       margin-top: 18px;
     }
 
+    [data-route-list] {
+      display: grid;
+      gap: 12px;
+    }
+
     .shortlist-bar {
       display: flex;
       justify-content: flex-end;
@@ -1048,6 +1054,35 @@
       display: block;
     }
 
+    .fare-info {
+      margin-left: 5px;
+      vertical-align: middle;
+      cursor: help;
+      color: var(--muted);
+    }
+
+    .fare-info .live-indicator-tooltip {
+      right: 0;
+      transform: none;
+    }
+
+    .amtrak-fare-picker { position: relative; display: inline-block; }
+    .amtrak-fare-picker summary { cursor: pointer; list-style: none; }
+    .amtrak-fare-picker summary::-webkit-details-marker { display: none; }
+    .amtrak-fare-link, .amtrak-fare-picker summary { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+    .amtrak-language-box {
+      position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
+      width: 320px; max-width: calc(100vw - 48px); padding: 14px;
+      box-sizing: border-box; word-break: keep-all; overflow-wrap: anywhere; line-height: 1.5;
+      border: 1px solid var(--line); border-radius: 8px;
+      background: var(--paper); color: var(--body);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+      white-space: normal; text-align: left; font-size: 0.85rem;
+    }
+    .amtrak-language-box p { margin: 0 0 10px; }
+    .amtrak-language-box a { display: block; padding: 7px 0; color: inherit; }
+
+
     .legs {
       display: grid;
       gap: 8px;
@@ -1405,7 +1440,9 @@
     .results:focus { outline: none; }
     .result-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
     .journey-time { color: var(--ink); font-weight: 850; }
-    .journey-duration { white-space: nowrap; }
+    .journey-duration { display: inline-flex; align-items: center; white-space: nowrap; }
+    .journey-duration .live-indicator { vertical-align: middle; }
+    .status-icon { display: block; width: 16px; height: 16px; }
     .leg-stations { line-height: 1.45; }
     .transfer-connection {
       padding: 10px 12px;
@@ -1715,6 +1752,20 @@
         <a href="#timetable-csv-links-title" data-source-links data-i18n="updateLogViewSources">View sources</a>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v096-title">
+          <h3 id="update-log-v096-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.6</span>
+            <span class="update-log-release-date" data-i18n="updateLogV096Date">October 6, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV096Favicon"><strong>Easier to spot.</strong> Added a favicon to help moose.train stand out in your browser tabs and bookmarks.</li>
+            <li data-i18n-html="updateLogV096Search"><strong>Faster first searches.</strong> A new search mechanism speeds up your initial search.</li>
+            <li data-i18n-html="updateLogV096AmtrakFares"><strong>Amtrak fares within reach.</strong> Added quick links to check fares on Amtrak.</li>
+            <li data-i18n-html="updateLogV096KoreanFares"><strong>Better fare links in Korean.</strong> Adapted the fare-checking link for Korean-language users, since Amtrak does not currently offer a Korean version of its site.</li>
+            <li data-i18n-html="updateLogV096Faq"><strong>A refreshed, shareable FAQ.</strong> Gave the FAQ page a cleaner look and added links you can share to individual questions.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v095-title">
           <h3 id="update-log-v095-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.5</span>
@@ -1872,6 +1923,8 @@
   </div>
   <script>
     const CSV_PATH = "moose_train_schedule.csv";
+    const SEARCH_SCHEDULE_VERSION = "dab7f918d8a7f931";
+    const SEARCH_SCHEDULE_PATH = "supporting_files/assets/schedule/search.json";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
     const TRANSFER_BUFFER = 5;
     const MAX_TRANSFER_MINUTES = 3 * 60;
@@ -2252,6 +2305,12 @@
         learnMoreFeedback: "Feedback",
         updateLogTitle: "Update Log",
         updateLogClose: "Close update log",
+        updateLogV096Date: "October 6, 2026",
+        updateLogV096Faq: "<strong>A refreshed, shareable FAQ.</strong> Gave the FAQ page a cleaner look and added links you can share to individual questions.",
+        updateLogV096Favicon: "<strong>Easier to spot.</strong> Added a favicon to help moose.train stand out in your browser tabs and bookmarks.",
+        updateLogV096Search: "<strong>Faster first searches.</strong> A new search mechanism speeds up your initial search.",
+        updateLogV096AmtrakFares: "<strong>Amtrak fares within reach.</strong> Added quick links to check fares on Amtrak.",
+        updateLogV096KoreanFares: "<strong>Better fare links in Korean.</strong> Adapted the fare-checking link for Korean-language users, since Amtrak does not currently offer a Korean version of its site.",
         updateLogV095Date: "September 20, 2026",
         updateLogV095Previews: "<strong>Cleaner link previews.</strong> Optimized previews for sharing moose.train links in iMessage, Discord, and other supported apps.",
         updateLogV095ShoreLineEast: "<strong>Shore Line East schedules refreshed.</strong> Updated schedule data following Connecticut’s <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">announcement of increased Shore Line East service</a>.",
@@ -2391,6 +2450,12 @@
         learnMoreFeedback: "피드백",
         updateLogTitle: "업데이트 로그",
         updateLogClose: "업데이트 로그 닫기",
+        updateLogV096Date: "2026년 10월 6일",
+        updateLogV096Faq: "<strong>보기 좋게 바뀐 FAQ, 공유도 간편하게.</strong> FAQ 페이지를 더 깔끔하게 다듬고, 원하는 질문으로 바로 연결되는 링크를 공유할 수 있도록 했습니다.",
+        updateLogV096Favicon: "<strong>한눈에 알아보는 moose.train.</strong> 브라우저 탭과 북마크에서 쉽게 찾을 수 있도록 파비콘을 추가했습니다.",
+        updateLogV096Search: "<strong>첫 검색도 더 빠르게.</strong> 검색 방식을 개선해 처음 검색할 때 결과를 더 빠르게 확인할 수 있습니다.",
+        updateLogV096AmtrakFares: "<strong>Amtrak 운임도 간편하게.</strong> Amtrak에서 운임을 바로 확인할 수 있는 링크를 추가했습니다.",
+        updateLogV096KoreanFares: "<strong>한국어 이용자를 위한 운임 링크.</strong> Amtrak 사이트가 아직 한국어를 지원하지 않는 점을 고려해, 한국어 버전의 운임 확인 링크를 개선했습니다.",
         updateLogV095Date: "2026년 9월 20일",
         updateLogV095Previews: "<strong>더 깔끔한 링크 미리보기.</strong> iMessage, Discord 및 기타 지원 앱에서 moose.train 링크를 공유할 때 보이는 미리보기를 개선했습니다.",
         updateLogV095ShoreLineEast: "<strong>Shore Line East 일정 새로 고침.</strong> 코네티컷주의 <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">Shore Line East 증편 발표</a>에 맞춰 일정 데이터를 업데이트했습니다.",
@@ -2530,6 +2595,12 @@
         learnMoreFeedback: "Comentarios",
         updateLogTitle: "Registro de cambios",
         updateLogClose: "Cerrar registro de cambios",
+        updateLogV096Date: "6 de octubre de 2026",
+        updateLogV096Faq: "<strong>Preguntas frecuentes renovadas y fáciles de compartir.</strong> Mejoramos el diseño de la página y añadimos enlaces para compartir cada pregunta directamente.",
+        updateLogV096Favicon: "<strong>Más fácil de reconocer.</strong> Añadimos un icono para que encuentres moose.train fácilmente entre tus pestañas y marcadores.",
+        updateLogV096Search: "<strong>Primera búsqueda más rápida.</strong> Mejoramos el sistema de búsqueda para que obtengas resultados más rápido desde la primera consulta.",
+        updateLogV096AmtrakFares: "<strong>Tarifas de Amtrak a un clic.</strong> Añadimos enlaces directos para consultar las tarifas en Amtrak.",
+        updateLogV096KoreanFares: "<strong>Consulta de tarifas mejorada en coreano.</strong> Adaptamos el enlace para quienes usan el sitio en coreano, ya que Amtrak aún no ofrece su web en ese idioma.",
         updateLogV095Date: "20 de septiembre de 2026",
         updateLogV095Previews: "<strong>Vistas previas de enlaces más limpias.</strong> Optimizamos las vistas previas al compartir enlaces de moose.train en iMessage, Discord y otras apps compatibles.",
         updateLogV095ShoreLineEast: "<strong>Horarios de Shore Line East actualizados.</strong> Actualizamos los datos de horarios tras el <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">anuncio de Connecticut sobre más servicio de Shore Line East</a>.",
@@ -2567,67 +2638,67 @@
 
     const faqContent = {
       en: [
-        { open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City and Connecticut region, bringing together schedules from Amtrak, Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p>` },
-        { open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train currently focuses on rail travel between New York City and Connecticut. That includes stations along the Metro-North New Haven Line in Westchester County, as well as destinations throughout Connecticut served by Metro-North, Amtrak, CTrail Shore Line East, and the CTrail Hartford Line.</p><p>The coverage stretches a little beyond those borders, too. You can plan trips as far north as Springfield, Massachusetts, and as far east as Westerly, Rhode Island.</p><p>This is just the starting point. I kept the initial service area relatively focused so I could get the experience right before expanding to more places.</p>` },
-        { open: true, summary: "When was the data most recently refreshed?", content: `<p>The schedule data in moose.train was last imported on October 3, 2026 at about 12:54 PM Eastern. Because moose.train currently uses published static GTFS schedule data rather than live train data, the results you see are based on the official schedules available at the time of the most recent import.</p><p>There are two useful dates to keep in mind: <strong>provider updated</strong>, which is the date indicated by the source feed or file, and <strong>received by moose.train</strong>, which is when this site last imported that feed. The current import records verify receipt dates but do not independently establish when providers last published an update.</p><ul><li><strong>Amtrak:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li><li><strong>Metro-North:</strong> provider update date unverified; received October 3, 2026. Service currently extends through May 22, 2027.</li><li><strong>CTrail Hartford Line:</strong> provider update date unverified; received October 3, 2026. Service currently extends through July 12, 2027.</li><li><strong>CTrail Shore Line East:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li></ul><p><strong>Shore Line East in October:</strong> The imported schedule includes weekday trains 1628, 1640, 1683, and 1693 from October 5, 2026. Searches use the schedule applicable to your travel date. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Official announcement</a>.</p><p><strong>Metro-North fall schedule:</strong> The refreshed feed includes New Haven Line stopping-pattern changes for the fall schedule beginning October 4, 2026, including weekday rush-hour changes from October 5. Hudson and Harlem Line changes are outside the current search coverage.</p><p>If a search is beyond the available schedule data for a trip, moose.train will show the latest date currently supported for that search.</p>` },
-        { summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from four rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they cover all scheduled passenger rail service between New York City and Connecticut, along with connections farther into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
-        { summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
-        { summary: "Why is it called moose.train?", content: `<p>It started as an acronym! The original working name was <strong>Metro-North Or Other Service Evaluator</strong>, or <strong>MOOSE</strong>. The name stuck, and eventually became moose.train.</p><p>And, conveniently enough, there really are moose in both New York and Connecticut. So it felt worth keeping. 🫎</p>` },
-        { summary: "Does moose.train sell train tickets?", content: `<p>No. moose.train helps you find and compare your train options, but it does not currently sell tickets.</p><p>Once you’ve found the trip that works for you, you can purchase your ticket directly from the train operator using its official app, website, ticket machines, or other available sales channels.</p><p>In the future, I’d love to make it easier to go from finding the right train to actually booking your trip.</p>` },
-        { summary: "Is moose.train affiliated with Amtrak, Metro-North, CTrail, the MTA, or any other transit agency?", content: `<p>No. moose.train is an independent project and is not affiliated with, endorsed by, or operated by any railroad or transit agency.</p><p>The schedules come from publicly available data published by the rail operators themselves, but moose.train is built and maintained independently.</p>` },
-        { summary: "Do Apple Maps or Google Maps already do this?", content: `<p>Not quite. Apple Maps and Google Maps are great when you want directions for a particular trip, but moose.train is built for comparing your options before you decide how and when you want to travel.</p><p>Maybe there’s an Amtrak train at 8:15am, a Metro-North option at 8:40am, and another trip at 9:10am that takes a little longer but requires fewer transfers. moose.train puts those options side by side, making it easier to compare the tradeoffs and choose the trip that works best for you.</p><p>It’s less about answering “How do I get there?” and more about answering “What are my options?”</p>` },
-        { summary: "Why not just use the train operators’ websites?", content: `<p>You certainly can, but each operator naturally focuses on its own trains. That can make comparing your options surprisingly complicated when more than one railroad can get you where you’re going.</p><p>A trip between New York City and Connecticut is a good example. Amtrak generally departs from Penn Station, while Metro-North departs from Grand Central. Depending on your destination and schedule, either one might be the better choice, but their websites aren’t designed to compare those options with each other.</p><p>moose.train brings them together so you can search once and see the bigger picture.</p>` },
-        { summary: "How accurate are the schedules?", content: `<p>The schedules in moose.train come directly from the official timetable data published by the participating rail operators. In other words, you’re seeing the same scheduled departure and arrival information provided by Amtrak, Metro-North, and CTrail.</p><p>moose.train now also shows delay information for Metro-North trips when that information is available. For Amtrak, CTrail Hartford Line, and CTrail Shore Line East trips, moose.train currently shows published schedule information only.</p><p>Rail service can still change quickly, and delays, cancellations, temporary service changes, or other operating updates may not always be reflected in moose.train. Before traveling, especially when timing matters, it’s always a good idea to confirm the latest information with the train operator.</p>` },
-        { summary: "Does moose.train show real-time delays?", content: `<p>Yes, for Metro-North trips when delay information is available. Metro-North results may show whether a trip appears to be on time or delayed.</p><p>moose.train does not currently show delay information for Amtrak, CTrail Hartford Line, or CTrail Shore Line East trips. Those results are based on published schedules, so real-time delays, cancellations, and other service changes may not appear.</p><p>I’d like to expand live train information in the future. For now, check with the operator directly before you travel if timing is important.</p>` },
-        { summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City and Connecticut are just the starting point.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
-        { summary: "Is moose.train free?", content: `<p>Yes! moose.train is completely free to use.</p><p>The schedule data comes from publicly available information published by the rail operators, and I built moose.train because I wanted a better way to make sense of it. It only seemed right to make that tool available to everyone else, too.</p>` },
-        { summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North New Haven Line, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares, UniRail connections, or trips whose fare is not represented in the local official fare table data.</p>` },
-        { summary: "Can I save favorite stations or trips?", content: `<p>Not permanently, but you can <strong>shortlist trips</strong> while comparing your results. Just add the trips you’re interested in to your shortlist, then hide everything else to make them easier to compare.</p><p>Your shortlist is designed for narrowing down options during your current search rather than saving trips or favorite stations for later. More persistent saving options could be useful in the future.</p>` },
-        { summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p>` },
-        { summary: "Will there eventually be a mobile app?", content: `<p>Maybe someday! For now, my focus is on making moose.train work really well in the browser, whether you’re using a phone, tablet, or computer.</p><p>A dedicated mobile app could be great down the road, especially if there are features that would genuinely benefit from one. But for now, I’d rather make the web experience as good as it can be.</p>` },
-        { summary: "Who built moose.train?", content: `<p>Hi! I’m Fred McNulty. I live in New York City, but I grew up in Connecticut, so I’ve spent a lot of time traveling by train between the two.</p><p>I’m a product manager by day and a transit enthusiast pretty much all the time. moose.train started as a personal project inspired by a problem I’d encountered plenty of times myself: figuring out the best way to get somewhere when the answer might involve more than one railroad.</p><p>I also genuinely believe that good public transportation can make our cities and communities better places to live. If moose.train can make taking the train just a little easier, I’ll consider that a win.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City and Connecticut region, bringing together schedules from Amtrak, Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train currently focuses on rail travel between New York City and Connecticut. That includes stations along the Metro-North New Haven Line in Westchester County, as well as destinations throughout Connecticut served by Metro-North, Amtrak, CTrail Shore Line East, and the CTrail Hartford Line.</p><p>The coverage stretches a little beyond those borders, too. You can plan trips as far north as Springfield, Massachusetts, and as far east as Westerly, Rhode Island.</p><p>This is just the starting point. I kept the initial service area relatively focused so I could get the experience right before expanding to more places.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "When was the data most recently refreshed?", content: `<p>The schedule data in moose.train was last imported on October 3, 2026 at about 12:54 PM Eastern. Because moose.train currently uses published static GTFS schedule data rather than live train data, the results you see are based on the official schedules available at the time of the most recent import.</p><p>There are two useful dates to keep in mind: <strong>provider updated</strong>, which is the date indicated by the source feed or file, and <strong>received by moose.train</strong>, which is when this site last imported that feed. The current import records verify receipt dates but do not independently establish when providers last published an update.</p><ul><li><strong>Amtrak:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li><li><strong>Metro-North:</strong> provider update date unverified; received October 3, 2026. Service currently extends through May 22, 2027.</li><li><strong>CTrail Hartford Line:</strong> provider update date unverified; received October 3, 2026. Service currently extends through July 12, 2027.</li><li><strong>CTrail Shore Line East:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li></ul><p><strong>Shore Line East in October:</strong> The imported schedule includes weekday trains 1628, 1640, 1683, and 1693 from October 5, 2026. Searches use the schedule applicable to your travel date. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Official announcement</a>.</p><p><strong>Metro-North fall schedule:</strong> The refreshed feed includes New Haven Line stopping-pattern changes for the fall schedule beginning October 4, 2026, including weekday rush-hour changes from October 5. Hudson and Harlem Line changes are outside the current search coverage.</p><p>If a search is beyond the available schedule data for a trip, moose.train will show the latest date currently supported for that search.</p>` },
+        { id: "which-rail-services-are-included", summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from four rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they cover all scheduled passenger rail service between New York City and Connecticut, along with connections farther into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
+        { id: "why-did-you-build-moose-train", summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
+        { id: "why-is-it-called-moose-train", summary: "Why is it called moose.train?", content: `<p>It started as an acronym! The original working name was <strong>Metro-North Or Other Service Evaluator</strong>, or <strong>MOOSE</strong>. The name stuck, and eventually became moose.train.</p><p>And, conveniently enough, there really are moose in both New York and Connecticut. So it felt worth keeping. 🫎</p>` },
+        { id: "does-moose-train-sell-train-tickets", summary: "Does moose.train sell train tickets?", content: `<p>No. moose.train helps you find and compare your train options, but it does not currently sell tickets.</p><p>Once you’ve found the trip that works for you, you can purchase your ticket directly from the train operator using its official app, website, ticket machines, or other available sales channels.</p><p>In the future, I’d love to make it easier to go from finding the right train to actually booking your trip.</p>` },
+        { id: "is-moose-train-affiliated-with-amtrak-metro-north-ctrail-the-mta-or-any-other-transit-agency", summary: "Is moose.train affiliated with Amtrak, Metro-North, CTrail, the MTA, or any other transit agency?", content: `<p>No. moose.train is an independent project and is not affiliated with, endorsed by, or operated by any railroad or transit agency.</p><p>The schedules come from publicly available data published by the rail operators themselves, but moose.train is built and maintained independently.</p>` },
+        { id: "do-apple-maps-or-google-maps-already-do-this", summary: "Do Apple Maps or Google Maps already do this?", content: `<p>Not quite. Apple Maps and Google Maps are great when you want directions for a particular trip, but moose.train is built for comparing your options before you decide how and when you want to travel.</p><p>Maybe there’s an Amtrak train at 8:15am, a Metro-North option at 8:40am, and another trip at 9:10am that takes a little longer but requires fewer transfers. moose.train puts those options side by side, making it easier to compare the tradeoffs and choose the trip that works best for you.</p><p>It’s less about answering “How do I get there?” and more about answering “What are my options?”</p>` },
+        { id: "why-not-just-use-the-train-operators-websites", summary: "Why not just use the train operators’ websites?", content: `<p>You certainly can, but each operator naturally focuses on its own trains. That can make comparing your options surprisingly complicated when more than one railroad can get you where you’re going.</p><p>A trip between New York City and Connecticut is a good example. Amtrak generally departs from Penn Station, while Metro-North departs from Grand Central. Depending on your destination and schedule, either one might be the better choice, but their websites aren’t designed to compare those options with each other.</p><p>moose.train brings them together so you can search once and see the bigger picture.</p>` },
+        { id: "how-accurate-are-the-schedules", summary: "How accurate are the schedules?", content: `<p>The schedules in moose.train come directly from the official timetable data published by the participating rail operators. In other words, you’re seeing the same scheduled departure and arrival information provided by Amtrak, Metro-North, and CTrail.</p><p>moose.train now also shows delay information for Metro-North trips when that information is available. For Amtrak, CTrail Hartford Line, and CTrail Shore Line East trips, moose.train currently shows published schedule information only.</p><p>Rail service can still change quickly, and delays, cancellations, temporary service changes, or other operating updates may not always be reflected in moose.train. Before traveling, especially when timing matters, it’s always a good idea to confirm the latest information with the train operator.</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "Does moose.train show real-time delays?", content: `<p>Yes, for Metro-North trips when delay information is available. Metro-North results may show whether a trip appears to be on time or delayed.</p><p>moose.train does not currently show delay information for Amtrak, CTrail Hartford Line, or CTrail Shore Line East trips. Those results are based on published schedules, so real-time delays, cancellations, and other service changes may not appear.</p><p>I’d like to expand live train information in the future. For now, check with the operator directly before you travel if timing is important.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City and Connecticut are just the starting point.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
+        { id: "is-moose-train-free", summary: "Is moose.train free?", content: `<p>Yes! moose.train is completely free to use.</p><p>The schedule data comes from publicly available information published by the rail operators, and I built moose.train because I wanted a better way to make sense of it. It only seemed right to make that tool available to everyone else, too.</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North New Haven Line, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares, UniRail connections, or trips whose fare is not represented in the local official fare table data.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "Can I save favorite stations or trips?", content: `<p>Not permanently, but you can <strong>shortlist trips</strong> while comparing your results. Just add the trips you’re interested in to your shortlist, then hide everything else to make them easier to compare.</p><p>Your shortlist is designed for narrowing down options during your current search rather than saving trips or favorite stations for later. More persistent saving options could be useful in the future.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p>` },
+        { id: "will-there-eventually-be-a-mobile-app", summary: "Will there eventually be a mobile app?", content: `<p>Maybe someday! For now, my focus is on making moose.train work really well in the browser, whether you’re using a phone, tablet, or computer.</p><p>A dedicated mobile app could be great down the road, especially if there are features that would genuinely benefit from one. But for now, I’d rather make the web experience as good as it can be.</p>` },
+        { id: "who-built-moose-train", summary: "Who built moose.train?", content: `<p>Hi! I’m Fred McNulty. I live in New York City, but I grew up in Connecticut, so I’ve spent a lot of time traveling by train between the two.</p><p>I’m a product manager by day and a transit enthusiast pretty much all the time. moose.train started as a personal project inspired by a problem I’d encountered plenty of times myself: figuring out the best way to get somewhere when the answer might involve more than one railroad.</p><p>I also genuinely believe that good public transportation can make our cities and communities better places to live. If moose.train can make taking the train just a little easier, I’ll consider that a win.</p>` },
       ],
       ko: [
-        { open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시와 코네티컷 지역에 집중하고 있으며, Amtrak, Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p>` },
-        { open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 현재 뉴욕시와 코네티컷 사이의 철도 여행에 집중하고 있습니다. 여기에는 웨스트체스터 카운티의 Metro-North New Haven Line 역들과, Metro-North, Amtrak, CTrail Shore Line East, CTrail Hartford Line이 운행하는 코네티컷 내 목적지가 포함됩니다.</p><p>지원 범위는 그 경계를 조금 넘어섭니다. 북쪽으로는 매사추세츠주 스프링필드까지, 동쪽으로는 로드아일랜드주 웨스터리까지 여행을 계획할 수 있습니다.</p><p>이것은 시작점일 뿐입니다. 더 많은 지역으로 확장하기 전에 경험을 제대로 다듬기 위해 초기 서비스 지역을 비교적 좁게 유지했습니다.</p>` },
-        { open: true, summary: "데이터는 가장 최근에 언제 새로 고쳤나요?", content: `<p>moose.train의 시간표 데이터는 2026년 10월 3일 동부시간 오후 12시 54분경에 마지막으로 가져왔습니다. moose.train은 현재 실시간 열차 데이터가 아니라 게시된 정적 GTFS 시간표 데이터를 사용하므로, 검색 결과는 가장 최근 가져온 시점에 제공되던 공식 시간표를 기준으로 합니다.</p><p>여기에는 두 가지 날짜가 있습니다. <strong>제공자 업데이트</strong>는 원본 피드나 파일에 표시된 날짜이고, <strong>moose.train 수신</strong>은 이 사이트가 해당 피드를 마지막으로 가져온 날짜입니다. 현재 가져오기 기록으로 수신 날짜는 확인할 수 있지만, 제공자가 마지막으로 업데이트를 게시한 날짜는 별도로 확인되지 않았습니다.</p><ul><li><strong>Amtrak:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li><li><strong>Metro-North:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 5월 22일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Hartford Line:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 7월 12일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Shore Line East:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li></ul><p><strong>10월 Shore Line East:</strong> 가져온 시간표에는 2026년 10월 5일부터 운행하는 평일 열차 1628, 1640, 1683, 1693이 포함되어 있습니다. 검색에는 선택한 여행 날짜에 해당하는 시간표가 적용됩니다. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">공식 발표</a>.</p><p><strong>Metro-North 가을 시간표:</strong> 새로 가져온 데이터에는 2026년 10월 4일부터 적용되는 New Haven Line 가을 시간표와 10월 5일부터의 평일 출퇴근 시간대 정차역 변경이 포함되어 있습니다. Hudson 및 Harlem Line은 현재 검색 범위에 포함되지 않습니다.</p><p>검색 날짜가 해당 여행에 사용할 수 있는 시간표 범위를 넘어가면, moose.train은 현재 검색할 수 있는 가장 늦은 날짜를 알려 줍니다.</p>` },
-        { summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 네 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시와 코네티컷 사이의 모든 정기 여객 철도 서비스와 주변 지역으로 이어지는 연결편을 함께 포괄합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
-        { summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
-        { summary: "왜 이름이 moose.train인가요?", content: `<p>처음에는 약어에서 시작했습니다! 원래 작업 이름은 <strong>Metro-North Or Other Service Evaluator</strong>, 즉 <strong>MOOSE</strong>였습니다. 그 이름이 계속 남았고, 결국 moose.train이 되었습니다.</p><p>게다가 실제로 뉴욕과 코네티컷에는 무스가 살고 있습니다. 그래서 계속 써도 괜찮겠다고 느꼈습니다. 🫎</p>` },
-        { summary: "moose.train에서 기차표를 판매하나요?", content: `<p>아니요. moose.train은 열차 선택지를 찾고 비교하도록 도와주지만, 현재 표를 판매하지는 않습니다.</p><p>맞는 여행을 찾은 뒤에는 해당 철도 운영사의 공식 앱, 웹사이트, 발권기 또는 이용 가능한 다른 판매 채널을 통해 직접 표를 구매할 수 있습니다.</p><p>앞으로는 맞는 열차를 찾은 뒤 실제 예약까지 더 쉽게 이어질 수 있도록 만들고 싶습니다.</p>` },
-        { summary: "moose.train은 Amtrak, Metro-North, CTrail, MTA 또는 다른 교통 기관과 제휴되어 있나요?", content: `<p>아니요. moose.train은 독립 프로젝트이며, 어떤 철도 회사나 교통 기관과도 제휴, 보증, 운영 관계가 없습니다.</p><p>시간표는 철도 운영사들이 직접 공개한 공개 데이터를 기반으로 하지만, moose.train은 독립적으로 만들고 관리됩니다.</p>` },
-        { summary: "Apple Maps나 Google Maps도 이미 이런 기능을 하지 않나요?", content: `<p>완전히 같지는 않습니다. Apple Maps와 Google Maps는 특정 여행의 길찾기를 원할 때 훌륭하지만, moose.train은 언제 어떻게 이동할지 결정하기 전에 선택지를 비교하도록 만들어졌습니다.</p><p>예를 들어 8:15am Amtrak 열차가 있고, 8:40am Metro-North 선택지가 있으며, 9:10am에는 시간이 조금 더 걸리지만 환승이 적은 여행이 있을 수 있습니다. moose.train은 이런 선택지를 나란히 보여 주어, 장단점을 비교하고 나에게 가장 잘 맞는 여행을 고르기 쉽게 합니다.</p><p>즉, “어떻게 가야 하지?”에 답하기보다는 “내 선택지는 무엇이지?”에 답하는 데 가깝습니다.</p>` },
-        { summary: "그냥 철도 운영사 웹사이트를 쓰면 안 되나요?", content: `<p>물론 사용할 수 있습니다. 하지만 각 운영사는 자연스럽게 자기 열차에 집중합니다. 여러 철도가 같은 목적지까지 갈 수 있는 경우, 선택지를 비교하는 일이 생각보다 복잡해질 수 있습니다.</p><p>뉴욕시와 코네티컷 사이의 여행이 좋은 예입니다. Amtrak은 보통 Penn Station에서 출발하고, Metro-North는 Grand Central에서 출발합니다. 목적지와 일정에 따라 어느 쪽이든 더 나은 선택일 수 있지만, 각 운영사의 웹사이트는 서로의 선택지를 비교하도록 설계되어 있지 않습니다.</p><p>moose.train은 이 선택지를 한곳에 모아, 한 번 검색해서 더 큰 그림을 볼 수 있게 합니다.</p>` },
-        { summary: "일정은 얼마나 정확한가요?", content: `<p>moose.train의 시간표는 참여 철도 운영사가 게시한 공식 시간표 데이터에서 직접 가져옵니다. 즉, Amtrak, Metro-North, CTrail이 제공하는 예정 출발 및 도착 정보를 보고 있는 것입니다.</p><p>moose.train은 이제 정보가 제공되는 경우 Metro-North 여정의 지연 정보도 함께 보여 줍니다. Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 경우 현재는 게시된 시간표 정보만 표시합니다.</p><p>철도 운행 상황은 빠르게 바뀔 수 있으며, 지연, 취소, 임시 서비스 변경 또는 기타 운행 정보가 moose.train에 항상 반영되는 것은 아닙니다. 특히 시간이 중요한 여행이라면 출발 전에 해당 철도 운영사의 최신 정보를 확인하는 것이 좋습니다.</p>` },
-        { summary: "moose.train에서 실시간 지연 정보를 보여 주나요?", content: `<p>네, Metro-North 여정은 지연 정보가 제공되는 경우 표시합니다. Metro-North 검색 결과에서는 여정이 정시인지 지연 중인지 확인할 수 있습니다.</p><p>moose.train은 현재 Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 지연 정보는 표시하지 않습니다. 해당 결과는 게시된 시간표를 기준으로 하므로 실시간 지연, 취소 및 기타 서비스 변경 사항이 나타나지 않을 수 있습니다.</p><p>앞으로 실시간 열차 정보를 더 넓게 제공하고 싶습니다. 현재로서는 시간이 중요한 경우 여행 전에 운영사에 직접 최신 정보를 확인해 주세요.</p>` },
-        { summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 뉴욕시와 코네티컷은 시작점일 뿐입니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
-        { summary: "moose.train은 무료인가요?", content: `<p>네! moose.train은 완전히 무료로 사용할 수 있습니다.</p><p>시간표 데이터는 철도 운영사들이 공개한 공개 정보에서 가져오며, 저는 그 정보를 더 잘 이해할 수 있는 방법이 필요해서 moose.train을 만들었습니다. 그 도구를 다른 사람들도 사용할 수 있게 하는 것이 자연스럽다고 생각했습니다.</p>` },
-        { summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금, UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p>` },
-        { summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>영구적으로 저장할 수는 없지만, 결과를 비교하는 동안 <strong>여정을 후보 목록에 추가</strong>할 수 있습니다. 관심 있는 여정을 후보 목록에 넣은 다음, 나머지를 숨겨 더 쉽게 비교할 수 있습니다.</p><p>후보 목록은 나중을 위해 여행이나 자주 쓰는 역을 저장하는 기능이 아니라, 현재 검색에서 선택지를 좁히기 위한 기능입니다. 더 오래 유지되는 저장 기능은 앞으로 유용할 수 있습니다.</p>` },
-        { summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p>` },
-        { summary: "언젠가 모바일 앱도 나오나요?", content: `<p>언젠가는 가능할 수도 있습니다! 지금은 휴대폰, 태블릿, 컴퓨터 어디에서든 moose.train이 브라우저에서 잘 작동하도록 만드는 데 집중하고 있습니다.</p><p>전용 모바일 앱은 나중에 좋을 수 있습니다. 특히 앱이 있을 때 실제로 더 좋아지는 기능이 있다면요. 하지만 지금은 웹 경험을 최대한 좋게 만드는 데 더 집중하고 싶습니다.</p>` },
-        { summary: "누가 moose.train을 만들었나요?", content: `<p>안녕하세요! 저는 Fred McNulty입니다. 저는 뉴욕시에 살고 있지만 코네티컷에서 자랐기 때문에, 두 지역 사이를 열차로 오간 시간이 많습니다.</p><p>저는 낮에는 제품 관리자이고, 거의 항상 대중교통 애호가이기도 합니다. moose.train은 제가 여러 번 직접 겪었던 문제에서 시작한 개인 프로젝트입니다. 목적지까지 가는 가장 좋은 방법이 하나 이상의 철도를 포함할 수 있을 때, 그 방법을 찾는 문제였습니다.</p><p>저는 좋은 대중교통이 도시와 지역사회를 더 살기 좋은 곳으로 만들 수 있다고 진심으로 믿습니다. moose.train이 열차 이용을 조금이라도 더 쉽게 만든다면, 그것만으로도 성공이라고 생각합니다.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시와 코네티컷 지역에 집중하고 있으며, Amtrak, Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 현재 뉴욕시와 코네티컷 사이의 철도 여행에 집중하고 있습니다. 여기에는 웨스트체스터 카운티의 Metro-North New Haven Line 역들과, Metro-North, Amtrak, CTrail Shore Line East, CTrail Hartford Line이 운행하는 코네티컷 내 목적지가 포함됩니다.</p><p>지원 범위는 그 경계를 조금 넘어섭니다. 북쪽으로는 매사추세츠주 스프링필드까지, 동쪽으로는 로드아일랜드주 웨스터리까지 여행을 계획할 수 있습니다.</p><p>이것은 시작점일 뿐입니다. 더 많은 지역으로 확장하기 전에 경험을 제대로 다듬기 위해 초기 서비스 지역을 비교적 좁게 유지했습니다.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "데이터는 가장 최근에 언제 새로 고쳤나요?", content: `<p>moose.train의 시간표 데이터는 2026년 10월 3일 동부시간 오후 12시 54분경에 마지막으로 가져왔습니다. moose.train은 현재 실시간 열차 데이터가 아니라 게시된 정적 GTFS 시간표 데이터를 사용하므로, 검색 결과는 가장 최근 가져온 시점에 제공되던 공식 시간표를 기준으로 합니다.</p><p>여기에는 두 가지 날짜가 있습니다. <strong>제공자 업데이트</strong>는 원본 피드나 파일에 표시된 날짜이고, <strong>moose.train 수신</strong>은 이 사이트가 해당 피드를 마지막으로 가져온 날짜입니다. 현재 가져오기 기록으로 수신 날짜는 확인할 수 있지만, 제공자가 마지막으로 업데이트를 게시한 날짜는 별도로 확인되지 않았습니다.</p><ul><li><strong>Amtrak:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li><li><strong>Metro-North:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 5월 22일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Hartford Line:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 7월 12일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Shore Line East:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li></ul><p><strong>10월 Shore Line East:</strong> 가져온 시간표에는 2026년 10월 5일부터 운행하는 평일 열차 1628, 1640, 1683, 1693이 포함되어 있습니다. 검색에는 선택한 여행 날짜에 해당하는 시간표가 적용됩니다. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">공식 발표</a>.</p><p><strong>Metro-North 가을 시간표:</strong> 새로 가져온 데이터에는 2026년 10월 4일부터 적용되는 New Haven Line 가을 시간표와 10월 5일부터의 평일 출퇴근 시간대 정차역 변경이 포함되어 있습니다. Hudson 및 Harlem Line은 현재 검색 범위에 포함되지 않습니다.</p><p>검색 날짜가 해당 여행에 사용할 수 있는 시간표 범위를 넘어가면, moose.train은 현재 검색할 수 있는 가장 늦은 날짜를 알려 줍니다.</p>` },
+        { id: "which-rail-services-are-included", summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 네 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시와 코네티컷 사이의 모든 정기 여객 철도 서비스와 주변 지역으로 이어지는 연결편을 함께 포괄합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
+        { id: "why-did-you-build-moose-train", summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
+        { id: "why-is-it-called-moose-train", summary: "왜 이름이 moose.train인가요?", content: `<p>처음에는 약어에서 시작했습니다! 원래 작업 이름은 <strong>Metro-North Or Other Service Evaluator</strong>, 즉 <strong>MOOSE</strong>였습니다. 그 이름이 계속 남았고, 결국 moose.train이 되었습니다.</p><p>게다가 실제로 뉴욕과 코네티컷에는 무스가 살고 있습니다. 그래서 계속 써도 괜찮겠다고 느꼈습니다. 🫎</p>` },
+        { id: "does-moose-train-sell-train-tickets", summary: "moose.train에서 기차표를 판매하나요?", content: `<p>아니요. moose.train은 열차 선택지를 찾고 비교하도록 도와주지만, 현재 표를 판매하지는 않습니다.</p><p>맞는 여행을 찾은 뒤에는 해당 철도 운영사의 공식 앱, 웹사이트, 발권기 또는 이용 가능한 다른 판매 채널을 통해 직접 표를 구매할 수 있습니다.</p><p>앞으로는 맞는 열차를 찾은 뒤 실제 예약까지 더 쉽게 이어질 수 있도록 만들고 싶습니다.</p>` },
+        { id: "is-moose-train-affiliated-with-amtrak-metro-north-ctrail-the-mta-or-any-other-transit-agency", summary: "moose.train은 Amtrak, Metro-North, CTrail, MTA 또는 다른 교통 기관과 제휴되어 있나요?", content: `<p>아니요. moose.train은 독립 프로젝트이며, 어떤 철도 회사나 교통 기관과도 제휴, 보증, 운영 관계가 없습니다.</p><p>시간표는 철도 운영사들이 직접 공개한 공개 데이터를 기반으로 하지만, moose.train은 독립적으로 만들고 관리됩니다.</p>` },
+        { id: "do-apple-maps-or-google-maps-already-do-this", summary: "Apple Maps나 Google Maps도 이미 이런 기능을 하지 않나요?", content: `<p>완전히 같지는 않습니다. Apple Maps와 Google Maps는 특정 여행의 길찾기를 원할 때 훌륭하지만, moose.train은 언제 어떻게 이동할지 결정하기 전에 선택지를 비교하도록 만들어졌습니다.</p><p>예를 들어 8:15am Amtrak 열차가 있고, 8:40am Metro-North 선택지가 있으며, 9:10am에는 시간이 조금 더 걸리지만 환승이 적은 여행이 있을 수 있습니다. moose.train은 이런 선택지를 나란히 보여 주어, 장단점을 비교하고 나에게 가장 잘 맞는 여행을 고르기 쉽게 합니다.</p><p>즉, “어떻게 가야 하지?”에 답하기보다는 “내 선택지는 무엇이지?”에 답하는 데 가깝습니다.</p>` },
+        { id: "why-not-just-use-the-train-operators-websites", summary: "그냥 철도 운영사 웹사이트를 쓰면 안 되나요?", content: `<p>물론 사용할 수 있습니다. 하지만 각 운영사는 자연스럽게 자기 열차에 집중합니다. 여러 철도가 같은 목적지까지 갈 수 있는 경우, 선택지를 비교하는 일이 생각보다 복잡해질 수 있습니다.</p><p>뉴욕시와 코네티컷 사이의 여행이 좋은 예입니다. Amtrak은 보통 Penn Station에서 출발하고, Metro-North는 Grand Central에서 출발합니다. 목적지와 일정에 따라 어느 쪽이든 더 나은 선택일 수 있지만, 각 운영사의 웹사이트는 서로의 선택지를 비교하도록 설계되어 있지 않습니다.</p><p>moose.train은 이 선택지를 한곳에 모아, 한 번 검색해서 더 큰 그림을 볼 수 있게 합니다.</p>` },
+        { id: "how-accurate-are-the-schedules", summary: "일정은 얼마나 정확한가요?", content: `<p>moose.train의 시간표는 참여 철도 운영사가 게시한 공식 시간표 데이터에서 직접 가져옵니다. 즉, Amtrak, Metro-North, CTrail이 제공하는 예정 출발 및 도착 정보를 보고 있는 것입니다.</p><p>moose.train은 이제 정보가 제공되는 경우 Metro-North 여정의 지연 정보도 함께 보여 줍니다. Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 경우 현재는 게시된 시간표 정보만 표시합니다.</p><p>철도 운행 상황은 빠르게 바뀔 수 있으며, 지연, 취소, 임시 서비스 변경 또는 기타 운행 정보가 moose.train에 항상 반영되는 것은 아닙니다. 특히 시간이 중요한 여행이라면 출발 전에 해당 철도 운영사의 최신 정보를 확인하는 것이 좋습니다.</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "moose.train에서 실시간 지연 정보를 보여 주나요?", content: `<p>네, Metro-North 여정은 지연 정보가 제공되는 경우 표시합니다. Metro-North 검색 결과에서는 여정이 정시인지 지연 중인지 확인할 수 있습니다.</p><p>moose.train은 현재 Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 지연 정보는 표시하지 않습니다. 해당 결과는 게시된 시간표를 기준으로 하므로 실시간 지연, 취소 및 기타 서비스 변경 사항이 나타나지 않을 수 있습니다.</p><p>앞으로 실시간 열차 정보를 더 넓게 제공하고 싶습니다. 현재로서는 시간이 중요한 경우 여행 전에 운영사에 직접 최신 정보를 확인해 주세요.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 뉴욕시와 코네티컷은 시작점일 뿐입니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
+        { id: "is-moose-train-free", summary: "moose.train은 무료인가요?", content: `<p>네! moose.train은 완전히 무료로 사용할 수 있습니다.</p><p>시간표 데이터는 철도 운영사들이 공개한 공개 정보에서 가져오며, 저는 그 정보를 더 잘 이해할 수 있는 방법이 필요해서 moose.train을 만들었습니다. 그 도구를 다른 사람들도 사용할 수 있게 하는 것이 자연스럽다고 생각했습니다.</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금, UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>영구적으로 저장할 수는 없지만, 결과를 비교하는 동안 <strong>여정을 후보 목록에 추가</strong>할 수 있습니다. 관심 있는 여정을 후보 목록에 넣은 다음, 나머지를 숨겨 더 쉽게 비교할 수 있습니다.</p><p>후보 목록은 나중을 위해 여행이나 자주 쓰는 역을 저장하는 기능이 아니라, 현재 검색에서 선택지를 좁히기 위한 기능입니다. 더 오래 유지되는 저장 기능은 앞으로 유용할 수 있습니다.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p>` },
+        { id: "will-there-eventually-be-a-mobile-app", summary: "언젠가 모바일 앱도 나오나요?", content: `<p>언젠가는 가능할 수도 있습니다! 지금은 휴대폰, 태블릿, 컴퓨터 어디에서든 moose.train이 브라우저에서 잘 작동하도록 만드는 데 집중하고 있습니다.</p><p>전용 모바일 앱은 나중에 좋을 수 있습니다. 특히 앱이 있을 때 실제로 더 좋아지는 기능이 있다면요. 하지만 지금은 웹 경험을 최대한 좋게 만드는 데 더 집중하고 싶습니다.</p>` },
+        { id: "who-built-moose-train", summary: "누가 moose.train을 만들었나요?", content: `<p>안녕하세요! 저는 Fred McNulty입니다. 저는 뉴욕시에 살고 있지만 코네티컷에서 자랐기 때문에, 두 지역 사이를 열차로 오간 시간이 많습니다.</p><p>저는 낮에는 제품 관리자이고, 거의 항상 대중교통 애호가이기도 합니다. moose.train은 제가 여러 번 직접 겪었던 문제에서 시작한 개인 프로젝트입니다. 목적지까지 가는 가장 좋은 방법이 하나 이상의 철도를 포함할 수 있을 때, 그 방법을 찾는 문제였습니다.</p><p>저는 좋은 대중교통이 도시와 지역사회를 더 살기 좋은 곳으로 만들 수 있다고 진심으로 믿습니다. moose.train이 열차 이용을 조금이라도 더 쉽게 만든다면, 그것만으로도 성공이라고 생각합니다.</p>` },
       ],
       es: [
-        { open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York y Connecticut, reuniendo horarios de Amtrak, Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p>` },
-        { open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train actualmente se centra en viajes en tren entre la ciudad de Nueva York y Connecticut. Eso incluye estaciones de la línea Metro-North New Haven Line en el condado de Westchester, así como destinos de Connecticut servidos por Metro-North, Amtrak, CTrail Shore Line East y CTrail Hartford Line.</p><p>La cobertura también se extiende un poco más allá de esos límites. Puedes planificar viajes tan al norte como Springfield, Massachusetts, y tan al este como Westerly, Rhode Island.</p><p>Esto es solo el punto de partida. Mantuve el área inicial de servicio relativamente enfocada para poder mejorar la experiencia antes de expandirla a más lugares.</p>` },
-        { open: true, summary: "¿Cuándo se actualizaron los datos por última vez?", content: `<p>Los datos de horarios de moose.train se importaron por última vez el 3 de octubre de 2026 alrededor de las 12:54 p. m., hora del Este. Como moose.train actualmente usa datos estáticos GTFS publicados en vez de datos de trenes en vivo, los resultados que ves se basan en los horarios oficiales disponibles en el momento de la importación más reciente.</p><p>Hay dos fechas útiles: <strong>actualizado por el proveedor</strong>, que es la fecha indicada por el feed o archivo de origen, y <strong>recibido por moose.train</strong>, que es cuando este sitio importó ese feed por última vez. Los registros actuales confirman la recepción, pero no verifican de forma independiente cuándo publicó cada proveedor su última actualización.</p><ul><li><strong>Amtrak:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li><li><strong>Metro-North:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 22 de mayo de 2027.</li><li><strong>CTrail Hartford Line:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 12 de julio de 2027.</li><li><strong>CTrail Shore Line East:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li></ul><p><strong>Shore Line East en octubre:</strong> El horario importado incluye los trenes de lunes a viernes 1628, 1640, 1683 y 1693 desde el 5 de octubre de 2026. Las búsquedas usan el horario correspondiente a la fecha del viaje. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Anuncio oficial</a>.</p><p><strong>Horario de otoño de Metro-North:</strong> Los datos actualizados incluyen cambios de paradas de New Haven Line desde el 4 de octubre de 2026, con cambios en horas punta de lunes a viernes desde el 5 de octubre. Hudson y Harlem Line quedan fuera de la cobertura actual.</p><p>Si una búsqueda está fuera del rango de horarios disponible para un viaje, moose.train mostrará la última fecha disponible actualmente para esa búsqueda.</p>` },
-        { summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de cuatro servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, cubren todo el servicio ferroviario de pasajeros programado entre la ciudad de Nueva York y Connecticut, además de conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
-        { summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
-        { summary: "¿Por qué se llama moose.train?", content: `<p>¡Empezó como un acrónimo! El nombre de trabajo original era <strong>Metro-North Or Other Service Evaluator</strong>, o <strong>MOOSE</strong>. El nombre se quedó y, con el tiempo, se convirtió en moose.train.</p><p>Además, convenientemente, realmente hay alces tanto en Nueva York como en Connecticut. Así que pareció valer la pena conservarlo. 🫎</p>` },
-        { summary: "¿moose.train vende boletos de tren?", content: `<p>No. moose.train te ayuda a encontrar y comparar tus opciones de tren, pero actualmente no vende boletos.</p><p>Una vez que encuentres el viaje que te conviene, puedes comprar tu boleto directamente al operador ferroviario mediante su app oficial, sitio web, máquinas expendedoras u otros canales de venta disponibles.</p><p>En el futuro, me gustaría facilitar el paso de encontrar el tren correcto a reservar realmente tu viaje.</p>` },
-        { summary: "¿moose.train está afiliado a Amtrak, Metro-North, CTrail, la MTA u otra agencia de transporte?", content: `<p>No. moose.train es un proyecto independiente y no está afiliado, respaldado ni operado por ningún ferrocarril o agencia de transporte.</p><p>Los horarios provienen de datos públicos publicados por los propios operadores ferroviarios, pero moose.train se construye y mantiene de forma independiente.</p>` },
-        { summary: "¿Apple Maps o Google Maps no hacen esto ya?", content: `<p>No exactamente. Apple Maps y Google Maps son excelentes cuando quieres indicaciones para un viaje específico, pero moose.train está pensado para comparar tus opciones antes de decidir cómo y cuándo quieres viajar.</p><p>Tal vez haya un tren de Amtrak a las 8:15am, una opción de Metro-North a las 8:40am y otro viaje a las 9:10am que tarda un poco más pero requiere menos transbordos. moose.train pone esas opciones lado a lado, lo que facilita comparar las ventajas y desventajas y elegir el viaje que mejor funciona para ti.</p><p>Se trata menos de responder “¿Cómo llego?” y más de responder “¿Cuáles son mis opciones?”</p>` },
-        { summary: "¿Por qué no usar simplemente los sitios web de los operadores?", content: `<p>Claro que puedes hacerlo, pero cada operador naturalmente se enfoca en sus propios trenes. Eso puede hacer que comparar tus opciones sea sorprendentemente complicado cuando más de un ferrocarril puede llevarte a donde vas.</p><p>Un viaje entre la ciudad de Nueva York y Connecticut es un buen ejemplo. Amtrak generalmente sale de Penn Station, mientras que Metro-North sale de Grand Central. Según tu destino y horario, cualquiera de los dos podría ser la mejor opción, pero sus sitios web no están diseñados para comparar esas opciones entre sí.</p><p>moose.train las reúne para que puedas buscar una vez y ver el panorama completo.</p>` },
-        { summary: "¿Qué tan precisos son los horarios?", content: `<p>Los horarios en moose.train provienen directamente de los datos oficiales de itinerarios publicados por los operadores ferroviarios participantes. En otras palabras, ves la misma información programada de salida y llegada proporcionada por Amtrak, Metro-North y CTrail.</p><p>moose.train ahora también muestra información de retrasos para viajes de Metro-North cuando esa información está disponible. Para viajes de Amtrak, CTrail Hartford Line y CTrail Shore Line East, moose.train actualmente muestra solo la información del horario publicado.</p><p>El servicio ferroviario puede cambiar rápidamente, y los retrasos, cancelaciones, cambios temporales de servicio u otras actualizaciones operativas no siempre se reflejan en moose.train. Antes de viajar, especialmente si el horario es importante, siempre conviene confirmar la información más reciente con el operador ferroviario.</p>` },
-        { summary: "¿moose.train muestra retrasos en tiempo real?", content: `<p>Sí, para viajes de Metro-North cuando la información de retrasos está disponible. Los resultados de Metro-North pueden indicar si un viaje parece estar a horario o retrasado.</p><p>moose.train actualmente no muestra información de retrasos para viajes de Amtrak, CTrail Hartford Line o CTrail Shore Line East. Esos resultados se basan en horarios publicados, por lo que retrasos en tiempo real, cancelaciones y otros cambios de servicio pueden no aparecer.</p><p>Me gustaría ampliar la información de trenes en vivo en el futuro. Por ahora, consulta directamente con el operador antes de viajar si el horario es importante.</p>` },
-        { summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York y Connecticut son solo el punto de partida.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
-        { summary: "¿moose.train es gratis?", content: `<p>¡Sí! moose.train es completamente gratis.</p><p>Los datos de horarios provienen de información pública publicada por los operadores ferroviarios, y construí moose.train porque quería una mejor manera de entenderla. Me pareció justo poner esa herramienta también a disposición de todos los demás.</p>` },
-        { summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de Metro-North New Haven Line, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales, conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p>` },
-        { summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>No permanentemente, pero puedes <strong>agregar viajes a tu lista breve</strong> mientras comparas tus resultados. Solo agrega los viajes que te interesen a la lista breve y luego oculta todo lo demás para compararlos con más facilidad.</p><p>La lista breve está pensada para reducir tus opciones durante la búsqueda actual, no para guardar viajes o estaciones favoritas para más tarde. Opciones de guardado más persistentes podrían ser útiles en el futuro.</p>` },
-        { summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p>` },
-        { summary: "¿Habrá una app móvil eventualmente?", content: `<p>¡Quizás algún día! Por ahora, mi enfoque está en hacer que moose.train funcione muy bien en el navegador, ya sea que uses un teléfono, una tableta o una computadora.</p><p>Una app móvil dedicada podría ser excelente más adelante, especialmente si hay funciones que realmente se beneficiarían de tener una. Pero por ahora prefiero hacer que la experiencia web sea lo mejor posible.</p>` },
-        { summary: "¿Quién construyó moose.train?", content: `<p>¡Hola! Soy Fred McNulty. Vivo en la ciudad de Nueva York, pero crecí en Connecticut, así que he pasado mucho tiempo viajando en tren entre ambos lugares.</p><p>Soy product manager durante el día y entusiasta del transporte público prácticamente todo el tiempo. moose.train empezó como un proyecto personal inspirado por un problema que yo mismo había encontrado muchas veces: averiguar la mejor manera de llegar a algún lugar cuando la respuesta podía incluir más de un ferrocarril.</p><p>También creo sinceramente que un buen transporte público puede hacer que nuestras ciudades y comunidades sean mejores lugares para vivir. Si moose.train puede hacer que tomar el tren sea apenas un poco más fácil, lo consideraré una victoria.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York y Connecticut, reuniendo horarios de Amtrak, Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train actualmente se centra en viajes en tren entre la ciudad de Nueva York y Connecticut. Eso incluye estaciones de la línea Metro-North New Haven Line en el condado de Westchester, así como destinos de Connecticut servidos por Metro-North, Amtrak, CTrail Shore Line East y CTrail Hartford Line.</p><p>La cobertura también se extiende un poco más allá de esos límites. Puedes planificar viajes tan al norte como Springfield, Massachusetts, y tan al este como Westerly, Rhode Island.</p><p>Esto es solo el punto de partida. Mantuve el área inicial de servicio relativamente enfocada para poder mejorar la experiencia antes de expandirla a más lugares.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Cuándo se actualizaron los datos por última vez?", content: `<p>Los datos de horarios de moose.train se importaron por última vez el 3 de octubre de 2026 alrededor de las 12:54 p. m., hora del Este. Como moose.train actualmente usa datos estáticos GTFS publicados en vez de datos de trenes en vivo, los resultados que ves se basan en los horarios oficiales disponibles en el momento de la importación más reciente.</p><p>Hay dos fechas útiles: <strong>actualizado por el proveedor</strong>, que es la fecha indicada por el feed o archivo de origen, y <strong>recibido por moose.train</strong>, que es cuando este sitio importó ese feed por última vez. Los registros actuales confirman la recepción, pero no verifican de forma independiente cuándo publicó cada proveedor su última actualización.</p><ul><li><strong>Amtrak:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li><li><strong>Metro-North:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 22 de mayo de 2027.</li><li><strong>CTrail Hartford Line:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 12 de julio de 2027.</li><li><strong>CTrail Shore Line East:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li></ul><p><strong>Shore Line East en octubre:</strong> El horario importado incluye los trenes de lunes a viernes 1628, 1640, 1683 y 1693 desde el 5 de octubre de 2026. Las búsquedas usan el horario correspondiente a la fecha del viaje. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Anuncio oficial</a>.</p><p><strong>Horario de otoño de Metro-North:</strong> Los datos actualizados incluyen cambios de paradas de New Haven Line desde el 4 de octubre de 2026, con cambios en horas punta de lunes a viernes desde el 5 de octubre. Hudson y Harlem Line quedan fuera de la cobertura actual.</p><p>Si una búsqueda está fuera del rango de horarios disponible para un viaje, moose.train mostrará la última fecha disponible actualmente para esa búsqueda.</p>` },
+        { id: "which-rail-services-are-included", summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de cuatro servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, cubren todo el servicio ferroviario de pasajeros programado entre la ciudad de Nueva York y Connecticut, además de conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
+        { id: "why-did-you-build-moose-train", summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
+        { id: "why-is-it-called-moose-train", summary: "¿Por qué se llama moose.train?", content: `<p>¡Empezó como un acrónimo! El nombre de trabajo original era <strong>Metro-North Or Other Service Evaluator</strong>, o <strong>MOOSE</strong>. El nombre se quedó y, con el tiempo, se convirtió en moose.train.</p><p>Además, convenientemente, realmente hay alces tanto en Nueva York como en Connecticut. Así que pareció valer la pena conservarlo. 🫎</p>` },
+        { id: "does-moose-train-sell-train-tickets", summary: "¿moose.train vende boletos de tren?", content: `<p>No. moose.train te ayuda a encontrar y comparar tus opciones de tren, pero actualmente no vende boletos.</p><p>Una vez que encuentres el viaje que te conviene, puedes comprar tu boleto directamente al operador ferroviario mediante su app oficial, sitio web, máquinas expendedoras u otros canales de venta disponibles.</p><p>En el futuro, me gustaría facilitar el paso de encontrar el tren correcto a reservar realmente tu viaje.</p>` },
+        { id: "is-moose-train-affiliated-with-amtrak-metro-north-ctrail-the-mta-or-any-other-transit-agency", summary: "¿moose.train está afiliado a Amtrak, Metro-North, CTrail, la MTA u otra agencia de transporte?", content: `<p>No. moose.train es un proyecto independiente y no está afiliado, respaldado ni operado por ningún ferrocarril o agencia de transporte.</p><p>Los horarios provienen de datos públicos publicados por los propios operadores ferroviarios, pero moose.train se construye y mantiene de forma independiente.</p>` },
+        { id: "do-apple-maps-or-google-maps-already-do-this", summary: "¿Apple Maps o Google Maps no hacen esto ya?", content: `<p>No exactamente. Apple Maps y Google Maps son excelentes cuando quieres indicaciones para un viaje específico, pero moose.train está pensado para comparar tus opciones antes de decidir cómo y cuándo quieres viajar.</p><p>Tal vez haya un tren de Amtrak a las 8:15am, una opción de Metro-North a las 8:40am y otro viaje a las 9:10am que tarda un poco más pero requiere menos transbordos. moose.train pone esas opciones lado a lado, lo que facilita comparar las ventajas y desventajas y elegir el viaje que mejor funciona para ti.</p><p>Se trata menos de responder “¿Cómo llego?” y más de responder “¿Cuáles son mis opciones?”</p>` },
+        { id: "why-not-just-use-the-train-operators-websites", summary: "¿Por qué no usar simplemente los sitios web de los operadores?", content: `<p>Claro que puedes hacerlo, pero cada operador naturalmente se enfoca en sus propios trenes. Eso puede hacer que comparar tus opciones sea sorprendentemente complicado cuando más de un ferrocarril puede llevarte a donde vas.</p><p>Un viaje entre la ciudad de Nueva York y Connecticut es un buen ejemplo. Amtrak generalmente sale de Penn Station, mientras que Metro-North sale de Grand Central. Según tu destino y horario, cualquiera de los dos podría ser la mejor opción, pero sus sitios web no están diseñados para comparar esas opciones entre sí.</p><p>moose.train las reúne para que puedas buscar una vez y ver el panorama completo.</p>` },
+        { id: "how-accurate-are-the-schedules", summary: "¿Qué tan precisos son los horarios?", content: `<p>Los horarios en moose.train provienen directamente de los datos oficiales de itinerarios publicados por los operadores ferroviarios participantes. En otras palabras, ves la misma información programada de salida y llegada proporcionada por Amtrak, Metro-North y CTrail.</p><p>moose.train ahora también muestra información de retrasos para viajes de Metro-North cuando esa información está disponible. Para viajes de Amtrak, CTrail Hartford Line y CTrail Shore Line East, moose.train actualmente muestra solo la información del horario publicado.</p><p>El servicio ferroviario puede cambiar rápidamente, y los retrasos, cancelaciones, cambios temporales de servicio u otras actualizaciones operativas no siempre se reflejan en moose.train. Antes de viajar, especialmente si el horario es importante, siempre conviene confirmar la información más reciente con el operador ferroviario.</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "¿moose.train muestra retrasos en tiempo real?", content: `<p>Sí, para viajes de Metro-North cuando la información de retrasos está disponible. Los resultados de Metro-North pueden indicar si un viaje parece estar a horario o retrasado.</p><p>moose.train actualmente no muestra información de retrasos para viajes de Amtrak, CTrail Hartford Line o CTrail Shore Line East. Esos resultados se basan en horarios publicados, por lo que retrasos en tiempo real, cancelaciones y otros cambios de servicio pueden no aparecer.</p><p>Me gustaría ampliar la información de trenes en vivo en el futuro. Por ahora, consulta directamente con el operador antes de viajar si el horario es importante.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York y Connecticut son solo el punto de partida.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
+        { id: "is-moose-train-free", summary: "¿moose.train es gratis?", content: `<p>¡Sí! moose.train es completamente gratis.</p><p>Los datos de horarios provienen de información pública publicada por los operadores ferroviarios, y construí moose.train porque quería una mejor manera de entenderla. Me pareció justo poner esa herramienta también a disposición de todos los demás.</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de Metro-North New Haven Line, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales, conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>No permanentemente, pero puedes <strong>agregar viajes a tu lista breve</strong> mientras comparas tus resultados. Solo agrega los viajes que te interesen a la lista breve y luego oculta todo lo demás para compararlos con más facilidad.</p><p>La lista breve está pensada para reducir tus opciones durante la búsqueda actual, no para guardar viajes o estaciones favoritas para más tarde. Opciones de guardado más persistentes podrían ser útiles en el futuro.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p>` },
+        { id: "will-there-eventually-be-a-mobile-app", summary: "¿Habrá una app móvil eventualmente?", content: `<p>¡Quizás algún día! Por ahora, mi enfoque está en hacer que moose.train funcione muy bien en el navegador, ya sea que uses un teléfono, una tableta o una computadora.</p><p>Una app móvil dedicada podría ser excelente más adelante, especialmente si hay funciones que realmente se beneficiarían de tener una. Pero por ahora prefiero hacer que la experiencia web sea lo mejor posible.</p>` },
+        { id: "who-built-moose-train", summary: "¿Quién construyó moose.train?", content: `<p>¡Hola! Soy Fred McNulty. Vivo en la ciudad de Nueva York, pero crecí en Connecticut, así que he pasado mucho tiempo viajando en tren entre ambos lugares.</p><p>Soy product manager durante el día y entusiasta del transporte público prácticamente todo el tiempo. moose.train empezó como un proyecto personal inspirado por un problema que yo mismo había encontrado muchas veces: averiguar la mejor manera de llegar a algún lugar cuando la respuesta podía incluir más de un ferrocarril.</p><p>También creo sinceramente que un buen transporte público puede hacer que nuestras ciudades y comunidades sean mejores lugares para vivir. Si moose.train puede hacer que tomar el tren sea apenas un poco más fácil, lo consideraré una victoria.</p>` },
       ],
     };
 
@@ -2934,6 +3005,7 @@
     let isSearchLoading = false;
     let activeSearchState = null;
     let departureRangeHours = 24;
+    let departureRangeFrame = null;
     let shortlistedRouteIds = new Set();
     let shortlistOnly = false;
     let metroNorthRealtimeCache = null;
@@ -3044,12 +3116,11 @@
       });
       document.addEventListener("click", (event) => {
         if (!event.target.closest("[data-status-toggle]")) closeRealtimeStatusTooltips();
+        els.results.querySelectorAll(".amtrak-fare-picker[open]").forEach((picker) => {
+          if (!picker.contains(event.target)) picker.open = false;
+        });
       });
-      els.results.addEventListener("input", (event) => {
-        if (!event.target.matches("#departure-range-slider")) return;
-        departureRangeHours = Number(event.target.value);
-        renderActiveSearchResults();
-      });
+      els.results.addEventListener("input", handleDepartureRangeInput);
       els.swap.addEventListener("click", () => {
         [els.origin.value, els.destination.value] = [els.destination.value, els.origin.value];
         renderSearch({ resetShortlist: true, requireSchedule: true });
@@ -3072,7 +3143,13 @@
         showSourceLinks();
       });
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeRealtimeStatusTooltips();
+        if (event.key === "Escape") {
+          closeRealtimeStatusTooltips();
+          els.results.querySelectorAll(".amtrak-fare-picker[open]").forEach((picker) => {
+            picker.open = false;
+            picker.querySelector("summary").focus();
+          });
+        }
         if (event.key === "Escape" && els.debugMenuPopup && !els.debugMenuPopup.hidden) {
           closeDebugMenu();
           return;
@@ -3088,6 +3165,15 @@
       stations = initialStations();
       populateStations(stations);
       setLanguage(languageFromUrl());
+      startSchedulePreload();
+    }
+
+    function startSchedulePreload() {
+      const preload = () => ensureScheduleLoaded({ updateStatus: false });
+      [els.origin, els.destination].forEach(input => input.addEventListener("focus", preload, { once: true }));
+      // Give the initial page a chance to paint before preparing search data.
+      if (typeof window.requestIdleCallback === "function") window.requestIdleCallback(preload, { timeout: 1500 });
+      else window.setTimeout(preload, 300);
     }
 
     function initTimezoneNotice() {
@@ -3465,7 +3551,10 @@
       }
       if (!timetableCsvLinks.length) {
         const loaded = await ensureScheduleLoaded();
-        if (!loaded) return;
+        if (!loaded) {
+          setStatus("csvLoadError", {}, true);
+          return;
+        }
       }
       els.sourceLinks.hidden = false;
       els.sourceLinks.open = true;
@@ -3510,6 +3599,14 @@
       const { updateStatus = true } = options;
       if (updateStatus) setStatus("loadingCsv");
       try {
+        const prepared = await fetchSearchSchedule();
+        applySchedule(prepared.trips, prepared.metadata);
+        if (updateStatus) setStatus("readyToSearch");
+        return true;
+      } catch (_error) {
+        // Preserve search on older deployments or if the optimized asset is unavailable.
+      }
+      try {
         const response = await fetch(CSV_PATH);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const builder = createTripBuilder();
@@ -3542,13 +3639,56 @@
       } catch (_error) {
         const embedded = readEmbeddedCsv();
         if (!embedded.trim()) {
-          setStatus("csvLoadError", {}, true);
+          if (updateStatus) setStatus("csvLoadError", {}, true);
           return false;
         }
         loadCsvText(embedded);
         if (updateStatus) setStatus("readyToSearch");
         return true;
       }
+    }
+
+    async function fetchSearchSchedule() {
+      const suffix = `?v=${SEARCH_SCHEDULE_VERSION}`;
+      if (typeof DecompressionStream === "function") {
+        try {
+          const response = await fetch(`${SEARCH_SCHEDULE_PATH}.gz${suffix}`);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          const stream = response.body.pipeThrough(new DecompressionStream("gzip"));
+          return decodeSearchSchedule(await new Response(stream).json());
+        } catch (_error) {
+          // Plain JSON also supports browsers without streaming decompression.
+        }
+      }
+      const response = await fetch(`${SEARCH_SCHEDULE_PATH}${suffix}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return decodeSearchSchedule(await response.json());
+    }
+
+    function decodeSearchSchedule(data) {
+      if (data.version !== 1 || !Array.isArray(data.strings) || !Array.isArray(data.trips) || !data.trips.length ||
+          !Array.isArray(data.metadata) || !Array.isArray(data.tripFields) || !Array.isArray(data.stopFields) ||
+          !Array.isArray(data.metadataFields) || !data.tripFields.includes("key") || !data.stopFields.includes("id")) {
+        throw new Error("Invalid search schedule");
+      }
+      const decode = value => {
+        if (!Array.isArray(value)) return value;
+        if (value.length !== 1 || !Number.isInteger(value[0]) || typeof data.strings[value[0]] !== "string") {
+          throw new Error("Invalid schedule string reference");
+        }
+        return data.strings[value[0]];
+      };
+      const object = (fields, row) => {
+        if (!Array.isArray(row) || row.length !== fields.length) throw new Error("Invalid schedule row");
+        return Object.fromEntries(fields.map((field, index) => [field, decode(row[index])]));
+      };
+      return {
+        trips: data.trips.map(row => ({
+          ...object(data.tripFields, row.slice(0, -1)),
+          stops: row[row.length - 1].map(stop => object(data.stopFields, stop)),
+        })),
+        metadata: data.metadata.map(row => object(data.metadataFields, row)),
+      };
     }
 
     function readEmbeddedCsv() {
@@ -4281,6 +4421,7 @@
         const loaded = await ensureScheduleLoaded({ updateStatus: false });
         setSearchLoading(false);
         if (!loaded) {
+          setStatus("csvLoadError", {}, true);
           els.results.innerHTML = "";
           return;
         }
@@ -4698,6 +4839,17 @@
         trip.stops.some((stop) => APP_TO_MNR_GTFS_STOP_ID.has(stop.id));
     }
 
+    function handleDepartureRangeInput(event) {
+      if (!event.target.matches("#departure-range-slider")) return;
+      departureRangeHours = Number(event.target.value);
+      event.target.style.setProperty("--range-fill", departureRangeFill(departureRangeHours));
+      if (departureRangeFrame !== null) return;
+      departureRangeFrame = window.requestAnimationFrame(() => {
+        departureRangeFrame = null;
+        renderActiveSearchResults();
+      });
+    }
+
     function renderActiveSearchResults() {
       if (!activeSearchState) return;
       const { routes, queryTime, mode, date, realtimeSnapshot } = activeSearchState;
@@ -4705,11 +4857,28 @@
       const visibleRoutes = shortlistOnly
         ? filteredRoutes.filter((route) => shortlistedRouteIds.has(routeShortlistId(route)))
         : filteredRoutes;
-      els.results.innerHTML = renderDepartureRangeFilter(visibleRoutes.length, queryTime, mode, date) +
-        renderShortlistFilterControl() +
+      const routeMarkup = renderShortlistFilterControl() +
         (visibleRoutes.length
           ? visibleRoutes.map((route) => renderRoute(route, queryTime, mode, date, routeShortlistId(route), shortlistedRouteIds.has(routeShortlistId(route)), realtimeSnapshot)).join("")
           : renderEmptySearchState({ key: "selectedRangeNoTrips", values: {} }));
+      const slider = els.results.querySelector?.("#departure-range-slider");
+      const routeList = els.results.querySelector?.("[data-route-list]");
+      if (slider && routeList) {
+        // Preserve the native range element, its drag gesture, and keyboard focus.
+        const rangeName = departureRangeName(departureRangeHours);
+        slider.value = String(departureRangeHours);
+        slider.style.setProperty("--range-fill", departureRangeFill(departureRangeHours));
+        slider.setAttribute("aria-valuetext", rangeName);
+        slider.setAttribute("aria-label", t("departureRangeLabel"));
+        els.results.querySelector(".range-label").textContent = t("departureRangeLabel");
+        els.results.querySelector(".trip-count").textContent = formatTripCount(visibleRoutes.length);
+        els.results.querySelector(".range-name").textContent = rangeName;
+        els.results.querySelector("#departure-range-copy").textContent = departureRangeDescription(queryTime, mode, date, departureRangeHours);
+        routeList.innerHTML = routeMarkup;
+      } else {
+        els.results.innerHTML = renderDepartureRangeFilter(visibleRoutes.length, queryTime, mode, date) +
+          `<div data-route-list>${routeMarkup}</div>`;
+      }
     }
 
     function resetShortlistState() {
@@ -4810,12 +4979,16 @@
       return `<div class="trip-count" aria-live="polite">${escapeHtml(formatTripCount(count))}</div>`;
     }
 
+    function departureRangeFill(hours) {
+      const progress = (hours - 1) / 23;
+      // Keep the fill centered under the thumb along its inset travel.
+      return `calc(${progress * 100}% + (0.5 - ${progress}) * var(--range-thumb-size))`;
+    }
+
     function renderDepartureRangeFilter(count, queryTime, mode, date) {
       const rangeName = departureRangeName(departureRangeHours);
       const rangeDescription = departureRangeDescription(queryTime, mode, date, departureRangeHours);
-      const rangeProgress = (departureRangeHours - 1) / 23;
-      // Keep the color boundary centered under the thumb along its inset travel.
-      const rangeFill = `calc(${rangeProgress * 100}% + (0.5 - ${rangeProgress}) * var(--range-thumb-size))`;
+      const rangeFill = departureRangeFill(departureRangeHours);
       return `
         <div class="results-filter">
           <div class="results-filter-top">
@@ -5451,6 +5624,20 @@
       return statuses.size === 1 ? Array.from(statuses)[0] : "";
     }
 
+    function renderAmtrakFareLink() {
+      if (currentLanguage === "ko") {
+        return `<details class="amtrak-fare-picker"><summary>Amtrak에서 운임 확인 ↗</summary>
+          <div class="amtrak-language-box"><p>현재 Amtrak 웹사이트는 한국어를 지원하지 않습니다.</p><p>이용할 언어를 선택하세요.</p>
+            <a href="https://amtrak.com" target="_blank" rel="noopener noreferrer">영어 (English) ↗</a>
+            <a href="https://espanol.amtrak.com/" target="_blank" rel="noopener noreferrer">스페인어 (Español) ↗</a>
+            <a href="https://francais.amtrak.com/" target="_blank" rel="noopener noreferrer">프랑스어 (Français) ↗</a>
+            <a href="https://zh.amtrak.com/" target="_blank" rel="noopener noreferrer">중국어 (中文) ↗</a>
+          </div></details>`;
+      }
+      const spanish = currentLanguage === "es";
+      return `<a class="amtrak-fare-link" href="${spanish ? "https://espanol.amtrak.com/" : "https://amtrak.com"}" target="_blank" rel="noopener noreferrer">${spanish ? "Consultar tarifa en Amtrak" : "Check fare on Amtrak"} ↗</a>`;
+    }
+
     function renderFareSummary(fare) {
       if (!fare) return "";
       if (Number.isInteger(fare.amountCents)) {
@@ -5733,7 +5920,12 @@
       const liveIndicator = renderRouteRealtimeIndicator(routeRealtimeStatus(route, queryTime, mode, searchDate, realtimeSnapshot));
       const routeFare = calculateRouteFare(route);
       const routeFareSummary = renderFareSummary(routeFare);
-      const routeFareMeta = routeFareSummary ? `<span class="fare-summary">${escapeHtml(routeFareSummary)}</span>` : "";
+      const amtrakFirstMixedTrip = normalize(route.legs[0].trip.agency) === "amtrak" &&
+        route.legs.some((leg) => normalize(leg.trip.agency) !== "amtrak");
+      const routeFareMeta = routeFareSummary ? `<span class="fare-summary">${Number.isInteger(routeFare.amountCents)
+        ? `${escapeHtml(formatFareAmount(routeFare))}<button class="live-indicator fare-info" type="button" aria-label="${escapeHtml(t("fareStandardOneWay"))}" aria-expanded="false" data-status-toggle><span aria-hidden="true">ⓘ</span><span class="live-indicator-tooltip" role="tooltip">${escapeHtml(t("fareStandardOneWay"))}</span></button>`
+        : escapeHtml(routeFareSummary)}</span>` : !amtrakFirstMixedTrip && route.legs.some((leg) => normalize(leg.trip.agency) === "amtrak")
+          ? `<span class="fare-summary">${renderAmtrakFareLink()}</span>` : "";
       return `
         <article class="result" data-route-id="${escapeHtml(routeId)}">
           <button
@@ -5752,7 +5944,7 @@
             <div class="result-meta"><span class="journey-time">${escapeHtml(routeTimeRange)}</span><span class="journey-duration">${liveIndicator}${escapeHtml(formatDuration(routeDuration))}</span>${routeFareMeta}</div>
           </div>
           <div class="legs">
-            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset)).join("")}
+            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset, route.legs.every((item) => normalize(item.trip.agency) === "amtrak"))).join("")}
           </div>
         </article>
       `;
@@ -5761,9 +5953,12 @@
     function renderRouteRealtimeIndicator(status) {
       if (!status) return "";
       const label = routeRealtimeStatusLabel(status);
+      const icon = status.symbol === "⊙" || status.symbol === "◷"
+        ? `<svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/>${status.symbol === "⊙" ? '<circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>' : '<path d="M12 6v6h5"/>'}</svg>`
+        : `<span aria-hidden="true">${escapeHtml(status.symbol)}</span>`;
       return `
         <button class="live-indicator" type="button" aria-label="${escapeHtml(label)}" aria-expanded="false" data-status-toggle>
-          <span aria-hidden="true">${escapeHtml(status.symbol)}</span>
+          ${icon}
           <span class="live-indicator-tooltip" role="tooltip">${escapeHtml(label)}</span>
         </button>
       `;
@@ -5923,7 +6118,7 @@
       return `<div class="transfer-connection">${escapeHtml(label)}</div>`;
     }
 
-    function renderLeg(leg, displayOffset) {
+    function renderLeg(leg, displayOffset, hideAmtrakFareLink = false) {
       const trip = leg.trip;
       const departure = realtimeLegDeparture(leg) ?? leg.departure;
       const arrival = realtimeLegArrival(leg) ?? leg.arrival;
@@ -5936,7 +6131,7 @@
             <div class="leg-stations"><strong>${escapeHtml(formatStationRange(leg.from, leg.to))}</strong></div>
             <div class="leg-meta">${escapeHtml(formatLegMeta(trip, leg.realtime))}</div>
           </div>
-          ${fareAmount ? `<div class="leg-fare">${escapeHtml(fareAmount)}</div>` : ""}
+          ${fareAmount ? `<div class="leg-fare">${escapeHtml(fareAmount)}</div>` : !hideAmtrakFareLink && normalize(trip.agency) === "amtrak" ? `<div class="leg-fare">${renderAmtrakFareLink()}</div>` : ""}
         </div>
       `;
     }

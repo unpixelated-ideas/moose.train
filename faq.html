@@ -260,23 +260,23 @@
       display: none;
     }
 
-    .faq-item summary::before {
-      content: ">";
-      display: inline-block;
-      width: 1rem;
-      color: var(--accent);
-      font-size: 0.82rem;
-      transform: translateY(-1px);
+    .faq-card { position: relative; scroll-margin-top: 20px; }
+    .faq-item summary { display: flex; align-items: center; gap: 16px; padding-right: 64px; }
+    .faq-question { flex: 1; min-width: 0; }
+    .faq-toggle { width: 20px; height: 20px; flex: none; color: var(--accent); }
+    .faq-item[open] .faq-toggle-vertical { display: none; }
+    .faq-permalink {
+      position: absolute; right: 12px; top: 10px; display: grid; place-items: center;
+      width: 36px; height: 36px; color: var(--muted); border-radius: 7px;
     }
-
-    .faq-item[open] summary::before {
-      content: "v";
-    }
+    .faq-permalink:hover { color: var(--accent); background: var(--field); }
+    .faq-permalink:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .faq-permalink svg { width: 16px; height: 16px; }
 
     .faq-body {
       display: grid;
       gap: 12px;
-      padding: 0 20px 20px 37px;
+      padding: 0 20px 20px;
       color: var(--body);
       line-height: 1.65;
     }
@@ -435,10 +435,20 @@
 
     async function init() {
       initTheme();
+      window.addEventListener("hashchange", openLinkedFaq);
+      els.faqList.addEventListener("click", (event) => {
+        const link = event.target.closest(".faq-permalink");
+        if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        history.pushState(null, "", link.href);
+        openLinkedFaq();
+      });
       els.appearance.addEventListener("change", () => setThemePreference(els.appearance.value));
       els.language.addEventListener("change", () => {
+        const url = new URL(location.href);
+        url.searchParams.set("lang", els.language.value);
+        history.replaceState(null, "", url);
         setLanguage(els.language.value);
-        history.replaceState(null, "", `faq.html?lang=${encodeURIComponent(currentLanguage)}`);
       });
       try {
         const response = await fetch("index.html", { cache: "no-store" });
@@ -514,14 +524,35 @@
       return (fallbackTranslations[currentLanguage] && fallbackTranslations[currentLanguage][key]) || fallbackTranslations.en[key];
     }
 
+    function faqLink(id) {
+      const url = new URL(location.href);
+      url.searchParams.set("lang", currentLanguage);
+      url.hash = id;
+      return url.href;
+    }
+
+    function openLinkedFaq() {
+      let id;
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+      const card = document.getElementById(id);
+      if (!card || !card.classList.contains("faq-card")) return;
+      card.querySelector("details").open = true;
+      card.scrollIntoView({ block: "start" });
+    }
+
     function renderFaq() {
       const items = faqContent[currentLanguage] || faqContent.en || [];
+      const linkLabel = { en: "Direct link to this FAQ", ko: "이 질문의 직접 링크", es: "Enlace directo a esta pregunta" }[currentLanguage];
       els.faqList.innerHTML = items.map((item, index) => `
-        <details class="faq-item"${index < 2 ? " open" : ""}>
-          <summary>${escapeHtml(item.summary)}</summary>
-          <div class="faq-body">${normalizeFaqLinks(item.content)}</div>
-        </details>
+        <div class="faq-card" id="${escapeHtml(item.id)}">
+          <details class="faq-item"${index < 2 ? " open" : ""}>
+            <summary><span class="faq-question">${escapeHtml(item.summary)}</span><svg class="faq-toggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/><path class="faq-toggle-vertical" d="M12 5v14"/></svg></summary>
+            <div class="faq-body">${normalizeFaqLinks(item.content)}</div>
+          </details>
+          <a class="faq-permalink" href="${escapeHtml(faqLink(item.id))}" aria-label="${escapeHtml(linkLabel + ': ' + item.summary)}" title="${escapeHtml(linkLabel)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 .2l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7-.2l-3 3a5 5 0 0 0 7 7l2-2"/></svg></a>
+        </div>
       `).join("");
+      openLinkedFaq();
     }
 
     function normalizeFaqLinks(content) {
