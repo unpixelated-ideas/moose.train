@@ -1,0 +1,68 @@
+name: Refresh schedules and publish
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+      timezone: America/New_York
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+# Scheduled, manual, and push deployments share a lock.
+concurrency:
+  group: moose-train-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # Standard runners are free for public repositories. Never run privately.
+    if: github.event.repository.private == false && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install extraction dependencies
+        run: python -m pip install -r supporting_files/extraction/requirements.txt
+      - name: Test importer
+        run: python -m unittest discover -s supporting_files/extraction/tests
+      - name: Download fresh schedules
+        if: github.event_name != 'push'
+        run: python supporting_files/extraction/extract_timetables.py
+      - name: Validate feed coverage
+        if: github.event_name != 'push'
+        run: python supporting_files/scripts/validate_refresh.py
+      - name: Build and validate browser search
+        run: |
+          node supporting_files/scripts/build_search_schedule.js
+          node supporting_files/scripts/build_search_schedule.js --check
+          node supporting_files/tests/compact_schedule.test.js
+      - name: Prepare public site
+        run: python supporting_files/scripts/package_site.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish validated site
+        id: deployment
+        uses: actions/deploy-pages@v4

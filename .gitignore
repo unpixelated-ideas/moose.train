@@ -13,6 +13,7 @@ __pycache__/
 node_modules/
 .npm/
 .cache/
+_site/
 coverage/
 
 # Local editor and OS noise

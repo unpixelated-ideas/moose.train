@@ -1,0 +1,64 @@
+import csv
+import datetime as dt
+import importlib.util
+import json
+from pathlib import Path
+import tempfile
+import unittest
+
+SPEC = importlib.util.spec_from_file_location(
+    "validate_refresh", Path(__file__).resolve().parents[2] / "scripts/validate_refresh.py"
+)
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+
+
+class RefreshValidationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        (self.root / "supporting_files/extraction").mkdir(parents=True)
+        self.metadata = [dict(feed_id=feed, success="true", errors="[]",
+                              record_counts=json.dumps({"stop_times": 10}))
+                         for feed in sorted(MODULE.EXPECTED)]
+        self.rows = [dict(source_pdf=feed + "_gtfs_example.zip", service_dates="",
+                          service_end_date="2026-11-01") for feed in sorted(MODULE.EXPECTED)]
+
+    def check(self):
+        for relative, rows in [("supporting_files/extraction/gtfs_import_metadata.csv", self.metadata),
+                               ("moose_train_schedule.csv", self.rows)]:
+            with (self.root / relative).open("w", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+                writer.writeheader()
+                writer.writerows(rows)
+        MODULE.validate(self.root, dt.date(2026, 10, 17))
+
+    def test_complete_refresh_and_comma_separated_dates(self):
+        self.rows[0]["service_dates"] = "2026-10-01,2026-11-01"
+        self.check()
+
+    def test_failed_feed_rejected(self):
+        self.metadata[0]["success"] = "false"
+        with self.assertRaisesRegex(ValueError, "Failed import"):
+            self.check()
+
+    def test_missing_product_rejected(self):
+        self.metadata.pop()
+        with self.assertRaisesRegex(ValueError, "exactly four"):
+            self.check()
+
+    def test_empty_feed_rejected(self):
+        self.metadata[0]["record_counts"] = '{"stop_times": 0}'
+        with self.assertRaisesRegex(ValueError, "Empty import"):
+            self.check()
+
+    def test_expired_explicit_dates_rejected(self):
+        self.rows[0]["service_dates"] = "2026-10-01,2026-10-02"
+        with self.assertRaisesRegex(ValueError, "No current or future"):
+            self.check()
+
+    def test_expired_regular_service_rejected(self):
+        self.rows[0]["service_end_date"] = "2026-10-01"
+        with self.assertRaisesRegex(ValueError, "No current or future"):
+            self.check()
