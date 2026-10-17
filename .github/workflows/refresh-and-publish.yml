@@ -40,6 +40,8 @@ jobs:
       - name: Validate feed coverage
         if: github.event_name != 'push'
         run: python supporting_files/scripts/validate_refresh.py
+      - name: Update public refresh dates from import records
+        run: python supporting_files/scripts/update_refresh_labels.py
       - name: Build and validate browser search
         run: |
           node supporting_files/scripts/build_search_schedule.js
