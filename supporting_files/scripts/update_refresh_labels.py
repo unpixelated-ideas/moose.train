@@ -38,26 +38,17 @@ def render(html, metadata):
                          lambda match: 'updateLogDataRefresh: "' + next(index) + '"', html)
     if count != 3:
         raise ValueError("Expected freshness translations in English, Korean, Spanish")
-    # FAQ is shared by index.html and faq.html. Replace the current-import
-    # paragraph and receipt-date list; leave dated historical notices intact.
-    intros = [
-        f"The schedule data in moose.train was last imported on {dates['en']} (US Eastern date). These are published static GTFS schedules, not live train data.",
-        f"moose.train의 시간표 데이터는 {dates['ko']}(미국 동부시간 기준)에 마지막으로 가져왔습니다. 게시된 정적 GTFS 시간표이며 실시간 열차 데이터가 아닙니다.",
-        f"Los datos de horarios de moose.train se importaron por última vez el {dates['es']} (fecha de EE. UU. Este). Son horarios estáticos GTFS publicados, no datos en vivo."
-    ]
-    languages = iter(zip(('en', 'ko', 'es'), intros))
+    # Both FAQ views use index.html. Only the date changes after a successful
+    # import; keep the localized copy and disclosure structure intact.
+    languages = iter(('en', 'ko', 'es'))
 
     def faq(match):
-        language, intro = next(languages)
-        receipt = {'en': 'received', 'ko': '수신', 'es': 'recibido'}[language]
-        items = []
-        for row in metadata:
-            imported = dt.datetime.fromisoformat(row['imported_at']).astimezone(ZoneInfo('America/New_York')).date()
-            name = {'mnr': 'Metro-North', 'hartford': 'CTrail Hartford Line',
-                    'sle': 'CTrail Shore Line East', 'amtrak': 'Amtrak'}[row['feed_id']]
-            items.append(f"<li><strong>{name}:</strong> {receipt} {format_date(imported, language)}.</li>")
-        content = re.sub(r'^<p>.*?</p>', lambda _: '<p>' + intro + '</p>', match[2], count=1)
-        content = re.sub(r'<ul>.*?</ul>', lambda _: '<ul>' + ''.join(items) + '</ul>', content, count=1)
+        language = next(languages)
+        content, count = re.subn(
+            r'(<time data-schedule-refresh-date>)[^<]*(</time>)',
+            lambda date: date[1] + dates[language] + date[2], match[2])
+        if count != 1:
+            raise ValueError("Expected one successful refresh date per FAQ translation")
         return match[1] + content + match[3]
 
     html, count = re.subn(r'(\{ id: "when-was-the-data-most-recently-refreshed"[^\n]*?content: `)([^`]*)(`)', faq, html)

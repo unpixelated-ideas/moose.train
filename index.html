@@ -1424,7 +1424,11 @@
     }
     .station-options[hidden] { display: none; }
     .station-options > div { padding: 12px; min-height: 44px; color: var(--ink); font-size: 16px; }
-    .station-options [role="option"] { cursor: pointer; }
+    .station-picker input { min-width: 0; width: 100%; text-overflow: ellipsis; }
+    .station-options [role="option"] { cursor: pointer; white-space: normal; overflow-wrap: anywhere; }
+    .station-options .station-option-city { border-bottom: 1px solid var(--line); }
+    .station-option-description { display: block; margin-top: 4px; color: var(--muted); font-size: 0.875em; line-height: 1.4; }
+
     .station-options [role="option"]:hover,
     .station-options [aria-selected="true"] { background: var(--color-hover); }
     /* iOS zooms focused form controls when their computed font is below 16px. */
@@ -1527,6 +1531,36 @@
 
       .header-controls {
         width: 100%;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .header-controls .setting-row {
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 6px;
+        min-width: 0;
+        min-height: 46px;
+        padding: 10px 8px;
+        font-size: 0.82rem;
+      }
+
+      .header-controls .setting-row + .setting-row {
+        border-top: 0;
+        border-left: 1px solid var(--line);
+      }
+
+      .header-controls .setting-label,
+      .header-controls .setting-chevron {
+        display: none;
+      }
+
+      .header-controls .setting-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .header-controls .setting-value {
+        max-width: none;
+        text-align: left;
       }
 
       main {
@@ -1747,113 +1781,124 @@
       <p class="update-log-meta">
         <span data-i18n="updateLogDataLabel">Schedule data</span>
         <span aria-hidden="true"> · </span>
-        <span data-i18n="updateLogDataRefresh">Last refreshed October 3, 2026</span>
-        <span aria-hidden="true"> · </span>
-        <a href="#timetable-csv-links-title" data-source-links data-i18n="updateLogViewSources">View sources</a>
+        <span data-i18n="updateLogDataRefresh">Last refreshed October 7, 2026</span>
       </p>
       <div class="update-log-releases">
-        <section class="update-log-release" aria-labelledby="update-log-v096-title">
-          <h3 id="update-log-v096-title" class="update-log-release-heading">
-            <span class="update-log-version">v0.9.6</span>
-            <span class="update-log-release-date" data-i18n="updateLogV096Date">October 6, 2026</span>
-          </h3>
-          <ul class="update-log-list">
-            <li data-i18n-html="updateLogV096Favicon"><strong>Easier to spot.</strong> Added a favicon to help moose.train stand out in your browser tabs and bookmarks.</li>
-            <li data-i18n-html="updateLogV096Search"><strong>Faster first searches.</strong> A new search mechanism speeds up your initial search.</li>
-            <li data-i18n-html="updateLogV096AmtrakFares"><strong>Amtrak fares within reach.</strong> Added quick links to check fares on Amtrak.</li>
-            <li data-i18n-html="updateLogV096KoreanFares"><strong>Better fare links in Korean.</strong> Adapted the fare-checking link for Korean-language users, since Amtrak does not currently offer a Korean version of its site.</li>
-            <li data-i18n-html="updateLogV096Faq"><strong>A refreshed, shareable FAQ.</strong> Gave the FAQ page a cleaner look and added links you can share to individual questions.</li>
-          </ul>
-        </section>
-
-        <section class="update-log-release" aria-labelledby="update-log-v095-title">
-          <h3 id="update-log-v095-title" class="update-log-release-heading">
-            <span class="update-log-version">v0.9.5</span>
-            <span class="update-log-release-date" data-i18n="updateLogV095Date">September 20, 2026</span>
-          </h3>
-          <ul class="update-log-list">
-            <li data-i18n-html="updateLogV095Previews"><strong>Cleaner link previews.</strong> Optimized previews for sharing moose.train links in iMessage, Discord, and other supported apps.</li>
-            <li data-i18n-html="updateLogV095ShoreLineEast"><strong>Shore Line East schedules refreshed.</strong> Updated schedule data following Connecticut’s <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US" target="_blank" rel="noopener noreferrer">announcement of increased Shore Line East service</a>.</li>
-          </ul>
-        </section>
-
-        <section class="update-log-release" aria-labelledby="update-log-v094-title">
-          <h3 id="update-log-v094-title" class="update-log-release-heading">
-            <span class="update-log-version">v0.9.4</span>
-            <span class="update-log-release-date" data-i18n="updateLogV094Date">September 6, 2026</span>
-          </h3>
-          <ul class="update-log-list">
-            <li data-i18n-html="updateLogV094MobileSearch"><strong>Mobile search is working again.</strong> Fixed an issue that prevented searches from successfully running on mobile and tablet browsers.</li>
-          </ul>
-        </section>
-
-        <section class="update-log-release" aria-labelledby="update-log-v093-title">
-          <h3 id="update-log-v093-title" class="update-log-release-heading">
-            <span class="update-log-version">v0.9.3</span>
-            <span class="update-log-release-date" data-i18n="updateLogV093Date">September 5, 2026</span>
-          </h3>
-          <ul class="update-log-list">
-            <li data-i18n-html="updateLogV093Fares"><strong>Fare details are easier to compare.</strong> Added standard one-way adult fare information for Metro-North, Shore Line East, and Hartford Line trips.</li>
-          </ul>
-        </section>
-
         <section class="update-log-release" aria-labelledby="update-log-v092-title">
           <h3 id="update-log-v092-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.2</span>
-            <span class="update-log-release-date" data-i18n="updateLogV092Date">August 31, 2026</span>
+            <span class="update-log-release-date" data-i18n="updateLogV092Date">October 17, 2026</span>
           </h3>
           <ul class="update-log-list">
-            <li data-i18n-html="updateLogV092Feedback"><strong>Feedback is easier to share.</strong> Added a feedback link so riders can send input as moose.train keeps improving.</li>
+            <li data-i18n-html="updateLogV092Refresh">Schedule data now refreshes automatically every day at 7 a.m. Eastern Time.</li>
+            <li data-i18n-html="updateLogV092Mobile">Tidied up the Appearance, Time Format, and Language options so they fit more comfortably on smaller screens.</li>
+            <li data-i18n-html="updateLogV092Writing">Refined the writing in the Update Log to make updates clearer and easier to read.</li>
+            <li data-i18n-html="updateLogV092Nyc">Made it clearer that the combined NYC option lets you search trains to or from both Grand Central and Penn Station in one go.</li>
           </ul>
         </section>
 
         <section class="update-log-release" aria-labelledby="update-log-v091-title">
           <h3 id="update-log-v091-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.1</span>
-            <span class="update-log-release-date" data-i18n="updateLogV091Date">August 30, 2026</span>
+            <span class="update-log-release-date" data-i18n="updateLogV091Date">October 6, 2026</span>
           </h3>
           <ul class="update-log-list">
-            <li data-i18n-html="updateLogV091Loading"><strong>Clearer loading.</strong> The loading experience was overhauled so it is easier to tell what moose.train is doing before results appear.</li>
-            <li data-i18n-html="updateLogV091Timezone"><strong>Smarter default searches.</strong> Default search times now better reflect the user’s local timezone.</li>
-            <li data-i18n-html="updateLogV091EasternTime"><strong>Clearer time-zone guidance.</strong> Users outside U.S. Eastern Time now see a reminder that all trip times are listed in U.S. Eastern Time.</li>
-            <li data-i18n-html="updateLogV091Range"><strong>A smoother departure range.</strong> The departure range selector got improvements that make narrowing results feel clearer and more dependable.</li>
-            <li data-i18n-html="updateLogV091Midnight"><strong>Better after-midnight labels.</strong> Fixed a bug that could describe future trips after midnight as “tomorrow.”</li>
+            <li data-i18n-html="updateLogV091Favicon">Added a small but useful detail: a favicon to help you spot moose.train in your tabs and bookmarks.</li>
+            <li data-i18n-html="updateLogV091Search">Made your first search faster with an updated search system.</li>
+            <li data-i18n-html="updateLogV091AmtrakFares">Added quick links to check fares on Amtrak.</li>
+            <li data-i18n-html="updateLogV091KoreanFares">Improved the Amtrak fare link for Korean-language users to account for Amtrak’s lack of a Korean-language site.</li>
+            <li data-i18n-html="updateLogV091Faq">Gave the FAQ a fresh look. You can now link directly to individual questions, too.</li>
           </ul>
         </section>
 
         <section class="update-log-release" aria-labelledby="update-log-v09-title">
           <h3 id="update-log-v09-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9</span>
-            <span class="update-log-release-date" data-i18n="updateLogV09Date">August 25, 2026</span>
+            <span class="update-log-release-date" data-i18n="updateLogV09Date">September 20, 2026</span>
           </h3>
           <ul class="update-log-list">
-            <li data-i18n-html="updateLogV09Performance"><strong>Faster load times.</strong> Schedule data loads more efficiently, so the first search feels quicker.</li>
-            <li data-i18n-html="updateLogV09Viewer"><strong>A cleaner Update Log.</strong> The viewer now groups changes by release date so updates are easier to scan.</li>
+            <li data-i18n-html="updateLogV09Previews">Improved how moose.train links look when shared in iMessage, Discord, and other supported apps.</li>
+            <li data-i18n-html="updateLogV09ShoreLineEast">Updated schedules to reflect Connecticut’s <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US" target="_blank" rel="noopener noreferrer">announcement of increased Shore Line East service</a>.</li>
           </ul>
         </section>
 
         <section class="update-log-release" aria-labelledby="update-log-v08-title">
           <h3 id="update-log-v08-title" class="update-log-release-heading">
             <span class="update-log-version">v0.8</span>
-            <span class="update-log-release-date" data-i18n="updateLogV08Date">July 15, 2026</span>
+            <span class="update-log-release-date" data-i18n="updateLogV08Date">September 6, 2026</span>
           </h3>
           <ul class="update-log-list">
-            <li data-i18n-html="updateLogOperators"><strong>More trains, one search.</strong> Compare Amtrak, Metro-North, CTrail Shore Line East, and CTrail Hartford Line together.</li>
-            <li data-i18n-html="updateLogRouting"><strong>Direct or with a transfer.</strong> Find direct trips and journeys with one transfer, with a five-minute transfer buffer built in.</li>
-            <li data-i18n-html="updateLogNyc"><strong>Two NYC terminals, one search.</strong> Search Penn Station and Grand Central together when either one could work.</li>
-            <li data-i18n-html="updateLogFilters"><strong>Narrow things down.</strong> Adjust the departure window to focus your results, then add promising trips to your Shortlist.</li>
-            <li data-i18n-html="updateLogPreferences"><strong>Make it yours.</strong> Choose light, dark, or system appearance; 12- or 24-hour time; and English, Korean, or Spanish.</li>
-            <li data-i18n-html="updateLogStates"><strong>Better answers when there isn’t a trip.</strong> Clearer explanations for unavailable dates, next-day trips, and journeys that would require two or more transfers.</li>
+            <li data-i18n-html="updateLogV08MobileSearch">Fixed an issue that kept searches from working on mobile and tablet browsers.</li>
           </ul>
         </section>
 
         <section class="update-log-release" aria-labelledby="update-log-v07-title">
           <h3 id="update-log-v07-title" class="update-log-release-heading">
             <span class="update-log-version">v0.7</span>
-            <span class="update-log-release-date" data-i18n="updateLogV07Date">June 20, 2026</span>
+            <span class="update-log-release-date" data-i18n="updateLogV07Date">September 5, 2026</span>
           </h3>
           <ul class="update-log-list">
-            <li data-i18n-html="updateLogV07Initial"><strong>Initial build.</strong> The first working version of moose.train brought the basic trip-planning idea onto the page.</li>
+            <li data-i18n-html="updateLogV07Fares">You can now see standard one-way adult fares for Metro-North, Shore Line East, and Hartford Line trips.</li>
+          </ul>
+        </section>
+
+        <section class="update-log-release" aria-labelledby="update-log-v06-title">
+          <h3 id="update-log-v06-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.6</span>
+            <span class="update-log-release-date" data-i18n="updateLogV06Date">August 31, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV06Feedback">Added a feedback link so you have an easy way to share ideas or report something that isn’t working.</li>
+          </ul>
+        </section>
+
+        <section class="update-log-release" aria-labelledby="update-log-v05-title">
+          <h3 id="update-log-v05-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.5</span>
+            <span class="update-log-release-date" data-i18n="updateLogV05Date">August 30, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV05Loading">Made the loading experience clearer, so you know what’s happening while your results are on the way.</li>
+            <li data-i18n-html="updateLogV05Timezone">Improved default search times to better account for your local time zone.</li>
+            <li data-i18n-html="updateLogV05EasternTime">Added a reminder when you’re outside Eastern Time: all trip times are shown in U.S. Eastern Time.</li>
+            <li data-i18n-html="updateLogV05Range">Made the departure range easier to adjust.</li>
+            <li data-i18n-html="updateLogV05Midnight">Fixed a bug that labeled some future trips after midnight as “tomorrow.”</li>
+          </ul>
+        </section>
+
+        <section class="update-log-release" aria-labelledby="update-log-v04-title">
+          <h3 id="update-log-v04-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.4</span>
+            <span class="update-log-release-date" data-i18n="updateLogV04Date">August 25, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV04Performance">Made schedule data load more efficiently, helping your first search return faster.</li>
+            <li data-i18n-html="updateLogV04Viewer">The Update Log now groups changes by release date, making it easier to catch up.</li>
+          </ul>
+        </section>
+
+        <section class="update-log-release" aria-labelledby="update-log-v03-title">
+          <h3 id="update-log-v03-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.3</span>
+            <span class="update-log-release-date" data-i18n="updateLogV03Date">July 15, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogOperators">Search Amtrak, Metro-North, CTrail Shore Line East, and CTrail Hartford Line together in one place.</li>
+            <li data-i18n-html="updateLogRouting">Find direct trips and journeys with one transfer, with at least five minutes between trains.</li>
+            <li data-i18n-html="updateLogNyc">Search Penn Station and Grand Central together with the combined NYC option.</li>
+            <li data-i18n-html="updateLogFilters">Narrow your search by departure window and save promising trips to a shortlist.</li>
+            <li data-i18n-html="updateLogPreferences">Make moose.train feel more familiar with light, dark, or system appearance; 12- or 24-hour time; and English, Korean, or Spanish.</li>
+            <li data-i18n-html="updateLogStates">Added clearer explanations for unavailable dates, trips arriving the next day, and journeys that need two or more transfers.</li>
+          </ul>
+        </section>
+
+        <section class="update-log-release" aria-labelledby="update-log-v02-title">
+          <h3 id="update-log-v02-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.2</span>
+            <span class="update-log-release-date" data-i18n="updateLogV02Date">June 20, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV02Initial">The first working version of moose.train, with basic trip planning in place.</li>
           </ul>
         </section>
       </div>
@@ -1923,7 +1968,7 @@
   </div>
   <script>
     const CSV_PATH = "moose_train_schedule.csv";
-    const SEARCH_SCHEDULE_VERSION = "dab7f918d8a7f931";
+    const SEARCH_SCHEDULE_VERSION = "c8d1179d7763a2ab";
     const SEARCH_SCHEDULE_PATH = "supporting_files/assets/schedule/search.json";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
     const TRANSFER_BUFFER = 5;
@@ -2305,42 +2350,47 @@
         learnMoreFeedback: "Feedback",
         updateLogTitle: "Update Log",
         updateLogClose: "Close update log",
-        updateLogV096Date: "October 6, 2026",
-        updateLogV096Faq: "<strong>A refreshed, shareable FAQ.</strong> Gave the FAQ page a cleaner look and added links you can share to individual questions.",
-        updateLogV096Favicon: "<strong>Easier to spot.</strong> Added a favicon to help moose.train stand out in your browser tabs and bookmarks.",
-        updateLogV096Search: "<strong>Faster first searches.</strong> A new search mechanism speeds up your initial search.",
-        updateLogV096AmtrakFares: "<strong>Amtrak fares within reach.</strong> Added quick links to check fares on Amtrak.",
-        updateLogV096KoreanFares: "<strong>Better fare links in Korean.</strong> Adapted the fare-checking link for Korean-language users, since Amtrak does not currently offer a Korean version of its site.",
-        updateLogV095Date: "September 20, 2026",
-        updateLogV095Previews: "<strong>Cleaner link previews.</strong> Optimized previews for sharing moose.train links in iMessage, Discord, and other supported apps.",
-        updateLogV095ShoreLineEast: "<strong>Shore Line East schedules refreshed.</strong> Updated schedule data following Connecticut’s <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">announcement of increased Shore Line East service</a>.",
-        updateLogV094Date: "September 6, 2026",
-        updateLogV094MobileSearch: "<strong>Mobile search is working again.</strong> Fixed an issue that prevented searches from successfully running on mobile and tablet browsers.",
-        updateLogV093Date: "September 5, 2026",
-        updateLogV093Fares: "<strong>Fare details are easier to compare.</strong> Added standard one-way adult fare information for Metro-North, Shore Line East, and Hartford Line trips.",
-        updateLogV092Date: "August 31, 2026",
-        updateLogV092Feedback: "<strong>Feedback is easier to share.</strong> Added a feedback link so riders can send input as moose.train keeps improving.",
-        updateLogV091Date: "August 30, 2026",
-        updateLogV091Loading: "<strong>Clearer loading.</strong> The loading experience was overhauled so it is easier to tell what moose.train is doing before results appear.",
-        updateLogV091Timezone: "<strong>Smarter default searches.</strong> Default search times now better reflect the user’s local timezone.",
-        updateLogV091EasternTime: "<strong>Clearer time-zone guidance.</strong> Users outside U.S. Eastern Time now see a reminder that all trip times are listed in U.S. Eastern Time.",
-        updateLogV091Range: "<strong>A smoother departure range.</strong> The departure range selector got improvements that make narrowing results feel clearer and more dependable.",
-        updateLogV091Midnight: "<strong>Better after-midnight labels.</strong> Fixed a bug that could describe future trips after midnight as “tomorrow.”",
-        updateLogV09Date: "August 25, 2026",
-        updateLogV09Performance: "<strong>Faster load times.</strong> Schedule data loads more efficiently, so the first search feels quicker.",
-        updateLogV09Viewer: "<strong>A cleaner Update Log.</strong> The viewer now groups changes by release date so updates are easier to scan.",
-        updateLogV08Date: "July 15, 2026",
-        updateLogOperators: "<strong>More trains, one search.</strong> Compare Amtrak, Metro-North, CTrail Shore Line East, and CTrail Hartford Line together.",
-        updateLogRouting: "<strong>Direct or with a transfer.</strong> Find direct trips and journeys with one transfer, with a five-minute transfer buffer built in.",
-        updateLogNyc: "<strong>Two NYC terminals, one search.</strong> Search Penn Station and Grand Central together when either one could work.",
-        updateLogFilters: "<strong>Narrow things down.</strong> Adjust the departure window to focus your results, then add promising trips to your Shortlist.",
-        updateLogPreferences: "<strong>Make it yours.</strong> Choose light, dark, or system appearance; 12- or 24-hour time; and English, Korean, or Spanish.",
-        updateLogStates: "<strong>Better answers when there isn’t a trip.</strong> Clearer explanations for unavailable dates, next-day trips, and journeys that would require two or more transfers.",
+        updateLogV091Date: "October 6, 2026",
+        updateLogV092Date: "October 17, 2026",
+        updateLogV092Refresh: "Schedule data now refreshes automatically every day at 7 a.m. Eastern Time.",
+        updateLogV092Mobile: "Tidied up the Appearance, Time Format, and Language options so they fit more comfortably on smaller screens.",
+        updateLogV092Writing: "Refined the writing in the Update Log to make updates clearer and easier to read.",
+        updateLogV092Nyc: "Made it clearer that the combined NYC option lets you search trains to or from both Grand Central and Penn Station in one go.",
+        updateLogV091Faq: "Gave the FAQ a fresh look. You can now link directly to individual questions, too.",
+        updateLogV091Favicon: "Added a small but useful detail: a favicon to help you spot moose.train in your tabs and bookmarks.",
+        updateLogV091Search: "Made your first search faster with an updated search system.",
+        updateLogV091AmtrakFares: "Added quick links to check fares on Amtrak.",
+        updateLogV091KoreanFares: "Improved the Amtrak fare link for Korean-language users to account for Amtrak’s lack of a Korean-language site.",
+        updateLogV09Date: "September 20, 2026",
+        updateLogV09Previews: "Improved how moose.train links look when shared in iMessage, Discord, and other supported apps.",
+        updateLogV09ShoreLineEast: "Updated schedules to reflect Connecticut’s <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">announcement of increased Shore Line East service</a>.",
+        updateLogV08Date: "September 6, 2026",
+        updateLogV08MobileSearch: "Fixed an issue that kept searches from working on mobile and tablet browsers.",
+        updateLogV07Date: "September 5, 2026",
+        updateLogV07Fares: "You can now see standard one-way adult fares for Metro-North, Shore Line East, and Hartford Line trips.",
+        updateLogV06Date: "August 31, 2026",
+        updateLogV06Feedback: "Added a feedback link so you have an easy way to share ideas or report something that isn’t working.",
+        updateLogV05Date: "August 30, 2026",
+        updateLogV05Loading: "Made the loading experience clearer, so you know what’s happening while your results are on the way.",
+        updateLogV05Timezone: "Improved default search times to better account for your local time zone.",
+        updateLogV05EasternTime: "Added a reminder when you’re outside Eastern Time: all trip times are shown in U.S. Eastern Time.",
+        updateLogV05Range: "Made the departure range easier to adjust.",
+        updateLogV05Midnight: "Fixed a bug that labeled some future trips after midnight as “tomorrow.”",
+        updateLogV04Date: "August 25, 2026",
+        updateLogV04Performance: "Made schedule data load more efficiently, helping your first search return faster.",
+        updateLogV04Viewer: "The Update Log now groups changes by release date, making it easier to catch up.",
+        updateLogV03Date: "July 15, 2026",
+        updateLogOperators: "Search Amtrak, Metro-North, CTrail Shore Line East, and CTrail Hartford Line together in one place.",
+        updateLogRouting: "Find direct trips and journeys with one transfer, with at least five minutes between trains.",
+        updateLogNyc: "Search Penn Station and Grand Central together with the combined NYC option.",
+        updateLogFilters: "Narrow your search by departure window and save promising trips to a shortlist.",
+        updateLogPreferences: "Make moose.train feel more familiar with light, dark, or system appearance; 12- or 24-hour time; and English, Korean, or Spanish.",
+        updateLogStates: "Added clearer explanations for unavailable dates, trips arriving the next day, and journeys that need two or more transfers.",
         updateLogDataLabel: "Schedule data",
-        updateLogDataRefresh: "Last refreshed October 3, 2026",
+        updateLogDataRefresh: "Last refreshed October 7, 2026",
         updateLogViewSources: "View sources",
-        updateLogV07Date: "June 20, 2026",
-        updateLogV07Initial: "<strong>Initial build.</strong> The first working version of moose.train brought the basic trip-planning idea onto the page.",
+        updateLogV02Date: "June 20, 2026",
+        updateLogV02Initial: "The first working version of moose.train, with basic trip planning in place.",
         faqTitle: "Frequently Asked Questions",
         faqIntro: "Quick answers about what moose.train does, where it works, and how it compares rail options.",
       },
@@ -2450,42 +2500,47 @@
         learnMoreFeedback: "피드백",
         updateLogTitle: "업데이트 로그",
         updateLogClose: "업데이트 로그 닫기",
-        updateLogV096Date: "2026년 10월 6일",
-        updateLogV096Faq: "<strong>보기 좋게 바뀐 FAQ, 공유도 간편하게.</strong> FAQ 페이지를 더 깔끔하게 다듬고, 원하는 질문으로 바로 연결되는 링크를 공유할 수 있도록 했습니다.",
-        updateLogV096Favicon: "<strong>한눈에 알아보는 moose.train.</strong> 브라우저 탭과 북마크에서 쉽게 찾을 수 있도록 파비콘을 추가했습니다.",
-        updateLogV096Search: "<strong>첫 검색도 더 빠르게.</strong> 검색 방식을 개선해 처음 검색할 때 결과를 더 빠르게 확인할 수 있습니다.",
-        updateLogV096AmtrakFares: "<strong>Amtrak 운임도 간편하게.</strong> Amtrak에서 운임을 바로 확인할 수 있는 링크를 추가했습니다.",
-        updateLogV096KoreanFares: "<strong>한국어 이용자를 위한 운임 링크.</strong> Amtrak 사이트가 아직 한국어를 지원하지 않는 점을 고려해, 한국어 버전의 운임 확인 링크를 개선했습니다.",
-        updateLogV095Date: "2026년 9월 20일",
-        updateLogV095Previews: "<strong>더 깔끔한 링크 미리보기.</strong> iMessage, Discord 및 기타 지원 앱에서 moose.train 링크를 공유할 때 보이는 미리보기를 개선했습니다.",
-        updateLogV095ShoreLineEast: "<strong>Shore Line East 일정 새로 고침.</strong> 코네티컷주의 <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">Shore Line East 증편 발표</a>에 맞춰 일정 데이터를 업데이트했습니다.",
-        updateLogV094Date: "2026년 9월 6일",
-        updateLogV094MobileSearch: "<strong>모바일 검색이 다시 정상 작동합니다.</strong> 모바일 및 태블릿 브라우저에서 검색이 제대로 실행되지 않던 문제를 수정했습니다.",
-        updateLogV093Date: "2026년 9월 5일",
-        updateLogV093Fares: "<strong>요금 정보를 더 쉽게 비교할 수 있게.</strong> Metro-North, Shore Line East, Hartford Line 여정에 표준 편도 성인 요금 정보를 추가했습니다.",
-        updateLogV092Date: "2026년 8월 31일",
-        updateLogV092Feedback: "<strong>의견을 더 쉽게 보낼 수 있게.</strong> moose.train을 계속 개선해 나갈 수 있도록 이용자가 의견을 보낼 수 있는 피드백 링크를 추가했습니다.",
-        updateLogV091Date: "2026년 8월 30일",
-        updateLogV091Loading: "<strong>더 알아보기 쉬운 로딩.</strong> 결과가 나오기 전 moose.train이 무엇을 하는지 더 분명히 알 수 있도록 로딩 경험을 전반적으로 다듬었습니다.",
-        updateLogV091Timezone: "<strong>더 똑똑한 기본 검색.</strong> 기본 검색 시간이 사용자의 현지 시간대를 더 잘 반영하도록 개선했습니다.",
-        updateLogV091EasternTime: "<strong>더 명확한 시간대 안내.</strong> 미국 동부 시간대 밖에 있는 사용자에게 모든 여정 시간이 미국 동부 시간 기준이라는 알림을 표시합니다.",
-        updateLogV091Range: "<strong>더 매끄러운 출발 시간 범위.</strong> 결과를 좁히는 흐름이 더 명확하고 안정적으로 느껴지도록 출발 시간 범위 선택기를 개선했습니다.",
-        updateLogV091Midnight: "<strong>자정 이후 표시 개선.</strong> 자정 이후의 향후 여정이 “내일”로 잘못 표시될 수 있던 문제를 수정했습니다.",
-        updateLogV09Date: "2026년 8월 25일",
-        updateLogV09Performance: "<strong>더 빨라진 로딩.</strong> 일정 데이터를 더 효율적으로 불러와 첫 검색이 더 빠르게 느껴집니다.",
-        updateLogV09Viewer: "<strong>더 깔끔한 업데이트 로그.</strong> 변경 사항을 릴리스 날짜별로 묶어 한눈에 훑어보기 쉽게 정리했습니다.",
-        updateLogV08Date: "2026년 7월 15일",
-        updateLogOperators: "<strong>여러 열차를 한 번에.</strong> Amtrak, Metro-North, CTrail Shore Line East, CTrail Hartford Line을 함께 비교할 수 있습니다.",
-        updateLogRouting: "<strong>직통도, 환승도.</strong> 직통 여정과 1회 환승 여정을 찾을 수 있으며, 환승에는 5분 여유 시간이 반영됩니다.",
-        updateLogNyc: "<strong>뉴욕의 두 터미널을 한 번에.</strong> Penn Station과 Grand Central 중 어디든 괜찮을 때 두 역을 함께 검색할 수 있습니다.",
-        updateLogFilters: "<strong>보기 좋게 좁히기.</strong> 출발 시간 범위를 조정해 결과를 줄이고, 괜찮아 보이는 여정은 Shortlist에 담아 둘 수 있습니다.",
-        updateLogPreferences: "<strong>내 방식대로.</strong> 라이트, 다크, 시스템 화면 모드와 12시간/24시간 형식, 영어/한국어/스페인어를 선택할 수 있습니다.",
-        updateLogStates: "<strong>열차가 없을 때도 더 친절하게.</strong> 검색 가능한 날짜를 벗어났거나, 다음 날 도착하거나, 두 번 이상의 환승이 필요한 경우를 더 분명하게 안내합니다.",
+        updateLogV091Date: "2026년 10월 6일",
+        updateLogV092Date: "2026년 10월 17일",
+        updateLogV092Refresh: "시간표 데이터가 매일 미국 동부 시간 오전 7시에 자동으로 업데이트됩니다.",
+        updateLogV092Mobile: "작은 화면에서도 편하게 사용할 수 있도록 화면 모드, 시간 형식, 언어 옵션을 간결하게 정리했습니다.",
+        updateLogV092Writing: "업데이트 내용을 더 쉽게 이해할 수 있도록 업데이트 로그의 문구를 다듬었습니다.",
+        updateLogV092Nyc: "통합 NYC 옵션 하나로 Grand Central과 Penn Station에서 출발하거나 두 역으로 도착하는 열차를 한 번에 검색할 수 있다는 점을 더 명확하게 안내했습니다.",
+        updateLogV091Faq: "FAQ를 새롭게 단장했습니다. 이제 개별 질문으로 바로 연결되는 링크도 공유할 수 있습니다.",
+        updateLogV091Favicon: "작지만 유용한 변화로, 탭과 북마크에서 moose.train을 쉽게 찾을 수 있도록 파비콘을 추가했습니다.",
+        updateLogV091Search: "검색 시스템을 개선해 첫 검색 결과를 더 빠르게 확인할 수 있습니다.",
+        updateLogV091AmtrakFares: "Amtrak 운임을 바로 확인할 수 있는 링크를 추가했습니다.",
+        updateLogV091KoreanFares: "Amtrak이 한국어 사이트를 제공하지 않는 점을 고려해 한국어 이용자를 위한 Amtrak 운임 링크를 개선했습니다.",
+        updateLogV09Date: "2026년 9월 20일",
+        updateLogV09Previews: "iMessage, Discord 등 지원 앱에서 moose.train 링크를 공유할 때 표시되는 미리보기를 개선했습니다.",
+        updateLogV09ShoreLineEast: "코네티컷주의 <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">Shore Line East 증편 발표</a>를 반영해 시간표를 업데이트했습니다.",
+        updateLogV08Date: "2026년 9월 6일",
+        updateLogV08MobileSearch: "모바일과 태블릿 브라우저에서 검색이 되지 않던 문제를 수정했습니다.",
+        updateLogV07Date: "2026년 9월 5일",
+        updateLogV07Fares: "이제 Metro-North, Shore Line East, Hartford Line 여정의 일반 성인 편도 요금을 확인할 수 있습니다.",
+        updateLogV06Date: "2026년 8월 31일",
+        updateLogV06Feedback: "아이디어를 나누거나 이용 중 생긴 문제를 쉽게 알려 주실 수 있도록 피드백 링크를 추가했습니다.",
+        updateLogV05Date: "2026년 8월 30일",
+        updateLogV05Loading: "검색 결과를 기다리는 동안 진행 상황을 알기 쉽도록 로딩 화면을 다듬었습니다.",
+        updateLogV05Timezone: "기본 검색 시간이 이용자의 현지 시간대를 더 잘 반영하도록 개선했습니다.",
+        updateLogV05EasternTime: "미국 동부 시간대 밖에서 접속하면 모든 여정 시간이 미국 동부 시간 기준이라는 안내가 표시됩니다.",
+        updateLogV05Range: "출발 시간 범위를 더 쉽게 조정할 수 있도록 개선했습니다.",
+        updateLogV05Midnight: "일부 미래 날짜의 자정 이후 여정이 ‘내일’로 잘못 표시되던 문제를 수정했습니다.",
+        updateLogV04Date: "2026년 8월 25일",
+        updateLogV04Performance: "시간표 데이터를 더 효율적으로 불러와 첫 검색 결과가 더 빠르게 나오도록 했습니다.",
+        updateLogV04Viewer: "업데이트 로그를 릴리스 날짜별로 정리해 변경 사항을 한눈에 확인하기 쉽게 했습니다.",
+        updateLogV03Date: "2026년 7월 15일",
+        updateLogOperators: "Amtrak, Metro-North, CTrail Shore Line East, CTrail Hartford Line을 한곳에서 함께 검색할 수 있습니다.",
+        updateLogRouting: "직통 여정과 1회 환승 여정을 찾을 수 있으며, 환승 시간은 최소 5분을 확보합니다.",
+        updateLogNyc: "통합 NYC 옵션으로 Penn Station과 Grand Central을 함께 검색할 수 있습니다.",
+        updateLogFilters: "출발 시간 범위로 검색 결과를 좁히고, 마음에 드는 여정을 관심 목록에 저장할 수 있습니다.",
+        updateLogPreferences: "라이트·다크·시스템 화면 모드, 12시간·24시간 형식, 영어·한국어·스페인어 중 편한 설정을 선택할 수 있습니다.",
+        updateLogStates: "검색할 수 없는 날짜, 다음 날 도착하는 여정, 두 번 이상 환승해야 하는 여정을 더 명확하게 안내합니다.",
         updateLogDataLabel: "일정 데이터",
-        updateLogDataRefresh: "마지막 새로 고침 2026년 10월 3일",
+        updateLogDataRefresh: "마지막 새로 고침 2026년 10월 7일",
         updateLogViewSources: "원본 보기",
-        updateLogV07Date: "2026년 6월 20일",
-        updateLogV07Initial: "<strong>첫 빌드.</strong> moose.train의 기본 여행 계획 아이디어를 처음으로 페이지 위에서 작동하는 형태로 만들었습니다.",
+        updateLogV02Date: "2026년 6월 20일",
+        updateLogV02Initial: "기본적인 여정 계획 기능을 갖춘 moose.train의 첫 번째 버전입니다.",
         faqTitle: "자주 묻는 질문",
         faqIntro: "moose.train이 무엇인지, 어디에서 사용할 수 있는지, 철도 옵션을 어떻게 비교하는지에 대한 빠른 답변입니다.",
       },
@@ -2595,42 +2650,47 @@
         learnMoreFeedback: "Comentarios",
         updateLogTitle: "Registro de cambios",
         updateLogClose: "Cerrar registro de cambios",
-        updateLogV096Date: "6 de octubre de 2026",
-        updateLogV096Faq: "<strong>Preguntas frecuentes renovadas y fáciles de compartir.</strong> Mejoramos el diseño de la página y añadimos enlaces para compartir cada pregunta directamente.",
-        updateLogV096Favicon: "<strong>Más fácil de reconocer.</strong> Añadimos un icono para que encuentres moose.train fácilmente entre tus pestañas y marcadores.",
-        updateLogV096Search: "<strong>Primera búsqueda más rápida.</strong> Mejoramos el sistema de búsqueda para que obtengas resultados más rápido desde la primera consulta.",
-        updateLogV096AmtrakFares: "<strong>Tarifas de Amtrak a un clic.</strong> Añadimos enlaces directos para consultar las tarifas en Amtrak.",
-        updateLogV096KoreanFares: "<strong>Consulta de tarifas mejorada en coreano.</strong> Adaptamos el enlace para quienes usan el sitio en coreano, ya que Amtrak aún no ofrece su web en ese idioma.",
-        updateLogV095Date: "20 de septiembre de 2026",
-        updateLogV095Previews: "<strong>Vistas previas de enlaces más limpias.</strong> Optimizamos las vistas previas al compartir enlaces de moose.train en iMessage, Discord y otras apps compatibles.",
-        updateLogV095ShoreLineEast: "<strong>Horarios de Shore Line East actualizados.</strong> Actualizamos los datos de horarios tras el <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">anuncio de Connecticut sobre más servicio de Shore Line East</a>.",
-        updateLogV094Date: "6 de septiembre de 2026",
-        updateLogV094MobileSearch: "<strong>La búsqueda móvil vuelve a funcionar.</strong> Corregimos un problema que impedía ejecutar búsquedas correctamente en navegadores móviles y de tabletas.",
-        updateLogV093Date: "5 de septiembre de 2026",
-        updateLogV093Fares: "<strong>Las tarifas son más fáciles de comparar.</strong> Agregamos información de tarifa adulta estándar de ida para viajes de Metro-North, Shore Line East y Hartford Line.",
-        updateLogV092Date: "31 de agosto de 2026",
-        updateLogV092Feedback: "<strong>Compartir comentarios es más fácil.</strong> Agregamos un enlace de comentarios para que los pasajeros puedan enviar ideas mientras moose.train sigue mejorando.",
-        updateLogV091Date: "30 de agosto de 2026",
-        updateLogV091Loading: "<strong>Carga más clara.</strong> Renovamos la experiencia de carga para que sea más fácil entender qué está haciendo moose.train antes de que aparezcan los resultados.",
-        updateLogV091Timezone: "<strong>Búsquedas iniciales más inteligentes.</strong> Las horas predeterminadas ahora reflejan mejor la zona horaria local del usuario.",
-        updateLogV091EasternTime: "<strong>Guía de zona horaria más clara.</strong> Los usuarios fuera de la hora del este de EE. UU. ahora ven un recordatorio de que todos los horarios de viaje se muestran en esa zona horaria.",
-        updateLogV091Range: "<strong>Un rango de salida más fluido.</strong> Mejoramos el selector de rango de salida para que acotar resultados se sienta más claro y confiable.",
-        updateLogV091Midnight: "<strong>Mejores etiquetas después de medianoche.</strong> Corregimos un error que podía mostrar viajes futuros después de medianoche como “mañana.”",
-        updateLogV09Date: "25 de agosto de 2026",
-        updateLogV09Performance: "<strong>Cargas más rápidas.</strong> Los datos de horarios se cargan de forma más eficiente, para que la primera búsqueda se sienta más ágil.",
-        updateLogV09Viewer: "<strong>Un registro de cambios más claro.</strong> El visor ahora agrupa las novedades por fecha de lanzamiento para que sea más fácil revisarlas.",
-        updateLogV08Date: "15 de julio de 2026",
-        updateLogOperators: "<strong>Más trenes, una sola búsqueda.</strong> Compara Amtrak, Metro-North, CTrail Shore Line East y CTrail Hartford Line juntos.",
-        updateLogRouting: "<strong>Directo o con transbordo.</strong> Encuentra viajes directos y trayectos con un transbordo, con un margen de cinco minutos ya incluido.",
-        updateLogNyc: "<strong>Dos terminales de NYC, una búsqueda.</strong> Busca Penn Station y Grand Central juntas cuando cualquiera de las dos pueda servir.",
-        updateLogFilters: "<strong>Afina los resultados.</strong> Ajusta la ventana de salida para enfocar la búsqueda y guarda viajes prometedores en tu Shortlist.",
-        updateLogPreferences: "<strong>A tu manera.</strong> Elige apariencia clara, oscura o del sistema; formato de 12 o 24 horas; e inglés, coreano o español.",
-        updateLogStates: "<strong>Mejores respuestas cuando no hay viaje.</strong> Explicaciones más claras para fechas no disponibles, viajes del día siguiente y trayectos que requerirían dos o más transbordos.",
+        updateLogV091Date: "6 de octubre de 2026",
+        updateLogV092Date: "17 de octubre de 2026",
+        updateLogV092Refresh: "Los horarios ahora se actualizan automáticamente todos los días a las 7 a. m., hora del este de EE. UU.",
+        updateLogV092Mobile: "Ordenamos las opciones de apariencia, formato de hora e idioma para que se adapten mejor a las pantallas pequeñas.",
+        updateLogV092Writing: "Revisamos la redacción del registro de cambios para que las novedades sean más claras y fáciles de leer.",
+        updateLogV092Nyc: "Aclaramos que la opción conjunta de NYC te permite buscar de una vez trenes con origen o destino en Grand Central y Penn Station.",
+        updateLogV091Faq: "Renovamos el diseño de las preguntas frecuentes. Ahora también puedes compartir enlaces directos a cada pregunta.",
+        updateLogV091Favicon: "Añadimos un detalle pequeño pero útil: un icono para encontrar moose.train fácilmente entre tus pestañas y marcadores.",
+        updateLogV091Search: "Mejoramos el sistema de búsqueda para que tu primera consulta sea más rápida.",
+        updateLogV091AmtrakFares: "Añadimos enlaces directos para consultar las tarifas en Amtrak.",
+        updateLogV091KoreanFares: "Adaptamos el enlace de tarifas de Amtrak para quienes usan el sitio en coreano, ya que Amtrak no ofrece una web en ese idioma.",
+        updateLogV09Date: "20 de septiembre de 2026",
+        updateLogV09Previews: "Mejoramos cómo se ven los enlaces de moose.train al compartirlos en iMessage, Discord y otras aplicaciones compatibles.",
+        updateLogV09ShoreLineEast: "Actualizamos los horarios para reflejar el <a href=\"https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5?language=en_US\" target=\"_blank\" rel=\"noopener noreferrer\">anuncio de Connecticut sobre el aumento del servicio de Shore Line East</a>.",
+        updateLogV08Date: "6 de septiembre de 2026",
+        updateLogV08MobileSearch: "Corregimos un problema que impedía realizar búsquedas en navegadores de móviles y tabletas.",
+        updateLogV07Date: "5 de septiembre de 2026",
+        updateLogV07Fares: "Ahora puedes consultar las tarifas estándar de ida para adultos en viajes de Metro-North, Shore Line East y Hartford Line.",
+        updateLogV06Date: "31 de agosto de 2026",
+        updateLogV06Feedback: "Añadimos un enlace para que puedas compartir ideas o avisarnos fácilmente si algo no funciona.",
+        updateLogV05Date: "30 de agosto de 2026",
+        updateLogV05Loading: "Aclaramos los mensajes de carga para que sepas qué está pasando mientras esperas los resultados.",
+        updateLogV05Timezone: "Mejoramos las horas de búsqueda predeterminadas para tener más en cuenta tu zona horaria local.",
+        updateLogV05EasternTime: "Si estás fuera de la zona horaria del este de EE. UU., verás un recordatorio de que todos los horarios de viaje se muestran en esa zona.",
+        updateLogV05Range: "Ahora es más fácil ajustar el intervalo de salida.",
+        updateLogV05Midnight: "Corregimos un error que marcaba como «mañana» algunos viajes de fechas futuras después de medianoche.",
+        updateLogV04Date: "25 de agosto de 2026",
+        updateLogV04Performance: "Optimizamos la carga de los horarios para que tu primera búsqueda devuelva resultados más rápido.",
+        updateLogV04Viewer: "El registro de cambios ahora agrupa las novedades por fecha de publicación para que sea más fácil ponerse al día.",
+        updateLogV03Date: "15 de julio de 2026",
+        updateLogOperators: "Busca viajes de Amtrak, Metro-North, CTrail Shore Line East y CTrail Hartford Line en un solo lugar.",
+        updateLogRouting: "Encuentra viajes directos o con un transbordo, con al menos cinco minutos entre trenes.",
+        updateLogNyc: "Busca Penn Station y Grand Central a la vez con la opción conjunta de NYC.",
+        updateLogFilters: "Acota la búsqueda por intervalo de salida y guarda los viajes que te interesen en una lista de favoritos.",
+        updateLogPreferences: "Adapta moose.train a tus preferencias: apariencia clara, oscura o del sistema; formato de 12 o 24 horas; e inglés, coreano o español.",
+        updateLogStates: "Añadimos explicaciones más claras para las fechas no disponibles, los viajes que llegan al día siguiente y los trayectos que necesitan dos o más transbordos.",
         updateLogDataLabel: "Datos de horarios",
-        updateLogDataRefresh: "Última actualización: 3 de octubre de 2026",
+        updateLogDataRefresh: "Última actualización: 7 de octubre de 2026",
         updateLogViewSources: "Ver fuentes",
-        updateLogV07Date: "20 de junio de 2026",
-        updateLogV07Initial: "<strong>Primera versión.</strong> La idea básica de planificación de viajes de moose.train llegó por primera vez a una página funcional.",
+        updateLogV02Date: "20 de junio de 2026",
+        updateLogV02Initial: "La primera versión funcional de moose.train, con las funciones básicas para planificar viajes.",
         faqTitle: "Preguntas frecuentes",
         faqIntro: "Respuestas rápidas sobre qué hace moose.train, dónde funciona y cómo compara opciones ferroviarias.",
       },
@@ -2640,7 +2700,7 @@
       en: [
         { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City and Connecticut region, bringing together schedules from Amtrak, Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p>` },
         { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train currently focuses on rail travel between New York City and Connecticut. That includes stations along the Metro-North New Haven Line in Westchester County, as well as destinations throughout Connecticut served by Metro-North, Amtrak, CTrail Shore Line East, and the CTrail Hartford Line.</p><p>The coverage stretches a little beyond those borders, too. You can plan trips as far north as Springfield, Massachusetts, and as far east as Westerly, Rhode Island.</p><p>This is just the starting point. I kept the initial service area relatively focused so I could get the experience right before expanding to more places.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "When was the data most recently refreshed?", content: `<p>The schedule data in moose.train was last imported on October 3, 2026 at about 12:54 PM Eastern. Because moose.train currently uses published static GTFS schedule data rather than live train data, the results you see are based on the official schedules available at the time of the most recent import.</p><p>There are two useful dates to keep in mind: <strong>provider updated</strong>, which is the date indicated by the source feed or file, and <strong>received by moose.train</strong>, which is when this site last imported that feed. The current import records verify receipt dates but do not independently establish when providers last published an update.</p><ul><li><strong>Amtrak:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li><li><strong>Metro-North:</strong> provider update date unverified; received October 3, 2026. Service currently extends through May 22, 2027.</li><li><strong>CTrail Hartford Line:</strong> provider update date unverified; received October 3, 2026. Service currently extends through July 12, 2027.</li><li><strong>CTrail Shore Line East:</strong> provider update date unverified; received October 3, 2026. Service currently extends through September 27, 2027.</li></ul><p><strong>Shore Line East in October:</strong> The imported schedule includes weekday trains 1628, 1640, 1683, and 1693 from October 5, 2026. Searches use the schedule applicable to your travel date. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Official announcement</a>.</p><p><strong>Metro-North fall schedule:</strong> The refreshed feed includes New Haven Line stopping-pattern changes for the fall schedule beginning October 4, 2026, including weekday rush-hour changes from October 5. Hudson and Harlem Line changes are outside the current search coverage.</p><p>If a search is beyond the available schedule data for a trip, moose.train will show the latest date currently supported for that search.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "How often is the schedule data updated?", content: `<p>moose.train refreshes its schedule data every morning at <strong>7am US Eastern Time</strong>, using information published by Metro-North, CTrail, and Amtrak.</p><p><strong>Last successfully refreshed:</strong> <time data-schedule-refresh-date>October 7, 2026</time> (US Eastern Time)</p><p>Schedules are not updated in real time, so delays, cancellations, and other service changes may not be reflected. For the latest service information, please check directly with your rail provider.</p>` },
         { id: "which-rail-services-are-included", summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from four rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they cover all scheduled passenger rail service between New York City and Connecticut, along with connections farther into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
         { id: "why-did-you-build-moose-train", summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
         { id: "why-is-it-called-moose-train", summary: "Why is it called moose.train?", content: `<p>It started as an acronym! The original working name was <strong>Metro-North Or Other Service Evaluator</strong>, or <strong>MOOSE</strong>. The name stuck, and eventually became moose.train.</p><p>And, conveniently enough, there really are moose in both New York and Connecticut. So it felt worth keeping. 🫎</p>` },
@@ -2661,7 +2721,7 @@
       ko: [
         { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시와 코네티컷 지역에 집중하고 있으며, Amtrak, Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p>` },
         { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 현재 뉴욕시와 코네티컷 사이의 철도 여행에 집중하고 있습니다. 여기에는 웨스트체스터 카운티의 Metro-North New Haven Line 역들과, Metro-North, Amtrak, CTrail Shore Line East, CTrail Hartford Line이 운행하는 코네티컷 내 목적지가 포함됩니다.</p><p>지원 범위는 그 경계를 조금 넘어섭니다. 북쪽으로는 매사추세츠주 스프링필드까지, 동쪽으로는 로드아일랜드주 웨스터리까지 여행을 계획할 수 있습니다.</p><p>이것은 시작점일 뿐입니다. 더 많은 지역으로 확장하기 전에 경험을 제대로 다듬기 위해 초기 서비스 지역을 비교적 좁게 유지했습니다.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "데이터는 가장 최근에 언제 새로 고쳤나요?", content: `<p>moose.train의 시간표 데이터는 2026년 10월 3일 동부시간 오후 12시 54분경에 마지막으로 가져왔습니다. moose.train은 현재 실시간 열차 데이터가 아니라 게시된 정적 GTFS 시간표 데이터를 사용하므로, 검색 결과는 가장 최근 가져온 시점에 제공되던 공식 시간표를 기준으로 합니다.</p><p>여기에는 두 가지 날짜가 있습니다. <strong>제공자 업데이트</strong>는 원본 피드나 파일에 표시된 날짜이고, <strong>moose.train 수신</strong>은 이 사이트가 해당 피드를 마지막으로 가져온 날짜입니다. 현재 가져오기 기록으로 수신 날짜는 확인할 수 있지만, 제공자가 마지막으로 업데이트를 게시한 날짜는 별도로 확인되지 않았습니다.</p><ul><li><strong>Amtrak:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li><li><strong>Metro-North:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 5월 22일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Hartford Line:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 7월 12일까지의 운행이 포함되어 있습니다.</li><li><strong>CTrail Shore Line East:</strong> 제공자 업데이트 날짜 미확인, 수신 2026년 10월 3일. 현재 2027년 9월 27일까지의 운행이 포함되어 있습니다.</li></ul><p><strong>10월 Shore Line East:</strong> 가져온 시간표에는 2026년 10월 5일부터 운행하는 평일 열차 1628, 1640, 1683, 1693이 포함되어 있습니다. 검색에는 선택한 여행 날짜에 해당하는 시간표가 적용됩니다. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">공식 발표</a>.</p><p><strong>Metro-North 가을 시간표:</strong> 새로 가져온 데이터에는 2026년 10월 4일부터 적용되는 New Haven Line 가을 시간표와 10월 5일부터의 평일 출퇴근 시간대 정차역 변경이 포함되어 있습니다. Hudson 및 Harlem Line은 현재 검색 범위에 포함되지 않습니다.</p><p>검색 날짜가 해당 여행에 사용할 수 있는 시간표 범위를 넘어가면, moose.train은 현재 검색할 수 있는 가장 늦은 날짜를 알려 줍니다.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "열차 시간표 데이터는 얼마나 자주 업데이트되나요?", content: `<p>moose.train은 Metro-North, CTrail, Amtrak에서 제공하는 정보를 바탕으로 <strong>미국 동부 시간 기준 매일 오전 7시</strong>에 열차 시간표 데이터를 새로고침합니다.</p><p><strong>마지막으로 성공적으로 업데이트된 날짜:</strong> <time data-schedule-refresh-date>2026년 10월 7일</time></p><p>시간표는 실시간으로 업데이트되지 않으므로 열차 지연, 운행 취소 및 기타 운행 변경 사항이 반영되지 않을 수 있습니다. 최신 운행 정보는 해당 철도 운영기관에서 직접 확인해 주세요.</p>` },
         { id: "which-rail-services-are-included", summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 네 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시와 코네티컷 사이의 모든 정기 여객 철도 서비스와 주변 지역으로 이어지는 연결편을 함께 포괄합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
         { id: "why-did-you-build-moose-train", summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
         { id: "why-is-it-called-moose-train", summary: "왜 이름이 moose.train인가요?", content: `<p>처음에는 약어에서 시작했습니다! 원래 작업 이름은 <strong>Metro-North Or Other Service Evaluator</strong>, 즉 <strong>MOOSE</strong>였습니다. 그 이름이 계속 남았고, 결국 moose.train이 되었습니다.</p><p>게다가 실제로 뉴욕과 코네티컷에는 무스가 살고 있습니다. 그래서 계속 써도 괜찮겠다고 느꼈습니다. 🫎</p>` },
@@ -2682,7 +2742,7 @@
       es: [
         { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York y Connecticut, reuniendo horarios de Amtrak, Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p>` },
         { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train actualmente se centra en viajes en tren entre la ciudad de Nueva York y Connecticut. Eso incluye estaciones de la línea Metro-North New Haven Line en el condado de Westchester, así como destinos de Connecticut servidos por Metro-North, Amtrak, CTrail Shore Line East y CTrail Hartford Line.</p><p>La cobertura también se extiende un poco más allá de esos límites. Puedes planificar viajes tan al norte como Springfield, Massachusetts, y tan al este como Westerly, Rhode Island.</p><p>Esto es solo el punto de partida. Mantuve el área inicial de servicio relativamente enfocada para poder mejorar la experiencia antes de expandirla a más lugares.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Cuándo se actualizaron los datos por última vez?", content: `<p>Los datos de horarios de moose.train se importaron por última vez el 3 de octubre de 2026 alrededor de las 12:54 p. m., hora del Este. Como moose.train actualmente usa datos estáticos GTFS publicados en vez de datos de trenes en vivo, los resultados que ves se basan en los horarios oficiales disponibles en el momento de la importación más reciente.</p><p>Hay dos fechas útiles: <strong>actualizado por el proveedor</strong>, que es la fecha indicada por el feed o archivo de origen, y <strong>recibido por moose.train</strong>, que es cuando este sitio importó ese feed por última vez. Los registros actuales confirman la recepción, pero no verifican de forma independiente cuándo publicó cada proveedor su última actualización.</p><ul><li><strong>Amtrak:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li><li><strong>Metro-North:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 22 de mayo de 2027.</li><li><strong>CTrail Hartford Line:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 12 de julio de 2027.</li><li><strong>CTrail Shore Line East:</strong> fecha de actualización del proveedor sin verificar; recibido el 3 de octubre de 2026. El servicio actualmente llega hasta el 27 de septiembre de 2027.</li></ul><p><strong>Shore Line East en octubre:</strong> El horario importado incluye los trenes de lunes a viernes 1628, 1640, 1683 y 1693 desde el 5 de octubre de 2026. Las búsquedas usan el horario correspondiente a la fecha del viaje. <a href="https://portal.ct.gov/governor/news/press-releases/2026/09-2026/governor-lamont-announces-additional-shore-line-east-rail-service-coming-on-october-5">Anuncio oficial</a>.</p><p><strong>Horario de otoño de Metro-North:</strong> Los datos actualizados incluyen cambios de paradas de New Haven Line desde el 4 de octubre de 2026, con cambios en horas punta de lunes a viernes desde el 5 de octubre. Hudson y Harlem Line quedan fuera de la cobertura actual.</p><p>Si una búsqueda está fuera del rango de horarios disponible para un viaje, moose.train mostrará la última fecha disponible actualmente para esa búsqueda.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Con qué frecuencia se actualizan los horarios?", content: `<p>moose.train actualiza los horarios de los trenes todas las mañanas a las <strong>7:00 a. m., hora del este de Estados Unidos</strong>, utilizando información publicada por Metro-North, CTrail y Amtrak.</p><p><strong>Última actualización realizada correctamente:</strong> <time data-schedule-refresh-date>7 de octubre de 2026</time></p><p>Los horarios no se actualizan en tiempo real, por lo que es posible que no reflejen retrasos, cancelaciones u otros cambios en el servicio. Para obtener la información más reciente, consulta directamente con el operador ferroviario.</p>` },
         { id: "which-rail-services-are-included", summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de cuatro servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, cubren todo el servicio ferroviario de pasajeros programado entre la ciudad de Nueva York y Connecticut, además de conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
         { id: "why-did-you-build-moose-train", summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
         { id: "why-is-it-called-moose-train", summary: "¿Por qué se llama moose.train?", content: `<p>¡Empezó como un acrónimo! El nombre de trabajo original era <strong>Metro-North Or Other Service Evaluator</strong>, o <strong>MOOSE</strong>. El nombre se quedó y, con el tiempo, se convirtió en moose.train.</p><p>Además, convenientemente, realmente hay alces tanto en Nueva York como en Connecticut. Así que pareció valer la pena conservarlo. 🫎</p>` },
@@ -2856,13 +2916,22 @@
     const virtualStations = [
       {
         id: "NYC_RAIL",
-        name: "*NY Penn OR Grand Central",
+        name: "🗽 New York City (major stations)",
         memberIds: ["NYP", "GCT"],
         displayNames: {
-          ko: "*뉴욕 펜역 또는 그랜드 센트럴역",
-          es: "*Penn Station de Nueva York o Grand Central",
+          en: "🗽 New York City (major stations)",
+          ko: "🗽 뉴욕 (주요 기차역)",
+          es: "🗽 Nueva York (estaciones principales)",
+        },
+        descriptions: {
+          en: "Penn Station or Grand Central",
+          es: "Penn Station o Grand Central",
+          ko: "뉴욕 펜역 또는 그랜드 센트럴역",
         },
         aliases: [
+          "*NY Penn OR Grand Central",
+          "*뉴욕 펜역 또는 그랜드 센트럴역",
+          "*Penn Station de Nueva York o Grand Central",
           "NY Penn OR Grand Central",
           "NY Penn or Grand Central",
           "뉴욕 펜역 또는 그랜드 센트럴역",
@@ -4077,7 +4146,7 @@
       const query = normalizeStationInput(value);
       const aliases = stationAliases.filter((alias) => alias.id === station.id).flatMap((alias) => alias.names);
       const virtual = virtualStations.find((item) => item.id === station.id);
-      return [...stationSearchValues(station), ...aliases, ...(virtual?.aliases || []), ...Object.values(virtual?.displayNames || {})]
+      return [...stationSearchValues(station), ...aliases, ...(virtual?.aliases || []), ...Object.values(virtual?.displayNames || {}), ...Object.values(virtual?.descriptions || {})]
         .some((name) => normalize(name).includes(query));
     }
 
@@ -4111,6 +4180,17 @@
             option.setAttribute("role", "option");
             option.setAttribute("aria-selected", "false");
             option.textContent = displayStationName(station.name);
+            const virtual = virtualStations.find((item) => item.id === station.id);
+            if (virtual) {
+              option.classList.add("station-option-city");
+              const description = document.createElement("span");
+              description.className = "station-option-description";
+              description.id = `${option.id}-description`;
+              description.textContent = virtual.descriptions[currentLanguage] || virtual.descriptions.en;
+              option.setAttribute("aria-label", displayStationName(station.name));
+              option.setAttribute("aria-describedby", description.id);
+              option.appendChild(description);
+            }
             option.addEventListener("click", () => select(index));
             list.appendChild(option);
           });

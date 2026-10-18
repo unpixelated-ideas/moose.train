@@ -1,5 +1,5 @@
 source_pdf,source_original_filename,rows_extracted,pages,timetable_effective_date,service_end_date,timetable_last_updated_date,timetable_revision_date
-mnr_gtfs_effective_2026-10-01_updated_2026-10-03.zip,gtfsmnr.zip,205989,,2026-10-01,2027-05-22,2026-10-03,
-hartford_gtfs_effective_2026-07-11_updated_2026-10-03.zip,hlgtfs.zip,266,,2026-07-11,2027-07-12,2026-10-03,
-sle_gtfs_effective_2026-09-27_updated_2026-10-03.zip,GTFS.zip,386,,2026-09-27,2027-09-27,2026-10-03,
-amtrak_gtfs_effective_2026-09-27_updated_2026-10-03.zip,GTFS.zip,4160,,2026-09-27,2027-09-27,2026-10-03,
+mnr_gtfs_effective_2026-10-05_updated_2026-10-07.zip,gtfsmnr.zip,194977,,2026-10-05,2027-05-22,2026-10-07,
+hartford_gtfs_effective_2026-07-11_updated_2026-10-07.zip,hlgtfs.zip,266,,2026-07-11,2027-07-12,2026-10-07,
+sle_gtfs_effective_2026-10-04_updated_2026-10-07.zip,GTFS.zip,386,,2026-10-04,2027-10-04,2026-10-07,
+amtrak_gtfs_effective_2026-10-04_updated_2026-10-07.zip,GTFS.zip,3852,,2026-10-04,2027-10-04,2026-10-07,
