@@ -2,13 +2,14 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const zlib = require('node:zlib');
 const root = path.resolve(__dirname, '../..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const script = html.slice(html.lastIndexOf('<script>') + 8, html.lastIndexOf('</script>')).replace('    init();', '');
 const json = fs.readFileSync(path.join(root, 'supporting_files/assets/schedule/search.json'));
 const gzip = fs.readFileSync(path.join(root, 'supporting_files/assets/schedule/search.json.gz'));
 const tinyCsv = 'agency,service_name,route_name,train_number,direction,station_id,station_name,station_sequence,arrival_time,departure_time\nTest,Test,Test,1,North,A,A,1,10:00,10:00\nTest,Test,Test,1,North,B,B,2,11:00,11:00\n';
-function environment({ decompression = true, brokenGzip = false, brokenJson = false, offline = false } = {}) {
+function environment({ decompression = true, brokenGzip = false, brokenJson = false, offline = false, compressedCsv = false } = {}) {
   const requests = [];
   const events = [];
   let idle;
@@ -19,6 +20,8 @@ function environment({ decompression = true, brokenGzip = false, brokenJson = fa
     fetch: async url => {
       requests.push(url);
       if (offline) throw new Error('Offline');
+      if (url === 'moose_train_schedule.csv.gz') return new Response(zlib.gzipSync(tinyCsv));
+      if (url === 'moose_train_schedule.csv' && compressedCsv) return new Response('', {status:404});
       if (url.includes('.gz')) return new Response(brokenGzip ? 'bad gzip' : gzip);
       if (url.includes('.json')) return new Response(brokenJson ? '{"version":0}' : json);
       return new Response(tinyCsv);
@@ -51,6 +54,10 @@ function environment({ decompression = true, brokenGzip = false, brokenJson = fa
   assert(await csvFallback.run('ensureScheduleLoaded()'));
   assert.equal(csvFallback.requests.at(-1), 'moose_train_schedule.csv');
   assert.equal(csvFallback.run('trips[0].stops[1].arrival'), 660);
+  const compressedFallback = environment({ brokenGzip: true, brokenJson: true, compressedCsv: true });
+  assert(await compressedFallback.run('ensureScheduleLoaded()'));
+  assert.equal(compressedFallback.requests.at(-1), 'moose_train_schedule.csv.gz');
+  assert.equal(compressedFallback.run('trips[0].stops[1].arrival'), 660);
   const offline = environment({ offline: true });
   assert.equal(await offline.run('ensureScheduleLoaded({ updateStatus: false })'), false);
   const attempts = offline.requests.length;

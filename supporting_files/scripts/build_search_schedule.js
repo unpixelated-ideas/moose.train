@@ -10,7 +10,10 @@ const html = fs.readFileSync(htmlPath, 'utf8');
 const script = html.slice(html.lastIndexOf('<script>') + 8, html.lastIndexOf('</script>')).replace('    init();', '');
 const context = vm.createContext({ document: { getElementById: () => ({}), querySelector() {} }, window: {}, console });
 vm.runInContext(script, context);
-const csv = fs.readFileSync(path.join(root, 'moose_train_schedule.csv'), 'utf8');
+const compressedCsv = path.join(root, 'moose_train_schedule.csv.gz');
+const csv = fs.existsSync(compressedCsv)
+  ? zlib.gunzipSync(fs.readFileSync(compressedCsv)).toString('utf8')
+  : fs.readFileSync(path.join(root, 'moose_train_schedule.csv'), 'utf8');
 context.csv = csv;
 const started = performance.now();
 const prepared = vm.runInContext(`(() => {

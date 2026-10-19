@@ -26,3 +26,6 @@ coverage/
 *.log
 *.tmp
 *.temp
+
+# Plain schedule is restored only for publication; track the lossless gzip snapshot.
+/moose_train_schedule.csv

@@ -1,5 +1,6 @@
 """Reject failed, empty, or expired products before uploading a Pages artifact."""
 import csv
+import gzip
 import datetime as dt
 import json
 from pathlib import Path
@@ -21,7 +22,10 @@ def validate(root=ROOT, today=None):
         if not json.loads(row["record_counts"]).get("stop_times", 0):
             raise ValueError(f"Empty import: {row['feed_id']}")
     coverage = {feed: False for feed in EXPECTED}
-    with (root / "moose_train_schedule.csv").open() as handle:
+    mnr_services = {name: False for name in ["Hudson Line", "Harlem Line", "New Haven Line", "New Canaan Branch", "Danbury Branch", "Waterbury Branch"]}
+    compressed = root / "moose_train_schedule.csv.gz"
+    schedule = gzip.open(compressed, "rt", encoding="utf-8") if compressed.exists() else (root / "moose_train_schedule.csv").open()
+    with schedule as handle:
         for row in csv.DictReader(handle):
             feed = next((feed for feed in EXPECTED if row["source_pdf"].startswith(feed + "_gtfs_")), None)
             if feed is None:
@@ -31,9 +35,14 @@ def validate(root=ROOT, today=None):
             else:
                 active = dt.date.fromisoformat(row["service_end_date"]) >= today
             coverage[feed] |= active
+            if feed == "mnr" and row.get("service_name") in mnr_services:
+                mnr_services[row["service_name"]] |= active
     missing = [feed for feed, active in coverage.items() if not active]
     if missing:
         raise ValueError(f"No current or future service for: {', '.join(missing)}")
+    missing_lines = [name for name, active in mnr_services.items() if not active]
+    if missing_lines:
+        raise ValueError(f"No current or future Metro-North service for: {', '.join(missing_lines)}")
     print("All five products imported successfully with current or future service.")
 
 

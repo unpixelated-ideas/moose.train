@@ -16,17 +16,18 @@ or personal tokens are required.
 
 ## Publication behavior
 
-Scheduled and manual runs download all configured GTFS feeds, generate the CSV,
+Scheduled, manual, and push runs download all configured GTFS feeds, generate the CSV,
 validate all five products and service coverage, and rebuild and test search
 assets. Only a successful build is deployed. Failure leaves the existing
 deployment available; GitHub Actions shows the failure, with notifications
 controlled by your GitHub notification preferences.
 
 Daily outputs are deployed as a Pages artifact, not committed back to Git.
-The repository therefore remains the manually maintained baseline. Normal
-pushes to main rebuild and publish that baseline without downloading feeds,
-so manually refreshed data and site edits can still be published. The next
-scheduled refresh replaces schedule data with the latest agency feeds.
+The repository therefore remains the manually maintained baseline. Every
+push to main downloads and validates fresh agency feeds before publishing
+the site edits, so a code update cannot republish the older saved baseline.
+If a refresh or validation fails, the code update is not deployed and the
+existing live site stays available.
 Source CSV downloads are included in the deployment; raw GTFS ZIPs and backups
 are excluded. Artifacts expire after one day to avoid accumulating storage.
 

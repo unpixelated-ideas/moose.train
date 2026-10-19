@@ -13,7 +13,7 @@ for subsequent searches; persistent browser database caching is not implemented.
 
 ## Updating schedules
 
-After changing `moose_train_schedule.csv` or the trip preparation functions in
+After changing the compressed snapshot `moose_train_schedule.csv.gz` or the trip preparation functions in
 `index.html`, run with Node.js 22 or newer:
 
 ```sh
@@ -22,7 +22,7 @@ node supporting_files/scripts/build_search_schedule.js --check
 node supporting_files/tests/compact_schedule.test.js
 ```
 
-Commit `index.html` and both generated files along with the schedule changes.
+Commit `index.html` and both generated files along with the schedule snapshot changes.
 The builder updates the asset version in `index.html` to prevent reusing an old
 schedule from the browser cache. It checks every decoded trip and metadata entry
 against the CSV-derived result, preserving service dates, overnight stop times,
@@ -32,3 +32,7 @@ The check command fails if the committed assets are stale. The GitHub Actions
 `Check search schedule` workflow also runs this check on relevant pushes and pull
 requests (it does not deploy or block the existing Pages deployment). Publish these files
 through the site's existing GitHub Pages process; no hosting changes required.
+
+## Compressed repository snapshot
+
+The complete schedule is stored losslessly as `moose_train_schedule.csv.gz` to stay below GitHub’s per-file limit. The builder reads that snapshot directly, with legacy plaintext CSV accepted when no compressed snapshot exists. The extractor writes deterministic gzip snapshots; the publication packager restores `moose_train_schedule.csv` for existing public download and fallback URLs. A local preview can also load the compressed CSV fallback directly. Metro-North per-feed CSV downloads use `.csv.gz` because the full feed also exceeds the file limit. No CSV columns, service dates, source identities, or train times are discarded.

@@ -35,10 +35,8 @@ jobs:
       - name: Test importer
         run: python -m unittest discover -s supporting_files/extraction/tests
       - name: Download fresh schedules
-        if: github.event_name != 'push'
         run: python supporting_files/extraction/extract_timetables.py
       - name: Validate feed coverage
-        if: github.event_name != 'push'
         run: python supporting_files/scripts/validate_refresh.py
       - name: Update public refresh dates from import records
         run: python supporting_files/scripts/update_refresh_labels.py
@@ -48,6 +46,7 @@ jobs:
           node supporting_files/scripts/build_search_schedule.js --check
           node supporting_files/tests/compact_schedule.test.js
           node supporting_files/tests/lirr.test.js
+          node supporting_files/tests/mnr_expansion.test.js
       - name: Prepare public site
         run: python supporting_files/scripts/package_site.py
       - uses: actions/upload-pages-artifact@v3

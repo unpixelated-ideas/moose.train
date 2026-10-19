@@ -1,126 +1,126 @@
 feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
-lirr,lirr:27,27,LIRR_27,BTA,Babylon,40.70068942,-73.32405561,,,,true
-lirr,lirr:42,42,LIRR_42,DGL,Douglaston,40.76806862,-73.74941265,,,,true
-lirr,lirr:187,187,LIRR_187,SFD,Seaford,40.67572393,-73.48656847,,,,true
-lirr,lirr:11,11,LIRR_11,BDY,Broadway,40.76165318,-73.80176612,,,,true
-lirr,lirr:38,38,LIRR_38,CPG,Copiague,40.68101528,-73.39834027,,,,true
-lirr,lirr:191,191,LIRR_191,SHN,Southampton,40.89471874,-72.39012376,,,,true
-lirr,lirr:190,190,LIRR_190,SHD,Southold,41.06632089,-72.4278803,,,,true
-lirr,lirr:153,153,LIRR_153,NPT,Northport,40.88064972,-73.32848513,,,,true
-lirr,lirr:102,102,LIRR_102,JAM,Jamaica,40.69960817,-73.80852987,,,,true
-lirr,lirr:193,193,LIRR_193,SJM,St. James,40.88216931,-73.15950725,,,,true
-lirr,lirr:165,165,LIRR_165,PLN,Pinelawn,40.74535851,-73.39960092,,,,true
-lirr,lirr:40,40,LIRR_40,CSH,Cold Spring Harbor,40.83563832,-73.45108591,,,,true
-lirr,lirr:73,73,LIRR_73,GPT,Greenport,41.09970991,-72.36310396,,,,true
-lirr,lirr:142,142,LIRR_142,MVN,Malverne,40.67547844,-73.66886364,,,,true
-lirr,lirr:72,72,LIRR_72,GNK,Great Neck,40.78721647,-73.72610046,,,,true
-lirr,lirr:21,21,LIRR_21,BPT,Bellport,40.7737389,-72.94396574,,,,true
-lirr,lirr:8,8,LIRR_8,AVL,Amityville,40.68024859,-73.42031192,,,,true
-lirr,lirr:92,92,LIRR_92,HVL,Hicksville,40.76717491,-73.52853322,,,,true
-lirr,lirr:118,118,LIRR_118,LIC,Long Island City,40.74134343,-73.95763922,,,,true
-lirr,lirr:162,162,LIRR_162,PDM,Plandome,40.81069853,-73.69521438,,,,true
-lirr,lirr:13,13,LIRR_13,BHN,Bridgehampton,40.93898378,-72.31004593,,,,true
 lirr,lirr:141,141,LIRR_141,MTK,Montauk,41.04710896,-71.95388103,,,,true
-lirr,lirr:117,117,LIRR_117,LHT,Lindenhurst,40.68826504,-73.36921149,,,,true
-lirr,lirr:226,226,LIRR_226,MRK,Merrick,40.6638004,-73.55062102,,,,true
-lirr,lirr:20,20,LIRR_20,BPG,Bethpage,40.74303924,-73.48343821,,,,true
-lirr,lirr:111,111,LIRR_111,KPK,Kings Park,40.88366659,-73.25624757,,,,true
-lirr,lirr:216,216,LIRR_216,WHD,West Hempstead,40.70196099,-73.64164361,,,,true
-lirr,lirr:223,223,LIRR_223,YPK,Yaphank-BNL,40.849270453967,-72.864465900794,,,,true
-lirr,lirr:1,1,LIRR_1,ABT,Albertson,40.77206317,-73.64169095,,,,true
-lirr,lirr:359,359,LIRR_359,EMT,Elmont-UBS Arena,40.720074,-73.725549,,,,true
-lirr,lirr:140,140,LIRR_140,MSY,Mastic-Shirley,40.79898815,-72.86442272,,,,true
-lirr,lirr:66,66,LIRR_66,GBN,Gibson,40.64925173,-73.70183483,,,,true
-lirr,lirr:91,91,LIRR_91,HUN,Huntington,40.85300971,-73.40952576,,,,true
-lirr,lirr:176,176,LIRR_176,RHD,Riverhead,40.91983928,-72.66691054,,,,true
-lirr,lirr:127,127,LIRR_127,MAV,Merillon Avenue,40.73516903,-73.66252148,,,,true
-lirr,lirr:132,132,LIRR_132,MIN,Mineola,40.74034743,-73.64086293,,,,true
-lirr,lirr:211,211,LIRR_211,VSM,Valley Stream,40.66151762,-73.70475875,,,,true
-lirr,lirr:183,183,LIRR_183,RVC,Rockville Centre,40.65831811,-73.64654935,,,,true
-lirr,lirr:67,67,LIRR_67,GCV,Glen Cove,40.86583421,-73.61616614,,,,true
-lirr,lirr:33,33,LIRR_33,CI,Central Islip,40.79185312,-73.19486082,,,,true
-lirr,lirr:124,124,LIRR_124,LVW,Lakeview,40.68585582,-73.65213777,,,,true
-lirr,lirr:131,131,LIRR_131,MHT,Manhasset,40.7967241,-73.69989909,,,,true
-lirr,lirr:23,23,LIRR_23,BRS,Bellerose,40.72220443,-73.71665289,,,,true
-lirr,lirr:171,171,LIRR_171,PWS,Port Washington,40.82903533,-73.687401,,,,true
-lirr,lirr:89,89,LIRR_89,HOL,Hollis,40.71018151,-73.76675252,,,,true
-lirr,lirr:4,4,LIRR_4,AGT,Amagansett,40.98003964,-72.13233416,,,,true
-lirr,lirr:179,179,LIRR_179,RON,Ronkonkoma,40.80808613,-73.10594023,,,,true
-lirr,lirr:83,83,LIRR_83,HBY,Hampton Bays,40.87660916,-72.52394936,,,,true
-lirr,lirr:44,44,LIRR_44,DPK,Deer Park,40.76948364,-73.29356494,,,,true
-lirr,lirr:213,213,LIRR_213,WBY,Westbury,40.75345386,-73.5858661,,,,true
-lirr,lirr:164,164,LIRR_164,PJN,Port Jefferson,40.9345531,-73.05250164,,,,true
-lirr,lirr:125,125,LIRR_125,LYN,Lynbrook,40.65605814,-73.67607083,,,,true
-lirr,lirr:85,85,LIRR_85,HGN,Hempstead Gardens,40.69491356,-73.64620888,,,,true
-lirr,lirr:220,220,LIRR_220,WYD,Wyandanch,40.75480101,-73.35806588,,,,true
-lirr,lirr:180,180,LIRR_180,ROS,Rosedale,40.66594933,-73.73554816,,,,true
-lirr,lirr:225,225,LIRR_225,BWN,Baldwin,40.65673224,-73.60716245,,,,true
-lirr,lirr:25,25,LIRR_25,BSD,Bayside,40.76315241,-73.77124986,,,,true
-lirr,lirr:202,202,LIRR_202,STN,Smithtown,40.85654755,-73.19803235,,,,true
-lirr,lirr:78,78,LIRR_78,GWN,Greenlawn,40.86866524,-73.36284977,,,,true
-lirr,lirr:184,184,LIRR_184,SAB,St. Albans,40.69118348,-73.76550937,,,,true
 lirr,lirr:107,107,LIRR_107,KGN,Kew Gardens,40.70964917,-73.83088807,,,,true
-lirr,lirr:39,39,LIRR_39,CPL,Carle Place,40.74920704,-73.60365242,,,,true
-lirr,lirr:122,122,LIRR_122,LTN,Laurelton,40.66848304,-73.75174687,,,,true
-lirr,lirr:31,31,LIRR_31,CAV,Centre Avenue,40.64831835,-73.6639675,,,,true
-lirr,lirr:119,119,LIRR_119,LMR,Locust Manor,40.67513907,-73.76504303,,,,true
-lirr,lirr:241,241,LIRR_241,ATL,Atlantic Terminal,40.68359596,-73.97567112,,,,true
-lirr,lirr:163,163,LIRR_163,PGE,Patchogue,40.76187901,-73.01574451,,,,true
-lirr,lirr:154,154,LIRR_154,OBY,Oyster Bay,40.87533774,-73.53403366,,,,true
-lirr,lirr:59,59,LIRR_59,FMD,Farmingdale,40.73591503,-73.44123878,,,,true
-lirr,lirr:84,84,LIRR_84,HEM,Hempstead,40.71329663,-73.62503239,,,,true
-lirr,lirr:77,77,LIRR_77,GVL,Greenvale,40.81571566,-73.62687152,,,,true
-lirr,lirr:74,74,LIRR_74,GRV,Great River,40.74044444,-73.17019585,,,,true
 lirr,lirr:148,148,LIRR_148,NAV,Nostrand Avenue,40.67838785,-73.94822108,,,,true
-lirr,lirr:120,120,LIRR_120,LNK,Little Neck,40.77504393,-73.74064662,,,,true
-lirr,lirr:65,65,LIRR_65,FRY,Far Rockaway,40.60914311,-73.75054135,,,,true
-lirr,lirr:219,219,LIRR_219,WWD,Westwood,40.66837227,-73.68120878,,,,true
-lirr,lirr:99,99,LIRR_99,IPK,Island Park,40.60129906,-73.65474248,,,,true
-lirr,lirr:123,123,LIRR_123,LVL,Locust Valley,40.87446697,-73.59830284,,,,true
-lirr,lirr:349,349,GCT,GCT,Grand Central,40.755162,-73.975455,,,,true
-lirr,lirr:157,157,LIRR_157,ODL,Oakdale,40.74343275,-73.13243549,,,,true
-lirr,lirr:215,215,LIRR_215,WGH,Wantagh,40.67299016,-73.50896484,,,,true
-lirr,lirr:64,64,LIRR_64,FPT,Freeport,40.65745799,-73.58232401,,,,true
-lirr,lirr:101,101,LIRR_101,IWD,Inwood,40.61228773,-73.74418354,,,,true
-lirr,lirr:149,149,LIRR_149,NBD,Nassau Boulevard,40.72296245,-73.66269823,,,,true
-lirr,lirr:32,32,LIRR_32,CHT,Cedarhurst,40.62217451,-73.72618275,,,,true
-lirr,lirr:135,135,LIRR_135,MPK,Massapequa Park,40.6778591,-73.45473724,,,,true
-lirr,lirr:217,217,LIRR_217,WMR,Woodmere,40.63133646,-73.71371544,,,,true
-lirr,lirr:26,26,LIRR_26,BSR,Bay Shore,40.72443344,-73.25408295,,,,true
-lirr,lirr:155,155,LIRR_155,ODE,Oceanside,40.63472102,-73.65466582,,,,true
-lirr,lirr:129,129,LIRR_129,MFD,Medford,40.81739665,-72.99890946,,,,true
-lirr,lirr:63,63,LIRR_63,FPK,Floral Park,40.72463725,-73.70639714,,,,true
-lirr,lirr:199,199,LIRR_199,SSM,Mets-Willets Point,40.75239835,-73.84370059,,,,true
-lirr,lirr:195,195,LIRR_195,SMR,Stewart Manor,40.72302771,-73.68102041,,,,true
-lirr,lirr:185,185,LIRR_185,SCF,Sea Cliff,40.85236805,-73.62541695,,,,true
-lirr,lirr:51,51,LIRR_51,ERY,East Rockaway,40.64221085,-73.65821626,,,,true
-lirr,lirr:55,55,LIRR_55,FHL,Forest Hills,40.71957556,-73.84481402,,,,true
-lirr,lirr:56,56,LIRR_56,FLS,Flushing Main Street,40.75789494,-73.83134684,,,,true
-lirr,lirr:152,152,LIRR_152,NHP,New Hyde Park,40.73075708,-73.68095886,,,,true
-lirr,lirr:90,90,LIRR_90,HPA,Hunterspoint Avenue,40.74239046,-73.94678997,,,,true
-lirr,lirr:76,76,LIRR_76,GST,Glen Street,40.85798112,-73.62121715,,,,true
-lirr,lirr:204,204,LIRR_204,SVL,Sayville,40.74035373,-73.08645531,,,,true
-lirr,lirr:16,16,LIRR_16,BMR,Bellmore,40.66880043,-73.52886016,,,,true
-lirr,lirr:233,233,LIRR_233,WHN,Westhampton,40.83030532,-72.65032454,,,,true
-lirr,lirr:14,14,LIRR_14,BK,Stony Brook,40.92032252,-73.12854943,,,,true
-lirr,lirr:130,130,LIRR_130,MHL,Murray Hill,40.76270926,-73.81453928,,,,true
-lirr,lirr:237,237,NYP,NYK,New York Penn,40.75058844,-73.99358408,,,,true
-lirr,lirr:94,94,LIRR_94,HWT,Hewlett,40.63676432,-73.70513866,,,,true
-lirr,lirr:198,198,LIRR_198,SPK,Speonk,40.82131516,-72.70526225,,,,true
-lirr,lirr:182,182,LIRR_182,RSN,Roslyn,40.7904781,-73.64326175,,,,true
-lirr,lirr:2,2,LIRR_2,ADL,Auburndale,40.76144288,-73.78995927,,,,true
-lirr,lirr:214,214,LIRR_214,WDD,Woodside,40.74585067,-73.90297516,,,,true
-lirr,lirr:36,36,LIRR_36,CLP,Country Life Press,40.72145656,-73.62967386,,,,true
-lirr,lirr:71,71,LIRR_71,GHD,Glen Head,40.83222531,-73.62611822,,,,true
-lirr,lirr:48,48,LIRR_48,EHN,East Hampton,40.96508629,-72.19324238,,,,true
+lirr,lirr:184,184,LIRR_184,SAB,St. Albans,40.69118348,-73.76550937,,,,true
+lirr,lirr:111,111,LIRR_111,KPK,Kings Park,40.88366659,-73.25624757,,,,true
+lirr,lirr:21,21,LIRR_21,BPT,Bellport,40.7737389,-72.94396574,,,,true
+lirr,lirr:127,127,LIRR_127,MAV,Merillon Avenue,40.73516903,-73.66252148,,,,true
+lirr,lirr:213,213,LIRR_213,WBY,Westbury,40.75345386,-73.5858661,,,,true
+lirr,lirr:1,1,LIRR_1,ABT,Albertson,40.77206317,-73.64169095,,,,true
+lirr,lirr:187,187,LIRR_187,SFD,Seaford,40.67572393,-73.48656847,,,,true
+lirr,lirr:66,66,LIRR_66,GBN,Gibson,40.64925173,-73.70183483,,,,true
 lirr,lirr:136,136,LIRR_136,MQA,Massapequa,40.67693014,-73.46905552,,,,true
-lirr,lirr:114,114,LIRR_114,LCE,Lawrence,40.6157347,-73.73589955,,,,true
-lirr,lirr:29,29,LIRR_29,BWD,Brentwood,40.78083474,-73.24361074,,,,true
-lirr,lirr:175,175,LIRR_175,QVG,Queens Village,40.71745785,-73.73645989,,,,true
-lirr,lirr:113,113,LIRR_113,LBH,Long Beach,40.5901817,-73.66481822,,,,true
-lirr,lirr:68,68,LIRR_68,GCY,Garden City,40.72310156,-73.64036107,,,,true
-lirr,lirr:205,205,LIRR_205,SYT,Syosset,40.82485746,-73.5004456,,,,true
-lirr,lirr:100,100,LIRR_100,ISP,Islip,40.73583449,-73.20932145,,,,true
+lirr,lirr:124,124,LIRR_124,LVW,Lakeview,40.68585582,-73.65213777,,,,true
+lirr,lirr:149,149,LIRR_149,NBD,Nassau Boulevard,40.72296245,-73.66269823,,,,true
+lirr,lirr:211,211,LIRR_211,VSM,Valley Stream,40.66151762,-73.70475875,,,,true
+lirr,lirr:25,25,LIRR_25,BSD,Bayside,40.76315241,-73.77124986,,,,true
 lirr,lirr:126,126,LIRR_126,MAK,Mattituck,40.99179354,-72.53606243,,,,true
+lirr,lirr:190,190,LIRR_190,SHD,Southold,41.06632089,-72.4278803,,,,true
+lirr,lirr:16,16,LIRR_16,BMR,Bellmore,40.66880043,-73.52886016,,,,true
+lirr,lirr:153,153,LIRR_153,NPT,Northport,40.88064972,-73.32848513,,,,true
+lirr,lirr:11,11,LIRR_11,BDY,Broadway,40.76165318,-73.80176612,,,,true
+lirr,lirr:102,102,LIRR_102,JAM,Jamaica,40.69960817,-73.80852987,,,,true
+lirr,lirr:132,132,LIRR_132,MIN,Mineola,40.74034743,-73.64086293,,,,true
+lirr,lirr:226,226,LIRR_226,MRK,Merrick,40.6638004,-73.55062102,,,,true
+lirr,lirr:23,23,LIRR_23,BRS,Bellerose,40.72220443,-73.71665289,,,,true
+lirr,lirr:44,44,LIRR_44,DPK,Deer Park,40.76948364,-73.29356494,,,,true
+lirr,lirr:142,142,LIRR_142,MVN,Malverne,40.67547844,-73.66886364,,,,true
+lirr,lirr:179,179,LIRR_179,RON,Ronkonkoma,40.80808613,-73.10594023,,,,true
+lirr,lirr:8,8,LIRR_8,AVL,Amityville,40.68024859,-73.42031192,,,,true
+lirr,lirr:195,195,LIRR_195,SMR,Stewart Manor,40.72302771,-73.68102041,,,,true
+lirr,lirr:198,198,LIRR_198,SPK,Speonk,40.82131516,-72.70526225,,,,true
+lirr,lirr:4,4,LIRR_4,AGT,Amagansett,40.98003964,-72.13233416,,,,true
+lirr,lirr:29,29,LIRR_29,BWD,Brentwood,40.78083474,-73.24361074,,,,true
+lirr,lirr:131,131,LIRR_131,MHT,Manhasset,40.7967241,-73.69989909,,,,true
+lirr,lirr:65,65,LIRR_65,FRY,Far Rockaway,40.60914311,-73.75054135,,,,true
+lirr,lirr:185,185,LIRR_185,SCF,Sea Cliff,40.85236805,-73.62541695,,,,true
+lirr,lirr:135,135,LIRR_135,MPK,Massapequa Park,40.6778591,-73.45473724,,,,true
+lirr,lirr:33,33,LIRR_33,CI,Central Islip,40.79185312,-73.19486082,,,,true
+lirr,lirr:94,94,LIRR_94,HWT,Hewlett,40.63676432,-73.70513866,,,,true
+lirr,lirr:199,199,LIRR_199,SSM,Mets-Willets Point,40.75239835,-73.84370059,,,,true
+lirr,lirr:165,165,LIRR_165,PLN,Pinelawn,40.74535851,-73.39960092,,,,true
+lirr,lirr:204,204,LIRR_204,SVL,Sayville,40.74035373,-73.08645531,,,,true
+lirr,lirr:220,220,LIRR_220,WYD,Wyandanch,40.75480101,-73.35806588,,,,true
+lirr,lirr:117,117,LIRR_117,LHT,Lindenhurst,40.68826504,-73.36921149,,,,true
+lirr,lirr:27,27,LIRR_27,BTA,Babylon,40.70068942,-73.32405561,,,,true
+lirr,lirr:74,74,LIRR_74,GRV,Great River,40.74044444,-73.17019585,,,,true
+lirr,lirr:241,241,LIRR_241,ATL,Atlantic Terminal,40.68359596,-73.97567112,,,,true
+lirr,lirr:51,51,LIRR_51,ERY,East Rockaway,40.64221085,-73.65821626,,,,true
+lirr,lirr:215,215,LIRR_215,WGH,Wantagh,40.67299016,-73.50896484,,,,true
+lirr,lirr:39,39,LIRR_39,CPL,Carle Place,40.74920704,-73.60365242,,,,true
+lirr,lirr:125,125,LIRR_125,LYN,Lynbrook,40.65605814,-73.67607083,,,,true
+lirr,lirr:176,176,LIRR_176,RHD,Riverhead,40.91983928,-72.66691054,,,,true
+lirr,lirr:118,118,LIRR_118,LIC,Long Island City,40.74134343,-73.95763922,,,,true
+lirr,lirr:56,56,LIRR_56,FLS,Flushing Main Street,40.75789494,-73.83134684,,,,true
+lirr,lirr:202,202,LIRR_202,STN,Smithtown,40.85654755,-73.19803235,,,,true
+lirr,lirr:90,90,LIRR_90,HPA,Hunterspoint Avenue,40.74239046,-73.94678997,,,,true
+lirr,lirr:36,36,LIRR_36,CLP,Country Life Press,40.72145656,-73.62967386,,,,true
+lirr,lirr:76,76,LIRR_76,GST,Glen Street,40.85798112,-73.62121715,,,,true
+lirr,lirr:219,219,LIRR_219,WWD,Westwood,40.66837227,-73.68120878,,,,true
+lirr,lirr:183,183,LIRR_183,RVC,Rockville Centre,40.65831811,-73.64654935,,,,true
+lirr,lirr:119,119,LIRR_119,LMR,Locust Manor,40.67513907,-73.76504303,,,,true
+lirr,lirr:72,72,LIRR_72,GNK,Great Neck,40.78721647,-73.72610046,,,,true
+lirr,lirr:92,92,LIRR_92,HVL,Hicksville,40.76717491,-73.52853322,,,,true
+lirr,lirr:2,2,LIRR_2,ADL,Auburndale,40.76144288,-73.78995927,,,,true
+lirr,lirr:175,175,LIRR_175,QVG,Queens Village,40.71745785,-73.73645989,,,,true
+lirr,lirr:40,40,LIRR_40,CSH,Cold Spring Harbor,40.83563832,-73.45108591,,,,true
+lirr,lirr:157,157,LIRR_157,ODL,Oakdale,40.74343275,-73.13243549,,,,true
+lirr,lirr:123,123,LIRR_123,LVL,Locust Valley,40.87446697,-73.59830284,,,,true
+lirr,lirr:77,77,LIRR_77,GVL,Greenvale,40.81571566,-73.62687152,,,,true
+lirr,lirr:38,38,LIRR_38,CPG,Copiague,40.68101528,-73.39834027,,,,true
+lirr,lirr:180,180,LIRR_180,ROS,Rosedale,40.66594933,-73.73554816,,,,true
+lirr,lirr:83,83,LIRR_83,HBY,Hampton Bays,40.87660916,-72.52394936,,,,true
+lirr,lirr:225,225,LIRR_225,BWN,Baldwin,40.65673224,-73.60716245,,,,true
+lirr,lirr:13,13,LIRR_13,BHN,Bridgehampton,40.93898378,-72.31004593,,,,true
+lirr,lirr:154,154,LIRR_154,OBY,Oyster Bay,40.87533774,-73.53403366,,,,true
+lirr,lirr:114,114,LIRR_114,LCE,Lawrence,40.6157347,-73.73589955,,,,true
+lirr,lirr:59,59,LIRR_59,FMD,Farmingdale,40.73591503,-73.44123878,,,,true
+lirr,lirr:91,91,LIRR_91,HUN,Huntington,40.85300971,-73.40952576,,,,true
+lirr,lirr:152,152,LIRR_152,NHP,New Hyde Park,40.73075708,-73.68095886,,,,true
+lirr,lirr:73,73,LIRR_73,GPT,Greenport,41.09970991,-72.36310396,,,,true
+lirr,lirr:113,113,LIRR_113,LBH,Long Beach,40.5901817,-73.66481822,,,,true
+lirr,lirr:193,193,LIRR_193,SJM,St. James,40.88216931,-73.15950725,,,,true
+lirr,lirr:85,85,LIRR_85,HGN,Hempstead Gardens,40.69491356,-73.64620888,,,,true
+lirr,lirr:233,233,LIRR_233,WHN,Westhampton,40.83030532,-72.65032454,,,,true
+lirr,lirr:164,164,LIRR_164,PJN,Port Jefferson,40.9345531,-73.05250164,,,,true
+lirr,lirr:155,155,LIRR_155,ODE,Oceanside,40.63472102,-73.65466582,,,,true
+lirr,lirr:140,140,LIRR_140,MSY,Mastic-Shirley,40.79898815,-72.86442272,,,,true
+lirr,lirr:14,14,LIRR_14,BK,Stony Brook,40.92032252,-73.12854943,,,,true
+lirr,lirr:55,55,LIRR_55,FHL,Forest Hills,40.71957556,-73.84481402,,,,true
+lirr,lirr:163,163,LIRR_163,PGE,Patchogue,40.76187901,-73.01574451,,,,true
+lirr,lirr:78,78,LIRR_78,GWN,Greenlawn,40.86866524,-73.36284977,,,,true
+lirr,lirr:162,162,LIRR_162,PDM,Plandome,40.81069853,-73.69521438,,,,true
+lirr,lirr:217,217,LIRR_217,WMR,Woodmere,40.63133646,-73.71371544,,,,true
+lirr,lirr:84,84,LIRR_84,HEM,Hempstead,40.71329663,-73.62503239,,,,true
+lirr,lirr:67,67,LIRR_67,GCV,Glen Cove,40.86583421,-73.61616614,,,,true
+lirr,lirr:68,68,LIRR_68,GCY,Garden City,40.72310156,-73.64036107,,,,true
+lirr,lirr:20,20,LIRR_20,BPG,Bethpage,40.74303924,-73.48343821,,,,true
 lirr,lirr:52,52,LIRR_52,EWN,East Williston,40.7560191,-73.63940764,,,,true
+lirr,lirr:223,223,LIRR_223,YPK,Yaphank-BNL,40.849270453967,-72.864465900794,,,,true
+lirr,lirr:89,89,LIRR_89,HOL,Hollis,40.71018151,-73.76675252,,,,true
+lirr,lirr:129,129,LIRR_129,MFD,Medford,40.81739665,-72.99890946,,,,true
+lirr,lirr:191,191,LIRR_191,SHN,Southampton,40.89471874,-72.39012376,,,,true
+lirr,lirr:122,122,LIRR_122,LTN,Laurelton,40.66848304,-73.75174687,,,,true
+lirr,lirr:237,237,NYP,NYK,New York Penn,40.75058844,-73.99358408,,,,true
+lirr,lirr:205,205,LIRR_205,SYT,Syosset,40.82485746,-73.5004456,,,,true
+lirr,lirr:120,120,LIRR_120,LNK,Little Neck,40.77504393,-73.74064662,,,,true
+lirr,lirr:359,359,LIRR_359,EMT,Elmont-UBS Arena,40.720074,-73.725549,,,,true
+lirr,lirr:42,42,LIRR_42,DGL,Douglaston,40.76806862,-73.74941265,,,,true
 lirr,lirr:50,50,LIRR_50,ENY,East New York,40.67581191,-73.90280882,,,,true
+lirr,lirr:171,171,LIRR_171,PWS,Port Washington,40.82903533,-73.687401,,,,true
+lirr,lirr:216,216,LIRR_216,WHD,West Hempstead,40.70196099,-73.64164361,,,,true
+lirr,lirr:214,214,LIRR_214,WDD,Woodside,40.74585067,-73.90297516,,,,true
+lirr,lirr:101,101,LIRR_101,IWD,Inwood,40.61228773,-73.74418354,,,,true
+lirr,lirr:63,63,LIRR_63,FPK,Floral Park,40.72463725,-73.70639714,,,,true
+lirr,lirr:99,99,LIRR_99,IPK,Island Park,40.60129906,-73.65474248,,,,true
+lirr,lirr:48,48,LIRR_48,EHN,East Hampton,40.96508629,-72.19324238,,,,true
+lirr,lirr:26,26,LIRR_26,BSR,Bay Shore,40.72443344,-73.25408295,,,,true
+lirr,lirr:32,32,LIRR_32,CHT,Cedarhurst,40.62217451,-73.72618275,,,,true
+lirr,lirr:130,130,LIRR_130,MHL,Murray Hill,40.76270926,-73.81453928,,,,true
+lirr,lirr:31,31,LIRR_31,CAV,Centre Avenue,40.64831835,-73.6639675,,,,true
+lirr,lirr:349,349,GCT,GCT,Grand Central,40.755162,-73.975455,,,,true
+lirr,lirr:71,71,LIRR_71,GHD,Glen Head,40.83222531,-73.62611822,,,,true
+lirr,lirr:64,64,LIRR_64,FPT,Freeport,40.65745799,-73.58232401,,,,true
+lirr,lirr:182,182,LIRR_182,RSN,Roslyn,40.7904781,-73.64326175,,,,true
+lirr,lirr:100,100,LIRR_100,ISP,Islip,40.73583449,-73.20932145,,,,true

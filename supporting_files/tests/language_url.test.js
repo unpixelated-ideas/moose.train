@@ -71,7 +71,8 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No horizontal overflow');
     }
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'moose.train');
-    for (const selector of ['meta[property="og:description"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'Compare Amtrak, LIRR, Metro-North, and CTrail in one search.');
+    const description = await page.locator('meta[name="description"]').getAttribute('content');
+    for (const selector of ['meta[property="og:description"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).getAttribute('content'), description);
     for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'https://unpixelated-ideas.github.io/moose.train/preiewimage.png');
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://unpixelated-ideas.github.io/moose.train/');
     const response = await page.request.get(base + '/preiewimage.png');

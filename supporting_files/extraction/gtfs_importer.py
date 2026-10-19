@@ -47,7 +47,74 @@ LIRR_STATION_IDS = {'Albertson': 'LIRR_1', 'Islip': 'LIRR_100', 'Inwood': 'LIRR_
 
 AMTRAK_OFFICIAL_URL = "https://content.amtrak.com/content/gtfs/GTFS.zip"
 AMTRAK_SOURCE_ID = "amtrak_official"
+MNR_EXPANSION_STATION_IDS = {
+    'Yankees-E 153 St': 'YANKEES',
+    'Morris Heights': 'MNR_9',
+    'University Heights': 'MNR_10',
+    'Marble Hill': 'MNR_11',
+    'Spuyten Duyvil': 'MNR_14',
+    'Riverdale': 'MNR_16',
+    'Ludlow': 'MNR_17',
+    'Yonkers': 'YNY',
+    'Glenwood': 'MNR_19',
+    'Greystone': 'MNR_20',
+    'Hastings-on-Hudson': 'MNR_22',
+    'Dobbs Ferry': 'MNR_23',
+    'Ardsley-on-Hudson': 'MNR_24',
+    'Irvington': 'MNR_25',
+    'Tarrytown': 'MNR_27',
+    'Philipse Manor': 'MNR_29',
+    'Scarborough': 'MNR_30',
+    'Ossining': 'MNR_31',
+    'Croton-Harmon': 'CRT',
+    'Cortlandt': 'MNR_37',
+    'Peekskill': 'MNR_39',
+    'Manitou': 'MNR_40',
+    'Garrison': 'MNR_42',
+    'Cold Spring': 'MNR_43',
+    'Breakneck Ridge': 'MNR_44',
+    'Beacon': 'MNR_46',
+    'New Hamburg': 'MNR_49',
+    'Poughkeepsie': 'POU',
+    'Melrose': 'MNR_54',
+    'Tremont': 'MNR_55',
+    'Botanical Garden': 'MNR_57',
+    'Williams Bridge': 'MNR_58',
+    'Woodlawn': 'MNR_59',
+    'Wakefield': 'MNR_61',
+    'Mt Vernon West': 'MNR_62',
+    'Fleetwood': 'MNR_64',
+    'Bronxville': 'MNR_65',
+    'Tuckahoe': 'MNR_66',
+    'Crestwood': 'MNR_68',
+    'Scarsdale': 'MNR_71',
+    'Hartsdale': 'MNR_72',
+    'White Plains': 'MNR_74',
+    'North White Plains': 'MNR_76',
+    'Valhalla': 'MNR_78',
+    'Mt Pleasant': 'MNR_79',
+    'Hawthorne': 'MNR_80',
+    'Pleasantville': 'MNR_81',
+    'Chappaqua': 'MNR_83',
+    'Mt Kisco': 'MNR_84',
+    'Bedford Hills': 'MNR_85',
+    'Katonah': 'MNR_86',
+    'Goldens Bridge': 'MNR_88',
+    "Purdy's": 'MNR_89',
+    'Croton Falls': 'MNR_90',
+    'Brewster': 'MNR_91',
+    'Southeast': 'MNR_94',
+    'Patterson': 'MNR_97',
+    'Pawling': 'MNR_98',
+    'Appalachian Trail': 'MNR_99',
+    'Harlem Valley-Wingdale': 'MNR_100',
+    'Dover Plains': 'MNR_101',
+    'Tenmile River': 'MNR_176',
+    'Wassaic': 'MNR_177',
+}
+
 AMTRAK_SCOPE_STOP_IDS = {
+    "YNY", "CRT", "POU",
     "BER",  # Berlin, CT
     "BRP",  # Bridgeport, CT
     "HFD",  # Hartford, CT
@@ -166,14 +233,18 @@ def default_feed_configs() -> list[GtfsFeedConfig]:
             operator_name="Metro-North",
             url="https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip",
             zip_filename="gtfsmnr.zip",
-            route_filter=RouteFilter(include_route_ids={"3", "4", "5", "6"}),
+            route_filter=RouteFilter(include_route_ids={"1", "2", "3", "4", "5", "6"}),
             route_service_names={
+                "1": "Hudson Line",
+                "2": "Harlem Line",
                 "3": "New Haven Line",
                 "4": "New Canaan Branch",
                 "5": "Danbury Branch",
                 "6": "Waterbury Branch",
             },
             route_names={
+                "1": "Hudson Line",
+                "2": "Harlem Line",
                 "3": "New Haven Line",
                 "4": "New Haven Line - New Canaan Branch",
                 "5": "New Haven Line - Danbury Branch",
@@ -185,7 +256,8 @@ def default_feed_configs() -> list[GtfsFeedConfig]:
                 "New Haven": "New Haven Union Station",
                 "New Haven-State St": "New Haven State Street",
             },
-            exclude_stop_ids={"651"},
+            exclude_stop_ids={"184", "651"},
+            station_id_map=MNR_EXPANSION_STATION_IDS,
         ),
         GtfsFeedConfig(
             feed_id="hartford",
@@ -234,7 +306,11 @@ def default_feed_configs() -> list[GtfsFeedConfig]:
             min_in_scope_stops=2,
             emit_only_in_scope_stops=True,
             stop_name_aliases=AMTRAK_STOP_ALIASES,
+            station_id_map=MNR_EXPANSION_STATION_IDS,
             stop_id_station_names={
+                "YNY": "Yonkers",
+                "CRT": "Croton-Harmon",
+                "POU": "Poughkeepsie",
                 "BER": "Berlin",
                 "BRP": "Bridgeport",
                 "HFD": "Hartford",
@@ -460,7 +536,8 @@ def normalize_feed(
     stops_by_id = {row["stop_id"]: row for row in tables["stops.txt"]}
     calendars = [row for row in tables["calendar.txt"] if row.get("service_id") in service_ids]
     calendar_dates = [row for row in tables["calendar_dates.txt"] if row.get("service_id") in service_ids]
-    shapes = [row for row in tables["shapes.txt"] if row.get("shape_id") in {trip.get("shape_id", "") for trip in trips}]
+    shape_ids = {trip.get("shape_id", "") for trip in trips}
+    shapes = [row for row in tables["shapes.txt"] if row.get("shape_id") in shape_ids]
     transfers = [
         row for row in tables["transfers.txt"]
         if row.get("from_stop_id") in stop_ids and row.get("to_stop_id") in stop_ids

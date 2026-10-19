@@ -11,7 +11,7 @@ Current feeds:
 | Feed ID | Source ID | Operator | URL | Route Selection |
 |---|---|---|---|---|
 | `lirr` | `lirr` | LIRR | `https://rrgtfsfeeds.s3.amazonaws.com/gtfslirr.zip` | All rail branches; exclude the nonpublic Hillside Facility. |
-| `mnr` | `mnr` | Metro-North | `https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip` | Include route IDs `3`, `4`, `5`, `6`; Hudson and Harlem are ignored for now. |
+| `mnr` | `mnr` | Metro-North | `https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip` | Include route IDs `1`–`6`: Hudson, Harlem, New Haven, and its three branches. Port Jervis and Pascack Valley remain out of scope. Exclude non-public Highbridge Yard and Springdale maintenance stops. |
 | `hartford` | `hartford` | CTrail | `https://ctrides.com/hlgtfs.zip` | Import complete feed. |
 | `sle` | `amtrak_official` | CTrail | `https://content.amtrak.com/content/gtfs/GTFS.zip` | Include Shore Line East agency `1230` from the Amtrak-hosted feed. |
 | `amtrak` | `amtrak_official` | Amtrak | `https://content.amtrak.com/content/gtfs/GTFS.zip` | Include Amtrak agency `51`, rail route type `2`, and trips serving at least two supported stations. |
@@ -50,10 +50,11 @@ The current Amtrak product is limited to trips that serve at least two supported
 
 - Connecticut Amtrak stations: Stamford, Bridgeport, New Haven Union, New Haven State Street, Wallingford, Meriden, Berlin, Hartford, Windsor, Windsor Locks, Old Saybrook, New London, Mystic
 - New York Penn
+- Shared Hudson Line stations: Yonkers, Croton-Harmon, Poughkeepsie
 - Springfield
 - Westerly
 
-Only those stops are emitted to `moose_train_schedule.csv`. Eligible through-trains may retain out-of-scope stops in normalized GTFS output with `in_search_scope=false`, plus original origin/destination notes in `raw_notes`.
+Only those stops are emitted to the combined schedule (`moose_train_schedule.csv.gz` in the repository, restored to CSV for publication). Eligible through-trains may retain out-of-scope stops in normalized GTFS output with `in_search_scope=false`, plus original origin/destination notes in `raw_notes`.
 
 Amtrak route selection uses agency ID `51` and GTFS rail route type `2`. Thruway bus routes and other non-rail route types are excluded by configuration.
 
@@ -101,3 +102,7 @@ Only create feed-specific parsing code for a documented GTFS incompatibility.
 ## LIRR station identity
 
 LIRR uses stable `LIRR_` station IDs to avoid collisions with other feeds. Penn Station maps to `NYP`, and Grand Central Madison maps to `GCT`, shared with Metro-North Grand Central Terminal. Operator-specific boarding areas remain visible in journey details. Public coverage includes Long Island and the LIRR stations in New York City; the one-transfer search limit still applies. The official source is [MTA Developer Resources](https://www.mta.info/developers).
+
+## Hudson and Harlem expansion
+
+Hudson/Harlem stations use explicit stable IDs in `MNR_EXPANSION_STATION_IDS`; shared Amtrak stations use `YNY`, `CRT`, and `POU` for both operators. Fordham keeps `FOR`. New stations retain MTA source names; IDs do not depend on future renaming. Passenger stop permissions remain in `raw_notes` and prepared search stops. Limited-service stations appear only with published service; no trains are synthesized for them.

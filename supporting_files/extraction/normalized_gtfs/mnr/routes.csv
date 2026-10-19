@@ -3,3 +3,5 @@ mnr,mnr:3,3,mnr:1,1,,New Haven,2,New Haven Line,New Haven Line
 mnr,mnr:4,4,mnr:1,1,,New Canaan,2,New Canaan Branch,New Haven Line - New Canaan Branch
 mnr,mnr:5,5,mnr:1,1,,Danbury,2,Danbury Branch,New Haven Line - Danbury Branch
 mnr,mnr:6,6,mnr:1,1,,Waterbury,2,Waterbury Branch,New Haven Line - Waterbury Branch
+mnr,mnr:1,1,mnr:1,1,,Hudson,2,Hudson Line,Hudson Line
+mnr,mnr:2,2,mnr:1,1,,Harlem,2,Harlem Line,Harlem Line

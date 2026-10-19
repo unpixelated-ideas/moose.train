@@ -2,6 +2,9 @@
 from __future__ import annotations
 
 import csv
+import gzip
+import io
+from contextlib import ExitStack
 import re
 import shutil
 from dataclasses import dataclass
@@ -15,7 +18,7 @@ from gtfs_importer import import_configured_feeds
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_DIR = ROOT / "supporting_files" / "source_pdfs"
-OUT_CSV = ROOT / "moose_train_schedule.csv"
+OUT_CSV = ROOT / "moose_train_schedule.csv.gz"
 QA_CSV = ROOT / "supporting_files" / "extraction" / "extraction_summary.csv"
 SOURCE_CSV_DIR = ROOT / "supporting_files" / "extraction" / "source_csvs"
 
@@ -1739,7 +1742,13 @@ def stitch_sle_through_trips(rows: list[dict[str, str]]) -> list[dict[str, str]]
 
 def write_csv(path: Path, columns: list[str], rows: list[dict[str, str]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as fh:
+    with ExitStack() as stack:
+        if path.suffix == ".gz":
+            raw = stack.enter_context(path.open("wb"))
+            compressed = stack.enter_context(gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0))
+            fh = stack.enter_context(io.TextIOWrapper(compressed, newline="", encoding="utf-8"))
+        else:
+            fh = stack.enter_context(path.open("w", newline="", encoding="utf-8"))
         writer = csv.DictWriter(fh, fieldnames=columns)
         writer.writeheader()
         writer.writerows(rows)
@@ -1752,7 +1761,8 @@ def write_existing_source_csvs(rows: list[dict[str, str]]) -> None:
     for row in rows:
         by_source.setdefault(row["source_pdf"], []).append(row)
     for source_name, source_rows in by_source.items():
-        path = SOURCE_CSV_DIR / f"{Path(source_name).stem}.csv"
+        suffix = ".csv.gz" if source_name.startswith("mnr_gtfs_") else ".csv"
+        path = SOURCE_CSV_DIR / f"{Path(source_name).stem}{suffix}"
         write_csv(path, BASE_COLUMNS, source_rows)
     for path in SOURCE_CSV_DIR.glob("*.csv"):
         source_pdf = f"{path.stem}.pdf"

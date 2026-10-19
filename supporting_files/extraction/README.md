@@ -9,5 +9,5 @@ project root. See [the search build guide](../reference/search_schedule_build.md
 The project root should stay limited to:
 
 - `index.html`
-- `moose_train_schedule.csv`
+- `moose_train_schedule.csv.gz`
 - `supporting_files/`

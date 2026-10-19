@@ -4,19 +4,23 @@ on:
     paths:
       - 'index.html'
       - 'moose_train_schedule.csv'
+      - 'moose_train_schedule.csv.gz'
       - 'supporting_files/scripts/build_search_schedule.js'
       - 'supporting_files/assets/schedule/**'
       - 'supporting_files/tests/compact_schedule.test.js'
       - 'supporting_files/tests/lirr.test.js'
+      - 'supporting_files/tests/mnr_expansion.test.js'
       - '.github/workflows/check-search-schedule.yml'
   pull_request:
     paths:
       - 'index.html'
       - 'moose_train_schedule.csv'
+      - 'moose_train_schedule.csv.gz'
       - 'supporting_files/scripts/build_search_schedule.js'
       - 'supporting_files/assets/schedule/**'
       - 'supporting_files/tests/compact_schedule.test.js'
       - 'supporting_files/tests/lirr.test.js'
+      - 'supporting_files/tests/mnr_expansion.test.js'
       - '.github/workflows/check-search-schedule.yml'
 permissions:
   contents: read
@@ -31,3 +35,4 @@ jobs:
       - run: node supporting_files/scripts/build_search_schedule.js --check
       - run: node supporting_files/tests/compact_schedule.test.js
       - run: node supporting_files/tests/lirr.test.js
+      - run: node supporting_files/tests/mnr_expansion.test.js

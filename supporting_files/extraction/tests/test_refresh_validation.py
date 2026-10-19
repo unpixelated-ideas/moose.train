@@ -1,4 +1,5 @@
 import csv
+import gzip
 import datetime as dt
 import importlib.util
 import json
@@ -23,12 +24,36 @@ class RefreshValidationTests(unittest.TestCase):
                               record_counts=json.dumps({"stop_times": 10}))
                          for feed in sorted(MODULE.EXPECTED)]
         self.rows = [dict(source_pdf=feed + "_gtfs_example.zip", service_dates="",
-                          service_end_date="2026-11-01") for feed in sorted(MODULE.EXPECTED)]
+                          service_end_date="2026-11-01", service_name="") for feed in sorted(MODULE.EXPECTED)]
+
+        for name in ["Hudson Line", "Harlem Line", "New Haven Line", "New Canaan Branch", "Danbury Branch", "Waterbury Branch"]:
+            self.rows.append(dict(source_pdf="mnr_gtfs_example.zip", service_dates="",
+                                  service_end_date="2026-11-01", service_name=name))
+
+    def test_missing_hudson_line_rejected(self):
+        self.rows = [row for row in self.rows if row["service_name"] != "Hudson Line"]
+        with self.assertRaisesRegex(ValueError, "Metro-North service for: Hudson Line"):
+            self.check()
+
+    def test_expired_harlem_line_rejected(self):
+        next(row for row in self.rows if row["service_name"] == "Harlem Line")["service_end_date"] = "2026-10-01"
+        with self.assertRaisesRegex(ValueError, "Metro-North service for: Harlem Line"):
+            self.check()
+
+    def test_compressed_snapshot_without_plaintext_csv(self):
+        self.compressed = True
+        self.check()
+        self.assertFalse((self.root / "moose_train_schedule.csv").exists())
 
     def check(self):
         for relative, rows in [("supporting_files/extraction/gtfs_import_metadata.csv", self.metadata),
                                ("moose_train_schedule.csv", self.rows)]:
-            with (self.root / relative).open("w", newline="") as handle:
+            path = self.root / relative
+            if getattr(self, "compressed", False) and relative == "moose_train_schedule.csv":
+                handle = gzip.open(str(path) + ".gz", "wt", newline="")
+            else:
+                handle = path.open("w", newline="")
+            with handle:
                 writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
                 writer.writeheader()
                 writer.writerows(rows)

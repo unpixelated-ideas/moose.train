@@ -9,7 +9,7 @@ This document records routing sanity rules used by the `index.html` prototype. T
 - Stop order is determined by `station_sequence`.
 - Direct trips are valid when the origin appears before the destination on the same trip.
 - Transfer trips are currently limited to one transfer.
-- Intermediate transfers are only allowed at explicit transfer hubs: New Haven Union Station, Bridgeport, Stamford, South Norwalk, and Grand Central Terminal.
+- Intermediate transfers are only allowed at explicit transfer hubs: New Haven Union Station, Bridgeport, Stamford, South Norwalk, Grand Central Terminal, existing LIRR hubs, Harlem-125th Street, Fordham, Croton-Harmon, Southeast, Yonkers, and Poughkeepsie.
 - Other stations can still be origins or destinations, but they are not treated as reasonable intermediate transfer points unless added to the transfer hub list later.
 - Published through trains, such as `SLE THRU`, should be represented as one trip so they route as direct service.
 - Literal `unknown` arrival or departure times are treated as missing and cannot be used for routing math.
@@ -109,3 +109,7 @@ The transfer requires more time and more complexity without arriving earlier.
 - Add future transfer hubs deliberately alongside the timetable coverage that makes them useful, such as New London after full Amtrak service enables Mystic or other east-of-New-London destinations.
 - If express/local or fare rules later make a seemingly indirect route useful, add an explicit exception rather than weakening these defaults.
 - Station aliases should be normalized before routing so equivalent stations do not create false transfer opportunities.
+
+## Hudson and Harlem
+
+Support direct and one-transfer journeys through Poughkeepsie and Wassaic. Use actual passenger calls at transfer hubs; preserve GTFS boarding/alighting restrictions. Grand Central and Penn remain distinct: the combined NYC selection compares endpoints and does not create a cross-town transfer. Connections keep the existing 5-minute default, 15-minute Grand Central and 20-minute Penn minimums, with a 180-minute maximum.
