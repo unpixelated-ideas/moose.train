@@ -17,7 +17,7 @@ const context = vm.createContext({Date, Math, MAX_TRANSFER_MINUTES:180, TRANSFER
  searchLegIndex:()=>context.index, matchesSearch:()=>true,
  sortRoutes:x=>x, filterDominatedRoutes:x=>x, dedupeRoutes:x=>x, filterBestTransferConnections:x=>x,
 });
-for(const name of ['realtimeEventServiceMinutes','routeServiceApplies','localDateWithOffset','dayOffset','makeRoute','findRoutes']) vm.runInContext(source(name),context);
+for(const name of ['realtimeEventServiceMinutes','routeServiceApplies','localDateWithOffset','dayOffset','makeRoute','minimumTransferMinutes','findRoutes']) vm.runInContext(source(name),context);
 context.routeDisplayOffset=()=>0;
 const event={epochSeconds:new Date('2026-09-27T00:55:00-04:00').getTime()/1000,minutes:55,delaySeconds:0};
 assert.equal(context.realtimeEventServiceMinutes(event,'2026-09-26',1495),1495);
@@ -37,6 +37,21 @@ for(const [wait,count] of [[4,0],[5,1],[180,1],[181,0],[339,0]]) {
  assert.equal(context.findRoutes('GCT','MYS',1400,'depart',date).length,count,`wait ${wait}`);
  assert.equal(context.findRoutes('GCT','MYS',1400,'depart',date,Infinity).length,wait>=5?1:0);
 }
+// Station minimums apply regardless of operator, including same-operator transfers.
+for (const [station, minimum] of [['NYP',20], ['GCT',15], ['STM',5]]) {
+ for (const agency of ['LIRR','Metro-North','Amtrak']) {
+  for (const wait of [minimum-1, minimum]) {
+   const inbound={...first,toId:station,trip:{key:'a',agency}};
+   const outbound={trip:{key:'b',agency},fromId:station,toId:'MYS',departure:1495+wait,arrival:1608+wait};
+   context.transferStationIds=new Set([station]);
+   context.index=new Map([['ORIGIN',[inbound]],[station,[outbound]]]);
+   assert.equal(context.findRoutes('ORIGIN','MYS',1400,'depart',date).length,wait>=minimum?1:0,`${station} ${agency} wait ${wait}`);
+  }
+ }
+}
+context.transferStationIds=new Set(['STM']);
+context.index=new Map([['GCT',[first]],['STM',[{trip:{key:'b'},fromId:'STM',toId:'MYS',departure:1834,arrival:1900}]]]);
+assert(!html.includes('data-i18n="transferBuffer"'), 'Homepage hides the minimum connection time');
 vm.runInContext(source('emptyStateForSearch'),context);
 context.latestSearchDateForStationSelection=()=>'';
 context.stationSearchIds=s=>[s.id];

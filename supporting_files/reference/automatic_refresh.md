@@ -17,7 +17,7 @@ or personal tokens are required.
 ## Publication behavior
 
 Scheduled and manual runs download all configured GTFS feeds, generate the CSV,
-validate all four products and service coverage, and rebuild and test search
+validate all five products and service coverage, and rebuild and test search
 assets. Only a successful build is deployed. Failure leaves the existing
 deployment available; GitHub Actions shows the failure, with notifications
 controlled by your GitHub notification preferences.

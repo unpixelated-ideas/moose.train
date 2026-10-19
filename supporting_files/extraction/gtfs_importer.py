@@ -39,9 +39,11 @@ NORMALIZED_TABLES = {
     "calendars": ["feed_id", "service_uid", "source_service_id", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "start_date", "end_date"],
     "calendar_dates": ["feed_id", "service_uid", "source_service_id", "date", "exception_type"],
     "shapes": ["feed_id", "shape_uid", "source_shape_id", "shape_pt_lat", "shape_pt_lon", "shape_pt_sequence", "shape_dist_traveled"],
-    "transfers": ["feed_id", "from_stop_uid", "source_from_stop_id", "to_stop_uid", "source_to_stop_id", "transfer_type", "min_transfer_time"],
+    "transfers": ["feed_id", "from_stop_uid", "source_from_stop_id", "to_stop_uid", "source_to_stop_id", "transfer_type", "min_transfer_time", "source_from_trip_id", "source_to_trip_id"],
     "canonical_stations": ["canonical_station_id", "station_name"],
 }
+
+LIRR_STATION_IDS = {'Albertson': 'LIRR_1', 'Islip': 'LIRR_100', 'Inwood': 'LIRR_101', 'Jamaica': 'LIRR_102', 'Kew Gardens': 'LIRR_107', 'Broadway': 'LIRR_11', 'Kings Park': 'LIRR_111', 'Long Beach': 'LIRR_113', 'Lawrence': 'LIRR_114', 'Lindenhurst': 'LIRR_117', 'Long Island City': 'LIRR_118', 'Locust Manor': 'LIRR_119', 'Little Neck': 'LIRR_120', 'Laurelton': 'LIRR_122', 'Locust Valley': 'LIRR_123', 'Lakeview': 'LIRR_124', 'Lynbrook': 'LIRR_125', 'Mattituck': 'LIRR_126', 'Merillon Avenue': 'LIRR_127', 'Medford': 'LIRR_129', 'Bridgehampton': 'LIRR_13', 'Murray Hill': 'LIRR_130', 'Manhasset': 'LIRR_131', 'Mineola': 'LIRR_132', 'Massapequa Park': 'LIRR_135', 'Massapequa': 'LIRR_136', 'Stony Brook': 'LIRR_14', 'Mastic-Shirley': 'LIRR_140', 'Montauk': 'LIRR_141', 'Malverne': 'LIRR_142', 'Nostrand Avenue': 'LIRR_148', 'Nassau Boulevard': 'LIRR_149', 'New Hyde Park': 'LIRR_152', 'Northport': 'LIRR_153', 'Oyster Bay': 'LIRR_154', 'Oceanside': 'LIRR_155', 'Oakdale': 'LIRR_157', 'Bellmore': 'LIRR_16', 'Plandome': 'LIRR_162', 'Patchogue': 'LIRR_163', 'Port Jefferson': 'LIRR_164', 'Pinelawn': 'LIRR_165', 'Port Washington': 'LIRR_171', 'Queens Village': 'LIRR_175', 'Riverhead': 'LIRR_176', 'Ronkonkoma': 'LIRR_179', 'Rosedale': 'LIRR_180', 'Roslyn': 'LIRR_182', 'Rockville Centre': 'LIRR_183', 'St. Albans': 'LIRR_184', 'Sea Cliff': 'LIRR_185', 'Seaford': 'LIRR_187', 'Southold': 'LIRR_190', 'Southampton': 'LIRR_191', 'St. James': 'LIRR_193', 'Stewart Manor': 'LIRR_195', 'Speonk': 'LIRR_198', 'Mets-Willets Point': 'LIRR_199', 'Auburndale': 'LIRR_2', 'Bethpage': 'LIRR_20', 'Smithtown': 'LIRR_202', 'Sayville': 'LIRR_204', 'Syosset': 'LIRR_205', 'Bellport': 'LIRR_21', 'Valley Stream': 'LIRR_211', 'Westbury': 'LIRR_213', 'Woodside': 'LIRR_214', 'Wantagh': 'LIRR_215', 'West Hempstead': 'LIRR_216', 'Woodmere': 'LIRR_217', 'Westwood': 'LIRR_219', 'Wyandanch': 'LIRR_220', 'Yaphank-BNL': 'LIRR_223', 'Baldwin': 'LIRR_225', 'Merrick': 'LIRR_226', 'Bellerose': 'LIRR_23', 'Westhampton': 'LIRR_233', 'Penn Station': 'NYP', 'Belmont Park': 'LIRR_24', 'Atlantic Terminal': 'LIRR_241', 'Bayside': 'LIRR_25', 'Bay Shore': 'LIRR_26', 'Babylon': 'LIRR_27', 'Brentwood': 'LIRR_29', 'Centre Avenue': 'LIRR_31', 'Cedarhurst': 'LIRR_32', 'Central Islip': 'LIRR_33', 'Grand Central': 'GCT', 'Elmont-UBS Arena': 'LIRR_359', 'Country Life Press': 'LIRR_36', 'Copiague': 'LIRR_38', 'Carle Place': 'LIRR_39', 'Amagansett': 'LIRR_4', 'Cold Spring Harbor': 'LIRR_40', 'Douglaston': 'LIRR_42', 'Deer Park': 'LIRR_44', 'East Hampton': 'LIRR_48', 'East New York': 'LIRR_50', 'East Rockaway': 'LIRR_51', 'East Williston': 'LIRR_52', 'Forest Hills': 'LIRR_55', 'Flushing Main Street': 'LIRR_56', 'Farmingdale': 'LIRR_59', 'Floral Park': 'LIRR_63', 'Freeport': 'LIRR_64', 'Far Rockaway': 'LIRR_65', 'Gibson': 'LIRR_66', 'Glen Cove': 'LIRR_67', 'Garden City': 'LIRR_68', 'Glen Head': 'LIRR_71', 'Great Neck': 'LIRR_72', 'Greenport': 'LIRR_73', 'Great River': 'LIRR_74', 'Glen Street': 'LIRR_76', 'Greenvale': 'LIRR_77', 'Greenlawn': 'LIRR_78', 'Amityville': 'LIRR_8', 'Hampton Bays': 'LIRR_83', 'Hempstead': 'LIRR_84', 'Hempstead Gardens': 'LIRR_85', 'Hillside Facility': 'LIRR_86', 'Hollis': 'LIRR_89', 'Hunterspoint Avenue': 'LIRR_90', 'Huntington': 'LIRR_91', 'Hicksville': 'LIRR_92', 'Hewlett': 'LIRR_94', 'Island Park': 'LIRR_99', 'New York Penn': 'NYP', 'Grand Central Madison': 'GCT'}
 
 AMTRAK_OFFICIAL_URL = "https://content.amtrak.com/content/gtfs/GTFS.zip"
 AMTRAK_SOURCE_ID = "amtrak_official"
@@ -149,6 +151,16 @@ class GtfsImportResult:
 
 def default_feed_configs() -> list[GtfsFeedConfig]:
     return [
+        GtfsFeedConfig(
+            feed_id="lirr",
+            operator_name="LIRR",
+            url="https://rrgtfsfeeds.s3.amazonaws.com/gtfslirr.zip",
+            zip_filename="gtfslirr.zip",
+            route_filter=RouteFilter(include_route_types={"2"}),
+            stop_name_aliases={"Grand Central Madison": "Grand Central", "Penn Station": "New York Penn"},
+            exclude_stop_ids={"86"},
+            station_id_map=LIRR_STATION_IDS,
+        ),
         GtfsFeedConfig(
             feed_id="mnr",
             operator_name="Metro-North",
@@ -597,6 +609,8 @@ def normalize_feed(
             "source_to_stop_id": row.get("to_stop_id", ""),
             "transfer_type": row.get("transfer_type", ""),
             "min_transfer_time": row.get("min_transfer_time", ""),
+            "source_from_trip_id": row.get("from_trip_id", ""),
+            "source_to_trip_id": row.get("to_trip_id", ""),
         })
     rows = derive_stop_event_rows(config, included_routes, trips, stop_times, stops_by_id, service_summaries, source_name, zip_path, station_id_for)
     return normalized, rows, source_name
@@ -669,7 +683,7 @@ def derive_stop_event_rows(config, routes, trips, stop_times, stops_by_id, servi
                 "source_original_filename": config.zip_name(),
                 "source_pdf": source_name,
                 "source_page": "0",
-                "raw_notes": raw_notes,
+                "raw_notes": raw_notes + f"; gtfs_stop_id={item['stop_id']}; pickup_type={item.get('pickup_type', '0')}; drop_off_type={item.get('drop_off_type', '0')}",
             })
     return rows
 
@@ -795,9 +809,9 @@ def raw_notes_for(config: GtfsFeedConfig, trip: dict[str, str], stop_times: list
     notes = [direction_for(config, trip), "GTFS"]
     if "(Bus)" in trip.get("trip_headsign", ""):
         notes.append("Bus substitution")
-    for key in ["peak_offpeak", "trip_id", "service_id"]:
+    for key in ["peak_offpeak", "trip_id", "service_id", "route_id", "direction_id"]:
         if trip.get(key):
-            notes.append(f"gtfs_{key}={trip[key]}" if key in {"trip_id", "service_id"} else f"{key}={trip[key]}")
+            notes.append(f"gtfs_{key}={trip[key]}" if key in {"trip_id", "service_id", "route_id", "direction_id"} else f"{key}={trip[key]}")
     return "; ".join(notes)
 
 

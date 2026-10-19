@@ -49,7 +49,7 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
     await page.evaluate(async () => {
       await ensureScheduleLoaded({ updateStatus: false });
       els.origin.value = 'New Haven'; els.destination.value = 'Stamford';
-      els.date.value = '2026-09-21'; els.time.value = '9:00 AM';
+      els.date.value = '2026-10-19'; els.time.value = '9:00 AM';
       await renderSearch({ requireSchedule: true });
     });
     assert(await page.locator('.result').count() > 0, 'Real search returns trips');
@@ -60,7 +60,7 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
       assert(await page.evaluate(() => activeSearchState === window.originalSearch), 'Language preserves exact search and route objects');
       assert(await page.evaluate(() => JSON.stringify([...shortlistedRouteIds]) === JSON.stringify(window.originalShortlist)));
       assert(await page.evaluate(() => findStation(els.origin.value).id === window.originalOriginId), 'Existing localized station names preserve the selected station');
-      assert.equal(await page.evaluate(() => els.date.value), '2026-09-21');
+      assert.equal(await page.evaluate(() => els.date.value), '2026-10-19');
     }
     for (const theme of ['light', 'dark', 'system']) {
       await page.selectOption('#appearance-select', theme);
@@ -71,7 +71,7 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No horizontal overflow');
     }
     for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'moose.train');
-    for (const selector of ['meta[property="og:description"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'Compare Amtrak and regional rail in one search.');
+    for (const selector of ['meta[property="og:description"]', 'meta[name="twitter:description"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'Compare Amtrak, LIRR, Metro-North, and CTrail in one search.');
     for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) assert.equal(await page.locator(selector).getAttribute('content'), 'https://unpixelated-ideas.github.io/moose.train/preiewimage.png');
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://unpixelated-ideas.github.io/moose.train/');
     const response = await page.request.get(base + '/preiewimage.png');

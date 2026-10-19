@@ -7,6 +7,7 @@ on:
       - 'supporting_files/scripts/build_search_schedule.js'
       - 'supporting_files/assets/schedule/**'
       - 'supporting_files/tests/compact_schedule.test.js'
+      - 'supporting_files/tests/lirr.test.js'
       - '.github/workflows/check-search-schedule.yml'
   pull_request:
     paths:
@@ -15,6 +16,7 @@ on:
       - 'supporting_files/scripts/build_search_schedule.js'
       - 'supporting_files/assets/schedule/**'
       - 'supporting_files/tests/compact_schedule.test.js'
+      - 'supporting_files/tests/lirr.test.js'
       - '.github/workflows/check-search-schedule.yml'
 permissions:
   contents: read
@@ -28,3 +30,4 @@ jobs:
           node-version: '22'
       - run: node supporting_files/scripts/build_search_schedule.js --check
       - run: node supporting_files/tests/compact_schedule.test.js
+      - run: node supporting_files/tests/lirr.test.js

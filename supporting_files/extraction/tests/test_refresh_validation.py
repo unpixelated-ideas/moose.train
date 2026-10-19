@@ -45,7 +45,7 @@ class RefreshValidationTests(unittest.TestCase):
 
     def test_missing_product_rejected(self):
         self.metadata.pop()
-        with self.assertRaisesRegex(ValueError, "exactly four"):
+        with self.assertRaisesRegex(ValueError, "exactly five"):
             self.check()
 
     def test_empty_feed_rejected(self):

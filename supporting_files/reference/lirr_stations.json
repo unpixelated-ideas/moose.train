@@ -1,0 +1,632 @@
+[
+  {
+    "id": "LIRR_1",
+    "sourceStopId": "1",
+    "name": "Albertson"
+  },
+  {
+    "id": "LIRR_100",
+    "sourceStopId": "100",
+    "name": "Islip"
+  },
+  {
+    "id": "LIRR_101",
+    "sourceStopId": "101",
+    "name": "Inwood"
+  },
+  {
+    "id": "LIRR_102",
+    "sourceStopId": "102",
+    "name": "Jamaica"
+  },
+  {
+    "id": "LIRR_107",
+    "sourceStopId": "107",
+    "name": "Kew Gardens"
+  },
+  {
+    "id": "LIRR_11",
+    "sourceStopId": "11",
+    "name": "Broadway"
+  },
+  {
+    "id": "LIRR_111",
+    "sourceStopId": "111",
+    "name": "Kings Park"
+  },
+  {
+    "id": "LIRR_113",
+    "sourceStopId": "113",
+    "name": "Long Beach"
+  },
+  {
+    "id": "LIRR_114",
+    "sourceStopId": "114",
+    "name": "Lawrence"
+  },
+  {
+    "id": "LIRR_117",
+    "sourceStopId": "117",
+    "name": "Lindenhurst"
+  },
+  {
+    "id": "LIRR_118",
+    "sourceStopId": "118",
+    "name": "Long Island City"
+  },
+  {
+    "id": "LIRR_119",
+    "sourceStopId": "119",
+    "name": "Locust Manor"
+  },
+  {
+    "id": "LIRR_120",
+    "sourceStopId": "120",
+    "name": "Little Neck"
+  },
+  {
+    "id": "LIRR_122",
+    "sourceStopId": "122",
+    "name": "Laurelton"
+  },
+  {
+    "id": "LIRR_123",
+    "sourceStopId": "123",
+    "name": "Locust Valley"
+  },
+  {
+    "id": "LIRR_124",
+    "sourceStopId": "124",
+    "name": "Lakeview"
+  },
+  {
+    "id": "LIRR_125",
+    "sourceStopId": "125",
+    "name": "Lynbrook"
+  },
+  {
+    "id": "LIRR_126",
+    "sourceStopId": "126",
+    "name": "Mattituck"
+  },
+  {
+    "id": "LIRR_127",
+    "sourceStopId": "127",
+    "name": "Merillon Avenue"
+  },
+  {
+    "id": "LIRR_129",
+    "sourceStopId": "129",
+    "name": "Medford"
+  },
+  {
+    "id": "LIRR_13",
+    "sourceStopId": "13",
+    "name": "Bridgehampton"
+  },
+  {
+    "id": "LIRR_130",
+    "sourceStopId": "130",
+    "name": "Murray Hill"
+  },
+  {
+    "id": "LIRR_131",
+    "sourceStopId": "131",
+    "name": "Manhasset"
+  },
+  {
+    "id": "LIRR_132",
+    "sourceStopId": "132",
+    "name": "Mineola"
+  },
+  {
+    "id": "LIRR_135",
+    "sourceStopId": "135",
+    "name": "Massapequa Park"
+  },
+  {
+    "id": "LIRR_136",
+    "sourceStopId": "136",
+    "name": "Massapequa"
+  },
+  {
+    "id": "LIRR_14",
+    "sourceStopId": "14",
+    "name": "Stony Brook"
+  },
+  {
+    "id": "LIRR_140",
+    "sourceStopId": "140",
+    "name": "Mastic-Shirley"
+  },
+  {
+    "id": "LIRR_141",
+    "sourceStopId": "141",
+    "name": "Montauk"
+  },
+  {
+    "id": "LIRR_142",
+    "sourceStopId": "142",
+    "name": "Malverne"
+  },
+  {
+    "id": "LIRR_148",
+    "sourceStopId": "148",
+    "name": "Nostrand Avenue"
+  },
+  {
+    "id": "LIRR_149",
+    "sourceStopId": "149",
+    "name": "Nassau Boulevard"
+  },
+  {
+    "id": "LIRR_152",
+    "sourceStopId": "152",
+    "name": "New Hyde Park"
+  },
+  {
+    "id": "LIRR_153",
+    "sourceStopId": "153",
+    "name": "Northport"
+  },
+  {
+    "id": "LIRR_154",
+    "sourceStopId": "154",
+    "name": "Oyster Bay"
+  },
+  {
+    "id": "LIRR_155",
+    "sourceStopId": "155",
+    "name": "Oceanside"
+  },
+  {
+    "id": "LIRR_157",
+    "sourceStopId": "157",
+    "name": "Oakdale"
+  },
+  {
+    "id": "LIRR_16",
+    "sourceStopId": "16",
+    "name": "Bellmore"
+  },
+  {
+    "id": "LIRR_162",
+    "sourceStopId": "162",
+    "name": "Plandome"
+  },
+  {
+    "id": "LIRR_163",
+    "sourceStopId": "163",
+    "name": "Patchogue"
+  },
+  {
+    "id": "LIRR_164",
+    "sourceStopId": "164",
+    "name": "Port Jefferson"
+  },
+  {
+    "id": "LIRR_165",
+    "sourceStopId": "165",
+    "name": "Pinelawn"
+  },
+  {
+    "id": "LIRR_171",
+    "sourceStopId": "171",
+    "name": "Port Washington"
+  },
+  {
+    "id": "LIRR_175",
+    "sourceStopId": "175",
+    "name": "Queens Village"
+  },
+  {
+    "id": "LIRR_176",
+    "sourceStopId": "176",
+    "name": "Riverhead"
+  },
+  {
+    "id": "LIRR_179",
+    "sourceStopId": "179",
+    "name": "Ronkonkoma"
+  },
+  {
+    "id": "LIRR_180",
+    "sourceStopId": "180",
+    "name": "Rosedale"
+  },
+  {
+    "id": "LIRR_182",
+    "sourceStopId": "182",
+    "name": "Roslyn"
+  },
+  {
+    "id": "LIRR_183",
+    "sourceStopId": "183",
+    "name": "Rockville Centre"
+  },
+  {
+    "id": "LIRR_184",
+    "sourceStopId": "184",
+    "name": "St. Albans"
+  },
+  {
+    "id": "LIRR_185",
+    "sourceStopId": "185",
+    "name": "Sea Cliff"
+  },
+  {
+    "id": "LIRR_187",
+    "sourceStopId": "187",
+    "name": "Seaford"
+  },
+  {
+    "id": "LIRR_190",
+    "sourceStopId": "190",
+    "name": "Southold"
+  },
+  {
+    "id": "LIRR_191",
+    "sourceStopId": "191",
+    "name": "Southampton"
+  },
+  {
+    "id": "LIRR_193",
+    "sourceStopId": "193",
+    "name": "St. James"
+  },
+  {
+    "id": "LIRR_195",
+    "sourceStopId": "195",
+    "name": "Stewart Manor"
+  },
+  {
+    "id": "LIRR_198",
+    "sourceStopId": "198",
+    "name": "Speonk"
+  },
+  {
+    "id": "LIRR_199",
+    "sourceStopId": "199",
+    "name": "Mets-Willets Point"
+  },
+  {
+    "id": "LIRR_2",
+    "sourceStopId": "2",
+    "name": "Auburndale"
+  },
+  {
+    "id": "LIRR_20",
+    "sourceStopId": "20",
+    "name": "Bethpage"
+  },
+  {
+    "id": "LIRR_202",
+    "sourceStopId": "202",
+    "name": "Smithtown"
+  },
+  {
+    "id": "LIRR_204",
+    "sourceStopId": "204",
+    "name": "Sayville"
+  },
+  {
+    "id": "LIRR_205",
+    "sourceStopId": "205",
+    "name": "Syosset"
+  },
+  {
+    "id": "LIRR_21",
+    "sourceStopId": "21",
+    "name": "Bellport"
+  },
+  {
+    "id": "LIRR_211",
+    "sourceStopId": "211",
+    "name": "Valley Stream"
+  },
+  {
+    "id": "LIRR_213",
+    "sourceStopId": "213",
+    "name": "Westbury"
+  },
+  {
+    "id": "LIRR_214",
+    "sourceStopId": "214",
+    "name": "Woodside"
+  },
+  {
+    "id": "LIRR_215",
+    "sourceStopId": "215",
+    "name": "Wantagh"
+  },
+  {
+    "id": "LIRR_216",
+    "sourceStopId": "216",
+    "name": "West Hempstead"
+  },
+  {
+    "id": "LIRR_217",
+    "sourceStopId": "217",
+    "name": "Woodmere"
+  },
+  {
+    "id": "LIRR_219",
+    "sourceStopId": "219",
+    "name": "Westwood"
+  },
+  {
+    "id": "LIRR_220",
+    "sourceStopId": "220",
+    "name": "Wyandanch"
+  },
+  {
+    "id": "LIRR_223",
+    "sourceStopId": "223",
+    "name": "Yaphank-BNL"
+  },
+  {
+    "id": "LIRR_225",
+    "sourceStopId": "225",
+    "name": "Baldwin"
+  },
+  {
+    "id": "LIRR_226",
+    "sourceStopId": "226",
+    "name": "Merrick"
+  },
+  {
+    "id": "LIRR_23",
+    "sourceStopId": "23",
+    "name": "Bellerose"
+  },
+  {
+    "id": "LIRR_233",
+    "sourceStopId": "233",
+    "name": "Westhampton"
+  },
+  {
+    "id": "NYP",
+    "sourceStopId": "237",
+    "name": "Penn Station"
+  },
+  {
+    "id": "LIRR_24",
+    "sourceStopId": "24",
+    "name": "Belmont Park"
+  },
+  {
+    "id": "LIRR_241",
+    "sourceStopId": "241",
+    "name": "Atlantic Terminal"
+  },
+  {
+    "id": "LIRR_25",
+    "sourceStopId": "25",
+    "name": "Bayside"
+  },
+  {
+    "id": "LIRR_26",
+    "sourceStopId": "26",
+    "name": "Bay Shore"
+  },
+  {
+    "id": "LIRR_27",
+    "sourceStopId": "27",
+    "name": "Babylon"
+  },
+  {
+    "id": "LIRR_29",
+    "sourceStopId": "29",
+    "name": "Brentwood"
+  },
+  {
+    "id": "LIRR_31",
+    "sourceStopId": "31",
+    "name": "Centre Avenue"
+  },
+  {
+    "id": "LIRR_32",
+    "sourceStopId": "32",
+    "name": "Cedarhurst"
+  },
+  {
+    "id": "LIRR_33",
+    "sourceStopId": "33",
+    "name": "Central Islip"
+  },
+  {
+    "id": "GCT",
+    "sourceStopId": "349",
+    "name": "Grand Central"
+  },
+  {
+    "id": "LIRR_359",
+    "sourceStopId": "359",
+    "name": "Elmont-UBS Arena"
+  },
+  {
+    "id": "LIRR_36",
+    "sourceStopId": "36",
+    "name": "Country Life Press"
+  },
+  {
+    "id": "LIRR_38",
+    "sourceStopId": "38",
+    "name": "Copiague"
+  },
+  {
+    "id": "LIRR_39",
+    "sourceStopId": "39",
+    "name": "Carle Place"
+  },
+  {
+    "id": "LIRR_4",
+    "sourceStopId": "4",
+    "name": "Amagansett"
+  },
+  {
+    "id": "LIRR_40",
+    "sourceStopId": "40",
+    "name": "Cold Spring Harbor"
+  },
+  {
+    "id": "LIRR_42",
+    "sourceStopId": "42",
+    "name": "Douglaston"
+  },
+  {
+    "id": "LIRR_44",
+    "sourceStopId": "44",
+    "name": "Deer Park"
+  },
+  {
+    "id": "LIRR_48",
+    "sourceStopId": "48",
+    "name": "East Hampton"
+  },
+  {
+    "id": "LIRR_50",
+    "sourceStopId": "50",
+    "name": "East New York"
+  },
+  {
+    "id": "LIRR_51",
+    "sourceStopId": "51",
+    "name": "East Rockaway"
+  },
+  {
+    "id": "LIRR_52",
+    "sourceStopId": "52",
+    "name": "East Williston"
+  },
+  {
+    "id": "LIRR_55",
+    "sourceStopId": "55",
+    "name": "Forest Hills"
+  },
+  {
+    "id": "LIRR_56",
+    "sourceStopId": "56",
+    "name": "Flushing Main Street"
+  },
+  {
+    "id": "LIRR_59",
+    "sourceStopId": "59",
+    "name": "Farmingdale"
+  },
+  {
+    "id": "LIRR_63",
+    "sourceStopId": "63",
+    "name": "Floral Park"
+  },
+  {
+    "id": "LIRR_64",
+    "sourceStopId": "64",
+    "name": "Freeport"
+  },
+  {
+    "id": "LIRR_65",
+    "sourceStopId": "65",
+    "name": "Far Rockaway"
+  },
+  {
+    "id": "LIRR_66",
+    "sourceStopId": "66",
+    "name": "Gibson"
+  },
+  {
+    "id": "LIRR_67",
+    "sourceStopId": "67",
+    "name": "Glen Cove"
+  },
+  {
+    "id": "LIRR_68",
+    "sourceStopId": "68",
+    "name": "Garden City"
+  },
+  {
+    "id": "LIRR_71",
+    "sourceStopId": "71",
+    "name": "Glen Head"
+  },
+  {
+    "id": "LIRR_72",
+    "sourceStopId": "72",
+    "name": "Great Neck"
+  },
+  {
+    "id": "LIRR_73",
+    "sourceStopId": "73",
+    "name": "Greenport"
+  },
+  {
+    "id": "LIRR_74",
+    "sourceStopId": "74",
+    "name": "Great River"
+  },
+  {
+    "id": "LIRR_76",
+    "sourceStopId": "76",
+    "name": "Glen Street"
+  },
+  {
+    "id": "LIRR_77",
+    "sourceStopId": "77",
+    "name": "Greenvale"
+  },
+  {
+    "id": "LIRR_78",
+    "sourceStopId": "78",
+    "name": "Greenlawn"
+  },
+  {
+    "id": "LIRR_8",
+    "sourceStopId": "8",
+    "name": "Amityville"
+  },
+  {
+    "id": "LIRR_83",
+    "sourceStopId": "83",
+    "name": "Hampton Bays"
+  },
+  {
+    "id": "LIRR_84",
+    "sourceStopId": "84",
+    "name": "Hempstead"
+  },
+  {
+    "id": "LIRR_85",
+    "sourceStopId": "85",
+    "name": "Hempstead Gardens"
+  },
+  {
+    "id": "LIRR_89",
+    "sourceStopId": "89",
+    "name": "Hollis"
+  },
+  {
+    "id": "LIRR_90",
+    "sourceStopId": "90",
+    "name": "Hunterspoint Avenue"
+  },
+  {
+    "id": "LIRR_91",
+    "sourceStopId": "91",
+    "name": "Huntington"
+  },
+  {
+    "id": "LIRR_92",
+    "sourceStopId": "92",
+    "name": "Hicksville"
+  },
+  {
+    "id": "LIRR_94",
+    "sourceStopId": "94",
+    "name": "Hewlett"
+  },
+  {
+    "id": "LIRR_99",
+    "sourceStopId": "99",
+    "name": "Island Park"
+  }
+]

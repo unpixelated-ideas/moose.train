@@ -14,7 +14,7 @@ SPEC.loader.exec_module(MODULE)
 class RefreshLabelTests(unittest.TestCase):
     def records(self):
         return [dict(feed_id=feed, success='true', imported_at='2026-10-18T00:30:00+00:00')
-                for feed in ('mnr', 'hartford', 'sle', 'amtrak')]
+                for feed in ('mnr', 'hartford', 'sle', 'amtrak', 'lirr')]
 
     def test_eastern_date_translations_faq_and_repeat_build(self):
         rows = self.records()

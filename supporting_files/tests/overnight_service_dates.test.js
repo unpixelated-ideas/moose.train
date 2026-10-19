@@ -8,8 +8,10 @@ const script = html.slice(html.lastIndexOf('<script>') + 8, html.lastIndexOf('</
 const context = vm.createContext({ document: {getElementById:()=>({}), querySelector(){}}, window:{}, Date, console });
 vm.runInContext(script, context);
 const run = code => vm.runInContext(code, context);
-context.csv = fs.readFileSync(path.join(__dirname, '../../moose_train_schedule.csv'), 'utf8');
-run(`trips = buildTrips(parseCsv(csv));`);
+run(`trips = [{key:'amtrak-66-fixture', agency:'Amtrak',service:'Northeast Regional',route:'Northeast Regional',direction:'east',train:'66',staticTripId:'308343',
+  serviceDays:'weekday',serviceStartDate:'2026-09-28',serviceEndDate:'2026-09-28',stops:[
+  {id:'NYP',name:'New York Penn',index:0,sequence:0,arrival:1751,departure:1784},
+  {id:'OSB',name:'Old Saybrook',index:1,sequence:1,arrival:1914,departure:1914}]}];`);
 const date = '2026-09-29';
 function search(origin='NYP', mode='leave', time=60, day=date, destination='OSB') {
   return run(`findRoutesForStationSelection({id:${JSON.stringify(origin)}},{id:${JSON.stringify(destination)}},${time},${JSON.stringify(mode)},dateFromIso(${JSON.stringify(day)}))`);

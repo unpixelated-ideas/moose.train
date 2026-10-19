@@ -47,6 +47,7 @@ jobs:
           node supporting_files/scripts/build_search_schedule.js
           node supporting_files/scripts/build_search_schedule.js --check
           node supporting_files/tests/compact_schedule.test.js
+          node supporting_files/tests/lirr.test.js
       - name: Prepare public site
         run: python supporting_files/scripts/package_site.py
       - uses: actions/upload-pages-artifact@v3

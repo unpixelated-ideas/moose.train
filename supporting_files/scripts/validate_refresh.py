@@ -6,7 +6,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED = {"mnr", "hartford", "sle", "amtrak"}
+EXPECTED = {"mnr", "hartford", "sle", "amtrak", "lirr"}
 
 
 def validate(root=ROOT, today=None):
@@ -14,7 +14,7 @@ def validate(root=ROOT, today=None):
     with (root / "supporting_files/extraction/gtfs_import_metadata.csv").open() as handle:
         metadata = list(csv.DictReader(handle))
     if {row["feed_id"] for row in metadata} != EXPECTED or len(metadata) != len(EXPECTED):
-        raise ValueError("Expected exactly four GTFS products")
+        raise ValueError("Expected exactly five GTFS products")
     for row in metadata:
         if row["success"] != "true" or json.loads(row["errors"]):
             raise ValueError(f"Failed import: {row['feed_id']}")
@@ -34,7 +34,7 @@ def validate(root=ROOT, today=None):
     missing = [feed for feed, active in coverage.items() if not active]
     if missing:
         raise ValueError(f"No current or future service for: {', '.join(missing)}")
-    print("All four products imported successfully with current or future service.")
+    print("All five products imported successfully with current or future service.")
 
 
 if __name__ == "__main__":

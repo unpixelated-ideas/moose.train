@@ -10,6 +10,7 @@ Current feeds:
 
 | Feed ID | Source ID | Operator | URL | Route Selection |
 |---|---|---|---|---|
+| `lirr` | `lirr` | LIRR | `https://rrgtfsfeeds.s3.amazonaws.com/gtfslirr.zip` | All rail branches; exclude the nonpublic Hillside Facility. |
 | `mnr` | `mnr` | Metro-North | `https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip` | Include route IDs `3`, `4`, `5`, `6`; Hudson and Harlem are ignored for now. |
 | `hartford` | `hartford` | CTrail | `https://ctrides.com/hlgtfs.zip` | Import complete feed. |
 | `sle` | `amtrak_official` | CTrail | `https://content.amtrak.com/content/gtfs/GTFS.zip` | Include Shore Line East agency `1230` from the Amtrak-hosted feed. |
@@ -96,3 +97,7 @@ A failed refresh should leave the previous normalized data for that feed intact 
 8. Confirm `gtfs_import_metadata.csv` has expected counts and no unexpected errors.
 
 Only create feed-specific parsing code for a documented GTFS incompatibility.
+
+## LIRR station identity
+
+LIRR uses stable `LIRR_` station IDs to avoid collisions with other feeds. Penn Station maps to `NYP`, and Grand Central Madison maps to `GCT`, shared with Metro-North Grand Central Terminal. Operator-specific boarding areas remain visible in journey details. Public coverage includes Long Island and the LIRR stations in New York City; the one-transfer search limit still applies. The official source is [MTA Developer Resources](https://www.mta.info/developers).

@@ -1,0 +1,13 @@
+feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+lirr,lirr:1,1,lirr:,,,Babylon Branch,2,Babylon Branch,Babylon Branch
+lirr,lirr:2,2,lirr:,,,Hempstead Branch,2,Hempstead Branch,Hempstead Branch
+lirr,lirr:3,3,lirr:,,,Oyster Bay Branch,2,Oyster Bay Branch,Oyster Bay Branch
+lirr,lirr:4,4,lirr:,,,Ronkonkoma Branch,2,Ronkonkoma Branch,Ronkonkoma Branch
+lirr,lirr:5,5,lirr:,,,Montauk Branch,2,Montauk Branch,Montauk Branch
+lirr,lirr:6,6,lirr:,,,Long Beach Branch,2,Long Beach Branch,Long Beach Branch
+lirr,lirr:7,7,lirr:,,,Far Rockaway Branch,2,Far Rockaway Branch,Far Rockaway Branch
+lirr,lirr:8,8,lirr:,,,West Hempstead Branch,2,West Hempstead Branch,West Hempstead Branch
+lirr,lirr:9,9,lirr:,,,Port Washington Branch,2,Port Washington Branch,Port Washington Branch
+lirr,lirr:10,10,lirr:,,,Port Jefferson Branch,2,Port Jefferson Branch,Port Jefferson Branch
+lirr,lirr:12,12,lirr:,,,City Terminal Zone,2,City Terminal Zone,City Terminal Zone
+lirr,lirr:13,13,lirr:,,,Greenport Service,2,Greenport Service,Greenport Service
