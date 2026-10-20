@@ -10,6 +10,8 @@ on:
       - 'supporting_files/tests/compact_schedule.test.js'
       - 'supporting_files/tests/lirr.test.js'
       - 'supporting_files/tests/mnr_expansion.test.js'
+      - 'supporting_files/tests/njt.test.js'
+      - 'supporting_files/assets/njt_fares.*'
       - '.github/workflows/check-search-schedule.yml'
   pull_request:
     paths:
@@ -21,6 +23,8 @@ on:
       - 'supporting_files/tests/compact_schedule.test.js'
       - 'supporting_files/tests/lirr.test.js'
       - 'supporting_files/tests/mnr_expansion.test.js'
+      - 'supporting_files/tests/njt.test.js'
+      - 'supporting_files/assets/njt_fares.*'
       - '.github/workflows/check-search-schedule.yml'
 permissions:
   contents: read
@@ -36,3 +40,4 @@ jobs:
       - run: node supporting_files/tests/compact_schedule.test.js
       - run: node supporting_files/tests/lirr.test.js
       - run: node supporting_files/tests/mnr_expansion.test.js
+      - run: node supporting_files/tests/njt.test.js

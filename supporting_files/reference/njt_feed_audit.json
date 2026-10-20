@@ -1,0 +1,28 @@
+{
+  "source_url": "https://www.njtransit.com/rail_data.zip",
+  "sha256": "0b0c31986a080e183955b3fe96bc537cf3beafceaf5587605aa47fe1938f975d",
+  "imported_at": "2026-10-19T21:32:16+00:00",
+  "service_start": "2026-09-15",
+  "service_end": "2027-03-13",
+  "trips_by_service": {
+    "Northeast Corridor": 651,
+    "Pascack Valley Line": 130,
+    "Port Jervis Line": 73
+  },
+  "stop_events": 10346,
+  "source_stops": 64,
+  "canonical_stations": 63,
+  "fare_files": [],
+  "published": false,
+  "launch_blockers": [
+    "Verify complete adult one-way fares, including Secaucus through fares and West of Hudson rules.",
+    "Integrate routing, Amtrak corridor scope, presentation, and release validation together after fares are verified."
+  ],
+  "warnings": [
+    "Missing optional GTFS file: calendar.txt",
+    "Missing optional GTFS file: feed_info.txt",
+    "Missing optional GTFS file: transfers.txt",
+    "Excluded 2401 trips on route_type outside configured scope: 2",
+    "Excluded 63 trips with configured block_ids: PJBUS"
+  ]
+}

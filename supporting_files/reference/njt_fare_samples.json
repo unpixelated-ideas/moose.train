@@ -1,0 +1,30 @@
+{
+  "source_url": "https://www.njtransit.com/api/graphql/graphql",
+  "retrieved_date": "2026-10-19",
+  "effective_date": null,
+  "published": false,
+  "notes": "Read-only public website GraphQL query using official station titles, not GTFS IDs or ticket station codes. Sample quotes establish availability, not complete coverage or fare-policy validation.",
+  "quotes": [
+    {
+      "origin": "NYP",
+      "destination": "TRE",
+      "regularFare": "$20.35",
+      "reducedFare": "$9.25",
+      "showMessage": false
+    },
+    {
+      "origin": "NJT_123",
+      "destination": "NYP",
+      "regularFare": "$24.05",
+      "reducedFare": "$11.70",
+      "showMessage": false
+    },
+    {
+      "origin": "NJT_142",
+      "destination": "NJT_63",
+      "regularFare": "$9.75",
+      "reducedFare": "$4.75",
+      "showMessage": false
+    }
+  ]
+}

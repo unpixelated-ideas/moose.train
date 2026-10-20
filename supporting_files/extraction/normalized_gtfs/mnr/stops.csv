@@ -1,113 +1,113 @@
 feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
-mnr,mnr:43,43,MNR_43,0CS,Cold Spring,41.415283,-73.95809,0,,,true
-mnr,mnr:54,54,MNR_54,1ML,Melrose,40.825761,-73.915231,0,,,true
-mnr,mnr:111,111,MAM,2MA,Mamaroneck,40.954061,-73.736125,0,,,true
-mnr,mnr:137,137,SOP,2SP,Southport,41.134844,-73.28897,0,,,true
-mnr,mnr:128,128,DAR,2DA,Darien,41.076913,-73.472966,0,,,true
-mnr,mnr:127,127,NTH,2NO,Noroton Heights,41.069041,-73.49788,0,,,true
-mnr,mnr:1,1,GCT,0NY,Grand Central,40.752998,-73.977056,0,,,true
-mnr,mnr:66,66,MNR_66,1TK,Tuckahoe,40.949393,-73.830166,0,,,true
-mnr,mnr:19,19,MNR_19,0GD,Glenwood,40.950496,-73.899062,0,,,true
-mnr,mnr:124,124,STM,2SM,Stamford,41.046611,-73.542846,0,,,true
-mnr,mnr:136,136,GNF,2GF,Green's Farms,41.122265,-73.315408,0,,,true
-mnr,mnr:106,106,PEL,2PH,Pelham,40.910321,-73.810242,0,,,true
-mnr,mnr:149,149,NHV,2NH,New Haven Union Station,41.296501,-72.92829,0,,,true
-mnr,mnr:105,105,MVE,2ME,Mount Vernon East,40.912161,-73.832185,0,,,true
-mnr,mnr:145,145,MIL,2MI,Milford,41.223231,-73.057647,0,,,true
-mnr,mnr:25,25,MNR_25,0IV,Irvington,41.039993,-73.873083,0,,,true
-mnr,mnr:190,190,WHA,2WH,West Haven,41.27142,-72.963488,0,,,true
-mnr,mnr:16,16,MNR_16,0RV,Riverdale,40.903981,-73.914126,0,,,true
-mnr,mnr:153,153,GLB,3GB,Glenbrook,41.070547,-73.520021,0,,,true
-mnr,mnr:143,143,SFD,2SR,Stratford,41.194255,-73.131532,0,,,true
-mnr,mnr:17,17,MNR_17,0LU,Ludlow,40.924972,-73.904612,0,,,true
-mnr,mnr:11,11,MNR_11,0MB,Marble Hill,40.874333,-73.910941,0,,,true
-mnr,mnr:9,9,MNR_9,0MH,Morris Heights,40.854252,-73.919583,0,,,true
-mnr,mnr:23,23,MNR_23,0DF,Dobbs Ferry,41.012459,-73.87949,0,,,true
-mnr,mnr:44,44,MNR_44,0BK,Breakneck Ridge,41.450181,-73.982449,0,,,true
-mnr,mnr:4,4,H125,0HL,Harlem-125th St.,40.805157,-73.939149,0,,,true
-mnr,mnr:188,188,FFB,2FM,Fairfield-Black Rock,41.161,-73.234336,0,,,true
-mnr,mnr:97,97,MNR_97,1PA,Patterson,41.511827,-73.604584,0,,,true
-mnr,mnr:29,29,MNR_29,0PM,Philipse Manor,41.09492,-73.869755,0,,,true
-mnr,mnr:58,58,MNR_58,1WG,Williams Bridge,40.878569,-73.871064,0,,,true
-mnr,mnr:131,131,SONO,2SN,South Norwalk,41.09673,-73.421132,0,,,true
-mnr,mnr:65,65,MNR_65,1BX,Bronxville,40.93978,-73.835208,0,,,true
-mnr,mnr:33,33,CRT,0HM,Croton-Harmon,41.189903,-73.882394,0,,,true
-mnr,mnr:94,94,MNR_94,1BR,Southeast,41.413203,-73.623787,0,,,true
-mnr,mnr:170,170,BCF,5BF,Beacon Falls,41.441752,-73.06359,0,,,true
-mnr,mnr:165,165,DAN,4DN,Danbury,41.396146,-73.44879,0,,,true
-mnr,mnr:37,37,MNR_37,0CT,Cortlandt,41.246259,-73.921884,0,,,true
-mnr,mnr:108,108,NRO,2NR,New Rochelle,40.911605,-73.783807,0,,,true
-mnr,mnr:115,115,POR,2PC,Port Chester,41.000732,-73.6647,0,,,true
-mnr,mnr:27,27,MNR_27,0TT,Tarrytown,41.076473,-73.864563,0,,,true
-mnr,mnr:134,134,WPT,2WP,Westport,41.118928,-73.371413,0,,,true
-mnr,mnr:74,74,MNR_74,1WP,White Plains,41.032589,-73.775208,0,,,true
-mnr,mnr:18,18,YNY,0YK,Yonkers,40.935795,-73.902668,0,,,true
-mnr,mnr:10,10,MNR_10,0UH,University Heights,40.862248,-73.91312,0,,,true
-mnr,mnr:51,51,POU,0PO,Poughkeepsie,41.705839,-73.937946,0,,,true
-mnr,mnr:177,177,MNR_177,1WA,Wassaic,41.814722,-73.562197,0,,,true
-mnr,mnr:39,39,MNR_39,0PE,Peekskill,41.285962,-73.93042,0,,,true
-mnr,mnr:62,62,MNR_62,1MW,Mt Vernon West,40.912142,-73.851129,0,,,true
-mnr,mnr:176,176,MNR_176,1TM,Tenmile River,41.779938,-73.558204,0,,,true
-mnr,mnr:161,161,CND,4CA,Cannondale,41.21662,-73.426703,0,,,true
-mnr,mnr:57,57,MNR_57,1BG,Botanical Garden,40.866555,-73.883109,0,,,true
-mnr,mnr:118,118,COB,2CC,Cos Cob,41.030171,-73.598306,0,,,true
-mnr,mnr:46,46,MNR_46,0BC,Beacon,41.504007,-73.984528,0,,,true
-mnr,mnr:56,56,FOR,1FO,Fordham,40.8615,-73.89058,0,,,true
-mnr,mnr:90,90,MNR_90,1CF,Croton Falls,41.347722,-73.662269,0,,,true
-mnr,mnr:76,76,MNR_76,1NW,North White Plains,41.049806,-73.773142,0,,,true
-mnr,mnr:72,72,MNR_72,1HA,Hartsdale,41.010333,-73.796407,0,,,true
-mnr,mnr:622,622,YANKEES,0YS,Yankees-E 153 St,40.8253,-73.9299,0,,,true
-mnr,mnr:86,86,MNR_86,1KA,Katonah,41.259552,-73.684155,0,,,true
-mnr,mnr:98,98,MNR_98,1PW,Pawling,41.564205,-73.600524,0,,,true
-mnr,mnr:40,40,MNR_40,0MN,Manitou,41.332601,-73.970426,0,,,true
-mnr,mnr:133,133,ENW,2EN,East Norwalk,41.103996,-73.404588,0,,,true
-mnr,mnr:157,157,NCN,3NC,New Canaan,41.146305,-73.495626,0,,,true
-mnr,mnr:88,88,MNR_88,1GO,Goldens Bridge,41.294338,-73.677655,0,,,true
-mnr,mnr:167,167,DBY,5DB,Derby-Shelton,41.319718,-73.083548,0,,,true
-mnr,mnr:83,83,MNR_83,1CQ,Chappaqua,41.158015,-73.774885,0,,,true
-mnr,mnr:168,168,ANS,5AN,Ansonia,41.344156,-73.079892,0,,,true
-mnr,mnr:22,22,MNR_22,0HS,Hastings-on-Hudson,40.994109,-73.884512,0,,,true
-mnr,mnr:154,154,SPD,3SD,Springdale,41.08876,-73.517828,0,,,true
-mnr,mnr:114,114,RYE,2RY,Rye,40.985922,-73.682553,0,,,true
-mnr,mnr:24,24,MNR_24,0AR,Ardsley-on-Hudson,41.026198,-73.876543,0,,,true
-mnr,mnr:172,172,WBY,5WB,Waterbury,41.552728,-73.046126,0,,,true
-mnr,mnr:59,59,MNR_59,1WN,Woodlawn,40.895361,-73.862916,0,,,true
-mnr,mnr:91,91,MNR_91,1BW,Brewster,41.39447,-73.619802,0,,,true
-mnr,mnr:112,112,HAR,2HS,Harrison,40.969432,-73.712964,0,,,true
-mnr,mnr:116,116,GRE,2GN,Greenwich,41.021277,-73.624621,0,,,true
-mnr,mnr:85,85,MNR_85,1BH,Bedford Hills,41.237316,-73.699936,0,,,true
-mnr,mnr:49,49,MNR_49,0NM,New Hamburg,41.587448,-73.947226,0,,,true
-mnr,mnr:164,164,BTH,4BE,Bethel,41.376225,-73.418171,0,,,true
-mnr,mnr:155,155,TMH,3TH,Talmadge Hill,41.116012,-73.498149,0,,,true
-mnr,mnr:140,140,BRP,2BP,Bridgeport,41.178677,-73.187076,0,,,true
-mnr,mnr:138,138,FFD,2FF,Fairfield,41.143077,-73.257742,0,,,true
-mnr,mnr:160,160,WILTON,4WI,Wilton,41.196202,-73.432434,0,,,true
-mnr,mnr:14,14,MNR_14,0DV,Spuyten Duyvil,40.878245,-73.921455,0,,,true
-mnr,mnr:81,81,MNR_81,1PV,Pleasantville,41.135222,-73.792661,0,,,true
-mnr,mnr:55,55,MNR_55,1TR,Tremont,40.847301,-73.89955,0,,,true
-mnr,mnr:163,163,RDG,4RD,Redding,41.325684,-73.4338,0,,,true
-mnr,mnr:78,78,MNR_78,1VA,Valhalla,41.072819,-73.772599,0,,,true
-mnr,mnr:169,169,SEY,5SY,Seymour,41.395139,-73.072499,0,,,true
-mnr,mnr:162,162,BVL,4BV,Branchville,41.26763,-73.441421,0,,,true
-mnr,mnr:84,84,MNR_84,1MK,Mt Kisco,41.208242,-73.729778,0,,,true
-mnr,mnr:151,151,STS,2SS,New Haven State Street,41.304979,-72.921747,0,,,true
-mnr,mnr:68,68,MNR_68,1CW,Crestwood,40.958997,-73.820564,0,,,true
-mnr,mnr:20,20,MNR_20,0GY,Greystone,40.972705,-73.889069,0,,,true
-mnr,mnr:89,89,MNR_89,1PY,Purdy's,41.325775,-73.659061,0,,,true
-mnr,mnr:129,129,ROW,2RO,Rowayton,41.077456,-73.445527,0,,,true
-mnr,mnr:110,110,LAR,2LA,Larchmont,40.933394,-73.759792,0,,,true
-mnr,mnr:121,121,OGW,2OG,Old Greenwich,41.033817,-73.565859,0,,,true
-mnr,mnr:120,120,RIV,2RS,Riverside,41.031682,-73.588173,0,,,true
 mnr,mnr:61,61,MNR_61,1WF,Wakefield,40.905936,-73.85568,0,,,true
-mnr,mnr:42,42,MNR_42,0GA,Garrison,41.38178,-73.947202,0,,,true
+mnr,mnr:44,44,MNR_44,0BK,Breakneck Ridge,41.450181,-73.982449,0,,,true
+mnr,mnr:188,188,FFB,2FM,Fairfield-Black Rock,41.161,-73.234336,0,,,true
+mnr,mnr:4,4,H125,0HL,Harlem-125th St.,40.805157,-73.939149,0,,,true
+mnr,mnr:129,129,ROW,2RO,Rowayton,41.077456,-73.445527,0,,,true
+mnr,mnr:157,157,NCN,3NC,New Canaan,41.146305,-73.495626,0,,,true
+mnr,mnr:106,106,PEL,2PH,Pelham,40.910321,-73.810242,0,,,true
+mnr,mnr:72,72,MNR_72,1HA,Hartsdale,41.010333,-73.796407,0,,,true
+mnr,mnr:163,163,RDG,4RD,Redding,41.325684,-73.4338,0,,,true
+mnr,mnr:10,10,MNR_10,0UH,University Heights,40.862248,-73.91312,0,,,true
+mnr,mnr:37,37,MNR_37,0CT,Cortlandt,41.246259,-73.921884,0,,,true
+mnr,mnr:27,27,MNR_27,0TT,Tarrytown,41.076473,-73.864563,0,,,true
+mnr,mnr:160,160,WILTON,4WI,Wilton,41.196202,-73.432434,0,,,true
+mnr,mnr:115,115,POR,2PC,Port Chester,41.000732,-73.6647,0,,,true
+mnr,mnr:153,153,GLB,3GB,Glenbrook,41.070547,-73.520021,0,,,true
+mnr,mnr:168,168,ANS,5AN,Ansonia,41.344156,-73.079892,0,,,true
+mnr,mnr:131,131,SONO,2SN,South Norwalk,41.09673,-73.421132,0,,,true
+mnr,mnr:118,118,COB,2CC,Cos Cob,41.030171,-73.598306,0,,,true
 mnr,mnr:171,171,NAU,5NG,Naugatuck,41.494204,-73.052655,0,,,true
-mnr,mnr:30,30,MNR_30,0SB,Scarborough,41.135763,-73.866163,0,,,true
-mnr,mnr:101,101,MNR_101,1DO,Dover Plains,41.740401,-73.576502,0,,,true
-mnr,mnr:79,79,MNR_79,1MP,Mt Pleasant,41.095877,-73.793822,0,,,true
-mnr,mnr:99,99,MNR_99,1AT,Appalachian Trail,41.592871,-73.588032,0,,,true
-mnr,mnr:80,80,MNR_80,1HN,Hawthorne,41.108581,-73.79625,0,,,true
+mnr,mnr:127,127,NTH,2NO,Noroton Heights,41.069041,-73.49788,0,,,true
+mnr,mnr:114,114,RYE,2RY,Rye,40.985922,-73.682553,0,,,true
+mnr,mnr:40,40,MNR_40,0MN,Manitou,41.332601,-73.970426,0,,,true
+mnr,mnr:46,46,MNR_46,0BC,Beacon,41.504007,-73.984528,0,,,true
+mnr,mnr:124,124,STM,2SM,Stamford,41.046611,-73.542846,0,,,true
+mnr,mnr:25,25,MNR_25,0IV,Irvington,41.039993,-73.873083,0,,,true
+mnr,mnr:108,108,NRO,2NR,New Rochelle,40.911605,-73.783807,0,,,true
+mnr,mnr:57,57,MNR_57,1BG,Botanical Garden,40.866555,-73.883109,0,,,true
+mnr,mnr:1,1,GCT,0NY,Grand Central,40.752998,-73.977056,0,,,true
+mnr,mnr:29,29,MNR_29,0PM,Philipse Manor,41.09492,-73.869755,0,,,true
+mnr,mnr:23,23,MNR_23,0DF,Dobbs Ferry,41.012459,-73.87949,0,,,true
+mnr,mnr:121,121,OGW,2OG,Old Greenwich,41.033817,-73.565859,0,,,true
+mnr,mnr:128,128,DAR,2DA,Darien,41.076913,-73.472966,0,,,true
+mnr,mnr:24,24,MNR_24,0AR,Ardsley-on-Hudson,41.026198,-73.876543,0,,,true
+mnr,mnr:138,138,FFD,2FF,Fairfield,41.143077,-73.257742,0,,,true
+mnr,mnr:151,151,STS,2SS,New Haven State Street,41.304979,-72.921747,0,,,true
+mnr,mnr:111,111,MAM,2MA,Mamaroneck,40.954061,-73.736125,0,,,true
 mnr,mnr:158,158,MRT7,4M7,Merritt 7,41.146618,-73.427859,0,,,true
-mnr,mnr:31,31,MNR_31,0OS,Ossining,41.157663,-73.869281,0,,,true
-mnr,mnr:71,71,MNR_71,1SC,Scarsdale,40.989168,-73.808634,0,,,true
-mnr,mnr:64,64,MNR_64,1FW,Fleetwood,40.92699,-73.83948,0,,,true
 mnr,mnr:100,100,MNR_100,1WI,Harlem Valley-Wingdale,41.637525,-73.57145,0,,,true
+mnr,mnr:74,74,MNR_74,1WP,White Plains,41.032589,-73.775208,0,,,true
+mnr,mnr:17,17,MNR_17,0LU,Ludlow,40.924972,-73.904612,0,,,true
+mnr,mnr:65,65,MNR_65,1BX,Bronxville,40.93978,-73.835208,0,,,true
+mnr,mnr:58,58,MNR_58,1WG,Williams Bridge,40.878569,-73.871064,0,,,true
+mnr,mnr:149,149,NHV,2NH,New Haven Union Station,41.296501,-72.92829,0,,,true
+mnr,mnr:80,80,MNR_80,1HN,Hawthorne,41.108581,-73.79625,0,,,true
+mnr,mnr:170,170,BCF,5BF,Beacon Falls,41.441752,-73.06359,0,,,true
+mnr,mnr:162,162,BVL,4BV,Branchville,41.26763,-73.441421,0,,,true
+mnr,mnr:161,161,CND,4CA,Cannondale,41.21662,-73.426703,0,,,true
+mnr,mnr:172,172,WBY,5WB,Waterbury,41.552728,-73.046126,0,,,true
+mnr,mnr:89,89,MNR_89,1PY,Purdy's,41.325775,-73.659061,0,,,true
+mnr,mnr:134,134,WPT,2WP,Westport,41.118928,-73.371413,0,,,true
+mnr,mnr:97,97,MNR_97,1PA,Patterson,41.511827,-73.604584,0,,,true
+mnr,mnr:31,31,MNR_31,0OS,Ossining,41.157663,-73.869281,0,,,true
+mnr,mnr:169,169,SEY,5SY,Seymour,41.395139,-73.072499,0,,,true
+mnr,mnr:62,62,MNR_62,1MW,Mt Vernon West,40.912142,-73.851129,0,,,true
+mnr,mnr:18,18,YNY,0YK,Yonkers,40.935795,-73.902668,0,,,true
+mnr,mnr:164,164,BTH,4BE,Bethel,41.376225,-73.418171,0,,,true
+mnr,mnr:105,105,MVE,2ME,Mount Vernon East,40.912161,-73.832185,0,,,true
+mnr,mnr:64,64,MNR_64,1FW,Fleetwood,40.92699,-73.83948,0,,,true
+mnr,mnr:76,76,MNR_76,1NW,North White Plains,41.049806,-73.773142,0,,,true
+mnr,mnr:98,98,MNR_98,1PW,Pawling,41.564205,-73.600524,0,,,true
+mnr,mnr:33,33,CRT,0HM,Croton-Harmon,41.189903,-73.882394,0,,,true
+mnr,mnr:51,51,POU,0PO,Poughkeepsie,41.705839,-73.937946,0,,,true
+mnr,mnr:84,84,MNR_84,1MK,Mt Kisco,41.208242,-73.729778,0,,,true
+mnr,mnr:85,85,MNR_85,1BH,Bedford Hills,41.237316,-73.699936,0,,,true
+mnr,mnr:14,14,MNR_14,0DV,Spuyten Duyvil,40.878245,-73.921455,0,,,true
+mnr,mnr:79,79,MNR_79,1MP,Mt Pleasant,41.095877,-73.793822,0,,,true
+mnr,mnr:140,140,BRP,2BP,Bridgeport,41.178677,-73.187076,0,,,true
+mnr,mnr:11,11,MNR_11,0MB,Marble Hill,40.874333,-73.910941,0,,,true
+mnr,mnr:88,88,MNR_88,1GO,Goldens Bridge,41.294338,-73.677655,0,,,true
+mnr,mnr:177,177,MNR_177,1WA,Wassaic,41.814722,-73.562197,0,,,true
+mnr,mnr:143,143,SFD,2SR,Stratford,41.194255,-73.131532,0,,,true
+mnr,mnr:39,39,MNR_39,0PE,Peekskill,41.285962,-73.93042,0,,,true
+mnr,mnr:190,190,WHA,2WH,West Haven,41.27142,-72.963488,0,,,true
+mnr,mnr:112,112,HAR,2HS,Harrison,40.969432,-73.712964,0,,,true
+mnr,mnr:20,20,MNR_20,0GY,Greystone,40.972705,-73.889069,0,,,true
+mnr,mnr:155,155,TMH,3TH,Talmadge Hill,41.116012,-73.498149,0,,,true
+mnr,mnr:133,133,ENW,2EN,East Norwalk,41.103996,-73.404588,0,,,true
+mnr,mnr:137,137,SOP,2SP,Southport,41.134844,-73.28897,0,,,true
+mnr,mnr:99,99,MNR_99,1AT,Appalachian Trail,41.592871,-73.588032,0,,,true
+mnr,mnr:16,16,MNR_16,0RV,Riverdale,40.903981,-73.914126,0,,,true
+mnr,mnr:43,43,MNR_43,0CS,Cold Spring,41.415283,-73.95809,0,,,true
+mnr,mnr:101,101,MNR_101,1DO,Dover Plains,41.740401,-73.576502,0,,,true
+mnr,mnr:145,145,MIL,2MI,Milford,41.223231,-73.057647,0,,,true
+mnr,mnr:59,59,MNR_59,1WN,Woodlawn,40.895361,-73.862916,0,,,true
+mnr,mnr:622,622,YANKEES,0YS,Yankees-E 153 St,40.8253,-73.9299,0,,,true
+mnr,mnr:78,78,MNR_78,1VA,Valhalla,41.072819,-73.772599,0,,,true
+mnr,mnr:116,116,GRE,2GN,Greenwich,41.021277,-73.624621,0,,,true
+mnr,mnr:19,19,MNR_19,0GD,Glenwood,40.950496,-73.899062,0,,,true
+mnr,mnr:91,91,MNR_91,1BW,Brewster,41.39447,-73.619802,0,,,true
+mnr,mnr:49,49,MNR_49,0NM,New Hamburg,41.587448,-73.947226,0,,,true
+mnr,mnr:56,56,FOR,1FO,Fordham,40.8615,-73.89058,0,,,true
+mnr,mnr:120,120,RIV,2RS,Riverside,41.031682,-73.588173,0,,,true
+mnr,mnr:81,81,MNR_81,1PV,Pleasantville,41.135222,-73.792661,0,,,true
+mnr,mnr:136,136,GNF,2GF,Green's Farms,41.122265,-73.315408,0,,,true
+mnr,mnr:154,154,SPD,3SD,Springdale,41.08876,-73.517828,0,,,true
+mnr,mnr:22,22,MNR_22,0HS,Hastings-on-Hudson,40.994109,-73.884512,0,,,true
+mnr,mnr:55,55,MNR_55,1TR,Tremont,40.847301,-73.89955,0,,,true
+mnr,mnr:66,66,MNR_66,1TK,Tuckahoe,40.949393,-73.830166,0,,,true
+mnr,mnr:9,9,MNR_9,0MH,Morris Heights,40.854252,-73.919583,0,,,true
+mnr,mnr:83,83,MNR_83,1CQ,Chappaqua,41.158015,-73.774885,0,,,true
+mnr,mnr:110,110,LAR,2LA,Larchmont,40.933394,-73.759792,0,,,true
+mnr,mnr:30,30,MNR_30,0SB,Scarborough,41.135763,-73.866163,0,,,true
+mnr,mnr:68,68,MNR_68,1CW,Crestwood,40.958997,-73.820564,0,,,true
+mnr,mnr:42,42,MNR_42,0GA,Garrison,41.38178,-73.947202,0,,,true
+mnr,mnr:176,176,MNR_176,1TM,Tenmile River,41.779938,-73.558204,0,,,true
+mnr,mnr:86,86,MNR_86,1KA,Katonah,41.259552,-73.684155,0,,,true
+mnr,mnr:90,90,MNR_90,1CF,Croton Falls,41.347722,-73.662269,0,,,true
+mnr,mnr:94,94,MNR_94,1BR,Southeast,41.413203,-73.623787,0,,,true
+mnr,mnr:165,165,DAN,4DN,Danbury,41.396146,-73.44879,0,,,true
+mnr,mnr:54,54,MNR_54,1ML,Melrose,40.825761,-73.915231,0,,,true
+mnr,mnr:71,71,MNR_71,1SC,Scarsdale,40.989168,-73.808634,0,,,true
+mnr,mnr:167,167,DBY,5DB,Derby-Shelton,41.319718,-73.083548,0,,,true

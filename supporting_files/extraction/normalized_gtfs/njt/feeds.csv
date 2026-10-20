@@ -1,0 +1,2 @@
+feed_id,source_id,operator_name,source_url,zip_path,imported_at,timezone
+njt,njt,NJ Transit,https://www.njtransit.com/rail_data.zip,/Users/fgbm27/Documents/2026/Moose.Train/supporting_files/source_gtfs/njt/rail_data.zip,2026-10-19T21:43:54+00:00,America/New_York

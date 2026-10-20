@@ -1,0 +1,299 @@
+{
+  "source_url": "https://www.njtransit.com/api/graphql/graphql",
+  "retrieved_at": "2026-10-19T21:32:39+00:00",
+  "effective_date": null,
+  "source_status": "Undocumented public website interface; quotes require fare-policy validation before publication",
+  "usable_responses": 3384,
+  "total_pairs": 3906,
+  "published": false,
+  "missing_pairs": 522,
+  "missing_pair_examples": [
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_113",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_123",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_135",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_137",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_149",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_26",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_46",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_57",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_86",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_113",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_123",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_135",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_137",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_149",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_26",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_46",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_57",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_110",
+      "destination": "NJT_86",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_111",
+      "destination": "NJT_113",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    },
+    {
+      "origin": "NJT_111",
+      "destination": "NJT_123",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false
+    }
+  ],
+  "asymmetric_pairs": [
+    {
+      "origin": "NJT_109",
+      "destination": "NJT_127",
+      "forward_cents": 265,
+      "reverse_cents": 605
+    },
+    {
+      "origin": "NJT_32905",
+      "destination": "NJT_32906",
+      "forward_cents": 1175,
+      "reverse_cents": 910
+    },
+    {
+      "origin": "NJT_32906",
+      "destination": "PJC",
+      "forward_cents": 660,
+      "reverse_cents": 925
+    },
+    {
+      "origin": "NJT_32906",
+      "destination": "TRE",
+      "forward_cents": 1120,
+      "reverse_cents": 1385
+    }
+  ],
+  "diagnostic_recheck": [
+    {
+      "origin": "NYP",
+      "destination": "NJT_32906",
+      "quoted_amount_cents": 1700,
+      "regular_fare_text": "$17.00",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_32906",
+      "destination": "NYP",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false,
+      "error_messages": [
+        "We're sorry. We are unable to provide trip results based on the information you provided. If you continue to encounter problems, we may be performing an update. Please wait a few minutes or call NJ TRANSIT Customer Service at (973) 275-5555."
+      ]
+    },
+    {
+      "origin": "NJT_109",
+      "destination": "NJT_127",
+      "quoted_amount_cents": 265,
+      "regular_fare_text": "$2.65",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_127",
+      "destination": "NJT_109",
+      "quoted_amount_cents": 605,
+      "regular_fare_text": "$6.05",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_123",
+      "quoted_amount_cents": null,
+      "regular_fare_text": null,
+      "via_secaucus_notice": null,
+      "usable_response": false,
+      "error_messages": [
+        "We're sorry. We are unable to provide trip results based on the information you provided. If you continue to encounter problems, we may be performing an update. Please wait a few minutes or call NJ TRANSIT Customer Service at (973) 275-5555."
+      ]
+    }
+  ],
+  "initial_query_service_date": null,
+  "interpretation": "Initial responses omitted the service date. Missing responses are not proof of missing tariff coverage. A dated recheck resolves the sampled missing responses; journey availability and route-dependent pricing must be validated before publication.",
+  "dated_diagnostic_service_date": "2026-10-20",
+  "dated_diagnostic_recheck": [
+    {
+      "origin": "NYP",
+      "destination": "NJT_32906",
+      "quoted_amount_cents": 1700,
+      "regular_fare_text": "$17.00",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_32906",
+      "destination": "NYP",
+      "quoted_amount_cents": 1700,
+      "regular_fare_text": "$17.00",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_109",
+      "destination": "NJT_127",
+      "quoted_amount_cents": 265,
+      "regular_fare_text": "$2.65",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_127",
+      "destination": "NJT_109",
+      "quoted_amount_cents": 605,
+      "regular_fare_text": "$6.05",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    },
+    {
+      "origin": "NJT_100",
+      "destination": "NJT_123",
+      "quoted_amount_cents": 2025,
+      "regular_fare_text": "$20.25",
+      "via_secaucus_notice": false,
+      "usable_response": true,
+      "error_messages": []
+    }
+  ]
+}

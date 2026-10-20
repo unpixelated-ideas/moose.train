@@ -3,10 +3,14 @@ NHV,New Haven Union Station,5,Primary transfer point between Metro-North, Shore 
 STM,Stamford,5,Metro-North and Amtrak transfer point.
 BRP,Bridgeport,5,Metro-North and Amtrak transfer point.
 SONO,South Norwalk,5,Metro-North transfer point.
-GCT,Grand Central Terminal,5,Metro-North transfer point for trips that require changing trains at the terminal.
+GCT,Grand Central Terminal,15,Metro-North transfer point for trips that require changing trains at the terminal.
 H125,Harlem-125th St.,5,Expanded Metro-North and shared Amtrak passenger transfer point.
 FOR,Fordham,5,Expanded Metro-North and shared Amtrak passenger transfer point.
 CRT,Croton-Harmon,5,Expanded Metro-North and shared Amtrak passenger transfer point.
 MNR_94,Southeast,5,Expanded Metro-North and shared Amtrak passenger transfer point.
 YNY,Yonkers,5,Expanded Metro-North and shared Amtrak passenger transfer point.
 POU,Poughkeepsie,5,Expanded Metro-North and shared Amtrak passenger transfer point.
+NYP,New York Penn,20,Shared Amtrak LIRR and NJ Transit transfer point.
+SEC,Secaucus Junction,5,NJ Transit upper and lower levels share one station identity.
+NWK,Newark Penn,5,Shared Amtrak and NJ Transit transfer point.
+TRE,Trenton,5,Shared Amtrak and NJ Transit transfer point.

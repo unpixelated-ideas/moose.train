@@ -1,110 +1,202 @@
 feed_id,stop_uid,source_stop_id,canonical_station_id,stop_code,stop_name,stop_lat,stop_lon,location_type,parent_station_uid,source_parent_station,in_search_scope
-amtrak,amtrak:TRE,TRE,TRENTON,TRE,Trenton,40.219011,-74.75444,,,,false
-amtrak,amtrak:MSS,MSS,MANASSAS_AMT,MSS,Manassas Amtrak Station,38.75027825,-77.47278955,,,,false
-amtrak,amtrak:SOB,SOB,SOUTH_BEND_A,SOB,South Bend Amtrak Station,41.67836,-86.287345,,,,false
-amtrak,amtrak:PHL,PHL,PHILADELPHIA,PHL,Philadelphia,39.955615,-75.181041,,,,false
-amtrak,amtrak:RNK,RNK,ROANOKE,RNK,Roanoke,37.273185,-79.941795,,,,false
-amtrak,amtrak:SAB,SAB,ST_ALBANS_AM,SAB,St. Albans Amtrak Station,44.81236,-73.086191,,,,false
-amtrak,amtrak:OSB,OSB,OSB,OSB,Old Saybrook,41.30039,-72.376818,,,,true
-amtrak,amtrak:MPR,MPR,MONTPELIER_B,MPR,Montpelier-Berlin Amtrak Station,44.255749,-72.606394,,,,false
-amtrak,amtrak:RSP,RSP,ROUSES_POINT,RSP,Rouses Point Amtrak,44.99487,-73.371093,,,,false
-amtrak,amtrak:NWK,NWK,NEWARK,NWK,Newark,40.734706,-74.16475,,,,false
-amtrak,amtrak:BFX,BFX,BUFFALO,BFX,Buffalo,42.878449,-78.873748,,,,false
-amtrak,amtrak:PTB,PTB,PETERSBURG_A,PTB,Petersburg Amtrak Station,37.241627,-77.428794,,,,false
-amtrak,amtrak:GFD,GFD,GREENFIELD_A,GFD,Greenfield Amtrak Station,42.585458,-72.600765,,,,false
-amtrak,amtrak:POU,POU,POU,POU,Poughkeepsie,41.707056,-73.93749,,,,true
+amtrak,amtrak:PVD,PVD,PROVIDENCE,PVD,Providence,41.82949,-71.413478,,,,false
+amtrak,amtrak:CLA,CLA,CLAREMONT_AM,CLA,Claremont Amtrak,43.36833,-72.377644,,,,false
+amtrak,amtrak:DNC,DNC,DURHAM_AMTRA,DNC,Durham Amtrak Station,35.997347,-78.906299,,,,false
+amtrak,amtrak:SBG,SBG,SEBRING_AMTR,SBG,Sebring Amtrak Station,27.496632,-81.434202,,,,false
+amtrak,amtrak:GRO,GRO,GREENSBORO,GRO,Greensboro,36.069797,-79.78708,,,,false
 amtrak,amtrak:NFK,NFK,NORFOLK,NFK,Norfolk,36.843509,-76.276195,,,,false
-amtrak,amtrak:WLY,WLY,WLY,WLY,Westerly,41.381081,-71.82978,,,,true
-amtrak,amtrak:ABE,ABE,ABERDEEN_AMT,ABE,Aberdeen Amtrak Station,39.508447,-76.16326,,,,false
-amtrak,amtrak:UCA,UCA,UTICA_AMTRAK,UCA,Utica Amtrak Station,43.103892,-75.223434,,,,false
-amtrak,amtrak:BLF,BLF,BELLOWS_FALL,BLF,Bellows Falls Amtrak Station,43.13654,-72.444597,,,,false
-amtrak,amtrak:RTE,RTE,ROUTE_128_AM,RTE,Route 128 Amtrak Station,42.210242,-71.147894,,,,false
-amtrak,amtrak:NYP,NYP,NYP,NYP,New York Penn,40.750327,-73.994459,,,,true
-amtrak,amtrak:FED,FED,FORT_EDWARD_,FED,Fort Edward Amtrak,43.269603,-73.58055,,,,false
-amtrak,amtrak:MET,MET,METROPARK_AM,MET,Metropark Amtrak Station,40.568056,-74.329583,,,,false
-amtrak,amtrak:WNL,WNL,WNL,WNL,Windsor Locks,41.913956,-72.626101,,,,true
-amtrak,amtrak:NPN,NPN,NEWPORT_NEWS,NPN,Newport News,37.122325,-76.517023,,,,false
-amtrak,amtrak:CNV,CNV,CASTLETON_AM,CNV,Castleton Amtrak Station,43.613382,-73.171337,,,,false
-amtrak,amtrak:ALX,ALX,ALEXANDRIA,ALX,Alexandria,38.806503,-77.06233,,,,false
 amtrak,amtrak:VRN,VRN,FERRISBURGH,VRN,Ferrisburgh,44.180921,-73.248824,,,,false
-amtrak,amtrak:SPG,SPG,SPG,SPG,Springfield,42.105987,-72.592905,,,,true
-amtrak,amtrak:QAN,QAN,QUANTICO_AMT,QAN,Quantico Amtrak,38.521882,-77.293027,,,,false
-amtrak,amtrak:SDY,SDY,SCHENECTADY,SDY,Schenectady,42.814724,-73.942892,,,,false
-amtrak,amtrak:BBY,BBY,BOSTON,BBY,Boston,42.347317,-71.075828,,,,false
+amtrak,amtrak:ASD,ASD,ASHLAND_AMTR,ASD,Ashland Amtrak,37.759596,-77.481304,,,,false
+amtrak,amtrak:BFX,BFX,BUFFALO,BFX,Buffalo,42.878449,-78.873748,,,,false
+amtrak,amtrak:BTN,BTN,BURLINGTON,BTN,Burlington,44.4757,-73.21927,,,,false
+amtrak,amtrak:WLY,WLY,WLY,WLY,Westerly,41.381081,-71.82978,,,,true
+amtrak,amtrak:SLQ,SLQ,ST_LAMBERT_A,SLQ,St-Lambert Amtrak Station,45.498896,-73.507287,,,,false
+amtrak,amtrak:ELY,ELY,ELYRIA_AMTRA,ELY,Elyria Amtrak,41.370033,-82.096685,,,,false
+amtrak,amtrak:SYR,SYR,SYRACUSE_REG,SYR,Syracuse Regional Transportation Center,43.076548,-76.169244,,,,false
+amtrak,amtrak:COI,COI,CONNERSVILLE,COI,Connersville Amtrak,39.645969,-85.13338,,,,false
+amtrak,amtrak:ROM,ROM,ROME_AMTRAK_,ROM,Rome Amtrak Station,43.199425,-75.44996,,,,false
+amtrak,amtrak:NPN,NPN,NEWPORT_NEWS,NPN,Newport News,37.122325,-76.517023,,,,false
+amtrak,amtrak:RTE,RTE,ROUTE_128_AM,RTE,Route 128 Amtrak Station,42.210242,-71.147894,,,,false
+amtrak,amtrak:SAV,SAV,SAVANNAH,SAV,Savannah,32.083412,-81.148264,,,,false
+amtrak,amtrak:NHT,NHT,NORTHAMPTON,NHT,Northampton,42.318858,-72.626379,,,,false
+amtrak,amtrak:PAR,PAR,PARKESBURG_A,PAR,Parkesburg Amtrak,39.95918,-75.922123,,,,false
+amtrak,amtrak:TCA,TCA,TOCCOA_AMTRA,TCA,Toccoa Amtrak Station,34.578456,-83.331542,,,,false
+amtrak,amtrak:CLE,CLE,CLEVELAND,CLE,Cleveland,41.505787,-81.696172,,,,false
+amtrak,amtrak:PAO,PAO,PAOLI_AMTRAK,PAO,Paoli Amtrak Station,40.042754,-75.48376,,,,false
+amtrak,amtrak:WPB,WPB,WEST_PALM_BE,WPB,West Palm Beach Amtrak Station,26.712554,-80.062184,,,,false
+amtrak,amtrak:WND,WND,WND,WND,Windsor,41.852013,-72.642253,,,,true
+amtrak,amtrak:NCR,NCR,NEW_CARROLLT,NCR,New Carrollton Amtrak Station,38.948098,-76.871494,,,,false
+amtrak,amtrak:MET,MET,MET,MET,Metropark,40.568056,-74.329583,,,,true
+amtrak,amtrak:PIC,PIC,PICAYUNE_AMT,PIC,Picayune Amtrak Station,30.524606,-89.68026,,,,false
+amtrak,amtrak:RSP,RSP,ROUSES_POINT,RSP,Rouses Point Amtrak,44.99487,-73.371093,,,,false
+amtrak,amtrak:AMS,AMS,AMSTERDAM_AM,AMS,Amsterdam Amtrak Station,42.953719,-74.2195,,,,false
+amtrak,amtrak:SDL,SDL,SLIDELL_AMTR,SDL,Slidell Amtrak Station,30.278372,-89.782565,,,,false
+amtrak,amtrak:CIN,CIN,CINCINNATI_U,CIN,Cincinnati Union Terminal,39.109927,-84.537061,,,,false
+amtrak,amtrak:WIL,WIL,WILMINGTON,WIL,Wilmington,39.737263,-75.551095,,,,false
+amtrak,amtrak:NHV,NHV,NHV,NHV,New Haven Union Station,41.297714,-72.92667,,,,true
+amtrak,amtrak:ROC,ROC,ROCHESTER,ROC,Rochester,43.163411,-77.608057,,,,false
+amtrak,amtrak:RGH,RGH,RALEIGH_UNIO,RGH,Raleigh Union Station,35.777209,-78.647784,,,,false
+amtrak,amtrak:NYP,NYP,NYP,NYP,New York Penn,40.750327,-73.994459,,,,true
+amtrak,amtrak:CVS,CVS,CHARLOTTESVI,CVS,Charlottesville,38.031484,-78.491684,,,,false
+amtrak,amtrak:JAX,JAX,JACKSONVILLE,JAX,Jacksonville,30.365601,-81.723893,,,,false
+amtrak,amtrak:MID,MID,MIDDLETOWN,MID,Middletown,40.195658,-76.736482,,,,false
+amtrak,amtrak:MTR,MTR,MONTREAL_CEN,MTR,Montreal Central Station,45.500169,-73.565767,,,,false
+amtrak,amtrak:ERI,ERI,ERIE_AMTRAK_,ERI,Erie Amtrak Station,42.120847,-80.082444,,,,false
+amtrak,amtrak:ATL,ATL,ATLANTA,ATL,Atlanta,33.799445,-84.392477,,,,false
+amtrak,amtrak:MAY,MAY,MAYSVILLE_AM,MAY,Maysville Amtrak Station,38.652148,-83.771074,,,,false
+amtrak,amtrak:SKY,SKY,SANDUSKY_AMT,SKY,Sandusky Amtrak Station,41.440671,-82.717866,,,,false
+amtrak,amtrak:CLF,CLF,CLIFTON_FORG,CLF,Clifton Forge Amtrak Station,37.814521,-79.827363,,,,false
+amtrak,amtrak:ORL,ORL,ORLANDO,ORL,Orlando,28.525926,-81.381516,,,,false
+amtrak,amtrak:DLD,DLD,DELAND,DLD,Deland,29.017849,-81.352477,,,,false
+amtrak,amtrak:WNM,WNM,WINDSOR_MT_A,WNM,Windsor-Mt. Ascutney Amtrak,43.479908,-72.384985,,,,false
+amtrak,amtrak:CLT,CLT,CHARLOTTE_AM,CLT,Charlotte Amtrak Station,35.241403,-80.822812,,,,false
+amtrak,amtrak:HOL,HOL,HOLLYWOOD_AM,HOL,Hollywood Amtrak Station,26.011641,-80.167884,,,,false
+amtrak,amtrak:RHI,RHI,RHINECLIFF_A,RHI,Rhinecliff Amtrak Station,41.921346,-73.951278,,,,false
+amtrak,amtrak:HUD,HUD,HUDSON_AMTRA,HUD,Hudson Amtrak Station,42.253891,-73.797729,,,,false
+amtrak,amtrak:PTB,PTB,PETERSBURG_A,PTB,Petersburg Amtrak Station,37.241627,-77.428794,,,,false
+amtrak,amtrak:PLB,PLB,PLATTSBURGH_,PLB,Plattsburgh Amtrak Station,44.696728,-73.446284,,,,false
+amtrak,amtrak:HIN,HIN,HINTON_AMTRA,HIN,Hinton Amtrak Station,37.675037,-80.892232,,,,false
+amtrak,amtrak:WTI,WTI,WATERLOO_AMT,WTI,Waterloo Amtrak Station,41.431816,-85.024298,,,,false
+amtrak,amtrak:FBG,FBG,FREDERICKSBU,FBG,Fredericksburg Amtrak,38.298413,-77.457203,,,,false
+amtrak,amtrak:KTR,KTR,KINGSTREE_AM,KTR,Kingstree Amtrak Station,33.663882,-79.829026,,,,false
+amtrak,amtrak:SSM,SSM,SELMA,SSM,Selma,35.532786,-78.280099,,,,false
+amtrak,amtrak:OSB,OSB,OSB,OSB,Old Saybrook,41.30039,-72.376818,,,,true
+amtrak,amtrak:WNL,WNL,WNL,WNL,Windsor Locks,41.913956,-72.626101,,,,true
+amtrak,amtrak:SAB,SAB,ST_ALBANS_AM,SAB,St. Albans Amtrak Station,44.81236,-73.086191,,,,false
 amtrak,amtrak:CRT,CRT,CRT,CRT,Croton-Harmon,41.189903,-73.882394,,,,true
+amtrak,amtrak:STM,STM,STM,STM,Stamford,41.04713,-73.54216,,,,true
+amtrak,amtrak:HAR,HAR,HARRISBURG,HAR,Harrisburg,40.26205,-76.878256,,,,false
+amtrak,amtrak:CLP,CLP,CULPEPER_AMT,CLP,Culpeper Amtrak Station,38.47236,-77.993421,,,,false
+amtrak,amtrak:DFB,DFB,DEERFIELD_BE,DFB,Deerfield Beach Amtrak Station,26.317069,-80.122147,,,,false
+amtrak,amtrak:YEM,YEM,YEMASSEE_AMT,YEM,Yemassee Amtrak,32.688286,-80.846901,,,,false
+amtrak,amtrak:KIS,KIS,KISSIMMEE_AM,KIS,Kissimmee Amtrak Station,28.293835,-81.404234,,,,false
+amtrak,amtrak:DYE,DYE,DYER_AMTRAK,DYE,Dyer Amtrak,41.515413,-87.518076,,,,false
+amtrak,amtrak:HBG,HBG,HATTIESBURG_,HBG,Hattiesburg Amtrak Station,31.326921,-89.286463,,,,false
+amtrak,amtrak:GFD,GFD,GREENFIELD_A,GFD,Greenfield Amtrak Station,42.585458,-72.600765,,,,false
+amtrak,amtrak:WLN,WLN,WILSON,WLN,Wilson,35.723135,-77.908029,,,,false
+amtrak,amtrak:CYN,CYN,CARY,CYN,Cary,35.788294,-78.782246,,,,false
+amtrak,amtrak:RMT,RMT,ROCKY_MOUNT,RMT,Rocky Mount,35.938001,-77.797855,,,,false
+amtrak,amtrak:CHI,CHI,CHICAGO_UNIO,CHI,Chicago Union Station,41.878684,-87.639443,,,,false
+amtrak,amtrak:DLB,DLB,DELRAY_BEACH,DLB,Delray Beach Amtrak,26.454021,-80.091154,,,,false
+amtrak,amtrak:POH,POH,PORT_HENRY_A,POH,Port Henry Amtrak Station,44.042297,-73.458753,,,,false
+amtrak,amtrak:AKY,AKY,ASHLAND_AMTR,AKY,Ashland Amtrak Station,38.480875,-82.639603,,,,false
+amtrak,amtrak:BNC,BNC,BURLINGTON_A,BNC,Burlington Amtrak Station,36.094225,-79.434531,,,,false
+amtrak,amtrak:EXT,EXT,EXTON_AMTRAK,EXT,Exton Amtrak,40.019291,-75.621713,,,,false
+amtrak,amtrak:POU,POU,POU,POU,Poughkeepsie,41.707056,-73.93749,,,,true
+amtrak,amtrak:PJC,PJC,PJC,PJC,Princeton Junction,40.31585,-74.623976,,,,true
+amtrak,amtrak:FTC,FTC,TICONDEROGA_,FTC,Ticonderoga Amtrak,43.853788,-73.389681,,,,false
+amtrak,amtrak:RPH,RPH,RANDOLPH_AMT,RPH,Randolph Amtrak,43.922398,-72.665459,,,,false
+amtrak,amtrak:JSP,JSP,JESUP_AMTRAK,JSP,Jesup Amtrak Station,31.605589,-81.882173,,,,false
+amtrak,amtrak:EKH,EKH,ELKHART_AMTR,EKH,Elkhart Amtrak Station,41.680748,-85.971848,,,,false
+amtrak,amtrak:LEW,LEW,LEWISTOWN_AM,LEW,Lewistown Amtrak Station,40.588309,-77.580047,,,,false
+amtrak,amtrak:MJY,MJY,MOUNT_JOY_AM,MJY,Mount Joy Amtrak,40.109165,-76.503443,,,,false
+amtrak,amtrak:CSN,CSN,CLEMSON_AMTR,CSN,Clemson Amtrak Station,34.691115,-82.832501,,,,false
+amtrak,amtrak:KIN,KIN,KINGSTON_AMT,KIN,Kingston Amtrak Station,41.483959,-71.560597,,,,false
+amtrak,amtrak:LYH,LYH,LYNCHBURG,LYH,Lynchburg,37.406439,-79.156934,,,,false
+amtrak,amtrak:WRJ,WRJ,WHITE_RIVER_,WRJ,White River Junction Amtrak Station,43.647785,-72.317272,,,,false
+amtrak,amtrak:LNC,LNC,LANCASTER,LNC,Lancaster,40.054181,-76.307714,,,,false
+amtrak,amtrak:UCA,UCA,UTICA_AMTRAK,UCA,Utica Amtrak Station,43.103892,-75.223434,,,,false
+amtrak,amtrak:WBG,WBG,WILLIAMSBURG,WBG,Williamsburg Amtrak Station,37.276414,-76.708564,,,,false
+amtrak,amtrak:ALD,ALD,ALDERSON_AMT,ALD,Alderson Amtrak,37.724277,-80.644856,,,,false
+amtrak,amtrak:DIL,DIL,DILLON_AMTRA,DIL,Dillon Amtrak Station,34.417647,-79.372301,,,,false
+amtrak,amtrak:NFS,NFS,NIAGARA_FALL,NFS,Niagara Falls,43.108736,-79.063291,,,,false
+amtrak,amtrak:MSS,MSS,MANASSAS_AMT,MSS,Manassas Amtrak Station,38.75027825,-77.47278955,,,,false
+amtrak,amtrak:ALT,ALT,ALTOONA_AMTR,ALT,Altoona Amtrak Station,40.514475,-78.40162,,,,false
+amtrak,amtrak:WSP,WSP,WPT,WSP,Westport,44.187288,-73.451773,,,,false
+amtrak,amtrak:LAU,LAU,LAUREL_AMTRA,LAU,Laurel Amtrak Station,31.692168,-89.127933,,,,false
+amtrak,amtrak:KAN,KAN,KANNAPOLIS,KAN,Kannapolis,35.496172,-80.624928,,,,false
+amtrak,amtrak:ATN,ATN,ANNISTON_AMT,ATN,Anniston Amtrak Station,33.649112,-85.832145,,,,false
+amtrak,amtrak:FLO,FLO,FLORENCE_AMT,FLO,Florence Amtrak Station,34.199157,-79.757056,,,,false
+amtrak,amtrak:GNB,GNB,GREENSBURG_A,GNB,Greensburg Amtrak,40.304986,-79.546893,,,,false
+amtrak,amtrak:BWI,BWI,BWI_THURGOOD,BWI,Bwi Thurgood Marshall Airport Station,39.192362,-76.6943,,,,false
+amtrak,amtrak:BRP,BRP,BRP,BRP,Bridgeport,41.178006,-73.187539,,,,true
+amtrak,amtrak:PRC,PRC,PRINCE_AMTRA,PRC,Prince Amtrak Station,37.856594,-81.060694,,,,false
+amtrak,amtrak:SAR,SAR,SARATOGA_SPR,SAR,Saratoga Springs Amtrak Station,43.08281,-73.810027,,,,false
+amtrak,amtrak:STA,STA,STAUNTON_AMT,STA,Staunton Amtrak Station,38.147639,-79.071776,,,,false
+amtrak,amtrak:BAL,BAL,BALTIMORE_PE,BAL,Baltimore Penn Station,39.307302,-76.615688,,,,false
+amtrak,amtrak:CNV,CNV,CASTLETON_AM,CNV,Castleton Amtrak Station,43.613382,-73.171337,,,,false
+amtrak,amtrak:RVM,RVM,RICHMOND_MAI,RVM,Richmond Main Street Amtrak Station,37.534209,-77.429512,,,,false
+amtrak,amtrak:WAB,WAB,WATERBURY_ST,WAB,Waterbury-Stowe Amtrak Station,44.335011,-72.751806,,,,false
+amtrak,amtrak:BOS,BOS,BOSTON,BOS,Boston,42.352311,-71.055304,,,,false
+amtrak,amtrak:GAS,GAS,GASTONIA_AMT,GAS,Gastonia Amtrak Station,35.269186,-81.162366,,,,false
+amtrak,amtrak:TWO,TWO,TORONTO,TWO,Toronto,43.645427,-79.380762,,,,false
+amtrak,amtrak:TRE,TRE,TRE,TRE,Trenton,40.219011,-74.75444,,,,true
+amtrak,amtrak:HGD,HGD,HUNTINGDON_A,HGD,Huntingdon Amtrak Station,40.483665,-78.01178,,,,false
+amtrak,amtrak:THN,THN,THURMOND_AMT,THN,Thurmond Amtrak,37.956986,-81.078754,,,,false
+amtrak,amtrak:RUD,RUD,RUTLAND,RUD,Rutland,43.605756,-72.981538,,,,false
+amtrak,amtrak:MNG,MNG,MONTGOMERY_A,MNG,Montgomery Amtrak,38.180743,-81.32403,,,,false
+amtrak,amtrak:TYR,TYR,TYRONE_AMTRA,TYR,Tyrone Amtrak,40.667705,-78.24047,,,,false
+amtrak,amtrak:GNS,GNS,GAINESVILLE_,GNS,Gainesville Amtrak Station,34.288897,-83.819694,,,,false
+amtrak,amtrak:LAB,LAB,LATROBE_AMTR,LAB,Latrobe Amtrak,40.317405,-79.385083,,,,false
+amtrak,amtrak:SDY,SDY,SCHENECTADY,SDY,Schenectady,42.814724,-73.942892,,,,false
+amtrak,amtrak:MDN,MDN,MDN,MDN,Meriden,41.539385,-72.800678,,,,true
+amtrak,amtrak:PHL,PHL,PHILADELPHIA,PHL,Philadelphia,39.955615,-75.181041,,,,false
+amtrak,amtrak:CWH,CWH,CORNWELLS_HE,CWH,Cornwells Heights Amtrak,40.071663,-74.952187,,,,false
+amtrak,amtrak:WSS,WSS,WHITE_SULPHU,WSS,White Sulphur Springs Amtrak,37.786443,-80.304004,,,,false
+amtrak,amtrak:ALB,ALB,ALBANY_RENSS,ALB,Albany-Rensselaer Amtrak Station,42.641029,-73.741147,,,,false
+amtrak,amtrak:HLK,HLK,HOLYOKE_AMTR,HLK,Holyoke Amtrak,42.204156,-72.602309,,,,false
+amtrak,amtrak:BLF,BLF,BELLOWS_FALL,BLF,Bellows Falls Amtrak Station,43.13654,-72.444597,,,,false
+amtrak,amtrak:MEI,MEI,MERIDIAN_UNI,MEI,Meridian Union Station,32.364166,-88.696568,,,,false
+amtrak,amtrak:CRF,CRF,CRAWFORDSVIL,CRF,Crawfordsville Amtrak,40.044705,-86.899187,,,,false
+amtrak,amtrak:ALX,ALX,ALEXANDRIA,ALX,Alexandria,38.806503,-77.06233,,,,false
+amtrak,amtrak:WTH,WTH,WINTER_HAVEN,WTH,Winter Haven,28.002146,-81.734878,,,,false
+amtrak,amtrak:ABE,ABE,ABERDEEN_AMT,ABE,Aberdeen Amtrak Station,39.508447,-76.16326,,,,false
+amtrak,amtrak:NRO,NRO,NEW_ROCHELLE,NRO,New Rochelle Amtrak Station,40.911451,-73.784329,,,,false
+amtrak,amtrak:HFD,HFD,HFD,HFD,Hartford,41.768761,-72.681314,,,,true
+amtrak,amtrak:BUF,BUF,BUFFALO_DEPE,BUF,Buffalo Depew Station,42.907017,-78.726584,,,,false
+amtrak,amtrak:TOL,TOL,TOLEDO,TOL,Toledo,41.638345,-83.541721,,,,false
+amtrak,amtrak:WPK,WPK,WINTER_PARK_,WPK,Winter Park Amtrak Station,28.597099,-81.351993,,,,false
+amtrak,amtrak:WAS,WAS,WASHINGTON_U,WAS,Washington Union Station,38.896993,-77.006422,,,,false
+amtrak,amtrak:PAK,PAK,PALATKA_AMTR,PAK,Palatka Amtrak,29.649734,-81.640471,,,,false
+amtrak,amtrak:EWR,EWR,EWR,EWR,Newark Airport Rail Station,40.696618,-74.18229,,,,true
+amtrak,amtrak:WHL,WHL,WHITEHALL_AM,WHL,Whitehall Amtrak,43.554694,-73.403207,,,,false
+amtrak,amtrak:LAF,LAF,LAFAYETTE_AM,LAF,Lafayette Amtrak Station,40.419347,-86.895901,,,,false
+amtrak,amtrak:ELT,ELT,ELIZABETHTOW,ELT,Elizabethtown Amtrak Station,40.147028,-76.612234,,,,false
+amtrak,amtrak:SPB,SPB,SPARTANBURG_,SPB,Spartanburg Amtrak Station,34.953736,-81.936917,,,,false
+amtrak,amtrak:COT,COT,COATESVILLE_,COT,Coatesville Amtrak,39.985688,-75.820929,,,,false
+amtrak,amtrak:BRA,BRA,BRATTLEBORO_,BRA,Brattleboro Amtrak Station,42.850849,-72.556497,,,,false
+amtrak,amtrak:SPM,SPM,SOUTH_PORTSM,SPM,South Portsmouth Amtrak,38.721281,-82.963751,,,,false
+amtrak,amtrak:STS,STS,STS,STS,New Haven State Street,41.305253,-72.922086,,,,true
+amtrak,amtrak:CHW,CHW,CHARLESTON,CHW,Charleston,38.346368,-81.638494,,,,false
+amtrak,amtrak:NOL,NOL,NEW_ORLEANS_,NOL,New Orleans Union Passenger Terminal,29.946085,-90.078291,,,,false
+amtrak,amtrak:NRK,NRK,NEWARK_AMTRA,NRK,Newark Amtrak,39.669686,-75.753513,,,,false
+amtrak,amtrak:SPG,SPG,SPG,SPG,Springfield,42.105987,-72.592905,,,,true
+amtrak,amtrak:GRV,GRV,GREENVILLE_A,GRV,Greenville Amtrak Station,34.858256,-82.413486,,,,false
+amtrak,amtrak:TCL,TCL,TUSCALOOSA_A,TCL,Tuscaloosa Amtrak Station,33.193165,-87.560228,,,,false
+amtrak,amtrak:SOB,SOB,SOUTH_BEND_A,SOB,South Bend Amtrak Station,41.67836,-86.287345,,,,false
+amtrak,amtrak:HUN,HUN,HUNTINGTON_A,HUN,Huntington Amtrak Station,38.41582,-82.439735,,,,false
+amtrak,amtrak:REN,REN,RENSSELAER_A,REN,Rensselaer Amtrak,40.943281,-87.155121,,,,false
+amtrak,amtrak:JST,JST,JOHNSTOWN_AM,JST,Johnstown Amtrak Station,40.329689,-78.921996,,,,false
+amtrak,amtrak:WFD,WFD,WFD,WFD,Wallingford,41.456969,-72.825221,,,,true
+amtrak,amtrak:BCV,BCV,BURKE_CENTRE,BCV,Burke Centre Amtrak,38.797271,-77.29879,,,,false
+amtrak,amtrak:ESX,ESX,ESSEX_JUNCTI,ESX,Essex Junction-Burlington Amtrak Station,44.492466,-73.110277,,,,false
+amtrak,amtrak:BBY,BBY,BOSTON,BBY,Boston,42.347317,-71.075828,,,,false
+amtrak,amtrak:IND,IND,INDIANAPOLIS,IND,Indianapolis,39.761984,-86.160423,,,,false
+amtrak,amtrak:CHS,CHS,CHARLESTON_A,CHS,Charleston Amtrak Station,32.875473,-79.998048,,,,false
+amtrak,amtrak:NWK,NWK,NWK,NWK,Newark Penn,40.734706,-74.16475,,,,true
+amtrak,amtrak:CBN,CBN,CANADIAN_BOR,CBN,Canadian Border,43.109235,-79.058357,,,,false
 amtrak,amtrak:BYN,BYN,BRYAN_AMTRAK,BYN,Bryan Amtrak Station,41.480319,-84.551799,,,,false
 amtrak,amtrak:NBK,NBK,NEW_BRUNSWIC,NBK,New Brunswick Amtrak Station,40.496522,-74.446265,,,,false
-amtrak,amtrak:CVS,CVS,CHARLOTTESVI,CVS,Charlottesville,38.031484,-78.491684,,,,false
-amtrak,amtrak:NFS,NFS,NIAGARA_FALL,NFS,Niagara Falls,43.108736,-79.063291,,,,false
-amtrak,amtrak:MDN,MDN,MDN,MDN,Meriden,41.539385,-72.800678,,,,true
-amtrak,amtrak:WIL,WIL,WILMINGTON,WIL,Wilmington,39.737263,-75.551095,,,,false
-amtrak,amtrak:MBY,MBY,MIDDLEBURY,MBY,Middlebury,44.017425,-73.169775,,,,false
-amtrak,amtrak:BUF,BUF,BUFFALO_DEPE,BUF,Buffalo Depew Station,42.907017,-78.726584,,,,false
-amtrak,amtrak:ASD,ASD,ASHLAND_AMTR,ASD,Ashland Amtrak,37.759596,-77.481304,,,,false
-amtrak,amtrak:AMS,AMS,AMSTERDAM_AM,AMS,Amsterdam Amtrak Station,42.953719,-74.2195,,,,false
-amtrak,amtrak:CLP,CLP,CULPEPER_AMT,CLP,Culpeper Amtrak Station,38.47236,-77.993421,,,,false
-amtrak,amtrak:CHI,CHI,CHICAGO_UNIO,CHI,Chicago Union Station,41.878684,-87.639443,,,,false
-amtrak,amtrak:SKY,SKY,SANDUSKY_AMT,SKY,Sandusky Amtrak Station,41.440671,-82.717866,,,,false
-amtrak,amtrak:ALB,ALB,ALBANY_RENSS,ALB,Albany-Rensselaer Amtrak Station,42.641029,-73.741147,,,,false
-amtrak,amtrak:BOS,BOS,BOSTON,BOS,Boston,42.352311,-71.055304,,,,false
-amtrak,amtrak:MTR,MTR,MONTREAL_CEN,MTR,Montreal Central Station,45.500169,-73.565767,,,,false
-amtrak,amtrak:WHL,WHL,WHITEHALL_AM,WHL,Whitehall Amtrak,43.554694,-73.403207,,,,false
-amtrak,amtrak:HUD,HUD,HUDSON_AMTRA,HUD,Hudson Amtrak Station,42.253891,-73.797729,,,,false
-amtrak,amtrak:NLC,NLC,NLC,NLC,New London,41.354267,-72.093225,,,,true
-amtrak,amtrak:PJC,PJC,PRINCETON_JU,PJC,Princeton Junction Amtrak Station,40.31585,-74.623976,,,,false
-amtrak,amtrak:SAR,SAR,SARATOGA_SPR,SAR,Saratoga Springs Amtrak Station,43.08281,-73.810027,,,,false
-amtrak,amtrak:ROM,ROM,ROME_AMTRAK_,ROM,Rome Amtrak Station,43.199425,-75.44996,,,,false
-amtrak,amtrak:RHI,RHI,RHINECLIFF_A,RHI,Rhinecliff Amtrak Station,41.921346,-73.951278,,,,false
-amtrak,amtrak:RUD,RUD,RUTLAND,RUD,Rutland,43.605756,-72.981538,,,,false
-amtrak,amtrak:PVD,PVD,PROVIDENCE,PVD,Providence,41.82949,-71.413478,,,,false
-amtrak,amtrak:BER,BER,BER,BER,Berlin,41.635595,-72.765274,,,,true
-amtrak,amtrak:ERI,ERI,ERIE_AMTRAK_,ERI,Erie Amtrak Station,42.120847,-80.082444,,,,false
-amtrak,amtrak:NHV,NHV,NHV,NHV,New Haven Union Station,41.297714,-72.92667,,,,true
-amtrak,amtrak:TOL,TOL,TOLEDO,TOL,Toledo,41.638345,-83.541721,,,,false
-amtrak,amtrak:EKH,EKH,ELKHART_AMTR,EKH,Elkhart Amtrak Station,41.680748,-85.971848,,,,false
-amtrak,amtrak:BAL,BAL,BALTIMORE_PE,BAL,Baltimore Penn Station,39.307302,-76.615688,,,,false
-amtrak,amtrak:WBG,WBG,WILLIAMSBURG,WBG,Williamsburg Amtrak Station,37.276414,-76.708564,,,,false
-amtrak,amtrak:BCV,BCV,BURKE_CENTRE,BCV,Burke Centre Amtrak,38.797271,-77.29879,,,,false
-amtrak,amtrak:WDB,WDB,WOODBRIDGE_A,WDB,Woodbridge Amtrak,38.658915,-77.247852,,,,false
-amtrak,amtrak:STM,STM,STM,STM,Stamford,41.04713,-73.54216,,,,true
-amtrak,amtrak:WND,WND,WND,WND,Windsor,41.852013,-72.642253,,,,true
-amtrak,amtrak:POH,POH,PORT_HENRY_A,POH,Port Henry Amtrak Station,44.042297,-73.458753,,,,false
-amtrak,amtrak:NRO,NRO,NEW_ROCHELLE,NRO,New Rochelle Amtrak Station,40.911451,-73.784329,,,,false
-amtrak,amtrak:LYH,LYH,LYNCHBURG,LYH,Lynchburg,37.406439,-79.156934,,,,false
-amtrak,amtrak:WFD,WFD,WFD,WFD,Wallingford,41.456969,-72.825221,,,,true
-amtrak,amtrak:WTI,WTI,WATERLOO_AMT,WTI,Waterloo Amtrak Station,41.431816,-85.024298,,,,false
-amtrak,amtrak:WAS,WAS,WASHINGTON_U,WAS,Washington Union Station,38.896993,-77.006422,,,,false
-amtrak,amtrak:NRK,NRK,NEWARK_AMTRA,NRK,Newark Amtrak,39.669686,-75.753513,,,,false
-amtrak,amtrak:BRP,BRP,BRP,BRP,Bridgeport,41.178006,-73.187539,,,,true
-amtrak,amtrak:CBN,CBN,CANADIAN_BOR,CBN,Canadian Border,43.109235,-79.058357,,,,false
-amtrak,amtrak:HFD,HFD,HFD,HFD,Hartford,41.768761,-72.681314,,,,true
-amtrak,amtrak:WRJ,WRJ,WHITE_RIVER_,WRJ,White River Junction Amtrak Station,43.647785,-72.317272,,,,false
-amtrak,amtrak:CLA,CLA,CLAREMONT_AM,CLA,Claremont Amtrak,43.36833,-72.377644,,,,false
-amtrak,amtrak:RVM,RVM,RICHMOND_MAI,RVM,Richmond Main Street Amtrak Station,37.534209,-77.429512,,,,false
-amtrak,amtrak:RPH,RPH,RANDOLPH_AMT,RPH,Randolph Amtrak,43.922398,-72.665459,,,,false
-amtrak,amtrak:BTN,BTN,BURLINGTON,BTN,Burlington,44.4757,-73.21927,,,,false
-amtrak,amtrak:CLE,CLE,CLEVELAND,CLE,Cleveland,41.505787,-81.696172,,,,false
-amtrak,amtrak:BRA,BRA,BRATTLEBORO_,BRA,Brattleboro Amtrak Station,42.850849,-72.556497,,,,false
-amtrak,amtrak:WNM,WNM,WINDSOR_MT_A,WNM,Windsor-Mt. Ascutney Amtrak,43.479908,-72.384985,,,,false
-amtrak,amtrak:ELY,ELY,ELYRIA_AMTRA,ELY,Elyria Amtrak,41.370033,-82.096685,,,,false
-amtrak,amtrak:NCR,NCR,NEW_CARROLLT,NCR,New Carrollton Amtrak Station,38.948098,-76.871494,,,,false
-amtrak,amtrak:SLQ,SLQ,ST_LAMBERT_A,SLQ,St-Lambert Amtrak Station,45.498896,-73.507287,,,,false
-amtrak,amtrak:SYR,SYR,SYRACUSE_REG,SYR,Syracuse Regional Transportation Center,43.076548,-76.169244,,,,false
+amtrak,amtrak:FAY,FAY,FAYETTEVILLE,FAY,Fayetteville Amtrak Station,35.054993,-78.884788,,,,false
+amtrak,amtrak:HPT,HPT,HIGH_POINT,HPT,High Point,35.957128,-80.006097,,,,false
+amtrak,amtrak:ARD,ARD,ARDMORE_AMTR,ARD,Ardmore Amtrak Station,40.008278,-75.290399,,,,false
 amtrak,amtrak:RVR,RVR,RICHMOND_STA,RVR,Richmond Staples Mill Road Amtrak Station,37.617693,-77.496943,,,,false
-amtrak,amtrak:BWI,BWI,BWI_THURGOOD,BWI,Bwi Thurgood Marshall Airport Station,39.192362,-76.6943,,,,false
-amtrak,amtrak:PLB,PLB,PLATTSBURGH_,PLB,Plattsburgh Amtrak Station,44.696728,-73.446284,,,,false
-amtrak,amtrak:FBG,FBG,FREDERICKSBU,FBG,Fredericksburg Amtrak,38.298413,-77.457203,,,,false
-amtrak,amtrak:STS,STS,STS,STS,New Haven State Street,41.305253,-72.922086,,,,true
-amtrak,amtrak:KIN,KIN,KINGSTON_AMT,KIN,Kingston Amtrak Station,41.483959,-71.560597,,,,false
-amtrak,amtrak:TWO,TWO,TORONTO,TWO,Toronto,43.645427,-79.380762,,,,false
-amtrak,amtrak:ROC,ROC,ROCHESTER,ROC,Rochester,43.163411,-77.608057,,,,false
-amtrak,amtrak:NFL,NFL,NIAGARA_FALL,NFL,Niagara Falls Amtrak Station,43.109908,-79.055276,,,,false
-amtrak,amtrak:EWR,EWR,NEWARK_LIBER,EWR,Newark Liberty International Airport,40.696618,-74.18229,,,,false
-amtrak,amtrak:WSP,WSP,WPT,WSP,Westport,44.187288,-73.451773,,,,false
-amtrak,amtrak:WAB,WAB,WATERBURY_ST,WAB,Waterbury-Stowe Amtrak Station,44.335011,-72.751806,,,,false
-amtrak,amtrak:HLK,HLK,HOLYOKE_AMTR,HLK,Holyoke Amtrak,42.204156,-72.602309,,,,false
-amtrak,amtrak:MYS,MYS,MYS,MYS,Mystic,41.350934,-71.963093,,,,true
-amtrak,amtrak:NHT,NHT,NORTHAMPTON,NHT,Northampton,42.318858,-72.626379,,,,false
+amtrak,amtrak:PHN,PHN,NORTH_PHILAD,PHN,North Philadelphia Amtrak Station,39.99678,-75.155114,,,,false
+amtrak,amtrak:SAL,SAL,SALISBURY,SAL,Salisbury,35.667496,-80.466323,,,,false
+amtrak,amtrak:QAN,QAN,QUANTICO_AMT,QAN,Quantico Amtrak,38.521882,-77.293027,,,,false
+amtrak,amtrak:FED,FED,FORT_EDWARD_,FED,Fort Edward Amtrak,43.269603,-73.58055,,,,false
 amtrak,amtrak:YNY,YNY,YNY,YNY,Yonkers,40.935586,-73.902263,,,,true
-amtrak,amtrak:FTC,FTC,TICONDEROGA_,FTC,Ticonderoga Amtrak,43.853788,-73.389681,,,,false
-amtrak,amtrak:ESX,ESX,ESSEX_JUNCTI,ESX,Essex Junction-Burlington Amtrak Station,44.492466,-73.110277,,,,false
+amtrak,amtrak:NLC,NLC,NLC,NLC,New London,41.354267,-72.093225,,,,true
+amtrak,amtrak:MPR,MPR,MONTPELIER_B,MPR,Montpelier-Berlin Amtrak Station,44.255749,-72.606394,,,,false
+amtrak,amtrak:BHM,BHM,BIRMINGHAM,BHM,Birmingham,33.512937,-86.807023,,,,false
+amtrak,amtrak:MIA,MIA,MIAMI_AMTRAK,MIA,Miami Amtrak Station,25.849554,-80.257759,,,,false
+amtrak,amtrak:DOW,DOW,DOWNINGTOWN_,DOW,Downingtown Amtrak,40.002193,-75.710775,,,,false
+amtrak,amtrak:MYS,MYS,MYS,MYS,Mystic,41.350934,-71.963093,,,,true
+amtrak,amtrak:FTL,FTL,FORT_LAUDERD,FTL,Fort Lauderdale Amtrak Station,26.119256,-80.17,,,,false
+amtrak,amtrak:RNK,RNK,ROANOKE,RNK,Roanoke,37.273185,-79.941795,,,,false
+amtrak,amtrak:WDB,WDB,WOODBRIDGE_A,WDB,Woodbridge Amtrak,38.658915,-77.247852,,,,false
+amtrak,amtrak:MBY,MBY,MIDDLEBURY,MBY,Middlebury,44.017425,-73.169775,,,,false
+amtrak,amtrak:PGH,PGH,PITTSBURGH_A,PGH,Pittsburgh Amtrak Station,40.444738,-79.992307,,,,false
+amtrak,amtrak:DAN,DAN,DANVILLE_AMT,DAN,Danville Amtrak Station,36.58409,-79.383968,,,,false
+amtrak,amtrak:NFL,NFL,NIAGARA_FALL,NFL,Niagara Falls Amtrak Station,43.109908,-79.055276,,,,false
+amtrak,amtrak:BER,BER,BER,BER,Berlin,41.635595,-72.765274,,,,true

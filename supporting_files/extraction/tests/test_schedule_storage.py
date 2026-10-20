@@ -21,11 +21,15 @@ class ScheduleStorageTests(unittest.TestCase):
             data = b"station_id,station_name\r\nPOU,Poughkeepsie\r\n"
             (root / "moose_train_schedule.csv.gz").write_bytes(gzip.compress(data, mtime=0))
             (exports / "mnr_gtfs_test.csv.gz").write_bytes(gzip.compress(data, mtime=0))
+            staging = root / "supporting_files/staging/njt"
+            staging.mkdir(parents=True)
+            (staging / "unreleased.csv").write_text("Unverified NJ Transit data")
             with patch.object(MODULE, "ROOT", root):
                 MODULE.main()
             self.assertEqual((root / "_site/moose_train_schedule.csv").read_bytes(), data)
             self.assertEqual(gzip.decompress((root / "_site/supporting_files/extraction/source_csvs/mnr_gtfs_test.csv.gz").read_bytes()), data)
             self.assertFalse((root / "_site/moose_train_schedule.csv.gz").exists())
+            self.assertFalse((root / "_site/supporting_files/staging").exists())
 
     def test_extractor_gzip_is_lossless_and_deterministic(self):
         from extract_timetables import write_csv

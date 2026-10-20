@@ -114,6 +114,7 @@ MNR_EXPANSION_STATION_IDS = {
 }
 
 AMTRAK_SCOPE_STOP_IDS = {
+    "NWK", "EWR", "MET", "PJC", "TRE",
     "YNY", "CRT", "POU",
     "BER",  # Berlin, CT
     "BRP",  # Bridgeport, CT
@@ -197,6 +198,10 @@ class GtfsFeedConfig:
     station_id_map: dict[str, str] = field(default_factory=dict)
     default_service_name: str = ""
     default_route_name: str = ""
+    train_number_fields: tuple[str, ...] = ("trip_short_name", "trip_id")
+    exclude_block_ids: set[str] = field(default_factory=set)
+    expected_stop_names: dict[str, str] = field(default_factory=dict)
+    validate_output: Callable[[dict, list], None] | None = None
 
     def zip_name(self) -> str:
         return self.zip_filename or f"{self.feed_id}.zip"
@@ -217,7 +222,9 @@ class GtfsImportResult:
 
 
 def default_feed_configs() -> list[GtfsFeedConfig]:
+    from njt import njt_feed_config
     return [
+        njt_feed_config(),
         GtfsFeedConfig(
             feed_id="lirr",
             operator_name="LIRR",
@@ -306,8 +313,10 @@ def default_feed_configs() -> list[GtfsFeedConfig]:
             min_in_scope_stops=2,
             emit_only_in_scope_stops=True,
             stop_name_aliases=AMTRAK_STOP_ALIASES,
-            station_id_map=MNR_EXPANSION_STATION_IDS,
+            station_id_map={**MNR_EXPANSION_STATION_IDS, "Newark Penn": "NWK", "Newark Airport Rail Station": "EWR", "Metropark": "MET", "Princeton Junction": "PJC", "Trenton": "TRE"},
             stop_id_station_names={
+                "NWK": "Newark Penn", "EWR": "Newark Airport Rail Station", "MET": "Metropark",
+                "PJC": "Princeton Junction", "TRE": "Trenton",
                 "YNY": "Yonkers",
                 "CRT": "Croton-Harmon",
                 "POU": "Poughkeepsie",
@@ -393,6 +402,8 @@ def import_feed(root: Path, config: GtfsFeedConfig, station_id_for: Callable[[st
             validate_required_files(tmp_feed)
             tables = read_gtfs_tables(tmp_feed, warnings)
             normalized, rows, source_name = normalize_feed(config, zip_path, tables, imported_at, station_id_for, warnings)
+            if config.validate_output:
+                config.validate_output(normalized, rows)
             replace_feed_dir(feed_dir, tmp_feed)
     except Exception as exc:
         errors.append(str(exc))
@@ -503,6 +514,11 @@ def normalize_feed(
         if excluded_non_rail_trips:
             warnings.append(f"Excluded {excluded_non_rail_trips} trips on route_type outside configured scope: {', '.join(sorted(config.route_filter.include_route_types))}")
     trips = [row for row in tables["trips.txt"] if row.get("route_id") in included_routes]
+    if config.exclude_block_ids:
+        excluded_count = sum(trip.get("block_id", "") in config.exclude_block_ids for trip in trips)
+        trips = [trip for trip in trips if trip.get("block_id", "") not in config.exclude_block_ids]
+        if excluded_count:
+            warnings.append(f"Excluded {excluded_count} trips with configured block_ids: {', '.join(sorted(config.exclude_block_ids))}")
     trip_ids = {row["trip_id"] for row in trips}
     stop_times = [
         row for row in tables["stop_times.txt"]
@@ -534,6 +550,10 @@ def normalize_feed(
     if excluded_stop_count:
         warnings.append(f"Excluded {excluded_stop_count} stop_times for configured non-public stop_ids: {', '.join(sorted(config.exclude_stop_ids))}")
     stops_by_id = {row["stop_id"]: row for row in tables["stops.txt"]}
+    for stop_id in stop_ids:
+        expected_name = config.expected_stop_names.get(stop_id)
+        if expected_name is not None and stops_by_id.get(stop_id, {}).get("stop_name") != expected_name:
+            raise ValueError(f"GTFS source stop name changed for {stop_id}; review explicit station mapping")
     calendars = [row for row in tables["calendar.txt"] if row.get("service_id") in service_ids]
     calendar_dates = [row for row in tables["calendar_dates.txt"] if row.get("service_id") in service_ids]
     shape_ids = {trip.get("shape_id", "") for trip in trips}
@@ -743,7 +763,7 @@ def derive_stop_event_rows(config, routes, trips, stop_times, stops_by_id, servi
                 "agency": config.operator_name,
                 "service_name": service_name_for(config, route),
                 "route_name": route_name_for(config, route),
-                "train_number": trip.get("trip_short_name") or trip["trip_id"],
+                "train_number": next((trip[key] for key in config.train_number_fields if trip.get(key)), trip["trip_id"]),
                 "direction": direction,
                 "station_id": canonical_station_id(config, station_name, station_id_for),
                 "station_name": station_name,

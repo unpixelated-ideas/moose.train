@@ -6,9 +6,9 @@ import gzip
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def main():
-    output = ROOT / "_site"
-    output.mkdir(exist_ok=False)
+def main(output=None):
+    output = output or ROOT / "_site"
+    output.mkdir(parents=True, exist_ok=False)
     for pattern in ("*.html", "*.ico", "*.png", "*.webmanifest", "CNAME", ".nojekyll", "moose_train_schedule.csv"):
         for source in ROOT.glob(pattern):
             shutil.copy2(source, output / source.name)
@@ -21,4 +21,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, help="New output directory for a local publication check")
+    main(parser.parse_args().output)

@@ -29,3 +29,6 @@ coverage/
 
 # Plain schedule is restored only for publication; track the lossless gzip snapshot.
 /moose_train_schedule.csv
+
+# Unreleased operator imports must not enter public schedule assets.
+/supporting_files/staging/

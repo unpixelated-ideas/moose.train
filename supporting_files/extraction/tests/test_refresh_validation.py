@@ -24,15 +24,28 @@ class RefreshValidationTests(unittest.TestCase):
                               record_counts=json.dumps({"stop_times": 10}))
                          for feed in sorted(MODULE.EXPECTED)]
         self.rows = [dict(source_pdf=feed + "_gtfs_example.zip", service_dates="",
-                          service_end_date="2026-11-01", service_name="") for feed in sorted(MODULE.EXPECTED)]
+                          service_end_date="2026-11-01", service_name="", train_number="100") for feed in sorted(MODULE.EXPECTED)]
 
         for name in ["Hudson Line", "Harlem Line", "New Haven Line", "New Canaan Branch", "Danbury Branch", "Waterbury Branch"]:
             self.rows.append(dict(source_pdf="mnr_gtfs_example.zip", service_dates="",
-                                  service_end_date="2026-11-01", service_name=name))
+                                  service_end_date="2026-11-01", service_name=name, train_number="100"))
+        for name in ["Northeast Corridor", "Port Jervis Line", "Pascack Valley Line"]:
+            self.rows.append(dict(source_pdf="njt_gtfs_example.zip", service_dates="",
+                                  service_end_date="2026-11-01", service_name=name, train_number="100"))
 
     def test_missing_hudson_line_rejected(self):
         self.rows = [row for row in self.rows if row["service_name"] != "Hudson Line"]
         with self.assertRaisesRegex(ValueError, "Metro-North service for: Hudson Line"):
+            self.check()
+
+    def test_missing_njt_line_rejected(self):
+        self.rows = [row for row in self.rows if row["service_name"] != "Pascack Valley Line"]
+        with self.assertRaisesRegex(ValueError, "NJ Transit service for: Pascack Valley Line"):
+            self.check()
+
+    def test_replacement_bus_cannot_be_published_as_a_train(self):
+        next(row for row in self.rows if row["source_pdf"].startswith("njt_"))["train_number"] = "PJBUS"
+        with self.assertRaisesRegex(ValueError, "replacement bus"):
             self.check()
 
     def test_expired_harlem_line_rejected(self):
@@ -70,7 +83,7 @@ class RefreshValidationTests(unittest.TestCase):
 
     def test_missing_product_rejected(self):
         self.metadata.pop()
-        with self.assertRaisesRegex(ValueError, "exactly five"):
+        with self.assertRaisesRegex(ValueError, "exactly six"):
             self.check()
 
     def test_empty_feed_rejected(self):

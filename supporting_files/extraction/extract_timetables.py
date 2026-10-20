@@ -192,7 +192,7 @@ class PdfSpec:
     revision: str
 
 
-def main() -> None:
+def main(*, download: bool = True) -> None:
     specs = discover_and_rename_pdfs()
     rows = []
     summary = []
@@ -225,7 +225,7 @@ def main() -> None:
             "timetable_revision_date": spec.revision,
         })
 
-    gtfs_rows, _gtfs_metadata, gtfs_results = import_configured_feeds(ROOT, station_id_for, download=True)
+    gtfs_rows, _gtfs_metadata, gtfs_results = import_configured_feeds(ROOT, station_id_for, download=download)
     failed_feeds = [result.feed_id for result in gtfs_results if result.errors]
     if failed_feeds:
         raise RuntimeError(f"GTFS refresh failed for {', '.join(failed_feeds)}; existing schedule CSV preserved. See gtfs_import_metadata.csv.")
@@ -1919,4 +1919,8 @@ def apply_mnr_new_haven_overlay_fixture(rows: list[dict[str, str]]) -> list[dict
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description="Prepare the combined rail schedule")
+    parser.add_argument("--no-download", action="store_true", help="Rebuild using saved official GTFS ZIPs")
+    args = parser.parse_args()
+    main(download=not args.no_download)

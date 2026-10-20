@@ -38,6 +38,8 @@ jobs:
         run: python supporting_files/extraction/extract_timetables.py
       - name: Validate feed coverage
         run: python supporting_files/scripts/validate_refresh.py
+      - name: Prepare corroborated adult NJ Transit fares
+        run: python supporting_files/extraction/build_njt_fares.py
       - name: Update public refresh dates from import records
         run: python supporting_files/scripts/update_refresh_labels.py
       - name: Build and validate browser search
@@ -47,6 +49,8 @@ jobs:
           node supporting_files/tests/compact_schedule.test.js
           node supporting_files/tests/lirr.test.js
           node supporting_files/tests/mnr_expansion.test.js
+          node supporting_files/tests/transfer_timing.test.js
+          node supporting_files/tests/njt.test.js
       - name: Prepare public site
         run: python supporting_files/scripts/package_site.py
       - uses: actions/upload-pages-artifact@v3

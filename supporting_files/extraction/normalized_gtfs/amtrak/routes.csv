@@ -1,11 +1,18 @@
 feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+amtrak,amtrak:36923,36923,amtrak:51,51,,Crescent,2,Crescent,Crescent
 amtrak,amtrak:88,88,amtrak:51,51,,Northeast Regional,2,Northeast Regional,Northeast Regional
 amtrak,amtrak:36921,36921,amtrak:51,51,,Empire Service,2,Empire Service,Empire Service
+amtrak,amtrak:58,58,amtrak:51,51,,Cardinal,2,Cardinal,Cardinal
+amtrak,amtrak:64,64,amtrak:51,51,,Pennsylvanian,2,Pennsylvanian,Pennsylvanian
 amtrak,amtrak:68,68,amtrak:51,51,,Maple Leaf,2,Maple Leaf,Maple Leaf
+amtrak,amtrak:69,69,amtrak:51,51,,Palmetto,2,Palmetto,Palmetto
 amtrak,amtrak:81,81,amtrak:51,51,,Lake Shore Limited,2,Lake Shore Limited,Lake Shore Limited
+amtrak,amtrak:85,85,amtrak:51,51,,Carolinian,2,Carolinian,Carolinian
 amtrak,amtrak:90,90,amtrak:51,51,,Vermonter,2,Vermonter,Vermonter
+amtrak,amtrak:94,94,amtrak:51,51,,Keystone Service,2,Keystone Service,Keystone Service
 amtrak,amtrak:95,95,amtrak:51,51,,Adirondack,2,Adirondack,Adirondack
 amtrak,amtrak:36949,36949,amtrak:51,51,,Ethan Allen Express,2,Ethan Allen Express,Ethan Allen Express
 amtrak,amtrak:40751,40751,amtrak:51,51,,Acela,2,Acela,Acela
 amtrak,amtrak:41042,41042,amtrak:51,51,,Amtrak Hartford Line,2,Amtrak Hartford Line,Amtrak Hartford Line
 amtrak,amtrak:41044,41044,amtrak:51,51,,Valley Flyer,2,Valley Flyer,Valley Flyer
+amtrak,amtrak:42947,42947,amtrak:51,51,,Silver Meteor,2,Silver Meteor,Silver Meteor

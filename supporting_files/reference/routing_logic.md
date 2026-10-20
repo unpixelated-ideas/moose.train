@@ -16,7 +16,7 @@ This document records routing sanity rules used by the `index.html` prototype. T
 
 ## Transfer Timing
 
-- Scheduled transfer waits must be between 5 and 180 minutes, inclusive.
+- Scheduled transfer waits use station minimums: 20 minutes at New York Penn, 15 at Grand Central, and 5 at other supported hubs. The maximum remains 180 minutes. The one-transfer ceiling applies uniformly to every operator.
 - If a search only finds otherwise valid connections above that maximum, explain that no connections have a wait of three hours or less and suggest another time or date.
 - GTFS times after 24:00 belong to the original service date, not the calendar date at the boarding stop.
 - Live predictions retain their calendar-day offset relative to the service date; never subtract a clock-only prediction from a scheduled service-day time.

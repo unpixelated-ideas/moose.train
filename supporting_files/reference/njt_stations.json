@@ -1,0 +1,450 @@
+{
+  "100": {
+    "fare_station_code": "457",
+    "fare_station_title": "Nanuet Station",
+    "source_name": "NANUET",
+    "station_id": "NJT_100",
+    "station_name": "Nanuet"
+  },
+  "103": {
+    "fare_station_code": "144",
+    "fare_station_title": "New Brunswick Station",
+    "source_name": "NEW BRUNSWICK",
+    "station_id": "NJT_103",
+    "station_name": "New Brunswick"
+  },
+  "105": {
+    "fare_station_code": "0",
+    "fare_station_title": "New York Penn Station",
+    "source_name": "NEW YORK PENN STATION",
+    "station_id": "NYP",
+    "station_name": "New York Penn"
+  },
+  "107": {
+    "fare_station_code": "100",
+    "fare_station_title": "Newark Penn Station",
+    "source_name": "NEWARK PENN STATION",
+    "station_id": "NWK",
+    "station_name": "Newark Penn"
+  },
+  "109": {
+    "fare_station_code": "102",
+    "fare_station_title": "North Elizabeth Station",
+    "source_name": "NORTH ELIZABETH",
+    "station_id": "NJT_109",
+    "station_name": "North Elizabeth"
+  },
+  "110": {
+    "fare_station_code": "430",
+    "fare_station_title": "New Bridge Landing Station",
+    "source_name": "NEW BRIDGE LANDING",
+    "station_id": "NJT_110",
+    "station_name": "New Bridge Landing"
+  },
+  "111": {
+    "fare_station_code": "436",
+    "fare_station_title": "Oradell Station",
+    "source_name": "ORADELL",
+    "station_id": "NJT_111",
+    "station_name": "Oradell"
+  },
+  "113": {
+    "fare_station_code": "796",
+    "fare_station_title": "Otisville Station",
+    "source_name": "OTISVILLE",
+    "station_id": "NJT_113",
+    "station_name": "Otisville"
+  },
+  "114": {
+    "fare_station_code": "446",
+    "fare_station_title": "Park Ridge Station",
+    "source_name": "PARK RIDGE",
+    "station_id": "NJT_114",
+    "station_name": "Park Ridge"
+  },
+  "115": {
+    "fare_station_code": "716",
+    "fare_station_title": "Passaic Station",
+    "source_name": "PASSAIC",
+    "station_id": "NJT_115",
+    "station_name": "Passaic"
+  },
+  "116": {
+    "fare_station_code": "728",
+    "fare_station_title": "Paterson Station",
+    "source_name": "PATERSON",
+    "station_id": "NJT_116",
+    "station_name": "Paterson"
+  },
+  "118": {
+    "fare_station_code": "455",
+    "fare_station_title": "Pearl River Station",
+    "source_name": "PEARL RIVER",
+    "station_id": "NJT_118",
+    "station_name": "Pearl River"
+  },
+  "121": {
+    "fare_station_code": "724",
+    "fare_station_title": "Plauderville Station",
+    "source_name": "PLAUDERVILLE",
+    "station_id": "NJT_121",
+    "station_name": "Plauderville"
+  },
+  "123": {
+    "fare_station_code": "797",
+    "fare_station_title": "Port Jervis Station",
+    "source_name": "PORT JERVIS",
+    "station_id": "NJT_123",
+    "station_name": "Port Jervis"
+  },
+  "125": {
+    "fare_station_code": "164",
+    "fare_station_title": "Princeton Junction Station",
+    "source_name": "PRINCETON JCT.",
+    "station_id": "PJC",
+    "station_name": "Princeton Junction"
+  },
+  "126": {
+    "fare_station_code": "732",
+    "fare_station_title": "Radburn Station",
+    "source_name": "RADBURN",
+    "station_id": "NJT_126",
+    "station_name": "Radburn"
+  },
+  "127": {
+    "fare_station_code": "116",
+    "fare_station_title": "Rahway Station",
+    "source_name": "RAHWAY",
+    "station_id": "NJT_127",
+    "station_name": "Rahway"
+  },
+  "128": {
+    "fare_station_code": "752",
+    "fare_station_title": "Ramsey Main Street Station",
+    "source_name": "RAMSEY",
+    "station_id": "NJT_128",
+    "station_name": "Ramsey"
+  },
+  "131": {
+    "fare_station_code": "742",
+    "fare_station_title": "Ridgewood Station",
+    "source_name": "RIDGEWOOD",
+    "station_id": "NJT_131",
+    "station_name": "Ridgewood"
+  },
+  "132": {
+    "fare_station_code": "432",
+    "fare_station_title": "River Edge Station",
+    "source_name": "RIVER EDGE",
+    "station_id": "NJT_132",
+    "station_name": "River Edge"
+  },
+  "134": {
+    "fare_station_code": "712",
+    "fare_station_title": "Rutherford Station",
+    "source_name": "RUTHERFORD",
+    "station_id": "NJT_134",
+    "station_name": "Rutherford"
+  },
+  "135": {
+    "fare_station_code": "793",
+    "fare_station_title": "Salisbury Mills Cornwall Station",
+    "source_name": "SALISBURY MILLS-CORNWALL",
+    "station_id": "NJT_135",
+    "station_name": "Salisbury Mills-Cornwall"
+  },
+  "137": {
+    "fare_station_code": "790",
+    "fare_station_title": "Sloatsburg Station",
+    "source_name": "SLOATSBURG",
+    "station_id": "NJT_137",
+    "station_name": "Sloatsburg"
+  },
+  "142": {
+    "fare_station_code": "459",
+    "fare_station_title": "Spring Valley Station",
+    "source_name": "SPRING VALLEY",
+    "station_id": "NJT_142",
+    "station_name": "Spring Valley"
+  },
+  "144": {
+    "fare_station_code": "758",
+    "fare_station_title": "Suffern Station",
+    "source_name": "SUFFERN",
+    "station_id": "NJT_144",
+    "station_name": "Suffern"
+  },
+  "146": {
+    "fare_station_code": "418",
+    "fare_station_title": "Teterboro Station",
+    "source_name": "TETERBORO",
+    "station_id": "NJT_146",
+    "station_name": "Teterboro"
+  },
+  "148": {
+    "fare_station_code": "180",
+    "fare_station_title": "Trenton Transit Center",
+    "source_name": "TRENTON TRANSIT CENTER",
+    "station_id": "TRE",
+    "station_name": "Trenton"
+  },
+  "149": {
+    "fare_station_code": "791",
+    "fare_station_title": "Tuxedo Station",
+    "source_name": "TUXEDO",
+    "station_id": "NJT_149",
+    "station_name": "Tuxedo"
+  },
+  "151": {
+    "fare_station_code": "748",
+    "fare_station_title": "Waldwick Station",
+    "source_name": "WALDWICK",
+    "station_id": "NJT_151",
+    "station_name": "Waldwick"
+  },
+  "156": {
+    "fare_station_code": "440",
+    "fare_station_title": "Westwood Station",
+    "source_name": "WESTWOOD",
+    "station_id": "NJT_156",
+    "station_name": "Westwood"
+  },
+  "159": {
+    "fare_station_code": "444",
+    "fare_station_title": "Woodcliff Lake Station",
+    "source_name": "WOODCLIFF LAKE",
+    "station_id": "NJT_159",
+    "station_name": "Woodcliff Lake"
+  },
+  "160": {
+    "fare_station_code": "412",
+    "fare_station_title": "Wood Ridge Station",
+    "source_name": "WOOD-RIDGE",
+    "station_id": "NJT_160",
+    "station_name": "Wood-Ridge"
+  },
+  "25": {
+    "fare_station_code": "730",
+    "fare_station_title": "Broadway Station Fair Lawn",
+    "source_name": "BROADWAY",
+    "station_id": "NJT_25",
+    "station_name": "Broadway"
+  },
+  "26": {
+    "fare_station_code": "794",
+    "fare_station_title": "Campbell Hall Station",
+    "source_name": "CAMPBELL HALL",
+    "station_id": "NJT_26",
+    "station_name": "Campbell Hall"
+  },
+  "29": {
+    "fare_station_code": "722",
+    "fare_station_title": "Clifton Station",
+    "source_name": "CLIFTON",
+    "station_id": "NJT_29",
+    "station_name": "Clifton"
+  },
+  "3": {
+    "fare_station_code": "750",
+    "fare_station_title": "Allendale Station",
+    "source_name": "ALLENDALE",
+    "station_id": "NJT_3",
+    "station_name": "Allendale"
+  },
+  "32905": {
+    "fare_station_code": "176",
+    "fare_station_title": "Hamilton Station",
+    "source_name": "HAMILTON",
+    "station_id": "NJT_32905",
+    "station_name": "Hamilton"
+  },
+  "32906": {
+    "fare_station_code": "146",
+    "fare_station_title": "Jersey Avenue Station (Northeast Corridor)",
+    "source_name": "JERSEY AVE.",
+    "station_id": "NJT_32906",
+    "station_name": "Jersey Avenue"
+  },
+  "33": {
+    "fare_station_code": "710",
+    "fare_station_title": "Delawanna Station",
+    "source_name": "DELAWANNA",
+    "station_id": "NJT_33",
+    "station_name": "Delawanna"
+  },
+  "37953": {
+    "fare_station_code": "101",
+    "fare_station_title": "Newark Airport Rail Station",
+    "source_name": "NEWARK AIRPORT RAILROAD STATION",
+    "station_id": "EWR",
+    "station_name": "Newark Airport Rail Station"
+  },
+  "38": {
+    "fare_station_code": "140",
+    "fare_station_title": "Edison Station",
+    "source_name": "EDISON STATION",
+    "station_id": "NJT_38",
+    "station_name": "Edison"
+  },
+  "38174": {
+    "fare_station_code": "10",
+    "fare_station_title": "Secaucus Junction Station",
+    "source_name": "SECAUCUS LOWER LEVEL",
+    "station_id": "SEC",
+    "station_name": "Secaucus Junction"
+  },
+  "38187": {
+    "fare_station_code": "10",
+    "fare_station_title": "Secaucus Junction Station",
+    "source_name": "SECAUCUS UPPER LEVEL",
+    "station_id": "SEC",
+    "station_name": "Secaucus Junction"
+  },
+  "38417": {
+    "fare_station_code": "754",
+    "fare_station_title": "Ramsey Route 17 Station",
+    "source_name": "RAMSEY ROUTE 17 STATION",
+    "station_id": "NJT_38417",
+    "station_name": "Ramsey Route 17"
+  },
+  "41": {
+    "fare_station_code": "104",
+    "fare_station_title": "Elizabeth Station",
+    "source_name": "ELIZABETH",
+    "station_id": "NJT_41",
+    "station_name": "Elizabeth"
+  },
+  "42": {
+    "fare_station_code": "438",
+    "fare_station_title": "Emerson Station",
+    "source_name": "EMERSON",
+    "station_id": "NJT_42",
+    "station_name": "Emerson"
+  },
+  "43": {
+    "fare_station_code": "422",
+    "fare_station_title": "Essex Street Station (PVL)",
+    "source_name": "ESSEX STREET",
+    "station_id": "NJT_43",
+    "station_name": "Essex Street"
+  },
+  "43599": {
+    "fare_station_code": "714",
+    "fare_station_title": "Wesmont Station",
+    "source_name": "WESMONT",
+    "station_id": "NJT_43599",
+    "station_name": "Wesmont"
+  },
+  "46": {
+    "fare_station_code": "718",
+    "fare_station_title": "Garfield Station",
+    "source_name": "GARFIELD",
+    "station_id": "NJT_46",
+    "station_name": "Garfield"
+  },
+  "5": {
+    "fare_station_code": "424",
+    "fare_station_title": "Anderson Street Station",
+    "source_name": "ANDERSON STREET",
+    "station_id": "NJT_5",
+    "station_name": "Anderson Street"
+  },
+  "51": {
+    "fare_station_code": "739",
+    "fare_station_title": "Glen Rock Boro Hall Station",
+    "source_name": "GLEN ROCK BORO HALL",
+    "station_id": "NJT_51",
+    "station_name": "Glen Rock Boro Hall"
+  },
+  "52": {
+    "fare_station_code": "738",
+    "fare_station_title": "Glen Rock Main Line Station",
+    "source_name": "GLEN ROCK MAIN LINE",
+    "station_id": "NJT_52",
+    "station_name": "Glen Rock Main Line"
+  },
+  "57": {
+    "fare_station_code": "792",
+    "fare_station_title": "Harriman Station",
+    "source_name": "HARRIMAN",
+    "station_id": "NJT_57",
+    "station_name": "Harriman"
+  },
+  "58": {
+    "fare_station_code": "736",
+    "fare_station_title": "Hawthorne Station",
+    "source_name": "HAWTHORNE",
+    "station_id": "NJT_58",
+    "station_name": "Hawthorne"
+  },
+  "62": {
+    "fare_station_code": "442",
+    "fare_station_title": "Hillsdale Station",
+    "source_name": "HILLSDALE",
+    "station_id": "NJT_62",
+    "station_name": "Hillsdale"
+  },
+  "63": {
+    "fare_station_code": "999",
+    "fare_station_title": "Hoboken Terminal",
+    "source_name": "HOBOKEN",
+    "station_id": "NJT_63",
+    "station_name": "Hoboken"
+  },
+  "64": {
+    "fare_station_code": "746",
+    "fare_station_title": "Ho-Ho-Kus Station",
+    "source_name": "HOHOKUS",
+    "station_id": "NJT_64",
+    "station_name": "Ho-Ho-Kus"
+  },
+  "70": {
+    "fare_station_code": "110",
+    "fare_station_title": "Linden Station",
+    "source_name": "LINDEN",
+    "station_id": "NJT_70",
+    "station_name": "Linden"
+  },
+  "75": {
+    "fare_station_code": "708",
+    "fare_station_title": "Lyndhurst Station",
+    "source_name": "LYNDHURST",
+    "station_id": "NJT_75",
+    "station_name": "Lyndhurst"
+  },
+  "78": {
+    "fare_station_code": "756",
+    "fare_station_title": "Mahwah Station",
+    "source_name": "MAHWAH",
+    "station_id": "NJT_78",
+    "station_name": "Mahwah"
+  },
+  "83": {
+    "fare_station_code": "126",
+    "fare_station_title": "Metropark Station",
+    "source_name": "METROPARK",
+    "station_id": "MET",
+    "station_name": "Metropark"
+  },
+  "84": {
+    "fare_station_code": "134",
+    "fare_station_title": "Metuchen Station",
+    "source_name": "METUCHEN",
+    "station_id": "NJT_84",
+    "station_name": "Metuchen"
+  },
+  "86": {
+    "fare_station_code": "795",
+    "fare_station_title": "Middletown New York Station",
+    "source_name": "MIDDLETOWN NY",
+    "station_id": "NJT_86",
+    "station_name": "Middletown, NY"
+  },
+  "90": {
+    "fare_station_code": "448",
+    "fare_station_title": "Montvale Station",
+    "source_name": "MONTVALE",
+    "station_id": "NJT_90",
+    "station_name": "Montvale"
+  }
+}

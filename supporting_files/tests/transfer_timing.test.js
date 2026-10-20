@@ -39,7 +39,7 @@ for(const [wait,count] of [[4,0],[5,1],[180,1],[181,0],[339,0]]) {
 }
 // Station minimums apply regardless of operator, including same-operator transfers.
 for (const [station, minimum] of [['NYP',20], ['GCT',15], ['STM',5]]) {
- for (const agency of ['LIRR','Metro-North','Amtrak']) {
+ for (const agency of ['LIRR','Metro-North','Amtrak','NJ Transit']) {
   for (const wait of [minimum-1, minimum]) {
    const inbound={...first,toId:station,trip:{key:'a',agency}};
    const outbound={trip:{key:'b',agency},fromId:station,toId:'MYS',departure:1495+wait,arrival:1608+wait};
@@ -48,6 +48,18 @@ for (const [station, minimum] of [['NYP',20], ['GCT',15], ['STM',5]]) {
    assert.equal(context.findRoutes('ORIGIN','MYS',1400,'depart',date).length,wait>=minimum?1:0,`${station} ${agency} wait ${wait}`);
   }
  }
+}
+// The same one-transfer maximum applies to staged NJ Transit and existing operators.
+for (const agencies of [['NJ Transit','NJ Transit','Amtrak'], ['LIRR','Metro-North','CTrail']]) {
+ context.transferStationIds=new Set(['SEC','NYP']);
+ const chain=[
+  {trip:{key:'a',agency:agencies[0]},fromId:'ORIGIN',toId:'SEC',departure:480,arrival:540},
+  {trip:{key:'b',agency:agencies[1]},fromId:'SEC',toId:'NYP',departure:550,arrival:565},
+  {trip:{key:'c',agency:agencies[2]},fromId:'NYP',toId:'DEST',departure:590,arrival:650},
+ ];
+ context.index=new Map([['ORIGIN',[chain[0]]],['SEC',[chain[1]]],['NYP',[chain[2]]]]);
+ assert.equal(context.findRoutes('ORIGIN','NYP',480,'depart',date).length,1,'One transfer remains supported');
+ assert.equal(context.findRoutes('ORIGIN','DEST',480,'depart',date).length,0,'Two transfers remain unsupported for every operator');
 }
 context.transferStationIds=new Set(['STM']);
 context.index=new Map([['GCT',[first]],['STM',[{trip:{key:'b'},fromId:'STM',toId:'MYS',departure:1834,arrival:1900}]]]);

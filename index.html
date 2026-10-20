@@ -1472,7 +1472,9 @@
       .result-title { font-size: 0.88rem; color: var(--muted); line-height: 1.45; }
       .result-meta { gap: 6px 12px; }
       .journey-time { flex-basis: 100%; font-size: clamp(1rem, 3.8vw, 1.25rem); }
-      .fare-summary { flex-basis: 100%; font-size: 0.82rem; }
+      .fare-summary { flex-basis: 100%; font-size: 0.82rem; position: relative; }
+      .fare-summary .fare-info { position: static; }
+      .fare-summary .fare-info .live-indicator-tooltip { left: 0; right: auto; }
       .legs { gap: 12px; }
       .leg { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding-top: 14px; }
       .leg .time { grid-column: 1; grid-row: 1; white-space: normal; line-height: 1.45; }
@@ -1788,6 +1790,18 @@
         <span data-i18n="updateLogDataRefresh">Last refreshed October 19, 2026</span>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v095-title">
+          <h3 id="update-log-v095-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.5</span>
+            <span class="update-log-release-date" data-i18n="updateLogV095Date">October 20, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogNjtCoverage">You can now search trips on NJ Transit commuter rail lines.</li>
+            <li data-i18n-html="updateLogV095WestHudson">Added Metro-North's west-of-Hudson lines: Port Jervis and Pascack Valley.</li>
+            <li data-i18n-html="updateLogV095KoreanStations">Fixed a bug that kept recently added stations from displaying correctly in Korean.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v094-title">
           <h3 id="update-log-v094-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.4</span>
@@ -1992,9 +2006,10 @@
       <p class="search-loading-note" data-i18n="firstSearchLoadNote">This only takes a moment on your first search.</p>
     </div>
   </div>
+  <script src="supporting_files/assets/njt_fares.js?v=1f91a37da16b3a55"></script>
   <script>
     const CSV_PATH = "moose_train_schedule.csv";
-    const SEARCH_SCHEDULE_VERSION = "131486412c3bd9f4";
+    const SEARCH_SCHEDULE_VERSION = "cabfb353c959015b";
     const SEARCH_SCHEDULE_PATH = "supporting_files/assets/schedule/search.json";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
     const TRANSFER_BUFFER = 5;
@@ -2507,6 +2522,14 @@
         fareCityTicket: "CityTicket",
         fareOneWay: "One-way",
         fareStandardOneWay: "standard one-way fare",
+        fareUnavailable: "Fare unavailable",
+        updateLogV095Date: "October 20, 2026",
+        updateLogNjtCoverage: "You can now search trips on NJ Transit commuter rail lines.",
+        updateLogV095WestHudson: "Added Metro-North's west-of-Hudson lines: Port Jervis and Pascack Valley.",
+        updateLogV095KoreanStations: "Fixed a bug that kept recently added stations from displaying correctly in Korean.",
+        njtFareChecked: "NJ Transit fare checked {date}",
+        njtThroughFare: "One ticket for both trains",
+        njtAirportFare: "AirTrain airport access included",
         tomorrow: "tomorrow",
         relativeNextDay: "the next day",
         previousDay: "previous day",
@@ -2518,7 +2541,7 @@
         introWhyTitle: "The solution",
         introWhyBody: "moose.train searches participating rail services in one place, making it easy to compare your options side by side.",
         introUseTitle: "Try it now",
-        introUseBody: "Explore rail travel across NYC, Long Island, the Hudson and Harlem lines, and Connecticut.",
+        introUseBody: "Explore rail travel across New York, New Jersey, and Connecticut.",
         learnMoreTitle: "Learn more",
         learnMoreFaq: "FAQs",
         learnMoreTerms: "Terms of Use",
@@ -2667,6 +2690,14 @@
         fareCityTicket: "CityTicket",
         fareOneWay: "편도",
         fareStandardOneWay: "일반 편도 운임",
+        fareUnavailable: "운임 정보 없음",
+        updateLogV095Date: "2026년 10월 20일",
+        updateLogNjtCoverage: "이제 NJ Transit 통근 열차 노선의 여정도 검색할 수 있습니다.",
+        updateLogV095WestHudson: "허드슨강 서쪽을 운행하는 Metro-North의 Port Jervis선과 Pascack Valley선을 추가했습니다.",
+        updateLogV095KoreanStations: "최근 추가된 역이 한국어에서 제대로 표시되지 않던 문제를 수정했습니다.",
+        njtFareChecked: "NJ Transit 운임 확인일: {date}",
+        njtThroughFare: "두 열차에 하나의 승차권 사용",
+        njtAirportFare: "AirTrain 공항 이용료 포함",
         tomorrow: "내일",
         relativeNextDay: "다음 날",
         previousDay: "전날",
@@ -2678,7 +2709,7 @@
         introWhyTitle: "해결책",
         introWhyBody: "moose.train은 참여 철도 서비스를 한곳에서 검색해 선택지를 나란히 비교하기 쉽게 해 줍니다.",
         introUseTitle: "지금 검색해 보세요",
-        introUseBody: "뉴욕시, 롱아일랜드, Hudson 및 Harlem 노선과 코네티컷의 철도 여행을 탐색해 보세요.",
+        introUseBody: "뉴욕, 뉴저지, 코네티컷의 철도 여행을 탐색해 보세요.",
         learnMoreTitle: "더 알아보기",
         learnMoreFaq: "FAQ",
         learnMoreTerms: "이용약관",
@@ -2827,6 +2858,14 @@
         fareCityTicket: "CityTicket",
         fareOneWay: "Solo ida",
         fareStandardOneWay: "tarifa estándar de solo ida",
+        fareUnavailable: "Tarifa no disponible",
+        updateLogV095Date: "20 de octubre de 2026",
+        updateLogNjtCoverage: "Ahora también puedes buscar viajes en las líneas de trenes de cercanías de NJ Transit.",
+        updateLogV095WestHudson: "Añadimos las líneas de Metro-North al oeste del Hudson: Port Jervis y Pascack Valley.",
+        updateLogV095KoreanStations: "Corregimos un error que impedía mostrar correctamente en coreano las estaciones añadidas recientemente.",
+        njtFareChecked: "Tarifa de NJ Transit consultada el {date}",
+        njtThroughFare: "Un boleto para ambos trenes",
+        njtAirportFare: "Incluye el acceso al aeropuerto en AirTrain",
         tomorrow: "mañana",
         relativeNextDay: "el día siguiente",
         previousDay: "día anterior",
@@ -2838,7 +2877,7 @@
         introWhyTitle: "La solución",
         introWhyBody: "moose.train busca servicios ferroviarios participantes en un solo lugar, para que compares tus opciones lado a lado.",
         introUseTitle: "Pruébalo ahora",
-        introUseBody: "Explora viajes en tren por NYC, Long Island, las líneas Hudson y Harlem, y Connecticut.",
+        introUseBody: "Explora viajes en tren por Nueva York, Nueva Jersey y Connecticut.",
         learnMoreTitle: "Más información",
         learnMoreFaq: "Preguntas frecuentes",
         learnMoreTerms: "Términos de uso",
@@ -2905,10 +2944,10 @@
 
     const faqContent = {
       en: [
-        { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City, Long Island, and Connecticut region, bringing together schedules from Amtrak, Long Island Rail Road (LIRR), Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train supports rail travel across New York City, Long Island, and Connecticut. LIRR coverage includes public stations across its branches. Metro-North coverage includes the Hudson Line through Poughkeepsie, the Harlem Line through Wassaic, and the New Haven Line with its New Canaan, Danbury, and Waterbury branches. Amtrak also serves Yonkers, Croton-Harmon, and Poughkeepsie. Port Jervis and Pascack Valley are not included.</p><p>You can also plan trips to Springfield, Massachusetts, and Westerly, Rhode Island. Searches support direct trips or one transfer; some journeys across the region need more transfers and cannot yet be shown.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "How often is the schedule data updated?", content: `<p>moose.train refreshes its schedule data every morning at <strong>7am US Eastern Time</strong>, using information published by LIRR, Metro-North, CTrail, and Amtrak.</p><p><strong>Last successfully refreshed:</strong> <time data-schedule-refresh-date>October 19, 2026</time> (US Eastern Time)</p><p>Schedules are not updated in real time, so delays, cancellations, and other service changes may not be reflected. For the latest service information, please check directly with your rail provider.</p>` },
-        { id: "which-rail-services-are-included", summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from five rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they connect New York City, Long Island, and Connecticut, with selected connections into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City, Long Island, and Connecticut region, bringing together schedules from Amtrak, Long Island Rail Road (LIRR), Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p><p>Coverage also includes NJ Transit’s Northeast Corridor, Port Jervis, and Pascack Valley lines and shared Amtrak stations in New Jersey.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train covers New York City, Long Island, Connecticut, and selected New Jersey and Hudson Valley routes. LIRR includes public stations across its branches. Metro-North includes Hudson, Harlem, and New Haven service with its branches.</p><p>NJ Transit coverage includes the Northeast Corridor between New York Penn and Trenton, the Port Jervis Line, and the Pascack Valley Line, including their through trains to Hoboken. Other NJ Transit lines are not yet included. Amtrak includes shared New Jersey corridor stations as well as the existing Connecticut, Hudson Valley, Springfield, and Westerly coverage.</p><p>All searches support direct trips or one transfer. Journeys needing two or more transfers are not yet shown, including some West of Hudson connections through both Secaucus and Penn Station.</p><p>Results show rail journeys only; replacement-bus itineraries are excluded. Port Jervis and Pascack Valley services are operated by NJ Transit on behalf of Metro-North.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "How often is the schedule data updated?", content: `<p>moose.train refreshes its schedule data every morning at <strong>7am US Eastern Time</strong>, using information published by LIRR, Metro-North, NJ Transit, CTrail, and Amtrak.</p><p><strong>Last successfully refreshed:</strong> <time data-schedule-refresh-date>October 19, 2026</time> (US Eastern Time)</p><p>Schedules are not updated in real time, so delays, cancellations, and other service changes may not be reflected. For the latest service information, please check directly with your rail provider.</p>` },
+        { id: "which-rail-services-are-included", summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from six rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they connect New York City, Long Island, and Connecticut, with selected connections into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
         { id: "why-did-you-build-moose-train", summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
         { id: "why-is-it-called-moose-train", summary: "Why is it called moose.train?", content: `<p>It started as an acronym! The original working name was <strong>Metro-North Or Other Service Evaluator</strong>, or <strong>MOOSE</strong>. The name stuck, and eventually became moose.train.</p><p>And, conveniently enough, there really are moose in both New York and Connecticut. So it felt worth keeping. 🫎</p>` },
         { id: "does-moose-train-sell-train-tickets", summary: "Does moose.train sell train tickets?", content: `<p>No. moose.train helps you find and compare your train options, but it does not currently sell tickets.</p><p>Once you’ve found the trip that works for you, you can purchase your ticket directly from the train operator using its official app, website, ticket machines, or other available sales channels.</p><p>In the future, I’d love to make it easier to go from finding the right train to actually booking your trip.</p>` },
@@ -2916,20 +2955,20 @@
         { id: "do-apple-maps-or-google-maps-already-do-this", summary: "Do Apple Maps or Google Maps already do this?", content: `<p>Not quite. Apple Maps and Google Maps are great when you want directions for a particular trip, but moose.train is built for comparing your options before you decide how and when you want to travel.</p><p>Maybe there’s an Amtrak train at 8:15am, a Metro-North option at 8:40am, and another trip at 9:10am that takes a little longer but requires fewer transfers. moose.train puts those options side by side, making it easier to compare the tradeoffs and choose the trip that works best for you.</p><p>It’s less about answering “How do I get there?” and more about answering “What are my options?”</p>` },
         { id: "why-not-just-use-the-train-operators-websites", summary: "Why not just use the train operators’ websites?", content: `<p>You certainly can, but each operator naturally focuses on its own trains. That can make comparing your options surprisingly complicated when more than one railroad can get you where you’re going.</p><p>A trip between New York City and Connecticut is a good example. Amtrak generally departs from Penn Station, while Metro-North departs from Grand Central. Depending on your destination and schedule, either one might be the better choice, but their websites aren’t designed to compare those options with each other.</p><p>moose.train brings them together so you can search once and see the bigger picture.</p>` },
         { id: "how-accurate-are-the-schedules", summary: "How accurate are the schedules?", content: `<p>The schedules in moose.train come directly from the official timetable data published by the participating rail operators. In other words, you’re seeing the same scheduled departure and arrival information provided by Amtrak, LIRR, Metro-North, and CTrail.</p><p>moose.train now also shows delay information for Metro-North and LIRR trips when that information is available. For Amtrak, CTrail Hartford Line, and CTrail Shore Line East trips, moose.train currently shows published schedule information only.</p><p>Rail service can still change quickly, and delays, cancellations, temporary service changes, or other operating updates may not always be reflected in moose.train. Before traveling, especially when timing matters, it’s always a good idea to confirm the latest information with the train operator.</p>` },
-        { id: "does-moose-train-show-real-time-delays", summary: "Does moose.train show real-time delays?", content: `<p>Yes, for Metro-North and LIRR trips when live information is available. Their results may show whether a trip appears to be on time or delayed.</p><p>moose.train does not currently show delay information for Amtrak, CTrail Hartford Line, or CTrail Shore Line East trips. Those results are based on published schedules, so real-time delays, cancellations, and other service changes may not appear.</p><p>I’d like to expand live train information in the future. For now, check with the operator directly before you travel if timing is important.</p>` },
-        { id: "will-the-service-area-eventually-expand", summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City, Long Island, and Connecticut are the current focus.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "Does moose.train show real-time delays?", content: `<p>Yes, for Metro-North and LIRR trips when live information is available. Their results may show whether a trip appears to be on time or delayed.</p><p>moose.train does not currently show delay information for Amtrak, CTrail Hartford Line, or CTrail Shore Line East trips. Those results are based on published schedules, so real-time delays, cancellations, and other service changes may not appear.</p><p>I’d like to expand live train information in the future. For now, check with the operator directly before you travel if timing is important.</p><p>NJ Transit results currently use scheduled times; live NJ Transit updates are not yet included.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City, Long Island, Connecticut, and selected New Jersey routes are the current focus.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
         { id: "is-moose-train-free", summary: "Is moose.train free?", content: `<p>Yes! moose.train is completely free to use.</p><p>The schedule data comes from publicly available information published by the rail operators, and I built moose.train because I wanted a better way to make sense of it. It only seemed right to make that tool available to everyone else, too.</p>` },
-        { id: "does-moose-train-calculate-ticket-prices", summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North Hudson, Harlem, and New Haven lines, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares (Yankees–E. 153rd Street trains appear without a calculated fare), UniRail connections, or trips whose fare is not represented in the local official fare table data.</p><p>LIRR fares use locally stored official prices, including adult one-way via tickets, Mets-Willets Point, Belmont Park, and Elmont-UBS Arena. Via tickets name the transfer station. When a detour requires two ordinary tickets instead, the total is labeled “Separate tickets.”</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North Hudson, Harlem, and New Haven lines, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares (Yankees–E. 153rd Street trains appear without a calculated fare), UniRail connections, or trips whose fare is not represented in the local official fare table data.</p><p>LIRR fares use locally stored official prices, including adult one-way via tickets, Mets-Willets Point, Belmont Park, and Elmont-UBS Arena. Via tickets name the transfer station. When a detour requires two ordinary tickets instead, the total is labeled “Separate tickets.”</p><p>NJ Transit prices are standard adult one-way fares. A connection between NJ Transit trains uses one through fare when available. Unverified prices show “Fare unavailable”. NJ Transit tickets to or from Newark Airport Rail Station include AirTrain airport access; the rail arrival time is for the station, not an airport terminal.</p>` },
         { id: "can-i-save-favorite-stations-or-trips", summary: "Can I save favorite stations or trips?", content: `<p>Not permanently, but you can <strong>shortlist trips</strong> while comparing your results. Just add the trips you’re interested in to your shortlist, then hide everything else to make them easier to compare.</p><p>Your shortlist is designed for narrowing down options during your current search rather than saving trips or favorite stations for later. More persistent saving options could be useful in the future.</p>` },
-        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p><p>LIRR connections can include Metro-North at Grand Central or Amtrak at Penn Station. Grand Central Terminal and Grand Central Madison share one search option; journey details identify the boarding area. Allow time to walk between trains.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p><p>LIRR connections can include Metro-North at Grand Central or Amtrak at Penn Station. Grand Central Terminal and Grand Central Madison share one search option; journey details identify the boarding area. Allow time to walk between trains.</p><p>Port Jervis and Pascack Valley trains connect to Penn Station via Secaucus. NJ Transit and Amtrak can connect at shared stations. The one-transfer maximum applies equally to every operator.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "Will there eventually be a mobile app?", content: `<p>Maybe someday! For now, my focus is on making moose.train work really well in the browser, whether you’re using a phone, tablet, or computer.</p><p>A dedicated mobile app could be great down the road, especially if there are features that would genuinely benefit from one. But for now, I’d rather make the web experience as good as it can be.</p>` },
         { id: "who-built-moose-train", summary: "Who built moose.train?", content: `<p>Hi! I’m Fred McNulty. I live in New York City, but I grew up in Connecticut, so I’ve spent a lot of time traveling by train between the two.</p><p>I’m a product manager by day and a transit enthusiast pretty much all the time. moose.train started as a personal project inspired by a problem I’d encountered plenty of times myself: figuring out the best way to get somewhere when the answer might involve more than one railroad.</p><p>I also genuinely believe that good public transportation can make our cities and communities better places to live. If moose.train can make taking the train just a little easier, I’ll consider that a win.</p>` },
       ],
       ko: [
-        { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시, 롱아일랜드, 코네티컷 지역에 집중하고 있으며, Amtrak, Long Island Rail Road (LIRR), Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 뉴욕시, 롱아일랜드, 코네티컷의 철도 여행을 지원합니다. Port Jervis와 Pascack Valley는 포함되지 않습니다. LIRR의 각 지선에 있는 일반 여객역과 Metro-North Hudson Line(Poughkeepsie까지), Harlem Line(Wassaic까지), New Haven Line 및 New Canaan, Danbury, Waterbury 지선, Amtrak, 두 CTrail 서비스를 함께 검색할 수 있습니다.</p><p>매사추세츠주 스프링필드와 로드아일랜드주 웨스터리까지도 여행을 계획할 수 있습니다. 직통 또는 한 번 환승하는 여정을 지원하며, 두 번 이상 환승해야 하는 일부 여정은 아직 표시할 수 없습니다.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "열차 시간표 데이터는 얼마나 자주 업데이트되나요?", content: `<p>moose.train은 LIRR, Metro-North, CTrail, Amtrak에서 제공하는 정보를 바탕으로 <strong>미국 동부 시간 기준 매일 오전 7시</strong>에 열차 시간표 데이터를 새로고침합니다.</p><p><strong>마지막으로 성공적으로 업데이트된 날짜:</strong> <time data-schedule-refresh-date>2026년 10월 19일</time></p><p>시간표는 실시간으로 업데이트되지 않으므로 열차 지연, 운행 취소 및 기타 운행 변경 사항이 반영되지 않을 수 있습니다. 최신 운행 정보는 해당 철도 운영기관에서 직접 확인해 주세요.</p>` },
-        { id: "which-rail-services-are-included", summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 다섯 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시, 롱아일랜드, 코네티컷과 주변 지역의 일부 연결편을 함께 제공합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시, 롱아일랜드, 코네티컷 지역에 집중하고 있으며, Amtrak, Long Island Rail Road (LIRR), Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p><p>NJ Transit의 Northeast Corridor, Port Jervis, Pascack Valley 노선과 뉴저지의 Amtrak 공용 정차역도 포함합니다.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 뉴욕시, 롱아일랜드, 코네티컷과 뉴저지 및 허드슨 밸리의 일부 노선을 지원합니다. LIRR의 일반 여객역과 Metro-North의 Hudson, Harlem, New Haven 노선 및 지선을 포함합니다.</p><p>NJ Transit은 뉴욕 펜역–트렌턴 Northeast Corridor, Port Jervis Line, Pascack Valley Line과 호보켄까지 이어지는 열차를 포함합니다. 다른 NJ Transit 노선은 아직 포함하지 않습니다. Amtrak은 기존 코네티컷, 허드슨 밸리, 스프링필드, 웨스터리 구간에 더해 뉴저지의 공용 정차역을 포함합니다.</p><p>모든 검색은 직통 또는 한 번의 환승만 지원합니다. Secaucus와 Penn Station에서 모두 갈아타야 하는 일부 여정처럼 두 번 이상 환승하는 여정은 아직 표시하지 않습니다.</p><p>결과에는 철도 여정만 표시하며 대체 버스 여정은 제외합니다. Port Jervis와 Pascack Valley는 NJ Transit이 Metro-North를 대신해 운행합니다.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "열차 시간표 데이터는 얼마나 자주 업데이트되나요?", content: `<p>moose.train은 LIRR, Metro-North, NJ Transit, CTrail, Amtrak에서 제공하는 정보를 바탕으로 <strong>미국 동부 시간 기준 매일 오전 7시</strong>에 열차 시간표 데이터를 새로고침합니다.</p><p><strong>마지막으로 성공적으로 업데이트된 날짜:</strong> <time data-schedule-refresh-date>2026년 10월 19일</time></p><p>시간표는 실시간으로 업데이트되지 않으므로 열차 지연, 운행 취소 및 기타 운행 변경 사항이 반영되지 않을 수 있습니다. 최신 운행 정보는 해당 철도 운영기관에서 직접 확인해 주세요.</p>` },
+        { id: "which-rail-services-are-included", summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 여섯 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시, 롱아일랜드, 코네티컷과 주변 지역의 일부 연결편을 함께 제공합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
         { id: "why-did-you-build-moose-train", summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
         { id: "why-is-it-called-moose-train", summary: "왜 이름이 moose.train인가요?", content: `<p>처음에는 약어에서 시작했습니다! 원래 작업 이름은 <strong>Metro-North Or Other Service Evaluator</strong>, 즉 <strong>MOOSE</strong>였습니다. 그 이름이 계속 남았고, 결국 moose.train이 되었습니다.</p><p>게다가 실제로 뉴욕과 코네티컷에는 무스가 살고 있습니다. 그래서 계속 써도 괜찮겠다고 느꼈습니다. 🫎</p>` },
         { id: "does-moose-train-sell-train-tickets", summary: "moose.train에서 기차표를 판매하나요?", content: `<p>아니요. moose.train은 열차 선택지를 찾고 비교하도록 도와주지만, 현재 표를 판매하지는 않습니다.</p><p>맞는 여행을 찾은 뒤에는 해당 철도 운영사의 공식 앱, 웹사이트, 발권기 또는 이용 가능한 다른 판매 채널을 통해 직접 표를 구매할 수 있습니다.</p><p>앞으로는 맞는 열차를 찾은 뒤 실제 예약까지 더 쉽게 이어질 수 있도록 만들고 싶습니다.</p>` },
@@ -2937,20 +2976,20 @@
         { id: "do-apple-maps-or-google-maps-already-do-this", summary: "Apple Maps나 Google Maps도 이미 이런 기능을 하지 않나요?", content: `<p>완전히 같지는 않습니다. Apple Maps와 Google Maps는 특정 여행의 길찾기를 원할 때 훌륭하지만, moose.train은 언제 어떻게 이동할지 결정하기 전에 선택지를 비교하도록 만들어졌습니다.</p><p>예를 들어 8:15am Amtrak 열차가 있고, 8:40am Metro-North 선택지가 있으며, 9:10am에는 시간이 조금 더 걸리지만 환승이 적은 여행이 있을 수 있습니다. moose.train은 이런 선택지를 나란히 보여 주어, 장단점을 비교하고 나에게 가장 잘 맞는 여행을 고르기 쉽게 합니다.</p><p>즉, “어떻게 가야 하지?”에 답하기보다는 “내 선택지는 무엇이지?”에 답하는 데 가깝습니다.</p>` },
         { id: "why-not-just-use-the-train-operators-websites", summary: "그냥 철도 운영사 웹사이트를 쓰면 안 되나요?", content: `<p>물론 사용할 수 있습니다. 하지만 각 운영사는 자연스럽게 자기 열차에 집중합니다. 여러 철도가 같은 목적지까지 갈 수 있는 경우, 선택지를 비교하는 일이 생각보다 복잡해질 수 있습니다.</p><p>뉴욕시와 코네티컷 사이의 여행이 좋은 예입니다. Amtrak은 보통 Penn Station에서 출발하고, Metro-North는 Grand Central에서 출발합니다. 목적지와 일정에 따라 어느 쪽이든 더 나은 선택일 수 있지만, 각 운영사의 웹사이트는 서로의 선택지를 비교하도록 설계되어 있지 않습니다.</p><p>moose.train은 이 선택지를 한곳에 모아, 한 번 검색해서 더 큰 그림을 볼 수 있게 합니다.</p>` },
         { id: "how-accurate-are-the-schedules", summary: "일정은 얼마나 정확한가요?", content: `<p>moose.train의 시간표는 참여 철도 운영사가 게시한 공식 시간표 데이터에서 직접 가져옵니다. 즉, Amtrak, LIRR, Metro-North, CTrail이 제공하는 예정 출발 및 도착 정보를 보고 있는 것입니다.</p><p>moose.train은 이제 정보가 제공되는 경우 Metro-North 및 LIRR 여정의 지연 정보도 함께 보여 줍니다. Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 경우 현재는 게시된 시간표 정보만 표시합니다.</p><p>철도 운행 상황은 빠르게 바뀔 수 있으며, 지연, 취소, 임시 서비스 변경 또는 기타 운행 정보가 moose.train에 항상 반영되는 것은 아닙니다. 특히 시간이 중요한 여행이라면 출발 전에 해당 철도 운영사의 최신 정보를 확인하는 것이 좋습니다.</p>` },
-        { id: "does-moose-train-show-real-time-delays", summary: "moose.train에서 실시간 지연 정보를 보여 주나요?", content: `<p>네, Metro-North 및 LIRR 여정은 지연 정보가 제공되는 경우 표시합니다. Metro-North 및 LIRR 검색 결과에서는 여정이 정시인지 지연 중인지 확인할 수 있습니다.</p><p>moose.train은 현재 Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 지연 정보는 표시하지 않습니다. 해당 결과는 게시된 시간표를 기준으로 하므로 실시간 지연, 취소 및 기타 서비스 변경 사항이 나타나지 않을 수 있습니다.</p><p>앞으로 실시간 열차 정보를 더 넓게 제공하고 싶습니다. 현재로서는 시간이 중요한 경우 여행 전에 운영사에 직접 최신 정보를 확인해 주세요.</p>` },
-        { id: "will-the-service-area-eventually-expand", summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 현재는 뉴욕시, 롱아일랜드, 코네티컷에 집중하고 있습니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "moose.train에서 실시간 지연 정보를 보여 주나요?", content: `<p>네, Metro-North 및 LIRR 여정은 지연 정보가 제공되는 경우 표시합니다. Metro-North 및 LIRR 검색 결과에서는 여정이 정시인지 지연 중인지 확인할 수 있습니다.</p><p>moose.train은 현재 Amtrak, CTrail Hartford Line, CTrail Shore Line East 여정의 지연 정보는 표시하지 않습니다. 해당 결과는 게시된 시간표를 기준으로 하므로 실시간 지연, 취소 및 기타 서비스 변경 사항이 나타나지 않을 수 있습니다.</p><p>앞으로 실시간 열차 정보를 더 넓게 제공하고 싶습니다. 현재로서는 시간이 중요한 경우 여행 전에 운영사에 직접 최신 정보를 확인해 주세요.</p><p>NJ Transit 결과는 시간표 기준이며, NJ Transit 실시간 정보는 아직 제공하지 않습니다.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 현재는 뉴욕시, 롱아일랜드, 코네티컷 및 뉴저지의 일부 노선에 집중하고 있습니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
         { id: "is-moose-train-free", summary: "moose.train은 무료인가요?", content: `<p>네! moose.train은 완전히 무료로 사용할 수 있습니다.</p><p>시간표 데이터는 철도 운영사들이 공개한 공개 정보에서 가져오며, 저는 그 정보를 더 잘 이해할 수 있는 방법이 필요해서 moose.train을 만들었습니다. 그 도구를 다른 사람들도 사용할 수 있게 하는 것이 자연스럽다고 생각했습니다.</p>` },
-        { id: "does-moose-train-calculate-ticket-prices", summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North Hudson, Harlem, New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금(Yankees–E. 153rd Street 열차는 요금 없이 표시), UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p><p>LIRR 요금은 로컬에 저장된 공식 가격을 사용하며, 성인 경유 편도 승차권과 Mets-Willets Point, Belmont Park, Elmont-UBS Arena 여정도 포함합니다. 경유 승차권에는 환승역을 표시합니다. 우회 여정에 일반 승차권 두 장이 필요한 경우 총액에 “별도 승차권”이라고 표시합니다.</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North Hudson, Harlem, New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금(Yankees–E. 153rd Street 열차는 요금 없이 표시), UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p><p>LIRR 요금은 로컬에 저장된 공식 가격을 사용하며, 성인 경유 편도 승차권과 Mets-Willets Point, Belmont Park, Elmont-UBS Arena 여정도 포함합니다. 경유 승차권에는 환승역을 표시합니다. 우회 여정에 일반 승차권 두 장이 필요한 경우 총액에 “별도 승차권”이라고 표시합니다.</p><p>NJ Transit 운임은 일반 성인 편도 기준입니다. NJ Transit 열차 간 환승은 가능한 경우 하나의 연결 운임을 표시합니다. 확인되지 않은 가격은 “운임 정보 없음”으로 표시합니다. Newark Airport Rail Station을 출발하거나 도착하는 NJ Transit 승차권에는 AirTrain 공항 이용료가 포함됩니다. 표시된 도착 시각은 공항 터미널이 아닌 철도역 기준입니다.</p>` },
         { id: "can-i-save-favorite-stations-or-trips", summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>영구적으로 저장할 수는 없지만, 결과를 비교하는 동안 <strong>여정을 후보 목록에 추가</strong>할 수 있습니다. 관심 있는 여정을 후보 목록에 넣은 다음, 나머지를 숨겨 더 쉽게 비교할 수 있습니다.</p><p>후보 목록은 나중을 위해 여행이나 자주 쓰는 역을 저장하는 기능이 아니라, 현재 검색에서 선택지를 좁히기 위한 기능입니다. 더 오래 유지되는 저장 기능은 앞으로 유용할 수 있습니다.</p>` },
-        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p><p>LIRR은 Grand Central에서 Metro-North와, Penn Station에서 Amtrak과 연결할 수 있습니다. Grand Central Terminal과 Grand Central Madison은 검색에서 하나의 역으로 표시되며, 여정 상세 정보에서 승차 구역을 안내합니다. 열차 사이를 이동할 시간을 확보해 주세요.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p><p>LIRR은 Grand Central에서 Metro-North와, Penn Station에서 Amtrak과 연결할 수 있습니다. Grand Central Terminal과 Grand Central Madison은 검색에서 하나의 역으로 표시되며, 여정 상세 정보에서 승차 구역을 안내합니다. 열차 사이를 이동할 시간을 확보해 주세요.</p><p>Port Jervis와 Pascack Valley 열차는 Secaucus에서 환승해 Penn Station으로 연결됩니다. NJ Transit과 Amtrak은 공용 정차역에서 환승할 수 있습니다. 운영사에 관계없이 최대 한 번의 환승만 지원합니다.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "언젠가 모바일 앱도 나오나요?", content: `<p>언젠가는 가능할 수도 있습니다! 지금은 휴대폰, 태블릿, 컴퓨터 어디에서든 moose.train이 브라우저에서 잘 작동하도록 만드는 데 집중하고 있습니다.</p><p>전용 모바일 앱은 나중에 좋을 수 있습니다. 특히 앱이 있을 때 실제로 더 좋아지는 기능이 있다면요. 하지만 지금은 웹 경험을 최대한 좋게 만드는 데 더 집중하고 싶습니다.</p>` },
         { id: "who-built-moose-train", summary: "누가 moose.train을 만들었나요?", content: `<p>안녕하세요! 저는 Fred McNulty입니다. 저는 뉴욕시에 살고 있지만 코네티컷에서 자랐기 때문에, 두 지역 사이를 열차로 오간 시간이 많습니다.</p><p>저는 낮에는 제품 관리자이고, 거의 항상 대중교통 애호가이기도 합니다. moose.train은 제가 여러 번 직접 겪었던 문제에서 시작한 개인 프로젝트입니다. 목적지까지 가는 가장 좋은 방법이 하나 이상의 철도를 포함할 수 있을 때, 그 방법을 찾는 문제였습니다.</p><p>저는 좋은 대중교통이 도시와 지역사회를 더 살기 좋은 곳으로 만들 수 있다고 진심으로 믿습니다. moose.train이 열차 이용을 조금이라도 더 쉽게 만든다면, 그것만으로도 성공이라고 생각합니다.</p>` },
       ],
       es: [
-        { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York, Long Island y Connecticut, reuniendo horarios de Amtrak, Long Island Rail Road (LIRR), Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train admite viajes en tren por Nueva York, Long Island y Connecticut. La cobertura de LIRR incluye las estaciones públicas de sus ramales. Metro-North incluye Hudson hasta Poughkeepsie, Harlem hasta Wassaic y New Haven con sus ramales de New Canaan, Danbury y Waterbury. Amtrak también sirve Yonkers, Croton-Harmon y Poughkeepsie. Port Jervis y Pascack Valley no están incluidos.</p><p>También puedes planificar viajes a Springfield, Massachusetts, y Westerly, Rhode Island. Las búsquedas admiten viajes directos o con un transbordo; algunos trayectos necesitan más transbordos y todavía no se pueden mostrar.</p>` },
-        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Con qué frecuencia se actualizan los horarios?", content: `<p>moose.train actualiza los horarios de los trenes todas las mañanas a las <strong>7:00 a. m., hora del este de Estados Unidos</strong>, utilizando información publicada por LIRR, Metro-North, CTrail y Amtrak.</p><p><strong>Última actualización realizada correctamente:</strong> <time data-schedule-refresh-date>19 de octubre de 2026</time></p><p>Los horarios no se actualizan en tiempo real, por lo que es posible que no reflejen retrasos, cancelaciones u otros cambios en el servicio. Para obtener la información más reciente, consulta directamente con el operador ferroviario.</p>` },
-        { id: "which-rail-services-are-included", summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de cinco servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, conectan Nueva York, Long Island y Connecticut, además de algunas conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York, Long Island y Connecticut, reuniendo horarios de Amtrak, Long Island Rail Road (LIRR), Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p><p>La cobertura también incluye Northeast Corridor, Port Jervis y Pascack Valley de NJ Transit y estaciones compartidas con Amtrak en Nueva Jersey.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train cubre Nueva York, Long Island, Connecticut y rutas seleccionadas de Nueva Jersey y Hudson Valley. LIRR incluye estaciones públicas de sus ramales. Metro-North incluye Hudson, Harlem y New Haven con sus ramales.</p><p>NJ Transit incluye el Northeast Corridor entre New York Penn y Trenton, Port Jervis Line y Pascack Valley Line, incluidos sus trenes directos a Hoboken. Las demás líneas de NJ Transit aún no están incluidas. Amtrak añade las estaciones compartidas del corredor de Nueva Jersey a su cobertura existente de Connecticut, Hudson Valley, Springfield y Westerly.</p><p>Todas las búsquedas admiten viajes directos o un transbordo. Aún no se muestran viajes que necesitan dos o más, incluidas algunas conexiones que requieren cambiar tanto en Secaucus como en Penn Station.</p><p>Los resultados muestran solo viajes ferroviarios; se excluyen los itinerarios con autobuses sustitutos. NJ Transit opera Port Jervis y Pascack Valley por cuenta de Metro-North.</p>` },
+        { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Con qué frecuencia se actualizan los horarios?", content: `<p>moose.train actualiza los horarios de los trenes todas las mañanas a las <strong>7:00 a. m., hora del este de Estados Unidos</strong>, utilizando información publicada por LIRR, Metro-North, NJ Transit, CTrail y Amtrak.</p><p><strong>Última actualización realizada correctamente:</strong> <time data-schedule-refresh-date>19 de octubre de 2026</time></p><p>Los horarios no se actualizan en tiempo real, por lo que es posible que no reflejen retrasos, cancelaciones u otros cambios en el servicio. Para obtener la información más reciente, consulta directamente con el operador ferroviario.</p>` },
+        { id: "which-rail-services-are-included", summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de seis servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, conectan Nueva York, Long Island y Connecticut, además de algunas conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
         { id: "why-did-you-build-moose-train", summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
         { id: "why-is-it-called-moose-train", summary: "¿Por qué se llama moose.train?", content: `<p>¡Empezó como un acrónimo! El nombre de trabajo original era <strong>Metro-North Or Other Service Evaluator</strong>, o <strong>MOOSE</strong>. El nombre se quedó y, con el tiempo, se convirtió en moose.train.</p><p>Además, convenientemente, realmente hay alces tanto en Nueva York como en Connecticut. Así que pareció valer la pena conservarlo. 🫎</p>` },
         { id: "does-moose-train-sell-train-tickets", summary: "¿moose.train vende boletos de tren?", content: `<p>No. moose.train te ayuda a encontrar y comparar tus opciones de tren, pero actualmente no vende boletos.</p><p>Una vez que encuentres el viaje que te conviene, puedes comprar tu boleto directamente al operador ferroviario mediante su app oficial, sitio web, máquinas expendedoras u otros canales de venta disponibles.</p><p>En el futuro, me gustaría facilitar el paso de encontrar el tren correcto a reservar realmente tu viaje.</p>` },
@@ -2958,12 +2997,12 @@
         { id: "do-apple-maps-or-google-maps-already-do-this", summary: "¿Apple Maps o Google Maps no hacen esto ya?", content: `<p>No exactamente. Apple Maps y Google Maps son excelentes cuando quieres indicaciones para un viaje específico, pero moose.train está pensado para comparar tus opciones antes de decidir cómo y cuándo quieres viajar.</p><p>Tal vez haya un tren de Amtrak a las 8:15am, una opción de Metro-North a las 8:40am y otro viaje a las 9:10am que tarda un poco más pero requiere menos transbordos. moose.train pone esas opciones lado a lado, lo que facilita comparar las ventajas y desventajas y elegir el viaje que mejor funciona para ti.</p><p>Se trata menos de responder “¿Cómo llego?” y más de responder “¿Cuáles son mis opciones?”</p>` },
         { id: "why-not-just-use-the-train-operators-websites", summary: "¿Por qué no usar simplemente los sitios web de los operadores?", content: `<p>Claro que puedes hacerlo, pero cada operador naturalmente se enfoca en sus propios trenes. Eso puede hacer que comparar tus opciones sea sorprendentemente complicado cuando más de un ferrocarril puede llevarte a donde vas.</p><p>Un viaje entre la ciudad de Nueva York y Connecticut es un buen ejemplo. Amtrak generalmente sale de Penn Station, mientras que Metro-North sale de Grand Central. Según tu destino y horario, cualquiera de los dos podría ser la mejor opción, pero sus sitios web no están diseñados para comparar esas opciones entre sí.</p><p>moose.train las reúne para que puedas buscar una vez y ver el panorama completo.</p>` },
         { id: "how-accurate-are-the-schedules", summary: "¿Qué tan precisos son los horarios?", content: `<p>Los horarios en moose.train provienen directamente de los datos oficiales de itinerarios publicados por los operadores ferroviarios participantes. En otras palabras, ves la misma información programada de salida y llegada proporcionada por Amtrak, LIRR, Metro-North y CTrail.</p><p>moose.train ahora también muestra información de retrasos para viajes de Metro-North y LIRR cuando esa información está disponible. Para viajes de Amtrak, CTrail Hartford Line y CTrail Shore Line East, moose.train actualmente muestra solo la información del horario publicado.</p><p>El servicio ferroviario puede cambiar rápidamente, y los retrasos, cancelaciones, cambios temporales de servicio u otras actualizaciones operativas no siempre se reflejan en moose.train. Antes de viajar, especialmente si el horario es importante, siempre conviene confirmar la información más reciente con el operador ferroviario.</p>` },
-        { id: "does-moose-train-show-real-time-delays", summary: "¿moose.train muestra retrasos en tiempo real?", content: `<p>Sí, para viajes de Metro-North y LIRR cuando la información de retrasos está disponible. Los resultados de Metro-North y LIRR pueden indicar si un viaje parece estar a horario o retrasado.</p><p>moose.train actualmente no muestra información de retrasos para viajes de Amtrak, CTrail Hartford Line o CTrail Shore Line East. Esos resultados se basan en horarios publicados, por lo que retrasos en tiempo real, cancelaciones y otros cambios de servicio pueden no aparecer.</p><p>Me gustaría ampliar la información de trenes en vivo en el futuro. Por ahora, consulta directamente con el operador antes de viajar si el horario es importante.</p>` },
-        { id: "will-the-service-area-eventually-expand", summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York, Long Island y Connecticut son el enfoque actual.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
+        { id: "does-moose-train-show-real-time-delays", summary: "¿moose.train muestra retrasos en tiempo real?", content: `<p>Sí, para viajes de Metro-North y LIRR cuando la información de retrasos está disponible. Los resultados de Metro-North y LIRR pueden indicar si un viaje parece estar a horario o retrasado.</p><p>moose.train actualmente no muestra información de retrasos para viajes de Amtrak, CTrail Hartford Line o CTrail Shore Line East. Esos resultados se basan en horarios publicados, por lo que retrasos en tiempo real, cancelaciones y otros cambios de servicio pueden no aparecer.</p><p>Me gustaría ampliar la información de trenes en vivo en el futuro. Por ahora, consulta directamente con el operador antes de viajar si el horario es importante.</p><p>Los resultados de NJ Transit usan horarios programados; aún no incluyen actualizaciones en vivo.</p>` },
+        { id: "will-the-service-area-eventually-expand", summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York, Long Island, Connecticut y rutas seleccionadas de Nueva Jersey son el enfoque actual.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
         { id: "is-moose-train-free", summary: "¿moose.train es gratis?", content: `<p>¡Sí! moose.train es completamente gratis.</p><p>Los datos de horarios provienen de información pública publicada por los operadores ferroviarios, y construí moose.train porque quería una mejor manera de entenderla. Me pareció justo poner esa herramienta también a disposición de todos los demás.</p>` },
-        { id: "does-moose-train-calculate-ticket-prices", summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de las líneas Hudson, Harlem y New Haven de Metro-North, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales (los trenes de Yankees–E. 153rd Street aparecen sin precio calculado), conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p><p>Las tarifas de LIRR usan precios oficiales almacenados localmente, incluidos billetes de adulto de solo ida vía una estación de transbordo y viajes a Mets-Willets Point, Belmont Park y Elmont-UBS Arena. Los billetes vía indican la estación de transbordo. Si un desvío requiere dos billetes ordinarios, el total se identifica como “Billetes separados”.</p>` },
+        { id: "does-moose-train-calculate-ticket-prices", summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de las líneas Hudson, Harlem y New Haven de Metro-North, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales (los trenes de Yankees–E. 153rd Street aparecen sin precio calculado), conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p><p>Las tarifas de LIRR usan precios oficiales almacenados localmente, incluidos billetes de adulto de solo ida vía una estación de transbordo y viajes a Mets-Willets Point, Belmont Park y Elmont-UBS Arena. Los billetes vía indican la estación de transbordo. Si un desvío requiere dos billetes ordinarios, el total se identifica como “Billetes separados”.</p><p>Los precios de NJ Transit son tarifas estándar de adulto de solo ida. Una conexión entre trenes de NJ Transit usa una tarifa conjunta cuando está disponible. Los precios sin verificar muestran “Tarifa no disponible”. Los boletos de NJ Transit hacia o desde Newark Airport Rail Station incluyen el acceso en AirTrain; la hora de llegada corresponde a la estación ferroviaria, no a una terminal aérea.</p>` },
         { id: "can-i-save-favorite-stations-or-trips", summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>No permanentemente, pero puedes <strong>agregar viajes a tu lista breve</strong> mientras comparas tus resultados. Solo agrega los viajes que te interesen a la lista breve y luego oculta todo lo demás para compararlos con más facilidad.</p><p>La lista breve está pensada para reducir tus opciones durante la búsqueda actual, no para guardar viajes o estaciones favoritas para más tarde. Opciones de guardado más persistentes podrían ser útiles en el futuro.</p>` },
-        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p><p>LIRR puede conectar con Metro-North en Grand Central o con Amtrak en Penn Station. Grand Central Terminal y Grand Central Madison comparten una opción de búsqueda; los detalles del viaje indican la zona de embarque. Reserva tiempo para caminar entre trenes.</p>` },
+        { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p><p>LIRR puede conectar con Metro-North en Grand Central o con Amtrak en Penn Station. Grand Central Terminal y Grand Central Madison comparten una opción de búsqueda; los detalles del viaje indican la zona de embarque. Reserva tiempo para caminar entre trenes.</p><p>Port Jervis y Pascack Valley conectan con Penn Station mediante un transbordo en Secaucus. NJ Transit y Amtrak pueden conectar en estaciones compartidas. El máximo de un transbordo se aplica por igual a todos los operadores.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "¿Habrá una app móvil eventualmente?", content: `<p>¡Quizás algún día! Por ahora, mi enfoque está en hacer que moose.train funcione muy bien en el navegador, ya sea que uses un teléfono, una tableta o una computadora.</p><p>Una app móvil dedicada podría ser excelente más adelante, especialmente si hay funciones que realmente se beneficiarían de tener una. Pero por ahora prefiero hacer que la experiencia web sea lo mejor posible.</p>` },
         { id: "who-built-moose-train", summary: "¿Quién construyó moose.train?", content: `<p>¡Hola! Soy Fred McNulty. Vivo en la ciudad de Nueva York, pero crecí en Connecticut, así que he pasado mucho tiempo viajando en tren entre ambos lugares.</p><p>Soy product manager durante el día y entusiasta del transporte público prácticamente todo el tiempo. moose.train empezó como un proyecto personal inspirado por un problema que yo mismo había encontrado muchas veces: averiguar la mejor manera de llegar a algún lugar cuando la respuesta podía incluir más de un ferrocarril.</p><p>También creo sinceramente que un buen transporte público puede hacer que nuestras ciudades y comunidades sean mejores lugares para vivir. Si moose.train puede hacer que tomar el tren sea apenas un poco más fácil, lo consideraré una victoria.</p>` },
       ],
@@ -3033,6 +3072,251 @@
     };
 
     const koreanStationNames = {
+      "Morris Heights": "모리스 하이츠",
+      "University Heights": "유니버시티 하이츠",
+      "Marble Hill": "마블 힐",
+      "Spuyten Duyvil": "스파이튼 다이빌",
+      "Riverdale": "리버데일",
+      "Ludlow": "러들로",
+      "Yonkers": "용커스",
+      "Glenwood": "글렌우드",
+      "Greystone": "그레이스톤",
+      "Hastings-on-Hudson": "헤이스팅스온허드슨",
+      "Dobbs Ferry": "돕스 페리",
+      "Ardsley-on-Hudson": "아즐리온허드슨",
+      "Irvington": "어빙턴",
+      "Tarrytown": "태리타운",
+      "Philipse Manor": "필립스 매너",
+      "Scarborough": "스카버러",
+      "Ossining": "오시닝",
+      "Croton-Harmon": "크로턴하먼",
+      "Cortlandt": "코틀런트",
+      "Peekskill": "픽스킬",
+      "Manitou": "매니투",
+      "Garrison": "개리슨",
+      "Cold Spring": "콜드 스프링",
+      "Breakneck Ridge": "브레이크넥 리지",
+      "Beacon": "비컨",
+      "New Hamburg": "뉴 함부르크",
+      "Poughkeepsie": "포킵시",
+      "Melrose": "멜로즈",
+      "Tremont": "트리몬트",
+      "Botanical Garden": "보태니컬 가든",
+      "Williams Bridge": "윌리엄스 브리지",
+      "Woodlawn": "우드론",
+      "Wakefield": "웨이크필드",
+      "Mt Vernon West": "마운트 버논 웨스트",
+      "Fleetwood": "플리트우드",
+      "Bronxville": "브롱크스빌",
+      "Tuckahoe": "터커호",
+      "Crestwood": "크레스트우드",
+      "Scarsdale": "스카스데일",
+      "Hartsdale": "하츠데일",
+      "White Plains": "화이트 플레인스",
+      "North White Plains": "노스 화이트 플레인스",
+      "Valhalla": "발할라",
+      "Mt Pleasant": "마운트 플레전트",
+      "Hawthorne": "호손",
+      "Pleasantville": "플레전트빌",
+      "Chappaqua": "채퍼콰",
+      "Mt Kisco": "마운트 키스코",
+      "Bedford Hills": "베드퍼드 힐스",
+      "Katonah": "커토나",
+      "Goldens Bridge": "골든스 브리지",
+      "Purdy's": "퍼디스",
+      "Croton Falls": "크로턴 폴스",
+      "Brewster": "브루스터",
+      "Southeast": "사우스이스트",
+      "Patterson": "패터슨",
+      "Pawling": "폴링",
+      "Appalachian Trail": "애팔래치언 트레일",
+      "Harlem Valley-Wingdale": "할렘 밸리-윙데일",
+      "Dover Plains": "도버 플레인스",
+      "Tenmile River": "텐마일 리버",
+      "Wassaic": "워세이익",
+      "Albertson": "앨버트슨",
+      "Islip": "아이슬립",
+      "Inwood": "인우드",
+      "Jamaica": "자메이카",
+      "Kew Gardens": "큐 가든스",
+      "Broadway": "브로드웨이",
+      "Kings Park": "킹스 파크",
+      "Long Beach": "롱비치",
+      "Lawrence": "로런스",
+      "Lindenhurst": "린든허스트",
+      "Long Island City": "롱아일랜드 시티",
+      "Locust Manor": "로커스트 매너",
+      "Little Neck": "리틀넥",
+      "Laurelton": "로럴턴",
+      "Locust Valley": "로커스트 밸리",
+      "Lakeview": "레이크뷰",
+      "Lynbrook": "린브룩",
+      "Mattituck": "매티턱",
+      "Merillon Avenue": "메릴런 애비뉴",
+      "Medford": "메드퍼드",
+      "Bridgehampton": "브리지햄프턴",
+      "Murray Hill": "머리 힐",
+      "Manhasset": "맨해셋",
+      "Mineola": "미니올라",
+      "Massapequa Park": "매서피콰 파크",
+      "Massapequa": "매서피콰",
+      "Stony Brook": "스토니브룩",
+      "Mastic-Shirley": "매스틱-셜리",
+      "Montauk": "몬톡",
+      "Malverne": "맬번",
+      "Nostrand Avenue": "노스트랜드 애비뉴",
+      "Nassau Boulevard": "나소 불러바드",
+      "New Hyde Park": "뉴 하이드 파크",
+      "Northport": "노스포트",
+      "Oyster Bay": "오이스터 베이",
+      "Oceanside": "오션사이드",
+      "Oakdale": "오크데일",
+      "Bellmore": "벨모어",
+      "Plandome": "플랜돔",
+      "Patchogue": "패초그",
+      "Port Jefferson": "포트 제퍼슨",
+      "Pinelawn": "파인론",
+      "Port Washington": "포트 워싱턴",
+      "Queens Village": "퀸스 빌리지",
+      "Riverhead": "리버헤드",
+      "Ronkonkoma": "롱콘코마",
+      "Rosedale": "로즈데일",
+      "Roslyn": "로즐린",
+      "Rockville Centre": "록빌 센터",
+      "St. Albans": "세인트 올번스",
+      "Sea Cliff": "시클리프",
+      "Seaford": "시퍼드",
+      "Southold": "사우스홀드",
+      "Southampton": "사우샘프턴",
+      "St. James": "세인트 제임스",
+      "Stewart Manor": "스튜어트 매너",
+      "Speonk": "스피옹크",
+      "Mets-Willets Point": "메츠-윌렛츠 포인트",
+      "Auburndale": "오번데일",
+      "Bethpage": "베스페이지",
+      "Smithtown": "스미스타운",
+      "Sayville": "세이빌",
+      "Syosset": "사이오셋",
+      "Bellport": "벨포트",
+      "Valley Stream": "밸리 스트림",
+      "Westbury": "웨스트베리",
+      "Woodside": "우드사이드",
+      "Wantagh": "원토",
+      "West Hempstead": "웨스트 헴프스테드",
+      "Woodmere": "우드미어",
+      "Westwood": "웨스트우드",
+      "Wyandanch": "와이언댄치",
+      "Yaphank-BNL": "야팽크-BNL",
+      "Baldwin": "볼드윈",
+      "Merrick": "메릭",
+      "Bellerose": "벨로즈",
+      "Westhampton": "웨스트햄프턴",
+      "Belmont Park": "벨몬트 파크",
+      "Atlantic Terminal": "애틀랜틱 터미널",
+      "Bayside": "베이사이드",
+      "Bay Shore": "베이쇼어",
+      "Babylon": "배빌런",
+      "Brentwood": "브렌트우드",
+      "Centre Avenue": "센터 애비뉴",
+      "Cedarhurst": "시더허스트",
+      "Central Islip": "센트럴 아이슬립",
+      "Elmont-UBS Arena": "엘몬트-UBS 아레나",
+      "Country Life Press": "컨트리 라이프 프레스",
+      "Copiague": "코페이그",
+      "Carle Place": "칼 플레이스",
+      "Amagansett": "애머갠셋",
+      "Cold Spring Harbor": "콜드 스프링 하버",
+      "Douglaston": "더글러스턴",
+      "Deer Park": "디어 파크",
+      "East Hampton": "이스트햄프턴",
+      "East New York": "이스트 뉴욕",
+      "East Rockaway": "이스트 로커웨이",
+      "East Williston": "이스트 윌리스턴",
+      "Forest Hills": "포리스트 힐스",
+      "Flushing Main Street": "플러싱 메인 스트리트",
+      "Farmingdale": "파밍데일",
+      "Floral Park": "플로럴 파크",
+      "Freeport": "프리포트",
+      "Far Rockaway": "파 로커웨이",
+      "Gibson": "깁슨",
+      "Glen Cove": "글렌코브",
+      "Garden City": "가든 시티",
+      "Glen Head": "글렌헤드",
+      "Great Neck": "그레이트넥",
+      "Greenport": "그린포트",
+      "Great River": "그레이트 리버",
+      "Glen Street": "글렌 스트리트",
+      "Greenvale": "그린베일",
+      "Greenlawn": "그린론",
+      "Amityville": "애미티빌",
+      "Hampton Bays": "햄프턴 베이스",
+      "Hempstead": "헴프스테드",
+      "Hempstead Gardens": "헴프스테드 가든스",
+      "Hollis": "홀리스",
+      "Hunterspoint Avenue": "헌터스포인트 애비뉴",
+      "Huntington": "헌팅턴",
+      "Hicksville": "힉스빌",
+      "Hewlett": "휴렛",
+      "Island Park": "아일랜드 파크",
+      "Nanuet": "내뉴엣",
+      "New Brunswick": "뉴브런즈윅",
+      "Newark Penn": "뉴어크 펜",
+      "North Elizabeth": "노스 엘리자베스",
+      "New Bridge Landing": "뉴 브리지 랜딩",
+      "Oradell": "오러델",
+      "Otisville": "오티스빌",
+      "Park Ridge": "파크 리지",
+      "Passaic": "퍼세이익",
+      "Paterson": "패터슨",
+      "Pearl River": "펄 리버",
+      "Plauderville": "플로더빌",
+      "Port Jervis": "포트 저비스",
+      "Princeton Junction": "프린스턴 정션",
+      "Radburn": "래드번",
+      "Rahway": "로웨이",
+      "Ramsey": "램지",
+      "Ridgewood": "리지우드",
+      "River Edge": "리버 에지",
+      "Rutherford": "러더퍼드",
+      "Salisbury Mills-Cornwall": "솔즈베리 밀스-콘월",
+      "Sloatsburg": "슬로츠버그",
+      "Spring Valley": "스프링 밸리",
+      "Suffern": "서펀",
+      "Teterboro": "티터버러",
+      "Trenton": "트렌턴",
+      "Tuxedo": "턱시도",
+      "Waldwick": "월드윅",
+      "Woodcliff Lake": "우드클리프 레이크",
+      "Wood-Ridge": "우드리지",
+      "Campbell Hall": "캠벨 홀",
+      "Clifton": "클리프턴",
+      "Allendale": "앨런데일",
+      "Hamilton": "해밀턴",
+      "Jersey Avenue": "저지 애비뉴",
+      "Delawanna": "델러워너",
+      "Newark Airport Rail Station": "뉴어크 에어포트 레일 스테이션",
+      "Edison": "에디슨",
+      "Secaucus Junction": "시코커스 정션",
+      "Ramsey Route 17": "램지 루트 17",
+      "Elizabeth": "엘리자베스",
+      "Emerson": "에머슨",
+      "Essex Street": "에식스 스트리트",
+      "Wesmont": "웨스몬트",
+      "Garfield": "가필드",
+      "Anderson Street": "앤더슨 스트리트",
+      "Glen Rock Boro Hall": "글렌록 보로 홀",
+      "Glen Rock Main Line": "글렌록 메인 라인",
+      "Harriman": "해리먼",
+      "Hillsdale": "힐스데일",
+      "Hoboken": "호보컨",
+      "Ho-Ho-Kus": "호호커스",
+      "Linden": "린든",
+      "Lyndhurst": "린드허스트",
+      "Mahwah": "마와",
+      "Metropark": "메트로파크",
+      "Metuchen": "머터천",
+      "Middletown, NY": "미들타운, 뉴욕",
+      "Montvale": "몬트베일",
       "Berlin": "베를린",
       "Ansonia": "앤소니아",
       "Beacon Falls": "비컨 폴스",
@@ -3110,6 +3394,11 @@
     };
 
     const stationAliases = [
+      {"id": "SEC", "names": ["Secaucus", "Secaucus Junction", "Secaucus upper level", "Secaucus lower level"]},
+      {"id": "NWK", "names": ["Newark Penn", "Newark Penn Station", "Penn Station Newark"]},
+      {"id": "EWR", "names": ["EWR", "Newark Airport", "Newark Liberty Airport", "Newark Airport Rail Station"]},
+      {"id": "PJC", "names": ["Princeton Jct", "Princeton Junction"]},
+      {"id": "TRE", "names": ["Trenton Transit Center", "Trenton"]},
       { id: "MNR_62", names: ["Mount Vernon West", "Mt. Vernon West"] },
       { id: "MNR_79", names: ["Mount Pleasant", "Mt. Pleasant"] },
       { id: "MNR_84", names: ["Mount Kisco", "Mt. Kisco"] },
@@ -3409,9 +3698,71 @@
       { id: "WND", name: "Windsor" },
       { id: "WNL", name: "Windsor Locks" },
       { id: "YANKEES", name: "Yankees-E 153 St" },
+      {"id": "NJT_100", "name": "Nanuet"},
+      {"id": "NJT_103", "name": "New Brunswick"},
+      {"id": "NWK", "name": "Newark Penn"},
+      {"id": "NJT_109", "name": "North Elizabeth"},
+      {"id": "NJT_110", "name": "New Bridge Landing"},
+      {"id": "NJT_111", "name": "Oradell"},
+      {"id": "NJT_113", "name": "Otisville"},
+      {"id": "NJT_114", "name": "Park Ridge"},
+      {"id": "NJT_115", "name": "Passaic"},
+      {"id": "NJT_116", "name": "Paterson"},
+      {"id": "NJT_118", "name": "Pearl River"},
+      {"id": "NJT_121", "name": "Plauderville"},
+      {"id": "NJT_123", "name": "Port Jervis"},
+      {"id": "PJC", "name": "Princeton Junction"},
+      {"id": "NJT_126", "name": "Radburn"},
+      {"id": "NJT_127", "name": "Rahway"},
+      {"id": "NJT_128", "name": "Ramsey"},
+      {"id": "NJT_131", "name": "Ridgewood"},
+      {"id": "NJT_132", "name": "River Edge"},
+      {"id": "NJT_134", "name": "Rutherford"},
+      {"id": "NJT_135", "name": "Salisbury Mills-Cornwall"},
+      {"id": "NJT_137", "name": "Sloatsburg"},
+      {"id": "NJT_142", "name": "Spring Valley"},
+      {"id": "NJT_144", "name": "Suffern"},
+      {"id": "NJT_146", "name": "Teterboro"},
+      {"id": "TRE", "name": "Trenton"},
+      {"id": "NJT_149", "name": "Tuxedo"},
+      {"id": "NJT_151", "name": "Waldwick"},
+      {"id": "NJT_156", "name": "Westwood"},
+      {"id": "NJT_159", "name": "Woodcliff Lake"},
+      {"id": "NJT_160", "name": "Wood-Ridge"},
+      {"id": "NJT_25", "name": "Broadway"},
+      {"id": "NJT_26", "name": "Campbell Hall"},
+      {"id": "NJT_29", "name": "Clifton"},
+      {"id": "NJT_3", "name": "Allendale"},
+      {"id": "NJT_32905", "name": "Hamilton"},
+      {"id": "NJT_32906", "name": "Jersey Avenue"},
+      {"id": "NJT_33", "name": "Delawanna"},
+      {"id": "EWR", "name": "Newark Airport Rail Station"},
+      {"id": "NJT_38", "name": "Edison"},
+      {"id": "SEC", "name": "Secaucus Junction"},
+      {"id": "NJT_38417", "name": "Ramsey Route 17"},
+      {"id": "NJT_41", "name": "Elizabeth"},
+      {"id": "NJT_42", "name": "Emerson"},
+      {"id": "NJT_43", "name": "Essex Street"},
+      {"id": "NJT_43599", "name": "Wesmont"},
+      {"id": "NJT_46", "name": "Garfield"},
+      {"id": "NJT_5", "name": "Anderson Street"},
+      {"id": "NJT_51", "name": "Glen Rock Boro Hall"},
+      {"id": "NJT_52", "name": "Glen Rock Main Line"},
+      {"id": "NJT_57", "name": "Harriman"},
+      {"id": "NJT_58", "name": "Hawthorne"},
+      {"id": "NJT_62", "name": "Hillsdale"},
+      {"id": "NJT_63", "name": "Hoboken"},
+      {"id": "NJT_64", "name": "Ho-Ho-Kus"},
+      {"id": "NJT_70", "name": "Linden"},
+      {"id": "NJT_75", "name": "Lyndhurst"},
+      {"id": "NJT_78", "name": "Mahwah"},
+      {"id": "MET", "name": "Metropark"},
+      {"id": "NJT_84", "name": "Metuchen"},
+      {"id": "NJT_86", "name": "Middletown, NY"},
+      {"id": "NJT_90", "name": "Montvale"},
     ];
 
-    const transferStationIds = new Set(["H125", "FOR", "CRT", "MNR_94", "YNY", "POU", "NHV", "STM", "BRP", "SONO", "GCT", "NYP", "LIRR_102", "LIRR_125", "LIRR_132", "LIRR_179", "LIRR_198", "LIRR_211", "LIRR_214", "LIRR_27", "LIRR_72", "LIRR_91", "LIRR_92"]);
+    const transferStationIds = new Set(["SEC", "NWK", "TRE", "H125", "FOR", "CRT", "MNR_94", "YNY", "POU", "NHV", "STM", "BRP", "SONO", "GCT", "NYP", "LIRR_102", "LIRR_125", "LIRR_132", "LIRR_179", "LIRR_198", "LIRR_211", "LIRR_214", "LIRR_27", "LIRR_72", "LIRR_91", "LIRR_92"]);
 
     const LIRR_TRANSFER_MINUTES = {"LIRR_102": 5.0};
 
@@ -4272,7 +4623,7 @@
           row.service_start_date,
           row.service_end_date,
           row.source_pdf,
-          row.agency === "LIRR" ? gtfsMetadataValue(row.raw_notes, "trip_id") : "",
+          ["LIRR", "NJ Transit"].includes(row.agency) ? gtfsMetadataValue(row.raw_notes, "trip_id") : "",
         ].join("|");
         if (!groups.has(key)) {
           groups.set(key, {
@@ -4701,6 +5052,7 @@
         hartford_gtfs: "CTrail - Hartford Line GTFS",
         sle_gtfs: "CTrail - Shore Line East GTFS",
         amtrak_gtfs: "Amtrak - GTFS Regional Rail",
+        njt_gtfs: "NJ Transit - Northeast Corridor, Port Jervis, and Pascack Valley GTFS",
       };
       const key = basename
         .replace(/_effective_\d{4}-\d{2}-\d{2}/i, "")
@@ -6017,6 +6369,7 @@
 
     function calculateRouteFare(route, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
       if (!route || !route.legs.length) return null;
+      if (route.legs.every(isNjtLeg)) return calculateNjtFare(route.legs, passengerCategory);
       if (route.legs.some(leg => [leg.fromId, leg.toId].includes("YANKEES"))) return null;
       if (route.legs.every(isLirrLeg)) return lirrFareForLegs(route.legs, passengerCategory);
       const combo = comboTicketFare(route, passengerCategory);
@@ -6078,6 +6431,7 @@
     }
 
     function calculateLegFare(leg, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      if (isNjtLeg(leg)) return calculateNjtFare([leg], passengerCategory);
       if (isLirrLeg(leg)) return lirrFareForLegs([leg], passengerCategory);
       if (isMetroNorthFareLeg(leg)) {
         const peakStatus = metroNorthFarePeakStatusForLegs([leg]);
@@ -6097,6 +6451,34 @@
         destinationStationId: leg.toId,
         passengerCategory,
       });
+    }
+
+    function isNjtLeg(leg) {
+      return leg?.trip?.agency === "NJ Transit";
+    }
+
+    function calculateNjtFare(legs, passengerCategory = FARE_PASSENGER_CATEGORY.ADULT) {
+      if (passengerCategory !== FARE_PASSENGER_CATEGORY.ADULT || !legs.length || legs.length > 2 || !legs.every(isNjtLeg)) return null;
+      const data = window.MOOSE_NJT_FARES;
+      if (data?.version !== 1 || data.currency !== "USD") return null;
+      const retrieved = Date.parse(data.retrievedAt);
+      if (!Number.isFinite(retrieved) || retrieved > Date.now() + 86400000 || Date.now() - retrieved > 30 * 86400000) return null;
+      if (legs.length === 2 && legs[0].toId !== legs[1].fromId) return null;
+      if (legs.length === 2) {
+        const routes = legs.map(leg => leg.trip.staticRouteId);
+        if (legs[0].toId === "SEC") {
+          if (!(routes[0] === "10" && ["6", "14"].includes(routes[1])) &&
+              !(routes[1] === "10" && ["6", "14"].includes(routes[0]))) return null;
+        } else if (!routes.every(id => id === "10")) return null;
+      }
+      const from = legs[0].fromId, to = legs[legs.length - 1].toId;
+      const quote = data.fares?.[`${from}>${to}`];
+      if (!quote || !Number.isInteger(quote.amountCents) || quote.amountCents <= 0) return null;
+      if (quote.viaSecaucusOnly && (legs.length !== 2 || legs[0].toId !== "SEC")) return null;
+      return {amountCents: quote.amountCents, currency: "USD", passengerCategory,
+        product: "NJT", fareType: FARE_TYPE.ORDINARY_ONE_WAY,
+        sourceUrl: data.sourceUrl, checkedDate: new Intl.DateTimeFormat("en-CA", {timeZone: TRANSIT_TIME_ZONE}).format(new Date(retrieved)),
+        through: legs.length === 2, airportAccessIncluded: [from, to].includes("EWR")};
     }
 
     function calculateMetroNorthFare(request) {
@@ -6278,6 +6660,9 @@
 
     function renderFareSummary(fare) {
       if (!fare) return "";
+      if (fare.product === "NJT") return [formatFareAmount(fare), t("fareStandardOneWay"),
+        t("njtFareChecked", {date: fare.checkedDate}), fare.through ? t("njtThroughFare") : "",
+        fare.airportAccessIncluded ? t("njtAirportFare") : ""].filter(Boolean).join(" · ");
       if (fare.fareType === "VIA_ONE_WAY") return [formatFareAmount(fare), t("fareViaOneWay", { station: displayStationName(fare.viaStationName) }), fare.peakStatus === FARE_PEAK_STATUS.PEAK ? t("farePeak") : t("fareOffPeak")].join(" · ");
       if (fare.componentFares?.length > 1) return formatFareAmount(fare) + " · " + t("fareSeparateTickets");
       if (fare.fareType === "COMBO_TICKET") return formatFareAmount(fare) + " · Combo Ticket · " + t("comboPurchaseNote");
@@ -6568,7 +6953,8 @@
       const routeFareMeta = routeFareSummary ? `<span class="fare-summary">${Number.isInteger(routeFare.amountCents)
         ? `${escapeHtml(formatFareAmount(routeFare))}${routeFare.fareType === "COMBO_TICKET" ? " · Combo Ticket" : routeFare.componentFares?.length > 1 ? " · " + escapeHtml(t("fareSeparateTickets")) : routeFare.fareType === "VIA_ONE_WAY" ? " · " + escapeHtml(t("fareViaOneWay", { station: displayStationName(routeFare.viaStationName) })) : ""}<button class="live-indicator fare-info" type="button" aria-label="${escapeHtml(routeFareSummary)}" aria-expanded="false" data-status-toggle><span aria-hidden="true">ⓘ</span><span class="live-indicator-tooltip" role="tooltip">${escapeHtml(routeFareSummary)}</span></button>`
         : escapeHtml(routeFareSummary)}</span>` : !amtrakFirstMixedTrip && route.legs.some((leg) => normalize(leg.trip.agency) === "amtrak")
-          ? `<span class="fare-summary">${renderAmtrakFareLink()}</span>` : "";
+          ? `<span class="fare-summary">${renderAmtrakFareLink()}</span>` : route.legs.every(isNjtLeg)
+            ? `<span class="fare-summary">${escapeHtml(t("fareUnavailable"))}</span>` : "";
       return `
         <article class="result" data-route-id="${escapeHtml(routeId)}">
           <button
@@ -6587,7 +6973,7 @@
             <div class="result-meta"><span class="journey-time">${escapeHtml(routeTimeRange)}</span><span class="journey-duration">${liveIndicator}${escapeHtml(formatDuration(routeDuration))}</span>${routeFareMeta}</div>
           </div>
           <div class="legs">
-            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset, (routeFare?.fareType === "COMBO_TICKET" || (routeFare && route.legs.every(isLirrLeg)) || route.legs.every((item) => normalize(item.trip.agency) === "amtrak")))).join("")}
+            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset, (route.legs.every(isNjtLeg) || routeFare?.fareType === "COMBO_TICKET" || (routeFare && route.legs.every(isLirrLeg)) || route.legs.every((item) => normalize(item.trip.agency) === "amtrak")))).join("")}
           </div>
         </article>
       `;
@@ -6780,7 +7166,7 @@
             <div class="leg-stations"><strong>${escapeHtml(formatStationRange(boardingStationName(leg.from, leg.fromId, trip.agency), boardingStationName(leg.to, leg.toId, trip.agency)))}</strong></div>
             <div class="leg-meta">${escapeHtml(formatLegMeta(trip, leg.realtime) + (leg.realtime?.departure?.track ? " · Track " + leg.realtime.departure.track : ""))}</div>
           </div>
-          ${fareAmount ? `<div class="leg-fare">${escapeHtml(fareAmount)}</div>` : !hideAmtrakFareLink && normalize(trip.agency) === "amtrak" ? `<div class="leg-fare">${renderAmtrakFareLink()}</div>` : ""}
+          ${fareAmount ? `<div class="leg-fare">${escapeHtml(fareAmount)}</div>` : !hideAmtrakFareLink && normalize(trip.agency) === "amtrak" ? `<div class="leg-fare">${renderAmtrakFareLink()}</div>` : !hideAmtrakFareLink && isNjtLeg(leg) ? `<div class="leg-fare">${escapeHtml(t("fareUnavailable"))}</div>` : ""}
         </div>
       `;
     }

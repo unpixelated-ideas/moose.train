@@ -4,6 +4,10 @@ Moose.train ingests static railroad schedules through `supporting_files/extracti
 
 The importer is feed-configured rather than railroad-parser-specific. Adding another GTFS-compatible railroad should usually mean adding one `GtfsFeedConfig`, optional route filters, optional station-scope rules, and optional station normalization aliases.
 
+NJ Transit is included in the normal refresh, with a separate source audit tool. See
+[NJ Transit integration](njt_integration.md) for verified source behavior,
+free GitHub Actions auditing, fare corroboration, and publication behavior.
+
 ## Configured Feeds
 
 Current feeds:
@@ -11,6 +15,7 @@ Current feeds:
 | Feed ID | Source ID | Operator | URL | Route Selection |
 |---|---|---|---|---|
 | `lirr` | `lirr` | LIRR | `https://rrgtfsfeeds.s3.amazonaws.com/gtfslirr.zip` | All rail branches; exclude the nonpublic Hillside Facility. |
+| `njt` | `njt` | NJ Transit | `https://www.njtransit.com/rail_data.zip` | Route IDs `6`, `10`, `14`; replacement-bus itineraries excluded. |
 | `mnr` | `mnr` | Metro-North | `https://rrgtfsfeeds.s3.amazonaws.com/gtfsmnr.zip` | Include route IDs `1`–`6`: Hudson, Harlem, New Haven, and its three branches. Port Jervis and Pascack Valley remain out of scope. Exclude non-public Highbridge Yard and Springdale maintenance stops. |
 | `hartford` | `hartford` | CTrail | `https://ctrides.com/hlgtfs.zip` | Import complete feed. |
 | `sle` | `amtrak_official` | CTrail | `https://content.amtrak.com/content/gtfs/GTFS.zip` | Include Shore Line East agency `1230` from the Amtrak-hosted feed. |
@@ -49,7 +54,7 @@ The `stops.csv` table includes `in_search_scope`. Feeds without a configured sta
 The current Amtrak product is limited to trips that serve at least two supported stations:
 
 - Connecticut Amtrak stations: Stamford, Bridgeport, New Haven Union, New Haven State Street, Wallingford, Meriden, Berlin, Hartford, Windsor, Windsor Locks, Old Saybrook, New London, Mystic
-- New York Penn
+- New York Penn, Newark Penn, Newark Airport Rail Station, Metropark, Princeton Junction, Trenton
 - Shared Hudson Line stations: Yonkers, Croton-Harmon, Poughkeepsie
 - Springfield
 - Westerly

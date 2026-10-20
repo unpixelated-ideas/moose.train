@@ -47,6 +47,10 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
     assert.equal(await page.locator('.tagline').textContent(), '암트랙과 지역 철도를 한 번의 검색으로 비교하세요.');
     // Load real local schedules and exercise the existing shared search engine.
     await page.evaluate(async () => {
+      // This checks language-state identity, independent of an asynchronous live
+      // provider replacing the search object while the assertions are running.
+      getMetroNorthRealtimeSnapshot = async () => null;
+      getLirrRealtimeSnapshot = async () => null;
       await ensureScheduleLoaded({ updateStatus: false });
       els.origin.value = 'New Haven'; els.destination.value = 'Stamford';
       els.date.value = '2026-10-19'; els.time.value = '9:00 AM';

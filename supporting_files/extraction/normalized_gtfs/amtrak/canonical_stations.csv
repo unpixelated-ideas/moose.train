@@ -1,12 +1,18 @@
 canonical_station_id,station_name
 ABERDEEN_AMT,Aberdeen Amtrak Station
 ALBANY_RENSS,Albany-Rensselaer Amtrak Station
+ALDERSON_AMT,Alderson Amtrak
 ALEXANDRIA,Alexandria
+ALTOONA_AMTR,Altoona Amtrak Station
 AMSTERDAM_AM,Amsterdam Amtrak Station
-ASHLAND_AMTR,Ashland Amtrak
+ANNISTON_AMT,Anniston Amtrak Station
+ARDMORE_AMTR,Ardmore Amtrak Station
+ASHLAND_AMTR,Ashland Amtrak Station
+ATLANTA,Atlanta
 BALTIMORE_PE,Baltimore Penn Station
 BELLOWS_FALL,Bellows Falls Amtrak Station
 BER,Berlin
+BIRMINGHAM,Birmingham
 BOSTON,Boston
 BRATTLEBORO_,Brattleboro Amtrak Station
 BRP,Bridgeport
@@ -15,94 +21,179 @@ BUFFALO,Buffalo
 BUFFALO_DEPE,Buffalo Depew Station
 BURKE_CENTRE,Burke Centre Amtrak
 BURLINGTON,Burlington
+BURLINGTON_A,Burlington Amtrak Station
 BWI_THURGOOD,Bwi Thurgood Marshall Airport Station
 CANADIAN_BOR,Canadian Border
+CARY,Cary
 CASTLETON_AM,Castleton Amtrak Station
+CHARLESTON,Charleston
+CHARLESTON_A,Charleston Amtrak Station
 CHARLOTTESVI,Charlottesville
+CHARLOTTE_AM,Charlotte Amtrak Station
 CHICAGO_UNIO,Chicago Union Station
+CINCINNATI_U,Cincinnati Union Terminal
 CLAREMONT_AM,Claremont Amtrak
+CLEMSON_AMTR,Clemson Amtrak Station
 CLEVELAND,Cleveland
+CLIFTON_FORG,Clifton Forge Amtrak Station
+COATESVILLE_,Coatesville Amtrak
+CONNERSVILLE,Connersville Amtrak
+CORNWELLS_HE,Cornwells Heights Amtrak
+CRAWFORDSVIL,Crawfordsville Amtrak
 CRT,Croton-Harmon
 CULPEPER_AMT,Culpeper Amtrak Station
+DANVILLE_AMT,Danville Amtrak Station
+DEERFIELD_BE,Deerfield Beach Amtrak Station
+DELAND,Deland
+DELRAY_BEACH,Delray Beach Amtrak
+DILLON_AMTRA,Dillon Amtrak Station
+DOWNINGTOWN_,Downingtown Amtrak
+DURHAM_AMTRA,Durham Amtrak Station
+DYER_AMTRAK,Dyer Amtrak
+ELIZABETHTOW,Elizabethtown Amtrak Station
 ELKHART_AMTR,Elkhart Amtrak Station
 ELYRIA_AMTRA,Elyria Amtrak
 ERIE_AMTRAK_,Erie Amtrak Station
 ESSEX_JUNCTI,Essex Junction-Burlington Amtrak Station
+EWR,Newark Airport Rail Station
+EXTON_AMTRAK,Exton Amtrak
+FAYETTEVILLE,Fayetteville Amtrak Station
 FERRISBURGH,Ferrisburgh
+FLORENCE_AMT,Florence Amtrak Station
 FORT_EDWARD_,Fort Edward Amtrak
+FORT_LAUDERD,Fort Lauderdale Amtrak Station
 FREDERICKSBU,Fredericksburg Amtrak
+GAINESVILLE_,Gainesville Amtrak Station
+GASTONIA_AMT,Gastonia Amtrak Station
 GREENFIELD_A,Greenfield Amtrak Station
+GREENSBORO,Greensboro
+GREENSBURG_A,Greensburg Amtrak
+GREENVILLE_A,Greenville Amtrak Station
+HARRISBURG,Harrisburg
+HATTIESBURG_,Hattiesburg Amtrak Station
 HFD,Hartford
+HIGH_POINT,High Point
+HINTON_AMTRA,Hinton Amtrak Station
+HOLLYWOOD_AM,Hollywood Amtrak Station
 HOLYOKE_AMTR,Holyoke Amtrak
 HUDSON_AMTRA,Hudson Amtrak Station
+HUNTINGDON_A,Huntingdon Amtrak Station
+HUNTINGTON_A,Huntington Amtrak Station
+INDIANAPOLIS,Indianapolis
+JACKSONVILLE,Jacksonville
+JESUP_AMTRAK,Jesup Amtrak Station
+JOHNSTOWN_AM,Johnstown Amtrak Station
+KANNAPOLIS,Kannapolis
 KINGSTON_AMT,Kingston Amtrak Station
+KINGSTREE_AM,Kingstree Amtrak Station
+KISSIMMEE_AM,Kissimmee Amtrak Station
+LAFAYETTE_AM,Lafayette Amtrak Station
+LANCASTER,Lancaster
+LATROBE_AMTR,Latrobe Amtrak
+LAUREL_AMTRA,Laurel Amtrak Station
+LEWISTOWN_AM,Lewistown Amtrak Station
 LYNCHBURG,Lynchburg
 MANASSAS_AMT,Manassas Amtrak Station
+MAYSVILLE_AM,Maysville Amtrak Station
 MDN,Meriden
-METROPARK_AM,Metropark Amtrak Station
+MERIDIAN_UNI,Meridian Union Station
+MET,Metropark
+MIAMI_AMTRAK,Miami Amtrak Station
 MIDDLEBURY,Middlebury
+MIDDLETOWN,Middletown
+MONTGOMERY_A,Montgomery Amtrak
 MONTPELIER_B,Montpelier-Berlin Amtrak Station
 MONTREAL_CEN,Montreal Central Station
+MOUNT_JOY_AM,Mount Joy Amtrak
 MYS,Mystic
-NEWARK,Newark
 NEWARK_AMTRA,Newark Amtrak
-NEWARK_LIBER,Newark Liberty International Airport
 NEWPORT_NEWS,Newport News
 NEW_BRUNSWIC,New Brunswick Amtrak Station
 NEW_CARROLLT,New Carrollton Amtrak Station
+NEW_ORLEANS_,New Orleans Union Passenger Terminal
 NEW_ROCHELLE,New Rochelle Amtrak Station
 NHV,New Haven Union Station
 NIAGARA_FALL,Niagara Falls Amtrak Station
 NLC,New London
 NORFOLK,Norfolk
 NORTHAMPTON,Northampton
+NORTH_PHILAD,North Philadelphia Amtrak Station
+NWK,Newark Penn
 NYP,New York Penn
+ORLANDO,Orlando
 OSB,Old Saybrook
+PALATKA_AMTR,Palatka Amtrak
+PAOLI_AMTRAK,Paoli Amtrak Station
+PARKESBURG_A,Parkesburg Amtrak
 PETERSBURG_A,Petersburg Amtrak Station
 PHILADELPHIA,Philadelphia
+PICAYUNE_AMT,Picayune Amtrak Station
+PITTSBURGH_A,Pittsburgh Amtrak Station
+PJC,Princeton Junction
 PLATTSBURGH_,Plattsburgh Amtrak Station
 PORT_HENRY_A,Port Henry Amtrak Station
 POU,Poughkeepsie
-PRINCETON_JU,Princeton Junction Amtrak Station
+PRINCE_AMTRA,Prince Amtrak Station
 PROVIDENCE,Providence
 QUANTICO_AMT,Quantico Amtrak
+RALEIGH_UNIO,Raleigh Union Station
 RANDOLPH_AMT,Randolph Amtrak
+RENSSELAER_A,Rensselaer Amtrak
 RHINECLIFF_A,Rhinecliff Amtrak Station
 RICHMOND_MAI,Richmond Main Street Amtrak Station
 RICHMOND_STA,Richmond Staples Mill Road Amtrak Station
 ROANOKE,Roanoke
 ROCHESTER,Rochester
+ROCKY_MOUNT,Rocky Mount
 ROME_AMTRAK_,Rome Amtrak Station
 ROUSES_POINT,Rouses Point Amtrak
 ROUTE_128_AM,Route 128 Amtrak Station
 RUTLAND,Rutland
+SALISBURY,Salisbury
 SANDUSKY_AMT,Sandusky Amtrak Station
 SARATOGA_SPR,Saratoga Springs Amtrak Station
+SAVANNAH,Savannah
 SCHENECTADY,Schenectady
+SEBRING_AMTR,Sebring Amtrak Station
+SELMA,Selma
+SLIDELL_AMTR,Slidell Amtrak Station
 SOUTH_BEND_A,South Bend Amtrak Station
+SOUTH_PORTSM,South Portsmouth Amtrak
+SPARTANBURG_,Spartanburg Amtrak Station
 SPG,Springfield
+STAUNTON_AMT,Staunton Amtrak Station
 STM,Stamford
 STS,New Haven State Street
 ST_ALBANS_AM,St. Albans Amtrak Station
 ST_LAMBERT_A,St-Lambert Amtrak Station
 SYRACUSE_REG,Syracuse Regional Transportation Center
+THURMOND_AMT,Thurmond Amtrak
 TICONDEROGA_,Ticonderoga Amtrak
+TOCCOA_AMTRA,Toccoa Amtrak Station
 TOLEDO,Toledo
 TORONTO,Toronto
-TRENTON,Trenton
+TRE,Trenton
+TUSCALOOSA_A,Tuscaloosa Amtrak Station
+TYRONE_AMTRA,Tyrone Amtrak
 UTICA_AMTRAK,Utica Amtrak Station
 WASHINGTON_U,Washington Union Station
 WATERBURY_ST,Waterbury-Stowe Amtrak Station
 WATERLOO_AMT,Waterloo Amtrak Station
+WEST_PALM_BE,West Palm Beach Amtrak Station
 WFD,Wallingford
 WHITEHALL_AM,Whitehall Amtrak
 WHITE_RIVER_,White River Junction Amtrak Station
+WHITE_SULPHU,White Sulphur Springs Amtrak
 WILLIAMSBURG,Williamsburg Amtrak Station
 WILMINGTON,Wilmington
+WILSON,Wilson
 WINDSOR_MT_A,Windsor-Mt. Ascutney Amtrak
+WINTER_HAVEN,Winter Haven
+WINTER_PARK_,Winter Park Amtrak Station
 WLY,Westerly
 WND,Windsor
 WNL,Windsor Locks
 WOODBRIDGE_A,Woodbridge Amtrak
 WPT,Westport
+YEMASSEE_AMT,Yemassee Amtrak
 YNY,Yonkers

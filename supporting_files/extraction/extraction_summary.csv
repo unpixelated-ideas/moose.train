@@ -1,6 +1,7 @@
 source_pdf,source_original_filename,rows_extracted,pages,timetable_effective_date,service_end_date,timetable_last_updated_date,timetable_revision_date
+njt_gtfs_effective_2026-09-15_updated_2026-10-19.zip,rail_data.zip,10346,,2026-09-15,2027-03-13,2026-10-19,
 lirr_gtfs_effective_2026-10-16_updated_2026-10-19.zip,gtfslirr.zip,24251,,2026-10-16,2026-11-08,2026-10-19,
 mnr_gtfs_effective_2026-10-15_updated_2026-10-19.zip,gtfsmnr.zip,464702,,2026-10-15,2027-05-22,2026-10-19,
 hartford_gtfs_effective_2026-07-11_updated_2026-10-19.zip,hlgtfs.zip,266,,2026-07-11,2027-07-12,2026-10-19,
 sle_gtfs_effective_2026-10-18_updated_2026-10-18.zip,GTFS.zip,386,,2026-10-18,2027-10-18,2026-10-19,
-amtrak_gtfs_effective_2026-10-18_updated_2026-10-18.zip,GTFS.zip,3613,,2026-10-18,2027-10-18,2026-10-19,
+amtrak_gtfs_effective_2026-10-18_updated_2026-10-18.zip,GTFS.zip,7038,,2026-10-18,2027-10-18,2026-10-19,

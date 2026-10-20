@@ -17,8 +17,9 @@ or personal tokens are required.
 ## Publication behavior
 
 Scheduled, manual, and push runs download all configured GTFS feeds, generate the CSV,
-validate all five products and service coverage, and rebuild and test search
-assets. Only a successful build is deployed. Failure leaves the existing
+validate all six products and service coverage, and rebuild and test search
+assets. It also prepares NJ Transit adult fare snapshots from the free public
+planner; unsupported or uncorroborated prices remain unavailable. Only a successful build is deployed. Failure leaves the existing
 deployment available; GitHub Actions shows the failure, with notifications
 controlled by your GitHub notification preferences.
 

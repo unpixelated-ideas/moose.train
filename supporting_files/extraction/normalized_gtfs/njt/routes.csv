@@ -1,0 +1,4 @@
+feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+njt,njt:6,6,njt:NJT,NJT,MNBNP,Port Jervis Line,2,Port Jervis Line,Port Jervis Line
+njt,njt:10,10,njt:NJT,NJT,NEC,Northeast Corridor,2,Northeast Corridor,Northeast Corridor
+njt,njt:14,14,njt:NJT,NJT,PASC,Pascack Valley Line,2,Pascack Valley Line,Pascack Valley Line

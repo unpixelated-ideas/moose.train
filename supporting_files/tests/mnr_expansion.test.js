@@ -32,7 +32,8 @@ assert.equal(run(`calculateMetroNorthRouteFare({legs:[leg('YNY','CRT'),leg('CRT'
 assert.equal(run(`calculateRouteFare({legs:[leg('YNY','CRT'),{fromId:'CRT',toId:'POU',trip:{agency:'Amtrak'}}]})`),null,'Do not quote partial mixed-operator totals');
 assert.equal(run(`new Set(stationIndex.map(s=>s.id)).size === stationIndex.length`),true,'Unique station IDs');
 assert.equal(run(`stationIndex.filter(s=>s.name==='Yankees-E 153 St').length`),1,'Keep existing stadium identity');
-assert.equal(run(`stationIndex.some(s=>/Highbridge|Springdale MW|Port Jervis|Pascack/i.test(s.name))`),false);
+assert.equal(run(`stationIndex.some(s=>/Highbridge|Springdale MW/i.test(s.name))`),false);
+assert.equal(run(`stationIndex.some(s=>s.id==='NJT_123' && s.name==='Port Jervis')`),true);
 run(`
   const liveDate = dateFromIso('2026-10-19');
   const hudsonTrip = {agency:'Metro-North',service:'Hudson Line',route:'Hudson Line',train:'871',stops:[{id:'GCT'},{id:'YNY'},{id:'POU'}]};

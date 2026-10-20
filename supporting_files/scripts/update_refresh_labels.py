@@ -19,8 +19,8 @@ def format_date(day, language):
 
 
 def render(html, metadata):
-    if len(metadata) != 5 or {row['feed_id'] for row in metadata} != {"mnr", "hartford", "sle", "amtrak", "lirr"}:
-        raise ValueError("Expected five import records")
+    if len(metadata) != 6 or {row['feed_id'] for row in metadata} != {"mnr", "hartford", "sle", "amtrak", "lirr", "njt"}:
+        raise ValueError("Expected six import records")
     if any(row['success'] != 'true' for row in metadata):
         raise ValueError("Cannot label failed imports as refreshed")
     # A complete refresh is only as fresh as its oldest product.

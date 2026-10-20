@@ -1,0 +1,855 @@
+feed_id,trip_uid,source_trip_id,route_uid,source_route_id,service_uid,source_service_id,trip_headsign,trip_short_name,direction_id,block_id,shape_uid,source_shape_id,operator_name,service_name,route_name
+njt,njt:2185,2185,njt:6,6,njt:30,30,HOBOKEN,,0,0088,njt:766,766,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2186,2186,njt:6,6,njt:31,31,HOBOKEN,,0,0094,njt:767,767,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2187,2187,njt:6,6,njt:2,2,HOBOKEN,,0,0066,njt:768,768,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2188,2188,njt:6,6,njt:2,2,HOBOKEN,,0,0058,njt:769,769,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2189,2189,njt:6,6,njt:2,2,HOBOKEN,,0,0064,njt:770,770,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2190,2190,njt:6,6,njt:2,2,HOBOKEN,,0,0062,njt:771,771,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2191,2191,njt:6,6,njt:24,24,HOBOKEN,,0,0080,njt:772,772,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2192,2192,njt:6,6,njt:24,24,HOBOKEN,,0,0072,njt:773,773,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2193,2193,njt:6,6,njt:24,24,HOBOKEN,,0,0078,njt:774,774,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2194,2194,njt:6,6,njt:4,4,HOBOKEN,,0,0044,njt:775,775,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2195,2195,njt:6,6,njt:24,24,HOBOKEN,,0,0074,njt:776,776,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2196,2196,njt:6,6,njt:4,4,HOBOKEN,,0,0046,njt:777,777,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2197,2197,njt:6,6,njt:24,24,HOBOKEN,,0,0076,njt:778,778,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2198,2198,njt:6,6,njt:4,4,HOBOKEN,,0,0048,njt:779,779,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2199,2199,njt:6,6,njt:24,24,HOBOKEN,,0,0070,njt:780,780,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2200,2200,njt:6,6,njt:4,4,HOBOKEN,,0,0054,njt:781,781,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2201,2201,njt:6,6,njt:24,24,HOBOKEN,,0,0082,njt:782,782,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2202,2202,njt:6,6,njt:4,4,HOBOKEN,,0,0056,njt:783,783,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2203,2203,njt:6,6,njt:6,6,HOBOKEN,,0,0044,njt:784,784,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2204,2204,njt:6,6,njt:6,6,HOBOKEN,,0,0046,njt:785,785,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2205,2205,njt:6,6,njt:6,6,HOBOKEN,,0,0048,njt:786,786,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2206,2206,njt:6,6,njt:4,4,HOBOKEN,,0,0052,njt:787,787,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2207,2207,njt:6,6,njt:6,6,HOBOKEN,,0,0054,njt:788,788,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2208,2208,njt:6,6,njt:4,4,HOBOKEN,,0,0068,njt:789,789,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2209,2209,njt:6,6,njt:6,6,HOBOKEN,,0,0056,njt:790,790,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2210,2210,njt:6,6,njt:4,4,HOBOKEN,,0,0042,njt:791,791,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2211,2211,njt:6,6,njt:6,6,HOBOKEN,,0,0052,njt:792,792,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2212,2212,njt:6,6,njt:6,6,HOBOKEN,,0,0068,njt:793,793,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2213,2213,njt:6,6,njt:4,4,HOBOKEN,,0,0050,njt:794,794,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2214,2214,njt:6,6,njt:6,6,HOBOKEN,,0,0042,njt:795,795,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2215,2215,njt:6,6,njt:6,6,HOBOKEN,,0,0050,njt:796,796,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2257,2257,njt:6,6,njt:32,32,PORT JERVIS,,1,0041,njt:804,804,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2258,2258,njt:6,6,njt:10,10,PORT JERVIS,,1,0093,njt:805,805,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2259,2259,njt:6,6,njt:33,33,PORT JERVIS,,1,0091,njt:806,806,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2260,2260,njt:6,6,njt:14,14,PORT JERVIS,,1,0099,njt:807,807,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2261,2261,njt:6,6,njt:34,34,PORT JERVIS,,1,0069,njt:808,808,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2262,2262,njt:6,6,njt:16,16,MIDDLETOWN NY,,1,0049,njt:809,809,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2263,2263,njt:6,6,njt:2,2,MIDDLETOWN NY,,1,0047,njt:810,810,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2264,2264,njt:6,6,njt:2,2,PORT JERVIS,,1,0043,njt:811,811,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2265,2265,njt:6,6,njt:2,2,PORT JERVIS,,1,0045,njt:812,812,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2266,2266,njt:6,6,njt:23,23,PORT JERVIS,,1,0041,njt:813,813,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2267,2267,njt:6,6,njt:13,13,PORT JERVIS,,1,0069,njt:814,814,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2268,2268,njt:6,6,njt:4,4,PORT JERVIS,,1,0059,njt:815,815,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2269,2269,njt:6,6,njt:24,24,PORT JERVIS,,1,0077,njt:816,816,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2270,2270,njt:6,6,njt:24,24,PORT JERVIS,,1,0079,njt:817,817,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2271,2271,njt:6,6,njt:25,25,PORT JERVIS,,1,0051,njt:818,818,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2272,2272,njt:6,6,njt:24,24,PORT JERVIS,,1,0075,njt:819,819,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2273,2273,njt:6,6,njt:25,25,PORT JERVIS,,1,0053,njt:820,820,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2274,2274,njt:6,6,njt:24,24,PORT JERVIS,,1,0071,njt:821,821,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2275,2275,njt:6,6,njt:4,4,PORT JERVIS,,1,0055,njt:822,822,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2276,2276,njt:6,6,njt:24,24,PORT JERVIS,,1,0073,njt:823,823,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2277,2277,njt:6,6,njt:4,4,PORT JERVIS,,1,0065,njt:824,824,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2278,2278,njt:6,6,njt:24,24,PORT JERVIS,,1,0081,njt:825,825,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2279,2279,njt:6,6,njt:35,35,PORT JERVIS,,1,0059,njt:826,826,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2280,2280,njt:6,6,njt:25,25,PORT JERVIS,,1,0061,njt:827,827,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2281,2281,njt:6,6,njt:6,6,PORT JERVIS,,1,0051,njt:828,828,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2282,2282,njt:6,6,njt:4,4,PORT JERVIS,,1,0063,njt:829,829,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2283,2283,njt:6,6,njt:6,6,PORT JERVIS,,1,0053,njt:830,830,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2284,2284,njt:6,6,njt:4,4,PORT JERVIS,,1,0057,njt:831,831,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2285,2285,njt:6,6,njt:6,6,PORT JERVIS,,1,0055,njt:832,832,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2286,2286,njt:6,6,njt:6,6,PORT JERVIS,,1,0065,njt:833,833,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2287,2287,njt:6,6,njt:4,4,PORT JERVIS,,1,0067,njt:834,834,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2288,2288,njt:6,6,njt:6,6,PORT JERVIS,,1,0061,njt:835,835,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2289,2289,njt:6,6,njt:6,6,PORT JERVIS,,1,0063,njt:836,836,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2290,2290,njt:6,6,njt:6,6,PORT JERVIS,,1,0057,njt:837,837,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2291,2291,njt:6,6,njt:6,6,PORT JERVIS,,1,0067,njt:838,838,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2313,2313,njt:6,6,njt:27,27,PORT JERVIS,,1,0041,njt:844,844,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2315,2315,njt:6,6,njt:28,28,PORT JERVIS,,1,0051,njt:846,846,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2316,2316,njt:6,6,njt:28,28,PORT JERVIS,,1,0053,njt:847,847,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2317,2317,njt:6,6,njt:28,28,PORT JERVIS,,1,0061,njt:848,848,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2318,2318,njt:6,6,njt:29,29,PORT JERVIS,,1,0051,njt:849,849,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2319,2319,njt:6,6,njt:29,29,PORT JERVIS,,1,0053,njt:850,850,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:2320,2320,njt:6,6,njt:29,29,PORT JERVIS,,1,0061,njt:851,851,NJ Transit,Port Jervis Line,Port Jervis Line
+njt,njt:3113,3113,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3892,njt:1607,1607,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3114,3114,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3892,njt:1608,1608,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3115,3115,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3800,njt:1609,1609,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3116,3116,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3800,njt:1610,1610,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3117,3117,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3742,njt:1611,1611,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3118,3118,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3742,njt:1612,1612,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3119,3119,njt:10,10,njt:37,37,NEW YORK PENN STATION,,0,8836,njt:1613,1613,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3120,3120,njt:10,10,njt:37,37,NEW YORK PENN STATION,,0,8838,njt:1614,1614,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3121,3121,njt:10,10,njt:8,8,NEW YORK PENN STATION,,0,7880,njt:1615,1615,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3122,3122,njt:10,10,njt:37,37,NEW YORK PENN STATION,,0,8842,njt:1616,1616,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3123,3123,njt:10,10,njt:10,10,NEW YORK PENN STATION,,0,8804,njt:1617,1617,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3124,3124,njt:10,10,njt:8,8,NEW YORK PENN STATION,,0,7800,njt:1618,1618,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3125,3125,njt:10,10,njt:10,10,NEW YORK PENN STATION,,0,8816,njt:1619,1619,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3126,3126,njt:10,10,njt:33,33,NEW YORK PENN STATION,,0,8812,njt:1620,1620,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3127,3127,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7842,njt:1621,1621,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3128,3128,njt:10,10,njt:33,33,NEW YORK PENN STATION,,0,8806,njt:1622,1622,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3129,3129,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7814,njt:1623,1623,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3130,3130,njt:10,10,njt:31,31,NEW YORK PENN STATION,,0,8800,njt:1624,1624,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3131,3131,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7818,njt:1625,1625,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3132,3132,njt:10,10,njt:31,31,NEW YORK PENN STATION,,0,8810,njt:1626,1626,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3133,3133,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7822,njt:1627,1627,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3134,3134,njt:10,10,njt:14,14,NEW YORK PENN STATION,,0,3710,njt:1628,1628,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3135,3135,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7826,njt:1629,1629,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3136,3136,njt:10,10,njt:14,14,NEW YORK PENN STATION,,0,3716,njt:1630,1630,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3137,3137,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7830,njt:1631,1631,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3138,3138,njt:10,10,njt:16,16,NEW YORK PENN STATION,,0,3716,njt:1632,1632,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3139,3139,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7834,njt:1633,1633,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3140,3140,njt:10,10,njt:16,16,NEW YORK PENN STATION,,0,3984,njt:1634,1634,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3141,3141,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7838,njt:1635,1635,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3142,3142,njt:10,10,njt:16,16,NEW YORK PENN STATION,,0,3710,njt:1636,1636,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3143,3143,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7846,njt:1637,1637,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3144,3144,njt:10,10,njt:38,38,NEW YORK PENN STATION,,0,3920,njt:1638,1638,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3145,3145,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7850,njt:1639,1639,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3146,3146,njt:10,10,njt:38,38,NEW YORK PENN STATION,,0,3128,njt:1640,1640,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3147,3147,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7854,njt:1641,1641,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3148,3148,njt:10,10,njt:38,38,NEW YORK PENN STATION,,0,3124,njt:1642,1642,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3149,3149,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7858,njt:1643,1643,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3150,3150,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3858,njt:1644,1644,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3151,3151,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7804,njt:1645,1645,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3152,3152,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3812,njt:1646,1646,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3153,3153,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7808,njt:1647,1647,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3154,3154,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3154,njt:1648,1648,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3155,3155,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7812,njt:1649,1649,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3156,3156,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3808,njt:1650,1650,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3157,3157,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7816,njt:1651,1651,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3158,3158,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3810,njt:1652,1652,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3159,3159,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7820,njt:1653,1653,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3160,3160,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3896,njt:1654,1654,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3161,3161,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7824,njt:1655,1655,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3162,3162,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3704,njt:1656,1656,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3163,3163,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7832,njt:1657,1657,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3164,3164,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3722,njt:1658,1658,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3165,3165,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7844,njt:1659,1659,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3166,3166,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3736,njt:1660,1660,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3167,3167,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7848,njt:1661,1661,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3168,3168,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3828,njt:1662,1662,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3169,3169,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7860,njt:1663,1663,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3170,3170,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3834,njt:1664,1664,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3171,3171,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7864,njt:1665,1665,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3172,3172,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3862,njt:1666,1666,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3173,3173,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7868,njt:1667,1667,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3174,3174,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3700,njt:1668,1668,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3175,3175,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7872,njt:1669,1669,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3176,3176,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3702,njt:1670,1670,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3177,3177,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7852,njt:1671,1671,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3178,3178,njt:10,10,njt:39,39,NEW YORK PENN STATION,,0,3892,njt:1672,1672,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3179,3179,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7856,njt:1673,1673,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3180,3180,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3838,njt:1674,1674,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3181,3181,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7828,njt:1675,1675,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3182,3182,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3840,njt:1676,1676,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3183,3183,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7836,njt:1677,1677,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3184,3184,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3846,njt:1678,1678,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3185,3185,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7840,njt:1679,1679,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3186,3186,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3850,njt:1680,1680,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3187,3187,njt:10,10,njt:1,1,NEW YORK PENN STATION,,0,7876,njt:1681,1681,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3188,3188,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3868,njt:1682,1682,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3189,3189,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3716,njt:1683,1683,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3190,3190,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3874,njt:1684,1684,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3191,3191,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3984,njt:1685,1685,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3192,3192,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3876,njt:1686,1686,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3193,3193,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3710,njt:1687,1687,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3194,3194,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3880,njt:1688,1688,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3195,3195,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3858,njt:1689,1689,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3196,3196,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3860,njt:1690,1690,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3197,3197,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3812,njt:1691,1691,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3198,3198,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3806,njt:1692,1692,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3199,3199,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3154,njt:1693,1693,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3200,3200,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3814,njt:1694,1694,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3201,3201,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3808,njt:1695,1695,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3202,3202,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3818,njt:1696,1696,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3203,3203,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3810,njt:1697,1697,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3204,3204,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3836,njt:1698,1698,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3205,3205,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3896,njt:1699,1699,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3206,3206,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3844,njt:1700,1700,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3207,3207,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3704,njt:1701,1701,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3208,3208,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3848,njt:1702,1702,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3209,3209,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3722,njt:1703,1703,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3210,3210,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3852,njt:1704,1704,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3211,3211,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3736,njt:1705,1705,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3212,3212,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3856,njt:1706,1706,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3213,3213,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3828,njt:1707,1707,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3214,3214,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3864,njt:1708,1708,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3215,3215,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3834,njt:1709,1709,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3216,3216,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3866,njt:1710,1710,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3217,3217,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3862,njt:1711,1711,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3218,3218,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3872,njt:1712,1712,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3219,3219,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3700,njt:1713,1713,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3220,3220,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3882,njt:1714,1714,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3221,3221,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3702,njt:1715,1715,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3222,3222,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3886,njt:1716,1716,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3223,3223,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3838,njt:1717,1717,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3224,3224,njt:10,10,njt:39,39,NEW YORK PENN STATION,,0,3800,njt:1718,1718,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3225,3225,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3840,njt:1719,1719,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3226,3226,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3842,njt:1720,1720,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3227,3227,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3846,njt:1721,1721,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3228,3228,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3830,njt:1722,1722,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3229,3229,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3850,njt:1723,1723,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3230,3230,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3888,njt:1724,1724,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3231,3231,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3868,njt:1725,1725,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3232,3232,njt:10,10,njt:39,39,NEW YORK PENN STATION,,0,3742,njt:1726,1726,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3233,3233,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3874,njt:1727,1727,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3234,3234,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3926,njt:1728,1728,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3235,3235,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3876,njt:1729,1729,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3236,3236,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3738,njt:1730,1730,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3237,3237,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3880,njt:1731,1731,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3238,3238,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3936,njt:1732,1732,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3239,3239,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3860,njt:1733,1733,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3240,3240,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3910,njt:1734,1734,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3241,3241,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3806,njt:1735,1735,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3242,3242,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3914,njt:1736,1736,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3243,3243,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3814,njt:1737,1737,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3244,3244,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3918,njt:1738,1738,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3245,3245,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3818,njt:1739,1739,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3246,3246,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3924,njt:1740,1740,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3247,3247,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3836,njt:1741,1741,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3248,3248,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3930,njt:1742,1742,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3249,3249,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3844,njt:1743,1743,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3250,3250,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3708,njt:1744,1744,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3251,3251,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3848,njt:1745,1745,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3252,3252,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3870,njt:1746,1746,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3253,3253,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3852,njt:1747,1747,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3254,3254,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3932,njt:1748,1748,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3255,3255,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3856,njt:1749,1749,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3256,3256,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3922,njt:1750,1750,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3257,3257,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3864,njt:1751,1751,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3258,3258,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3706,njt:1752,1752,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3259,3259,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3866,njt:1753,1753,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3260,3260,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3720,njt:1754,1754,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3261,3261,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3872,njt:1755,1755,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3262,3262,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3186,njt:1756,1756,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3263,3263,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3882,njt:1757,1757,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3264,3264,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3934,njt:1758,1758,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3265,3265,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3886,njt:1759,1759,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3266,3266,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3954,njt:1760,1760,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3267,3267,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3842,njt:1761,1761,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3268,3268,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3718,njt:1762,1762,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3269,3269,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3830,njt:1763,1763,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3270,3270,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3712,njt:1764,1764,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3271,3271,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3888,njt:1765,1765,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3272,3272,njt:10,10,njt:2,2,NEW YORK PENN STATION,,0,3714,njt:1766,1766,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3273,3273,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3926,njt:1767,1767,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3274,3274,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7842,njt:1768,1768,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3275,3275,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3738,njt:1769,1769,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3276,3276,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7814,njt:1770,1770,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3277,3277,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3936,njt:1771,1771,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3278,3278,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7818,njt:1772,1772,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3279,3279,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3910,njt:1773,1773,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3280,3280,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7822,njt:1774,1774,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3281,3281,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3914,njt:1775,1775,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3282,3282,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7826,njt:1776,1776,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3283,3283,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3918,njt:1777,1777,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3284,3284,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7830,njt:1778,1778,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3285,3285,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3924,njt:1779,1779,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3286,3286,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7834,njt:1780,1780,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3287,3287,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3930,njt:1781,1781,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3288,3288,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7838,njt:1782,1782,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3289,3289,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3708,njt:1783,1783,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3290,3290,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7846,njt:1784,1784,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3291,3291,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3870,njt:1785,1785,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3292,3292,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7850,njt:1786,1786,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3293,3293,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3932,njt:1787,1787,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3294,3294,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7854,njt:1788,1788,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3295,3295,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3920,njt:1789,1789,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3296,3296,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7858,njt:1790,1790,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3297,3297,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3922,njt:1791,1791,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3298,3298,njt:10,10,njt:40,40,NEW YORK PENN STATION,,0,7880,njt:1792,1792,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3299,3299,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3706,njt:1793,1793,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3300,3300,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7804,njt:1794,1794,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3301,3301,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3720,njt:1795,1795,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3302,3302,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7808,njt:1796,1796,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3303,3303,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3128,njt:1797,1797,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3304,3304,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7812,njt:1798,1798,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3305,3305,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3186,njt:1799,1799,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3306,3306,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7816,njt:1800,1800,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3307,3307,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3934,njt:1801,1801,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3308,3308,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7820,njt:1802,1802,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3309,3309,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3954,njt:1803,1803,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3310,3310,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7824,njt:1804,1804,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3311,3311,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3718,njt:1805,1805,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3312,3312,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7832,njt:1806,1806,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3313,3313,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3712,njt:1807,1807,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3314,3314,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7844,njt:1808,1808,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3315,3315,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3714,njt:1809,1809,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3316,3316,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7848,njt:1810,1810,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3317,3317,njt:10,10,njt:4,4,NEW YORK PENN STATION,,0,3124,njt:1811,1811,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3318,3318,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7860,njt:1812,1812,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3319,3319,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7864,njt:1813,1813,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3320,3320,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7868,njt:1814,1814,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3321,3321,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7872,njt:1815,1815,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3322,3322,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7852,njt:1816,1816,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3323,3323,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7856,njt:1817,1817,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3324,3324,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7828,njt:1818,1818,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3325,3325,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7836,njt:1819,1819,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3326,3326,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7840,njt:1820,1820,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3327,3327,njt:10,10,njt:12,12,NEW YORK PENN STATION,,0,7876,njt:1821,1821,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3328,3328,njt:10,10,njt:34,34,NEW YORK PENN STATION,,0,7800,njt:1822,1822,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3329,3329,njt:10,10,njt:9,9,NEW YORK PENN STATION,,0,7800,njt:1823,1823,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3330,3330,njt:10,10,njt:41,41,NEW YORK PENN STATION,,0,7880,njt:1824,1824,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3331,3331,njt:10,10,njt:41,41,NEW YORK PENN STATION,,0,7800,njt:1825,1825,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3332,3332,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7850,njt:1826,1826,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3333,3333,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7810,njt:1827,1827,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3334,3334,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7814,njt:1828,1828,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3335,3335,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7818,njt:1829,1829,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3336,3336,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7822,njt:1830,1830,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3337,3337,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7826,njt:1831,1831,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3338,3338,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7830,njt:1832,1832,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3339,3339,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7834,njt:1833,1833,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3340,3340,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7838,njt:1834,1834,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3341,3341,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7842,njt:1835,1835,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3342,3342,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7846,njt:1836,1836,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3343,3343,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7854,njt:1837,1837,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3344,3344,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7858,njt:1838,1838,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3345,3345,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7832,njt:1839,1839,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3346,3346,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7844,njt:1840,1840,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3347,3347,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7804,njt:1841,1841,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3348,3348,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7808,njt:1842,1842,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3349,3349,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7812,njt:1843,1843,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3350,3350,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7816,njt:1844,1844,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3351,3351,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7820,njt:1845,1845,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3352,3352,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7824,njt:1846,1846,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3353,3353,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7828,njt:1847,1847,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3354,3354,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7836,njt:1848,1848,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3355,3355,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7840,njt:1849,1849,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3356,3356,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7848,njt:1850,1850,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3357,3357,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7852,njt:1851,1851,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3358,3358,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7856,njt:1852,1852,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3359,3359,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7860,njt:1853,1853,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3360,3360,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7864,njt:1854,1854,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3361,3361,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7868,njt:1855,1855,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3362,3362,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7872,njt:1856,1856,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3363,3363,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,7876,njt:1857,1857,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3364,3364,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8708,njt:1858,1858,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3365,3365,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8712,njt:1859,1859,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3366,3366,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8716,njt:1860,1860,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3367,3367,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8720,njt:1861,1861,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3368,3368,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8724,njt:1862,1862,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3369,3369,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8728,njt:1863,1863,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3370,3370,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8732,njt:1864,1864,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3371,3371,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8736,njt:1865,1865,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3372,3372,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8740,njt:1866,1866,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3373,3373,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8744,njt:1867,1867,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3374,3374,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8748,njt:1868,1868,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3375,3375,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8752,njt:1869,1869,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3376,3376,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8756,njt:1870,1870,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3377,3377,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8760,njt:1871,1871,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3378,3378,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8764,njt:1872,1872,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3379,3379,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8768,njt:1873,1873,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3380,3380,njt:10,10,njt:13,13,NEW YORK PENN STATION,,0,8772,njt:1874,1874,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3381,3381,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3812,njt:1875,1875,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3382,3382,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3842,njt:1876,1876,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3383,3383,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3862,njt:1877,1877,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3384,3384,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3808,njt:1878,1878,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3385,3385,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3850,njt:1879,1879,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3386,3386,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3866,njt:1880,1880,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3387,3387,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3870,njt:1881,1881,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3388,3388,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3830,njt:1882,1882,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3389,3389,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3810,njt:1883,1883,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3390,3390,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3838,njt:1884,1884,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3391,3391,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3846,njt:1885,1885,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3392,3392,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3858,njt:1886,1886,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3393,3393,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3874,njt:1887,1887,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3394,3394,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3702,njt:1888,1888,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3395,3395,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3704,njt:1889,1889,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3396,3396,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3700,njt:1890,1890,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3397,3397,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3806,njt:1891,1891,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3398,3398,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3818,njt:1892,1892,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3399,3399,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3826,njt:1893,1893,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3400,3400,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3844,njt:1894,1894,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3401,3401,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3864,njt:1895,1895,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3402,3402,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3836,njt:1896,1896,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3403,3403,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3840,njt:1897,1897,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3404,3404,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3848,njt:1898,1898,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3405,3405,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3852,njt:1899,1899,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3406,3406,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3856,njt:1900,1900,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3407,3407,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3860,njt:1901,1901,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3408,3408,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3868,njt:1902,1902,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3409,3409,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3872,njt:1903,1903,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3410,3410,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3880,njt:1904,1904,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3411,3411,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3882,njt:1905,1905,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3412,3412,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3888,njt:1906,1906,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3413,3413,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3832,njt:1907,1907,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3414,3414,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3886,njt:1908,1908,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3415,3415,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3984,njt:1909,1909,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3416,3416,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3910,njt:1910,1910,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3417,3417,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3914,njt:1911,1911,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3418,3418,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3918,njt:1912,1912,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3419,3419,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3924,njt:1913,1913,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3420,3420,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3932,njt:1914,1914,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3421,3421,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3922,njt:1915,1915,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3422,3422,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3926,njt:1916,1916,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3423,3423,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3936,njt:1917,1917,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3424,3424,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3720,njt:1918,1918,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3425,3425,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3154,njt:1919,1919,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3426,3426,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3934,njt:1920,1920,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3427,3427,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3954,njt:1921,1921,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3428,3428,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3708,njt:1922,1922,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3429,3429,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3712,njt:1923,1923,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3430,3430,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3714,njt:1924,1924,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3431,3431,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3722,njt:1925,1925,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3432,3432,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3114,njt:1926,1926,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3433,3433,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3124,njt:1927,1927,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3434,3434,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3710,njt:1928,1928,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3435,3435,njt:10,10,njt:5,5,NEW YORK PENN STATION,,0,3828,njt:1929,1929,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3436,3436,njt:10,10,njt:28,28,NEW YORK PENN STATION,,0,8758,njt:1930,1930,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3437,3437,njt:10,10,njt:28,28,NEW YORK PENN STATION,,0,8744,njt:1931,1931,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3438,3438,njt:10,10,njt:42,42,NEW YORK PENN STATION,,0,8750,njt:1932,1932,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3439,3439,njt:10,10,njt:19,19,NEW YORK PENN STATION,,0,8706,njt:1933,1933,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3440,3440,njt:10,10,njt:19,19,NEW YORK PENN STATION,,0,8710,njt:1934,1934,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3441,3441,njt:10,10,njt:19,19,NEW YORK PENN STATION,,0,8714,njt:1935,1935,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3442,3442,njt:10,10,njt:19,19,NEW YORK PENN STATION,,0,8718,njt:1936,1936,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3443,3443,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3803,njt:1937,1937,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3444,3444,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3803,njt:1938,1938,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3445,3445,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3801,njt:1939,1939,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3446,3446,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3805,njt:1940,1940,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3447,3447,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3805,njt:1941,1941,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3448,3448,njt:10,10,njt:10,10,TRENTON TRANSIT CENTER,,1,8841,njt:1942,1942,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3449,3449,njt:10,10,njt:10,10,TRENTON TRANSIT CENTER,,1,8861,njt:1943,1943,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3450,3450,njt:10,10,njt:10,10,TRENTON TRANSIT CENTER,,1,8865,njt:1944,1944,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3451,3451,njt:10,10,njt:33,33,NEW BRUNSWICK,,1,8837,njt:1945,1945,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3452,3452,njt:10,10,njt:33,33,NEW BRUNSWICK,,1,8833,njt:1946,1946,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3453,3453,njt:10,10,njt:33,33,TRENTON TRANSIT CENTER,,1,8829,njt:1947,1947,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3454,3454,njt:10,10,njt:8,8,TRENTON TRANSIT CENTER,,1,7803,njt:1948,1948,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3455,3455,njt:10,10,njt:33,33,TRENTON TRANSIT CENTER,,1,8835,njt:1949,1949,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3456,3456,njt:10,10,njt:14,14,TRENTON TRANSIT CENTER,,1,3871,njt:1950,1950,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3457,3457,njt:10,10,njt:8,8,TRENTON TRANSIT CENTER,,1,7801,njt:1951,1951,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3458,3458,njt:10,10,njt:14,14,TRENTON TRANSIT CENTER,,1,3873,njt:1952,1952,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3459,3459,njt:10,10,njt:14,14,TRENTON TRANSIT CENTER,,1,8855,njt:1953,1953,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3460,3460,njt:10,10,njt:8,8,TRENTON TRANSIT CENTER,,1,7805,njt:1954,1954,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3461,3461,njt:10,10,njt:14,14,TRENTON TRANSIT CENTER,,1,8849,njt:1955,1955,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3462,3462,njt:10,10,njt:14,14,TRENTON TRANSIT CENTER,,1,8851,njt:1956,1956,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3463,3463,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7875,njt:1957,1957,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3464,3464,njt:10,10,njt:16,16,JERSEY AVE.,,1,3127,njt:1958,1958,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3465,3465,njt:10,10,njt:43,43,TRENTON TRANSIT CENTER,,1,7863,njt:1959,1959,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3466,3466,njt:10,10,njt:16,16,TRENTON TRANSIT CENTER,,1,3871,njt:1960,1960,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3467,3467,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7879,njt:1961,1961,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3468,3468,njt:10,10,njt:16,16,TRENTON TRANSIT CENTER,,1,3873,njt:1962,1962,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3469,3469,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7883,njt:1963,1963,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3470,3470,njt:10,10,njt:16,16,TRENTON TRANSIT CENTER,,1,3951,njt:1964,1964,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3471,3471,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7847,njt:1965,1965,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3472,3472,njt:10,10,njt:2,2,JERSEY AVE.,,1,3713,njt:1966,1966,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3473,3473,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7851,njt:1967,1967,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3474,3474,njt:10,10,njt:2,2,JERSEY AVE.,,1,3165,njt:1968,1968,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3475,3475,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7855,njt:1969,1969,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3476,3476,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3855,njt:1970,1970,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3477,3477,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7859,njt:1971,1971,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3478,3478,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3917,njt:1972,1972,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3479,3479,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7867,njt:1973,1973,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3480,3480,njt:10,10,njt:2,2,JERSEY AVE.,,1,3705,njt:1974,1974,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3481,3481,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7871,njt:1975,1975,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3482,3482,njt:10,10,njt:2,2,JERSEY AVE.,,1,3753,njt:1976,1976,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3483,3483,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7825,njt:1977,1977,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3484,3484,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3875,njt:1978,1978,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3485,3485,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7833,njt:1979,1979,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3486,3486,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3879,njt:1980,1980,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3487,3487,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7837,njt:1981,1981,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3488,3488,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3885,njt:1982,1982,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3489,3489,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7857,njt:1983,1983,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3490,3490,njt:10,10,njt:2,2,JERSEY AVE.,,1,3719,njt:1984,1984,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3491,3491,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7817,njt:1985,1985,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3492,3492,njt:10,10,njt:2,2,JERSEY AVE.,,1,3735,njt:1986,1986,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3493,3493,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7821,njt:1987,1987,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3494,3494,njt:10,10,njt:2,2,JERSEY AVE.,,1,3737,njt:1988,1988,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3495,3495,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7829,njt:1989,1989,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3496,3496,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3823,njt:1990,1990,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3497,3497,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7845,njt:1991,1991,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3498,3498,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3915,njt:1992,1992,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3499,3499,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7861,njt:1993,1993,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3500,3500,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3857,njt:1994,1994,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3501,3501,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7865,njt:1995,1995,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3502,3502,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3867,njt:1996,1996,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3503,3503,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7869,njt:1997,1997,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3504,3504,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3887,njt:1998,1998,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3505,3505,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7873,njt:1999,1999,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3506,3506,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3889,njt:2000,2000,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3507,3507,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7813,njt:2001,2001,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3508,3508,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3893,njt:2002,2002,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3509,3509,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7841,njt:2003,2003,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3510,3510,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3815,njt:2004,2004,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3511,3511,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7849,njt:2005,2005,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3512,3512,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3821,njt:2006,2006,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3513,3513,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7853,njt:2007,2007,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3514,3514,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3829,njt:2008,2008,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3515,3515,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7877,njt:2009,2009,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3516,3516,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3833,njt:2010,2010,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3517,3517,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7881,njt:2011,2011,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3518,3518,njt:10,10,njt:39,39,TRENTON TRANSIT CENTER,,1,3803,njt:2012,2012,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3519,3519,njt:10,10,njt:1,1,TRENTON TRANSIT CENTER,,1,7885,njt:2013,2013,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3520,3520,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3809,njt:2014,2014,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3521,3521,njt:10,10,njt:1,1,RAHWAY,,1,7839,njt:2015,2015,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3522,3522,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3835,njt:2016,2016,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3523,3523,njt:10,10,njt:4,4,JERSEY AVE.,,1,3127,njt:2017,2017,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3524,3524,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3839,njt:2018,2018,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3525,3525,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3871,njt:2019,2019,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3526,3526,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3843,njt:2020,2020,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3527,3527,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3873,njt:2021,2021,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3528,3528,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3845,njt:2022,2022,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3529,3529,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3951,njt:2023,2023,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3530,3530,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3849,njt:2024,2024,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3531,3531,njt:10,10,njt:4,4,JERSEY AVE.,,1,3713,njt:2025,2025,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3532,3532,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3813,njt:2026,2026,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3533,3533,njt:10,10,njt:4,4,JERSEY AVE.,,1,3165,njt:2027,2027,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3534,3534,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3817,njt:2028,2028,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3535,3535,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3855,njt:2029,2029,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3536,3536,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3825,njt:2030,2030,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3537,3537,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3917,njt:2031,2031,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3538,3538,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3827,njt:2032,2032,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3539,3539,njt:10,10,njt:4,4,JERSEY AVE.,,1,3705,njt:2033,2033,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3540,3540,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3837,njt:2034,2034,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3541,3541,njt:10,10,njt:4,4,JERSEY AVE.,,1,3753,njt:2035,2035,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3542,3542,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3861,njt:2036,2036,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3543,3543,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3875,njt:2037,2037,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3544,3544,njt:10,10,njt:39,39,TRENTON TRANSIT CENTER,,1,3801,njt:2038,2038,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3545,3545,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3879,njt:2039,2039,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3546,3546,njt:10,10,njt:39,39,TRENTON TRANSIT CENTER,,1,3805,njt:2040,2040,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3547,3547,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3885,njt:2041,2041,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3548,3548,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3831,njt:2042,2042,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3549,3549,njt:10,10,njt:4,4,JERSEY AVE.,,1,3719,njt:2043,2043,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3550,3550,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3841,njt:2044,2044,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3551,3551,njt:10,10,njt:4,4,JERSEY AVE.,,1,3735,njt:2045,2045,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3552,3552,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3847,njt:2046,2046,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3553,3553,njt:10,10,njt:4,4,JERSEY AVE.,,1,3737,njt:2047,2047,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3554,3554,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3877,njt:2048,2048,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3555,3555,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3823,njt:2049,2049,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3556,3556,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3883,njt:2050,2050,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3557,3557,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3915,njt:2051,2051,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3558,3558,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3895,njt:2052,2052,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3559,3559,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3857,njt:2053,2053,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3560,3560,njt:10,10,njt:2,2,JERSEY AVE.,,1,3701,njt:2054,2054,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3561,3561,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3867,njt:2055,2055,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3562,3562,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3943,njt:2056,2056,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3563,3563,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3887,njt:2057,2057,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3564,3564,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3947,njt:2058,2058,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3565,3565,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3889,njt:2059,2059,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3566,3566,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3949,njt:2060,2060,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3567,3567,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3893,njt:2061,2061,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3568,3568,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3953,njt:2062,2062,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3569,3569,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3815,njt:2063,2063,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3570,3570,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3957,njt:2064,2064,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3571,3571,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3821,njt:2065,2065,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3572,3572,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3979,njt:2066,2066,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3573,3573,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3829,njt:2067,2067,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3574,3574,njt:10,10,njt:2,2,JERSEY AVE.,,1,3709,njt:2068,2068,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3575,3575,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3833,njt:2069,2069,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3576,3576,njt:10,10,njt:2,2,JERSEY AVE.,,1,3721,njt:2070,2070,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3577,3577,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3809,njt:2071,2071,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3578,3578,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3965,njt:2072,2072,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3579,3579,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3835,njt:2073,2073,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3580,3580,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3937,njt:2074,2074,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3581,3581,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3839,njt:2075,2075,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3582,3582,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3961,njt:2076,2076,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3583,3583,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3843,njt:2077,2077,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3584,3584,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3963,njt:2078,2078,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3585,3585,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3845,njt:2079,2079,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3586,3586,njt:10,10,njt:2,2,TRENTON TRANSIT CENTER,,1,3969,njt:2080,2080,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3587,3587,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3849,njt:2081,2081,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3588,3588,njt:10,10,njt:2,2,JERSEY AVE.,,1,3723,njt:2082,2082,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3589,3589,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3813,njt:2083,2083,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3590,3590,njt:10,10,njt:2,2,JERSEY AVE.,,1,3725,njt:2084,2084,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3591,3591,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3817,njt:2085,2085,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3592,3592,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7875,njt:2086,2086,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3593,3593,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3825,njt:2087,2087,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3594,3594,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7863,njt:2088,2088,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3595,3595,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3827,njt:2089,2089,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3596,3596,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7879,njt:2090,2090,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3597,3597,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3837,njt:2091,2091,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3598,3598,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7883,njt:2092,2092,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3599,3599,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3861,njt:2093,2093,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3600,3600,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7847,njt:2094,2094,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3601,3601,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3831,njt:2095,2095,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3602,3602,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7851,njt:2096,2096,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3603,3603,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3841,njt:2097,2097,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3604,3604,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7855,njt:2098,2098,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3605,3605,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3847,njt:2099,2099,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3606,3606,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7859,njt:2100,2100,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3607,3607,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3877,njt:2101,2101,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3608,3608,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7867,njt:2102,2102,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3609,3609,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3883,njt:2103,2103,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3610,3610,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7871,njt:2104,2104,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3611,3611,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3895,njt:2105,2105,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3612,3612,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7825,njt:2106,2106,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3613,3613,njt:10,10,njt:4,4,JERSEY AVE.,,1,3701,njt:2107,2107,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3614,3614,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7833,njt:2108,2108,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3615,3615,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3943,njt:2109,2109,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3616,3616,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7837,njt:2110,2110,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3617,3617,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3947,njt:2111,2111,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3618,3618,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7857,njt:2112,2112,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3619,3619,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3949,njt:2113,2113,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3620,3620,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7817,njt:2114,2114,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3621,3621,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3953,njt:2115,2115,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3622,3622,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7821,njt:2116,2116,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3623,3623,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3957,njt:2117,2117,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3624,3624,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7829,njt:2118,2118,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3625,3625,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3979,njt:2119,2119,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3626,3626,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7845,njt:2120,2120,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3627,3627,njt:10,10,njt:4,4,JERSEY AVE.,,1,3709,njt:2121,2121,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3628,3628,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7861,njt:2122,2122,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3629,3629,njt:10,10,njt:4,4,JERSEY AVE.,,1,3721,njt:2123,2123,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3630,3630,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7865,njt:2124,2124,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3631,3631,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3965,njt:2125,2125,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3632,3632,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7869,njt:2126,2126,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3633,3633,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3937,njt:2127,2127,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3634,3634,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7873,njt:2128,2128,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3635,3635,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3961,njt:2129,2129,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3636,3636,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7813,njt:2130,2130,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3637,3637,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3963,njt:2131,2131,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3638,3638,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7841,njt:2132,2132,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3639,3639,njt:10,10,njt:4,4,TRENTON TRANSIT CENTER,,1,3969,njt:2133,2133,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3640,3640,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7849,njt:2134,2134,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3641,3641,njt:10,10,njt:4,4,JERSEY AVE.,,1,3723,njt:2135,2135,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3642,3642,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7853,njt:2136,2136,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3643,3643,njt:10,10,njt:4,4,JERSEY AVE.,,1,3725,njt:2137,2137,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3644,3644,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7877,njt:2138,2138,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3645,3645,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7881,njt:2139,2139,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3646,3646,njt:10,10,njt:12,12,TRENTON TRANSIT CENTER,,1,7885,njt:2140,2140,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3647,3647,njt:10,10,njt:12,12,RAHWAY,,1,7839,njt:2141,2141,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3648,3648,njt:10,10,njt:34,34,TRENTON TRANSIT CENTER,,1,7803,njt:2142,2142,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3649,3649,njt:10,10,njt:9,9,TRENTON TRANSIT CENTER,,1,7803,njt:2143,2143,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3650,3650,njt:10,10,njt:34,34,TRENTON TRANSIT CENTER,,1,7801,njt:2144,2144,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3651,3651,njt:10,10,njt:9,9,TRENTON TRANSIT CENTER,,1,7801,njt:2145,2145,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3652,3652,njt:10,10,njt:18,18,TRENTON TRANSIT CENTER,,1,7863,njt:2146,2146,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3653,3653,njt:10,10,njt:34,34,TRENTON TRANSIT CENTER,,1,7805,njt:2147,2147,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3654,3654,njt:10,10,njt:9,9,TRENTON TRANSIT CENTER,,1,7805,njt:2148,2148,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3655,3655,njt:10,10,njt:41,41,TRENTON TRANSIT CENTER,,1,7899,njt:2149,2149,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3656,3656,njt:10,10,njt:41,41,TRENTON TRANSIT CENTER,,1,7805,njt:2150,2150,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3657,3657,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7843,njt:2151,2151,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3658,3658,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7831,njt:2152,2152,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3659,3659,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7871,njt:2153,2153,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3660,3660,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7835,njt:2154,2154,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3661,3661,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7839,njt:2155,2155,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3662,3662,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7847,njt:2156,2156,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3663,3663,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7851,njt:2157,2157,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3664,3664,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7855,njt:2158,2158,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3665,3665,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7859,njt:2159,2159,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3666,3666,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7863,njt:2160,2160,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3667,3667,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7867,njt:2161,2161,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3668,3668,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7875,njt:2162,2162,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3669,3669,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7879,njt:2163,2163,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3670,3670,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7883,njt:2164,2164,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3671,3671,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7813,njt:2165,2165,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3672,3672,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7817,njt:2166,2166,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3673,3673,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7887,njt:2167,2167,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3674,3674,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7821,njt:2168,2168,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3675,3675,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7825,njt:2169,2169,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3676,3676,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7829,njt:2170,2170,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3677,3677,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7833,njt:2171,2171,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3678,3678,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7837,njt:2172,2172,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3679,3679,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7841,njt:2173,2173,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3680,3680,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7845,njt:2174,2174,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3681,3681,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7849,njt:2175,2175,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3682,3682,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7853,njt:2176,2176,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3683,3683,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7857,njt:2177,2177,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3684,3684,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7861,njt:2178,2178,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3685,3685,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7865,njt:2179,2179,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3686,3686,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7869,njt:2180,2180,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3687,3687,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7873,njt:2181,2181,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3688,3688,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7877,njt:2182,2182,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3689,3689,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7881,njt:2183,2183,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3690,3690,njt:10,10,njt:13,13,TRENTON TRANSIT CENTER,,1,7885,njt:2184,2184,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3691,3691,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8721,njt:2185,2185,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3692,3692,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8725,njt:2186,2186,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3693,3693,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8729,njt:2187,2187,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3694,3694,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8733,njt:2188,2188,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3695,3695,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8737,njt:2189,2189,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3696,3696,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8741,njt:2190,2190,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3697,3697,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8745,njt:2191,2191,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3698,3698,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8749,njt:2192,2192,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3699,3699,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8753,njt:2193,2193,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3700,3700,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8757,njt:2194,2194,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3701,3701,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8761,njt:2195,2195,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3702,3702,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8765,njt:2196,2196,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3703,3703,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8769,njt:2197,2197,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3704,3704,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8773,njt:2198,2198,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3705,3705,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8777,njt:2199,2199,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3706,3706,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8781,njt:2200,2200,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3707,3707,njt:10,10,njt:13,13,SECAUCUS UPPER LEVEL,,1,8785,njt:2201,2201,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3708,3708,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3963,njt:2202,2202,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3709,3709,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3877,njt:2203,2203,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3710,3710,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3823,njt:2204,2204,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3711,3711,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3847,njt:2205,2205,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3712,3712,njt:10,10,njt:5,5,JERSEY AVE.,,1,3703,njt:2206,2206,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3713,3713,njt:10,10,njt:5,5,JERSEY AVE.,,1,3735,njt:2207,2207,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3714,3714,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3817,njt:2208,2208,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3715,3715,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3859,njt:2209,2209,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3716,3716,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3867,njt:2210,2210,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3717,3717,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3879,njt:2211,2211,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3718,3718,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3831,njt:2212,2212,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3719,3719,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3835,njt:2213,2213,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3720,3720,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3839,njt:2214,2214,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3721,3721,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3843,njt:2215,2215,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3722,3722,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3865,njt:2216,2216,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3723,3723,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3871,njt:2217,2217,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3724,3724,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3875,njt:2218,2218,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3725,3725,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3885,njt:2219,2219,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3726,3726,njt:10,10,njt:5,5,JERSEY AVE.,,1,3737,njt:2220,2220,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3727,3727,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3873,njt:2221,2221,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3728,3728,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3887,njt:2222,2222,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3729,3729,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3889,njt:2223,2223,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3730,3730,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3893,njt:2224,2224,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3731,3731,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3821,njt:2225,2225,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3732,3732,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3829,njt:2226,2226,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3733,3733,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3809,njt:2227,2227,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3734,3734,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3825,njt:2228,2228,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3735,3735,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3853,njt:2229,2229,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3736,3736,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3883,njt:2230,2230,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3737,3737,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3897,njt:2231,2231,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3738,3738,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3845,njt:2232,2232,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3739,3739,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3813,njt:2233,2233,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3740,3740,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3815,njt:2234,2234,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3741,3741,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3833,njt:2235,2235,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3742,3742,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3837,njt:2236,2236,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3743,3743,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3841,njt:2237,2237,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3744,3744,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3849,njt:2238,2238,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3745,3745,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3851,njt:2239,2239,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3746,3746,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3895,njt:2240,2240,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3747,3747,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3951,njt:2241,2241,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3748,3748,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3953,njt:2242,2242,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3749,3749,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3937,njt:2243,2243,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3750,3750,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3943,njt:2244,2244,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3751,3751,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3949,njt:2245,2245,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3752,3752,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3957,njt:2246,2246,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3753,3753,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3965,njt:2247,2247,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3754,3754,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3969,njt:2248,2248,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3755,3755,njt:10,10,njt:5,5,JERSEY AVE.,,1,3153,njt:2249,2249,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3756,3756,njt:10,10,njt:5,5,JERSEY AVE.,,1,3713,njt:2250,2250,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3757,3757,njt:10,10,njt:5,5,JERSEY AVE.,,1,3721,njt:2251,2251,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3758,3758,njt:10,10,njt:5,5,JERSEY AVE.,,1,3727,njt:2252,2252,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3759,3759,njt:10,10,njt:5,5,JERSEY AVE.,,1,3719,njt:2253,2253,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3760,3760,njt:10,10,njt:5,5,TRENTON TRANSIT CENTER,,1,3961,njt:2254,2254,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3761,3761,njt:10,10,njt:19,19,SECAUCUS UPPER LEVEL,,1,8705,njt:2255,2255,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3762,3762,njt:10,10,njt:19,19,SECAUCUS UPPER LEVEL,,1,8711,njt:2256,2256,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:3763,3763,njt:10,10,njt:19,19,SECAUCUS UPPER LEVEL,,1,8815,njt:2257,2257,NJ Transit,Northeast Corridor,Northeast Corridor
+njt,njt:5098,5098,njt:14,14,njt:4,4,HOBOKEN,,0,1636,njt:2901,2901,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5099,5099,njt:14,14,njt:6,6,HOBOKEN,,0,1636,njt:2902,2902,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5100,5100,njt:14,14,njt:1,1,HOBOKEN,,0,2122,njt:2903,2903,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5101,5101,njt:14,14,njt:3,3,HOBOKEN,,0,2122,njt:2904,2904,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5102,5102,njt:14,14,njt:1,1,HOBOKEN,,0,2124,njt:2905,2905,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5103,5103,njt:14,14,njt:3,3,HOBOKEN,,0,2124,njt:2906,2906,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5104,5104,njt:14,14,njt:1,1,HOBOKEN,,0,2100,njt:2907,2907,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5105,5105,njt:14,14,njt:3,3,HOBOKEN,,0,2100,njt:2908,2908,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5106,5106,njt:14,14,njt:1,1,HOBOKEN,,0,2102,njt:2909,2909,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5107,5107,njt:14,14,njt:3,3,HOBOKEN,,0,2102,njt:2910,2910,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5108,5108,njt:14,14,njt:1,1,HOBOKEN,,0,2104,njt:2911,2911,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5109,5109,njt:14,14,njt:3,3,HOBOKEN,,0,2104,njt:2912,2912,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5110,5110,njt:14,14,njt:1,1,HOBOKEN,,0,2108,njt:2913,2913,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5111,5111,njt:14,14,njt:3,3,HOBOKEN,,0,2108,njt:2914,2914,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5112,5112,njt:14,14,njt:1,1,HOBOKEN,,0,2112,njt:2915,2915,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5113,5113,njt:14,14,njt:3,3,HOBOKEN,,0,2112,njt:2916,2916,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5114,5114,njt:14,14,njt:1,1,HOBOKEN,,0,2114,njt:2917,2917,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5115,5115,njt:14,14,njt:3,3,HOBOKEN,,0,2114,njt:2918,2918,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5116,5116,njt:14,14,njt:1,1,HOBOKEN,,0,2118,njt:2919,2919,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5117,5117,njt:14,14,njt:3,3,HOBOKEN,,0,2118,njt:2920,2920,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5118,5118,njt:14,14,njt:1,1,HOBOKEN,,0,2126,njt:2921,2921,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5119,5119,njt:14,14,njt:3,3,HOBOKEN,,0,2126,njt:2922,2922,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5120,5120,njt:14,14,njt:1,1,HOBOKEN,,0,2106,njt:2923,2923,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5121,5121,njt:14,14,njt:3,3,HOBOKEN,,0,2106,njt:2924,2924,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5122,5122,njt:14,14,njt:1,1,HOBOKEN,,0,2110,njt:2925,2925,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5123,5123,njt:14,14,njt:3,3,HOBOKEN,,0,2110,njt:2926,2926,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5124,5124,njt:14,14,njt:4,4,HOBOKEN,,0,1628,njt:2927,2927,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5125,5125,njt:14,14,njt:6,6,HOBOKEN,,0,1628,njt:2928,2928,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5126,5126,njt:14,14,njt:4,4,HOBOKEN,,0,1612,njt:2929,2929,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5127,5127,njt:14,14,njt:6,6,HOBOKEN,,0,1612,njt:2930,2930,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5128,5128,njt:14,14,njt:4,4,HOBOKEN,,0,1620,njt:2931,2931,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5129,5129,njt:14,14,njt:6,6,HOBOKEN,,0,1620,njt:2932,2932,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5130,5130,njt:14,14,njt:4,4,HOBOKEN,,0,1618,njt:2933,2933,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5131,5131,njt:14,14,njt:6,6,HOBOKEN,,0,1618,njt:2934,2934,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5132,5132,njt:14,14,njt:4,4,HOBOKEN,,0,1610,njt:2935,2935,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5133,5133,njt:14,14,njt:6,6,HOBOKEN,,0,1610,njt:2936,2936,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5134,5134,njt:14,14,njt:4,4,HOBOKEN,,0,1622,njt:2937,2937,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5135,5135,njt:14,14,njt:6,6,HOBOKEN,,0,1622,njt:2938,2938,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5136,5136,njt:14,14,njt:4,4,HOBOKEN,,0,1624,njt:2939,2939,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5137,5137,njt:14,14,njt:6,6,HOBOKEN,,0,1624,njt:2940,2940,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5138,5138,njt:14,14,njt:4,4,HOBOKEN,,0,1614,njt:2941,2941,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5139,5139,njt:14,14,njt:6,6,HOBOKEN,,0,1614,njt:2942,2942,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5140,5140,njt:14,14,njt:4,4,HOBOKEN,,0,1602,njt:2943,2943,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5141,5141,njt:14,14,njt:6,6,HOBOKEN,,0,1602,njt:2944,2944,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5142,5142,njt:14,14,njt:4,4,HOBOKEN,,0,1604,njt:2945,2945,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5143,5143,njt:14,14,njt:6,6,HOBOKEN,,0,1604,njt:2946,2946,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5144,5144,njt:14,14,njt:4,4,HOBOKEN,,0,1608,njt:2947,2947,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5145,5145,njt:14,14,njt:6,6,HOBOKEN,,0,1608,njt:2948,2948,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5146,5146,njt:14,14,njt:4,4,HOBOKEN,,0,1626,njt:2949,2949,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5147,5147,njt:14,14,njt:6,6,HOBOKEN,,0,1626,njt:2950,2950,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5148,5148,njt:14,14,njt:4,4,HOBOKEN,,0,1630,njt:2951,2951,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5149,5149,njt:14,14,njt:6,6,HOBOKEN,,0,1630,njt:2952,2952,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5150,5150,njt:14,14,njt:4,4,HOBOKEN,,0,1632,njt:2953,2953,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5151,5151,njt:14,14,njt:6,6,HOBOKEN,,0,1632,njt:2954,2954,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5152,5152,njt:14,14,njt:4,4,HOBOKEN,,0,1634,njt:2955,2955,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5153,5153,njt:14,14,njt:6,6,HOBOKEN,,0,1634,njt:2956,2956,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5154,5154,njt:14,14,njt:4,4,HOBOKEN,,0,1606,njt:2957,2957,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5155,5155,njt:14,14,njt:6,6,HOBOKEN,,0,1606,njt:2958,2958,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5156,5156,njt:14,14,njt:4,4,HOBOKEN,,0,1650,njt:2959,2959,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5157,5157,njt:14,14,njt:6,6,HOBOKEN,,0,1650,njt:2960,2960,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5158,5158,njt:14,14,njt:4,4,HOBOKEN,,0,1652,njt:2961,2961,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5159,5159,njt:14,14,njt:6,6,HOBOKEN,,0,1652,njt:2962,2962,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5160,5160,njt:14,14,njt:4,4,HOBOKEN,,0,1616,njt:2963,2963,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5161,5161,njt:14,14,njt:6,6,HOBOKEN,,0,1616,njt:2964,2964,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5162,5162,njt:14,14,njt:57,57,SPRING VALLEY,,1,2101,njt:2965,2965,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5163,5163,njt:14,14,njt:58,58,SPRING VALLEY,,1,2101,njt:2966,2966,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5164,5164,njt:14,14,njt:59,59,SPRING VALLEY,,1,2101,njt:2967,2967,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5165,5165,njt:14,14,njt:1,1,SPRING VALLEY,,1,2103,njt:2968,2968,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5166,5166,njt:14,14,njt:9,9,SPRING VALLEY,,1,2101,njt:2969,2969,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5167,5167,njt:14,14,njt:1,1,SPRING VALLEY,,1,2107,njt:2970,2970,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5168,5168,njt:14,14,njt:3,3,SPRING VALLEY,,1,2103,njt:2971,2971,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5169,5169,njt:14,14,njt:1,1,SPRING VALLEY,,1,2111,njt:2972,2972,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5170,5170,njt:14,14,njt:3,3,SPRING VALLEY,,1,2107,njt:2973,2973,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5171,5171,njt:14,14,njt:1,1,SPRING VALLEY,,1,2115,njt:2974,2974,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5172,5172,njt:14,14,njt:3,3,SPRING VALLEY,,1,2111,njt:2975,2975,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5173,5173,njt:14,14,njt:1,1,SPRING VALLEY,,1,2119,njt:2976,2976,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5174,5174,njt:14,14,njt:3,3,SPRING VALLEY,,1,2115,njt:2977,2977,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5175,5175,njt:14,14,njt:1,1,SPRING VALLEY,,1,2121,njt:2978,2978,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5176,5176,njt:14,14,njt:3,3,SPRING VALLEY,,1,2119,njt:2979,2979,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5177,5177,njt:14,14,njt:1,1,SPRING VALLEY,,1,2123,njt:2980,2980,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5178,5178,njt:14,14,njt:3,3,SPRING VALLEY,,1,2121,njt:2981,2981,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5179,5179,njt:14,14,njt:1,1,SPRING VALLEY,,1,2129,njt:2982,2982,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5180,5180,njt:14,14,njt:3,3,SPRING VALLEY,,1,2123,njt:2983,2983,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5181,5181,njt:14,14,njt:1,1,SPRING VALLEY,,1,2133,njt:2984,2984,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5182,5182,njt:14,14,njt:3,3,SPRING VALLEY,,1,2129,njt:2985,2985,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5183,5183,njt:14,14,njt:1,1,SPRING VALLEY,,1,2117,njt:2986,2986,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5184,5184,njt:14,14,njt:3,3,SPRING VALLEY,,1,2133,njt:2987,2987,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5185,5185,njt:14,14,njt:1,1,SPRING VALLEY,,1,2125,njt:2988,2988,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5186,5186,njt:14,14,njt:3,3,SPRING VALLEY,,1,2117,njt:2989,2989,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5187,5187,njt:14,14,njt:4,4,SPRING VALLEY,,1,1621,njt:2990,2990,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5188,5188,njt:14,14,njt:3,3,SPRING VALLEY,,1,2125,njt:2991,2991,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5189,5189,njt:14,14,njt:4,4,SPRING VALLEY,,1,1605,njt:2992,2992,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5190,5190,njt:14,14,njt:6,6,SPRING VALLEY,,1,1621,njt:2993,2993,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5191,5191,njt:14,14,njt:4,4,SPRING VALLEY,,1,1607,njt:2994,2994,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5192,5192,njt:14,14,njt:6,6,SPRING VALLEY,,1,1605,njt:2995,2995,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5193,5193,njt:14,14,njt:4,4,SPRING VALLEY,,1,1611,njt:2996,2996,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5194,5194,njt:14,14,njt:6,6,SPRING VALLEY,,1,1607,njt:2997,2997,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5195,5195,njt:14,14,njt:4,4,SPRING VALLEY,,1,1613,njt:2998,2998,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5196,5196,njt:14,14,njt:6,6,SPRING VALLEY,,1,1611,njt:2999,2999,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5197,5197,njt:14,14,njt:4,4,SPRING VALLEY,,1,1617,njt:3000,3000,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5198,5198,njt:14,14,njt:6,6,SPRING VALLEY,,1,1613,njt:3001,3001,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5199,5199,njt:14,14,njt:4,4,SPRING VALLEY,,1,1623,njt:3002,3002,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5200,5200,njt:14,14,njt:6,6,SPRING VALLEY,,1,1617,njt:3003,3003,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5201,5201,njt:14,14,njt:4,4,SPRING VALLEY,,1,1625,njt:3004,3004,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5202,5202,njt:14,14,njt:6,6,SPRING VALLEY,,1,1623,njt:3005,3005,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5203,5203,njt:14,14,njt:4,4,SPRING VALLEY,,1,1627,njt:3006,3006,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5204,5204,njt:14,14,njt:6,6,SPRING VALLEY,,1,1625,njt:3007,3007,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5205,5205,njt:14,14,njt:4,4,SPRING VALLEY,,1,1631,njt:3008,3008,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5206,5206,njt:14,14,njt:6,6,SPRING VALLEY,,1,1627,njt:3009,3009,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5207,5207,njt:14,14,njt:4,4,SPRING VALLEY,,1,1633,njt:3010,3010,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5208,5208,njt:14,14,njt:6,6,SPRING VALLEY,,1,1631,njt:3011,3011,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5209,5209,njt:14,14,njt:4,4,SPRING VALLEY,,1,1635,njt:3012,3012,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5210,5210,njt:14,14,njt:6,6,SPRING VALLEY,,1,1633,njt:3013,3013,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5211,5211,njt:14,14,njt:4,4,SPRING VALLEY,,1,1637,njt:3014,3014,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5212,5212,njt:14,14,njt:6,6,SPRING VALLEY,,1,1635,njt:3015,3015,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5213,5213,njt:14,14,njt:4,4,SPRING VALLEY,,1,1641,njt:3016,3016,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5214,5214,njt:14,14,njt:6,6,SPRING VALLEY,,1,1637,njt:3017,3017,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5215,5215,njt:14,14,njt:4,4,SPRING VALLEY,,1,1643,njt:3018,3018,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5216,5216,njt:14,14,njt:6,6,SPRING VALLEY,,1,1641,njt:3019,3019,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5217,5217,njt:14,14,njt:4,4,SPRING VALLEY,,1,1645,njt:3020,3020,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5218,5218,njt:14,14,njt:6,6,SPRING VALLEY,,1,1643,njt:3021,3021,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5219,5219,njt:14,14,njt:4,4,SPRING VALLEY,,1,1647,njt:3022,3022,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5220,5220,njt:14,14,njt:6,6,SPRING VALLEY,,1,1645,njt:3023,3023,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5221,5221,njt:14,14,njt:4,4,NEW BRIDGE LANDING,,1,1651,njt:3024,3024,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5222,5222,njt:14,14,njt:6,6,SPRING VALLEY,,1,1647,njt:3025,3025,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5223,5223,njt:14,14,njt:4,4,SPRING VALLEY,,1,1629,njt:3026,3026,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5224,5224,njt:14,14,njt:6,6,NEW BRIDGE LANDING,,1,1651,njt:3027,3027,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5225,5225,njt:14,14,njt:4,4,NEW BRIDGE LANDING,,1,1653,njt:3028,3028,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5226,5226,njt:14,14,njt:6,6,SPRING VALLEY,,1,1629,njt:3029,3029,NJ Transit,Pascack Valley Line,Pascack Valley Line
+njt,njt:5227,5227,njt:14,14,njt:6,6,NEW BRIDGE LANDING,,1,1653,njt:3030,3030,NJ Transit,Pascack Valley Line,Pascack Valley Line

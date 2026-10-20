@@ -1,0 +1,37 @@
+name: Audit staged NJ Transit schedules
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    # Standard runners on public repositories only; no paid backend or API required.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test NJ Transit importer
+        run: python -m unittest discover -s supporting_files/extraction/tests -p 'test_njt_*.py'
+      - name: Download and audit official schedules
+        run: python supporting_files/extraction/prepare_njt.py
+      - name: Check staged journeys with the production router
+        run: node supporting_files/scripts/audit_njt_routes.js supporting_files/staging/njt/schedule.csv.gz
+      - name: Show audit in workflow summary
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          report = Path('supporting_files/staging/njt/audit.json').read_text()
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## NJ Transit staging audit\n\n```json\n' + report + '```\n')
+          PY
