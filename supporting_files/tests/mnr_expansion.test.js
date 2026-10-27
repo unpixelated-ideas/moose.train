@@ -1,5 +1,6 @@
 // Test the production functions and committed timetable, not copies of the logic.
 const assert = require('node:assert/strict');
+const {serviceDateForGroups} = require('./helpers/service_date');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
@@ -62,20 +63,13 @@ run(`const prepared = decodeSearchSchedule(schedule); trips = prepared.trips; st
 const downloads = run('buildTimetableCsvLinks(prepared.metadata)');
 assert(downloads.some(link=>link.href.includes('mnr_gtfs_') && link.href.endsWith('.csv.gz')));
 for (const link of downloads) assert(fs.existsSync(path.join(root, link.href)), `Missing timetable download: ${link.href}`);
-const testDate = run(`(() => {
-  const groups = [
-    trips.filter(t=>t.agency==='Metro-North' && t.service==='Hudson Line' && t.stops.some(s=>s.id==='POU')),
-    trips.filter(t=>t.agency==='Metro-North' && t.service==='Harlem Line' && t.stops.some(s=>s.id==='MNR_177')),
-    trips.filter(t=>t.agency==='Amtrak' && t.stops.some(s=>s.id==='NYP') && t.stops.some(s=>s.id==='POU')),
-  ];
-  if (groups.some(group=>!group.length)) throw new Error('Expanded service missing from schedule');
-  const first = groups.map(group=>group.map(t=>t.serviceStartDate).sort()[0]).sort().at(-1);
-  for (let offset=0;offset<21;offset++) {
-    const date=addDays(dateFromIso(first),offset);
-    if (date.getDay()>0 && date.getDay()<6 && groups.every(group=>group.some(t=>serviceApplies(t,date)))) return localDateIso(date);
-  }
-  throw new Error('No overlapping weekday coverage for expanded services');
-})()`);
+const testDate = serviceDateForGroups(run(`[
+  ...['YNY','CRT','POU'].flatMap(id => [
+    trips.filter(t=>t.agency==='Metro-North' && t.stops.some(s=>s.id==='GCT') && t.stops.some(s=>s.id===id)),
+    trips.filter(t=>t.agency==='Amtrak' && t.stops.some(s=>s.id==='NYP') && t.stops.some(s=>s.id===id)),
+  ]),
+  trips.filter(t=>t.agency==='Metro-North' && t.service==='Harlem Line' && t.stops.some(s=>s.id==='MNR_177')),
+]`), run('({dateFromIso, localDateIso, addDays, serviceApplies})'), {label:'Expanded services', weekdaysOnly:true});
 const search = (from,to,date=testDate) => run(`findRoutesForStationSelection({id:'${from}'},{id:'${to}'},360,'leave',dateFromIso('${date}'))`);
 for (const destination of ['YNY','CRT','POU']) {
   const started = performance.now();

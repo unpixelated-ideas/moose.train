@@ -50,6 +50,7 @@ jobs:
           node supporting_files/tests/lirr.test.js
           node supporting_files/tests/mnr_expansion.test.js
           node supporting_files/tests/transfer_timing.test.js
+          node supporting_files/tests/service_date.test.js
           node supporting_files/tests/njt.test.js
       - name: Prepare public site
         run: python supporting_files/scripts/package_site.py
