@@ -1,0 +1,6 @@
+feed_id,route_uid,source_route_id,agency_uid,source_agency_id,route_short_name,route_long_name,route_type,service_name,route_name
+amtrak,amtrak:88,88,amtrak:51,51,,Northeast Regional,2,Northeast Regional,Northeast Regional
+amtrak,amtrak:90,90,amtrak:51,51,,Vermonter,2,Vermonter,Vermonter
+amtrak,amtrak:40751,40751,amtrak:51,51,,Acela,2,Acela,Acela
+amtrak,amtrak:41042,41042,amtrak:51,51,,Amtrak Hartford Line,2,Amtrak Hartford Line,Amtrak Hartford Line
+amtrak,amtrak:41044,41044,amtrak:51,51,,Valley Flyer,2,Valley Flyer,Valley Flyer

@@ -1,0 +1,1 @@
+This snapshot preserves the state before rolling back the September 27 GTFS refresh. The active schedule and refresh FAQ were restored from gtfs_refresh_20260927T042355Z. Unrelated newer interface and routing edits were preserved. Reports in this snapshot describe the reverted refresh, not the active data.

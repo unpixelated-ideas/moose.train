@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-09-27T04:23:56.462226+00:00",
+  "paths": [
+    "moose_train_schedule.csv",
+    "index.html",
+    "supporting_files/extraction",
+    "supporting_files/source_gtfs"
+  ],
+  "schedule_sha256": "d093f9fe77820df88eea35b5a1aa76654cb0e117bd15d4e5fe1b4bdf9edce849"
+}

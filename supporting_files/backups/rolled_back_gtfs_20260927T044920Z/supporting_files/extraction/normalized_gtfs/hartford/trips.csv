@@ -1,0 +1,40 @@
+feed_id,trip_uid,source_trip_id,route_uid,source_route_id,service_uid,source_service_id,trip_headsign,trip_short_name,direction_id,block_id,shape_uid,source_shape_id,operator_name,service_name,route_name
+hartford,hartford:12020,12020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4462,0,4462,hartford:shp-HART-04,shp-HART-04,CTrail,Hartford Line,Hartford Line
+hartford,hartford:13010,13010,hartford:HART,HART,hartford:1,1,Northbound to Hartford,CTrail 6456,0,6456,hartford:shp-HART-11,shp-HART-11,CTrail,Hartford Line,Hartford Line
+hartford,hartford:15010,15010,hartford:HART,HART,hartford:1,1,Northbound to Hartford,CTrail 6458,0,6458,hartford:shp-HART-06,shp-HART-06,CTrail,Hartford Line,Hartford Line
+hartford,hartford:21020,21020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4406,0,4406,hartford:shp-HART-01,shp-HART-01,CTrail,Hartford Line,Hartford Line
+hartford,hartford:20020,20020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4452,0,4452,hartford:shp-HART-02,shp-HART-02,CTrail,Hartford Line,Hartford Line
+hartford,hartford:30020,30020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4400,0,4400,hartford:shp-HART-17,shp-HART-17,CTrail,Hartford Line,Hartford Line
+hartford,hartford:3020,3020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4450,0,4450,hartford:shp-HART-14,shp-HART-14,CTrail,Hartford Line,Hartford Line
+hartford,hartford:32020,32020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4404,0,4404,hartford:shp-HART-07,shp-HART-07,CTrail,Hartford Line,Hartford Line
+hartford,hartford:7020,7020,hartford:HART,HART,hartford:2,2,Northbound to Hartford,CTrail 4458,0,4458,hartford:shp-HART-12,shp-HART-12,CTrail,Hartford Line,Hartford Line
+hartford,hartford:5010,5010,hartford:HART,HART,hartford:1,1,Northbound to Springfield,CTrail 6410,0,6410,hartford:shp-HART-13,shp-HART-13,CTrail,Hartford Line,Hartford Line
+hartford,hartford:37010,37010,hartford:HART,HART,hartford:1,1,Northbound to Springfield,CTrail 6402,0,6402,hartford:shp-HART-10,shp-HART-10,CTrail,Hartford Line,Hartford Line
+hartford,hartford:35020,35020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4406B,0,4406B,hartford:shp-HART-24,shp-HART-24,CTrail,Hartford Line,Hartford Line
+hartford,hartford:2010,2010,hartford:HART,HART,hartford:1,1,Northbound to Springfield,CTrail 6454,0,6454,hartford:shp-HART-08,shp-HART-08,CTrail,Hartford Line,Hartford Line
+hartford,hartford:26020,26020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4400B,0,4400B,hartford:shp-HART-23,shp-HART-23,CTrail,Hartford Line,Hartford Line
+hartford,hartford:18010,18010,hartford:HART,HART,hartford:1,1,Northbound to Springfield,CTrail 6400,0,6400,hartford:shp-HART-05,shp-HART-05,CTrail,Hartford Line,Hartford Line
+hartford,hartford:19020,19020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4414,0,4414,hartford:shp-HART-09,shp-HART-09,CTrail,Hartford Line,Hartford Line
+hartford,hartford:14020,14020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4476,0,4476,hartford:shp-HART-72,shp-HART-72,CTrail,Hartford Line,Hartford Line
+hartford,hartford:10020,10020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4404B,0,4404B,hartford:shp-HART-22,shp-HART-22,CTrail,Hartford Line,Hartford Line
+hartford,hartford:1020,1020,hartford:HART,HART,hartford:2,2,Northbound to Springfield,CTrail 4466,0,4466,hartford:shp-HART-03,shp-HART-03,CTrail,Hartford Line,Hartford Line
+hartford,hartford:31020,31020,hartford:HART,HART,hartford:2,2,Southbound to Hartford,CTrail 4403B,1,4403B,hartford:shp-HART-73,shp-HART-73,CTrail,Hartford Line,Hartford Line
+hartford,hartford:8020,8020,hartford:HART,HART,hartford:2,2,Southbound to Hartford,CTrail 4407B,1,4407B,hartford:shp-HART-70,shp-HART-70,CTrail,Hartford Line,Hartford Line
+hartford,hartford:9020,9020,hartford:HART,HART,hartford:2,2,Southbound to Hartford,CTrail 4405B,1,4405B,hartford:shp-HART-71,shp-HART-71,CTrail,Hartford Line,Hartford Line
+hartford,hartford:6010,6010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6455,1,6455,hartford:shp-HART-55,shp-HART-55,CTrail,Hartford Line,Hartford Line
+hartford,hartford:38010,38010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6403,1,6403,hartford:shp-HART-51,shp-HART-51,CTrail,Hartford Line,Hartford Line
+hartford,hartford:39020,39020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4463,1,4463,hartford:shp-HART-54,shp-HART-54,CTrail,Hartford Line,Hartford Line
+hartford,hartford:4020,4020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4453,1,4453,hartford:shp-HART-59,shp-HART-59,CTrail,Hartford Line,Hartford Line
+hartford,hartford:36010,36010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6401,1,6401,hartford:shp-HART-63,shp-HART-63,CTrail,Hartford Line,Hartford Line
+hartford,hartford:33020,33020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4417,1,4417,hartford:shp-HART-21,shp-HART-21,CTrail,Hartford Line,Hartford Line
+hartford,hartford:34020,34020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4405,1,4405,hartford:shp-HART-56,shp-HART-56,CTrail,Hartford Line,Hartford Line
+hartford,hartford:11010,11010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6411,1,6411,hartford:shp-HART-64,shp-HART-64,CTrail,Hartford Line,Hartford Line
+hartford,hartford:16020,16020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4467,1,4467,hartford:shp-HART-61,shp-HART-61,CTrail,Hartford Line,Hartford Line
+hartford,hartford:17020,17020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4461,1,4461,hartford:shp-HART-57,shp-HART-57,CTrail,Hartford Line,Hartford Line
+hartford,hartford:27020,27020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4403,1,4403,hartford:shp-HART-65,shp-HART-65,CTrail,Hartford Line,Hartford Line
+hartford,hartford:28010,28010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6457,1,6457,hartford:shp-HART-52,shp-HART-52,CTrail,Hartford Line,Hartford Line
+hartford,hartford:29020,29020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4401,1,4401,hartford:shp-HART-66,shp-HART-66,CTrail,Hartford Line,Hartford Line
+hartford,hartford:22020,22020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4407,1,4407,hartford:shp-HART-62,shp-HART-62,CTrail,Hartford Line,Hartford Line
+hartford,hartford:23010,23010,hartford:HART,HART,hartford:1,1,Southbound to New Haven Union Station,CTrail 6459,1,6459,hartford:shp-HART-58,shp-HART-58,CTrail,Hartford Line,Hartford Line
+hartford,hartford:24020,24020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4415,1,4415,hartford:shp-HART-60,shp-HART-60,CTrail,Hartford Line,Hartford Line
+hartford,hartford:25020,25020,hartford:HART,HART,hartford:2,2,Southbound to New Haven Union Station,CTrail 4451,1,4451,hartford:shp-HART-53,shp-HART-53,CTrail,Hartford Line,Hartford Line

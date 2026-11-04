@@ -1,0 +1,444 @@
+{
+  "mnr": {
+    "imported_local": "2026-09-27T00:24:14-04:00",
+    "rows_before": 264306,
+    "rows_after": 266324,
+    "coverage_start": "2026-09-09",
+    "coverage_end": "2027-05-22",
+    "old_end": "2027-05-22",
+    "added_train_numbers": [
+      "7520",
+      "7526",
+      "7527"
+    ],
+    "removed_train_numbers": [
+      "7338",
+      "7341",
+      "7343",
+      "7362",
+      "7365",
+      "7367",
+      "7536",
+      "7542",
+      "7560",
+      "7566"
+    ],
+    "changed_stop_time_patterns": [
+      "1849"
+    ],
+    "after_midnight_rows": 6401,
+    "calendar_rows": 0,
+    "exception_rows": 1357,
+    "feed_info": [],
+    "warnings": [
+      "Missing optional GTFS file: calendar.txt",
+      "Missing optional GTFS file: feed_info.txt",
+      "Excluded 47 stop_times for configured non-public stop_ids: 651"
+    ],
+    "change_examples": {
+      "1849": {
+        "removed": [],
+        "added": [
+          [
+            "STM",
+            "10:22",
+            "10:22"
+          ]
+        ]
+      }
+    }
+  },
+  "hartford": {
+    "imported_local": "2026-09-27T00:25:18-04:00",
+    "rows_before": 266,
+    "rows_after": 266,
+    "coverage_start": "2026-07-11",
+    "coverage_end": "2027-07-12",
+    "old_end": "2027-07-12",
+    "added_train_numbers": [],
+    "removed_train_numbers": [],
+    "changed_stop_time_patterns": [],
+    "after_midnight_rows": 0,
+    "calendar_rows": 2,
+    "exception_rows": 16,
+    "feed_info": [
+      {
+        "feed_publisher_name": "CONN DOT",
+        "feed_publisher_url": "https://www.hartfordline.com/fares-schedules/",
+        "feed_lang": "en",
+        "feed_start_date": "20260711",
+        "feed_end_date": "20270712",
+        "feed_version": "S1000057"
+      }
+    ],
+    "warnings": [],
+    "change_examples": {}
+  },
+  "sle": {
+    "imported_local": "2026-09-27T00:25:20-04:00",
+    "rows_before": 429,
+    "rows_after": 429,
+    "coverage_start": "2026-09-20",
+    "coverage_end": "2027-09-20",
+    "old_end": "2027-09-20",
+    "added_train_numbers": [],
+    "removed_train_numbers": [],
+    "changed_stop_time_patterns": [],
+    "after_midnight_rows": 6,
+    "calendar_rows": 4,
+    "exception_rows": 0,
+    "feed_info": [
+      {
+        "feed_publisher_name": "Amtrak",
+        "feed_publisher_url": "http://www.amtrak.com",
+        "feed_lang": "en",
+        "default_lang": "en",
+        "feed_start_date": "20260927",
+        "feed_end_date": "20261003",
+        "feed_version": "20260926",
+        "feed_contact_email": "DL_DTGTFSsupport@Amtrak.com",
+        "feed_contact_url": "http://www.amtrak.com"
+      }
+    ],
+    "warnings": [
+      "Missing optional GTFS file: calendar_dates.txt",
+      "Missing optional GTFS file: transfers.txt"
+    ],
+    "change_examples": {}
+  },
+  "amtrak": {
+    "imported_local": "2026-09-27T00:25:22-04:00",
+    "rows_before": 4130,
+    "rows_after": 4245,
+    "coverage_start": "2026-09-20",
+    "coverage_end": "2027-09-20",
+    "old_end": "2027-09-20",
+    "added_train_numbers": [],
+    "removed_train_numbers": [
+      "1152",
+      "1169"
+    ],
+    "changed_stop_time_patterns": [
+      "1088",
+      "1150",
+      "1160",
+      "1161",
+      "1163",
+      "1167",
+      "1194",
+      "150",
+      "152",
+      "162",
+      "194",
+      "2151",
+      "2152",
+      "2155",
+      "2252",
+      "2255",
+      "65",
+      "66",
+      "67"
+    ],
+    "after_midnight_rows": 105,
+    "calendar_rows": 109,
+    "exception_rows": 0,
+    "feed_info": [
+      {
+        "feed_publisher_name": "Amtrak",
+        "feed_publisher_url": "http://www.amtrak.com",
+        "feed_lang": "en",
+        "default_lang": "en",
+        "feed_start_date": "20260927",
+        "feed_end_date": "20261003",
+        "feed_version": "20260926",
+        "feed_contact_email": "DL_DTGTFSsupport@Amtrak.com",
+        "feed_contact_url": "http://www.amtrak.com"
+      }
+    ],
+    "warnings": [
+      "Missing optional GTFS file: calendar_dates.txt",
+      "Missing optional GTFS file: transfers.txt",
+      "Excluded 537 trips on route_type outside configured scope: 2",
+      "Excluded 1653 trips with fewer than 2 in-scope stops"
+    ],
+    "change_examples": {
+      "1088": {
+        "removed": [
+          [
+            "NHV",
+            "16:45",
+            "16:47"
+          ],
+          [
+            "NLC",
+            "17:41",
+            "17:43"
+          ],
+          [
+            "OSB",
+            "17:16",
+            "17:17"
+          ]
+        ],
+        "added": [
+          [
+            "NHV",
+            "16:45",
+            "17:00"
+          ],
+          [
+            "NLC",
+            "17:56",
+            "17:59"
+          ],
+          [
+            "OSB",
+            "17:30",
+            "17:33"
+          ]
+        ]
+      },
+      "1150": {
+        "removed": [
+          [
+            "NHV",
+            "08:36",
+            "08:38"
+          ],
+          [
+            "NLC",
+            "09:25",
+            "09:27"
+          ],
+          [
+            "OSB",
+            "09:06",
+            "09:07"
+          ]
+        ],
+        "added": [
+          [
+            "NHV",
+            "08:36",
+            "09:01"
+          ],
+          [
+            "NLC",
+            "09:51",
+            "09:54"
+          ],
+          [
+            "OSB",
+            "09:26",
+            "09:31"
+          ]
+        ]
+      },
+      "1160": {
+        "removed": [
+          [
+            "MYS",
+            "11:45",
+            "11:45"
+          ],
+          [
+            "WLY",
+            "11:55",
+            "11:55"
+          ]
+        ],
+        "added": [
+          [
+            "MYS",
+            "11:45",
+            "11:46"
+          ],
+          [
+            "WLY",
+            "11:55",
+            "11:57"
+          ]
+        ]
+      },
+      "1161": {
+        "removed": [
+          [
+            "NLC",
+            "10:43",
+            "10:45"
+          ]
+        ],
+        "added": [
+          [
+            "NLC",
+            "10:41",
+            "10:43"
+          ]
+        ]
+      },
+      "1163": {
+        "removed": [
+          [
+            "BRP",
+            "14:26",
+            "14:28"
+          ],
+          [
+            "NHV",
+            "14:05",
+            "14:06"
+          ],
+          [
+            "NLC",
+            "13:16",
+            "13:17"
+          ],
+          [
+            "OSB",
+            "13:35",
+            "13:36"
+          ],
+          [
+            "STM",
+            "14:53",
+            "14:55"
+          ]
+        ],
+        "added": [
+          [
+            "BRP",
+            "14:29",
+            "14:31"
+          ],
+          [
+            "NHV",
+            "14:07",
+            "14:09"
+          ],
+          [
+            "NLC",
+            "13:20",
+            "13:21"
+          ],
+          [
+            "OSB",
+            "13:39",
+            "13:40"
+          ],
+          [
+            "STM",
+            "14:56",
+            "14:58"
+          ]
+        ]
+      },
+      "1167": {
+        "removed": [
+          [
+            "NLC",
+            "18:04",
+            "18:06"
+          ],
+          [
+            "OSB",
+            "18:29",
+            "18:30"
+          ],
+          [
+            "WLY",
+            "17:36",
+            "17:38"
+          ]
+        ],
+        "added": [
+          [
+            "NLC",
+            "18:02",
+            "18:04"
+          ],
+          [
+            "OSB",
+            "18:31",
+            "18:33"
+          ],
+          [
+            "WLY",
+            "17:38",
+            "17:41"
+          ]
+        ]
+      },
+      "1194": {
+        "removed": [
+          [
+            "BRP",
+            "18:17",
+            "18:18"
+          ],
+          [
+            "NHV",
+            "18:44",
+            "18:49"
+          ],
+          [
+            "NLC",
+            "19:45",
+            "19:47"
+          ],
+          [
+            "OSB",
+            "19:18",
+            "19:20"
+          ],
+          [
+            "STM",
+            "17:47",
+            "17:49"
+          ]
+        ],
+        "added": [
+          [
+            "NHV",
+            "18:38",
+            "18:44"
+          ],
+          [
+            "NLC",
+            "19:30",
+            "19:31"
+          ],
+          [
+            "STM",
+            "17:43",
+            "17:45"
+          ],
+          [
+            "WLY",
+            "19:49",
+            "19:49"
+          ]
+        ]
+      },
+      "150": {
+        "removed": [],
+        "added": [
+          [
+            "BRP",
+            "08:12",
+            "08:13"
+          ],
+          [
+            "NHV",
+            "08:37",
+            "08:44"
+          ],
+          [
+            "STM",
+            "07:43",
+            "07:44"
+          ]
+        ]
+      }
+    }
+  }
+}
