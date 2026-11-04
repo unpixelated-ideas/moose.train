@@ -1530,7 +1530,29 @@
       }
     }
 
+    .small-glass-only { display: none; }
     @media (max-width: 560px) {
+      .small-glass-only { display: inline; }
+      .result .wide-glass-only { display: none; }
+      .result { padding: 14px; gap: 12px; }
+      .result-top { gap: 6px; padding-right: 0; }
+      .result-title { padding-right: 36px; font-size: .82rem; }
+      .result-meta { gap: 4px 8px; min-width: 0; }
+      .journey-time { font-size: clamp(1.2rem, 5.6vw, 1.55rem); line-height: 1.3; overflow-wrap: anywhere; }
+      .journey-duration { font-size: .82rem; }
+      .result .fare-summary { flex-basis: auto; font-size: .88rem; color: var(--ink); min-width: 0; overflow-wrap: anywhere; }
+      .result .fare-summary::before { content: "·"; margin-right: 8px; color: var(--muted); }
+      .legs { gap: 8px; }
+      .result .leg { grid-template-columns: auto minmax(0, 1fr) fit-content(25%); gap: 6px 10px; padding-top: 10px; align-items: start; }
+      .result .leg .time { grid-column: 1; grid-row: 1; font-size: .82rem; font-weight: 650; line-height: 1.5; }
+      .leg .mobile-leg-times { display: grid; }
+      .result .leg-details { grid-column: 2; grid-row: 1; overflow-wrap: anywhere; }
+      .leg-stations { font-size: .9rem; line-height: 1.4; }
+      .result .leg-meta { font-size: .75rem; margin-top: 3px; }
+      .result .leg-fare { grid-column: 3; grid-row: 1; text-align: right; font-size: .82rem; font-weight: 650; overflow-wrap: anywhere; }
+      .result .transfer-connection { padding: 4px 0; border: 0; border-radius: 0; background: transparent; font-size: .75rem; font-weight: 500; }
+      .transfer-icon { width: 14px; height: 14px; vertical-align: middle; margin-right: 4px; }
+
       header {
         align-items: stretch;
         flex-direction: column;
@@ -1759,6 +1781,7 @@
         <div class="learn-more-list">
           <a id="learn-more-faq-link" class="learn-more-link" href="faq.html" data-i18n="learnMoreFaq">FAQs</a>
           <a id="learn-more-terms-link" class="learn-more-link" href="terms.html" data-i18n="learnMoreTerms">Terms of Use</a>
+          <a class="learn-more-link" href="moose.train-departure-board.html" data-i18n="learnMoreDisplayBoard">Departure Board</a>
           <a id="learn-more-privacy-link" class="learn-more-link" href="privacy.html" data-i18n="learnMorePrivacy">Privacy Policy</a>
           <span class="learn-more-unavailable" aria-disabled="true">
             <span data-i18n="learnMoreAbout">About</span>
@@ -1790,6 +1813,16 @@
         <span data-i18n="updateLogDataRefresh">Last refreshed October 19, 2026</span>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v097-title">
+          <h3 id="update-log-v097-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.7</span>
+            <span class="update-log-release-date" data-i18n="updateLogV097Date">November 3, 2027</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV097Departures">Added a digital departure board. Choose any supported station to see upcoming departures at a glance.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v096-title">
           <h3 id="update-log-v096-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.6</span>
@@ -2486,6 +2519,8 @@
         timezoneNoticeDateTime: "{date}, {time}",
         timezoneNoticeDismiss: "Dismiss",
         direct: "Direct",
+        mobileDirect: "Direct train",
+        mobileTransfers: "{count} transfer · {station}",
         transferAt: "Transfer at {station}",
         trainLabel: "Train {number}",
         timeRange: "{start} to {end}",
@@ -2535,6 +2570,8 @@
         fareUnavailable: "Fare unavailable",
         updateLogV095Date: "October 20, 2026",
         updateLogV096Date: "October 27, 2026",
+        updateLogV097Date: "November 3, 2027",
+        updateLogV097Departures: "Added a digital departure board. Choose any supported station to see upcoming departures at a glance.",
         updateLogV096Refresh: "Fixed an issue that kept schedules from refreshing.",
         updateLogNjtCoverage: "You can now search trips on NJ Transit commuter rail lines.",
         updateLogV095WestHudson: "Added Metro-North's west-of-Hudson lines: Port Jervis and Pascack Valley.",
@@ -2558,6 +2595,7 @@
         learnMoreFaq: "FAQs",
         learnMoreTerms: "Terms of Use",
         learnMorePrivacy: "Privacy Policy",
+        learnMoreDisplayBoard: "Departure Board",
         learnMoreAbout: "About",
         learnMoreUpdateLog: "Update Log",
         learnMoreFeedback: "Feedback",
@@ -2656,6 +2694,8 @@
         timezoneNoticeDateTime: "{date} {time}",
         timezoneNoticeDismiss: "닫기",
         direct: "직통",
+        mobileDirect: "직통 열차",
+        mobileTransfers: "환승 {count}회 · {station}",
         transferAt: "{station} 환승",
         trainLabel: "{number}번 열차",
         timeRange: "{start}에서 {end}까지",
@@ -2705,6 +2745,8 @@
         fareUnavailable: "운임 정보 없음",
         updateLogV095Date: "2026년 10월 20일",
         updateLogV096Date: "2026년 10월 27일",
+        updateLogV097Date: "2027년 11월 3일",
+        updateLogV097Departures: "디지털 출발 안내판을 추가했습니다. 지원되는 역을 선택하면 곧 출발하는 열차를 한눈에 확인할 수 있습니다.",
         updateLogV096Refresh: "시간표가 업데이트되지 않던 문제를 수정했습니다.",
         updateLogNjtCoverage: "이제 NJ Transit 통근 열차 노선의 여정도 검색할 수 있습니다.",
         updateLogV095WestHudson: "허드슨강 서쪽을 운행하는 Metro-North의 Port Jervis선과 Pascack Valley선을 추가했습니다.",
@@ -2728,6 +2770,7 @@
         learnMoreFaq: "FAQ",
         learnMoreTerms: "이용약관",
         learnMorePrivacy: "개인정보 처리방침",
+        learnMoreDisplayBoard: "출발 안내판",
         learnMoreAbout: "소개",
         learnMoreUpdateLog: "업데이트 로그",
         learnMoreFeedback: "피드백",
@@ -2826,6 +2869,8 @@
         timezoneNoticeDateTime: "{date}, {time}",
         timezoneNoticeDismiss: "Cerrar",
         direct: "Directo",
+        mobileDirect: "Tren directo",
+        mobileTransfers: "{count} transbordo · {station}",
         transferAt: "Transbordo en {station}",
         trainLabel: "Tren {number}",
         timeRange: "{start} a {end}",
@@ -2875,6 +2920,8 @@
         fareUnavailable: "Tarifa no disponible",
         updateLogV095Date: "20 de octubre de 2026",
         updateLogV096Date: "27 de octubre de 2026",
+        updateLogV097Date: "3 de noviembre de 2027",
+        updateLogV097Departures: "Añadimos un panel digital de salidas. Elige cualquier estación disponible para ver las próximas salidas de un vistazo.",
         updateLogV096Refresh: "Corregimos un problema que impedía actualizar los horarios.",
         updateLogNjtCoverage: "Ahora también puedes buscar viajes en las líneas de trenes de cercanías de NJ Transit.",
         updateLogV095WestHudson: "Añadimos las líneas de Metro-North al oeste del Hudson: Port Jervis y Pascack Valley.",
@@ -2898,6 +2945,7 @@
         learnMoreFaq: "Preguntas frecuentes",
         learnMoreTerms: "Términos de uso",
         learnMorePrivacy: "Política de privacidad",
+        learnMoreDisplayBoard: "Panel de salidas",
         learnMoreAbout: "Acerca de",
         learnMoreUpdateLog: "Registro de cambios",
         learnMoreFeedback: "Comentarios",
@@ -6985,7 +7033,7 @@
             <span class="shortlist-toggle-icon" aria-hidden="true">${isShortlisted ? "✓" : "⊕"}</span>
           </button>
           <div class="result-top">
-            <div class="result-title" aria-label="${escapeHtml(titleLabel)}">${escapeHtml(title)}${titleStatus}</div>
+            <div class="result-title" aria-label="${escapeHtml(titleLabel)}"><span class="wide-glass-only">${escapeHtml(title)}</span><span class="small-glass-only">${escapeHtml(route.legs.length > 1 ? t("mobileTransfers", { count: route.legs.length - 1, station: compactStationName(route.transferStation || route.legs[1].from) }) : t("mobileDirect"))}</span>${titleStatus}</div>
             <div class="result-meta"><span class="journey-time">${escapeHtml(routeTimeRange)}</span><span class="journey-duration">${liveIndicator}${escapeHtml(formatDuration(routeDuration))}</span>${routeFareMeta}</div>
           </div>
           <div class="legs">
@@ -7162,7 +7210,15 @@
       const label = wait >= 0
         ? t("transferConnection", { duration: formatDuration(wait), station: displayStationName(next.from) })
         : t("transferAt", { station: displayStationName(next.from) });
-      return `<div class="transfer-connection">${escapeHtml(label)}</div>`;
+      const mobileWait = Number.isFinite(arrival) && Number.isFinite(departure) && wait >= 0 ? ` · ${escapeHtml(formatDuration(wait))}` : "";
+      return `<div class="transfer-connection"><span class="wide-glass-only">${escapeHtml(label)}</span><span class="small-glass-only"><svg class="transfer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></svg>${escapeHtml(t("transferAt", { station: compactStationName(next.from) }))}${mobileWait}</span></div>`;
+    }
+
+    // Condense generic station suffixes only; retain names and boarding areas in accessible text.
+    function compactStationName(name) {
+      const short = String(name || "").replace(/\s+(?:Union Station|Terminal|Station)$/i, "");
+      if (currentLanguage === "ko" && koreanStationNames[name]) return koreanStationNames[name];
+      return displayStationName(short);
     }
 
     function boardingStationName(name, id, agency) {
@@ -7177,9 +7233,9 @@
       const fareAmount = fare ? formatFareAmount(fare) : "";
       return `
         <div class="leg">
-          <div class="time">${escapeHtml(formatDisplayTimeRange(departure, arrival, displayOffset))}</div>
+          <div class="time"><span class="wide-glass-only">${escapeHtml(formatDisplayTimeRange(departure, arrival, displayOffset))}</span><span class="small-glass-only mobile-leg-times"><span>${escapeHtml(formatMinutes(departure + displayOffset))}</span><span>${escapeHtml(formatMinutes(arrival + displayOffset))}</span></span></div>
           <div class="leg-details">
-            <div class="leg-stations"><strong>${escapeHtml(formatStationRange(boardingStationName(leg.from, leg.fromId, trip.agency), boardingStationName(leg.to, leg.toId, trip.agency)))}</strong></div>
+            <div class="leg-stations"><strong class="wide-glass-only">${escapeHtml(formatStationRange(boardingStationName(leg.from, leg.fromId, trip.agency), boardingStationName(leg.to, leg.toId, trip.agency)))}</strong><strong class="small-glass-only" tabindex="0" title="${escapeHtml(formatStationRange(boardingStationName(leg.from, leg.fromId, trip.agency), boardingStationName(leg.to, leg.toId, trip.agency)))}" aria-label="${escapeHtml(formatStationRange(boardingStationName(leg.from, leg.fromId, trip.agency), boardingStationName(leg.to, leg.toId, trip.agency)))}">${escapeHtml(compactStationName(leg.from))} → ${escapeHtml(compactStationName(leg.to))}</strong></div>
             <div class="leg-meta">${escapeHtml(formatLegMeta(trip, leg.realtime) + (leg.realtime?.departure?.track ? " · Track " + leg.realtime.departure.track : ""))}</div>
           </div>
           ${fareAmount ? `<div class="leg-fare">${escapeHtml(fareAmount)}</div>` : !hideAmtrakFareLink && normalize(trip.agency) === "amtrak" ? `<div class="leg-fare">${renderAmtrakFareLink()}</div>` : !hideAmtrakFareLink && isNjtLeg(leg) ? `<div class="leg-fare">${escapeHtml(t("fareUnavailable"))}</div>` : ""}

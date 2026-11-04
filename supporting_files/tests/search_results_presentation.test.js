@@ -43,6 +43,24 @@ run(`
   assert.deepEqual(events, ['blur', 'focus', 'scroll'], 'No-result searches also move focus');
   const connection = run(`renderTransferConnection({arrival: 1015}, {departure:1066,from:'Bridgeport'})`);
   assert(connection.includes('51m transfer at Bridgeport'));
+  for (const [arrival, departure, expected] of [[1430, 1450, '20m'], [1495, 1834, '5h 39m'], [0, 609, '10h 9m']]) {
+    const markup = run(`renderTransferConnection({arrival:${arrival}}, {departure:${departure},from:'New Haven'})`);
+    assert(markup.includes(` · ${expected}</span>`), 'Mobile wait uses date-adjusted schedule minutes');
+  }
+  for (const legs of ['{arrival:100}, {departure:90,from:"New Haven"}', '{}, {from:"New Haven"}']) {
+    const markup = run(`renderTransferConnection(${legs})`);
+    assert(!markup.includes('NaN'));
+    assert(!/ · [^<]+<\/span>/.test(markup), 'Unknown or invalid mobile waits are omitted');
+  }
+  assert.equal(run('compactStationName("Grand Central Terminal")'), 'Grand Central');
+  assert.equal(run('compactStationName("New Haven Union Station")'), 'New Haven');
+  assert.equal(run('compactStationName("Station Road")'), 'Station Road');
+  for (const language of ['en', 'ko', 'es']) {
+    run(`currentLanguage = "${language}"`);
+    assert.notEqual(run('t("mobileDirect")'), 'mobileDirect');
+    assert(!run('t("mobileTransfers", {count:1, station:"Test"})').includes('{'));
+  }
+  run('currentLanguage = "en"');
   assert(!html.includes('leg-source-spacer'), 'Legs must not reserve space for removed source links');
   console.log('Search results focus and transfer presentation tests passed');
 })().catch(error => { console.error(error); process.exitCode = 1; });

@@ -363,6 +363,8 @@
       <span id="footer-note">moose.train</span>
       <span aria-hidden="true">·</span>
       <a id="footer-home-link" href="index.html">Trip search</a>
+      <span aria-hidden="true">·</span>
+      <a id="footer-display-board-link" href="moose.train-departure-board.html">Departure Board</a>
     </footer>
   </main>
 
@@ -576,6 +578,7 @@
       els.backLink.textContent = strings.back;
       els.footer.setAttribute("aria-label", strings.footerLabel);
       els.footerHomeLink.textContent = strings.footerHome;
+      document.getElementById("footer-display-board-link").textContent = ({en:"Departure Board",ko:"출발 안내판",es:"Panel de salidas"})[currentLanguage] || "Departure Board";
       els.privacyTitle.textContent = strings.privacyTitle;
       els.privacySummary.textContent = strings.privacySummary;
       els.lastUpdated.textContent = strings.lastUpdated;

@@ -57,6 +57,21 @@ const outputs = [
   [path.join(root, 'supporting_files/assets/schedule/search.json'), json],
   [path.join(root, 'supporting_files/assets/schedule/search.json.gz'), compressed],
 ];
+// Keep the standalone station page usable when opened directly from disk.
+const boardPath = path.join(root, 'moose.train-departure-board.html');
+if (fs.existsSync(boardPath)) {
+  const stationTrips = prepared.trips.filter(trip => trip.stops.some(stop => stop.id === 'OSB'));
+  const embedded = JSON.stringify(stationTrips).replace(/</g, '\\u003c');
+  const board = fs.readFileSync(boardPath, 'utf8').replace(
+    /(<script id="station-schedule" type="application\/json">)[\s\S]*?(<\/script>)/,
+    (_match, open, close) => open + embedded + close,
+  );
+  const completeBoard = board.replace(
+    /(<script id="all-stations-schedule" type="application\/octet-stream">)[\s\S]*?(<\/script>)/,
+    (_match, open, close) => open + compressed.toString('base64') + close,
+  );
+  outputs.push([boardPath, Buffer.from(completeBoard)]);
+}
 // Check the browser decoder against the exact CSV-derived trips, including all stop times and keys.
 context.payload = payload;
 const decoded = vm.runInContext('decodeSearchSchedule(payload)', context);

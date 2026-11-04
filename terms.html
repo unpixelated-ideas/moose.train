@@ -299,6 +299,7 @@
         min-width: 0;
       }
     }
+      .display-board-footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--border);font-size:14px}.display-board-footer a{color:inherit}
   </style>
 </head>
 <body>
@@ -344,6 +345,7 @@
         <div class="status">Loading Terms of Use...</div>
       </div>
     </article>
+    <footer class="display-board-footer"><a id="footer-display-board-link" href="moose.train-departure-board.html">Departure Board</a></footer>
   </main>
 
   <script>
@@ -466,6 +468,7 @@
       els.language.setAttribute("aria-label", text("languageLabel", "Language"));
       els.tagline.textContent = text("tagline", "M.O.O.S.E. - Metro-North Or Other Service\u00a0Evaluator");
       els.backLink.textContent = pageText("back");
+      document.getElementById("footer-display-board-link").textContent = ({en:"Departure Board",ko:"출발 안내판",es:"Panel de salidas"})[currentLanguage] || "Departure Board";
       els.backLink.href = `index.html?lang=${encodeURIComponent(currentLanguage)}`;
       renderTerms(content);
     }
