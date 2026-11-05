@@ -59,6 +59,12 @@ const outputs = [
 ];
 // Keep the standalone station page usable when opened directly from disk.
 const boardPath = path.join(root, 'moose.train-departure-board.html');
+function normalizeEmbeddedSchedule(contents) {
+  return contents.toString('utf8').replace(
+    /(<script id="all-stations-schedule" type="application\/octet-stream">)([\s\S]*?)(<\/script>)/,
+    (_match, open, encoded, close) => open + zlib.gunzipSync(Buffer.from(encoded.trim(), 'base64')).toString('base64') + close,
+  );
+}
 if (fs.existsSync(boardPath)) {
   const stationTrips = prepared.trips.filter(trip => trip.stops.some(stop => stop.id === 'OSB'));
   const embedded = JSON.stringify(stationTrips).replace(/</g, '\\u003c');
@@ -82,7 +88,9 @@ for (const [file, contents] of outputs) {
     // gzip byte streams can differ across zlib versions; their content must match.
     const matches = existing && (file.endsWith('.gz')
       ? zlib.gunzipSync(existing).equals(json)
-      : existing.equals(contents));
+      : file === boardPath
+        ? normalizeEmbeddedSchedule(existing) === normalizeEmbeddedSchedule(contents)
+        : existing.equals(contents));
     if (!matches) {
       throw new Error(`Stale schedule output: ${path.relative(root, file)}. Run the schedule builder.`);
     }
