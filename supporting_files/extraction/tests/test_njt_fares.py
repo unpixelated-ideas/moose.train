@@ -3,10 +3,21 @@ import datetime as dt
 
 from test_gtfs_importer import station_id_for  # Also installs the extraction import path.
 from fetch_njt_fares import amount_cents, fare_query, parse_quotes
-from build_njt_fares import compile_snapshot, ENDPOINT
+from build_njt_fares import compile_snapshot, next_fare_service_date, ENDPOINT
 
 
 class NjtFareTests(unittest.TestCase):
+    def test_fare_date_is_a_future_new_york_weekday(self):
+        for instant, expected in [
+            ("2026-11-05T03:00:00+00:00", "2026-11-05"),
+            ("2026-11-05T15:00:00+00:00", "2026-11-06"),
+            ("2026-11-06T15:00:00+00:00", "2026-11-09"),
+            ("2026-11-07T15:00:00+00:00", "2026-11-09"),
+            ("2026-11-08T15:00:00+00:00", "2026-11-09"),
+        ]:
+            with self.subTest(instant=instant):
+                self.assertEqual(next_fare_service_date(dt.datetime.fromisoformat(instant)).isoformat(), expected)
+
     def report(self, reverse_amount=2035):
         return {"source_url": ENDPOINT, "query_service_date": "2026-10-20",
                 "retrieved_at": "2026-10-19T21:00:00+00:00", "quotes": [

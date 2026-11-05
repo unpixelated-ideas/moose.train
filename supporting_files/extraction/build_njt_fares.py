@@ -59,6 +59,15 @@ def compile_snapshot(report, required_pairs=CORE_PAIRS):
             "coverage": {"publishedPairs": len(fares), "queriedPairs": len(quotes)}}
 
 
+def next_fare_service_date(now=None):
+    # Today's planner results can omit trains that have already departed.
+    now = now or dt.datetime.now(ZoneInfo("America/New_York"))
+    day = now.astimezone(ZoneInfo("America/New_York")).date() + dt.timedelta(days=1)
+    while day.weekday() >= 5:
+        day += dt.timedelta(days=1)
+    return day
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--from-report", type=Path, help="Compile an already collected, dated official-source audit")
@@ -67,11 +76,8 @@ def main():
     if args.from_report:
         report = json.loads(args.from_report.read_text())
     else:
-        # Use a complete weekday timetable, including commuter-only stations.
-        day = dt.datetime.now(ZoneInfo("America/New_York")).date()
-        while day.weekday() >= 5:
-            day += dt.timedelta(days=1)
-        report = collect_report(day)
+        # Use a future weekday timetable, including commuter-only stations.
+        report = collect_report(next_fare_service_date())
     snapshot = compile_snapshot(report)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     temp = args.output.with_suffix(".json.tmp")
