@@ -7,7 +7,7 @@ const code = html.slice(html.indexOf('// Shareable board URLs'), html.indexOf('l
 const stations = [{id:'OSB',name:'Old Saybrook'},{id:'CL',name:'Clinton'},{id:'LIRR_11',name:'Broadway'},{id:'NJT_25',name:'Broadway'}];
 async function check(query, expected) {
  const location = new URL('https://moose.train/moose.train-departure-board.html'+query);
- const preferences = {direction:'west',walkingTime:'99'};
+ const preferences = {direction:'west',walkingTime:'99',language:'en'};
  let selected = stations[0], result;
  const context = vm.createContext({URL,URLSearchParams,location,preferences,console,allTrips:[],
   stationOptions:()=>stations,loadEmbeddedTrips:async()=>[],
@@ -18,7 +18,7 @@ async function check(query, expected) {
  vm.runInContext(code,context);
  await vm.runInContext('initializeBoardUrl()',context);
  assert.equal(selected.name,expected[0]);assert.equal(preferences.direction,expected[1]);assert.equal(preferences.walkingTime,expected[2]);
- assert.equal(result.searchParams.get('station'),expected[3]);assert.equal(preferences.visibleTrains,Number(new URLSearchParams(query).get('rows'))||7);
+ assert.equal(result.searchParams.get('station'),expected[3]);assert.equal(preferences.visibleTrains,Number(new URLSearchParams(query).get('rows'))||8);
  return result;
 }
 (async()=>{

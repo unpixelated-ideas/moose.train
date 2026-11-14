@@ -2507,6 +2507,7 @@
         swap: "Swap",
         resetSearch: "Reset",
         readyToSearch: "Enter a trip to search schedules.",
+        localDataBeyondRange: "☣️ Local preview: the saved schedules for this trip end on {date}, so this copy can’t return results for your selected date. This is a local data limitation; the live site refreshes schedules separately. To test results here, try a date covered by the saved schedules.",
         loadingCsv: "Loading schedule data...",
         loadingFirstSearch: "Loading schedules for your first search...",
         findingTrains: "Finding trains",
@@ -2681,6 +2682,7 @@
         swap: "바꾸기",
         resetSearch: "초기화",
         readyToSearch: "여행 정보를 입력해 일정을 검색하세요.",
+        localDataBeyondRange: "☣️ 로컬 미리보기: 이 구간의 저장된 시간표는 {date}까지이므로 선택한 날짜의 결과를 표시할 수 없습니다. 로컬 데이터의 제한이며, 실제 사이트의 시간표는 별도로 갱신됩니다. 검색 결과를 테스트하려면 저장된 시간표의 유효 기간 내 날짜를 선택하세요.",
         loadingCsv: "일정 데이터를 불러오는 중...",
         loadingFirstSearch: "첫 검색을 위한 일정 데이터를 불러오는 중...",
         findingTrains: "열차를 찾는 중",
@@ -2855,6 +2857,7 @@
         swap: "Invertir",
         resetSearch: "Restablecer",
         readyToSearch: "Ingresa un viaje para buscar horarios.",
+        localDataBeyondRange: "☣️ Vista previa local: los horarios guardados para este viaje llegan hasta el {date}, por lo que esta copia no puede mostrar resultados para la fecha seleccionada. Es una limitación de los datos locales; el sitio publicado actualiza sus horarios por separado. Para probar los resultados aquí, elige una fecha cubierta por los horarios guardados.",
         loadingCsv: "Cargando horarios...",
         loadingFirstSearch: "Cargando horarios para tu primera búsqueda...",
         findingTrains: "Buscando trenes",
@@ -3946,6 +3949,13 @@
 
     init();
 
+    function isLocalPreview(location) {
+      const hostname = location.hostname.toLowerCase();
+      return location.protocol === "file:" || hostname === "localhost" ||
+        hostname.endsWith(".localhost") || hostname === "[::1]" || hostname === "::1" ||
+        /^127(?:\.\d{1,3}){3}$/.test(hostname);
+    }
+
     function init() {
       applyDefaultSearchDateTime();
       initStationPickers();
@@ -4370,6 +4380,8 @@
       const previousDestination = stations.length ? findStation(els.destination.value, { fuzzy: false }) : null;
       currentLanguage = normalizeLanguage(language);
       syncLanguageUrl(currentLanguage);
+      const boardLink = document.querySelector('[data-i18n="learnMoreDisplayBoard"]');
+      if (boardLink) boardLink.href = "moose.train-departure-board.html?lang=" + currentLanguage;
       els.language.value = currentLanguage;
       document.documentElement.lang = currentLanguage;
       document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -6092,7 +6104,9 @@
     }
 
     function renderEmptySearchState(state) {
-      const message = t(state.key, state.values || {});
+      const messageKey = state.key === "dataBeyondRange" && isLocalPreview(window.location)
+        ? "localDataBeyondRange" : state.key;
+      const message = t(messageKey, state.values || {});
       const action = state.searchDate ? `
         <button class="empty-action" type="button" data-search-date="${escapeHtml(state.searchDate)}">
           ${escapeHtml(t("searchLatestDate", { date: formatDisplayDate(state.searchDate) }))}
@@ -6154,17 +6168,28 @@
     function latestSearchDate(originId, destinationId) {
       const originLegs = candidateLegsFromStation(originId);
       let latest = "";
+      // No journey can outlive the trains serving its destination. A direct
+      // train reaching this bound avoids an unnecessary connection scan.
+      const upperBound = maxIsoDate(...trips
+        .filter((trip) => trip.stops.some((stop) => stop.id === destinationId))
+        .map(maxServiceDateForTrip));
       originLegs
         .filter((leg) => leg.toId === destinationId)
         .forEach((leg) => {
           latest = maxIsoDate(latest, latestCommonServiceDate([leg.trip]));
         });
+      if (latest === upperBound) return latest;
+      const onwardByStation = new Map();
       originLegs.forEach((firstLeg) => {
+        if (latest === upperBound) return;
         if (firstLeg.toId === originId || firstLeg.toId === destinationId) return;
         if (!transferStationIds.has(firstLeg.toId)) return;
         if (firstLegPassesDestinationBeforeTransfer(firstLeg, destinationId)) return;
         if (firstLegContinuesToDestinationAfterTransfer(firstLeg, destinationId)) return;
-        const onwardLegs = candidateLegsFromStation(firstLeg.toId, destinationId);
+        if (!onwardByStation.has(firstLeg.toId)) {
+          onwardByStation.set(firstLeg.toId, candidateLegsFromStation(firstLeg.toId, destinationId));
+        }
+        const onwardLegs = onwardByStation.get(firstLeg.toId);
         onwardLegs.forEach((secondLeg) => {
           if (secondLeg.toId !== destinationId) return;
           if (secondLeg.trip.key === firstLeg.trip.key) return;
@@ -6256,11 +6281,15 @@
       const reach = Math.max(0, ...durations) + (Number.isFinite(maxTransferMinutes) ? maxTransferMinutes : calendarReach);
       const index = new Map();
       trips.forEach((trip) => {
+        const legs = trip.stops.flatMap((stop) => {
+          if (stop.id === originId) return tripLegsFromStop(trip, stop);
+          if (transferStationIds.has(stop.id)) return tripLegsFromStop(trip, stop, destinationId);
+          return [];
+        });
+        if (!legs.length) return;
         const instances = serviceDatesForSearch(date, mode, queryTime, trip, reach)
           .filter((instance) => serviceApplies(trip, instance.date));
         if (!instances.length) return;
-        const legs = allTripLegs(trip).filter((leg) =>
-          leg.fromId === originId || (leg.toId === destinationId && transferStationIds.has(leg.fromId)));
         instances.forEach((instance) => {
           legs.forEach((leg) => {
             const datedLeg = { ...leg, serviceDate: instance.date, serviceOffset: instance.offset,
