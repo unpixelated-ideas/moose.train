@@ -83,3 +83,16 @@ run("trip.train='2718';signData.arrivals[0].track='';boardTrainTimeTracks.set('G
 assert.equal(run('boardLiveAtStop(trip,trip.stops[0],day,0)'),null,'Do not substitute the scheduled platform group for a live track');
 assert.throws(()=>run("normalizeTrainTimeTracks({...signData,is_stale:true},'GCT',Date.now()/1000)"),/stale/);
 console.log('Display board realtime matching, delayed departures, cancellations, skipped stops, freshness, and LIRR identity passed.');
+
+// Grand Central's railroad choice must not filter departures at other stations.
+run("selectedStation={id:'GCT',name:'Grand Central'}; preferences.grandCentralRailroad='both'");
+assert.equal(run("boardRailroadMatches({agency:'Metro-North'})"),true);
+assert.equal(run("boardRailroadMatches({agency:'LIRR'})"),true);
+for(const agency of ['Metro-North','LIRR']){
+ run('preferences.grandCentralRailroad='+JSON.stringify(agency));
+ assert.equal(run('boardRailroadMatches({agency:'+JSON.stringify(agency)+'})'),true);
+ assert.equal(run('boardRailroadMatches({agency:'+JSON.stringify(agency==='LIRR'?'Metro-North':'LIRR')+'})'),false);
+}
+run("selectedStation={id:'OSB'}");
+assert.equal(run("boardRailroadMatches({agency:'CTrail'})"),true);
+console.log('Grand Central railroad choices filter independently and leave other stations unchanged.');
