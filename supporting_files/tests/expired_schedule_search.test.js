@@ -11,7 +11,11 @@ const context = vm.createContext({document:{getElementById:()=>({}),querySelecto
 vm.runInContext(script, context);
 context.data = JSON.parse(fs.readFileSync(path.join(root, 'supporting_files/assets/schedule/search.json'), 'utf8'));
 vm.runInContext('trips = decodeSearchSchedule(data).trips', context);
-const state = vm.runInContext(`emptyStateForSearch({id:'NYC_RAIL'}, {id:'LIRR_1'}, dateFromIso('2026-11-14'), 660, 'leave')`, context, {timeout:10000});
+const coverageEnd = vm.runInContext("maxIsoDate(...trips.filter(trip => trip.stops.some(stop => stop.id === 'LIRR_1')).map(maxServiceDateForTrip))", context, {timeout:10000});
+assert.match(coverageEnd, /^\d{4}-\d{2}-\d{2}$/);
+const expired = new Date(Date.parse(coverageEnd) + 7 * 86400000).toISOString().slice(0, 10);
+context.expired = expired;
+const state = vm.runInContext(`emptyStateForSearch({id:'NYC_RAIL'}, {id:'LIRR_1'}, dateFromIso(expired), 660, 'leave')`, context, {timeout:10000});
 assert.equal(state.key, 'dataBeyondRange');
-assert.equal(state.searchDate, '2026-11-08');
+assert.equal(state.searchDate, coverageEnd);
 console.log('Expired Albertson schedule returns coverage message without freezing.');

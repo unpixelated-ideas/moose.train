@@ -44,6 +44,7 @@ route_id,agency_id,route_short_name,route_long_name,route_type,route_url,route_c
 36924,51,,Coast Starlight,2,https://www.amtrak.com/coast-starlight-train,CAE4F1,000000
 36926,51,,Lincoln Service Missouri River Runner,2,https://www.amtrak.com/illinois-services-train,CAE4F1,000000
 36930,51,,Sunset Limited,2,https://www.amtrak.com/sunset-limited-train,CAE4F1,000000
+39626,51,,Winter Park Express,2,https://www.amtrak.com/winter-park-express,CAE4F1,000000
 40751,51,,Acela,2,http://www.amtrak.com/acela-train,CAE4F1,000000
 41042,51,,Amtrak Hartford Line,2,https://www.amtrak.com/amtrak-hartford-line-train,CAE4F1,000000
 41044,51,,Valley Flyer,2,https://www.amtrak.com/valley-flyer-train,CAE4F1,000000

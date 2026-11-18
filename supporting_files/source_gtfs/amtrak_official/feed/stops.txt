@@ -376,7 +376,6 @@ OLT,OLT,San Diego Old Town Transportation Center,https://www.amtrak.com/stations
 OLW,OLW,Olympia-Lacey Amtrak Station,https://www.amtrak.com/stations/olw,America/Los_Angeles,46.991273,-122.794059
 OMA,OMA,Omaha Amtrak Station,https://www.amtrak.com/stations/oma,America/Chicago,41.249697,-95.927201
 ONA,ONA,Ontario Amtrak,https://www.amtrak.com/stations/ona,America/Los_Angeles,34.061672,-117.649569
-ORB,ORB,Old Orchard Beach Amtrak,https://www.amtrak.com/stations/orb,America/New_York,43.514326,-70.376225
 ORC,ORC,Oregon City Amtrak,https://www.amtrak.com/stations/orc,America/Los_Angeles,45.366146,-122.595925
 ORL,ORL,Orlando,https://www.amtrak.com/stations/orl,America/New_York,28.525926,-81.381516
 ORV,ORV,Oroville Amtrak Bus Stop,https://www.amtrak.com/stations/orv,America/Los_Angeles,39.520057,-121.572102
@@ -583,7 +582,7 @@ WLY,WLY,Westerly Amtrak Station,https://www.amtrak.com/stations/wly,America/New_
 WMH,WMH,Williams,https://www.amtrak.com/stations/wmh,America/Denver,35.25114,-112.198135
 WMN,WMN,Wilmington Amtrak Station,https://www.amtrak.com/stations/wmn,America/New_York,34.251192,-77.874895
 WND,WND,Windsor,https://www.amtrak.com/stations/wnd,America/New_York,41.852013,-72.642253
-WNL,WNL,Windsor Locks,https://www.amtrak.com/stations/wnl,America/New_York,41.913956,-72.626101
+WNL,WNL,Windsor Locks,https://www.amtrak.com/stations/wnl,America/New_York,41.93336,-72.62767
 WNM,WNM,Windsor-Mt. Ascutney Amtrak,https://www.amtrak.com/stations/wnm,America/New_York,43.479908,-72.384985
 WNN,WNN,Winnemucca Amtrak,https://www.amtrak.com/stations/wnn,America/Los_Angeles,40.969044,-117.73221
 WNR,WNR,Walnut Ridge Amtrak Station,https://www.amtrak.com/stations/wnr,America/Chicago,36.06766,-90.956766
@@ -591,6 +590,7 @@ WOB,WOB,Woburn Amtrak Station,https://www.amtrak.com/stations/wob,America/New_Yo
 WOR,WOR,Worcester Union Station,https://www.amtrak.com/stations/wor,America/New_York,42.261478,-71.794812
 WPB,WPB,West Palm Beach Amtrak Station,https://www.amtrak.com/stations/wpb,America/New_York,26.712554,-80.062184
 WPK,WPK,Winter Park Amtrak Station,https://www.amtrak.com/stations/wpk,America/New_York,28.597099,-81.351993
+WPR,WPR,Winter Park Ski Resort Amtrak Station,https://www.amtrak.com/stations/wpr,America/Denver,39.887584,-105.763245
 WPS,WPS,Winter Park,https://www.amtrak.com/stations/wps,America/Denver,39.88369,-105.761836
 WPT,WPT,Wolf Point Amtrak Station,https://www.amtrak.com/stations/wpt,America/Denver,48.091672,-105.642736
 WRJ,WRJ,White River Junction Amtrak Station,https://www.amtrak.com/stations/wrj,America/New_York,43.647785,-72.317272
@@ -639,8 +639,6 @@ HAE,HAE,Halethorpe,http://www.amtrak.com/stations/hae,America/New_York,39.237185
 MSA,MSA,Martin Airport,http://www.amtrak.com/stations/msa,America/New_York,39.33012395,-76.42143326
 EDG,EDG,Edgewood,http://www.amtrak.com/stations/edg,America/New_York,39.41624514,-76.29281265
 PRV,PRV,Perryville,http://www.amtrak.com/stations/prv,America/New_York,39.5579616,-76.0732195
-NSF,NSF,N.C. State Fair,http://www.amtrak.com/stations/nsf,America/New_York,35.794203,-78.706292
-LEX,LEX,Lexington,http://www.amtrak.com/stations/lex,America/New_York,35.820856,-80.251565
 WAS,WAS,Washington Union Station,https://www.amtrak.com/stations/was,America/New_York,38.896993,-77.006422
 LBO,LBO,Lbo,http://www.amtrak.com/stations/lbo,America/New_York,54.77395978,-101.84806319
 WMD,WMD,Wmd,http://www.amtrak.com/stations/wmd,America/New_York,39.157083,-122.146998
