@@ -25,10 +25,11 @@ Current files:
 
 PDFs may be renamed after extraction so their filenames describe the service and best-derived timetable dates. The CSV preserves the uploaded filename in `source_original_filename`; each stop event also includes `source_pdf` and `source_page` for traceability.
 
-To refresh the CSV after adding or replacing PDFs, run:
+After adding or replacing PDFs, run these commands from the repository root with Python 3.12.
 
 ```sh
-/Users/fgbm27/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 supporting_files/extraction/extract_timetables.py
+python3 -m pip install -r supporting_files/extraction/requirements.txt
+python3 supporting_files/extraction/extract_timetables.py
 ```
 
 After each run, review:

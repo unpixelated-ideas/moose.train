@@ -55,17 +55,24 @@ CTrail:
 
 ## First Checks To Run
 
+From the repository root, use Python 3.12 and install the extraction dependencies before running the refresh.
+
 ```sh
-/Users/fgbm27/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 supporting_files/extraction/extract_timetables.py
+python3 -m pip install -r supporting_files/extraction/requirements.txt
+python3 supporting_files/extraction/extract_timetables.py
 cat supporting_files/extraction/extraction_summary.csv
-/Users/fgbm27/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 - <<'PY'
-import csv, re
-rows = list(csv.DictReader(open("moose_train_schedule.csv")))
+python3 - <<'PY'
+import csv
+import gzip
+import re
+with gzip.open("moose_train_schedule.csv.gz", "rt", encoding="utf-8-sig", newline="") as schedule:
+    rows = list(csv.DictReader(schedule))
+# GTFS times can exceed 23:59 for service after midnight.
 bad = [
     (r["train_number"], r["station_name"], f, r[f])
     for r in rows
     for f in ("arrival_time", "departure_time")
-    if r[f] and r[f] != "unknown" and not re.match(r"^(?:[01]\d|2[0-3]):[0-5]\d$", r[f])
+    if r[f] and r[f] != "unknown" and not re.fullmatch(r"[0-9]{2,}:[0-5][0-9]", r[f])
 ]
 print(len(rows), "rows")
 print(len(bad), "bad times")

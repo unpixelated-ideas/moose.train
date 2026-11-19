@@ -66,7 +66,7 @@ html[data-experience="independence"][data-appearance] th{background:#fff;color:#
 table th:nth-child(6){width:13%}#track-heading{text-align:center;width:8%}td.track{text-align:center;font-variant-numeric:tabular-nums}table.has-tracks th:nth-child(4){width:25%}@media(max-width:600px){table.has-tracks th:nth-child(3){width:26%}table.has-tracks th:nth-child(4){width:18%}}
 
 /* Keep all board sizes tied to the selected number of visible departures. */
-:root{--visible-trains:8;--type:min(calc(26vw / (var(--visible-trains) + 1)),calc(46dvh / (var(--visible-trains) + 2.5)));--row:calc((100dvh - var(--type) * 2.9) / (var(--visible-trains) + 1))}
+:root{--visible-trains:8;--type:min(calc(26vw / (var(--visible-trains) + 1)),calc(46dvh / (var(--visible-trains) + 2.5)));--row:calc((100dvh - var(--type) * 2.9 - var(--fullscreen-top-gap,0px)) / (var(--visible-trains) + 1))}
 .topbar{height:calc(var(--type) * 1.65);min-height:0;gap:12px}.topbar h1{font-size:var(--type);font-weight:400}.topbar .station-control{flex:1;max-width:none;overflow:visible}.topbar #station-title{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topbar #station-search{font-size:var(--type);height:1.3em;width:100%}#station-title .sub{font-size:.34em}
 .topbar #walking-time-display{font-size:var(--type);margin:0;max-width:45%;white-space:normal;line-height:1.05}.settings{flex-shrink:0}
 .board-footer{height:calc(var(--type) * 1.25);font-size:calc(var(--type) * .75);gap:12px}.footer-clock{min-width:0}.board-footer a{flex-shrink:0}
@@ -104,8 +104,14 @@ html[lang="ko"] table.has-tracks th:nth-child(4){width:18%}
 #station-tip-dismiss{flex-shrink:0;border:0;background:transparent;color:#fff;font:20px/1 Arial,sans-serif;cursor:pointer;padding:0 2px}
 #fullscreen-toggle{border:0;background:transparent;color:inherit;cursor:pointer;padding:0;flex-shrink:0}
 #fullscreen-toggle:hover,#fullscreen-toggle:focus-visible{background:#ffffff26}
-/* Safari does not expose the exit overlay's width; reserve its top-left area on iPad. */
-html[data-ipad-fullscreen] .topbar{padding-left:100px}
+/* Leave room for the browser controls over the top-left corner in full screen. */
+html:is(:fullscreen,:-webkit-full-screen) .topbar{padding-left:100px}
+html:is(:fullscreen,:-webkit-full-screen) :is(#station-picker,#station-tip){max-width:calc(100vw - 110px)}
+@media(max-width:480px){
+ html:is(:fullscreen,:-webkit-full-screen){--fullscreen-top-gap:max(44px,env(fullscreen-inset-top,0px))}
+ html:is(:fullscreen,:-webkit-full-screen) .topbar{padding:var(--fullscreen-top-gap) 14px 0;height:calc(var(--type) * 1.65 + var(--fullscreen-top-gap))}
+ html:is(:fullscreen,:-webkit-full-screen) :is(#station-picker,#station-tip){max-width:calc(100vw - 24px)}
+}
 .settings{flex-shrink:0}.station-control{max-width:calc(100% - 282px)}
 @media(max-width:750px){.station-control{max-width:calc(100% - 214px)}}
 </style></head><body><div id="holiday-snow" aria-hidden="true" hidden></div><div id="halloween-ghost" aria-hidden="true" hidden>👻</div><main><header class="topbar"><div class="station-control"><h1><button id="station-title" type="button" aria-expanded="false" aria-controls="station-picker">Old Saybrook</button></h1><div id="station-tip" role="note" hidden><span id="station-tip-text"></span><button id="station-tip-dismiss" type="button" aria-label="Dismiss tip">×</button></div><input id="station-search" type="search" aria-label="Search stations" aria-controls="station-results" placeholder="Type a station name…" autocomplete="off" hidden><div id="station-picker" hidden><div id="station-results"></div><p id="picker-status" role="status"></p></div></div><span id="walking-time-display" hidden></span><div class="settings"><button id="halloween-toggle" class="setting" type="button" aria-label="Winter holiday mode" title="Winter holiday mode" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.2-.9Z"/></svg></button><button id="fullscreen-toggle" class="setting" type="button" aria-label="Enter full screen" title="Enter full screen" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button><label class="setting" title="Appearance"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M12 16v5m-4 0h8"/></svg><select id="setting-appearance" aria-label="Appearance"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label><label class="setting" title="Time format"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><select id="setting-format" aria-label="Time format"><option value="12">AM/PM</option><option value="24">24-hour</option></select></label><label class="setting" title="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg><select id="setting-language" aria-label="Language"><option value="en">English</option><option value="ko">한국어</option><option value="es">Español</option></select></label><button id="board-settings-button" class="setting" type="button" aria-label="Board settings" title="Board settings" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 3-.6 2.4-2 .9-2.2-.7-2.4 4.1 1.7 1.7v2.3l-1.7 1.7 2.4 4.1 2.3-.7 1.9 1 .6 2.2h4.8l.6-2.3 2-.9 2.2.7 2.4-4.1-1.7-1.7v-2.3l1.7-1.7-2.4-4.1-2.3.7-1.9-1L14.3 3Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></header>
@@ -613,8 +619,6 @@ function fullscreenTextEnglish(){return {enter:'Enter full screen',exit:'Exit fu
 function boardIsFullscreen(){return !!(document.fullscreenElement||document.webkitFullscreenElement);}
 function updateFullscreenButton(){
  const button=document.getElementById('fullscreen-toggle'),active=boardIsFullscreen(),t=fullscreenText();
- const isIPad=/iPad/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
- document.documentElement.toggleAttribute('data-ipad-fullscreen',active&&isIPad);
  button.title=active?t.exit:t.enter;button.setAttribute('aria-label',button.title);button.setAttribute('aria-pressed',String(active));
  button.querySelector('path').setAttribute('d',active?'M3 8h5V3m8 0v5h5M8 21v-5H3m18 0h-5v5':'M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5');
 }

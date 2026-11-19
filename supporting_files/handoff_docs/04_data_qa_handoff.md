@@ -47,17 +47,23 @@ Preserve known fixtures:
 
 ## First Checks To Run
 
+Run this check from the repository root against the compressed schedule.
+
 ```sh
-/Users/fgbm27/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 - <<'PY'
-import csv, re
+python3 - <<'PY'
+import csv
+import gzip
+import re
 from collections import Counter
-rows = list(csv.DictReader(open("moose_train_schedule.csv")))
+with gzip.open("moose_train_schedule.csv.gz", "rt", encoding="utf-8-sig", newline="") as schedule:
+    rows = list(csv.DictReader(schedule))
 print("rows", len(rows))
 print(Counter(r["service_name"] for r in rows))
+# GTFS times can exceed 23:59 for service after midnight.
 bad = [
     r for r in rows
     for f in ("arrival_time", "departure_time")
-    if r[f] and r[f] != "unknown" and not re.match(r"^(?:[01]\d|2[0-3]):[0-5]\d$", r[f])
+    if r[f] and r[f] != "unknown" and not re.fullmatch(r"[0-9]{2,}:[0-5][0-9]", r[f])
 ]
 print("bad times", len(bad))
 branch_only = {
