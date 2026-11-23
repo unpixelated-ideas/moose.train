@@ -36,7 +36,7 @@ const { chromium } = require('playwright');
     await page.evaluate(() => new Promise(requestAnimationFrame));
     assert.equal(await slider.inputValue(), '24');
     assert.equal(await slider.getAttribute('aria-valuetext'), 'Full search period');
-    assert.match(await page.locator('#departure-range-copy').textContent(), /9:59 PM tomorrow/);
+    assert.match(await page.locator('#departure-range-copy').textContent(), /9:59 PM the next day/);
     console.log('Slider continuous drag, stable element, keyboard focus, range label and next-day boundary passed.');
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

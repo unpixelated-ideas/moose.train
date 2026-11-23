@@ -665,6 +665,38 @@
     .shortlist-bar {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    .shortlist-bar .shortlist-count {
+      margin-inline-end: auto;
+    }
+
+    .shortlist-clear {
+      width: auto;
+      min-height: 38px;
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    .shortlist-clear:hover,
+    .shortlist-clear:active {
+      background: var(--color-hover);
+      color: var(--ink);
+    }
+
+    .shortlist-note,
+    .shortlist-date {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .shortlist-date {
+      margin-top: 4px;
     }
 
     .shortlist-filter {
@@ -1209,8 +1241,7 @@
     }
 
     .learn-more-link,
-    .learn-more-button,
-    .learn-more-unavailable {
+    .learn-more-button {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -1247,11 +1278,6 @@
     .learn-more-button:focus-visible {
       box-shadow: 0 0 0 3px var(--color-focus-ring);
       outline: none;
-    }
-
-    .learn-more-unavailable {
-      color: var(--link);
-      cursor: not-allowed;
     }
 
     .update-log-backdrop {
@@ -1783,9 +1809,7 @@
           <a id="learn-more-terms-link" class="learn-more-link" href="terms.html" data-i18n="learnMoreTerms">Terms of Use</a>
           <a class="learn-more-link" href="moose.train-departure-board.html" data-i18n="learnMoreDisplayBoard">Departure Board</a>
           <a id="learn-more-privacy-link" class="learn-more-link" href="privacy.html" data-i18n="learnMorePrivacy">Privacy Policy</a>
-          <span class="learn-more-unavailable" aria-disabled="true">
-            <span data-i18n="learnMoreAbout">About</span>
-          </span>
+          <a id="learn-more-about-link" class="learn-more-link" href="about.html" data-i18n="learnMoreAbout">About</a>
           <button id="update-log-button" class="learn-more-button" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="update-log-popup" data-i18n="learnMoreUpdateLog">Update Log</button>
           <a id="learn-more-feedback-link" class="learn-more-link" href="https://forms.gle/vas2DaTwrqiZf6SHA" target="_blank" rel="noopener noreferrer" data-i18n="learnMoreFeedback">Feedback</a>
         </div>
@@ -1813,6 +1837,17 @@
         <span data-i18n="updateLogDataRefresh">Last refreshed October 19, 2026</span>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v099-title">
+          <h3 id="update-log-v099-title" class="update-log-release-heading">
+            <span class="update-log-version">v0.9.9</span>
+            <span class="update-log-release-date" data-i18n="updateLogV099Date">November 22, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV099Shortlist">Your shortlist now stays with you across searches, so you can compare trips with different origins or destinations.</li>
+            <li data-i18n-html="updateLogV099About">Added content to the About page so you can learn more about moose.train.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v098-title">
           <h3 id="update-log-v098-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.8</span>
@@ -2063,6 +2098,8 @@
   <script src="supporting_files/assets/njt_fares.js?v=1f91a37da16b3a55"></script>
   <script>
     const CSV_PATH = "moose_train_schedule.csv";
+    const SHORTLIST_STORAGE_KEY = "moose.train.shortlist";
+    const SHORTLIST_STORAGE_VERSION = 1;
     const SEARCH_SCHEDULE_VERSION = "e81e534cb1618632";
     const SEARCH_SCHEDULE_PATH = "supporting_files/assets/schedule/search.json";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
@@ -2557,6 +2594,11 @@
         shortlistOn: "On Shortlist",
         shortlistShow: "Show Shortlist ({count})",
         shortlistShowAll: "Show All Trips",
+        shortlistCount: "Shortlisted trips ({count})",
+        shortlistClear: "Clear Shortlist",
+        shortlistClearConfirm: "Remove all trips from your shortlist?",
+        shortlistStale: "Some saved schedules may be outdated.",
+        shortlistDateRange: "{departure} – {arrival}",
         realtimeLive: "Live MTA railroad updates",
         realtimeArrived: "Train arrived",
         realtimeEarly: "Arriving early",
@@ -2584,6 +2626,9 @@
         updateLogV096Date: "October 27, 2026",
         updateLogV097Date: "November 3, 2027",
         updateLogV098Date: "November 18, 2026",
+        updateLogV099Date: "November 22, 2026",
+        updateLogV099Shortlist: "Your shortlist now stays with you across searches, so you can compare trips with different origins or destinations.",
+        updateLogV099About: "Added content to the About page so you can learn more about moose.train.",
         updateLogV098Departures: "Fixed bugs in the departure board.",
         updateLogV098Fullscreen: "Adjusted full-screen mode to work better on iPadOS and visionOS.",
         updateLogV097Departures: "Added a digital departure board. Choose any supported station to see upcoming departures at a glance.",
@@ -2611,6 +2656,20 @@
         learnMorePrivacy: "Privacy Policy",
         learnMoreDisplayBoard: "Departure Board",
         learnMoreAbout: "About",
+        aboutTitle: "About moose.train",
+        aboutProblem: "The problem",
+        aboutProblemBody: "Traveling by train shouldn't require searching half a dozen websites just to figure out your options. Yet that's often what happens when planning a trip involving Amtrak and regional rail. Each railroad has its own schedules, search tools, and ticketing systems, even when their trains serve the same stations or travel along the same tracks. Comparing routes, connections, travel times, and fares can quickly become a frustrating exercise.",
+        aboutSolution: "The solution",
+        aboutSolutionBody: "moose.train makes it easier to compare Amtrak and regional rail in one search. Rather than treating each railroad as a separate system, it brings their schedules together so you can see how different services might get you from one place to another. That includes journeys involving transfers between railroads and alternative departure stations, such as New York's Penn Station and Grand Central Terminal.",
+        aboutSolutionGoal: "The goal isn't to replace the railroads' own websites or ticketing systems. It's to help you understand your options before deciding how to travel.",
+        aboutBuild: "How we built it",
+        aboutBuildBody: "We started with a simple idea: what if we looked at the rail network from the passenger's perspective, rather than the railroad's? We brought together publicly available schedules from multiple operators, worked through the differences in how they organize their services, and developed a way to compare journeys across railroad boundaries.",
+        aboutBuildCoverage: "We began with New York City and the surrounding region, where Amtrak and several regional railroads operate alongside one another. We're continuing to refine the experience, expand coverage, and make it easier to discover connections that might otherwise be overlooked.",
+        aboutCreator: "Creator",
+        aboutAdvisor: "Technical Advisor & Collaborator",
+        aboutDisclaimer: "moose.train is an independent project and is not affiliated with Amtrak or any participating railroad.",
+        aboutBack: "Back to trip search",
+        aboutHome: "moose.train home",
         learnMoreUpdateLog: "Update Log",
         learnMoreFeedback: "Feedback",
         updateLogTitle: "Update Log",
@@ -2735,6 +2794,11 @@
         shortlistOn: "후보 목록에 있음",
         shortlistShow: "후보 목록 보기 ({count})",
         shortlistShowAll: "모든 여정 보기",
+        shortlistCount: "후보 여정 ({count}개)",
+        shortlistClear: "후보 목록 비우기",
+        shortlistClearConfirm: "후보 목록에서 모든 여정을 삭제할까요?",
+        shortlistStale: "저장된 일부 시간표 정보가 오래되었을 수 있습니다.",
+        shortlistDateRange: "{departure} ~ {arrival}",
         realtimeLive: "MTA 철도 실시간 정보",
         realtimeArrived: "열차 도착",
         realtimeEarly: "예정보다 일찍 도착",
@@ -2762,6 +2826,9 @@
         updateLogV096Date: "2026년 10월 27일",
         updateLogV097Date: "2027년 11월 3일",
         updateLogV098Date: "2026년 11월 18일",
+        updateLogV099Date: "2026년 11월 22일",
+        updateLogV099Shortlist: "이제 새로 검색해도 관심 목록이 유지되어, 출발지나 도착지가 다른 여정을 함께 비교할 수 있습니다.",
+        updateLogV099About: "moose.train에 대해 더 알아볼 수 있도록 소개 페이지에 내용을 추가했습니다.",
         updateLogV098Departures: "출발 안내판의 오류를 수정했습니다.",
         updateLogV098Fullscreen: "iPadOS와 visionOS에서 더 잘 작동하도록 전체 화면 모드를 조정했습니다.",
         updateLogV097Departures: "디지털 출발 안내판을 추가했습니다. 지원되는 역을 선택하면 곧 출발하는 열차를 한눈에 확인할 수 있습니다.",
@@ -2789,6 +2856,20 @@
         learnMorePrivacy: "개인정보 처리방침",
         learnMoreDisplayBoard: "출발 안내판",
         learnMoreAbout: "소개",
+        aboutTitle: "moose.train 소개",
+        aboutProblem: "문제",
+        aboutProblemBody: "기차 여행의 선택지를 알아보려고 웹사이트를 대여섯 곳씩 찾아볼 필요는 없어야 합니다. 하지만 암트랙과 지역 철도를 이용하는 여행을 계획할 때는 실제로 그런 일이 흔합니다. 철도 운영사마다 시간표와 검색 도구, 승차권 예매 시스템이 따로 있기 때문입니다. 같은 역에 정차하거나 같은 선로를 이용하더라도 마찬가지입니다. 노선과 환승, 소요 시간, 운임을 비교하는 일은 금세 번거로워집니다.",
+        aboutSolution: "해결책",
+        aboutSolutionBody: "moose.train은 한 번의 검색으로 암트랙과 지역 철도를 비교할 수 있도록 돕습니다. 철도 운영사별로 따로 검색하는 대신 여러 운영사의 시간표를 한곳에 모아 다양한 열차를 이용해 출발지에서 목적지까지 이동할 수 있는 방법을 보여줍니다. 철도 운영사 간 환승이 필요한 여정은 물론, 뉴욕의 펜역과 그랜드 센트럴 터미널처럼 출발역이 다른 선택지도 비교할 수 있습니다.",
+        aboutSolutionGoal: "철도 운영사의 공식 웹사이트나 승차권 예매 시스템을 대신하려는 것은 아닙니다. 여행 방법을 결정하기 전에 가능한 선택지를 쉽게 파악하도록 돕는 것이 목표입니다.",
+        aboutBuild: "개발 과정",
+        aboutBuildBody: "우리는 단순한 질문에서 시작했습니다. 철도 운영사가 아니라 승객의 관점에서 철도망을 바라보면 어떨까요? 여러 운영사가 공개한 시간표를 모으고, 각 운영사가 서비스를 구성하는 방식의 차이를 살펴본 뒤, 서로 다른 철도를 이용하는 여정을 비교할 수 있도록 만들었습니다.",
+        aboutBuildCoverage: "첫 출발점은 암트랙과 여러 지역 철도가 함께 운행하는 뉴욕시와 그 주변 지역이었습니다. 지금도 이용 경험을 개선하고, 서비스 지역을 넓히고, 놓치기 쉬운 연결편을 더 쉽게 찾을 수 있도록 다듬고 있습니다.",
+        aboutCreator: "제작자",
+        aboutAdvisor: "기술 자문 및 협력자",
+        aboutDisclaimer: "moose.train은 독립 프로젝트로, 암트랙을 비롯해 사이트에 표시되는 어떤 철도 운영사와도 제휴 관계가 없습니다.",
+        aboutBack: "여행 검색으로 돌아가기",
+        aboutHome: "moose.train 홈",
         learnMoreUpdateLog: "업데이트 로그",
         learnMoreFeedback: "피드백",
         updateLogTitle: "업데이트 로그",
@@ -2913,6 +2994,11 @@
         shortlistOn: "En la lista breve",
         shortlistShow: "Ver lista breve ({count})",
         shortlistShowAll: "Ver todos los viajes",
+        shortlistCount: "Viajes guardados ({count})",
+        shortlistClear: "Vaciar lista breve",
+        shortlistClearConfirm: "¿Quieres quitar todos los viajes de tu lista breve?",
+        shortlistStale: "Algunos horarios guardados pueden estar desactualizados.",
+        shortlistDateRange: "{departure} – {arrival}",
         realtimeLive: "Información en vivo de los ferrocarriles MTA",
         realtimeArrived: "Tren llegó",
         realtimeEarly: "Llegando antes de horario",
@@ -2940,6 +3026,9 @@
         updateLogV096Date: "27 de octubre de 2026",
         updateLogV097Date: "3 de noviembre de 2027",
         updateLogV098Date: "18 de noviembre de 2026",
+        updateLogV099Date: "22 de noviembre de 2026",
+        updateLogV099Shortlist: "Tu lista de favoritos ahora se conserva entre búsquedas, para que puedas comparar viajes con distintos orígenes o destinos.",
+        updateLogV099About: "Añadimos contenido a la página Acerca de para que puedas conocer mejor moose.train.",
         updateLogV098Departures: "Corregimos errores en el panel de salidas.",
         updateLogV098Fullscreen: "Ajustamos el modo de pantalla completa para que funcione mejor en iPadOS y visionOS.",
         updateLogV097Departures: "Añadimos un panel digital de salidas. Elige cualquier estación disponible para ver las próximas salidas de un vistazo.",
@@ -2967,6 +3056,20 @@
         learnMorePrivacy: "Política de privacidad",
         learnMoreDisplayBoard: "Panel de salidas",
         learnMoreAbout: "Acerca de",
+        aboutTitle: "Acerca de moose.train",
+        aboutProblem: "El problema",
+        aboutProblemBody: "Viajar en tren no debería requerir consultar media docena de sitios web solo para conocer las opciones disponibles. Sin embargo, eso es lo que suele ocurrir al planear un viaje que incluye Amtrak y trenes regionales. Cada compañía ferroviaria tiene sus propios horarios, herramientas de búsqueda y sistemas de venta de boletos, incluso cuando sus trenes paran en las mismas estaciones o circulan por las mismas vías. Comparar rutas, conexiones, tiempos de viaje y tarifas puede convertirse rápidamente en una tarea frustrante.",
+        aboutSolution: "La solución",
+        aboutSolutionBody: "moose.train facilita la comparación de Amtrak y los trenes regionales en una sola búsqueda. En lugar de tratar a cada compañía ferroviaria como un sistema independiente, reúne sus horarios para mostrar cómo distintos servicios pueden llevarte de un lugar a otro. Esto incluye viajes con transbordos entre compañías y estaciones de salida alternativas, como Penn Station y Grand Central Terminal en Nueva York.",
+        aboutSolutionGoal: "El objetivo no es reemplazar los sitios web ni los sistemas de venta de boletos de las compañías ferroviarias. Es ayudarte a conocer tus opciones antes de decidir cómo viajar.",
+        aboutBuild: "Cómo lo construimos",
+        aboutBuildBody: "Partimos de una idea sencilla: ¿qué pasaría si viéramos la red ferroviaria desde la perspectiva del pasajero, en lugar de la compañía ferroviaria? Reunimos horarios disponibles públicamente de varios operadores, analizamos las diferencias en la manera en que organizan sus servicios y desarrollamos una forma de comparar viajes que combinan distintas compañías ferroviarias.",
+        aboutBuildCoverage: "Comenzamos con la ciudad de Nueva York y sus alrededores, donde Amtrak y varios servicios ferroviarios regionales operan en una misma región. Seguimos perfeccionando la experiencia, ampliando la cobertura y facilitando el descubrimiento de conexiones que, de otro modo, podrían pasar desapercibidas.",
+        aboutCreator: "Creador",
+        aboutAdvisor: "Asesor técnico y colaborador",
+        aboutDisclaimer: "moose.train es un proyecto independiente y no está afiliado a Amtrak ni a ninguna de las compañías ferroviarias cuyos servicios aparecen en el sitio.",
+        aboutBack: "Volver a la búsqueda de viajes",
+        aboutHome: "Inicio de moose.train",
         learnMoreUpdateLog: "Registro de cambios",
         learnMoreFeedback: "Comentarios",
         updateLogTitle: "Registro de cambios",
@@ -3043,7 +3146,7 @@
         { id: "will-the-service-area-eventually-expand", summary: "Will the service area eventually expand?", content: `<p>I hope so! New York City, Long Island, Connecticut, and selected New Jersey routes are the current focus.</p><p>There are plenty of other places where multiple rail systems overlap and trip planning can get complicated, and I’d love to bring moose.train to more of them over time. Where it goes next will depend in part on what people find useful and which regions they’d most like to see added.</p><p>If there’s somewhere you think moose.train should support next, let me know!</p>` },
         { id: "is-moose-train-free", summary: "Is moose.train free?", content: `<p>Yes! moose.train is completely free to use.</p><p>The schedule data comes from publicly available information published by the rail operators, and I built moose.train because I wanted a better way to make sense of it. It only seemed right to make that tool available to everyone else, too.</p>` },
         { id: "does-moose-train-calculate-ticket-prices", summary: "Does moose.train calculate ticket prices?", content: `<p>moose.train now shows standard adult one-way fares for supported Metro-North Hudson, Harlem, and New Haven lines, CTrail Shore Line East, and CTrail Hartford Line trips when the official fare table has a matching fare. Metro-North fares use the train’s published peak/off-peak classification and show CityTicket for qualifying trips within New York City. CTrail-only fares do not use peak/off-peak pricing.</p><p>For now, moose.train does not calculate Amtrak fares outside eligible Hartford Line ticketing, discounted fares, special event fares (Yankees–E. 153rd Street trains appear without a calculated fare), UniRail connections, or trips whose fare is not represented in the local official fare table data.</p><p>LIRR fares use locally stored official prices, including adult one-way via tickets, Mets-Willets Point, Belmont Park, and Elmont-UBS Arena. Via tickets name the transfer station. When a detour requires two ordinary tickets instead, the total is labeled “Separate tickets.”</p><p>NJ Transit prices are standard adult one-way fares. A connection between NJ Transit trains uses one through fare when available. Unverified prices show “Fare unavailable”. NJ Transit tickets to or from Newark Airport Rail Station include AirTrain airport access; the rail arrival time is for the station, not an airport terminal.</p>` },
-        { id: "can-i-save-favorite-stations-or-trips", summary: "Can I save favorite stations or trips?", content: `<p>Not permanently, but you can <strong>shortlist trips</strong> while comparing your results. Just add the trips you’re interested in to your shortlist, then hide everything else to make them easier to compare.</p><p>Your shortlist is designed for narrowing down options during your current search rather than saving trips or favorite stations for later. More persistent saving options could be useful in the future.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "Can I save favorite stations or trips?", content: `<p>Add trips to your <strong>shortlist</strong> to compare them across searches. Saved trips stay in this browser until you remove them or clear the shortlist.</p>` },
         { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "Does moose.train support trips that require transfers between different rail operators?", content: `<p>Yes! moose.train can find trips that require a transfer, including transfers between different rail operators. For example, a trip might combine Metro-North with CTrail or Amtrak when that provides a useful connection.</p><p>For now, trips are limited to <strong>one transfer</strong>. Itineraries requiring two or more transfers aren’t supported yet, but expanding that capability is something I’d like to tackle in the future.</p><p>LIRR connections can include Metro-North at Grand Central or Amtrak at Penn Station. Grand Central Terminal and Grand Central Madison share one search option; journey details identify the boarding area. Allow time to walk between trains.</p><p>Port Jervis and Pascack Valley trains connect to Penn Station via Secaucus. NJ Transit and Amtrak can connect at shared stations. The one-transfer maximum applies equally to every operator.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "Will there eventually be a mobile app?", content: `<p>Maybe someday! For now, my focus is on making moose.train work really well in the browser, whether you’re using a phone, tablet, or computer.</p><p>A dedicated mobile app could be great down the road, especially if there are features that would genuinely benefit from one. But for now, I’d rather make the web experience as good as it can be.</p>` },
         { id: "who-built-moose-train", summary: "Who built moose.train?", content: `<p>Hi! I’m Fred McNulty. I live in New York City, but I grew up in Connecticut, so I’ve spent a lot of time traveling by train between the two.</p><p>I’m a product manager by day and a transit enthusiast pretty much all the time. moose.train started as a personal project inspired by a problem I’d encountered plenty of times myself: figuring out the best way to get somewhere when the answer might involve more than one railroad.</p><p>I also genuinely believe that good public transportation can make our cities and communities better places to live. If moose.train can make taking the train just a little easier, I’ll consider that a win.</p>` },
@@ -3064,7 +3167,7 @@
         { id: "will-the-service-area-eventually-expand", summary: "서비스 지역은 나중에 확장되나요?", content: `<p>그랬으면 합니다! 현재는 뉴욕시, 롱아일랜드, 코네티컷 및 뉴저지의 일부 노선에 집중하고 있습니다.</p><p>여러 철도 시스템이 겹쳐 여행 계획이 복잡해지는 지역은 많이 있고, 시간이 지나면서 그런 곳에도 moose.train을 제공하고 싶습니다. 다음에 어디로 확장할지는 사람들이 무엇을 유용하게 느끼는지, 어떤 지역을 가장 보고 싶어 하는지에 어느 정도 달려 있습니다.</p><p>moose.train이 다음으로 지원했으면 하는 지역이 있다면 알려 주세요!</p>` },
         { id: "is-moose-train-free", summary: "moose.train은 무료인가요?", content: `<p>네! moose.train은 완전히 무료로 사용할 수 있습니다.</p><p>시간표 데이터는 철도 운영사들이 공개한 공개 정보에서 가져오며, 저는 그 정보를 더 잘 이해할 수 있는 방법이 필요해서 moose.train을 만들었습니다. 그 도구를 다른 사람들도 사용할 수 있게 하는 것이 자연스럽다고 생각했습니다.</p>` },
         { id: "does-moose-train-calculate-ticket-prices", summary: "moose.train에서 티켓 가격도 계산하나요?", content: `<p>moose.train은 이제 공식 요금표에서 일치하는 요금을 찾을 수 있는 Metro-North Hudson, Harlem, New Haven Line, CTrail Shore Line East, CTrail Hartford Line 여정에 대해 일반 성인 편도 요금을 표시합니다. Metro-North 요금은 열차의 공개 피크/오프피크 분류를 사용하고, 뉴욕시 내에서 적용되는 여정에는 CityTicket을 표시합니다. CTrail 전용 요금에는 피크/오프피크 구분을 적용하지 않습니다.</p><p>현재는 적용 가능한 Hartford Line 티켓 체계 밖의 Amtrak 요금, 할인 요금, 특별 행사 요금(Yankees–E. 153rd Street 열차는 요금 없이 표시), UniRail 연결 요금, 로컬 공식 요금표 데이터에 없는 여정의 요금은 계산하지 않습니다.</p><p>LIRR 요금은 로컬에 저장된 공식 가격을 사용하며, 성인 경유 편도 승차권과 Mets-Willets Point, Belmont Park, Elmont-UBS Arena 여정도 포함합니다. 경유 승차권에는 환승역을 표시합니다. 우회 여정에 일반 승차권 두 장이 필요한 경우 총액에 “별도 승차권”이라고 표시합니다.</p><p>NJ Transit 운임은 일반 성인 편도 기준입니다. NJ Transit 열차 간 환승은 가능한 경우 하나의 연결 운임을 표시합니다. 확인되지 않은 가격은 “운임 정보 없음”으로 표시합니다. Newark Airport Rail Station을 출발하거나 도착하는 NJ Transit 승차권에는 AirTrain 공항 이용료가 포함됩니다. 표시된 도착 시각은 공항 터미널이 아닌 철도역 기준입니다.</p>` },
-        { id: "can-i-save-favorite-stations-or-trips", summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>영구적으로 저장할 수는 없지만, 결과를 비교하는 동안 <strong>여정을 후보 목록에 추가</strong>할 수 있습니다. 관심 있는 여정을 후보 목록에 넣은 다음, 나머지를 숨겨 더 쉽게 비교할 수 있습니다.</p><p>후보 목록은 나중을 위해 여행이나 자주 쓰는 역을 저장하는 기능이 아니라, 현재 검색에서 선택지를 좁히기 위한 기능입니다. 더 오래 유지되는 저장 기능은 앞으로 유용할 수 있습니다.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "자주 쓰는 역이나 여행 일정을 저장할 수 있나요?", content: `<p>여정을 <strong>후보 목록</strong>에 추가하면 여러 검색의 결과를 비교할 수 있습니다. 저장된 여정은 직접 삭제하거나 후보 목록을 비울 때까지 이 브라우저에 남습니다.</p>` },
         { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "서로 다른 철도 운영사 간 환승이 필요한 여행도 지원하나요?", content: `<p>네! moose.train은 서로 다른 철도 운영사 간 환승을 포함해 환승이 필요한 여행을 찾을 수 있습니다. 예를 들어 유용한 연결이 있을 때 Metro-North와 CTrail 또는 Amtrak을 조합한 여행이 나올 수 있습니다.</p><p>현재는 여행이 <strong>한 번의 환승</strong>으로 제한됩니다. 두 번 이상의 환승이 필요한 여정은 아직 지원하지 않지만, 앞으로 확장하고 싶은 부분입니다.</p><p>LIRR은 Grand Central에서 Metro-North와, Penn Station에서 Amtrak과 연결할 수 있습니다. Grand Central Terminal과 Grand Central Madison은 검색에서 하나의 역으로 표시되며, 여정 상세 정보에서 승차 구역을 안내합니다. 열차 사이를 이동할 시간을 확보해 주세요.</p><p>Port Jervis와 Pascack Valley 열차는 Secaucus에서 환승해 Penn Station으로 연결됩니다. NJ Transit과 Amtrak은 공용 정차역에서 환승할 수 있습니다. 운영사에 관계없이 최대 한 번의 환승만 지원합니다.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "언젠가 모바일 앱도 나오나요?", content: `<p>언젠가는 가능할 수도 있습니다! 지금은 휴대폰, 태블릿, 컴퓨터 어디에서든 moose.train이 브라우저에서 잘 작동하도록 만드는 데 집중하고 있습니다.</p><p>전용 모바일 앱은 나중에 좋을 수 있습니다. 특히 앱이 있을 때 실제로 더 좋아지는 기능이 있다면요. 하지만 지금은 웹 경험을 최대한 좋게 만드는 데 더 집중하고 싶습니다.</p>` },
         { id: "who-built-moose-train", summary: "누가 moose.train을 만들었나요?", content: `<p>안녕하세요! 저는 Fred McNulty입니다. 저는 뉴욕시에 살고 있지만 코네티컷에서 자랐기 때문에, 두 지역 사이를 열차로 오간 시간이 많습니다.</p><p>저는 낮에는 제품 관리자이고, 거의 항상 대중교통 애호가이기도 합니다. moose.train은 제가 여러 번 직접 겪었던 문제에서 시작한 개인 프로젝트입니다. 목적지까지 가는 가장 좋은 방법이 하나 이상의 철도를 포함할 수 있을 때, 그 방법을 찾는 문제였습니다.</p><p>저는 좋은 대중교통이 도시와 지역사회를 더 살기 좋은 곳으로 만들 수 있다고 진심으로 믿습니다. moose.train이 열차 이용을 조금이라도 더 쉽게 만든다면, 그것만으로도 성공이라고 생각합니다.</p>` },
@@ -3085,7 +3188,7 @@
         { id: "will-the-service-area-eventually-expand", summary: "¿El área de servicio se ampliará eventualmente?", content: `<p>¡Eso espero! La ciudad de Nueva York, Long Island, Connecticut y rutas seleccionadas de Nueva Jersey son el enfoque actual.</p><p>Hay muchos otros lugares donde varios sistemas ferroviarios se superponen y planificar un viaje puede complicarse, y me encantaría llevar moose.train a más de ellos con el tiempo. El próximo destino dependerá en parte de lo que la gente encuentre útil y de las regiones que más quiera ver agregadas.</p><p>Si hay algún lugar que crees que moose.train debería admitir después, ¡dímelo!</p>` },
         { id: "is-moose-train-free", summary: "¿moose.train es gratis?", content: `<p>¡Sí! moose.train es completamente gratis.</p><p>Los datos de horarios provienen de información pública publicada por los operadores ferroviarios, y construí moose.train porque quería una mejor manera de entenderla. Me pareció justo poner esa herramienta también a disposición de todos los demás.</p>` },
         { id: "does-moose-train-calculate-ticket-prices", summary: "¿moose.train calcula precios de boletos?", content: `<p>moose.train ahora muestra tarifas estándar de adulto, solo ida, para viajes compatibles de las líneas Hudson, Harlem y New Haven de Metro-North, CTrail Shore Line East y CTrail Hartford Line cuando la tabla oficial tiene una tarifa coincidente. Las tarifas de Metro-North usan la clasificación publicada de pico/fuera de pico del tren y muestran CityTicket para viajes que califican dentro de la ciudad de Nueva York. Las tarifas solo de CTrail no usan precios pico/fuera de pico.</p><p>Por ahora, moose.train no calcula tarifas de Amtrak fuera de la venta de boletos elegible de Hartford Line, descuentos, tarifas de eventos especiales (los trenes de Yankees–E. 153rd Street aparecen sin precio calculado), conexiones UniRail ni viajes cuya tarifa no esté en los datos locales de tablas oficiales.</p><p>Las tarifas de LIRR usan precios oficiales almacenados localmente, incluidos billetes de adulto de solo ida vía una estación de transbordo y viajes a Mets-Willets Point, Belmont Park y Elmont-UBS Arena. Los billetes vía indican la estación de transbordo. Si un desvío requiere dos billetes ordinarios, el total se identifica como “Billetes separados”.</p><p>Los precios de NJ Transit son tarifas estándar de adulto de solo ida. Una conexión entre trenes de NJ Transit usa una tarifa conjunta cuando está disponible. Los precios sin verificar muestran “Tarifa no disponible”. Los boletos de NJ Transit hacia o desde Newark Airport Rail Station incluyen el acceso en AirTrain; la hora de llegada corresponde a la estación ferroviaria, no a una terminal aérea.</p>` },
-        { id: "can-i-save-favorite-stations-or-trips", summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>No permanentemente, pero puedes <strong>agregar viajes a tu lista breve</strong> mientras comparas tus resultados. Solo agrega los viajes que te interesen a la lista breve y luego oculta todo lo demás para compararlos con más facilidad.</p><p>La lista breve está pensada para reducir tus opciones durante la búsqueda actual, no para guardar viajes o estaciones favoritas para más tarde. Opciones de guardado más persistentes podrían ser útiles en el futuro.</p>` },
+        { id: "can-i-save-favorite-stations-or-trips", summary: "¿Puedo guardar estaciones o viajes favoritos?", content: `<p>Agrega viajes a tu <strong>lista breve</strong> para compararlos entre búsquedas. Los viajes guardados se conservan en este navegador hasta que los quites o vacíes la lista.</p>` },
         { id: "does-moose-train-support-trips-that-require-transfers-between-different-rail-operators", summary: "¿moose.train admite viajes que requieren transbordos entre distintos operadores ferroviarios?", content: `<p>¡Sí! moose.train puede encontrar viajes que requieren un transbordo, incluidos transbordos entre distintos operadores ferroviarios. Por ejemplo, un viaje podría combinar Metro-North con CTrail o Amtrak cuando eso ofrece una conexión útil.</p><p>Por ahora, los viajes están limitados a <strong>un transbordo</strong>. Los itinerarios que requieren dos o más transbordos todavía no se admiten, pero ampliar esa capacidad es algo que me gustaría abordar en el futuro.</p><p>LIRR puede conectar con Metro-North en Grand Central o con Amtrak en Penn Station. Grand Central Terminal y Grand Central Madison comparten una opción de búsqueda; los detalles del viaje indican la zona de embarque. Reserva tiempo para caminar entre trenes.</p><p>Port Jervis y Pascack Valley conectan con Penn Station mediante un transbordo en Secaucus. NJ Transit y Amtrak pueden conectar en estaciones compartidas. El máximo de un transbordo se aplica por igual a todos los operadores.</p>` },
         { id: "will-there-eventually-be-a-mobile-app", summary: "¿Habrá una app móvil eventualmente?", content: `<p>¡Quizás algún día! Por ahora, mi enfoque está en hacer que moose.train funcione muy bien en el navegador, ya sea que uses un teléfono, una tableta o una computadora.</p><p>Una app móvil dedicada podría ser excelente más adelante, especialmente si hay funciones que realmente se beneficiarían de tener una. Pero por ahora prefiero hacer que la experiencia web sea lo mejor posible.</p>` },
         { id: "who-built-moose-train", summary: "¿Quién construyó moose.train?", content: `<p>¡Hola! Soy Fred McNulty. Vivo en la ciudad de Nueva York, pero crecí en Connecticut, así que he pasado mucho tiempo viajando en tren entre ambos lugares.</p><p>Soy product manager durante el día y entusiasta del transporte público prácticamente todo el tiempo. moose.train empezó como un proyecto personal inspirado por un problema que yo mismo había encontrado muchas veces: averiguar la mejor manera de llegar a algún lugar cuando la respuesta podía incluir más de un ferrocarril.</p><p>También creo sinceramente que un buen transporte público puede hacer que nuestras ciudades y comunidades sean mejores lugares para vivir. Si moose.train puede hacer que tomar el tren sea apenas un poco más fácil, lo consideraré una victoria.</p>` },
@@ -3911,7 +4014,8 @@
     let activeSearchState = null;
     let departureRangeHours = 24;
     let departureRangeFrame = null;
-    let shortlistedRouteIds = new Set();
+    let emptySearch = null;
+    let shortlistedTrips = readShortlist();
     let shortlistOnly = false;
     let metroNorthRealtimeCache = null;
     let metroNorthRealtimeLibraryPromise = null;
@@ -3945,6 +4049,7 @@
       timetableCsvLinks: document.getElementById("timetable-csv-links"),
       sourceLinks: document.querySelector(".source-links"),
       sourceLinksTitle: document.getElementById("timetable-csv-links-title"),
+      learnMoreAboutLink: document.getElementById("learn-more-about-link"),
       learnMoreFaqLink: document.getElementById("learn-more-faq-link"),
       learnMoreTermsLink: document.getElementById("learn-more-terms-link"),
       learnMorePrivacyLink: document.getElementById("learn-more-privacy-link"),
@@ -3993,13 +4098,13 @@
         if (minutes !== null) els.time.value = formatInputTime(minutes);
         updateSettingSummaries();
         refreshTimezoneNotice();
-        renderSearch();
+        renderActiveSearchResults();
       });
       els.time.addEventListener("blur", () => {
         const minutes = parseClockInput(els.time.value);
         if (minutes !== null) els.time.value = formatInputTime(minutes);
       });
-      els.search.addEventListener("click", () => renderSearch({ resetShortlist: true, requireSchedule: true }));
+      els.search.addEventListener("click", () => renderSearch({ requireSchedule: true }));
       els.results.addEventListener("click", (event) => {
         const statusToggle = event.target.closest("[data-status-toggle]");
         if (statusToggle) {
@@ -4012,6 +4117,18 @@
         if (shortlistFilter) {
           shortlistOnly = !shortlistOnly;
           renderActiveSearchResults();
+          els.results.querySelector("[data-shortlist-filter]")?.focus({ preventScroll: true });
+          return;
+        }
+
+        if (event.target.closest("[data-shortlist-clear]")) {
+          if (window.confirm(t("shortlistClearConfirm"))) {
+            shortlistedTrips.clear();
+            persistShortlist();
+            shortlistOnly = false;
+            renderActiveSearchResults();
+            els.results.focus({ preventScroll: true });
+          }
           return;
         }
 
@@ -4024,7 +4141,7 @@
         const button = event.target.closest("[data-search-date]");
         if (!button) return;
         els.date.value = button.dataset.searchDate;
-        renderSearch({ resetShortlist: true, requireSchedule: true });
+        renderSearch({ requireSchedule: true });
       });
       document.addEventListener("click", (event) => {
         if (!event.target.closest("[data-status-toggle]")) closeRealtimeStatusTooltips();
@@ -4035,12 +4152,12 @@
       els.results.addEventListener("input", handleDepartureRangeInput);
       els.swap.addEventListener("click", () => {
         [els.origin.value, els.destination.value] = [els.destination.value, els.origin.value];
-        renderSearch({ resetShortlist: true, requireSchedule: true });
+        renderSearch({ requireSchedule: true });
       });
       els.reset.addEventListener("click", resetSearchForm);
       els.timezoneNoticeDismiss.addEventListener("click", dismissTimezoneNotice);
       document.addEventListener("visibilitychange", () => {
-        if (!document.hidden && activeSearchState) renderActiveSearchResults();
+        if (!document.hidden) renderActiveSearchResults();
         if (!document.hidden) refreshTimezoneNotice();
       });
       els.updateLogButton.addEventListener("click", openUpdateLog);
@@ -4433,8 +4550,7 @@
         }
         renderTimetableCsvLinks(timetableCsvLinks);
         updateHomepageLinks();
-        if (activeSearchState) renderActiveSearchResults();
-        else renderSearch();
+        renderActiveSearchResults();
       }
     }
 
@@ -5238,10 +5354,11 @@
       timeFormat = els.timeFormat.value;
       departureRangeHours = 24;
       activeSearchState = null;
-      resetShortlistState();
+      emptySearch = null;
+      shortlistOnly = false;
       stopActiveResultStatusRefresh();
       closeRealtimeStatusTooltips();
-      els.results.innerHTML = "";
+      renderActiveSearchResults();
       els.results.removeAttribute("aria-busy");
       setStatus("readyToSearch");
     }
@@ -5328,6 +5445,9 @@
     }
 
     function updateHomepageLinks() {
+      if (els.learnMoreAboutLink) {
+        els.learnMoreAboutLink.href = `about.html?lang=${encodeURIComponent(currentLanguage)}`;
+      }
       if (els.learnMoreFaqLink) {
         els.learnMoreFaqLink.href = `faq.html?lang=${encodeURIComponent(currentLanguage)}`;
       }
@@ -5343,15 +5463,16 @@
     }
 
     async function renderSearch(options = {}) {
-      const { resetShortlist = false, requireSchedule = false } = options;
+      const { requireSchedule = false } = options;
+      if (requireSchedule) shortlistOnly = false;
       const origin = findStation(els.origin.value);
       const destination = findStation(els.destination.value);
       const queryTime = parseClockInput(els.time.value);
       if (!origin || !destination || queryTime === null) {
         activeSearchState = null;
         stopActiveResultStatusRefresh();
-        resetShortlistState();
-        els.results.innerHTML = "";
+        emptySearch = null;
+        renderActiveSearchResults();
         return;
       }
       if (!trips.length) {
@@ -5361,20 +5482,19 @@
         setSearchLoading(false);
         if (!loaded) {
           setStatus("csvLoadError", {}, true);
-          els.results.innerHTML = "";
+          renderActiveSearchResults();
           return;
         }
         setStatus("readyToSearch");
       }
-      if (resetShortlist) resetShortlistState();
       const loadedOrigin = findStation(els.origin.value);
       const loadedDestination = findStation(els.destination.value);
       let loadedQueryTime = parseClockInput(els.time.value);
       if (!loadedOrigin || !loadedDestination || loadedQueryTime === null) {
         activeSearchState = null;
         stopActiveResultStatusRefresh();
-        resetShortlistState();
-        els.results.innerHTML = "";
+        emptySearch = null;
+        renderActiveSearchResults();
         return;
       }
       const date = els.date.value ? new Date(`${els.date.value}T12:00:00`) : new Date();
@@ -5391,6 +5511,7 @@
       if (!activeSearchState || activeSearchState.signature !== signature) departureRangeHours = 24;
       const routes = findRoutesForStationSelection(loadedOrigin, loadedDestination, loadedQueryTime, mode, date);
       if (routes.length) {
+        emptySearch = null;
         activeSearchState = { signature, routes, queryTime: loadedQueryTime, mode, date };
         renderActiveSearchResults();
         startActiveResultStatusRefresh();
@@ -5400,8 +5521,8 @@
       }
       activeSearchState = null;
       stopActiveResultStatusRefresh();
-      resetShortlistState();
-      els.results.innerHTML = renderResultCount(0) + renderEmptySearchState(emptyStateForSearch(loadedOrigin, loadedDestination, date, loadedQueryTime, mode));
+      emptySearch = emptyStateForSearch(loadedOrigin, loadedDestination, date, loadedQueryTime, mode);
+      renderActiveSearchResults();
       if (requireSchedule) focusSearchResults();
     }
 
@@ -5428,7 +5549,7 @@
           refreshRealtimeForCurrentSearch();
           return;
         }
-        renderActiveSearchResults();
+        if (!shortlistOnly) renderActiveSearchResults();
       }, ACTIVE_RESULT_STATUS_REFRESH_MS);
     }
 
@@ -5461,7 +5582,7 @@
       if (!activeSearchState || activeSearchState.signature !== searchState.signature) return;
       if (!snapshots.length) {
         activeSearchState = { ...activeSearchState, realtimeSnapshot: null, routes: searchState.routes.map(route => ({ ...route, realtime: null, legs: route.legs.map(leg => ({ ...leg, realtime: null })) })) };
-        renderActiveSearchResults();
+        if (!shortlistOnly) renderActiveSearchResults();
         return;
       }
       const snapshot = { feedTimestamp: Math.max(...snapshots.map(s => s.feedTimestamp)),
@@ -5472,7 +5593,7 @@
         return enrichRouteWithRealtime(clean, snapshot, searchState.date);
       });
       activeSearchState = { ...activeSearchState, routes: enrichedRoutes, realtimeSnapshot: snapshot };
-      renderActiveSearchResults();
+      if (!shortlistOnly) renderActiveSearchResults();
     }
 
     let lirrRealtimeCache = null;
@@ -5834,15 +5955,26 @@
     }
 
     function renderActiveSearchResults() {
-      if (!activeSearchState) return;
+      els.results.setAttribute?.("aria-label", t(shortlistOnly ? "shortlistCount" : "searchResults", {
+        count: formatNumber(shortlistedTrips.size),
+      }));
+      if (shortlistOnly) {
+        renderSavedShortlist();
+        return;
+      }
+      if (!activeSearchState) {
+        els.results.innerHTML = renderShortlistFilterControl() +
+          (emptySearch ? renderResultCount(0) + renderEmptySearchState(emptySearch) : "");
+        return;
+      }
       const { routes, queryTime, mode, date, realtimeSnapshot } = activeSearchState;
-      const filteredRoutes = filterRoutesByDepartureRange(routes, queryTime, mode, departureRangeHours);
-      const visibleRoutes = shortlistOnly
-        ? filteredRoutes.filter((route) => shortlistedRouteIds.has(routeShortlistId(route)))
-        : filteredRoutes;
+      const visibleRoutes = filterRoutesByDepartureRange(routes, queryTime, mode, departureRangeHours);
       const routeMarkup = renderShortlistFilterControl() +
         (visibleRoutes.length
-          ? visibleRoutes.map((route) => renderRoute(route, queryTime, mode, date, routeShortlistId(route), shortlistedRouteIds.has(routeShortlistId(route)), realtimeSnapshot)).join("")
+          ? visibleRoutes.map((route) => {
+            const id = activeRouteShortlistId(route, activeSearchState);
+            return renderRoute(route, queryTime, mode, date, id, shortlistedTrips.has(id), realtimeSnapshot);
+          }).join("")
           : renderEmptySearchState({ key: "selectedRangeNoTrips", values: {} }));
       const slider = els.results.querySelector?.("#departure-range-slider");
       const routeList = els.results.querySelector?.("[data-route-list]");
@@ -5864,34 +5996,35 @@
       }
     }
 
-    function resetShortlistState() {
-      shortlistedRouteIds = new Set();
-      shortlistOnly = false;
-    }
-
     function toggleShortlist(routeId, button) {
       if (!routeId) return;
-      if (shortlistedRouteIds.has(routeId)) {
-        shortlistedRouteIds.delete(routeId);
+      if (shortlistedTrips.has(routeId)) {
+        shortlistedTrips.delete(routeId);
       } else {
-        shortlistedRouteIds.add(routeId);
+        const search = activeSearchState;
+        const route = search?.routes.find((item) => activeRouteShortlistId(item, search) === routeId);
+        if (!route) return;
+        shortlistedTrips.set(routeId, snapshotShortlistedTrip(route, search));
       }
+      persistShortlist();
 
-      if (shortlistOnly && !shortlistedRouteIds.has(routeId)) {
-        if (!shortlistedRouteIds.size) shortlistOnly = false;
+      if (shortlistOnly) {
+        if (!shortlistedTrips.size) shortlistOnly = false;
         renderActiveSearchResults();
+        (els.results.querySelector("[data-shortlist-filter]") || els.results).focus({ preventScroll: true });
         return;
       }
 
-      updateShortlistToggle(button, routeId);
+      for (const toggle of els.results.querySelectorAll("[data-shortlist-toggle]")) {
+        if (toggle.dataset.routeId === routeId) updateShortlistToggle(toggle, routeId);
+      }
       animateShortlistToggle(button);
-      if (!shortlistedRouteIds.size) shortlistOnly = false;
       renderShortlistFilterControlInPlace();
     }
 
     function updateShortlistToggle(button, routeId) {
       if (!button) return;
-      const selected = shortlistedRouteIds.has(routeId);
+      const selected = shortlistedTrips.has(routeId);
       const label = t(selected ? "shortlistOn" : "shortlistAdd");
       button.setAttribute("aria-pressed", String(selected));
       button.setAttribute("aria-label", label);
@@ -5910,42 +6043,165 @@
     }
 
     function renderShortlistFilterControlInPlace() {
-      const existing = els.results.querySelector("[data-shortlist-bar]");
+      const routeList = els.results.querySelector("[data-route-list]");
+      if (!routeList) return;
+      const existing = routeList.querySelector("[data-shortlist-bar]");
       if (existing) {
         existing.outerHTML = renderShortlistFilterControl();
         return;
       }
-      if (!shortlistedRouteIds.size) return;
-      const filter = els.results.querySelector(".results-filter");
-      if (filter) {
-        filter.insertAdjacentHTML("afterend", renderShortlistFilterControl());
-      } else {
-        els.results.insertAdjacentHTML("afterbegin", renderShortlistFilterControl());
+      if (shortlistedTrips.size) {
+        routeList.insertAdjacentHTML("afterbegin", renderShortlistFilterControl());
       }
     }
 
     function renderShortlistFilterControl() {
-      const count = shortlistedRouteIds.size;
+      const count = shortlistedTrips.size;
       if (!count) return "";
-      const label = shortlistOnly ? t("shortlistShowAll") : t("shortlistShow", { count: formatNumber(count) });
+      const values = { count: formatNumber(count) };
+      const label = shortlistOnly ? t("shortlistShowAll") : t("shortlistShow", values);
       return `
         <div class="shortlist-bar" data-shortlist-bar>
+          ${shortlistOnly ? `<strong class="shortlist-count">${escapeHtml(t("shortlistCount", values))}</strong>` : ""}
           <button class="shortlist-filter" type="button" data-shortlist-filter>${escapeHtml(label)}</button>
+          ${shortlistOnly ? `<button class="shortlist-clear" type="button" data-shortlist-clear>${escapeHtml(t("shortlistClear"))}</button>` : ""}
         </div>
       `;
     }
 
-    function routeShortlistId(route) {
-      return route.legs.map((leg) => [
-        normalize(leg.trip.agency),
-        normalize(leg.trip.service),
-        normalize(leg.trip.route),
-        normalize(leg.trip.direction),
+    // Schedule times are Eastern wall-clock minutes. UTC here is a calendar
+    // coordinate, so adding a schedule day always adds 1440 minutes.
+    function shortlistDayMinutes(date) {
+      return Date.parse(`${date}T00:00:00Z`) / 60000;
+    }
+
+    function shortlistDateAtMinute(minute) {
+      return new Date(minute * 60000).toISOString().slice(0, 10);
+    }
+
+    function routeShortlistId(route, date, offset = 0) {
+      const base = shortlistDayMinutes(date) + offset;
+      return JSON.stringify(route.legs.map((leg) => [
+        leg.trip.agency,
+        leg.trip.service,
+        leg.trip.route,
+        leg.trip.train || leg.trip.staticTripId,
         leg.fromId,
         leg.toId,
-        leg.departure,
-        leg.arrival,
-      ].join(":")).join(">");
+        base + leg.departure,
+        base + leg.arrival,
+      ]));
+    }
+
+    function activeRouteShortlistId(route, { date, queryTime, mode }) {
+      return routeShortlistId(route, localDateKey(date), routeDisplayOffset(route, queryTime, mode));
+    }
+
+    function snapshotShortlistedTrip(route, { date, queryTime, mode }) {
+      const displayOffset = routeDisplayOffset(route, queryTime, mode);
+      const departureDay = dayOffset(route.departure + displayOffset);
+      const offset = displayOffset - departureDay * 1440;
+      const departureDate = localDateKey(localDateWithOffset(date, departureDay));
+      const legs = route.legs.map((leg) => {
+        const { agency, service, route, train, staticTripId, stops } = leg.trip;
+        return {
+          trip: { agency, service, route, train, staticTripId },
+          from: leg.from, fromId: leg.fromId,
+          to: leg.to, toId: leg.toId,
+          departure: leg.departure + offset, arrival: leg.arrival + offset,
+          serviceDate: leg.serviceDate ? localDateKey(leg.serviceDate) : departureDate,
+          stops: stops?.slice(leg.originStop.index, leg.destinationStop.index + 1).map((stop) => ({
+            id: stop.id, name: stop.name,
+            arrival: stop.arrival === null ? null : stop.arrival + (leg.serviceOffset || 0) + offset,
+            departure: stop.departure === null ? null : stop.departure + (leg.serviceOffset || 0) + offset,
+          })) || [],
+        };
+      });
+      return {
+        date: departureDate,
+        scheduleVersion: SEARCH_SCHEDULE_VERSION,
+        route: makeRoute(legs, route.transferStation),
+        fare: calculateRouteFare(route),
+        legFares: route.legs.map((leg) => calculateLegFare(leg)),
+      };
+    }
+
+    function validShortlistFare(fare) {
+      return fare === null || (fare && typeof fare === "object" &&
+        (Number.isInteger(fare.amountCents) || Number.isFinite(fare.amount)) &&
+        (!fare.currency || (typeof fare.currency === "string" && /^[a-z]{3}$/i.test(fare.currency))) &&
+        (fare.fareType !== "VIA_ONE_WAY" || typeof fare.viaStationName === "string"));
+    }
+
+    function validShortlistedTrip(saved) {
+      const route = saved?.route;
+      return typeof saved?.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(saved.date) &&
+        Number.isFinite(shortlistDayMinutes(saved.date)) &&
+        shortlistDateAtMinute(shortlistDayMinutes(saved.date)) === saved.date &&
+        typeof saved.scheduleVersion === "string" &&
+        Array.isArray(route?.legs) && route.legs.length > 0 && !route.realtime &&
+        (route.transferStation === null || typeof route.transferStation === "string") &&
+        [route.departure, route.arrival, route.duration].every(Number.isSafeInteger) &&
+        route.departure >= 0 && route.departure < 1440 &&
+        route.arrival >= route.departure &&
+        shortlistDayMinutes(saved.date) + route.arrival < shortlistDayMinutes("9999-12-31") + 1440 &&
+        route.duration === route.arrival - route.departure &&
+        route.legs.every((leg, index) => leg && leg.trip && !leg.realtime &&
+          [leg.from, leg.to, leg.fromId, leg.toId, leg.serviceDate, leg.trip.agency].every((value) => typeof value === "string" && value) &&
+          [leg.trip.service, leg.trip.route, leg.trip.train, leg.trip.staticTripId].every((value) => value == null || typeof value === "string") &&
+          Number.isSafeInteger(leg.departure) && Number.isSafeInteger(leg.arrival) &&
+          leg.departure >= (index ? route.legs[index - 1].arrival : route.departure) &&
+          leg.arrival >= leg.departure && leg.arrival <= route.arrival) &&
+        route.legs[0].departure === route.departure && route.legs.at(-1).arrival === route.arrival &&
+        validShortlistFare(saved.fare) && Array.isArray(saved.legFares) &&
+        saved.legFares.length === route.legs.length && saved.legFares.every(validShortlistFare);
+    }
+
+    function readShortlist() {
+      const trips = new Map();
+      try {
+        const stored = JSON.parse(localStorage.getItem(SHORTLIST_STORAGE_KEY));
+        if (stored?.version !== SHORTLIST_STORAGE_VERSION || !Array.isArray(stored.trips)) return trips;
+        for (const saved of stored.trips) {
+          if (!validShortlistedTrip(saved)) continue;
+          const id = routeShortlistId(saved.route, saved.date);
+          if (!trips.has(id)) trips.set(id, saved);
+        }
+      } catch (_error) {
+        // Storage may be unavailable, or the stored JSON may be invalid.
+      }
+      return trips;
+    }
+
+    function persistShortlist() {
+      try {
+        if (shortlistedTrips.size) {
+          localStorage.setItem(SHORTLIST_STORAGE_KEY, JSON.stringify({
+            version: SHORTLIST_STORAGE_VERSION,
+            trips: Array.from(shortlistedTrips.values()),
+          }));
+        } else {
+          localStorage.removeItem(SHORTLIST_STORAGE_KEY);
+        }
+      } catch (_error) {
+        // Keep the in-memory shortlist usable if storage is blocked or full.
+      }
+    }
+
+    function renderSavedShortlist() {
+      const now = new Date();
+      const today = dateIsoFromParts(transitDateTimeParts(now) || localDateTimeParts(now));
+      const savedTrips = Array.from(shortlistedTrips, ([id, saved]) => ({
+        id, saved, departure: shortlistDayMinutes(saved.date) + saved.route.departure,
+      })).sort((left, right) => left.departure - right.departure);
+      const mayBeOutdated = savedTrips.some(({ saved }) =>
+        saved.date < today || saved.scheduleVersion !== SEARCH_SCHEDULE_VERSION);
+      const note = mayBeOutdated ? `<div class="shortlist-note">${escapeHtml(t("shortlistStale"))}</div>` : "";
+      els.results.innerHTML = `<div data-route-list>${renderShortlistFilterControl()}${note}${
+        savedTrips.map(({ id, saved }) => renderRoute(
+          saved.route, 0, "leave", new Date(`${saved.date}T12:00:00`), id, true, null, saved
+        )).join("")
+      }</div>`;
     }
 
     function searchSignature(origin, destination, queryTime, mode, date) {
@@ -6126,7 +6382,8 @@
     function renderEmptySearchState(state) {
       const messageKey = state.key === "dataBeyondRange" && isLocalPreview(window.location)
         ? "localDataBeyondRange" : state.key;
-      const message = t(messageKey, state.values || {});
+      const values = state.searchDate ? { date: formatDisplayDate(state.searchDate) } : state.values;
+      const message = t(messageKey, values);
       const action = state.searchDate ? `
         <button class="empty-action" type="button" data-search-date="${escapeHtml(state.searchDate)}">
           ${escapeHtml(t("searchLatestDate", { date: formatDisplayDate(state.searchDate) }))}
@@ -7044,10 +7301,11 @@
       return Array.from(bySignature.values());
     }
 
-    function renderRoute(route, queryTime, mode, searchDate, routeId, isShortlisted, realtimeSnapshot = null) {
+    function renderRoute(route, queryTime, mode, searchDate, routeId, isShortlisted, realtimeSnapshot = null, saved = null) {
       const title = route.transferStation ? t("transferAt", { station: displayStationName(route.transferStation) }) : t("direct");
       const displayOffset = routeDisplayOffset(route, queryTime, mode);
-      const dayStatus = routeDayStatus(route, queryTime, mode, searchDate);
+      const dayStatus = saved ? "" : routeDayStatus(route, queryTime, mode, searchDate);
+      const dateLabel = saved ? renderShortlistDate(saved) : "";
       const titleLabel = dayStatus ? `${title}, ${t(dayStatus)}` : title;
       const titleStatus = dayStatus ? `<span class="result-title-extra" aria-hidden="true"> · ${escapeHtml(t(dayStatus))}</span>` : "";
       const shortlistLabel = t(isShortlisted ? "shortlistOn" : "shortlistAdd");
@@ -7055,8 +7313,8 @@
         ? formatDisplayTimeRange(route.realtime.departure, route.realtime.arrival, displayOffset)
         : formatDisplayTimeRange(route.departure, route.arrival, displayOffset);
       const routeDuration = route.realtime ? route.realtime.duration : route.duration;
-      const liveIndicator = renderRouteRealtimeIndicator(routeRealtimeStatus(route, queryTime, mode, searchDate, realtimeSnapshot));
-      const routeFare = calculateRouteFare(route);
+      const liveIndicator = saved ? "" : renderRouteRealtimeIndicator(routeRealtimeStatus(route, queryTime, mode, searchDate, realtimeSnapshot));
+      const routeFare = saved ? saved.fare : calculateRouteFare(route);
       const routeFareSummary = renderFareSummary(routeFare);
       const amtrakFirstMixedTrip = normalize(route.legs[0].trip.agency) === "amtrak" &&
         route.legs.some((leg) => normalize(leg.trip.agency) !== "amtrak");
@@ -7082,11 +7340,21 @@
             <div class="result-title" aria-label="${escapeHtml(titleLabel)}"><span class="wide-glass-only">${escapeHtml(title)}</span><span class="small-glass-only">${escapeHtml(route.legs.length > 1 ? t("mobileTransfers", { count: route.legs.length - 1, station: compactStationName(route.transferStation || route.legs[1].from) }) : t("mobileDirect"))}</span>${titleStatus}</div>
             <div class="result-meta"><span class="journey-time">${escapeHtml(routeTimeRange)}</span><span class="journey-duration">${liveIndicator}${escapeHtml(formatDuration(routeDuration))}</span>${routeFareMeta}</div>
           </div>
+          ${dateLabel}
           <div class="legs">
-            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset, (route.legs.every(isNjtLeg) || routeFare?.fareType === "COMBO_TICKET" || (routeFare && route.legs.every(isLirrLeg)) || route.legs.every((item) => normalize(item.trip.agency) === "amtrak")))).join("")}
+            ${route.legs.map((leg, index) => (index ? renderTransferConnection(route.legs[index - 1], leg) : "") + renderLeg(leg, displayOffset, (route.legs.every(isNjtLeg) || routeFare?.fareType === "COMBO_TICKET" || (routeFare && route.legs.every(isLirrLeg)) || route.legs.every((item) => normalize(item.trip.agency) === "amtrak")), saved ? saved.legFares[index] : undefined)).join("")}
           </div>
         </article>
       `;
+    }
+
+    function renderShortlistDate(saved) {
+      const arrival = shortlistDateAtMinute(shortlistDayMinutes(saved.date) + saved.route.arrival);
+      const departureLabel = formatDisplayDate(saved.date);
+      const label = arrival === saved.date ? departureLabel : t("shortlistDateRange", {
+        departure: departureLabel, arrival: formatDisplayDate(arrival),
+      });
+      return `<div class="shortlist-date">${escapeHtml(label)}</div>`;
     }
 
     function renderRouteRealtimeIndicator(status) {
@@ -7271,11 +7539,11 @@
       return id === "GCT" ? (agency === "LIRR" ? "Grand Central Madison — LIRR" : "Grand Central Terminal — Metro-North") : name;
     }
 
-    function renderLeg(leg, displayOffset, hideAmtrakFareLink = false) {
+    function renderLeg(leg, displayOffset, hideAmtrakFareLink = false, savedFare) {
       const trip = leg.trip;
       const departure = realtimeLegDeparture(leg) ?? leg.departure;
       const arrival = realtimeLegArrival(leg) ?? leg.arrival;
-      const fare = hideAmtrakFareLink ? null : calculateLegFare(leg);
+      const fare = hideAmtrakFareLink ? null : savedFare === undefined ? calculateLegFare(leg) : savedFare;
       const fareAmount = fare ? formatFareAmount(fare) : "";
       return `
         <div class="leg">

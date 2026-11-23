@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About moose.train</title>
+  <script>
+    (() => {
+      const storageKey = "moose-theme";
+      try {
+        const savedTheme = localStorage.getItem(storageKey);
+        const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const preference = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+        document.documentElement.dataset.theme = preference === "system" && systemDark ? "dark" : preference === "dark" ? "dark" : "light";
+        document.documentElement.dataset.themePreference = preference;
+      } catch (_error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.dataset.themePreference = "system";
+      }
+    })();
+  </script>
+  <style>
+    :root,
+    [data-theme="light"] {
+      color-scheme: light;
+      --color-page: #ffffff;
+      --color-input: #ffffff;
+      --color-text-primary: #000000;
+      --color-text-body: #1d1d1f;
+      --color-text-secondary: #6e6e73;
+      --color-border: #bfbfbf;
+      --color-border-hover: #a9a9ad;
+      --color-accent: #0070e2;
+      --color-link: #0070e2;
+      --color-focus-ring: rgba(0, 112, 226, 0.16);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --wash: var(--color-page);
+      --system-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --color-page: #000000;
+      --color-input: #151619;
+      --color-text-primary: #f5f5f7;
+      --color-text-body: #d2d2d7;
+      --color-text-secondary: #a1a1a6;
+      --color-border: #3a3a3c;
+      --color-border-hover: #48484a;
+      --color-accent: #0070e2;
+      --color-link: #2997ff;
+      --color-focus-ring: rgba(0, 112, 226, 0.3);
+      --ink: var(--color-text-primary);
+      --body: var(--color-text-body);
+      --muted: var(--color-text-secondary);
+      --line: var(--color-border);
+      --field: var(--color-input);
+      --accent: var(--color-accent);
+      --link: var(--color-link);
+      --wash: var(--color-page);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--body);
+      background: var(--wash);
+      font-family: var(--system-font);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 34px 20px 56px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .masthead {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: clamp(76px, 10vw, 108px);
+      height: auto;
+      aspect-ratio: 1;
+      display: block;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .brand-home {
+      display: block;
+      flex: 0 0 auto;
+      line-height: 0;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      min-width: 180px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--body);
+    }
+
+    select {
+      width: 100%;
+      min-height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--field);
+      color: var(--ink);
+      padding: 10px 12px;
+      font: inherit;
+      transition: background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    select:hover {
+      border-color: var(--color-border-hover);
+    }
+
+    select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+      outline: none;
+    }
+
+    .header-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 12px;
+      max-width: 580px;
+    }
+
+    .top-link {
+      display: inline-flex;
+      margin-bottom: 18px;
+      color: var(--link);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .top-link:hover {
+      text-decoration: underline;
+    }
+
+    .top-link:focus-visible,
+    .brand-home:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    article {
+      max-width: 68ch;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    h1, h2 {
+      color: var(--ink);
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+    }
+
+    h2 {
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    }
+
+    article section {
+      margin-top: 28px;
+    }
+
+    article p {
+      margin: 0 0 12px;
+    }
+
+    .credits {
+      display: grid;
+      gap: 14px;
+      margin: 28px 0 0;
+      padding: 18px 0;
+      border-block: 1px solid var(--line);
+    }
+
+    .credits dt {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .credits dd {
+      margin: 0;
+    }
+
+    .disclaimer {
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .disclaimer small {
+      font-size: 0.875rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      select {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .header-controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      main {
+        padding: 20px 14px 36px;
+      }
+
+      label {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="masthead">
+        <a class="brand-home" href="index.html" aria-label="moose.train home">
+          <img class="brand-logo" src="supporting_files/assets/logov2.png" alt="" width="1024" height="1024">
+        </a>
+      </div>
+      <div class="header-controls">
+        <label>
+          <span data-i18n="appearanceLabel">Appearance</span>
+          <select id="appearance-select">
+            <option value="system" data-i18n="appearanceSystem">System</option>
+            <option value="light" data-i18n="appearanceLight">Light</option>
+            <option value="dark" data-i18n="appearanceDark">Dark</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="languageLabel">Language</span>
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <article hidden>
+      <a id="back-link" class="top-link" href="index.html" data-i18n="aboutBack"></a>
+      <h1 data-i18n="aboutTitle"></h1>
+      <section>
+        <h2 data-i18n="aboutProblem"></h2>
+        <p data-i18n="aboutProblemBody"></p>
+      </section>
+      <section>
+        <h2 data-i18n="aboutSolution"></h2>
+        <p data-i18n="aboutSolutionBody"></p>
+        <p data-i18n="aboutSolutionGoal"></p>
+      </section>
+      <section>
+        <h2 data-i18n="aboutBuild"></h2>
+        <p data-i18n="aboutBuildBody"></p>
+        <p data-i18n="aboutBuildCoverage"></p>
+      </section>
+      <dl class="credits">
+        <div>
+          <dt data-i18n="aboutCreator"></dt>
+          <dd>Frederick G. B. McNulty</dd>
+        </div>
+        <div>
+          <dt data-i18n="aboutAdvisor"></dt>
+          <dd>James Y. Wang</dd>
+        </div>
+      </dl>
+      <p class="disclaimer"><small><em data-i18n="aboutDisclaimer"></em></small></p>
+    </article>
+    <p id="load-error" role="status" hidden></p>
+  </main>
+
+  <script>
+    const THEME_STORAGE_KEY = "moose-theme";
+    const systemThemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const els = {
+      appearance: document.getElementById("appearance-select"),
+      language: document.getElementById("language-select"),
+      article: document.querySelector("article"),
+      brandHome: document.querySelector(".brand-home"),
+      backLink: document.getElementById("back-link"),
+      loadError: document.getElementById("load-error"),
+    };
+    let translations = {};
+    const requestedLanguage = new URLSearchParams(location.search).get("lang");
+    const initialLanguage = ["en", "es", "ko"].includes(requestedLanguage) ? requestedLanguage : "en";
+    document.documentElement.lang = initialLanguage;
+
+    init();
+
+    async function init() {
+      initTheme();
+      els.appearance.addEventListener("change", () => setThemePreference(els.appearance.value));
+      els.brandHome.href = `index.html?lang=${encodeURIComponent(initialLanguage)}`;
+      try {
+        const response = await fetch("index.html", { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        translations = extractObject(await response.text(), "translations");
+      } catch (_error) {
+        const messages = {
+          en: "Unable to load the About page.",
+          es: "No se pudo cargar la página de información.",
+          ko: "소개 페이지를 불러올 수 없습니다.",
+        };
+        els.loadError.textContent = messages[initialLanguage];
+        els.loadError.hidden = false;
+        return;
+      }
+      setLanguage(initialLanguage);
+      els.language.addEventListener("change", () => {
+        const url = new URL(location.href);
+        url.searchParams.set("lang", els.language.value);
+        history.replaceState(null, "", url);
+        setLanguage(els.language.value);
+      });
+      els.article.hidden = false;
+    }
+
+    function extractObject(source, name) {
+      const marker = `const ${name} = `;
+      const start = source.indexOf(marker);
+      if (start < 0) throw new Error(`Missing ${name}`);
+      const bodyStart = source.indexOf("{", start);
+      let depth = 0;
+      let inString = "";
+      let escaped = false;
+      for (let i = bodyStart; i < source.length; i += 1) {
+        const char = source[i];
+        if (inString) {
+          if (escaped) {
+            escaped = false;
+          } else if (char === "\\") {
+            escaped = true;
+          } else if (char === inString) {
+            inString = "";
+          }
+          continue;
+        }
+        if (char === "\"" || char === "'" || char === "`") {
+          inString = char;
+        } else if (char === "{") {
+          depth += 1;
+        } else if (char === "}") {
+          depth -= 1;
+          if (depth === 0) {
+            return new Function(`return (${source.slice(bodyStart, i + 1)});`)();
+          }
+        }
+      }
+      throw new Error(`Unclosed ${name}`);
+    }
+
+    function setLanguage(language) {
+      const copy = translations[language];
+      document.documentElement.lang = language;
+      document.title = copy.aboutTitle;
+      els.language.value = language;
+      for (const element of document.querySelectorAll("[data-i18n]")) {
+        element.textContent = copy[element.dataset.i18n];
+      }
+      els.brandHome.setAttribute("aria-label", copy.aboutHome);
+      els.brandHome.href = els.backLink.href = `index.html?lang=${encodeURIComponent(language)}`;
+    }
+
+    function initTheme() {
+      const preference = currentThemePreference();
+      els.appearance.value = preference;
+      applyThemePreference(preference);
+      if (systemThemeQuery) {
+        const handleSystemThemeChange = () => {
+          if (currentThemePreference() === "system") applyThemePreference("system");
+        };
+        if (systemThemeQuery.addEventListener) {
+          systemThemeQuery.addEventListener("change", handleSystemThemeChange);
+        } else if (systemThemeQuery.addListener) {
+          systemThemeQuery.addListener(handleSystemThemeChange);
+        }
+      }
+    }
+
+    function setThemePreference(preference) {
+      const nextPreference = ["system", "light", "dark"].includes(preference) ? preference : "system";
+      try {
+        if (nextPreference === "system") {
+          localStorage.removeItem(THEME_STORAGE_KEY);
+        } else {
+          localStorage.setItem(THEME_STORAGE_KEY, nextPreference);
+        }
+      } catch (_error) {
+        // Ignore storage failures; the selected theme still applies for this page view.
+      }
+      applyThemePreference(nextPreference);
+    }
+
+    function currentThemePreference() {
+      try {
+        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+        return savedTheme === "light" || savedTheme === "dark" ? savedTheme : "system";
+      } catch (_error) {
+        return "system";
+      }
+    }
+
+    function applyThemePreference(preference) {
+      const resolvedTheme = preference === "dark" || (preference === "system" && systemThemeQuery && systemThemeQuery.matches)
+        ? "dark"
+        : "light";
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.themePreference = preference;
+      if (els.appearance) els.appearance.value = preference;
+    }
+
+  </script>
+</body>
+</html>

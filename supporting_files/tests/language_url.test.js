@@ -53,18 +53,18 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
       getLirrRealtimeSnapshot = async () => null;
       await ensureScheduleLoaded({ updateStatus: false });
       els.origin.value = 'New Haven'; els.destination.value = 'Stamford';
-      els.date.value = '2026-10-19'; els.time.value = '9:00 AM';
+      els.date.value = '2026-11-19'; els.time.value = '9:00 AM';
       await renderSearch({ requireSchedule: true });
     });
     assert(await page.locator('.result').count() > 0, 'Real search returns trips');
     await page.locator('.shortlist-toggle').first().click();
-    await page.evaluate(() => { window.originalSearch = activeSearchState; window.originalShortlist = [...shortlistedRouteIds]; window.originalOriginId = findStation(els.origin.value).id; });
+    await page.evaluate(() => { window.originalSearch = activeSearchState; window.originalShortlist = [...shortlistedTrips.keys()]; window.originalOriginId = findStation(els.origin.value).id; });
     for (const language of ['en', 'es', 'ko']) {
       await page.selectOption('#language-select', language);
       assert(await page.evaluate(() => activeSearchState === window.originalSearch), 'Language preserves exact search and route objects');
-      assert(await page.evaluate(() => JSON.stringify([...shortlistedRouteIds]) === JSON.stringify(window.originalShortlist)));
+      assert(await page.evaluate(() => JSON.stringify([...shortlistedTrips.keys()]) === JSON.stringify(window.originalShortlist)));
       assert(await page.evaluate(() => findStation(els.origin.value).id === window.originalOriginId), 'Existing localized station names preserve the selected station');
-      assert.equal(await page.evaluate(() => els.date.value), '2026-10-19');
+      assert.equal(await page.evaluate(() => els.date.value), '2026-11-19');
     }
     for (const theme of ['light', 'dark', 'system']) {
       await page.selectOption('#appearance-select', theme);
