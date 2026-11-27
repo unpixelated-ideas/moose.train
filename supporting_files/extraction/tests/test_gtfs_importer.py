@@ -10,7 +10,7 @@ from tempfile import TemporaryDirectory
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from gtfs_importer import GtfsFeedConfig, RouteFilter, import_configured_feeds, import_feed
+from gtfs_importer import GtfsFeedConfig, RouteFilter, default_feed_configs, import_configured_feeds, import_feed
 
 
 def station_id_for(name: str) -> str:
@@ -171,6 +171,34 @@ def amtrak_files() -> dict[str, list[dict[str, str]]]:
 
 
 class GtfsImporterTests(unittest.TestCase):
+    def test_amtrak_expansion_preserves_shared_and_duplicate_station_identities(self):
+        files = amtrak_files()
+        for sequence, (stop_id, name) in enumerate(
+            [("NRO", "New Rochelle Amtrak Station"),
+             ("NBK", "New Brunswick Amtrak Station"),
+             ("WSP", "Westport")],
+            start=6,
+        ):
+            files["stops.txt"].append(dict(files["stops.txt"][0], stop_id=stop_id, stop_name=name))
+            files["stop_times.txt"].append(dict(
+                files["stop_times.txt"][0], stop_id=stop_id, stop_sequence=str(sequence),
+                arrival_time=f"{sequence + 8}:00:00", departure_time=f"{sequence + 8}:01:00",
+            ))
+
+        config = next(config for config in default_feed_configs() if config.feed_id == "amtrak")
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            write_gtfs_zip(root, "amtrak_official", "GTFS.zip", files)
+            result = import_feed(root, config, station_id_for, download=False)
+
+        self.assertFalse(result.errors)
+        stations = {row["station_id"]: row["station_name"] for row in result.rows}
+        self.assertEqual(stations["NRO"], "New Rochelle")
+        self.assertEqual(stations["NJT_103"], "New Brunswick")
+        self.assertEqual(stations["WSP"], "Westport")
+        self.assertNotIn("NBK", stations)
+        self.assertNotIn("WPT", stations)
+
     def test_single_feed_import(self):
         with TemporaryDirectory() as tmp:
             root = Path(tmp)

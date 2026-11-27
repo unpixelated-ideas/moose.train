@@ -446,5 +446,505 @@
     "source_name": "MONTVALE",
     "station_id": "NJT_90",
     "station_name": "Montvale"
+  },
+  "10": {
+    "source_name": "ATLANTIC CITY",
+    "station_id": "NJT_10",
+    "station_name": "Atlantic City"
+  },
+  "101": {
+    "source_name": "NETCONG",
+    "station_id": "NJT_101",
+    "station_name": "Netcong"
+  },
+  "102": {
+    "source_name": "NETHERWOOD",
+    "station_id": "NJT_102",
+    "station_name": "Netherwood"
+  },
+  "104": {
+    "source_name": "NEW PROVIDENCE",
+    "station_id": "NJT_104",
+    "station_name": "New Providence"
+  },
+  "106": {
+    "source_name": "NEWARK BROAD ST",
+    "station_id": "NJT_106",
+    "station_name": "Newark Broad Street"
+  },
+  "108": {
+    "source_name": "NORTH BRANCH",
+    "station_id": "NJT_108",
+    "station_name": "North Branch"
+  },
+  "11": {
+    "source_name": "AVENEL",
+    "station_id": "NJT_11",
+    "station_name": "Avenel"
+  },
+  "112": {
+    "source_name": "ORANGE",
+    "station_id": "NJT_112",
+    "station_name": "Orange"
+  },
+  "117": {
+    "source_name": "PEAPACK",
+    "station_id": "NJT_117",
+    "station_name": "Peapack"
+  },
+  "119": {
+    "source_name": "PERTH AMBOY",
+    "station_id": "NJT_119",
+    "station_name": "Perth Amboy"
+  },
+  "12": {
+    "source_name": "BASKING RIDGE",
+    "station_id": "NJT_12",
+    "station_name": "Basking Ridge"
+  },
+  "120": {
+    "source_name": "PLAINFIELD",
+    "station_id": "NJT_120",
+    "station_name": "Plainfield"
+  },
+  "122": {
+    "source_name": "POINT PLEASANT",
+    "station_id": "NJT_122",
+    "station_name": "Point Pleasant Beach"
+  },
+  "124": {
+    "source_name": "PRINCETON",
+    "station_id": "NJT_124",
+    "station_name": "Princeton"
+  },
+  "129": {
+    "source_name": "RARITAN",
+    "station_id": "NJT_129",
+    "station_name": "Raritan"
+  },
+  "13": {
+    "source_name": "BAY HEAD",
+    "station_id": "NJT_13",
+    "station_name": "Bay Head"
+  },
+  "130": {
+    "source_name": "RED BANK",
+    "station_id": "NJT_130",
+    "station_name": "Red Bank"
+  },
+  "136": {
+    "source_name": "SHORT HILLS",
+    "station_id": "NJT_136",
+    "station_name": "Short Hills"
+  },
+  "138": {
+    "source_name": "SOMERVILLE",
+    "station_id": "NJT_138",
+    "station_name": "Somerville"
+  },
+  "139": {
+    "source_name": "SOUTH AMBOY",
+    "station_id": "NJT_139",
+    "station_name": "South Amboy"
+  },
+  "14": {
+    "source_name": "BAY STREET",
+    "station_id": "NJT_14",
+    "station_name": "Bay Street"
+  },
+  "140": {
+    "source_name": "SOUTH ORANGE",
+    "station_id": "NJT_140",
+    "station_name": "South Orange"
+  },
+  "141": {
+    "source_name": "SPRING LAKE",
+    "station_id": "NJT_141",
+    "station_name": "Spring Lake"
+  },
+  "143": {
+    "source_name": "STIRLING",
+    "station_id": "NJT_143",
+    "station_name": "Stirling"
+  },
+  "145": {
+    "source_name": "SUMMIT",
+    "station_id": "NJT_145",
+    "station_name": "Summit"
+  },
+  "147": {
+    "source_name": "TOWACO",
+    "station_id": "NJT_147",
+    "station_name": "Towaco"
+  },
+  "15": {
+    "source_name": "BELMAR",
+    "station_id": "NJT_15",
+    "station_name": "Belmar"
+  },
+  "150": {
+    "source_name": "UPPER MONTCLAIR",
+    "station_id": "NJT_150",
+    "station_name": "Upper Montclair"
+  },
+  "152": {
+    "source_name": "WALNUT STREET",
+    "station_id": "NJT_152",
+    "station_name": "Walnut Street"
+  },
+  "153": {
+    "source_name": "WATCHUNG AVENUE",
+    "station_id": "NJT_153",
+    "station_name": "Watchung Avenue"
+  },
+  "154": {
+    "source_name": "WATSESSING AVENUE",
+    "station_id": "NJT_154",
+    "station_name": "Watsessing Avenue"
+  },
+  "155": {
+    "source_name": "WESTFIELD",
+    "station_id": "NJT_155",
+    "station_name": "Westfield"
+  },
+  "157": {
+    "source_name": "WHITE HOUSE",
+    "station_id": "NJT_157",
+    "station_name": "White House"
+  },
+  "158": {
+    "source_name": "WOODBRIDGE",
+    "station_id": "NJT_158",
+    "station_name": "Woodbridge"
+  },
+  "17": {
+    "source_name": "BERKELEY HEIGHTS",
+    "station_id": "NJT_17",
+    "station_name": "Berkeley Heights"
+  },
+  "18": {
+    "source_name": "BERNARDSVILLE",
+    "station_id": "NJT_18",
+    "station_name": "Bernardsville"
+  },
+  "19": {
+    "source_name": "BLOOMFIELD",
+    "station_id": "NJT_19",
+    "station_name": "Bloomfield"
+  },
+  "2": {
+    "source_name": "ABSECON",
+    "station_id": "NJT_2",
+    "station_name": "Absecon"
+  },
+  "20": {
+    "source_name": "BOONTON",
+    "station_id": "NJT_20",
+    "station_name": "Boonton"
+  },
+  "21": {
+    "source_name": "BOUND BROOK",
+    "station_id": "NJT_21",
+    "station_name": "Bound Brook"
+  },
+  "22": {
+    "source_name": "BRADLEY BEACH",
+    "station_id": "NJT_22",
+    "station_name": "Bradley Beach"
+  },
+  "23": {
+    "source_name": "BRICK CHURCH",
+    "station_id": "NJT_23",
+    "station_name": "Brick Church"
+  },
+  "24": {
+    "source_name": "BRIDGEWATER",
+    "station_id": "NJT_24",
+    "station_name": "Bridgewater"
+  },
+  "27": {
+    "source_name": "CHATHAM",
+    "station_id": "NJT_27",
+    "station_name": "Chatham"
+  },
+  "28": {
+    "source_name": "CHERRY HILL",
+    "station_id": "NJT_28",
+    "station_name": "Cherry Hill"
+  },
+  "30": {
+    "source_name": "CONVENT",
+    "station_id": "NJT_30",
+    "station_name": "Convent Station"
+  },
+  "31": {
+    "source_name": "ROSELLE PARK",
+    "station_id": "NJT_31",
+    "station_name": "Roselle Park"
+  },
+  "32": {
+    "source_name": "CRANFORD",
+    "station_id": "NJT_32",
+    "station_name": "Cranford"
+  },
+  "34": {
+    "source_name": "DENVILLE",
+    "station_id": "NJT_34",
+    "station_name": "Denville"
+  },
+  "35": {
+    "source_name": "DOVER",
+    "station_id": "NJT_35",
+    "station_name": "Dover"
+  },
+  "36": {
+    "source_name": "DUNELLEN",
+    "station_id": "NJT_36",
+    "station_name": "Dunellen"
+  },
+  "37": {
+    "source_name": "EAST ORANGE",
+    "station_id": "NJT_37",
+    "station_name": "East Orange"
+  },
+  "37169": {
+    "source_name": "ABERDEEN-MATAWAN",
+    "station_id": "NJT_37169",
+    "station_name": "Aberdeen-Matawan"
+  },
+  "38081": {
+    "source_name": "MSU",
+    "station_id": "NJT_38081",
+    "station_name": "Montclair State University"
+  },
+  "38105": {
+    "source_name": "UNION",
+    "station_id": "NJT_38105",
+    "station_name": "Union"
+  },
+  "39": {
+    "source_name": "EGG HARBOR",
+    "station_id": "NJT_39",
+    "station_name": "Egg Harbor City"
+  },
+  "39472": {
+    "source_name": "MOUNT ARLINGTON",
+    "station_id": "NJT_39472",
+    "station_name": "Mount Arlington"
+  },
+  "39635": {
+    "source_name": "WAYNE/ROUTE 23 TRANSIT CENTER [RR]",
+    "station_id": "NJT_39635",
+    "station_name": "Wayne Route 23 Transit Center"
+  },
+  "4": {
+    "source_name": "ALLENHURST",
+    "station_id": "NJT_4",
+    "station_name": "Allenhurst"
+  },
+  "40": {
+    "source_name": "ELBERON",
+    "station_id": "NJT_40",
+    "station_name": "Elberon"
+  },
+  "40570": {
+    "source_name": "MEADOWLANDS RAIL STATION",
+    "station_id": "NJT_40570",
+    "station_name": "Meadowlands Sports Complex"
+  },
+  "43298": {
+    "source_name": "PENNSAUKEN TRANSIT CENTER",
+    "station_id": "NJT_43298",
+    "station_name": "Pennsauken Transit Center"
+  },
+  "44": {
+    "source_name": "FANWOOD",
+    "station_id": "NJT_44",
+    "station_name": "Fanwood"
+  },
+  "45": {
+    "source_name": "FAR HILLS",
+    "station_id": "NJT_45",
+    "station_name": "Far Hills"
+  },
+  "47": {
+    "source_name": "GARWOOD",
+    "station_id": "NJT_47",
+    "station_name": "Garwood"
+  },
+  "48": {
+    "source_name": "GILLETTE",
+    "station_id": "NJT_48",
+    "station_name": "Gillette"
+  },
+  "49": {
+    "source_name": "GLADSTONE",
+    "station_id": "NJT_49",
+    "station_name": "Gladstone"
+  },
+  "50": {
+    "source_name": "GLEN RIDGE",
+    "station_id": "NJT_50",
+    "station_name": "Glen Ridge"
+  },
+  "54": {
+    "source_name": "HACKETTSTOWN",
+    "station_id": "NJT_54",
+    "station_name": "Hackettstown"
+  },
+  "55": {
+    "source_name": "HAMMONTON",
+    "station_id": "NJT_55",
+    "station_name": "Hammonton"
+  },
+  "59": {
+    "source_name": "HAZLET",
+    "station_id": "NJT_59",
+    "station_name": "Hazlet"
+  },
+  "6": {
+    "source_name": "ANNANDALE",
+    "station_id": "NJT_6",
+    "station_name": "Annandale"
+  },
+  "60": {
+    "source_name": "HIGH BRIDGE",
+    "station_id": "NJT_60",
+    "station_name": "High Bridge"
+  },
+  "61": {
+    "source_name": "HIGHLAND AVENUE",
+    "station_id": "NJT_61",
+    "station_name": "Highland Avenue"
+  },
+  "67": {
+    "source_name": "LAKE HOPATCONG",
+    "station_id": "NJT_67",
+    "station_name": "Lake Hopatcong"
+  },
+  "68": {
+    "source_name": "LEBANON",
+    "station_id": "NJT_68",
+    "station_name": "Lebanon"
+  },
+  "69": {
+    "source_name": "LINCOLN PARK",
+    "station_id": "NJT_69",
+    "station_name": "Lincoln Park"
+  },
+  "71": {
+    "source_name": "LINDENWOLD",
+    "station_id": "NJT_71",
+    "station_name": "Lindenwold"
+  },
+  "72": {
+    "source_name": "LITTLE FALLS",
+    "station_id": "NJT_72",
+    "station_name": "Little Falls"
+  },
+  "73": {
+    "source_name": "LITTLE SILVER",
+    "station_id": "NJT_73",
+    "station_name": "Little Silver"
+  },
+  "74": {
+    "source_name": "LONG BRANCH",
+    "station_id": "NJT_74",
+    "station_name": "Long Branch"
+  },
+  "76": {
+    "source_name": "LYONS",
+    "station_id": "NJT_76",
+    "station_name": "Lyons"
+  },
+  "77": {
+    "source_name": "MADISON",
+    "station_id": "NJT_77",
+    "station_name": "Madison"
+  },
+  "79": {
+    "source_name": "MANASQUAN",
+    "station_id": "NJT_79",
+    "station_name": "Manasquan"
+  },
+  "8": {
+    "source_name": "ASBURY PARK",
+    "station_id": "NJT_8",
+    "station_name": "Asbury Park"
+  },
+  "81": {
+    "source_name": "MAPLEWOOD",
+    "station_id": "NJT_81",
+    "station_name": "Maplewood"
+  },
+  "85": {
+    "source_name": "MIDDLETOWN NJ",
+    "station_id": "NJT_85",
+    "station_name": "Middletown, NJ"
+  },
+  "87": {
+    "source_name": "MILLBURN",
+    "station_id": "NJT_87",
+    "station_name": "Millburn"
+  },
+  "88": {
+    "source_name": "MILLINGTON",
+    "station_id": "NJT_88",
+    "station_name": "Millington"
+  },
+  "89": {
+    "source_name": "MONTCLAIR HEIGHTS",
+    "station_id": "NJT_89",
+    "station_name": "Montclair Heights"
+  },
+  "9": {
+    "source_name": "ATCO",
+    "station_id": "NJT_9",
+    "station_name": "Atco"
+  },
+  "91": {
+    "source_name": "MORRIS PLAINS",
+    "station_id": "NJT_91",
+    "station_name": "Morris Plains"
+  },
+  "92": {
+    "source_name": "MORRISTOWN",
+    "station_id": "NJT_92",
+    "station_name": "Morristown"
+  },
+  "93": {
+    "source_name": "MOUNT OLIVE",
+    "station_id": "NJT_93",
+    "station_name": "Mount Olive"
+  },
+  "94": {
+    "source_name": "MOUNT TABOR",
+    "station_id": "NJT_94",
+    "station_name": "Mount Tabor"
+  },
+  "95": {
+    "source_name": "MOUNTAIN AVENUE",
+    "station_id": "NJT_95",
+    "station_name": "Mountain Avenue"
+  },
+  "96": {
+    "source_name": "MOUNTAIN LAKES",
+    "station_id": "NJT_96",
+    "station_name": "Mountain Lakes"
+  },
+  "97": {
+    "source_name": "MOUNTAIN STATION",
+    "station_id": "NJT_97",
+    "station_name": "Mountain Station"
+  },
+  "98": {
+    "source_name": "MOUNTAIN VIEW",
+    "station_id": "NJT_98",
+    "station_name": "Mountain View"
+  },
+  "99": {
+    "source_name": "MURRAY HILL",
+    "station_id": "NJT_99",
+    "station_name": "Murray Hill"
   }
 }

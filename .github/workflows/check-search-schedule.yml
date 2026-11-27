@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'index.html'
+      - 'moose.train-departure-board.html'
+      - 'supporting_files/reference/duplicate_station_railroads.json'
       - 'moose_train_schedule.csv'
       - 'moose_train_schedule.csv.gz'
       - 'supporting_files/scripts/build_search_schedule.js'
@@ -18,6 +20,8 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'moose.train-departure-board.html'
+      - 'supporting_files/reference/duplicate_station_railroads.json'
       - 'moose_train_schedule.csv'
       - 'moose_train_schedule.csv.gz'
       - 'supporting_files/scripts/build_search_schedule.js'
@@ -46,3 +50,4 @@ jobs:
       - run: node supporting_files/tests/mnr_expansion.test.js
       - run: node supporting_files/tests/service_date.test.js
       - run: node supporting_files/tests/njt.test.js
+      - run: node supporting_files/tests/display_board_urls.test.js

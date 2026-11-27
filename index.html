@@ -1563,10 +1563,10 @@
       .result { padding: 14px; gap: 12px; }
       .result-top { gap: 6px; padding-right: 0; }
       .result-title { padding-right: 36px; font-size: .82rem; }
-      .result-meta { gap: 4px 8px; min-width: 0; }
+      .result-meta { gap: 4px 8px; min-width: 0; position: relative; }
       .journey-time { font-size: clamp(1.2rem, 5.6vw, 1.55rem); line-height: 1.3; overflow-wrap: anywhere; }
       .journey-duration { font-size: .82rem; }
-      .result .fare-summary { flex-basis: auto; font-size: .88rem; color: var(--ink); min-width: 0; overflow-wrap: anywhere; }
+      .result .fare-summary { flex-basis: auto; font-size: .88rem; color: var(--ink); min-width: 0; overflow-wrap: anywhere; position: static; }
       .result .fare-summary::before { content: "·"; margin-right: 8px; color: var(--muted); }
       .legs { gap: 8px; }
       .result .leg { grid-template-columns: auto minmax(0, 1fr) fit-content(25%); gap: 6px 10px; padding-top: 10px; align-items: start; }
@@ -1837,6 +1837,18 @@
         <span data-i18n="updateLogDataRefresh">Last refreshed October 19, 2026</span>
       </p>
       <div class="update-log-releases">
+        <section class="update-log-release" aria-labelledby="update-log-v1-title">
+          <h3 id="update-log-v1-title" class="update-log-release-heading">
+            <span class="update-log-version">v1</span>
+            <span class="update-log-release-date" data-i18n="updateLogV1Date">November 26, 2026</span>
+          </h3>
+          <ul class="update-log-list">
+            <li data-i18n-html="updateLogV1BoardLabels">Choose what the departure board shows: line and branch, railroad, or both.</li>
+            <li data-i18n-html="updateLogV1StationNames">Made stations with the same name easier to tell apart, such as Broadway on NJ Transit and Broadway on LIRR.</li>
+            <li data-i18n-html="updateLogV1Coverage">Search and the departure board now cover Amtrak and NJ Transit commuter rail throughout New York and New Jersey.</li>
+          </ul>
+        </section>
+
         <section class="update-log-release" aria-labelledby="update-log-v099-title">
           <h3 id="update-log-v099-title" class="update-log-release-heading">
             <span class="update-log-version">v0.9.9</span>
@@ -2100,7 +2112,7 @@
     const CSV_PATH = "moose_train_schedule.csv";
     const SHORTLIST_STORAGE_KEY = "moose.train.shortlist";
     const SHORTLIST_STORAGE_VERSION = 1;
-    const SEARCH_SCHEDULE_VERSION = "e81e534cb1618632";
+    const SEARCH_SCHEDULE_VERSION = "58ac55e0e30ec995";
     const SEARCH_SCHEDULE_PATH = "supporting_files/assets/schedule/search.json";
     const EMBEDDED_CSV_ID = "embedded-schedule-csv";
     const TRANSFER_BUFFER = 5;
@@ -2627,6 +2639,10 @@
         updateLogV097Date: "November 3, 2027",
         updateLogV098Date: "November 18, 2026",
         updateLogV099Date: "November 22, 2026",
+        updateLogV1Date: "November 26, 2026",
+        updateLogV1BoardLabels: "Choose what the departure board shows: line and branch, railroad, or both.",
+        updateLogV1StationNames: "Made stations with the same name easier to tell apart, such as Broadway on NJ Transit and Broadway on LIRR.",
+        updateLogV1Coverage: "Search and the departure board now cover Amtrak and NJ Transit commuter rail throughout New York and New Jersey.",
         updateLogV099Shortlist: "Your shortlist now stays with you across searches, so you can compare trips with different origins or destinations.",
         updateLogV099About: "Added content to the About page so you can learn more about moose.train.",
         updateLogV098Departures: "Fixed bugs in the departure board.",
@@ -2827,6 +2843,10 @@
         updateLogV097Date: "2027년 11월 3일",
         updateLogV098Date: "2026년 11월 18일",
         updateLogV099Date: "2026년 11월 22일",
+        updateLogV1Date: "2026년 11월 26일",
+        updateLogV1BoardLabels: "출발 안내판에 노선·지선만 표시할지, 철도 운영사만 표시할지, 둘 다 표시할지 선택할 수 있습니다.",
+        updateLogV1StationNames: "NJ Transit의 Broadway역과 LIRR의 Broadway역처럼 이름이 같은 역을 더 쉽게 구분할 수 있도록 했습니다.",
+        updateLogV1Coverage: "이제 검색과 출발 안내판에서 뉴욕주와 뉴저지주 전역의 Amtrak 열차와 NJ Transit 통근 열차를 확인할 수 있습니다.",
         updateLogV099Shortlist: "이제 새로 검색해도 관심 목록이 유지되어, 출발지나 도착지가 다른 여정을 함께 비교할 수 있습니다.",
         updateLogV099About: "moose.train에 대해 더 알아볼 수 있도록 소개 페이지에 내용을 추가했습니다.",
         updateLogV098Departures: "출발 안내판의 오류를 수정했습니다.",
@@ -3027,6 +3047,10 @@
         updateLogV097Date: "3 de noviembre de 2027",
         updateLogV098Date: "18 de noviembre de 2026",
         updateLogV099Date: "22 de noviembre de 2026",
+        updateLogV1Date: "26 de noviembre de 2026",
+        updateLogV1BoardLabels: "Elige qué muestra el panel de salidas: línea y ramal, compañía ferroviaria o ambos.",
+        updateLogV1StationNames: "Ahora es más fácil distinguir estaciones con el mismo nombre, como Broadway de NJ Transit y Broadway de LIRR.",
+        updateLogV1Coverage: "La búsqueda y el tablero de salidas ahora cubren Amtrak y los trenes de cercanías de NJ Transit en todo el estado de Nueva York y Nueva Jersey.",
         updateLogV099Shortlist: "Tu lista de favoritos ahora se conserva entre búsquedas, para que puedas comparar viajes con distintos orígenes o destinos.",
         updateLogV099About: "Añadimos contenido a la página Acerca de para que puedas conocer mejor moose.train.",
         updateLogV098Departures: "Corregimos errores en el panel de salidas.",
@@ -3131,8 +3155,8 @@
 
     const faqContent = {
       en: [
-        { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>For now, moose.train is focused on the New York City, Long Island, and Connecticut region, bringing together schedules from Amtrak, Long Island Rail Road (LIRR), Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p><p>Coverage also includes NJ Transit’s Northeast Corridor, Port Jervis, and Pascack Valley lines and shared Amtrak stations in New Jersey.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train covers New York City, Long Island, Connecticut, and selected New Jersey and Hudson Valley routes. LIRR includes public stations across its branches. Metro-North includes Hudson, Harlem, and New Haven service with its branches.</p><p>NJ Transit coverage includes the Northeast Corridor between New York Penn and Trenton, the Port Jervis Line, and the Pascack Valley Line, including their through trains to Hoboken. Other NJ Transit lines are not yet included. Amtrak includes shared New Jersey corridor stations as well as the existing Connecticut, Hudson Valley, Springfield, and Westerly coverage.</p><p>All searches support direct trips or one transfer. Journeys needing two or more transfers are not yet shown, including some West of Hudson connections through both Secaucus and Penn Station.</p><p>Results show rail journeys only; replacement-bus itineraries are excluded. Port Jervis and Pascack Valley services are operated by NJ Transit on behalf of Metro-North.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "What is moose.train?", content: `<p>moose.train is a trip planner that brings your rail options together in one place. Instead of checking different train operators separately, you can search once and see the different ways to make your trip side by side.</p><p>moose.train brings together schedules from Amtrak, NJ Transit, Long Island Rail Road (LIRR), Metro-North, and CTrail. The idea is simple: spend less time comparing schedules across different websites and more time figuring out which train actually works best for you.</p><p>Search and the departure board cover Amtrak and NJ Transit commuter rail throughout New York and New Jersey.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "What areas does moose.train currently support?", content: `<p>moose.train covers Amtrak and NJ Transit commuter rail throughout New York and New Jersey, including seasonal and event trains when scheduled. LIRR includes public stations across its branches. Metro-North includes Hudson, Harlem, and New Haven service with its branches.</p><p>Coverage also includes Connecticut, Springfield, Massachusetts, and Westerly, Rhode Island.</p><p>All searches support direct trips or one transfer. Journeys needing two or more transfers are not yet shown, including some West of Hudson connections through both Secaucus and Penn Station.</p><p>Results show rail journeys only; replacement-bus itineraries are excluded. Port Jervis and Pascack Valley services are operated by NJ Transit on behalf of Metro-North.</p>` },
         { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "How often is the schedule data updated?", content: `<p>moose.train refreshes its schedule data every morning at <strong>7am US Eastern Time</strong>, using information published by LIRR, Metro-North, NJ Transit, CTrail, and Amtrak.</p><p><strong>Last successfully refreshed:</strong> <time data-schedule-refresh-date>October 19, 2026</time> (US Eastern Time)</p><p>Schedules are not updated in real time, so delays, cancellations, and other service changes may not be reflected. For the latest service information, please check directly with your rail provider.</p>` },
         { id: "which-rail-services-are-included", summary: "Which rail services are included?", content: `<p>moose.train currently brings together schedules from six rail services:</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Together, they connect New York City, Long Island, and Connecticut, with selected connections into the surrounding region.</p><p>Have another rail service you’d like to see on moose.train? I’d love to hear about it.</p>` },
         { id: "why-did-you-build-moose-train", summary: "Why did you build moose.train?", content: `<p>I built moose.train because planning a train trip between New York City and Connecticut often meant checking several different websites just to figure out my options. Amtrak, Metro-North, and CTrail each show you their piece of the puzzle, but I wanted to see the whole picture at once.</p><p>Sometimes the best trip leaves from Penn Station. Sometimes it leaves from Grand Central. Sometimes taking Amtrak saves enough time to be worth the extra money, and sometimes regional rail makes more sense. I wanted to see those choices together instead of piecing them together myself every time I traveled.</p><p>Eventually I figured: why not just build the tool I wished existed?</p>` },
@@ -3152,8 +3176,8 @@
         { id: "who-built-moose-train", summary: "Who built moose.train?", content: `<p>Hi! I’m Fred McNulty. I live in New York City, but I grew up in Connecticut, so I’ve spent a lot of time traveling by train between the two.</p><p>I’m a product manager by day and a transit enthusiast pretty much all the time. moose.train started as a personal project inspired by a problem I’d encountered plenty of times myself: figuring out the best way to get somewhere when the answer might involve more than one railroad.</p><p>I also genuinely believe that good public transportation can make our cities and communities better places to live. If moose.train can make taking the train just a little easier, I’ll consider that a win.</p>` },
       ],
       ko: [
-        { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>현재 moose.train은 뉴욕시, 롱아일랜드, 코네티컷 지역에 집중하고 있으며, Amtrak, Long Island Rail Road (LIRR), Metro-North, CTrail의 시간표를 함께 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p><p>NJ Transit의 Northeast Corridor, Port Jervis, Pascack Valley 노선과 뉴저지의 Amtrak 공용 정차역도 포함합니다.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 뉴욕시, 롱아일랜드, 코네티컷과 뉴저지 및 허드슨 밸리의 일부 노선을 지원합니다. LIRR의 일반 여객역과 Metro-North의 Hudson, Harlem, New Haven 노선 및 지선을 포함합니다.</p><p>NJ Transit은 뉴욕 펜역–트렌턴 Northeast Corridor, Port Jervis Line, Pascack Valley Line과 호보켄까지 이어지는 열차를 포함합니다. 다른 NJ Transit 노선은 아직 포함하지 않습니다. Amtrak은 기존 코네티컷, 허드슨 밸리, 스프링필드, 웨스터리 구간에 더해 뉴저지의 공용 정차역을 포함합니다.</p><p>모든 검색은 직통 또는 한 번의 환승만 지원합니다. Secaucus와 Penn Station에서 모두 갈아타야 하는 일부 여정처럼 두 번 이상 환승하는 여정은 아직 표시하지 않습니다.</p><p>결과에는 철도 여정만 표시하며 대체 버스 여정은 제외합니다. Port Jervis와 Pascack Valley는 NJ Transit이 Metro-North를 대신해 운행합니다.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "moose.train은 무엇인가요?", content: `<p>moose.train은 철도 여행 선택지를 한곳에 모아 주는 여행 계획 도구입니다. 여러 철도 운영사의 웹사이트를 따로 확인하는 대신, 한 번 검색해서 여행할 수 있는 여러 방법을 나란히 비교할 수 있습니다.</p><p>moose.train은 Amtrak, NJ Transit, Long Island Rail Road (LIRR), Metro-North, CTrail의 시간표를 한곳에서 보여 줍니다. 목적은 단순합니다. 여러 웹사이트에서 시간표를 비교하는 시간을 줄이고, 실제로 나에게 가장 잘 맞는 열차가 무엇인지 판단하는 데 더 집중할 수 있게 하는 것입니다.</p><p>검색과 출발 안내판에서 뉴욕주와 뉴저지주 전역의 Amtrak 열차와 NJ Transit 통근 열차를 확인할 수 있습니다.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "moose.train은 현재 어떤 지역을 지원하나요?", content: `<p>moose.train은 뉴욕주와 뉴저지주 전역의 Amtrak 열차와 NJ Transit 통근 열차를 지원합니다. 계절 및 행사 열차는 운행 일정이 있는 기간에 표시합니다. LIRR의 일반 여객역과 Metro-North의 Hudson, Harlem, New Haven 노선 및 지선을 포함합니다.</p><p>코네티컷주, 매사추세츠주 스프링필드, 로드아일랜드주 웨스터리도 지원합니다.</p><p>모든 검색은 직통 또는 한 번의 환승만 지원합니다. Secaucus와 Penn Station에서 모두 갈아타야 하는 일부 여정처럼 두 번 이상 환승하는 여정은 아직 표시하지 않습니다.</p><p>결과에는 철도 여정만 표시하며 대체 버스 여정은 제외합니다. Port Jervis와 Pascack Valley는 NJ Transit이 Metro-North를 대신해 운행합니다.</p>` },
         { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "열차 시간표 데이터는 얼마나 자주 업데이트되나요?", content: `<p>moose.train은 LIRR, Metro-North, NJ Transit, CTrail, Amtrak에서 제공하는 정보를 바탕으로 <strong>미국 동부 시간 기준 매일 오전 7시</strong>에 열차 시간표 데이터를 새로고침합니다.</p><p><strong>마지막으로 성공적으로 업데이트된 날짜:</strong> <time data-schedule-refresh-date>2026년 10월 19일</time></p><p>시간표는 실시간으로 업데이트되지 않으므로 열차 지연, 운행 취소 및 기타 운행 변경 사항이 반영되지 않을 수 있습니다. 최신 운행 정보는 해당 철도 운영기관에서 직접 확인해 주세요.</p>` },
         { id: "which-rail-services-are-included", summary: "어떤 철도 서비스가 포함되어 있나요?", content: `<p>moose.train은 현재 여섯 가지 철도 서비스의 시간표를 함께 제공합니다.</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>이 서비스들은 뉴욕시, 롱아일랜드, 코네티컷과 주변 지역의 일부 연결편을 함께 제공합니다.</p><p>moose.train에 추가되었으면 하는 다른 철도 서비스가 있다면 알려 주세요. 의견을 듣고 싶습니다.</p>` },
         { id: "why-did-you-build-moose-train", summary: "왜 moose.train을 만들었나요?", content: `<p>뉴욕시와 코네티컷 사이의 열차 여행을 계획할 때, 선택지를 파악하려면 여러 웹사이트를 확인해야 하는 경우가 많아서 moose.train을 만들었습니다. Amtrak, Metro-North, CTrail은 각각 자기 부분을 보여 주지만, 저는 전체 그림을 한 번에 보고 싶었습니다.</p><p>어떤 때는 Penn Station에서 출발하는 여행이 가장 좋고, 어떤 때는 Grand Central에서 출발하는 편이 더 좋습니다. Amtrak이 추가 비용을 낼 만큼 시간을 절약해 주는 경우도 있고, 지역 철도가 더 합리적인 경우도 있습니다. 저는 여행할 때마다 직접 조합하지 않고 그런 선택지를 한곳에서 보고 싶었습니다.</p><p>그러다 결국 이렇게 생각했습니다. 내가 바랐던 도구를 직접 만들면 되지 않을까?</p>` },
@@ -3173,8 +3197,8 @@
         { id: "who-built-moose-train", summary: "누가 moose.train을 만들었나요?", content: `<p>안녕하세요! 저는 Fred McNulty입니다. 저는 뉴욕시에 살고 있지만 코네티컷에서 자랐기 때문에, 두 지역 사이를 열차로 오간 시간이 많습니다.</p><p>저는 낮에는 제품 관리자이고, 거의 항상 대중교통 애호가이기도 합니다. moose.train은 제가 여러 번 직접 겪었던 문제에서 시작한 개인 프로젝트입니다. 목적지까지 가는 가장 좋은 방법이 하나 이상의 철도를 포함할 수 있을 때, 그 방법을 찾는 문제였습니다.</p><p>저는 좋은 대중교통이 도시와 지역사회를 더 살기 좋은 곳으로 만들 수 있다고 진심으로 믿습니다. moose.train이 열차 이용을 조금이라도 더 쉽게 만든다면, 그것만으로도 성공이라고 생각합니다.</p>` },
       ],
       es: [
-        { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>Por ahora, moose.train se centra en la región de la ciudad de Nueva York, Long Island y Connecticut, reuniendo horarios de Amtrak, Long Island Rail Road (LIRR), Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p><p>La cobertura también incluye Northeast Corridor, Port Jervis y Pascack Valley de NJ Transit y estaciones compartidas con Amtrak en Nueva Jersey.</p>` },
-        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train cubre Nueva York, Long Island, Connecticut y rutas seleccionadas de Nueva Jersey y Hudson Valley. LIRR incluye estaciones públicas de sus ramales. Metro-North incluye Hudson, Harlem y New Haven con sus ramales.</p><p>NJ Transit incluye el Northeast Corridor entre New York Penn y Trenton, Port Jervis Line y Pascack Valley Line, incluidos sus trenes directos a Hoboken. Las demás líneas de NJ Transit aún no están incluidas. Amtrak añade las estaciones compartidas del corredor de Nueva Jersey a su cobertura existente de Connecticut, Hudson Valley, Springfield y Westerly.</p><p>Todas las búsquedas admiten viajes directos o un transbordo. Aún no se muestran viajes que necesitan dos o más, incluidas algunas conexiones que requieren cambiar tanto en Secaucus como en Penn Station.</p><p>Los resultados muestran solo viajes ferroviarios; se excluyen los itinerarios con autobuses sustitutos. NJ Transit opera Port Jervis y Pascack Valley por cuenta de Metro-North.</p>` },
+        { id: "what-is-moose-train", open: true, summary: "¿Qué es moose.train?", content: `<p>moose.train es un planificador de viajes que reúne tus opciones de tren en un solo lugar. En vez de revisar distintos operadores por separado, puedes buscar una vez y ver lado a lado las diferentes maneras de hacer tu viaje.</p><p>moose.train reúne los horarios de Amtrak, NJ Transit, Long Island Rail Road (LIRR), Metro-North y CTrail. La idea es sencilla: pasar menos tiempo comparando horarios en distintos sitios web y más tiempo decidiendo qué tren realmente te conviene.</p><p>La búsqueda y el tablero de salidas cubren Amtrak y los trenes de cercanías de NJ Transit en todo el estado de Nueva York y Nueva Jersey.</p>` },
+        { id: "what-areas-does-moose-train-currently-support", open: true, summary: "¿Qué áreas admite moose.train actualmente?", content: `<p>moose.train cubre Amtrak y los trenes de cercanías de NJ Transit en todo el estado de Nueva York y Nueva Jersey, incluidos los trenes de temporada y de eventos cuando están programados. LIRR incluye estaciones públicas de sus ramales. Metro-North incluye Hudson, Harlem y New Haven con sus ramales.</p><p>La cobertura también incluye Connecticut, Springfield (Massachusetts) y Westerly (Rhode Island).</p><p>Todas las búsquedas admiten viajes directos o un transbordo. Aún no se muestran viajes que necesitan dos o más, incluidas algunas conexiones que requieren cambiar tanto en Secaucus como en Penn Station.</p><p>Los resultados muestran solo viajes ferroviarios; se excluyen los itinerarios con autobuses sustitutos. NJ Transit opera Port Jervis y Pascack Valley por cuenta de Metro-North.</p>` },
         { id: "when-was-the-data-most-recently-refreshed", open: true, summary: "¿Con qué frecuencia se actualizan los horarios?", content: `<p>moose.train actualiza los horarios de los trenes todas las mañanas a las <strong>7:00 a. m., hora del este de Estados Unidos</strong>, utilizando información publicada por LIRR, Metro-North, NJ Transit, CTrail y Amtrak.</p><p><strong>Última actualización realizada correctamente:</strong> <time data-schedule-refresh-date>19 de octubre de 2026</time></p><p>Los horarios no se actualizan en tiempo real, por lo que es posible que no reflejen retrasos, cancelaciones u otros cambios en el servicio. Para obtener la información más reciente, consulta directamente con el operador ferroviario.</p>` },
         { id: "which-rail-services-are-included", summary: "¿Qué servicios ferroviarios están incluidos?", content: `<p>moose.train actualmente reúne horarios de seis servicios ferroviarios:</p><ul><li><strong>Amtrak</strong></li><li><strong>NJ Transit</strong></li><li><strong>Long Island Rail Road (LIRR)</strong></li><li><strong>Metro-North Railroad</strong></li><li><strong>CTrail Shore Line East</strong></li><li><strong>CTrail Hartford Line</strong></li></ul><p>Juntos, conectan Nueva York, Long Island y Connecticut, además de algunas conexiones hacia la región circundante.</p><p>¿Hay otro servicio ferroviario que te gustaría ver en moose.train? Me encantaría saberlo.</p>` },
         { id: "why-did-you-build-moose-train", summary: "¿Por qué construiste moose.train?", content: `<p>Construí moose.train porque planificar un viaje en tren entre la ciudad de Nueva York y Connecticut a menudo significaba revisar varios sitios web solo para entender mis opciones. Amtrak, Metro-North y CTrail muestran cada uno su parte del rompecabezas, pero yo quería ver la imagen completa de una vez.</p><p>A veces el mejor viaje sale de Penn Station. A veces sale de Grand Central. A veces tomar Amtrak ahorra suficiente tiempo como para justificar el costo adicional, y a veces el tren regional tiene más sentido. Quería ver esas opciones juntas en vez de reconstruirlas por mi cuenta cada vez que viajaba.</p><p>Finalmente pensé: ¿por qué no construir la herramienta que me gustaría que existiera?</p>` },
@@ -3259,6 +3283,124 @@
     };
 
     const koreanStationNames = {
+      "Aberdeen-Matawan": "애버딘-매터완",
+      "Absecon": "앱시컨",
+      "Albany-Rensselaer": "올버니-렌슬러",
+      "Allenhurst": "앨런허스트",
+      "Amsterdam": "암스테르담",
+      "Annandale": "애넌데일",
+      "Asbury Park": "애즈버리 파크",
+      "Atco": "앳코",
+      "Atlantic City": "애틀랜틱시티",
+      "Avenel": "애버넬",
+      "Basking Ridge": "배스킹 리지",
+      "Bay Head": "베이 헤드",
+      "Bay Street": "베이 스트리트",
+      "Belmar": "벨마",
+      "Berkeley Heights": "버클리 하이츠",
+      "Bernardsville": "버나즈빌",
+      "Bloomfield": "블룸필드",
+      "Boonton": "분턴",
+      "Bound Brook": "바운드 브룩",
+      "Bradley Beach": "브래들리 비치",
+      "Brick Church": "브릭 처치",
+      "Bridgewater": "브리지워터",
+      "Buffalo-Depew": "버펄로 디퓨",
+      "Buffalo-Exchange Street": "버펄로 익스체인지 스트리트",
+      "Chatham": "채텀",
+      "Cherry Hill": "체리 힐",
+      "Convent Station": "컨벤트 스테이션",
+      "Cranford": "크랜퍼드",
+      "Denville": "덴빌",
+      "Dover": "도버",
+      "Dunellen": "더넬런",
+      "East Orange": "이스트 오렌지",
+      "Egg Harbor City": "에그 하버 시티",
+      "Elberon": "엘버론",
+      "Fanwood": "팬우드",
+      "Far Hills": "파 힐스",
+      "Fort Edward-Glens Falls": "포트 에드워드-글렌스 폴스",
+      "Fort Ticonderoga": "포트 타이콘더로가",
+      "Garwood": "가우드",
+      "Gillette": "질레트",
+      "Gladstone": "글래드스톤",
+      "Glen Ridge": "글렌 리지",
+      "Hackettstown": "해키츠타운",
+      "Hammonton": "해먼턴",
+      "Hazlet": "해즐릿",
+      "High Bridge": "하이 브리지",
+      "Highland Avenue": "하일랜드 애비뉴",
+      "Hudson": "허드슨",
+      "Lake Hopatcong": "호팻콩 호수",
+      "Lebanon": "레버넌",
+      "Lincoln Park": "링컨 파크",
+      "Lindenwold": "린든월드",
+      "Little Falls": "리틀 폴스",
+      "Little Silver": "리틀 실버",
+      "Long Branch": "롱 브랜치",
+      "Lyons": "라이언스",
+      "Manasquan": "매너스콴",
+      "Maplewood": "메이플우드",
+      "Meadowlands Sports Complex": "메도랜즈 스포츠 컴플렉스",
+      "Middletown, NJ": "미들타운, 뉴저지",
+      "Millburn": "밀번",
+      "Millington": "밀링턴",
+      "Montclair Heights": "몬트클레어 하이츠",
+      "Montclair State University": "몬트클레어 주립대학교",
+      "Morris Plains": "모리스 플레인스",
+      "Morristown": "모리스타운",
+      "Mount Arlington": "마운트 알링턴",
+      "Mount Olive": "마운트 올리브",
+      "Mount Tabor": "마운트 테이버",
+      "Mountain Avenue": "마운틴 애비뉴",
+      "Mountain Lakes": "마운틴 레이크스",
+      "Mountain Station": "마운틴 스테이션",
+      "Mountain View": "마운틴 뷰",
+      "Netcong": "넷콩",
+      "Netherwood": "네더우드",
+      "New Providence": "뉴 프로비던스",
+      "New York State Fair": "뉴욕주 박람회",
+      "Newark Broad Street": "뉴어크 브로드 스트리트",
+      "Niagara Falls": "나이아가라폴스",
+      "North Branch": "노스 브랜치",
+      "Orange": "오렌지",
+      "Peapack": "피팩",
+      "Pennsauken Transit Center": "펜소컨 교통센터",
+      "Perth Amboy": "퍼스 앰보이",
+      "Plainfield": "플레인필드",
+      "Plattsburgh": "플래츠버그",
+      "Point Pleasant Beach": "포인트 플레전트 비치",
+      "Port Henry": "포트 헨리",
+      "Princeton": "프린스턴",
+      "Raritan": "래리턴",
+      "Red Bank": "레드 뱅크",
+      "Rhinecliff": "라인클리프",
+      "Rochester": "로체스터",
+      "Rome": "롬",
+      "Roselle Park": "로젤 파크",
+      "Rouses Point": "라우시스 포인트",
+      "Saratoga Springs": "새러토가 스프링스",
+      "Schenectady": "스커넥터디",
+      "Short Hills": "쇼트 힐스",
+      "Somerville": "서머빌",
+      "South Amboy": "사우스 앰보이",
+      "South Orange": "사우스 오렌지",
+      "Spring Lake": "스프링 레이크",
+      "Stirling": "스털링",
+      "Summit": "서밋",
+      "Syracuse": "시러큐스",
+      "Towaco": "터와코",
+      "Union": "유니언",
+      "Upper Montclair": "어퍼 몬트클레어",
+      "Utica": "유티카",
+      "Walnut Street": "월넛 스트리트",
+      "Watchung Avenue": "와청 애비뉴",
+      "Watsessing Avenue": "왓세싱 애비뉴",
+      "Wayne Route 23 Transit Center": "웨인 23번 도로 교통센터",
+      "Westfield": "웨스트필드",
+      "White House": "화이트 하우스",
+      "Whitehall": "화이트홀",
+      "Woodbridge": "우드브리지",
       "Morris Heights": "모리스 하이츠",
       "University Heights": "유니버시티 하이츠",
       "Marble Hill": "마블 힐",
@@ -3631,6 +3773,8 @@
       },
     ];
 
+    const duplicateStationRailroads = {"LIRR_11":"LIRR","LIRR_130":"LIRR","LIRR_219":"LIRR","MAD":"Shore Line East","MNR_80":"Metro-North","NJT_25":"NJ Transit","NJT_58":"NJ Transit","NJT_77":"NJ Transit","NJT_99":"NJ Transit","NJT_156":"NJ Transit","WPT":"Metro-North","WSP":"Amtrak"};
+
     const stationIndex = [
       {"id": "MNR_9", "name": "Morris Heights"},
       {"id": "MNR_10", "name": "University Heights"},
@@ -3949,7 +4093,11 @@
       {"id": "NJT_90", "name": "Montvale"},
     ];
 
-    const transferStationIds = new Set(["SEC", "NWK", "TRE", "H125", "FOR", "CRT", "MNR_94", "YNY", "POU", "NHV", "STM", "BRP", "SONO", "GCT", "NYP", "LIRR_102", "LIRR_125", "LIRR_132", "LIRR_179", "LIRR_198", "LIRR_211", "LIRR_214", "LIRR_27", "LIRR_72", "LIRR_91", "LIRR_92"]);
+    const transferStationIds = new Set([
+      "SEC", "NWK", "TRE", "H125", "FOR", "CRT", "MNR_94", "YNY", "POU", "NHV", "STM", "BRP", "SONO", "GCT", "NYP",
+      "LIRR_102", "LIRR_125", "LIRR_132", "LIRR_179", "LIRR_198", "LIRR_211", "LIRR_214", "LIRR_27", "LIRR_72", "LIRR_91", "LIRR_92",
+      "ALB", "SDY", "NRO", "PJC", "NJT_63", "NJT_74", "NJT_106", "NJT_127", "NJT_131", "NJT_145",
+    ]);
 
     const LIRR_TRANSFER_MINUTES = {"LIRR_102": 5.0};
 
@@ -4005,6 +4153,7 @@
     let currentLanguage = "en";
     let timeFormat = "12";
     let trips = [];
+    let stationTripLookup = null;
     let stations = [];
     let timetableCsvLinks = [];
     let stationSequencesByDirection = new Map();
@@ -5116,7 +5265,16 @@
       })));
     }
 
+    function stationPickerLabel(station, name = displayStationName(station.name)) {
+      const railroad = duplicateStationRailroads[station.id];
+      return railroad ? `${name} (${railroad})` : name;
+    }
+
     function stationMatchesQuery(station, value) {
+      const qualifiedQuery = normalize(value);
+      if (duplicateStationRailroads[station.id] && stationSearchValues(station)
+        .some((name) => normalize(stationPickerLabel(station, name)).includes(qualifiedQuery))) return true;
+      if (/\((?:LIRR|Metro-North|NJ Transit|Shore Line East|Amtrak)\)\s*$/i.test(value)) return false;
       const query = normalizeStationInput(value);
       const aliases = stationAliases.filter((alias) => alias.id === station.id).flatMap((alias) => alias.names);
       const virtual = virtualStations.find((item) => item.id === station.id);
@@ -5136,6 +5294,7 @@
         const list = document.getElementById(`${input.id}-options`);
         let matches = [];
         let activeIndex = -1;
+        let blurTimeout;
         function close() {
           list.hidden = true;
           input.setAttribute("aria-expanded", "false");
@@ -5153,7 +5312,7 @@
             option.id = `${input.id}-option-${index}`;
             option.setAttribute("role", "option");
             option.setAttribute("aria-selected", "false");
-            option.textContent = displayStationName(station.name);
+            option.textContent = stationPickerLabel(station);
             const virtual = virtualStations.find((item) => item.id === station.id);
             if (virtual) {
               option.classList.add("station-option-city");
@@ -5178,18 +5337,21 @@
           input.setAttribute("aria-expanded", "true");
         }
         function select(index) {
-          input.value = displayStationName(matches[index].name);
+          input.value = stationPickerLabel(matches[index]);
           close();
           input.blur();
         }
         // Keep focus through a pointer click; touch scrolling still uses native scrolling.
         list.addEventListener("mousedown", (event) => event.preventDefault());
-        input.addEventListener("focus", render);
+        input.addEventListener("focus", () => {
+          clearTimeout(blurTimeout);
+          render();
+        });
         input.addEventListener("input", render);
         input.addEventListener("stationrefresh", () => { if (!list.hidden) render(); });
         input.addEventListener("blur", () => {
           // A tap's click can follow blur on mobile. Let the click select first.
-          setTimeout(close, 180);
+          blurTimeout = setTimeout(close, 180);
         });
         input.addEventListener("keydown", (event) => {
           if (event.isComposing) return;
@@ -5215,7 +5377,7 @@
 
     function updateStationInputLanguage(input, station) {
       if (!station || !input.value.trim()) return;
-      input.value = displayStationName(station.name);
+      input.value = stationPickerLabel(station);
     }
 
     function buildTimetableCsvLinks(sourceRows) {
@@ -5261,7 +5423,7 @@
         hartford_gtfs: "CTrail - Hartford Line GTFS",
         sle_gtfs: "CTrail - Shore Line East GTFS",
         amtrak_gtfs: "Amtrak - GTFS Regional Rail",
-        njt_gtfs: "NJ Transit - Northeast Corridor, Port Jervis, and Pascack Valley GTFS",
+        njt_gtfs: "NJ Transit - Commuter Rail GTFS",
       };
       const key = basename
         .replace(/_effective_\d{4}-\d{2}-\d{2}/i, "")
@@ -6308,11 +6470,17 @@
       if (!clean) return null;
       const virtual = virtualStations.find((station) => virtualStationMatches(station, clean));
       if (virtual) return virtual;
+      const qualified = normalize(value);
+      const identified = stations.find((station) => duplicateStationRailroads[station.id] &&
+        stationSearchValues(station).some((name) => normalize(stationPickerLabel(station, name)) === qualified));
+      if (identified) return identified;
       const aliasedId = stationAliasId(clean);
       if (aliasedId) return stations.find((station) => station.id === aliasedId) || null;
-      const exact = stations.find((station) => stationSearchValues(station).some((name) => normalize(name) === clean));
-      if (exact || !fuzzy) return exact || null;
-      return stations.find((station) => stationSearchValues(station).some((name) => normalize(name).includes(clean)));
+      const exact = stations.filter((station) => stationSearchValues(station).some((name) => normalize(name) === clean));
+      if (exact.length || !fuzzy) return exact.length === 1 ? exact[0] : null;
+      const match = stations.find((station) => stationSearchValues(station).some((name) => normalize(name).includes(clean)));
+      if (match && duplicateStationRailroads[match.id] && stations.some((station) => station.id !== match.id && station.name === match.name)) return null;
+      return match;
     }
 
     function virtualStationMatches(station, cleanValue) {
@@ -6447,9 +6615,8 @@
       let latest = "";
       // No journey can outlive the trains serving its destination. A direct
       // train reaching this bound avoids an unnecessary connection scan.
-      const upperBound = maxIsoDate(...trips
-        .filter((trip) => trip.stops.some((stop) => stop.id === destinationId))
-        .map(maxServiceDateForTrip));
+      const upperBound = maxIsoDate(...tripIndexesAtStation(destinationId)
+        .map((index) => maxServiceDateForTrip(trips[index])));
       originLegs
         .filter((leg) => leg.toId === destinationId)
         .forEach((leg) => {
@@ -6480,9 +6647,38 @@
     }
 
     function candidateLegsFromStation(originId, destinationId = null) {
-      return trips.flatMap((trip) => (
-        stopsAt(trip, originId).flatMap((originStop) => tripLegsFromStop(trip, originStop, destinationId))
-      ));
+      return tripIndexesAtStation(originId).flatMap((index) => {
+        const trip = trips[index];
+        return stopsAt(trip, originId).flatMap((originStop) => tripLegsFromStop(trip, originStop, destinationId));
+      });
+    }
+
+    function getStationTripLookup() {
+      if (stationTripLookup?.trips === trips) return stationTripLookup;
+      const byStation = new Map();
+      let maxDuration = 0;
+      trips.forEach((trip, index) => {
+        let first = Infinity;
+        let last = -Infinity;
+        trip.stops.forEach((stop) => {
+          if (!byStation.has(stop.id)) byStation.set(stop.id, []);
+          const stationTrips = byStation.get(stop.id);
+          if (stationTrips.at(-1) !== index) stationTrips.push(index);
+          for (const time of [stop.arrival, stop.departure]) {
+            if (Number.isFinite(time)) {
+              first = Math.min(first, time);
+              last = Math.max(last, time);
+            }
+          }
+        });
+        maxDuration = Math.max(maxDuration, last - first);
+      });
+      stationTripLookup = { trips, byStation, maxDuration };
+      return stationTripLookup;
+    }
+
+    function tripIndexesAtStation(stationId) {
+      return getStationTripLookup().byStation.get(stationId) || [];
     }
 
     function latestCommonServiceDate(serviceTrips) {
@@ -6542,10 +6738,7 @@
     }
 
     function searchLegIndex(date, queryTime, mode, maxTransferMinutes, originId, destinationId) {
-      const durations = trips.map((trip) => {
-        const times = trip.stops.flatMap((stop) => [stop.arrival, stop.departure]).filter(Number.isFinite);
-        return times.length ? Math.max(...times) - Math.min(...times) : 0;
-      });
+      const { maxDuration } = getStationTripLookup();
       // The other leg can extend beyond the search anchor's 24-hour window.
       // The unlimited-wait diagnostic spans the complete available calendar.
       const calendarReach = Number.isFinite(maxTransferMinutes) ? 0 : trips.reduce((reach, trip) => {
@@ -6555,9 +6748,11 @@
           Math.abs((Date.UTC(...iso.split("-").map((n, i) => Number(n) - (i === 1 ? 1 : 0))) -
             Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())) / 60000)));
       }, SEARCH_WINDOW_MINUTES);
-      const reach = Math.max(0, ...durations) + (Number.isFinite(maxTransferMinutes) ? maxTransferMinutes : calendarReach);
+      const reach = maxDuration + (Number.isFinite(maxTransferMinutes) ? maxTransferMinutes : calendarReach);
       const index = new Map();
-      trips.forEach((trip) => {
+      const candidates = new Set([...tripIndexesAtStation(originId), ...tripIndexesAtStation(destinationId)]);
+      [...candidates].sort((first, second) => first - second).forEach((tripIndex) => {
+        const trip = trips[tripIndex];
         const legs = trip.stops.flatMap((stop) => {
           if (stop.id === originId) return tripLegsFromStop(trip, stop);
           if (transferStationIds.has(stop.id)) return tripLegsFromStop(trip, stop, destinationId);

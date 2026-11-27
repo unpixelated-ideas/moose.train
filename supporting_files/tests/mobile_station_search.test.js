@@ -27,6 +27,24 @@ for (const query of ['ans', 'Ansonia', 'ANS']) {
 assert.equal(run('stations.filter(station => stationMatchesQuery(station, "zzzzzz")).length'), 0);
 assert.equal(run('stations.filter(station => stationMatchesQuery(station, "")).length === stations.length'), true);
 assert.equal(run('stations.some(station => stationMatchesQuery(station, "penn"))'), true);
+for (const language of ['en', 'es', 'ko']) {
+  context.language = language;
+  run('currentLanguage = language');
+  for (const [name, ids] of [
+    ['Broadway', ['LIRR_11', 'NJT_25']],
+    ['Hawthorne', ['MNR_80', 'NJT_58']],
+    ['Westwood', ['LIRR_219', 'NJT_156']],
+  ]) {
+    context.query = name;
+    assert.equal(run('findStation(query)'), null);
+    for (const id of ids) {
+      context.id = id;
+      context.query = run('stationPickerLabel(stations.find(station => station.id === id))');
+      assert.equal(run('findStation(query)?.id'), id);
+      assert.equal(run('stations.filter(station => stationMatchesQuery(station, query)).length'), 1);
+    }
+  }
+}
 assert(!/id="(?:origin|destination)"[^>]*\blist=/.test(html));
 // Trip grouping must survive interleaved trains without retaining raw CSV rows.
 context.fixtureRows = [

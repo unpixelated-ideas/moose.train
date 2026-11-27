@@ -20,8 +20,8 @@ def njt_files():
     files = base_files()
     files["routes.txt"] = [dict(route_id=key, agency_id="A1", route_short_name="",
                                 route_long_name=name, route_type="2") for key, name in ROUTES.items()]
-    files["routes.txt"].append(dict(route_id="5", agency_id="A1", route_short_name="MNBN",
-                                    route_long_name="Main/Bergen County Line", route_type="2"))
+    files["routes.txt"].append(dict(route_id="4", agency_id="A1", route_short_name="HBLR",
+                                    route_long_name="Hudson-Bergen Light Rail", route_type="0"))
     names = {"105": "NEW YORK PENN STATION", "107": "NEWARK PENN STATION",
              "38174": "SECAUCUS LOWER LEVEL", "38187": "SECAUCUS UPPER LEVEL",
              "63": "HOBOKEN", "123": "PORT JERVIS", "142": "SPRING VALLEY"}
@@ -29,8 +29,10 @@ def njt_files():
                            for key, name in names.items()]
     files["trips.txt"] = []
     files["stop_times.txt"] = []
-    for route, stops in {"6": ["123", "38174", "63"], "10": ["107", "38187", "105"],
-                         "14": ["142", "38174", "63"], "5": ["38174", "63"]}.items():
+    core_stops = {"6": ["123", "38174", "63"], "10": ["107", "38187", "105"],
+                  "14": ["142", "38174", "63"]}
+    for route in (*core_stops, *(key for key in ROUTES if key not in core_stops), "4"):
+        stops = core_stops.get(route, ["38174", "63"])
         for direction in ("0", "1"):
             trip_id = f"internal-{route}-{direction}"
             files["trips.txt"].append(dict(route_id=route, service_id="S1", trip_id=trip_id,
@@ -60,8 +62,8 @@ class NjtImporterTests(unittest.TestCase):
     def test_scope_train_numbers_through_trips_and_source_identity(self):
         result = self.import_fixture()
         validate_njt_result(result, TODAY)
-        self.assertEqual(len(result.normalized["trips"]), 6)
-        self.assertEqual(len(result.rows), 18)
+        self.assertEqual(len(result.normalized["trips"]), 2 * len(ROUTES))
+        self.assertEqual(len(result.rows), 18 + 4 * (len(ROUTES) - 3))
         self.assertEqual({r["service_name"] for r in result.rows}, set(ROUTES.values()))
         trip = [r for r in result.rows if "gtfs_trip_id=internal-6-0;" in r["raw_notes"]]
         self.assertEqual([r["station_id"] for r in trip], ["NJT_123", "SEC", "NJT_63"])
@@ -90,7 +92,7 @@ class NjtImporterTests(unittest.TestCase):
         self.assertFalse((self.root / "moose_train_schedule.csv.gz").exists())
         self.assertFalse((self.root / "supporting_files/extraction/gtfs_import_metadata.csv").exists())
         with gzip.open(output / "schedule.csv.gz", "rt") as handle:
-            self.assertEqual(len(list(csv.DictReader(handle))), 18)
+            self.assertEqual(len(list(csv.DictReader(handle))), 18 + 4 * (len(ROUTES) - 3))
         self.assertEqual(json.loads((output / "audit.json").read_text()), report)
         with self.assertRaises(FileExistsError):
             prepare(source, output, TODAY)
@@ -109,7 +111,7 @@ class NjtImporterTests(unittest.TestCase):
 
     def test_missing_line_and_changed_route_rejected(self):
         self.files["trips.txt"] = [t for t in self.files["trips.txt"] if t["route_id"] != "14"]
-        with self.assertRaisesRegex(ValueError, "all three"):
+        with self.assertRaisesRegex(ValueError, "missing or expired service: Pascack Valley"):
             validate_njt_result(self.import_fixture(), TODAY)
         self.files = njt_files()
         self.files["routes.txt"][0]["route_long_name"] = "Changed line"
@@ -129,17 +131,21 @@ class NjtImporterTests(unittest.TestCase):
             validate_njt_result(self.import_fixture(), TODAY)
 
     def test_replacement_bus_is_not_imported_as_a_through_train(self):
-        trip = dict(self.files["trips.txt"][0], trip_id="bus-itinerary", block_id="PJBUS")
-        self.files["trips.txt"].append(trip)
-        self.files["stop_times.txt"].extend([
-            dict(stop, trip_id="bus-itinerary") for stop in list(self.files["stop_times.txt"])
-            if stop["trip_id"] == "internal-6-0"
-        ])
+        for route_id, marker in (("6", "PJBUS"), ("8", "GBUS710")):
+            source_id = f"internal-{route_id}-0"
+            bus_id = f"bus-{route_id}"
+            source = next(trip for trip in self.files["trips.txt"] if trip["trip_id"] == source_id)
+            self.files["trips.txt"].append(dict(source, trip_id=bus_id, block_id=marker))
+            self.files["stop_times.txt"].extend([
+                dict(stop, trip_id=bus_id) for stop in list(self.files["stop_times.txt"])
+                if stop["trip_id"] == source_id
+            ])
         result = self.import_fixture()
         validate_njt_result(result, TODAY)
-        self.assertEqual(len(result.normalized["trips"]), 6)
+        self.assertEqual(len(result.normalized["trips"]), 2 * len(ROUTES))
         self.assertFalse(any("PJBUS" in row["train_number"] for row in result.rows))
         self.assertTrue(any("Excluded 1 trips" in warning and "PJBUS" in warning for warning in result.warnings))
+        self.assertTrue(any("Excluded 1 trips" in warning and "GBUS" in warning for warning in result.warnings))
 
     def test_unknown_bus_marker_requires_review(self):
         self.files["trips.txt"][0]["block_id"] = "OTHER_BUS"

@@ -113,7 +113,34 @@ MNR_EXPANSION_STATION_IDS = {
     'Wassaic': 'MNR_177',
 }
 
+AMTRAK_NY_NJ_EXPANSION_STATIONS = {
+    "ALB": "Albany-Rensselaer",
+    "AMS": "Amsterdam",
+    "BFX": "Buffalo-Exchange Street",
+    "BUF": "Buffalo-Depew",
+    "FED": "Fort Edward-Glens Falls",
+    "FTC": "Fort Ticonderoga",
+    "HUD": "Hudson",
+    "NBK": "New Brunswick",
+    "NFL": "Niagara Falls",
+    "NRO": "New Rochelle",
+    "NYF": "New York State Fair",
+    "PLB": "Plattsburgh",
+    "POH": "Port Henry",
+    "RHI": "Rhinecliff",
+    "ROC": "Rochester",
+    "ROM": "Rome",
+    "RSP": "Rouses Point",
+    "SAR": "Saratoga Springs",
+    "SDY": "Schenectady",
+    "SYR": "Syracuse",
+    "UCA": "Utica",
+    "WHL": "Whitehall",
+    "WSP": "Westport",
+}
+
 AMTRAK_SCOPE_STOP_IDS = {
+    *AMTRAK_NY_NJ_EXPANSION_STATIONS,
     "NWK", "EWR", "MET", "PJC", "TRE",
     "YNY", "CRT", "POU",
     "BER",  # Berlin, CT
@@ -200,6 +227,7 @@ class GtfsFeedConfig:
     default_route_name: str = ""
     train_number_fields: tuple[str, ...] = ("trip_short_name", "trip_id")
     exclude_block_ids: set[str] = field(default_factory=set)
+    exclude_block_id_pattern: str = ""
     expected_stop_names: dict[str, str] = field(default_factory=dict)
     validate_output: Callable[[dict, list], None] | None = None
 
@@ -313,8 +341,18 @@ def default_feed_configs() -> list[GtfsFeedConfig]:
             min_in_scope_stops=2,
             emit_only_in_scope_stops=True,
             stop_name_aliases=AMTRAK_STOP_ALIASES,
-            station_id_map={**MNR_EXPANSION_STATION_IDS, "Newark Penn": "NWK", "Newark Airport Rail Station": "EWR", "Metropark": "MET", "Princeton Junction": "PJC", "Trenton": "TRE"},
+            station_id_map={
+                **MNR_EXPANSION_STATION_IDS,
+                **{name: code for code, name in AMTRAK_NY_NJ_EXPANSION_STATIONS.items()},
+                "New Brunswick": "NJT_103",
+                "Newark Penn": "NWK",
+                "Newark Airport Rail Station": "EWR",
+                "Metropark": "MET",
+                "Princeton Junction": "PJC",
+                "Trenton": "TRE",
+            },
             stop_id_station_names={
+                **AMTRAK_NY_NJ_EXPANSION_STATIONS,
                 "NWK": "Newark Penn", "EWR": "Newark Airport Rail Station", "MET": "Metropark",
                 "PJC": "Princeton Junction", "TRE": "Trenton",
                 "YNY": "Yonkers",
@@ -519,6 +557,12 @@ def normalize_feed(
         trips = [trip for trip in trips if trip.get("block_id", "") not in config.exclude_block_ids]
         if excluded_count:
             warnings.append(f"Excluded {excluded_count} trips with configured block_ids: {', '.join(sorted(config.exclude_block_ids))}")
+    if config.exclude_block_id_pattern:
+        pattern = re.compile(config.exclude_block_id_pattern)
+        rail_trips = [trip for trip in trips if not pattern.fullmatch(trip.get("block_id", ""))]
+        if len(rail_trips) != len(trips):
+            warnings.append(f"Excluded {len(trips) - len(rail_trips)} trips matching block_id pattern {pattern.pattern}")
+        trips = rail_trips
     trip_ids = {row["trip_id"] for row in trips}
     stop_times = [
         row for row in tables["stop_times.txt"]

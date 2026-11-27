@@ -3,10 +3,14 @@ import csv
 import gzip
 import datetime as dt
 import json
+import sys
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "supporting_files/extraction"))
+from njt import REQUIRED_SERVICES
+
 EXPECTED = {"mnr", "hartford", "sle", "amtrak", "lirr", "njt"}
 
 
@@ -23,7 +27,7 @@ def validate(root=ROOT, today=None):
             raise ValueError(f"Empty import: {row['feed_id']}")
     coverage = {feed: False for feed in EXPECTED}
     mnr_services = {name: False for name in ["Hudson Line", "Harlem Line", "New Haven Line", "New Canaan Branch", "Danbury Branch", "Waterbury Branch"]}
-    njt_services = {name: False for name in ["Northeast Corridor", "Port Jervis Line", "Pascack Valley Line"]}
+    njt_services = dict.fromkeys(sorted(REQUIRED_SERVICES), False)
     compressed = root / "moose_train_schedule.csv.gz"
     schedule = gzip.open(compressed, "rt", encoding="utf-8") if compressed.exists() else (root / "moose_train_schedule.csv").open()
     with schedule as handle:

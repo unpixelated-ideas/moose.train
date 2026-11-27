@@ -17,18 +17,25 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:8765';
         await page.goto(`${base}/?lang=${lang}`);
         await page.waitForFunction(() => trips.length > 0);
         const state = await page.evaluate(async () => {
+          // Exercise fare rendering independently of the dated, checked-in snapshot's expiry.
+          window.MOOSE_NJT_FARES = { ...window.MOOSE_NJT_FARES, retrievedAt: new Date().toISOString() };
           els.origin.value='Port Jervis'; els.destination.value='New York Penn';
           els.date.value='2026-10-20'; els.time.value='7:00 AM';
           await renderSearch({requireSchedule:true});
-          return {count:activeSearchState.routes.length,
-            allOneTransfer:activeSearchState.routes.every(route=>route.legs.length===2 && route.legs[0].toId==='SEC'),
-            expected:formatFareAmount(calculateNjtFare(activeSearchState.routes[0].legs)),
+          const routes = activeSearchState.routes;
+          const fares = routes.map(route => calculateNjtFare(route.legs));
+          const pricedIndex = fares.findIndex(Boolean);
+          return {count:routes.length, pricedIndex,
+            allOneTransfer:routes.every(route=>route.legs.length===2 && route.legs[0].toId==='SEC'),
+            expected:pricedIndex < 0 ? null : formatFareAmount(fares[pricedIndex]),
             throughNote:t('njtThroughFare')};
         });
         assert(state.count>0 && state.allOneTransfer);
-        assert((await page.locator('.result .fare-summary').first().textContent()).includes(state.expected));
+        assert(state.pricedIndex >= 0, 'At least one connection is covered by the verified fare fixture');
+        const pricedResult = page.locator('.result').nth(state.pricedIndex);
+        assert((await pricedResult.locator('.fare-summary').textContent()).includes(state.expected));
         assert.equal(await page.locator('.result .leg-fare').count(),0,'Do not show two separate prices for one NJ Transit ticket');
-        const info=page.locator('.result .fare-info').first();
+        const info=pricedResult.locator('.fare-info').first();
         await info.click();
         assert((await info.textContent()).includes(state.throughNote));
         assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),true,'No horizontal page overflow');

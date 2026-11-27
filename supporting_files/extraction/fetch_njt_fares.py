@@ -81,7 +81,10 @@ def fetch_payload(query):
 
 
 def collect_report(service_date, all_pairs=True):
-    stations = {value["station_id"]: value for value in station_mappings().values()}
+    stations = {
+        value["station_id"]: value for value in station_mappings().values()
+        if value.get("fare_station_title")
+    }
     pairs = list(itertools.permutations(sorted(stations), 2)) if all_pairs else SAMPLE_PAIRS
     quotes = []
     batches = [pairs[offset:offset + 10] for offset in range(0, len(pairs), 10)]

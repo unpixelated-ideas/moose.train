@@ -37,10 +37,10 @@ class MetroNorthExpansionTests(unittest.TestCase):
                 self.assertIn('pickup_type=1', result.rows[0]['raw_notes'])
                 self.assertIn('drop_off_type=1', result.rows[-1]['raw_notes'])
 
-    def test_amtrak_scope_only_adds_shared_hudson_stations(self):
+    def test_amtrak_scope_preserves_shared_hudson_stations_during_expansion(self):
         config = next(c for c in default_feed_configs() if c.feed_id == 'amtrak')
         self.assertTrue({'YNY','CRT','POU'} <= config.in_scope_stop_ids)
-        self.assertFalse({'ALB','HUD','RHI'} & config.in_scope_stop_ids)
+        self.assertTrue({'ALB','HUD','RHI'} <= config.in_scope_stop_ids)
         self.assertEqual(config.station_id_map['Croton-Harmon'], 'CRT')
         self.assertEqual(config.min_in_scope_stops, 2)
         self.assertEqual(config.route_filter.include_route_types, {'2'})

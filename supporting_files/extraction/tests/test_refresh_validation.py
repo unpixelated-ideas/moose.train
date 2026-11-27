@@ -29,7 +29,7 @@ class RefreshValidationTests(unittest.TestCase):
         for name in ["Hudson Line", "Harlem Line", "New Haven Line", "New Canaan Branch", "Danbury Branch", "Waterbury Branch"]:
             self.rows.append(dict(source_pdf="mnr_gtfs_example.zip", service_dates="",
                                   service_end_date="2026-11-01", service_name=name, train_number="100"))
-        for name in ["Northeast Corridor", "Port Jervis Line", "Pascack Valley Line"]:
+        for name in sorted(MODULE.REQUIRED_SERVICES):
             self.rows.append(dict(source_pdf="njt_gtfs_example.zip", service_dates="",
                                   service_end_date="2026-11-01", service_name=name, train_number="100"))
 

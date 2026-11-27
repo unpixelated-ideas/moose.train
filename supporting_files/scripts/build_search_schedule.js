@@ -7,6 +7,14 @@ const zlib = require('node:zlib');
 const root = path.resolve(__dirname, '../..');
 const htmlPath = path.join(root, 'index.html');
 const html = fs.readFileSync(htmlPath, 'utf8');
+const duplicateRailroads = JSON.parse(fs.readFileSync(
+  path.join(root, 'supporting_files/reference/duplicate_station_railroads.json'), 'utf8',
+));
+function updateStationQualifiers(page) {
+  const declaration = /const duplicateStationRailroads = \{[^}]*\};/;
+  if (!declaration.test(page)) throw new Error('Missing embedded station qualifier declaration');
+  return page.replace(declaration, `const duplicateStationRailroads = ${JSON.stringify(duplicateRailroads)};`);
+}
 const script = html.slice(html.lastIndexOf('<script>') + 8, html.lastIndexOf('</script>')).replace('    init();', '');
 const context = vm.createContext({ document: { getElementById: () => ({}), querySelector() {} }, window: {}, console });
 vm.runInContext(script, context);
@@ -51,7 +59,8 @@ const payload = {
 const json = Buffer.from(JSON.stringify(payload));
 const compressed = zlib.gzipSync(json, { level: 9 });
 const version = crypto.createHash('sha256').update(json).digest('hex').slice(0, 16);
-const updatedHtml = html.replace(/const SEARCH_SCHEDULE_VERSION = "[^"]*";/, `const SEARCH_SCHEDULE_VERSION = "${version}";`);
+const updatedHtml = updateStationQualifiers(html)
+  .replace(/const SEARCH_SCHEDULE_VERSION = "[^"]*";/, `const SEARCH_SCHEDULE_VERSION = "${version}";`);
 const outputs = [
   [htmlPath, Buffer.from(updatedHtml)],
   [path.join(root, 'supporting_files/assets/schedule/search.json'), json],
@@ -68,7 +77,7 @@ function normalizeEmbeddedSchedule(contents) {
 if (fs.existsSync(boardPath)) {
   const stationTrips = prepared.trips.filter(trip => trip.stops.some(stop => stop.id === 'OSB'));
   const embedded = JSON.stringify(stationTrips).replace(/</g, '\\u003c');
-  const board = fs.readFileSync(boardPath, 'utf8').replace(
+  const board = updateStationQualifiers(fs.readFileSync(boardPath, 'utf8')).replace(
     /(<script id="station-schedule" type="application\/json">)[\s\S]*?(<\/script>)/,
     (_match, open, close) => open + embedded + close,
   );

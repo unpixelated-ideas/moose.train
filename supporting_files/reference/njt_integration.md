@@ -2,12 +2,11 @@
 
 ## Implemented coverage
 
-The normal schedule build includes NJ Transit's Northeast Corridor (New York
-Penn–Trenton), Port Jervis Line, and Pascack Valley Line, including through trains
-to Hoboken. Amtrak now exposes Newark Penn, Newark Airport Rail Station,
-Metropark, Princeton Junction, and Trenton alongside its existing supported stops.
-Other NJ Transit lines, PATH, light rail, buses, passes, and discounted fares are
-outside this release. Live NJ Transit updates remain deferred.
+The normal schedule build includes NJ Transit commuter rail stops in New York and
+New Jersey, including the Princeton Shuttle and Meadowlands trains when scheduled.
+Main/Bergen local trains and Port Jervis trains remain separate services. Search
+and the departure board use the same schedule. PATH, light rail, buses, passes,
+discounted fares, and NJ Transit live updates are outside this release.
 
 All operators retain the same maximum of one transfer. Secaucus, Newark Penn,
 and Trenton are allowed hubs alongside existing hubs. Penn Station retains its
@@ -23,20 +22,18 @@ Other NJ Transit stations have namespaced IDs to avoid collisions.
 ## Schedule source and exceptions
 
 The official public source is <https://www.njtransit.com/rail_data.zip>. It needs
-no developer credentials, paid API, or backend. Import routes 10, 6, and 14 only;
-retain the New Jersey stops of Port Jervis through trains but exclude unrelated
-Main/Bergen-only route 5. NJ Transit uses `block_id` for its published train number.
+no developer credentials, paid API, or backend. Import the configured commuter
+rail routes and keep Philadelphia 30th Street outside the search area. NJ Transit
+uses `block_id` for its published train number.
 Original trip, route, stop, and service IDs remain traceable in normalized data
 and the browser's prepared trips.
 
-The checked October 19, 2026 ZIP contains 854 selected rail trip records, 10,346
-stop events, and 63 canonical stations, with service September 15, 2026–March 13,
-2027. Counts represent GTFS records across calendars, not daily train frequency.
-Its calendar is supplied through `calendar_dates.txt`; no `calendar.txt` is needed.
+The saved November 18, 2026 snapshot includes 163 canonical NJ Transit stations in
+the expanded scope. Its calendar is supplied through `calendar_dates.txt`.
 The archive has no fare tables or transfer minimums.
 
-Sixty-three `PJBUS` trip variants are excluded in full, including attached rail
-segments, because the source labels replacement-bus itineraries as rail route 6.
+Port Jervis `PJBUS` and Gladstone `GBUS` itineraries are excluded in full because
+the source labels these replacement buses as rail trips.
 Unknown nonnumeric train markers, unmapped/reassigned stop IDs, missing lines,
 and expired coverage fail validation instead of being published.
 
@@ -61,7 +58,7 @@ not agree. It never fills missing data by reversing a fare, choosing a cheaper
 quote, or adding leg prices. A disagreement is not proof of a source error;
 it means the price needs further validation.
 
-Core journeys for all three products must have corroborated prices in both
+Core journeys in the verified fare snapshot must have corroborated prices in both
 directions or the build fails, preserving the previous deployed site. Other
 unverified prices display a localized “Fare unavailable”. Both directions are
 stored explicitly. North Elizabeth–Rahway is a known withheld pair; the dated
