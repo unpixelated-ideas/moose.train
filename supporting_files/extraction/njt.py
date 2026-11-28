@@ -10,20 +10,20 @@ from gtfs_importer import GtfsFeedConfig, GtfsImportResult, RouteFilter
 
 RAIL_URL = "https://www.njtransit.com/rail_data.zip"
 ROUTES = {
-    "1": "Atlantic City Rail Line",
-    "2": "Montclair-Boonton Line",
-    "3": "Montclair-Boonton Line",
-    "5": "Main/Bergen County Line",
-    "6": "Port Jervis Line",
-    "7": "Morris & Essex Line",
-    "8": "Gladstone Branch",
-    "9": "Meadowlands Rail Line",
-    "10": "Northeast Corridor",
-    "11": "North Jersey Coast Line",
-    "12": "North Jersey Coast Line",
-    "14": "Pascack Valley Line",
-    "15": "Princeton Shuttle",
-    "16": "Raritan Valley Line",
+    "ATLC": "Atlantic City Rail Line",
+    "BNTN": "Montclair-Boonton Line",
+    "BNTNM": "Montclair-Boonton Line",
+    "MNBN": "Main/Bergen County Line",
+    "MNBNP": "Port Jervis Line",
+    "MNE": "Morris & Essex Line",
+    "MNEG": "Gladstone Branch",
+    "MRL": "Meadowlands Rail Line",
+    "NEC": "Northeast Corridor",
+    "NJCL": "North Jersey Coast Line",
+    "NJCLL": "North Jersey Coast Line",
+    "PASC": "Pascack Valley Line",
+    "PRIN": "Princeton Shuttle",
+    "RARV": "Raritan Valley Line",
 }
 REQUIRED_SERVICES = frozenset(ROUTES.values()) - {"Meadowlands Rail Line"}
 STATIONS_PATH = Path(__file__).resolve().parents[1] / "reference/njt_stations.json"
@@ -38,8 +38,8 @@ def njt_feed_config(today: dt.date | None = None) -> GtfsFeedConfig:
     return GtfsFeedConfig(
         feed_id="njt", operator_name="NJ Transit", url=RAIL_URL,
         zip_filename="rail_data.zip",
-        route_filter=RouteFilter(include_route_ids=set(ROUTES), include_route_types={"2"}),
-        route_service_names=ROUTES, route_names=ROUTES,
+        # Numeric IDs shift when seasonal routes enter or leave the feed.
+        route_filter=RouteFilter(include_route_short_names=set(ROUTES), include_route_types={"2"}),
         stop_id_station_names={key: value["station_name"] for key, value in stations.items()},
         stop_name_aliases={value["source_name"]: value["station_name"] for value in stations.values()},
         station_id_map={value["station_name"]: value["station_id"] for value in stations.values()},
@@ -62,10 +62,10 @@ def validate_njt_result(result: GtfsImportResult, today: dt.date | None = None) 
 
 def validate_njt_output(normalized, rows, today: dt.date | None = None):
     today = today or dt.datetime.now(ZoneInfo("America/New_York")).date()
-    routes = {row["source_route_id"]: row for row in normalized["routes"]}
-    for route_id, route in routes.items():
-        if route["route_long_name"] != ROUTES[route_id]:
-            raise ValueError(f"NJ Transit route {route_id} changed; review route selection")
+    for route in normalized["routes"]:
+        code = route["route_short_name"]
+        if route["route_long_name"] != ROUTES[code]:
+            raise ValueError(f"NJ Transit route {code} ({route['source_route_id']}) changed; review route selection")
     stations = station_mappings()
     for stop in normalized["stops"]:
         source_id = stop["source_stop_id"]

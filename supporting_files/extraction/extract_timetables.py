@@ -226,7 +226,10 @@ def main(*, download: bool = True) -> None:
         })
 
     gtfs_rows, _gtfs_metadata, gtfs_results = import_configured_feeds(ROOT, station_id_for, download=download)
-    failed_feeds = [result.feed_id for result in gtfs_results if result.errors]
+    failed_feeds = [
+        f"{result.feed_id}: {'; '.join(result.errors)}"
+        for result in gtfs_results if result.errors
+    ]
     if failed_feeds:
         raise RuntimeError(f"GTFS refresh failed for {', '.join(failed_feeds)}; existing schedule CSV preserved. See gtfs_import_metadata.csv.")
     rows.extend(gtfs_rows)

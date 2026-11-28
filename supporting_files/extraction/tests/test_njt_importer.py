@@ -14,12 +14,13 @@ from njt import ROUTES, njt_feed_config, validate_njt_result
 from prepare_njt import prepare
 
 TODAY = dt.date(2026, 10, 19)
+ROUTE_IDS = dict(zip(("1", "2", "3", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16"), ROUTES))
 
 
 def njt_files():
     files = base_files()
-    files["routes.txt"] = [dict(route_id=key, agency_id="A1", route_short_name="",
-                                route_long_name=name, route_type="2") for key, name in ROUTES.items()]
+    files["routes.txt"] = [dict(route_id=key, agency_id="A1", route_short_name=code,
+                                route_long_name=ROUTES[code], route_type="2") for key, code in ROUTE_IDS.items()]
     files["routes.txt"].append(dict(route_id="4", agency_id="A1", route_short_name="HBLR",
                                     route_long_name="Hudson-Bergen Light Rail", route_type="0"))
     names = {"105": "NEW YORK PENN STATION", "107": "NEWARK PENN STATION",
@@ -31,7 +32,7 @@ def njt_files():
     files["stop_times.txt"] = []
     core_stops = {"6": ["123", "38174", "63"], "10": ["107", "38187", "105"],
                   "14": ["142", "38174", "63"]}
-    for route in (*core_stops, *(key for key in ROUTES if key not in core_stops), "4"):
+    for route in (*core_stops, *(key for key in ROUTE_IDS if key not in core_stops), "4"):
         stops = core_stops.get(route, ["38174", "63"])
         for direction in ("0", "1"):
             trip_id = f"internal-{route}-{direction}"
@@ -73,6 +74,23 @@ class NjtImporterTests(unittest.TestCase):
         self.assertEqual(trip[0]["service_start_date"], "2026-10-19")
         self.assertEqual(trip[0]["service_end_date"], "2026-10-20")
         self.assertEqual(result.normalized["trips"][0]["source_trip_id"], "internal-6-0")
+
+    def test_seasonal_route_removal_can_renumber_other_routes(self):
+        meadowlands_trips = {t["trip_id"] for t in self.files["trips.txt"] if t["route_id"] == "9"}
+        self.files["stop_times.txt"] = [s for s in self.files["stop_times.txt"]
+                                        if s["trip_id"] not in meadowlands_trips]
+        for table in ("routes.txt", "trips.txt"):
+            self.files[table] = [row for row in self.files[table] if row["route_id"] != "9"]
+            for row in self.files[table]:
+                route_id = int(row["route_id"])
+                if route_id > 9:
+                    row["route_id"] = str(route_id - 1)
+        result = self.import_fixture()
+        validate_njt_result(result, TODAY)
+        self.assertEqual({r["service_name"] for r in result.rows},
+                         set(ROUTES.values()) - {"Meadowlands Rail Line"})
+        northeast = next(r for r in result.normalized["routes"] if r["source_route_id"] == "9")
+        self.assertEqual(northeast["service_name"], "Northeast Corridor")
 
     def test_secaucus_levels_share_station_without_losing_source_stops(self):
         result = self.import_fixture()

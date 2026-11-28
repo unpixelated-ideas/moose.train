@@ -185,6 +185,7 @@ class RouteFilter:
     exclude_agency_ids: set[str] = field(default_factory=set)
     include_route_long_names: set[str] = field(default_factory=set)
     include_route_types: set[str] = field(default_factory=set)
+    include_route_short_names: set[str] = field(default_factory=set)
 
     def allows(self, route: dict[str, str]) -> bool:
         route_id = route.get("route_id", "")
@@ -195,6 +196,8 @@ class RouteFilter:
         if self.include_agency_ids and agency_id not in self.include_agency_ids:
             return False
         if self.include_route_long_names and long_name not in self.include_route_long_names:
+            return False
+        if self.include_route_short_names and route.get("route_short_name", "") not in self.include_route_short_names:
             return False
         if self.include_route_types and route.get("route_type", "") not in self.include_route_types:
             return False
